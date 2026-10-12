@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Cập nhật data/calendar-us.json từ ForexFactory (feed tuần: nfs.faireconomy.media).
-Lọc country == USD, impact High/Medium (+ Holiday). Giờ đổi sang Asia/Ho_Chi_Minh.
+Lọc country == USD, impact == High (tin đỏ) – chỉ tin tác động cao. Giờ đổi sang Asia/Ho_Chi_Minh.
 Chạy: python3 scripts/update-calendar.py   (feed giới hạn tần suất – đừng gọi quá vài lần/giờ)
 Lưu ý: feed tuần KHÔNG có trường 'actual' (số thực tế); nếu sau này có sẽ tự ghi vào."""
 import json, sys, urllib.request, datetime as dt
@@ -45,7 +45,7 @@ def main():
     if not isinstance(raw, list) or not raw: sys.exit('Feed rỗng/không hợp lệ – giữ nguyên file cũ')
     ev = []
     for x in raw:
-        if x.get('country') != 'USD' or x.get('impact') not in ('High', 'Medium', 'Holiday'): continue
+        if x.get('country') != 'USD' or x.get('impact') != 'High': continue
         t = dt.datetime.fromisoformat(x['date']).astimezone(VN)
         n, ex = vi(x['title'])
         ev.append({'title': x['title'], 'title_vi': n, 'explain': ex, 'impact': x['impact'],
@@ -59,5 +59,5 @@ def main():
            'updated_vn': now.strftime('%H:%M %d/%m/%Y'), 'updated_utc': now.astimezone(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
            'has_actual': any('actual' in x for x in raw), 'events': ev}
     json.dump(out, open(OUT, 'w'), ensure_ascii=False, indent=1)
-    print(f'{len(ev)} sự kiện USD (High/Medium/Holiday) → {OUT}')
+    print(f'{len(ev)} sự kiện USD (High) → {OUT}')
 if __name__ == '__main__': main()

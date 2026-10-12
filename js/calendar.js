@@ -17,10 +17,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     if (!$('ffcal')) return;
     $('ff-upd').textContent = d.updated_vn || '—';
-    let showMed = localStorage.getItem('hmg_ff_med') === '1';
-    const tg = $('ff-med'); tg.checked = showMed; tg.onchange = () => { showMed = tg.checked; localStorage.setItem('hmg_ff_med', showMed ? '1' : '0'); draw(); };
     function draw() {
-      const list = ev.filter(x => x.impact !== 'Medium' || showMed), groups = {};
+      const list = ev.filter(x => x.impact === 'High'), groups = {};
       list.forEach(x => (groups[dayKey(x.t)] = groups[dayKey(x.t)] || []).push(x));
       const nx = nextHigh();
       $('ffcal').innerHTML = Object.keys(groups).sort().map((k, gi) => {

@@ -5,22 +5,10 @@
   "url": "https://www.forexfactory.com/calendar",
   "feed": "https://nfs.faireconomy.media/ff_calendar_thisweek.json"
  },
- "updated_vn": "02:25 13/10/2026",
- "updated_utc": "2026-10-12T19:25:31Z",
+ "updated_vn": "02:26 13/10/2026",
+ "updated_utc": "2026-10-12T19:26:12Z",
  "has_actual": false,
  "events": [
-  {
-   "title": "Bank Holiday",
-   "title_vi": "Ngày nghỉ lễ ngân hàng Mỹ",
-   "explain": "Thanh khoản thấp, thị trường trái phiếu Mỹ có thể đóng cửa.",
-   "impact": "Holiday",
-   "time_utc": "2026-10-12T11:00:00Z",
-   "time_vn": "18:00 12/10/2026",
-   "date_vn": "2026-10-12",
-   "forecast": "",
-   "previous": "",
-   "actual": ""
-  },
   {
    "title": "Core CPI m/m",
    "title_vi": "CPI lõi (lạm phát trừ thực phẩm & năng lượng)",
@@ -115,30 +103,6 @@
    "date_vn": "2026-10-15",
    "forecast": "0.3%",
    "previous": "1.2%",
-   "actual": ""
-  },
-  {
-   "title": "Philly Fed Manufacturing Index",
-   "title_vi": "Chỉ số sản xuất Philadelphia Fed",
-   "explain": "Khảo sát sản xuất khu vực, tín hiệu sớm cho ISM.",
-   "impact": "Medium",
-   "time_utc": "2026-10-15T12:30:00Z",
-   "time_vn": "19:30 15/10/2026",
-   "date_vn": "2026-10-15",
-   "forecast": "26.5",
-   "previous": "37.8",
-   "actual": ""
-  },
-  {
-   "title": "Unemployment Claims",
-   "title_vi": "Đơn xin trợ cấp thất nghiệp lần đầu",
-   "explain": "Công bố thứ Năm hằng tuần; tăng mạnh → thị trường lao động yếu → hỗ trợ vàng.",
-   "impact": "Medium",
-   "time_utc": "2026-10-15T12:30:00Z",
-   "time_vn": "19:30 15/10/2026",
-   "date_vn": "2026-10-15",
-   "forecast": "195K",
-   "previous": "197K",
    "actual": ""
   },
   {
