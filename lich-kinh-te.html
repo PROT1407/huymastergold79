@@ -22,9 +22,12 @@
 <div id="site-header"></div>
 <main class="wrap">
 
-<div class="page-head"><p class="crumb"><a href="index.html">Trang chủ</a> › Thị trường › Lịch kinh tế</p><h1>Lịch <span style="color:var(--gold)">kinh tế</span></h1><p>Giờ hiển thị theo múi giờ trình duyệt của bạn. Lọc: Mỹ, EU, Trung Quốc, Nhật, Anh, Việt Nam.</p></div>
+<div class="page-head"><p class="crumb"><a href="index.html">Trang chủ</a> › Thị trường › Lịch kinh tế</p><h1>Lịch <span style="color:var(--gold)">kinh tế</span></h1><p>Tin kinh tế Mỹ tác động mạnh tới vàng, theo giờ Việt Nam – dữ liệu ForexFactory.</p></div>
+<div class="ffcd card" id="ff-cd-box"><span class="tag-red">⏰ ĐẾM NGƯỢC TIN MỸ TÁC ĐỘNG CAO</span><div id="ff-cd">—</div></div>
 <div class="grid" style="grid-template-columns:2fr 1fr;gap:16px" id="cal-grid">
-  <div class="card"><div id="tv-cal" data-imp="-1,0,1" style="height:900px"></div></div>
+  <div class="card"><div class="ff-bar"><h2 style="margin:0">🇺🇸 Lịch tin Mỹ tuần này</h2><label class="ff-tg"><input type="checkbox" id="ff-med"> Hiện cả tin tác động trung bình</label></div>
+  <p class="small muted">Nguồn: <a href="https://www.forexfactory.com/calendar" target="_blank" rel="noopener">ForexFactory ↗</a> · Cập nhật lúc <b id="ff-upd">—</b> (giờ VN) · Giờ hiển thị luôn là giờ Việt Nam (UTC+7). Cột "Thực tế" chỉ có khi dữ liệu được làm mới sau giờ công bố.</p>
+  <div id="ffcal">Đang tải…</div></div>
   <aside class="card article"><h3>Sự kiện cần chú ý với vàng</h3>
     <ul><li><b>FOMC / lãi suất Fed:</b> tăng lãi suất thường gây áp lực lên vàng; giảm lãi suất hỗ trợ vàng.</li>
     <li><b>CPI (lạm phát Mỹ):</b> lạm phát cao hơn dự báo → kỳ vọng Fed thắt chặt → USD mạnh, vàng dễ giảm ngắn hạn.</li>
@@ -32,11 +35,13 @@
     <li><b>PCE, GDP, PMI:</b> ảnh hưởng gián tiếp qua kỳ vọng lãi suất.</li></ul>
     <div class="note small">Mẹo: tránh mua vàng vật chất ngay trước tin lớn; chờ giá ổn định rồi mới xuống tiền.</div></aside>
 </div>
+<details class="card sec" id="tv-fallback"><summary>📅 Lịch kinh tế đầy đủ (TradingView – nhiều quốc gia, giờ theo trình duyệt)</summary><div id="tv-cal" data-imp="-1,0,1" style="height:800px;margin-top:10px"></div></details>
 <style>@media(max-width:1020px){#cal-grid{grid-template-columns:1fr!important}}</style>
 
 </main>
 <div id="site-footer"></div>
 <script src="js/common.js"></script>
 <script src="js/app.js"></script>
+<script src="js/calendar.js"></script>
 </body>
 </html>

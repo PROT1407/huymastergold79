@@ -1,0 +1,157 @@
+{
+ "_ghi_chu": "Tự sinh bởi scripts/update-calendar.py từ ForexFactory – đừng sửa tay. Giờ: Asia/Ho_Chi_Minh.",
+ "source": {
+  "name": "ForexFactory",
+  "url": "https://www.forexfactory.com/calendar",
+  "feed": "https://nfs.faireconomy.media/ff_calendar_thisweek.json"
+ },
+ "updated_vn": "02:25 13/10/2026",
+ "updated_utc": "2026-10-12T19:25:31Z",
+ "has_actual": false,
+ "events": [
+  {
+   "title": "Bank Holiday",
+   "title_vi": "Ngày nghỉ lễ ngân hàng Mỹ",
+   "explain": "Thanh khoản thấp, thị trường trái phiếu Mỹ có thể đóng cửa.",
+   "impact": "Holiday",
+   "time_utc": "2026-10-12T11:00:00Z",
+   "time_vn": "18:00 12/10/2026",
+   "date_vn": "2026-10-12",
+   "forecast": "",
+   "previous": "",
+   "actual": ""
+  },
+  {
+   "title": "Core CPI m/m",
+   "title_vi": "CPI lõi (lạm phát trừ thực phẩm & năng lượng)",
+   "explain": "Chỉ số Fed theo dõi sát. Cao hơn dự báo → lợi suất, USD tăng → vàng dễ giảm.",
+   "impact": "High",
+   "time_utc": "2026-10-14T12:30:00Z",
+   "time_vn": "19:30 14/10/2026",
+   "date_vn": "2026-10-14",
+   "forecast": "0.2%",
+   "previous": "0.3%",
+   "actual": ""
+  },
+  {
+   "title": "Core CPI y/y",
+   "title_vi": "CPI lõi (lạm phát trừ thực phẩm & năng lượng)",
+   "explain": "Chỉ số Fed theo dõi sát. Cao hơn dự báo → lợi suất, USD tăng → vàng dễ giảm.",
+   "impact": "High",
+   "time_utc": "2026-10-14T12:30:00Z",
+   "time_vn": "19:30 14/10/2026",
+   "date_vn": "2026-10-14",
+   "forecast": "2.5%",
+   "previous": "2.4%",
+   "actual": ""
+  },
+  {
+   "title": "CPI m/m",
+   "title_vi": "CPI – chỉ số giá tiêu dùng (lạm phát)",
+   "explain": "Lạm phát cao hơn dự báo → kỳ vọng Fed tăng/giữ lãi suất cao → áp lực lên vàng.",
+   "impact": "High",
+   "time_utc": "2026-10-14T12:30:00Z",
+   "time_vn": "19:30 14/10/2026",
+   "date_vn": "2026-10-14",
+   "forecast": "0.6%",
+   "previous": "0.4%",
+   "actual": ""
+  },
+  {
+   "title": "CPI y/y",
+   "title_vi": "CPI – chỉ số giá tiêu dùng (lạm phát)",
+   "explain": "Lạm phát cao hơn dự báo → kỳ vọng Fed tăng/giữ lãi suất cao → áp lực lên vàng.",
+   "impact": "High",
+   "time_utc": "2026-10-14T12:30:00Z",
+   "time_vn": "19:30 14/10/2026",
+   "date_vn": "2026-10-14",
+   "forecast": "3.6%",
+   "previous": "3.4%",
+   "actual": ""
+  },
+  {
+   "title": "Core PPI m/m",
+   "title_vi": "PPI lõi – giá sản xuất",
+   "explain": "Báo trước áp lực lạm phát tới người tiêu dùng.",
+   "impact": "High",
+   "time_utc": "2026-10-15T12:30:00Z",
+   "time_vn": "19:30 15/10/2026",
+   "date_vn": "2026-10-15",
+   "forecast": "0.3%",
+   "previous": "0.2%",
+   "actual": ""
+  },
+  {
+   "title": "Core Retail Sales m/m",
+   "title_vi": "Doanh số bán lẻ lõi",
+   "explain": "Tiêu dùng mạnh → kinh tế khỏe, Fed ít lý do nới lỏng → USD mạnh.",
+   "impact": "High",
+   "time_utc": "2026-10-15T12:30:00Z",
+   "time_vn": "19:30 15/10/2026",
+   "date_vn": "2026-10-15",
+   "forecast": "0.5%",
+   "previous": "1.4%",
+   "actual": ""
+  },
+  {
+   "title": "PPI m/m",
+   "title_vi": "PPI – chỉ số giá sản xuất",
+   "explain": "Giá đầu vào tăng → lạm phát có thể lan sang CPI.",
+   "impact": "High",
+   "time_utc": "2026-10-15T12:30:00Z",
+   "time_vn": "19:30 15/10/2026",
+   "date_vn": "2026-10-15",
+   "forecast": "0.5%",
+   "previous": "0.4%",
+   "actual": ""
+  },
+  {
+   "title": "Retail Sales m/m",
+   "title_vi": "Doanh số bán lẻ",
+   "explain": "Đo sức chi tiêu của người Mỹ; mạnh hơn dự báo thường bất lợi cho vàng.",
+   "impact": "High",
+   "time_utc": "2026-10-15T12:30:00Z",
+   "time_vn": "19:30 15/10/2026",
+   "date_vn": "2026-10-15",
+   "forecast": "0.3%",
+   "previous": "1.2%",
+   "actual": ""
+  },
+  {
+   "title": "Philly Fed Manufacturing Index",
+   "title_vi": "Chỉ số sản xuất Philadelphia Fed",
+   "explain": "Khảo sát sản xuất khu vực, tín hiệu sớm cho ISM.",
+   "impact": "Medium",
+   "time_utc": "2026-10-15T12:30:00Z",
+   "time_vn": "19:30 15/10/2026",
+   "date_vn": "2026-10-15",
+   "forecast": "26.5",
+   "previous": "37.8",
+   "actual": ""
+  },
+  {
+   "title": "Unemployment Claims",
+   "title_vi": "Đơn xin trợ cấp thất nghiệp lần đầu",
+   "explain": "Công bố thứ Năm hằng tuần; tăng mạnh → thị trường lao động yếu → hỗ trợ vàng.",
+   "impact": "Medium",
+   "time_utc": "2026-10-15T12:30:00Z",
+   "time_vn": "19:30 15/10/2026",
+   "date_vn": "2026-10-15",
+   "forecast": "195K",
+   "previous": "197K",
+   "actual": ""
+  },
+  {
+   "title": "Fed Chairman Warsh Speaks",
+   "title_vi": "Phát biểu của Chủ tịch Fed",
+   "explain": "Sự kiện rủi ro cao: mọi tín hiệu về lãi suất có thể làm vàng, USD biến động mạnh.",
+   "impact": "High",
+   "time_utc": "2026-10-16T03:30:00Z",
+   "time_vn": "10:30 16/10/2026",
+   "date_vn": "2026-10-16",
+   "forecast": "",
+   "previous": "",
+   "actual": ""
+  }
+ ]
+}

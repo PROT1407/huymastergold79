@@ -137,3 +137,20 @@ footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:24px}foote
 .share a.tg-link{border-color:#2aabee;color:#2aabee}
 @media(max-width:640px){.tg-card{flex-wrap:wrap}.tg-go{width:100%;text-align:center}}
 @media(prefers-reduced-motion:reduce){.tg-ic{animation:none}}
+/* Lịch tin Mỹ – ForexFactory */
+.ffb{display:inline-block;padding:2px 9px;border-radius:999px;font-size:.72rem;font-weight:800}.ffb.hi{background:var(--down);color:#fff}.ffb.md{background:#ff9a2e;color:#2a1500}.ffb.hd{background:rgba(141,151,167,.25);color:var(--muted)}
+.ff-bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;margin-bottom:6px}.ff-tg{display:flex;gap:6px;align-items:center;margin:0;cursor:pointer}.ff-tg input{width:auto;margin:0}
+.ffday{margin-top:16px;animation:mIn .5s ease both}.ffday-h{padding:8px 12px;border-radius:10px;background:var(--bg2);border:1px solid var(--line);text-transform:capitalize}
+.ffday.today .ffday-h{border-color:var(--gold);background:rgba(240,185,11,.12);color:var(--gold)}.ff-today{background:var(--gold);color:#1a1405;padding:1px 8px;border-radius:6px;font-size:.72rem;font-weight:900;margin-left:6px;animation:blink 1.6s infinite}
+.ffday.past{opacity:.6}
+.ffev{display:flex;gap:12px;padding:12px 6px;border-bottom:1px dashed var(--line);transition:background .2s}.ffev:hover{background:rgba(240,185,11,.05)}.ffev.done{opacity:.6}
+.ffev.next{background:rgba(234,57,67,.08);border-radius:12px;box-shadow:inset 3px 0 0 var(--down)}
+.ffev-t{flex:none;width:62px;text-align:center;font-weight:800;font-size:1.1rem;color:var(--gold);font-variant-numeric:tabular-nums}.ffev-t small{display:block;font-size:.64rem;color:var(--muted);font-weight:600}
+.ffev-b{flex:1;min-width:0}.ffev-h{display:flex;flex-wrap:wrap;gap:6px;align-items:center}.ffev-x{margin-top:4px}.ff-nx{font-size:.72rem;font-weight:800;color:var(--down)}
+.ffnum{display:grid;grid-template-columns:repeat(3,minmax(0,110px));gap:6px;margin-top:6px}.ffnum span{background:var(--bg2);border-radius:8px;padding:4px 8px;font-size:.7rem;color:var(--muted)}.ffnum b{display:block;font-size:.92rem;color:var(--txt)}
+.ffcd{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:16px;border:1px solid rgba(234,57,67,.5);background:linear-gradient(135deg,rgba(234,57,67,.14),var(--card) 60%)}
+.ffcd #ff-cd{flex:1;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}.ffcd-l b{display:block;font-size:1.1rem}.ffcd-l small{color:var(--muted)}.ffcd .fomc-cd{min-width:260px}
+.tag-red{background:var(--down);color:#fff;font-weight:800;font-size:.72rem;padding:3px 10px;border-radius:6px;letter-spacing:.04em}
+.usn-list{display:grid;gap:8px}.usn{display:flex;gap:12px;align-items:center;padding:10px 12px;border-radius:12px;background:var(--bg2);border:1px solid var(--line);text-decoration:none;color:var(--txt);transition:transform .2s,border-color .2s}.usn:hover{transform:translateX(4px);border-color:var(--down)}
+.usn-t{flex:none;width:70px;text-align:center}.usn-t b{display:block;color:var(--gold);font-size:1.15rem}.usn-t small,.usn-x small{color:var(--muted);font-size:.74rem}.usn-x{flex:1;min-width:0}.usn-x b{display:block}
+@media(max-width:640px){.ffnum{grid-template-columns:repeat(3,1fr)}.ffev-t{width:50px;font-size:1rem}.ffcd .fomc-cd{min-width:0;width:100%}}
