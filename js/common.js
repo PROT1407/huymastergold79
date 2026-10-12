@@ -4,6 +4,7 @@
   const H = window.HMG = {};
   H.ZALO = 'https://zaloapp.com/qr/p/1px7atusm4iwa?src=qr';
   H.YT = 'https://www.youtube.com/@HuyNguyen-zv3zk';
+  H.TG = 'https://t.me/HTFXGROUP';
   H.YT_LIVE = 'https://www.youtube.com/@tradinglivexauusd4647';
   H.YT_LIVE_ID = 'UC3wvszVefYJJ5S5V9t1kUtA';
   H.EMAIL = 'Huydaigia1407@gmail.com';
@@ -65,7 +66,7 @@
     <div class="cols">
       <div><a class="brand" href="index.html" style="display:flex"><img src="assets/favicon.svg" width="30" height="30" alt="">Huymaster<b>Gold79</b></a>
         <p class="muted small" style="margin-top:8px">Nhà phân tích vàng cá nhân. Chiến lược mỗi sáng cho người mua vàng vật chất tại Việt Nam.</p>
-        <div class="share"><a href="${H.YT}" target="_blank" rel="noopener">▶ YouTube</a><a href="#" data-zalo>💬 Zalo</a><a href="mailto:${H.EMAIL}">✉ Email</a></div>
+        <div class="share"><a href="${H.YT}" target="_blank" rel="noopener">▶ YouTube</a><a href="#" data-zalo>💬 Zalo</a><a class="tg-link" href="${H.TG}" target="_blank" rel="noopener">✈ Telegram</a><a href="mailto:${H.EMAIL}">✉ Email</a></div>
         <p class="small" style="margin-top:8px">🔴 Kênh live: <a href="${H.YT_LIVE}" target="_blank" rel="noopener">TRADING LIVE XAUUSD</a></p></div>
       <div><h4>Giá vàng</h4><a href="gia-vang.html#bang-gia">Bảng giá trong nước</a><a href="gia-vang.html#quy-doi">Quy đổi thế giới</a><a href="gia-vang.html#may-tinh">Máy tính vàng</a><a href="gia-vang.html#chenh-lech">Chênh lệch SJC</a></div>
       <div><h4>Phân tích</h4><a href="live.html">🔴 Phòng Live</a><a href="chien-luoc.html">Chiến lược hôm nay</a><a href="bieu-do.html">Biểu đồ toàn màn hình</a><a href="lich-kinh-te.html">Lịch kinh tế</a><a href="tin-tuc.html">Tin tức</a><a href="quy-forex.html">Quỹ Forex</a><a href="tai-khoan-follow.html">Tài khoản Follow</a></div>
@@ -97,7 +98,7 @@
   /* ---- chia sẻ ---- */
   H.shareHTML = (text) => {
     const u = encodeURIComponent(location.href.split('#')[0]), t = encodeURIComponent(text || document.title);
-    return `<div class="share"><a target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=${u}">Chia sẻ Facebook</a><a target="_blank" rel="noopener" href="https://zalo.me/share?u=${u}">Chia sẻ Zalo</a><a target="_blank" rel="noopener" href="https://t.me/share/url?url=${u}&text=${t}">Telegram</a><button type="button" onclick="navigator.clipboard&&navigator.clipboard.writeText(location.href);this.textContent='Đã sao chép ✓'">Sao chép link</button></div>`;
+    return `<div class="share"><a target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=${u}">Chia sẻ Facebook</a><a target="_blank" rel="noopener" href="https://zalo.me/share?u=${u}">Chia sẻ Zalo</a><a target="_blank" rel="noopener" href="https://t.me/share/url?url=${u}&text=${t}">Chia sẻ Telegram</a><a class="tg-link" target="_blank" rel="noopener" href="${H.TG}">✈ Vào nhóm Telegram</a><button type="button" onclick="navigator.clipboard&&navigator.clipboard.writeText(location.href);this.textContent='Đã sao chép ✓'">Sao chép link</button></div>`;
   };
   document.querySelectorAll('[data-share]').forEach(el => el.innerHTML = H.shareHTML(el.dataset.share));
 

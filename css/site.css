@@ -125,3 +125,15 @@ footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:24px}foote
 .fomc-bar{height:6px;border-radius:9px;background:var(--line);overflow:hidden}.fomc-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold3),var(--gold2));transition:width 1s linear}
 @media(max-width:640px){.tl{padding-left:20px}.tl:before{left:5px}.tl .macro-item:before{left:-21px}.tl-date{display:none}.macro-item{padding:14px}.imp{margin-left:0}.fomc-cd b{font-size:1.2rem}.chips{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:4px}.chips button{flex:none}}
 @media(prefers-reduced-motion:reduce){.anim,.hl:after,.fomc-cd b.tk{animation:none;opacity:1;transform:none}.macro-item{transition:none}}
+
+/* Telegram HTFX */
+.tg-card{display:flex;align-items:center;gap:14px;margin:18px 0;padding:16px 20px;border-radius:18px;text-decoration:none;color:#fff!important;background:linear-gradient(135deg,#2aabee,#1e88d0 60%,#1565c0);box-shadow:0 10px 30px rgba(42,171,238,.3);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
+.tg-card:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(42,171,238,.45)}
+.tg-ic{width:50px;height:50px;flex:none;display:grid;place-items:center;border-radius:50%;background:#fff;color:#229ed9;font-size:1.5rem;animation:tgFly 2.4s ease-in-out infinite}
+@keyframes tgFly{50%{transform:translate(3px,-3px) rotate(-8deg)}}
+.tg-tx{flex:1}.tg-tx b{display:block;font-size:1.15rem}.tg-tx small{opacity:.9}
+.tg-go{flex:none;padding:9px 16px;border-radius:999px;background:#fff;color:#1565c0;font-weight:800}
+.btn.tg{background:linear-gradient(135deg,#2aabee,#1e88d0);color:#fff!important}
+.share a.tg-link{border-color:#2aabee;color:#2aabee}
+@media(max-width:640px){.tg-card{flex-wrap:wrap}.tg-go{width:100%;text-align:center}}
+@media(prefers-reduced-motion:reduce){.tg-ic{animation:none}}
