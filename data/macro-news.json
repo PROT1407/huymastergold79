@@ -1,5 +1,5 @@
 {
- "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC. impact: tăng | giảm | trung lập. source.doc=true: nội dung từ tài liệu của Huy. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
+ "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
  "updated": "2026-10-12",
  "fomc": {
   "source": {
@@ -113,22 +113,6 @@
    "priority": 1
   },
   {
-   "date": "2026-10-02",
-   "category": "Trái phiếu",
-   "title": "Theo tài liệu của Huy: Lợi suất 20–30 năm neo cao, \"rào cản bê tông\" cho vàng",
-   "summary": "Tổng quan cuối ngày 02/10 của Huy: lợi suất US20Y 5,685% và US30Y 5,641% (tài liệu gọi là đỉnh 24 năm); xác suất Fed tăng lãi suất tháng 10 giảm từ 38% xuống 25%. Lãi suất Fed điều khiển dòng tiền ngắn hạn, còn lợi suất 20–30 năm do tài khóa & nợ công quyết định – nhà đầu tư đòi phần bù ~5,6% vì nguồn cung trái phiếu lớn. Ngắn hạn vàng có nhịp tăng nhói; trung–dài hạn mọi nhịp hồi dễ gặp lực bán.",
-   "impact": "giảm",
-   "reason": "Theo tài liệu: lợi suất phi rủi ro ~5,6%/năm rút dòng tiền dài hạn khỏi vàng; rủi ro đình phát khiến dòng tiền chốt lời vàng ở vùng cao.",
-   "check": "Đối chiếu: dữ liệu Bộ Tài chính Mỹ ngày 02/10 ghi 20 năm 5,67%, 30 năm 5,63% (giá đóng cửa, khác nhẹ số trong tài liệu – có thể là số trong phiên). Dự báo NFP trong tài liệu là 89.000, CNBC ghi 84.000. Xác suất 38%→25% và nhận định \"đỉnh 24 năm\" chưa kiểm chứng được nguồn.",
-   "source": {
-    "name": "Theo tài liệu của Huy (02/10/2026)",
-    "url": "",
-    "doc": true
-   },
-   "time_vn": "Tổng hợp cuối ngày 02/10 (tài liệu không ghi giờ)",
-   "priority": 2
-  },
-  {
    "date": "2026-09-16",
    "category": "FOMC",
    "title": "FOMC tăng lãi suất 0,25 điểm % lên 3,75–4,00% (12–0)",
@@ -195,37 +179,6 @@
    },
    "time_vn": "Giá đóng cửa 09/10 (≈ 04:00 sáng 10/10 giờ VN)",
    "priority": 2
-  },
-  {
-   "date": "2026-10-12",
-   "category": "Tương quan",
-   "title": "Theo tài liệu của Huy: Vàng & US10Y – tương quan ngược mang tính chu kỳ",
-   "summary": "So sánh % biến động siêu dài hạn (từ 2000): vàng tăng hơn +1.448%, US10Y chỉ dao động quanh -11,34% đến vài chục %. 2001–2011 lợi suất giảm (QE) – vàng tăng phi mã; 2011–2018 lợi suất hồi – vàng điều chỉnh; từ 2020 lợi suất lên 4–5% nhưng vàng vẫn tăng do cầu trú ẩn, nợ công và ngân hàng trung ương gom vàng. Bài học: lợi suất điều khiển nhịp ngắn/trung hạn (H1, D1); khung thập kỷ do lạm phát, nợ công, địa chính trị.",
-   "impact": "trung lập",
-   "reason": "Kiến thức nền: không dùng tương quan dài hạn để dự báo ngắn hạn và ngược lại.",
-   "check": "Mốc % phụ thuộc điểm neo trên biểu đồ TradingView của Huy; không phải số liệu thống kê chuẩn.",
-   "source": {
-    "name": "Theo tài liệu của Huy – So sánh tương quan vàng và trái phiếu",
-    "url": "",
-    "doc": true
-   },
-   "time_vn": "Không có giờ – kiến thức nền (tài liệu không ghi ngày)",
-   "priority": 3
-  },
-  {
-   "date": "2026-10-12",
-   "category": "Tương quan",
-   "title": "Theo tài liệu của Huy: Kẹp giá trái phiếu 10 năm với nến vàng – dùng đúng cách",
-   "summary": "Giá trái phiếu là chỉ báo đồng pha, không phải chỉ báo báo trước; vị trí đường trái phiếu 'nằm dưới' nến vàng chỉ do tỷ lệ hiển thị của TradingView. Dùng để xác nhận vĩ mô và tìm phân kỳ liên thị trường: trái phiếu giảm sâu mà vàng không tạo đáy thấp hơn → vàng đang khỏe, không nên bán. Quy trình 3 bước: đọc xu hướng trái phiếu → chờ tín hiệu kỹ thuật trên vàng → chỉ bán khi cả hai đồng thuận.",
-   "impact": "trung lập",
-   "reason": "Phương pháp phân tích, không phải tín hiệu giá.",
-   "source": {
-    "name": "Theo tài liệu của Huy",
-    "url": "",
-    "doc": true
-   },
-   "time_vn": "Không có giờ – phương pháp (tài liệu không ghi ngày)",
-   "priority": 3
   }
  ],
  "us_schedule": [

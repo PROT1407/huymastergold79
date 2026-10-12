@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (/fomc|dot plot/.test(t)) return ['🏛', 'Fed/FOMC']; if (/việc làm|bảng lương|thất nghiệp|nfp/.test(t)) return ['👷', 'Việc làm'];
     if (/lạm phát|cpi|pce/.test(t)) return ['🔥', 'Lạm phát']; if (/usd|dxy/.test(t) && it.category === 'Tương quan') return ['💵', 'USD'];
     return ({ 'Lợi suất': ['📈', 'Lợi suất'], 'Trái phiếu': ['🧾', 'Trái phiếu'], 'Fed': ['🏦', 'Fed'], 'FOMC': ['🏛', 'FOMC'], 'Tương quan': ['🔗', 'Tương quan'] })[it.category] || ['📰', it.category]; };
-  const src = s => s ? (s.doc ? `<span class="badge side">📄 ${e(s.name)}</span>` : `<a href="${e(s.url)}" target="_blank" rel="noopener">${e(s.name)} ↗</a>`) : '';
+  const src = s => s && s.url ? `<a href="${e(s.url)}" target="_blank" rel="noopener">${e(s.name)} ↗</a>` : '';
   const card = (it, full, i) => { const ic = ICON(it), im = IMP[it.impact] || IMP['trung lập'];
     return `<article class="card macro-item anim i-${im[0]}" style="animation-delay:${Math.min(i || 0, 10) * 60}ms" data-cat="${e(it.category)}">${full ? `<span class="tl-date">${H.dateVN(it.date)}</span>` : ''}
     <div class="mi-head"><span class="mi-ic" title="${e(ic[1])}">${ic[0]}</span><span class="badge side">${e(it.category)}</span><span class="muted small">${H.dateVN(it.date)}</span>${it.priority === 1 ? '<span class="badge ex">Tác động trực tiếp</span>' : ''}<span class="imp ${im[0]}">${im[1]}</span></div>
@@ -27,11 +27,11 @@ document.addEventListener('DOMContentLoaded', function () {
       const draw = c => { $('macro').innerHTML = items.filter(x => c === 'Tất cả' || x.category === c).map((x, i) => card(x, true, i)).join(''); $('macro-chips').querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.c === c)); };
       $('macro-chips').onclick = ev => { const b = ev.target.closest('button'); if (b) draw(b.dataset.c); };
       const want = new URLSearchParams(location.search).get('muc'); draw(cats.includes(want) ? want : 'Tất cả');
-      const top = items.filter(x => x.priority === 1 && !x.source.doc).sort((a, b) => b.date.localeCompare(a.date))[0];
+      const top = items.filter(x => x.priority === 1).sort((a, b) => b.date.localeCompare(a.date))[0];
       if (top && $('macro-hl')) $('macro-hl').innerHTML = hlCard(top);
       $('macro-upd').textContent = H.dateVN(d.updated);
     }
-    if ($('macro-home')) $('macro-home').innerHTML = items.filter(x => !x.source.doc).slice(0, 4).map((x, i) => card(x, false, i)).join('');
+    if ($('macro-home')) $('macro-home').innerHTML = items.slice(0, 4).map((x, i) => card(x, false, i)).join('');
     if ($('us-sched')) $('us-sched').innerHTML = `<table class="tbl"><thead><tr><th>Loại tin Mỹ</th><th>Giờ VN (hè Mỹ)</th><th>Giờ VN (đông Mỹ)</th></tr></thead><tbody>${d.us_schedule.map(x => `<tr><td style="text-align:left">${e(x.event)}<br><small class="muted">${e(x.et)}</small></td><td><b>${e(x.vn_summer)}</b></td><td>${e(x.vn_winter)}</td></tr>`).join('')}</tbody></table><p class="small muted" style="margin-top:6px">${e(d.us_schedule_note)}</p>`;
     const box = $('fomc');
     {
