@@ -4,6 +4,8 @@
   const H = window.HMG = {};
   H.ZALO = 'https://zaloapp.com/qr/p/1px7atusm4iwa?src=qr';
   H.YT = 'https://www.youtube.com/@HuyNguyen-zv3zk';
+  H.YT_LIVE = 'https://www.youtube.com/@tradinglivexauusd4647';
+  H.YT_LIVE_ID = 'UC3wvszVefYJJ5S5V9t1kUtA';
   H.EMAIL = 'Huydaigia1407@gmail.com';
   H.LUONG = 37.5 / 31.1035; // 1,20565
   H.fmt = (n, d = 0) => (n == null || isNaN(n)) ? '—' : Number(n).toLocaleString('vi-VN', { maximumFractionDigits: d, minimumFractionDigits: d });
@@ -30,6 +32,7 @@
       ['gia-vang.html#chenh-lech', 'Chênh lệch SJC – thế giới', 'Biểu đồ lịch sử'],
       ['gia-vang.html#so-tich-luy', 'Sổ tích lũy lãi/lỗ', 'Lưu trên trình duyệt của bạn'],
       ['gia-vang.html#bac', 'Bạc & Bitcoin', 'Giá thế giới quy đổi']], true],
+    ['live', 'live.html', '🔴 Live'],
     ['chart', 'bieu-do.html', '📈 Biểu đồ'],
     ['strat', 'chien-luoc.html', '🎯 Chiến lược'],
     ['market', 'tin-tuc.html', '🌐 Thị trường', [
@@ -44,7 +47,7 @@
       ['kien-thuc.html#doc-bieu-do', 'Đọc biểu đồ cơ bản', 'Nến, hỗ trợ, MA, RSI'],
       ['kien-thuc.html#don-vi', 'Đơn vị & quy đổi', 'Lượng, chỉ, oz, gram'],
       ['kien-thuc.html#yeu-to', 'Yếu tố tác động giá vàng', 'USD, lãi suất, lạm phát']]],
-    ['about', 'lien-he.html', '👤 Về tôi / Liên hệ']
+    ['about', 'lien-he.html', '👤 Liên hệ']
   ];
   const menu = M.map(([k, href, label, sub, mega]) => `<li><a href="${href}" class="${k === page ? 'on' : ''}">${label}${sub ? ' ▾' : ''}</a>${sub ? `<div class="dd${mega ? ' mega' : ''}">${sub.map(s => `<a href="${s[0]}">${s[1]}<small>${s[2]}</small></a>`).join('')}</div>` : ''}</li>`).join('');
 
@@ -53,6 +56,7 @@
   <header class="hdr"><div class="wrap">
     <a class="brand" href="index.html"><img src="assets/favicon.svg" width="34" height="34" alt="">Huymaster<b>Gold79</b></a>
     <ul class="menu" id="menu">${menu}</ul>
+    <a href="live.html" id="live-badge" class="live-badge" hidden>● LIVE</a>
     <button class="icon-btn" id="theme-btn" title="Đổi giao diện sáng/tối" aria-label="Đổi giao diện">🌓</button>
     <button class="icon-btn burger" id="burger" aria-label="Menu">☰</button>
   </div></header>`;
@@ -61,9 +65,10 @@
     <div class="cols">
       <div><a class="brand" href="index.html" style="display:flex"><img src="assets/favicon.svg" width="30" height="30" alt="">Huymaster<b>Gold79</b></a>
         <p class="muted small" style="margin-top:8px">Nhà phân tích vàng cá nhân. Chiến lược mỗi sáng cho người mua vàng vật chất tại Việt Nam.</p>
-        <div class="share"><a href="${H.YT}" target="_blank" rel="noopener">▶ YouTube</a><a href="#" data-zalo>💬 Zalo</a><a href="mailto:${H.EMAIL}">✉ Email</a></div></div>
+        <div class="share"><a href="${H.YT}" target="_blank" rel="noopener">▶ YouTube</a><a href="#" data-zalo>💬 Zalo</a><a href="mailto:${H.EMAIL}">✉ Email</a></div>
+        <p class="small" style="margin-top:8px">🔴 Kênh live: <a href="${H.YT_LIVE}" target="_blank" rel="noopener">TRADING LIVE XAUUSD</a></p></div>
       <div><h4>Giá vàng</h4><a href="gia-vang.html#bang-gia">Bảng giá trong nước</a><a href="gia-vang.html#quy-doi">Quy đổi thế giới</a><a href="gia-vang.html#may-tinh">Máy tính vàng</a><a href="gia-vang.html#chenh-lech">Chênh lệch SJC</a></div>
-      <div><h4>Phân tích</h4><a href="chien-luoc.html">Chiến lược hôm nay</a><a href="bieu-do.html">Biểu đồ toàn màn hình</a><a href="lich-kinh-te.html">Lịch kinh tế</a><a href="tin-tuc.html">Tin tức</a><a href="quy-forex.html">Quỹ Forex</a><a href="tai-khoan-follow.html">Tài khoản Follow</a></div>
+      <div><h4>Phân tích</h4><a href="live.html">🔴 Phòng Live</a><a href="chien-luoc.html">Chiến lược hôm nay</a><a href="bieu-do.html">Biểu đồ toàn màn hình</a><a href="lich-kinh-te.html">Lịch kinh tế</a><a href="tin-tuc.html">Tin tức</a><a href="quy-forex.html">Quỹ Forex</a><a href="tai-khoan-follow.html">Tài khoản Follow</a></div>
       <div><h4>Thông tin</h4><a href="kien-thuc.html">Kiến thức</a><a href="lien-he.html">Về tôi</a><a href="lien-he.html#lien-he">Liên hệ</a><a href="mailto:${H.EMAIL}">${H.EMAIL}</a></div>
     </div>
     <p class="disc">⚠ <b>Miễn trừ trách nhiệm:</b> Nội dung chỉ mang tính tham khảo, là quan điểm cá nhân, <b>không phải lời khuyên đầu tư</b>. Giá quy đổi là ước tính, chưa gồm thuế phí. Dữ liệu từ bên thứ ba (TradingView, gold-api.com, open.er-api.com, vang.today) có thể chậm hoặc sai lệch.<br>© ${new Date().getFullYear()} HuymasterGold79.com.vn</p>
@@ -150,5 +155,23 @@
     const html = items.join('') || '<span>Không tải được giá</span>';
     document.getElementById('pb-track').innerHTML = html + html;
   }
+  /* ---- lịch live (giờ VN, GMT+7) ---- */
+  H.liveNext = function (sessions, now = Date.now()) {
+    const VN = 7 * 3600e3; let best = null;
+    sessions.forEach(s => {
+      const [hh, mm] = s.time.split(':').map(Number), vn = new Date(now + VN);
+      for (let add = -1; add <= 7; add++) {
+        const d = new Date(Date.UTC(vn.getUTCFullYear(), vn.getUTCMonth(), vn.getUTCDate() + add, hh, mm) - VN);
+        if (new Date(d.getTime() + VN).getUTCDay() !== s.day) continue;
+        const end = d.getTime() + (s.duration || 60) * 60e3;
+        if (end > now && (!best || d < best.start)) best = { ...s, start: d, end: new Date(end), live: d.getTime() <= now };
+      }
+    });
+    return best;
+  };
+  H.countdown = ms => { if (ms <= 0) return 'Đang live'; const s = Math.floor(ms / 1e3), d = Math.floor(s / 86400), h = Math.floor(s % 86400 / 3600), m = Math.floor(s % 3600 / 60), x = s % 60; return (d ? d + ' ngày ' : '') + String(h).padStart(2, '0') + ':' + String(m).padStart(2, '0') + ':' + String(x).padStart(2, '0'); };
+  H.gcal = n => { const z = d => d.toISOString().replace(/[-:]|\.\d{3}/g, ''); return 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + encodeURIComponent(n.title) + '&dates=' + z(n.start) + '/' + z(n.end) + '&details=' + encodeURIComponent((n.desc || '') + '\nXem tại: https://www.youtube.com/@tradinglivexauusd4647/live') + '&recur=' + encodeURIComponent('RRULE:FREQ=WEEKLY') + '&ctz=Asia/Ho_Chi_Minh'; };
+  H.schedule = H.getJSON('data/live-schedule.json').catch(() => null);
+  H.schedule.then(sc => { if (!sc) return; const tick = () => { const n = H.liveNext(sc.sessions); document.getElementById('live-badge').hidden = !(n && n.live); }; tick(); setInterval(tick, 30000); });
   H.refresh(); setInterval(H.refresh, 60000);
 })();

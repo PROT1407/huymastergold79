@@ -11,6 +11,7 @@ Website tĩnh, không cần build. Kéo thả cả thư mục (hoặc file zip) 
 | chien-luoc.html | Chiến lược hôm nay + lưu trữ (`?ngay=2026-10-12` để mở 1 ngày) |
 | tin-tuc.html / lich-kinh-te.html | Widget tin tức & lịch kinh tế TradingView |
 | kien-thuc.html | Bài hướng dẫn cho người mới |
+| live.html | Phòng Live (YouTube TRADING LIVE XAUUSD), lịch `data/live-schedule.json`, đếm ngược, Google Calendar |
 | quy-forex.html | Xây dựng quỹ Forex – dữ liệu `data/fund.json` (SỐ LIỆU MẪU) |
 | tai-khoan-follow.html | Tài khoản Follow – dữ liệu `data/follow-accounts.json` (SỐ LIỆU MẪU) |
 | lien-he.html | Về tôi, QR Zalo, YouTube, email |
@@ -28,3 +29,4 @@ Giống v1: Netlify (kéo thả), Vercel, GitHub Pages; trỏ DNS tên miền .c
 
 Nội dung chỉ mang tính tham khảo, không phải lời khuyên đầu tư.
 - **Forex:** sửa `data/fund.json` và `data/follow-accounts.json` bằng số liệu thật, thêm `verify_url` (Myfxbook/FXBlue…) và đặt `"example": false` để ẩn nhãn "SỐ LIỆU VÍ DỤ MẪU".
+- **Lịch live:** sửa `data/live-schedule.json` (day 0=CN…6=T7, giờ VN). Khi đang live có thể điền `liveVideoId` để hiện khung chat.

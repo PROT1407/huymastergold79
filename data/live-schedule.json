@@ -1,0 +1,25 @@
+{
+  "_ghi_chu": "Lịch live hằng tuần. day: 0=Chủ nhật,1=Thứ 2,...,6=Thứ 7. Giờ Việt Nam (GMT+7). duration: phút. Đặt example=true để hiện nhãn 'Lịch mẫu'.",
+  "example": false,
+  "channel": {
+    "name": "TRADING LIVE XAUUSD",
+    "handle": "@tradinglivexauusd4647",
+    "id": "UC3wvszVefYJJ5S5V9t1kUtA"
+  },
+  "liveVideoId": "",
+  "sessions": [
+    {
+      "day": 1,
+      "time": "19:00",
+      "duration": 120,
+      "title": "Phòng live nhận định – Vàng trước phiên Mỹ",
+      "desc": "Nhận định XAU/USD trước phiên Mỹ, kịch bản tuần, vùng mua vàng vật chất, hỏi đáp trực tiếp (19:00–21:00 giờ VN)."
+    }
+  ],
+  "topics": [
+    "Fed và lãi suất: vàng sẽ phản ứng thế nào?",
+    "Chênh lệch SJC – thế giới: lúc nào nên mua nhẫn 9999?",
+    "Đọc biểu đồ XAU/USD khung H4 cho người mới",
+    "Hỏi đáp trực tiếp: quản lý vốn khi giá biến động mạnh"
+  ]
+}
