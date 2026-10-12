@@ -1,70 +1,264 @@
 {
-  "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC. impact: tăng | giảm | trung lập. source.doc=true: nội dung từ tài liệu của Huy. Thêm tin mới lên đầu mảng.",
-  "updated": "2026-10-12",
-  "fomc": {
-    "source": { "name": "Federal Reserve – FOMC calendars", "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" },
-    "note": "Quyết định công bố 14:00 giờ Washington ngày thứ 2 của cuộc họp (≈ 01:00–02:00 sáng hôm sau giờ VN). * = có dự phóng kinh tế (dot plot).",
-    "meetings": [
-      { "dates": "27–28/01", "decision": "2026-01-28T19:00:00Z", "sep": false },
-      { "dates": "17–18/03", "decision": "2026-03-18T18:00:00Z", "sep": true },
-      { "dates": "28–29/04", "decision": "2026-04-29T18:00:00Z", "sep": false },
-      { "dates": "16–17/06", "decision": "2026-06-17T18:00:00Z", "sep": true },
-      { "dates": "28–29/07", "decision": "2026-07-29T18:00:00Z", "sep": false },
-      { "dates": "15–16/09", "decision": "2026-09-16T18:00:00Z", "sep": true, "result": "Tăng 0,25 điểm % lên 3,75–4,00%" },
-      { "dates": "27–28/10", "decision": "2026-10-28T18:00:00Z", "sep": false },
-      { "dates": "08–09/12", "decision": "2026-12-09T19:00:00Z", "sep": true }
-    ]
+ "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC. impact: tăng | giảm | trung lập. source.doc=true: nội dung từ tài liệu của Huy. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
+ "updated": "2026-10-12",
+ "fomc": {
+  "source": {
+   "name": "Federal Reserve – FOMC calendars",
+   "url": "https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm"
   },
-  "items": [
-    { "date": "2026-10-09", "category": "Lợi suất", "title": "Lợi suất 30 năm hạ nhiệt từ đỉnh 2026, vàng hồi về gần 4.200 USD",
-      "summary": "Lợi suất trái phiếu Mỹ 30 năm đóng cửa 5,67% ngày 07/10 – mức cao nhất năm 2026 – rồi giảm về 5,60% ngày 08–09/10. Lợi suất 10 năm từ 5,28% xuống 5,24%. Hợp đồng vàng tương lai đóng cửa 4.216,3 USD ngày 09/10 (+47,1 USD), sau khi chạm đáy 4.091,2 USD giữa tuần.",
-      "impact": "tăng", "reason": "Lợi suất giảm làm giảm chi phí cơ hội nắm giữ vàng (vàng không trả lãi); theo dõi từng ngày, vàng biến động ngược chiều lợi suất 30 năm.",
-      "source": { "name": "US Treasury – Daily Yield Curve; FXRecap", "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026" },
-      "source2": { "name": "FXRecap: Gold rebounds as Treasury yields ease", "url": "https://fxrecap.com/forex-news/top-stories/gold-rebounds-as-treasury-yields-ease" } },
-    { "date": "2026-10-08", "category": "Trái phiếu", "title": "Đấu giá 22 tỷ USD trái phiếu 30 năm: lợi suất 5,618% – cao nhất năm",
-      "summary": "Phiên đấu giá mở lại trái phiếu 30 năm ngày 08/10 trị giá 22 tỷ USD chốt ở 5,618%, tỷ lệ bid-to-cover 2,54 – lợi suất đấu giá 30 năm cao nhất năm 2026. Sau phiên đấu giá, lợi suất dài hạn hạ nhiệt.",
-      "impact": "trung lập", "reason": "Lợi suất đấu giá cao phản ánh áp lực nguồn cung trái phiếu (gây sức ép lên vàng), nhưng nhu cầu đấu giá ổn định giúp lợi suất hạ sau đó – tác động hai chiều.",
-      "source": { "name": "FXRecap (dẫn TreasuryDirect)", "url": "https://fxrecap.com/forex-news/top-stories/gold-rebounds-as-treasury-yields-ease" } },
-    { "date": "2026-10-09", "category": "Lợi suất", "title": "Lợi suất thực 10 năm (TIPS) ở 2,91% – cao hơn nhiều so với đầu năm",
-      "summary": "Lợi suất thực TIPS 10 năm đóng cửa 2,91% ngày 09/10/2026 (đầu tháng 4 là 1,94%; tháng 9 tăng gần 0,5 điểm %). Lạm phát kỳ vọng 10 năm (breakeven) khoảng 2,33%.",
-      "impact": "giảm", "reason": "Lợi suất thực cao làm tăng chi phí cơ hội giữ vàng – về lý thuyết là lực cản chính của vàng; tuy vậy lực mua của ngân hàng trung ương đã làm mối quan hệ này yếu đi từ 2022.",
-      "source": { "name": "TIPSYield.com (dữ liệu US Treasury / FRED)", "url": "https://tipsyield.com/real-yields" } },
-    { "date": "2026-10-02", "category": "Fed", "title": "Bảng lương phi nông nghiệp tháng 9 chỉ +29.000, thất nghiệp 4,2%",
-      "summary": "BLS công bố ngày 02/10: việc làm phi nông nghiệp tăng 29.000 (dự báo 84.000), tỷ lệ thất nghiệp 4,2% (từ 4,1%), tháng 7–8 bị điều chỉnh giảm tổng cộng 60.000. Thị trường đặt cược cao rằng Fed giữ nguyên lãi suất tại cuộc họp cuối tháng 10.",
-      "impact": "tăng", "reason": "Dữ liệu lao động yếu làm giảm khả năng Fed tăng lãi suất tiếp, gây áp lực lên USD – thường hỗ trợ vàng trong ngắn hạn.",
-      "source": { "name": "CNBC – Jobs report September 2026", "url": "https://www.cnbc.com/2026/10/02/jobs-report-september-2026.html" } },
-    { "date": "2026-10-02", "category": "Trái phiếu", "title": "Theo tài liệu của Huy: Lợi suất 20–30 năm neo cao, \"rào cản bê tông\" cho vàng",
-      "summary": "Tổng quan cuối ngày 02/10 của Huy: lợi suất US20Y 5,685% và US30Y 5,641% (tài liệu gọi là đỉnh 24 năm); xác suất Fed tăng lãi suất tháng 10 giảm từ 38% xuống 25%. Lãi suất Fed điều khiển dòng tiền ngắn hạn, còn lợi suất 20–30 năm do tài khóa & nợ công quyết định – nhà đầu tư đòi phần bù ~5,6% vì nguồn cung trái phiếu lớn. Ngắn hạn vàng có nhịp tăng nhói; trung–dài hạn mọi nhịp hồi dễ gặp lực bán.",
-      "impact": "giảm", "reason": "Theo tài liệu: lợi suất phi rủi ro ~5,6%/năm rút dòng tiền dài hạn khỏi vàng; rủi ro đình phát khiến dòng tiền chốt lời vàng ở vùng cao.",
-      "check": "Đối chiếu: dữ liệu Bộ Tài chính Mỹ ngày 02/10 ghi 20 năm 5,67%, 30 năm 5,63% (giá đóng cửa, khác nhẹ số trong tài liệu – có thể là số trong phiên). Dự báo NFP trong tài liệu là 89.000, CNBC ghi 84.000. Xác suất 38%→25% và nhận định \"đỉnh 24 năm\" chưa kiểm chứng được nguồn.",
-      "source": { "name": "Theo tài liệu của Huy (02/10/2026)", "url": "", "doc": true } },
-    { "date": "2026-09-16", "category": "FOMC", "title": "FOMC tăng lãi suất 0,25 điểm % lên 3,75–4,00% (12–0)",
-      "summary": "Tại cuộc họp 15–16/09, FOMC nhất trí tăng biên độ lãi suất quỹ liên bang thêm 0,25 điểm % lên 3,75–4,00%, hiệu lực từ 17/09. Tuyên bố: lạm phát vẫn cao, Fed \"sẽ đưa lạm phát về ổn định\".",
-      "impact": "giảm", "reason": "Fed thắt chặt làm tăng lợi suất và hỗ trợ USD – thường gây áp lực lên vàng.",
-      "source": { "name": "Federal Reserve – FOMC statement 16/09/2026", "url": "https://www.federalreserve.gov/monetarypolicy/files/monetary20260916a1.pdf" } },
-    { "date": "2026-09-16", "category": "FOMC", "title": "Dot plot tháng 9: trung vị 4,1% cuối 2026 – thêm một lần tăng",
-      "summary": "Theo dự phóng kinh tế (SEP) 16/09: trung vị lãi suất cuối năm 2026 là 4,1%, 2027: 4,1%, 2028: 3,9%, 2029: 3,6%, dài hạn 3,2%. 16/18 thành viên dự kiến tăng thêm một lần trong 2026, 4 người dự kiến hai lần.",
-      "impact": "giảm", "reason": "Lộ trình lãi suất cao kéo dài (\"higher for longer\") giữ lợi suất thực cao – bất lợi cho vàng nếu thực hiện đúng.",
-      "source": { "name": "Federal Reserve – Summary of Economic Projections", "url": "https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260916.htm" },
-      "source2": { "name": "J.P. Morgan AM – FOMC Statement September 2026", "url": "https://am.jpmorgan.com/us/en/asset-management/adv/insights/portfolio-insights/fixed-income/fixed-income-perspectives/fomc-statement-september-2026/" } },
-    { "date": "2026-10-28", "category": "FOMC", "title": "Lịch: FOMC họp 27–28/10, quyết định khoảng 01:00 sáng 29/10 giờ VN",
-      "summary": "Cuộc họp tiếp theo của FOMC diễn ra 27–28/10/2026 (không có dot plot). Thời gian im lặng (blackout) của quan chức Fed: 17–29/10.",
-      "impact": "trung lập", "reason": "Sự kiện rủi ro: biến động vàng thường tăng mạnh quanh giờ công bố – hạn chế mua vàng vật chất ngay trước tin.",
-      "source": { "name": "Federal Reserve – Calendar October 2026", "url": "https://www.federalreserve.gov/newsevents/2026-october.htm" },
-      "source2": { "name": "Chicago Fed – FOMC blackout periods", "url": "https://www.chicagofed.org/utilities/about-us/federal-reserve-calendars" } },
-    { "date": "2026-10-09", "category": "Tương quan", "title": "Tương quan vàng – USD (DXY): DXY quanh 102, vàng giằng co 4.100–4.200",
-      "summary": "DXY đóng cửa 102,23 ngày 09/10 (102,04 ngày 01/10); giá vàng giao ngay đóng cửa 4.146,46 USD/oz ngày 09/10 (4.152,44 ngày 01/10). Tương quan nghịch vàng – DXY lịch sử khoảng -0,4 đến -0,6 (12 tháng), yếu đi trong giai đoạn ngân hàng trung ương mua vàng mạnh.",
-      "impact": "trung lập", "reason": "USD đi ngang nên chưa tạo lực đẩy rõ ràng; lợi suất (đặc biệt lợi suất thực) đang là biến số chi phối hơn.",
-      "source": { "name": "Exa Markets – DXY & XAUUSD (01–09/10/2026)", "url": "https://exa.ai/library/markets/index/DXY?date=2026-10-12&view=series&from=2026-10-01" },
-      "source2": { "name": "Convex – DXY vs Gold", "url": "https://convextrade.com/compare/dxy-vs-gold" } },
-    { "date": "2026-10-12", "category": "Tương quan", "title": "Theo tài liệu của Huy: Vàng & US10Y – tương quan ngược mang tính chu kỳ",
-      "summary": "So sánh % biến động siêu dài hạn (từ 2000): vàng tăng hơn +1.448%, US10Y chỉ dao động quanh -11,34% đến vài chục %. 2001–2011 lợi suất giảm (QE) – vàng tăng phi mã; 2011–2018 lợi suất hồi – vàng điều chỉnh; từ 2020 lợi suất lên 4–5% nhưng vàng vẫn tăng do cầu trú ẩn, nợ công và ngân hàng trung ương gom vàng. Bài học: lợi suất điều khiển nhịp ngắn/trung hạn (H1, D1); khung thập kỷ do lạm phát, nợ công, địa chính trị.",
-      "impact": "trung lập", "reason": "Kiến thức nền: không dùng tương quan dài hạn để dự báo ngắn hạn và ngược lại.",
-      "check": "Mốc % phụ thuộc điểm neo trên biểu đồ TradingView của Huy; không phải số liệu thống kê chuẩn.",
-      "source": { "name": "Theo tài liệu của Huy – So sánh tương quan vàng và trái phiếu", "url": "", "doc": true } },
-    { "date": "2026-10-12", "category": "Tương quan", "title": "Theo tài liệu của Huy: Kẹp giá trái phiếu 10 năm với nến vàng – dùng đúng cách",
-      "summary": "Giá trái phiếu là chỉ báo đồng pha, không phải chỉ báo báo trước; vị trí đường trái phiếu 'nằm dưới' nến vàng chỉ do tỷ lệ hiển thị của TradingView. Dùng để xác nhận vĩ mô và tìm phân kỳ liên thị trường: trái phiếu giảm sâu mà vàng không tạo đáy thấp hơn → vàng đang khỏe, không nên bán. Quy trình 3 bước: đọc xu hướng trái phiếu → chờ tín hiệu kỹ thuật trên vàng → chỉ bán khi cả hai đồng thuận.",
-      "impact": "trung lập", "reason": "Phương pháp phân tích, không phải tín hiệu giá.",
-      "source": { "name": "Theo tài liệu của Huy", "url": "", "doc": true } }
+  "note": "Quyết định công bố 14:00 giờ Washington ngày thứ 2 của cuộc họp (≈ 01:00–02:00 sáng hôm sau giờ VN). * = có dự phóng kinh tế (dot plot).",
+  "meetings": [
+   {
+    "dates": "27–28/01",
+    "decision": "2026-01-28T19:00:00Z",
+    "sep": false
+   },
+   {
+    "dates": "17–18/03",
+    "decision": "2026-03-18T18:00:00Z",
+    "sep": true
+   },
+   {
+    "dates": "28–29/04",
+    "decision": "2026-04-29T18:00:00Z",
+    "sep": false
+   },
+   {
+    "dates": "16–17/06",
+    "decision": "2026-06-17T18:00:00Z",
+    "sep": true
+   },
+   {
+    "dates": "28–29/07",
+    "decision": "2026-07-29T18:00:00Z",
+    "sep": false
+   },
+   {
+    "dates": "15–16/09",
+    "decision": "2026-09-16T18:00:00Z",
+    "sep": true,
+    "result": "Tăng 0,25 điểm % lên 3,75–4,00%"
+   },
+   {
+    "dates": "27–28/10",
+    "decision": "2026-10-28T18:00:00Z",
+    "sep": false
+   },
+   {
+    "dates": "08–09/12",
+    "decision": "2026-12-09T19:00:00Z",
+    "sep": true
+   }
   ]
+ },
+ "items": [
+  {
+   "date": "2026-10-09",
+   "category": "Lợi suất",
+   "title": "Lợi suất 30 năm hạ nhiệt từ đỉnh 2026, vàng hồi về gần 4.200 USD",
+   "summary": "Lợi suất trái phiếu Mỹ 30 năm đóng cửa 5,67% ngày 07/10 – mức cao nhất năm 2026 – rồi giảm về 5,60% ngày 08–09/10. Lợi suất 10 năm từ 5,28% xuống 5,24%. Hợp đồng vàng tương lai đóng cửa 4.216,3 USD ngày 09/10 (+47,1 USD), sau khi chạm đáy 4.091,2 USD giữa tuần.",
+   "impact": "tăng",
+   "reason": "Lợi suất giảm làm giảm chi phí cơ hội nắm giữ vàng (vàng không trả lãi); theo dõi từng ngày, vàng biến động ngược chiều lợi suất 30 năm.",
+   "source": {
+    "name": "US Treasury – Daily Yield Curve; FXRecap",
+    "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
+   },
+   "source2": {
+    "name": "FXRecap: Gold rebounds as Treasury yields ease",
+    "url": "https://fxrecap.com/forex-news/top-stories/gold-rebounds-as-treasury-yields-ease"
+   },
+   "time_vn": "Giá đóng cửa phiên Mỹ 09/10 (≈ 04:00 sáng 10/10 giờ VN)",
+   "priority": 1
+  },
+  {
+   "date": "2026-10-08",
+   "category": "Trái phiếu",
+   "title": "Đấu giá 22 tỷ USD trái phiếu 30 năm: lợi suất 5,618% – cao nhất năm",
+   "summary": "Phiên đấu giá mở lại trái phiếu 30 năm ngày 08/10 trị giá 22 tỷ USD chốt ở 5,618%, tỷ lệ bid-to-cover 2,54 – lợi suất đấu giá 30 năm cao nhất năm 2026. Sau phiên đấu giá, lợi suất dài hạn hạ nhiệt.",
+   "impact": "trung lập",
+   "reason": "Lợi suất đấu giá cao phản ánh áp lực nguồn cung trái phiếu (gây sức ép lên vàng), nhưng nhu cầu đấu giá ổn định giúp lợi suất hạ sau đó – tác động hai chiều.",
+   "source": {
+    "name": "FXRecap (dẫn TreasuryDirect)",
+    "url": "https://fxrecap.com/forex-news/top-stories/gold-rebounds-as-treasury-yields-ease"
+   },
+   "time_vn": "Kết quả đấu giá 13:00 ET 08/10 = 00:00 ngày 09/10 giờ VN",
+   "priority": 2
+  },
+  {
+   "date": "2026-10-09",
+   "category": "Lợi suất",
+   "title": "Lợi suất thực 10 năm (TIPS) ở 2,91% – cao hơn nhiều so với đầu năm",
+   "summary": "Lợi suất thực TIPS 10 năm đóng cửa 2,91% ngày 09/10/2026 (đầu tháng 4 là 1,94%; tháng 9 tăng gần 0,5 điểm %). Lạm phát kỳ vọng 10 năm (breakeven) khoảng 2,33%.",
+   "impact": "giảm",
+   "reason": "Lợi suất thực cao làm tăng chi phí cơ hội giữ vàng – về lý thuyết là lực cản chính của vàng; tuy vậy lực mua của ngân hàng trung ương đã làm mối quan hệ này yếu đi từ 2022.",
+   "source": {
+    "name": "TIPSYield.com (dữ liệu US Treasury / FRED)",
+    "url": "https://tipsyield.com/real-yields"
+   },
+   "time_vn": "Giá đóng cửa 09/10 (≈ 04:00 sáng 10/10 giờ VN)",
+   "priority": 1
+  },
+  {
+   "date": "2026-10-02",
+   "category": "Fed",
+   "title": "Bảng lương phi nông nghiệp tháng 9 chỉ +29.000, thất nghiệp 4,2%",
+   "summary": "BLS công bố ngày 02/10: việc làm phi nông nghiệp tăng 29.000 (dự báo 84.000), tỷ lệ thất nghiệp 4,2% (từ 4,1%), tháng 7–8 bị điều chỉnh giảm tổng cộng 60.000. Thị trường đặt cược cao rằng Fed giữ nguyên lãi suất tại cuộc họp cuối tháng 10.",
+   "impact": "tăng",
+   "reason": "Dữ liệu lao động yếu làm giảm khả năng Fed tăng lãi suất tiếp, gây áp lực lên USD – thường hỗ trợ vàng trong ngắn hạn.",
+   "source": {
+    "name": "CNBC – Jobs report September 2026",
+    "url": "https://www.cnbc.com/2026/10/02/jobs-report-september-2026.html"
+   },
+   "time_vn": "08:30 ET 02/10 = 19:30 ngày 02/10 giờ VN",
+   "priority": 1
+  },
+  {
+   "date": "2026-10-02",
+   "category": "Trái phiếu",
+   "title": "Theo tài liệu của Huy: Lợi suất 20–30 năm neo cao, \"rào cản bê tông\" cho vàng",
+   "summary": "Tổng quan cuối ngày 02/10 của Huy: lợi suất US20Y 5,685% và US30Y 5,641% (tài liệu gọi là đỉnh 24 năm); xác suất Fed tăng lãi suất tháng 10 giảm từ 38% xuống 25%. Lãi suất Fed điều khiển dòng tiền ngắn hạn, còn lợi suất 20–30 năm do tài khóa & nợ công quyết định – nhà đầu tư đòi phần bù ~5,6% vì nguồn cung trái phiếu lớn. Ngắn hạn vàng có nhịp tăng nhói; trung–dài hạn mọi nhịp hồi dễ gặp lực bán.",
+   "impact": "giảm",
+   "reason": "Theo tài liệu: lợi suất phi rủi ro ~5,6%/năm rút dòng tiền dài hạn khỏi vàng; rủi ro đình phát khiến dòng tiền chốt lời vàng ở vùng cao.",
+   "check": "Đối chiếu: dữ liệu Bộ Tài chính Mỹ ngày 02/10 ghi 20 năm 5,67%, 30 năm 5,63% (giá đóng cửa, khác nhẹ số trong tài liệu – có thể là số trong phiên). Dự báo NFP trong tài liệu là 89.000, CNBC ghi 84.000. Xác suất 38%→25% và nhận định \"đỉnh 24 năm\" chưa kiểm chứng được nguồn.",
+   "source": {
+    "name": "Theo tài liệu của Huy (02/10/2026)",
+    "url": "",
+    "doc": true
+   },
+   "time_vn": "Tổng hợp cuối ngày 02/10 (tài liệu không ghi giờ)",
+   "priority": 2
+  },
+  {
+   "date": "2026-09-16",
+   "category": "FOMC",
+   "title": "FOMC tăng lãi suất 0,25 điểm % lên 3,75–4,00% (12–0)",
+   "summary": "Tại cuộc họp 15–16/09, FOMC nhất trí tăng biên độ lãi suất quỹ liên bang thêm 0,25 điểm % lên 3,75–4,00%, hiệu lực từ 17/09. Tuyên bố: lạm phát vẫn cao, Fed \"sẽ đưa lạm phát về ổn định\".",
+   "impact": "giảm",
+   "reason": "Fed thắt chặt làm tăng lợi suất và hỗ trợ USD – thường gây áp lực lên vàng.",
+   "source": {
+    "name": "Federal Reserve – FOMC statement 16/09/2026",
+    "url": "https://www.federalreserve.gov/monetarypolicy/files/monetary20260916a1.pdf"
+   },
+   "time_vn": "14:00 ET 16/09 = 01:00 ngày 17/09 giờ VN",
+   "priority": 1
+  },
+  {
+   "date": "2026-09-16",
+   "category": "FOMC",
+   "title": "Dot plot tháng 9: trung vị 4,1% cuối 2026 – thêm một lần tăng",
+   "summary": "Theo dự phóng kinh tế (SEP) 16/09: trung vị lãi suất cuối năm 2026 là 4,1%, 2027: 4,1%, 2028: 3,9%, 2029: 3,6%, dài hạn 3,2%. 16/18 thành viên dự kiến tăng thêm một lần trong 2026, 4 người dự kiến hai lần.",
+   "impact": "giảm",
+   "reason": "Lộ trình lãi suất cao kéo dài (\"higher for longer\") giữ lợi suất thực cao – bất lợi cho vàng nếu thực hiện đúng.",
+   "source": {
+    "name": "Federal Reserve – Summary of Economic Projections",
+    "url": "https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260916.htm"
+   },
+   "source2": {
+    "name": "J.P. Morgan AM – FOMC Statement September 2026",
+    "url": "https://am.jpmorgan.com/us/en/asset-management/adv/insights/portfolio-insights/fixed-income/fixed-income-perspectives/fomc-statement-september-2026/"
+   },
+   "time_vn": "14:00 ET 16/09 = 01:00 ngày 17/09 giờ VN",
+   "priority": 1
+  },
+  {
+   "date": "2026-10-28",
+   "category": "FOMC",
+   "title": "Lịch: FOMC họp 27–28/10, quyết định khoảng 01:00 sáng 29/10 giờ VN",
+   "summary": "Cuộc họp tiếp theo của FOMC diễn ra 27–28/10/2026 (không có dot plot). Thời gian im lặng (blackout) của quan chức Fed: 17–29/10.",
+   "impact": "trung lập",
+   "reason": "Sự kiện rủi ro: biến động vàng thường tăng mạnh quanh giờ công bố – hạn chế mua vàng vật chất ngay trước tin.",
+   "source": {
+    "name": "Federal Reserve – Calendar October 2026",
+    "url": "https://www.federalreserve.gov/newsevents/2026-october.htm"
+   },
+   "source2": {
+    "name": "Chicago Fed – FOMC blackout periods",
+    "url": "https://www.chicagofed.org/utilities/about-us/federal-reserve-calendars"
+   },
+   "time_vn": "14:00 ET 28/10 = 01:00 ngày 29/10 giờ VN (họp báo 01:30)",
+   "priority": 1
+  },
+  {
+   "date": "2026-10-09",
+   "category": "Tương quan",
+   "title": "Tương quan vàng – USD (DXY): DXY quanh 102, vàng giằng co 4.100–4.200",
+   "summary": "DXY đóng cửa 102,23 ngày 09/10 (102,04 ngày 01/10); giá vàng giao ngay đóng cửa 4.146,46 USD/oz ngày 09/10 (4.152,44 ngày 01/10). Tương quan nghịch vàng – DXY lịch sử khoảng -0,4 đến -0,6 (12 tháng), yếu đi trong giai đoạn ngân hàng trung ương mua vàng mạnh.",
+   "impact": "trung lập",
+   "reason": "USD đi ngang nên chưa tạo lực đẩy rõ ràng; lợi suất (đặc biệt lợi suất thực) đang là biến số chi phối hơn.",
+   "source": {
+    "name": "Exa Markets – DXY & XAUUSD (01–09/10/2026)",
+    "url": "https://exa.ai/library/markets/index/DXY?date=2026-10-12&view=series&from=2026-10-01"
+   },
+   "source2": {
+    "name": "Convex – DXY vs Gold",
+    "url": "https://convextrade.com/compare/dxy-vs-gold"
+   },
+   "time_vn": "Giá đóng cửa 09/10 (≈ 04:00 sáng 10/10 giờ VN)",
+   "priority": 2
+  },
+  {
+   "date": "2026-10-12",
+   "category": "Tương quan",
+   "title": "Theo tài liệu của Huy: Vàng & US10Y – tương quan ngược mang tính chu kỳ",
+   "summary": "So sánh % biến động siêu dài hạn (từ 2000): vàng tăng hơn +1.448%, US10Y chỉ dao động quanh -11,34% đến vài chục %. 2001–2011 lợi suất giảm (QE) – vàng tăng phi mã; 2011–2018 lợi suất hồi – vàng điều chỉnh; từ 2020 lợi suất lên 4–5% nhưng vàng vẫn tăng do cầu trú ẩn, nợ công và ngân hàng trung ương gom vàng. Bài học: lợi suất điều khiển nhịp ngắn/trung hạn (H1, D1); khung thập kỷ do lạm phát, nợ công, địa chính trị.",
+   "impact": "trung lập",
+   "reason": "Kiến thức nền: không dùng tương quan dài hạn để dự báo ngắn hạn và ngược lại.",
+   "check": "Mốc % phụ thuộc điểm neo trên biểu đồ TradingView của Huy; không phải số liệu thống kê chuẩn.",
+   "source": {
+    "name": "Theo tài liệu của Huy – So sánh tương quan vàng và trái phiếu",
+    "url": "",
+    "doc": true
+   },
+   "time_vn": "Không có giờ – kiến thức nền (tài liệu không ghi ngày)",
+   "priority": 3
+  },
+  {
+   "date": "2026-10-12",
+   "category": "Tương quan",
+   "title": "Theo tài liệu của Huy: Kẹp giá trái phiếu 10 năm với nến vàng – dùng đúng cách",
+   "summary": "Giá trái phiếu là chỉ báo đồng pha, không phải chỉ báo báo trước; vị trí đường trái phiếu 'nằm dưới' nến vàng chỉ do tỷ lệ hiển thị của TradingView. Dùng để xác nhận vĩ mô và tìm phân kỳ liên thị trường: trái phiếu giảm sâu mà vàng không tạo đáy thấp hơn → vàng đang khỏe, không nên bán. Quy trình 3 bước: đọc xu hướng trái phiếu → chờ tín hiệu kỹ thuật trên vàng → chỉ bán khi cả hai đồng thuận.",
+   "impact": "trung lập",
+   "reason": "Phương pháp phân tích, không phải tín hiệu giá.",
+   "source": {
+    "name": "Theo tài liệu của Huy",
+    "url": "",
+    "doc": true
+   },
+   "time_vn": "Không có giờ – phương pháp (tài liệu không ghi ngày)",
+   "priority": 3
+  }
+ ],
+ "us_schedule": [
+  {
+   "event": "Dữ liệu kinh tế Mỹ (NFP, CPI, PPI, bán lẻ, đơn xin trợ cấp thất nghiệp…)",
+   "et": "08:30 ET",
+   "vn_summer": "19:30",
+   "vn_winter": "20:30"
+  },
+  {
+   "event": "PMI ISM, niềm tin tiêu dùng, JOLTS",
+   "et": "10:00 ET",
+   "vn_summer": "21:00",
+   "vn_winter": "22:00"
+  },
+  {
+   "event": "Kết quả đấu giá trái phiếu kho bạc",
+   "et": "13:00 ET",
+   "vn_summer": "00:00 (hôm sau)",
+   "vn_winter": "01:00 (hôm sau)"
+  },
+  {
+   "event": "Quyết định lãi suất FOMC / biên bản họp",
+   "et": "14:00 ET",
+   "vn_summer": "01:00 (hôm sau)",
+   "vn_winter": "02:00 (hôm sau)"
+  },
+  {
+   "event": "Họp báo Chủ tịch Fed",
+   "et": "14:30 ET",
+   "vn_summer": "01:30 (hôm sau)",
+   "vn_winter": "02:30 (hôm sau)"
+  }
+ ],
+ "us_schedule_note": "Giờ hè Mỹ (EDT, UTC-4): từ 08/03 đến 01/11/2026 – chênh 11 giờ. Giờ đông (EST, UTC-5): từ 01/11/2026 – chênh 12 giờ. Việt Nam không đổi giờ (UTC+7)."
 }

@@ -5,12 +5,12 @@ document.addEventListener('DOMContentLoaded', function () {
   const IMP = { 'tăng': ['up', '▲ Tích cực cho vàng'], 'giảm': ['down', '▼ Tiêu cực cho vàng'], 'trung lập': ['side', '◆ Trung lập'] };
   const src = s => s ? (s.doc ? `<span class="badge side">📄 ${e(s.name)}</span>` : `<a href="${e(s.url)}" target="_blank" rel="noopener">${e(s.name)} ↗</a>`) : '';
   const card = (it, full) => `<article class="card macro-item" data-cat="${e(it.category)}">
-    <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center"><span class="badge side">${e(it.category)}</span><span class="muted small">${H.dateVN(it.date)}</span><span class="badge ${IMP[it.impact][0]}" style="margin-left:auto">${IMP[it.impact][1]}</span></div>
-    <h3 style="color:var(--txt);margin:8px 0 6px;font-size:1.02rem">${e(it.title)}</h3>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;align-items:center"><span class="badge side">${e(it.category)}</span><span class="muted small">${H.dateVN(it.date)}</span>${it.priority === 1 ? '<span class="badge ex">Tác động trực tiếp</span>' : ''}<span class="badge ${IMP[it.impact][0]}" style="margin-left:auto">${IMP[it.impact][1]}</span></div>
+    <h3 style="color:var(--txt);margin:8px 0 2px;font-size:1.02rem">${e(it.title)}</h3><p class="small" style="color:var(--gold)">🕐 Giờ VN: ${e(it.time_vn || '—')}</p>
     ${full ? `<p class="small">${e(it.summary)}</p><p class="small" style="margin-top:6px"><b>Tác động tới vàng:</b> ${e(it.reason)}</p>${it.check ? `<p class="small note" style="margin:8px 0 0">⚠ ${e(it.check)}</p>` : ''}` : `<p class="small muted">${e(it.reason)}</p>`}
     <p class="small" style="margin-top:8px">Nguồn: ${src(it.source)}${it.source2 ? ' · ' + src(it.source2) : ''}</p></article>`;
   H.getJSON('data/macro-news.json').then(d => {
-    const items = d.items.slice().sort((a, b) => b.date.localeCompare(a.date));
+    const items = d.items.slice().sort((a, b) => (a.priority || 2) - (b.priority || 2) || b.date.localeCompare(a.date));
     if ($('macro')) {
       const cats = ['Tất cả', 'Lợi suất', 'Trái phiếu', 'Tương quan', 'Fed', 'FOMC'];
       $('macro-chips').innerHTML = cats.map((c, i) => `<button type="button" data-c="${c}" class="${i ? '' : 'on'}">${c} <small>${i ? items.filter(x => x.category === c).length : items.length}</small></button>`).join('');
@@ -20,10 +20,11 @@ document.addEventListener('DOMContentLoaded', function () {
       $('macro-upd').textContent = H.dateVN(d.updated);
     }
     if ($('macro-home')) $('macro-home').innerHTML = items.filter(x => !x.source.doc).slice(0, 4).map(x => card(x, false)).join('');
+    if ($('us-sched')) $('us-sched').innerHTML = `<table class="tbl"><thead><tr><th>Loại tin Mỹ</th><th>Giờ VN (hè Mỹ)</th><th>Giờ VN (đông Mỹ)</th></tr></thead><tbody>${d.us_schedule.map(x => `<tr><td style="text-align:left">${e(x.event)}<br><small class="muted">${e(x.et)}</small></td><td><b>${e(x.vn_summer)}</b></td><td>${e(x.vn_winter)}</td></tr>`).join('')}</tbody></table><p class="small muted" style="margin-top:6px">${e(d.us_schedule_note)}</p>`;
     const box = $('fomc');
     {
       const m = d.fomc.meetings, nowF = () => Date.now();
-      if (box) box.innerHTML = `<table class="tbl"><thead><tr><th>Cuộc họp 2026</th><th>Giờ VN công bố</th><th></th></tr></thead><tbody>${m.map(x => { const t = new Date(x.decision); return `<tr data-t="${t.getTime()}"><td><b>${x.dates}</b>${x.sep ? ' *' : ''}${x.result ? `<br><small class="muted">${e(x.result)}</small>` : ''}</td><td>${t.toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh', hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' })}</td><td class="st"></td></tr>`; }).join('')}</tbody></table>
+      if (box) box.innerHTML = `<table class="tbl"><thead><tr><th>Cuộc họp 2026</th><th>Quyết định (giờ VN)</th><th></th></tr></thead><tbody>${m.map(x => { const t = new Date(x.decision); return `<tr data-t="${t.getTime()}"><td><b>${x.dates}</b>${x.sep ? ' *' : ''}${x.result ? `<br><small class="muted">${e(x.result)}</small>` : ''}</td><td>${t.toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh', hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' })}</td><td class="st"></td></tr>`; }).join('')}</tbody></table>
         <p class="small muted" style="margin-top:6px">${e(d.fomc.note)} Nguồn: <a href="${e(d.fomc.source.url)}" target="_blank" rel="noopener">${e(d.fomc.source.name)} ↗</a></p>`;
       const tick = () => {
         const n = m.map(x => new Date(x.decision)).find(t => t.getTime() > nowF());
