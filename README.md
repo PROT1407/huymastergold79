@@ -30,3 +30,4 @@ Giống v1: Netlify (kéo thả), Vercel, GitHub Pages; trỏ DNS tên miền .c
 Nội dung chỉ mang tính tham khảo, không phải lời khuyên đầu tư.
 - **Forex:** sửa `data/fund.json` và `data/follow-accounts.json` bằng số liệu thật, thêm `verify_url` (Myfxbook/FXBlue…) và đặt `"example": false` để ẩn nhãn "SỐ LIỆU VÍ DỤ MẪU".
 - **Lịch live:** sửa `data/live-schedule.json` (day 0=CN…6=T7, giờ VN). Khi đang live có thể điền `liveVideoId` để hiện khung chat.
+- **Tin vĩ mô:** thêm tin vào đầu mảng `items` trong `data/macro-news.json` (category: Lợi suất/Trái phiếu/Tương quan/Fed/FOMC; impact: tăng/giảm/trung lập; luôn ghi nguồn). Lịch FOMC ở `fomc.meetings`.
