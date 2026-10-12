@@ -1,5 +1,5 @@
 {
- "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
+ "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC | Chiến tranh. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
  "updated": "2026-10-12",
  "fomc": {
   "source": {
@@ -52,6 +52,56 @@
   ]
  },
  "items": [
+  {
+   "date": "2026-10-12",
+   "category": "Chiến tranh",
+   "title": "Vàng đảo chiều giảm khi dầu, diesel tăng lại do Houthi tấn công Ả Rập Xê Út",
+   "summary": "Phiên thứ Hai 12/10, giá vàng đảo chiều mất phần tăng đầu phiên khi dầu thô tăng và diesel Mỹ hồi phục (sau khi giảm 3% hôm thứ Sáu xuống 4,74 USD/gallon), dù ông Trump nới trừng phạt diesel Nga và tuyên bố 'ngừng bắn năng lượng' Nga – Ukraine. Lo ngại xung đột lan rộng tăng sau khi Houthi nhận tấn công sân bay Riyadh và hai cơ sở của Saudi Aramco; ông Trump gợi ý Mỹ có thể tham gia không kích Houthi cùng Ả Rập Xê Út.",
+   "impact": "giảm",
+   "reason": "Kênh 'dầu → lạm phát → lãi suất': căng thẳng Trung Đông đẩy giá dầu lên, củng cố khả năng Fed tăng lãi suất – bất lợi cho vàng. Heraeus: 'vàng vẫn chịu sức ép khi căng thẳng Trung Đông tiếp tục đẩy giá dầu lên'.",
+   "source": {
+    "name": "BullionVault – Gold News 12/10/2026",
+    "url": "https://www.bullionvault.com/gold-news/gold-price-news/gold-diesel-trump-101220261"
+   },
+   "time_vn": "Phiên châu Âu – Mỹ ngày 12/10 (chiều – tối 12/10 giờ VN)",
+   "priority": 1
+  },
+  {
+   "date": "2026-10-12",
+   "category": "Chiến tranh",
+   "title": "Ông Trump tuyên bố 'ngừng bắn năng lượng' Nga – Ukraine; vàng nhích lên quanh 4.200 USD",
+   "summary": "Chủ nhật 11/10, Tổng thống Trump đăng rằng Nga và Ukraine đã đồng ý 'ngừng bắn năng lượng' có hiệu lực ngay, nhưng không nêu chi tiết. Ukraine ủng hộ nếu Nga tuân thủ và cáo buộc Nga vẫn tấn công cơ sở năng lượng ở Kyiv, Kharkiv; Điện Kremlin nói các liên lạc đang tiếp diễn. Đầu phiên châu Á 12/10, XAU/USD tăng 0,3% lên 4.206,86 USD/oz (00:30 GMT).",
+   "impact": "trung lập",
+   "reason": "Hy vọng giảm áp lực nguồn cung nhiên liệu (giảm lạm phát) đối trọng với rủi ro Trung Đông; ANZ lưu ý rủi ro lạm phát có thể hạn chế đà tăng nếu khiến Fed thắt chặt thêm.",
+   "source": {
+    "name": "Investing.com – Gold edges higher near $4,200",
+    "url": "https://uk.investing.com/news/commodities-news/gold-edges-higher-near-4200-as-traders-weigh-energy-truce-mideast-risks-4904437"
+   },
+   "source2": {
+    "name": "BBC – Trump says Ukraine and Russia have agreed 'energy ceasefire'",
+    "url": "https://www.bbc.com/news/articles/c6pvg4jyz1m0o"
+   },
+   "time_vn": "Giá vàng: 00:30 GMT 12/10 = 07:30 sáng 12/10 giờ VN (tuyên bố của ông Trump: Chủ nhật 11/10 giờ Mỹ)",
+   "priority": 1
+  },
+  {
+   "date": "2026-10-10",
+   "category": "Chiến tranh",
+   "title": "Houthi tấn công sân bay Riyadh: ít nhất 12 người chết, hơn 300 người bị thương",
+   "summary": "Ngày 10/10, vụ tấn công thứ ba trong tuần vào sân bay quốc tế King Khalid (Riyadh) làm ít nhất 12 người chết, hơn 300 người bị thương – vụ tấn công đẫm máu nhất tại Ả Rập Xê Út trong hơn một thập kỷ; sân bay tạm dừng hoạt động. AP sau đó ghi nhận số người chết lên 13; Houthi cũng nhận tấn công cơ sở dầu khí ở miền đông Ả Rập Xê Út.",
+   "impact": "trung lập",
+   "reason": "Tác động hai chiều: rủi ro leo thang tạo nhu cầu trú ẩn, nhưng đồng thời đẩy giá dầu và lạm phát kỳ vọng lên – giữ lợi suất và USD cao, kìm vàng.",
+   "source": {
+    "name": "Reuters (qua Al-Monitor) – Houthi attack on Saudi airport kills 12",
+    "url": "https://www.al-monitor.com/originals/2026/10/houthi-attack-saudi-airport-kills-12-over-300-wounded-authorities-say"
+   },
+   "source2": {
+    "name": "AP – Saudis probe how defense systems failed",
+    "url": "https://apnews.com/article/saudi-yemen-houthis-riyadh-airport-40c6ab822df376688ce1a0955a044488"
+   },
+   "time_vn": "Ngày 10/10 giờ Riyadh (UTC+3, chậm hơn VN 4 giờ); nguồn không nêu giờ cụ thể",
+   "priority": 2
+  },
   {
    "date": "2026-10-09",
    "category": "Lợi suất",

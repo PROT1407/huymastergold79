@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const IMP = { 'tăng': ['up', '▲ Tăng cho vàng'], 'giảm': ['down', '▼ Giảm cho vàng'], 'trung lập': ['side', '◆ Trung lập'] };
   /* Biểu tượng theo chủ đề: ưu tiên từ khóa trong tiêu đề, sau đó theo category */
   const ICON = it => { const t = (it.title + ' ' + it.category).toLowerCase();
-    if (/fomc|dot plot/.test(t)) return ['🏛', 'Fed/FOMC']; if (/việc làm|bảng lương|thất nghiệp|nfp/.test(t)) return ['👷', 'Việc làm'];
+    if (it.category === 'Chiến tranh' || /chiến tranh|địa chính trị|xung đột|houthi|ngừng bắn/.test(t)) return ['⚔️', 'Chiến tranh & địa chính trị']; if (/fomc|dot plot/.test(t)) return ['🏛', 'Fed/FOMC']; if (/việc làm|bảng lương|thất nghiệp|nfp/.test(t)) return ['👷', 'Việc làm'];
     if (/lạm phát|cpi|pce/.test(t)) return ['🔥', 'Lạm phát']; if (/usd|dxy/.test(t) && it.category === 'Tương quan') return ['💵', 'USD'];
     return ({ 'Lợi suất': ['📈', 'Lợi suất'], 'Trái phiếu': ['🧾', 'Trái phiếu'], 'Fed': ['🏦', 'Fed'], 'FOMC': ['🏛', 'FOMC'], 'Tương quan': ['🔗', 'Tương quan'] })[it.category] || ['📰', it.category]; };
   const src = s => s && s.url ? `<a href="${e(s.url)}" target="_blank" rel="noopener">${e(s.name)} ↗</a>` : '';
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
   H.getJSON('data/macro-news.json').then(d => {
     const items = d.items.slice().sort((a, b) => (a.priority || 2) - (b.priority || 2) || b.date.localeCompare(a.date));
     if ($('macro')) {
-      const cats = ['Tất cả', 'Lợi suất', 'Trái phiếu', 'Tương quan', 'Fed', 'FOMC'];
+      const cats = ['Tất cả', 'Lợi suất', 'Trái phiếu', 'Tương quan', 'Fed', 'FOMC', 'Chiến tranh'];
       $('macro-chips').innerHTML = cats.map((c, i) => `<button type="button" data-c="${c}" class="${i ? '' : 'on'}">${c} <small>${i ? items.filter(x => x.category === c).length : items.length}</small></button>`).join('');
       const draw = c => { $('macro').innerHTML = items.filter(x => c === 'Tất cả' || x.category === c).map((x, i) => card(x, true, i)).join(''); $('macro-chips').querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.c === c)); };
       $('macro-chips').onclick = ev => { const b = ev.target.closest('button'); if (b) draw(b.dataset.c); };
