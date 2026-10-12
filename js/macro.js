@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const ICON = it => { const t = (it.title + ' ' + it.category).toLowerCase();
     if (it.category === 'Chiến tranh' || /chiến tranh|địa chính trị|xung đột|houthi|ngừng bắn/.test(t)) return ['⚔️', 'Chiến tranh & địa chính trị']; if (/fomc|dot plot/.test(t)) return ['🏛', 'Fed/FOMC']; if (/việc làm|bảng lương|thất nghiệp|nfp/.test(t)) return ['👷', 'Việc làm'];
     if (/lạm phát|cpi|pce/.test(t)) return ['🔥', 'Lạm phát']; if (/usd|dxy/.test(t) && it.category === 'Tương quan') return ['💵', 'USD'];
-    return ({ 'Lợi suất': ['📈', 'Lợi suất'], 'Trái phiếu': ['🧾', 'Trái phiếu'], 'Fed': ['🏦', 'Fed'], 'FOMC': ['🏛', 'FOMC'], 'Tương quan': ['🔗', 'Tương quan'] })[it.category] || ['📰', it.category]; };
+    return ({ 'Lợi suất': ['📈', 'Lợi suất'], 'Trái phiếu': ['🧾', 'Trái phiếu'], 'Fed': ['🏦', 'Fed'], 'FOMC': ['🏛', 'FOMC'], 'Tương quan': ['🔗', 'Tương quan'], 'Ngân hàng TW': ['🪙', 'Ngân hàng trung ương mua vàng'] })[it.category] || ['📰', it.category]; };
   const src = s => s && s.url ? `<a href="${e(s.url)}" target="_blank" rel="noopener">${e(s.name)} ↗</a>` : '';
   const card = (it, full, i) => { const ic = ICON(it), im = IMP[it.impact] || IMP['trung lập'];
     return `<article class="card macro-item anim i-${im[0]}" style="animation-delay:${Math.min(i || 0, 10) * 60}ms" data-cat="${e(it.category)}">${full ? `<span class="tl-date">${H.dateVN(it.date)}</span>` : ''}
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
   H.getJSON('data/macro-news.json').then(d => {
     const items = d.items.slice().sort((a, b) => (a.priority || 2) - (b.priority || 2) || b.date.localeCompare(a.date));
     if ($('macro')) {
-      const cats = ['Tất cả', 'Lợi suất', 'Trái phiếu', 'Tương quan', 'Fed', 'FOMC', 'Chiến tranh'];
+      const cats = ['Tất cả', 'Lợi suất', 'Trái phiếu', 'Tương quan', 'Fed', 'FOMC', 'Chiến tranh', 'Ngân hàng TW'];
       $('macro-chips').innerHTML = cats.map((c, i) => `<button type="button" data-c="${c}" class="${i ? '' : 'on'}">${c} <small>${i ? items.filter(x => x.category === c).length : items.length}</small></button>`).join('');
       const draw = c => { $('macro').innerHTML = items.filter(x => c === 'Tất cả' || x.category === c).map((x, i) => card(x, true, i)).join(''); $('macro-chips').querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.c === c)); };
       $('macro-chips').onclick = ev => { const b = ev.target.closest('button'); if (b) draw(b.dataset.c); };

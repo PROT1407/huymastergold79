@@ -1,5 +1,5 @@
 {
- "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC | Chiến tranh. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
+ "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC | Chiến tranh | Ngân hàng TW. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
  "updated": "2026-10-13",
  "fomc": {
   "source": {
@@ -52,6 +52,74 @@
   ]
  },
  "items": [
+  {
+   "date": "2026-10-12",
+   "category": "Chiến tranh",
+   "title": "Zelenskyy: Nga vi phạm 'ngừng bắn năng lượng'; Brent đóng cửa 106,65 USD, Iran chưa mở lại Hormuz",
+   "summary": "Chỉ vài giờ sau khi ông Trump tuyên bố 'ngừng bắn năng lượng' Nga – Ukraine, Tổng thống Zelenskyy cho biết riêng thứ Hai 12/10 Nga đã tấn công 6 cơ sở năng lượng của Ukraine; Điện Kremlin nói các liên lạc vẫn đang diễn ra (CNBC). Cùng lúc, Houthi tiếp tục bắn drone và tên lửa vào Ả Rập Xê Út sau vụ tấn công sân bay Riyadh. Giá dầu đảo chiều từ giảm sang tăng: Brent đóng cửa +1,8% lên 106,65 USD/thùng, WTI +2% lên 93,74 USD. Kitco dẫn lời quan chức an ninh Iran Mohsen Rezaei: phản hồi mới nhất của Mỹ với 7 điều kiện để mở lại eo biển Hormuz là 'chưa đủ', chưa đàm phán khi các điều kiện chưa được đáp ứng.",
+   "impact": "giảm",
+   "reason": "Chiến sự kéo dài tạo nhu cầu trú ẩn, nhưng kênh 'dầu tăng → lạm phát → Fed tăng lãi suất → USD và lợi suất cao' đang lấn át: vàng không giữ được đỉnh 1 tuần đầu phiên. Nếu Hormuz có tín hiệu mở lại, dầu giảm có thể giúp vàng hồi.",
+   "source": {
+    "name": "CNBC – Brent tops $106 after Saudi airport attack, Ukraine says Russia violated energy ceasefire",
+    "url": "https://www.cnbc.com/2026/10/12/oil-prics-today-iran-us-saudi-arabia-crude-.html"
+   },
+   "source2": {
+    "name": "CNBC – Zelenskyy accuses Russia of violating Trump's energy ceasefire",
+    "url": "https://www.cnbc.com/2026/10/12/russia-ukraine-energy-ceasefire-trump.html"
+   },
+   "time_vn": "Phát biểu của Zelenskyy: thứ Hai 12/10 (≈ chiều – tối 12/10 giờ VN); giá dầu chốt phiên ≈ 01:30 sáng 13/10 giờ VN",
+   "priority": 1
+  },
+  {
+   "date": "2026-10-12",
+   "category": "Tương quan",
+   "title": "USD giữ gần đỉnh 18 tháng (DXY 102,57); vàng đóng phiên thứ Hai giảm 0,6% về quanh 4.169 USD",
+   "summary": "CNBC (Reuters): chỉ số USD tăng 0,3% lên 102,57 – ngay dưới đỉnh 18 tháng của tuần trước – nhờ dòng tiền trú ẩn khi xung đột Trung Đông leo thang và đồng euro yếu (lo ngại tài chính công Pháp, chênh lệch lợi suất Pháp – Đức 140 điểm cơ bản). Số liệu CFTC cho thấy vị thế đặt cược USD tăng lên khoảng 36 tỷ USD trong tuần tới 7/10, từ 8,4 tỷ USD ba tuần trước. CME FedWatch: 81% khả năng Fed giữ lãi suất tháng 10. Kitco: sau giờ đóng cửa thứ Hai, vàng giao ngay quanh 4.168,90 USD/oz (−0,59%), bạc 60,12 USD (−0,96%); thị trường thấy khoảng 87,7% khả năng Fed tăng lãi suất ít nhất một lần trước tháng 12.",
+   "impact": "giảm",
+   "reason": "USD mạnh khiến vàng đắt hơn với người mua ngoài Mỹ và đi cùng kỳ vọng Fed thắt chặt → áp lực giảm. Kitco: mốc cần giữ 4.175 rồi 4.155 USD; kháng cự 4.221–4.227 USD. CPI tháng 9 (19:30 thứ Tư 14/10 giờ VN) là phép thử chính.",
+   "source": {
+    "name": "CNBC – Dollar hovers near 18-month high as Gulf unrest, U.S. inflation keep investors on edge",
+    "url": "https://www.cnbc.com/2026/10/12/dollar-stays-near-18-month-high-as-mideast-conflict-inflation-data-in-focus.html"
+   },
+   "source2": {
+    "name": "Kitco – Gold, silver soften as markets price in December Fed hike risk (PM Report 12/10)",
+    "url": "https://www.kitco.com/news/article/2026-10-12/gold-silver-soften-markets-price-december-fed-hike-risk-kitco-pm-report"
+   },
+   "time_vn": "CNBC đăng 00:06 EDT 12/10 = 11:06 trưa 12/10 giờ VN; giá vàng sau đóng cửa Mỹ ≈ 04:00 sáng 13/10 giờ VN",
+   "priority": 1
+  },
+  {
+   "date": "2026-10-12",
+   "category": "Lợi suất",
+   "title": "Lợi suất 10 năm Mỹ giữ 5,24% – gần mức cao nhất từ 2002; 20 năm 5,65%, 30 năm 5,60%",
+   "summary": "Thị trường trái phiếu tiền mặt Mỹ nghỉ lễ Columbus Day 12/10, lợi suất trái phiếu kho bạc 10 năm đứng ở khoảng 5,24% (CNBC), quanh mức cao nhất kể từ 2002. Theo đường cong lợi suất phiên thứ Sáu mà Kitco dẫn, kỳ hạn 20 năm ở 5,65% và 30 năm ở 5,60%. Kitco nhận định nhà đầu tư trái phiếu dài hạn đang đòi bù rủi ro lạm phát, rủi ro nguồn cung trái phiếu và rủi ro tài khóa cao hơn.",
+   "impact": "giảm",
+   "reason": "Lợi suất trên 5% làm tăng chi phí cơ hội của vàng (tài sản không sinh lãi). Thị trường trái phiếu mở cửa lại tối 13/10 giờ VN – nếu lợi suất tăng tiếp, vàng dễ bị ép; ngược lại, nếu nhà đầu tư coi nợ công Mỹ là rủi ro mất giá tiền tệ, đây có thể thành yếu tố hỗ trợ vàng về dài hạn.",
+   "source": {
+    "name": "CNBC – US10Y: U.S. 10 Year Treasury",
+    "url": "https://www.cnbc.com/quotes/US10Y"
+   },
+   "source2": {
+    "name": "Kitco – PM Report 12/10/2026",
+    "url": "https://www.kitco.com/news/article/2026-10-12/gold-silver-soften-markets-price-december-fed-hike-risk-kitco-pm-report"
+   },
+   "time_vn": "Thứ Hai 12/10 (Mỹ nghỉ lễ trái phiếu); phiên trái phiếu Mỹ mở lại ≈ tối 13/10 giờ VN",
+   "priority": 2
+  },
+  {
+   "date": "2026-10-07",
+   "category": "Ngân hàng TW",
+   "title": "Trung Quốc mua vàng tháng thứ 23 liên tiếp: thêm khoảng 23 tấn trong tháng 9",
+   "summary": "Reuters: dự trữ vàng của Ngân hàng Nhân dân Trung Quốc (PBOC) tăng lên 77,47 triệu ounce cuối tháng 9, từ 76,73 triệu ounce cuối tháng 8 – tức thêm 740.000 ounce (≈ 23 tấn), nhiều hơn mức thêm của tháng 8 – kéo dài chuỗi mua 23 tháng liên tiếp. Giá trị dự trữ vàng giảm từ 350,08 tỷ xuống 323,52 tỷ USD do giá vàng giảm hơn 6% trong tháng 9.",
+   "impact": "tăng",
+   "reason": "Ngân hàng trung ương mua đều đặn kể cả khi giá giảm tạo lực đỡ cho vàng ở các vùng giá thấp, dù trong ngắn hạn USD và lợi suất vẫn là yếu tố chi phối.",
+   "source": {
+    "name": "Reuters (qua Mining Weekly) – China's central bank adds to gold reserves for 23rd consecutive month",
+    "url": "https://www.miningweekly.com/article/chinas-central-bank-adds-to-gold-reserves-for-twenty-third-consecutive-month-2026-10-07"
+   },
+   "time_vn": "PBOC công bố thứ Tư 7/10 (giờ Bắc Kinh, sớm hơn VN 1 giờ) – trước 09:44 sáng 7/10 giờ VN",
+   "priority": 2
+  },
   {
    "date": "2026-10-12",
    "category": "Fed",
