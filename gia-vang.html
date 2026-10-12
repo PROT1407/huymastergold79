@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Giá vàng hôm nay SJC, PNJ, DOJI – Quy đổi & máy tính vàng | HuymasterGold79</title>
+<meta name="description" content="Bảng giá vàng miếng SJC, vàng nhẫn 9999, quy đổi giá vàng thế giới sang VND/lượng, máy tính vàng theo chỉ/lượng/gram, chênh lệch SJC và sổ tích lũy.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://huymastergold79.com.vn/gia-vang.html">
+<meta name="theme-color" content="#0d1117">
+<meta property="og:type" content="website"><meta property="og:locale" content="vi_VN"><meta property="og:site_name" content="HuymasterGold79">
+<meta property="og:title" content="Giá vàng hôm nay SJC, PNJ, DOJI – Quy đổi & máy tính vàng | HuymasterGold79"><meta property="og:description" content="Bảng giá vàng miếng SJC, vàng nhẫn 9999, quy đổi giá vàng thế giới sang VND/lượng, máy tính vàng theo chỉ/lượng/gram, chênh lệch SJC và sổ tích lũy."><meta property="og:url" content="https://huymastergold79.com.vn/gia-vang.html"><meta property="og:image" content="https://huymastergold79.com.vn/assets/og-image.svg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.dataset.theme=localStorage.getItem('hmg_theme')||'dark'</script>
+<link rel="stylesheet" href="css/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"HuymasterGold79","url":"https://huymastergold79.com.vn/","publisher":{"@type":"Person","name":"HuymasterGold79 – Ngọc Huy","email":"mailto:Huydaigia1407@gmail.com","sameAs":["https://www.youtube.com/@HuyNguyen-zv3zk"]}}</script>
+</head>
+<body data-page="gia">
+<div id="site-header"></div>
+<main class="wrap">
+
+<div class="page-head"><p class="crumb"><a href="index.html">Trang chủ</a> › Giá vàng VN</p><h1>Giá vàng Việt Nam <span style="color:var(--gold)">hôm nay</span></h1><p>Tự động cập nhật mỗi 60 giây · <span data-upd>—</span></p></div>
+<div class="chips"><a href="#bang-gia">Bảng giá</a><a href="#quy-doi">Quy đổi</a><a href="#may-tinh">Máy tính vàng</a><a href="#chenh-lech">Chênh lệch SJC</a><a href="#so-tich-luy">Sổ tích lũy</a><a href="#bac">Bạc & Bitcoin</a></div>
+<div id="bang-gia"><div class="grid g2">
+  <div class="card" id="vang-mieng"><h2>🧱 Vàng miếng 24K <span class="unit-toggle"><button data-u="chi">Chỉ</button><button data-u="luong">Lượng</button></span></h2>
+    <p class="muted small">Cập nhật: <span data-upd>—</span> · <span class="live">● LIVE</span> · <span data-vnsrc></span></p><div data-table="mieng"></div></div>
+  <div class="card" id="vang-nhan"><h2>💍 Vàng nhẫn 9999 <span class="unit-toggle"><button data-u="chi">Chỉ</button><button data-u="luong">Lượng</button></span></h2>
+    <p class="muted small">Cập nhật: <span data-upd>—</span> · <span class="live">● LIVE</span></p><div data-table="nhan"></div></div>
+</div></div>
+<section class="grid g2 sec">
+  <div class="card" id="quy-doi"><h2>⚖ Quy đổi giá vàng thế giới → VND/lượng</h2>
+    <p class="muted small">1 lượng = 37,5 g · 1 oz = 31,1035 g · hệ số 1,20565 · Nguồn: gold-api.com, open.er-api.com</p>
+    <div class="grid g2" style="gap:10px;margin-top:10px"><label>Giá vàng thế giới (USD/oz)<input id="c-xau" type="number" step="0.1"></label><label>Tỷ giá USD/VND<input id="c-fx" type="number"></label></div>
+    <div class="mini-out"><div><span>Giá TG quy đổi</span><b id="c-out">—</b></div><div><span>Quy đổi +1% (thuế phí ước tính)</span><b id="c-out1">—</b></div></div>
+    <div class="mini-out"><div class="r" style="grid-column:span 2"><span>Chênh lệch SJC bán ra – thế giới</span><b id="c-gap">—</b></div></div>
+    <button class="btn ghost" id="c-reset" type="button" style="margin-top:12px">↻ Lấy lại giá trực tuyến</button></div>
+  <div class="card" id="may-tinh"><h2>🧮 Máy tính giá trị vàng</h2>
+    <div class="grid g2" style="gap:10px"><label>Số lượng<input id="k-qty" type="number" value="1" min="0" step="0.01"></label>
+      <label>Đơn vị<select id="k-unit"><option value="chi">Chỉ (3,75 g)</option><option value="luong">Lượng / cây (37,5 g)</option><option value="gram">Gram</option><option value="oz">Ounce (31,1 g)</option><option value="kg">Kg</option></select></label>
+      <label>Theo giá<select id="k-basis"><option value="world">Thế giới quy đổi</option></select></label>
+      <label>Chiều giá<select id="k-side"><option value="sell">Tiệm bán ra (bạn mua)</option><option value="buy">Tiệm mua vào (bạn bán)</option></select></label></div>
+    <div class="note" style="text-align:center"><span class="muted small">Thành tiền ước tính</span><div style="font-size:1.8rem;font-weight:800;color:var(--gold)" id="k-out">—</div><div class="small muted" id="k-info"></div></div></div>
+</section>
+<section class="card sec" id="chenh-lech"><h2>📊 Lịch sử chênh lệch SJC – thế giới (triệu đồng/lượng)</h2>
+  <p class="muted small">Hiện tại: <b id="gap-last">—</b>. Điểm vàng nhỏ = <b>dữ liệu ví dụ</b> trong <code>data/gap-history.json</code> (cần thay bằng số liệu thật); điểm xanh = số liệu thật trình duyệt của bạn tự ghi lại mỗi ngày khi mở trang.</p>
+  <div id="gap-chart" class="gap-chart" style="color:var(--txt)"></div></section>
+<section class="card sec" id="so-tich-luy"><h2>📒 Sổ tích lũy vàng – theo dõi lãi/lỗ</h2>
+  <p class="muted small">Ghi lại các lần mua vàng để biết lãi/lỗ theo giá hiện tại. Không cần đăng nhập, dữ liệu chỉ lưu trên trình duyệt của bạn.</p>
+  <form id="book-form" class="grid g4" style="gap:10px;margin:10px 0;grid-template-columns:repeat(5,1fr)"><label>Ngày mua<input id="b-date" type="date" required></label><label>Loại vàng<select id="b-brand"><option>SJC</option></select></label><label>Số chỉ<input id="b-chi" type="number" step="0.01" min="0.01" required></label><label>Giá mua (nghìn đ/chỉ)<input id="b-price" type="number" required placeholder="14430"></label><button class="btn" type="submit" style="align-self:end;margin-bottom:10px">+ Thêm</button></form>
+  <div id="book"></div></section>
+<section class="grid g2 sec" id="bac">
+  <div class="card tile"><div class="ic">🥈</div><div class="lbl">BẠC THẾ GIỚI</div><div class="val" id="t-xag">—</div><div class="sub" id="t-xag-v"></div><div data-mini="OANDA:XAGUSD" style="height:200px;margin-top:10px"></div></div>
+  <div class="card tile"><div class="ic">₿</div><div class="lbl">BITCOIN</div><div class="val" id="t-btc">—</div><div class="sub" id="t-btc-v"></div><div data-mini="BITSTAMP:BTCUSD" style="height:200px;margin-top:10px"></div></div>
+</section>
+<div data-share="Giá vàng hôm nay – HuymasterGold79"></div>
+
+</main>
+<div id="site-footer"></div>
+<script src="js/common.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

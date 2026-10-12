@@ -1,0 +1,31 @@
+{
+  "strategies": [
+    {
+      "date": "2026-10-12",
+      "example": true,
+      "title": "VÍ DỤ MẪU – Vàng tích lũy chờ tín hiệu",
+      "trend": "Tăng nhẹ (tích lũy)",
+      "trendType": "up",
+      "support": [4150, 4120, 4085],
+      "resistance": [4200, 4235, 4280],
+      "entryZones": [
+        "Vùng mua thăm dò: 4.150 – 4.160 USD/oz",
+        "Vùng mua mạnh: 4.120 – 4.125 USD/oz (dừng lỗ dưới 4.080)"
+      ],
+      "physicalAdvice": "Người mua vàng vật chất nên chia nhỏ vốn 3 phần, ưu tiên nhẫn trơn 9999 khi chênh lệch SJC – thế giới cao. Không mua đuổi khi giá trong nước tăng nóng trong phiên.",
+      "notes": "Theo dõi số liệu CPI Mỹ và chỉ số DXY. Đây là nội dung VÍ DỤ, hãy thay bằng chiến lược thật."
+    },
+    {
+      "date": "2026-10-11",
+      "example": true,
+      "title": "VÍ DỤ MẪU – Điều chỉnh kỹ thuật",
+      "trend": "Đi ngang",
+      "trendType": "side",
+      "support": [4130, 4100],
+      "resistance": [4185, 4210],
+      "entryZones": ["Canh mua quanh 4.100 – 4.110 USD/oz"],
+      "physicalAdvice": "Giữ vị thế, chưa mua thêm.",
+      "notes": "Nội dung lưu trữ ví dụ."
+    }
+  ]
+}

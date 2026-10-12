@@ -1,0 +1,20 @@
+{
+  "_ghi_chu": "TOÀN BỘ SỐ LIỆU LÀ VÍ DỤ MẪU. Thay bằng tài khoản thật (sàn, nền tảng copy, link xác minh) và đặt example=false.",
+  "example": true,
+  "steps": [
+    { "title": "Liên hệ qua Zalo", "desc": "Nhắn Ngọc Huy để được tư vấn mức vốn, khẩu vị rủi ro và kiểm tra sự phù hợp." },
+    { "title": "Mở tài khoản tại sàn được cấp phép", "desc": "Chọn sàn có giấy phép từ cơ quan quản lý uy tín; tự đứng tên và tự quản lý tiền của bạn." },
+    { "title": "Kết nối nền tảng copy/follow", "desc": "Đăng ký theo dõi tài khoản chiến lược trên nền tảng copy trade của sàn (ví dụ: MT4/MT5 Signals hoặc nền tảng riêng của sàn)." },
+    { "title": "Thiết lập tỷ lệ & giới hạn lỗ", "desc": "Chọn tỷ lệ sao chép nhỏ, đặt mức dừng sao chép khi tài khoản sụt giảm (ví dụ 20%)." },
+    { "title": "Theo dõi & đánh giá định kỳ", "desc": "Xem báo cáo hằng tuần; có thể dừng theo dõi bất cứ lúc nào." }
+  ],
+  "accounts": [
+    { "name": "Tài khoản Vàng An toàn (VÍ DỤ)", "platform": "MT5 – (cập nhật tên sàn)", "style": "XAU/USD, rủi ro thấp", "min_deposit": "500 USD", "gain_pct": 12.5, "max_dd_pct": 8.2, "months": 6, "followers": 0, "verify_url": "", "status": "Mẫu – chưa hoạt động" },
+    { "name": "Tài khoản Tăng trưởng (VÍ DỤ)", "platform": "MT4 – (cập nhật tên sàn)", "style": "XAU/USD + EUR/USD, rủi ro trung bình", "min_deposit": "1.000 USD", "gain_pct": 21.0, "max_dd_pct": 14.6, "months": 6, "followers": 0, "verify_url": "", "status": "Mẫu – chưa hoạt động" }
+  ],
+  "faq": [
+    { "q": "Tiền của tôi có chuyển cho HuymasterGold79 không?", "a": "Không. Bạn tự mở tài khoản đứng tên mình tại sàn; chỉ các lệnh được sao chép. Không ai được yêu cầu bạn chuyển tiền cá nhân." },
+    { "q": "Có cam kết lợi nhuận không?", "a": "Không có bất kỳ cam kết lợi nhuận nào. Kết quả quá khứ không đảm bảo kết quả tương lai; bạn có thể mất một phần hoặc toàn bộ vốn." },
+    { "q": "Tôi có thể dừng theo dõi khi nào?", "a": "Bất cứ lúc nào, ngay trên nền tảng copy của sàn." }
+  ]
+}
