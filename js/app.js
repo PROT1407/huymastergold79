@@ -111,16 +111,16 @@
   const trendCls = { up: 'up', down: 'down', side: 'side' };
   function strategyHTML(s, compact) {
     const lv = `<div class="lv">${(s.support || []).map(v => `<span class="pill s">HT ${f(v)}</span>`).join('')}${(s.resistance || []).map(v => `<span class="pill r">KC ${f(v)}</span>`).join('')}</div>`;
-    if (compact) return `<span class="tag">⚡ NHẬN ĐỊNH NHANH · ${H.dateVN(s.date)}</span> ${s.example ? '<span class="badge ex">VÍ DỤ MẪU</span>' : ''}
+    if (compact) return `<span class="tag">⚡ NHẬN ĐỊNH NHANH · ${H.dateVN(s.date)}</span> <span class="badge ex">HUY MASTER NHẬN ĐỊNH</span>
       <h2>${H.esc(s.title)}</h2><p>Xu hướng: <span class="badge ${trendCls[s.trendType] || 'side'}">${H.esc(s.trend)}</span></p>${lv}
-      <p class="small"><b>🏅 Mua vàng vật chất:</b> ${H.esc(s.physicalAdvice)}</p><a class="btn" style="margin-top:10px" href="chien-luoc.html">Xem kế hoạch đầy đủ →</a>`;
+      <p class="small"><b>🏅 Mua vàng vật chất:</b> ${H.esc(s.physicalAdvice)}</p>${s.dataTime ? `<p class="small muted" style="margin-top:6px">🕐 ${H.esc(s.dataTime)}</p>` : ''}${s.disclaimer ? `<p class="small muted"><i>${H.esc(s.disclaimer)}</i></p>` : ''}<a class="btn" style="margin-top:10px" href="chien-luoc.html">Xem kế hoạch đầy đủ →</a>`;
     return `<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px"><div><span class="muted">📅 ${H.dateVN(s.date)}</span><h2 style="font-size:1.4rem;color:var(--txt);margin:4px 0">${H.esc(s.title)}</h2></div>
-      <div>${s.example ? '<span class="badge ex">VÍ DỤ MẪU</span> ' : ''}<span class="badge ${trendCls[s.trendType] || 'side'}">Xu hướng: ${H.esc(s.trend)}</span></div></div>
+      <div><span class="badge ex">HUY MASTER NHẬN ĐỊNH</span> <span class="badge ${trendCls[s.trendType] || 'side'}">Xu hướng: ${H.esc(s.trend)}</span></div></div>
       <div class="grid g3" style="margin:14px 0">
         <div class="card"><h3>🟢 Hỗ trợ (USD/oz)</h3>${(s.support || []).map(v => `<span class="pill s">${f(v)}</span> `).join('')}</div>
         <div class="card"><h3>🔴 Kháng cự (USD/oz)</h3>${(s.resistance || []).map(v => `<span class="pill r">${f(v)}</span> `).join('')}</div>
-        <div class="card"><h3>🎯 Vùng vào lệnh</h3><ul style="padding-left:18px">${(s.entryZones || []).map(z => `<li>${H.esc(z)}</li>`).join('')}</ul></div></div>
-      <div class="note"><b>🏅 Lời khuyên mua vàng vật chất:</b> ${H.esc(s.physicalAdvice)}</div>${s.notes ? `<p class="muted">📝 ${H.esc(s.notes)}</p>` : ''}${H.shareHTML('Chiến lược vàng ' + H.dateVN(s.date) + ' – HuymasterGold79')}`;
+        <div class="card"><h3>🎯 Vùng mua</h3><ul style="padding-left:18px">${(s.entryZones || []).map(z => `<li>${H.esc(z)}</li>`).join('')}</ul>${(s.sellZones || []).length ? `<h3 style="margin-top:10px">🔻 Vùng bán</h3><ul style="padding-left:18px">${s.sellZones.map(z => `<li>${H.esc(z)}</li>`).join('')}</ul>` : ''}</div></div>
+      <div class="note"><b>🏅 Lời khuyên mua vàng vật chất:</b> ${H.esc(s.physicalAdvice)}</div>${(s.macro || []).length ? `<div class="card" style="margin-top:12px"><h3>🌐 Bối cảnh vĩ mô</h3><ul style="padding-left:18px" class="small">${s.macro.map(z => `<li>${H.esc(z)}</li>`).join('')}</ul></div>` : ''}${s.notes ? `<p class="muted small" style="margin-top:8px">📝 ${H.esc(s.notes)}</p>` : ''}${s.dataTime ? `<p class="small muted" style="margin-top:6px">🕐 ${H.esc(s.dataTime)}</p>` : ''}${s.disclaimer ? `<p class="small muted"><i>${H.esc(s.disclaimer)}</i></p>` : ''}${H.shareHTML('Chiến lược vàng ' + H.dateVN(s.date) + ' – HuymasterGold79')}`;
   }
   if ($('quick') || $('strategy')) {
     H.getJSON('data/strategies.json').then(d => {
@@ -129,7 +129,7 @@
       if ($('strategy')) {
         const want = new URLSearchParams(location.search).get('ngay'), show = s => { $('strategy').innerHTML = strategyHTML(s); arc.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.d === s.date)); };
         const arc = $('archive');
-        arc.innerHTML = list.map(s => `<button type="button" data-d="${s.date}"><b>${H.dateVN(s.date)}</b>${s.example ? ' · ví dụ' : ''} – ${H.esc(s.trend)}</button>`).join('');
+        arc.innerHTML = list.map(s => `<button type="button" data-d="${s.date}"><b>${H.dateVN(s.date)}</b> – ${H.esc(s.trend)}</button>`).join('');
         arc.onclick = e => { const b = e.target.closest('button'); if (b) { show(list.find(s => s.date === b.dataset.d)); scrollTo({ top: 0, behavior: 'smooth' }); } };
         show(list.find(s => s.date === want) || list[0]);
       }
