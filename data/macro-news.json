@@ -1,6 +1,6 @@
 {
  "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC | Chiến tranh. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
- "updated": "2026-10-12",
+ "updated": "2026-10-13",
  "fomc": {
   "source": {
    "name": "Federal Reserve – FOMC calendars",
@@ -52,6 +52,42 @@
   ]
  },
  "items": [
+  {
+   "date": "2026-10-12",
+   "category": "Fed",
+   "title": "Fed Hammack: cần chính sách thắt chặt hơn, tăng lãi suất 'từng bước nhỏ nhưng nhanh'",
+   "summary": "Chủ tịch Fed Cleveland Beth Hammack (thành viên bỏ phiếu FOMC 2026) phát biểu tại hội nghị NABE ngày 12/10: 'lập trường chính sách thắt chặt là phù hợp' để đưa lạm phát về 2%, và bà muốn 'điều chỉnh nhỏ, làm tương đối nhanh' thay vì chờ rồi phải sửa sai mạnh hơn. Bà cảnh báo lạm phát cao kéo dài làm tăng nguy cơ 'tâm lý lạm phát' bám rễ; PCE tháng 8 ở 3,4%, PCE lõi 3%. Theo CME FedWatch (CNBC dẫn), thị trường thấy hơn 78% khả năng Fed giữ lãi suất trong tháng 10 nhưng gần 88% khả năng tăng vào tháng 12.",
+   "impact": "giảm",
+   "reason": "Giọng điệu 'diều hâu' củng cố kỳ vọng Fed tăng lãi suất tiếp → lợi suất và USD được hỗ trợ, tăng chi phí cơ hội nắm giữ vàng. Áp lực có thể mạnh thêm nếu CPI thứ Tư 14/10 (19:30 giờ VN) cao hơn dự báo.",
+   "source": {
+    "name": "CNBC – Fed's Hammack: higher rates could be needed",
+    "url": "https://www.cnbc.com/2026/10/12/beth-hammack-fed-inflation-policy.html"
+   },
+   "source2": {
+    "name": "Fed Cleveland – Bài phát biểu 12/10/2026 (PDF)",
+    "url": "https://www.clevelandfed.org/-/media/project/clevelandfedtenant/clevelandfedsite/collections/speeches/sp-20261012-trimming-the-sails-communicating-my-reaction-function.pdf"
+   },
+   "time_vn": "CNBC đăng 13:08 EDT 12/10 = 00:08 ngày 13/10 giờ VN",
+   "priority": 1
+  },
+  {
+   "date": "2026-10-12",
+   "category": "Chiến tranh",
+   "title": "Iran tấn công thêm siêu tàu dầu ở Hormuz; USD gần đỉnh 18 tháng, vàng mất mốc 4.200 USD",
+   "summary": "Hải quân Vệ binh Cách mạng Iran (IRGC) cho biết sáng thứ Hai 12/10 đã đánh trúng một siêu tàu dầu cố đi qua eo biển Hormuz khi tắt bộ phát tín hiệu, khiến tàu bốc cháy (AFP) – vụ thứ 3 trong 2 ngày theo IRGC. Kitco: vàng giao ngay có lúc vượt 4.200 USD trong phiên châu Á rồi lùi về khoảng 4.156 USD trước phiên Mỹ (giảm gần 1%); chỉ số USD (DXY) quanh 102,2 – gần mức cao nhất khoảng 18 tháng; Brent quanh 105 USD, WTI trên 92 USD/thùng. Thị trường trái phiếu Mỹ nghỉ lễ Columbus Day.",
+   "impact": "giảm",
+   "reason": "Rủi ro chiến sự hỗ trợ nhu cầu trú ẩn, nhưng dầu cao giữ lạm phát cao → kỳ vọng Fed tăng lãi suất (khoảng 85% khả năng tăng trước tháng 12 theo Kitco) và USD mạnh đang lấn át – vàng chịu sức ép trước CPI.",
+   "source": {
+    "name": "Kitco – Gold struggles as US dollar nears 18-month high (12/10/2026)",
+    "url": "https://www.kitco.com/news/article/2026-10-12/gold-prices-struggle-hold-early-gains-us-dollar-nears-18-month-high-bond"
+   },
+   "source2": {
+    "name": "AFP (qua The Hindu) – Iran Guards say struck vessel in Hormuz",
+    "url": "https://www.thehindu.com/news/international/iran-guards-say-struck-vessel-in-strait-of-hormuz/article71576235.ece"
+   },
+   "time_vn": "Sáng 12/10 giờ Tehran (≈ trưa – chiều 12/10 giờ VN); giá vàng: trước phiên Mỹ ≈ 19:00–20:00 tối 12/10 giờ VN",
+   "priority": 1
+  },
   {
    "date": "2026-10-12",
    "category": "Chiến tranh",
