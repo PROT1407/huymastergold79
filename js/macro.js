@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
   H.getJSON('data/macro-news.json').then(d => {
     const items = d.items.slice().sort((a, b) => (a.priority || 2) - (b.priority || 2) || b.date.localeCompare(a.date));
     if ($('macro')) {
-      const cats = ['Tất cả', 'Lợi suất', 'Trái phiếu', 'Tương quan', 'Fed', 'FOMC', 'Chiến tranh', 'Ngân hàng TW'];
+      const cats = ['Tất cả', 'Vàng', 'Lạm phát', 'Dầu mỏ', 'Lợi suất', 'Trái phiếu', 'Tương quan', 'Fed', 'FOMC', 'Chiến tranh', 'Ngân hàng TW'];
       $('macro-chips').innerHTML = cats.map((c, i) => `<button type="button" data-c="${c}" class="${i ? '' : 'on'}">${c} <small>${i ? items.filter(x => x.category === c).length : items.length}</small></button>`).join('');
       const draw = c => { $('macro').innerHTML = items.filter(x => c === 'Tất cả' || x.category === c).map((x, i) => card(x, true, i)).join(''); $('macro-chips').querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.c === c)); };
       $('macro-chips').onclick = ev => { const b = ev.target.closest('button'); if (b) draw(b.dataset.c); };

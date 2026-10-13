@@ -54,6 +54,132 @@
  "items": [
   {
    "date": "2026-10-14",
+   "category": "Chiến tranh",
+   "priority": 1,
+   "impact": "trung lập",
+   "title": "Tên lửa Houthi trúng tòa nhà trụ sở Saudi Aramco ở Dhahran sau khi Ả Rập Xê Út không kích Sanaa – Brent đầu phiên Á nhích lên ~106,4 USD",
+   "summary": "Reuters: Bộ Năng lượng Ả Rập Xê Út xác nhận một tòa nhà hành chính của Aramco ở Dhahran bị tấn công tối thứ Ba 13/10 (giờ Ả Rập Xê Út, ≈ rạng sáng 14/10 giờ VN), gây cháy hạn chế, không có thương vong. Nguồn tin công ty nói một tên lửa đạn đạo đánh trúng tòa văn phòng, hư hại 3 tầng trên cùng. Trước đó liên quân do Ả Rập Xê Út dẫn đầu không kích kho nhiên liệu Sabah ngoại ô Sanaa (Yemen); Houthi đe dọa cả trụ sở Aramco và một nhà máy lọc dầu ở Riyadh. Tên lửa bị đánh chặn rơi mảnh xuống Riyadh làm 4 người bị thương. Ông Trump đã điện đàm với Thái tử Mohammed bin Salman; Mỹ đến nay vẫn chưa tham chiến trực tiếp. Eo Hormuz vẫn bị Iran đóng từ tháng 2 nên tuyến Bab el-Mandeb càng quan trọng. Thị trường: Brent (BZ=F, Yahoo) 106,39 USD lúc 06:45 VN 14/10, so với giá chốt 105,69; vàng COMEX GC=F gần như đi ngang quanh 4.179–4.184 USD (05:00–06:45 VN). CNBC chưa có bài về vụ tấn công Aramco.",
+   "reason": "Ngắn hạn: rủi ro địa chính trị là lực đỡ trú ẩn cho vàng, nhưng tác động lớn hơn là qua dầu: dầu cao → lạm phát → Fed thêm lý do tăng lãi → USD/lợi suất mạnh → bất lợi vàng. Hai lực trái chiều nên vàng gần như đứng yên sáng nay. Trung – dài hạn: nếu Houthi đánh tiếp cơ sở dầu của Ả Rập Xê Út, giá dầu có thể tăng mạnh và kéo kỳ vọng tăng lãi lên; nếu Mỹ/Thổ Nhĩ Kỳ can thiệp làm leo thang chiến sự, cầu trú ẩn vào vàng sẽ rõ hơn.",
+   "source": {
+    "name": "Reuters (qua Al-Monitor) – Saudi Aramco administrative building attacked, limited fire reported",
+    "url": "https://www.al-monitor.com/originals/2026/10/missile-hits-headquarters-saudi-aramco-source-says-houthi-conflict-escalates"
+   },
+   "source2": {
+    "name": "Reuters (qua The Korea Times) – Saudi Arabia strikes Yemen capital as Houthis vow to retaliate",
+    "url": "https://www.koreatimes.co.kr/world/20261014/saudi-arabia-strikes-yemen-capital-as-houthis-vow-to-retaliate"
+   },
+   "time_vn": "Tối 13/10 giờ Ả Rập Xê Út (UTC+3) ≈ rạng sáng 14/10 giờ VN; Reuters về không kích Sanaa 23:25 VN 13/10; giá Brent/vàng đo lúc 06:45 VN 14/10"
+  },
+  {
+   "date": "2026-10-14",
+   "category": "Lạm phát",
+   "priority": 1,
+   "impact": "trung lập",
+   "title": "CNBC: CPI tháng 9 Mỹ (19:30 tối nay giờ VN) dự báo +0,6% tháng, 3,6% năm; lõi +0,2% tháng, 2,5% năm",
+   "summary": "CNBC (đăng 14:05 EDT 13/10 = 01:05 sáng 14/10 giờ VN), theo khảo sát Dow Jones: CPI tổng tháng 9 dự báo tăng 0,6% so với tháng trước và 3,6% so với cùng kỳ, cho thấy lạm phát đang tăng tốc, xa mục tiêu 2% của Fed. CPI lõi (bỏ thực phẩm, năng lượng) dự báo +0,2% tháng, 2,5% năm. Chuyên gia RSM cảnh báo giá dầu có thể đẩy số tổng cao hơn nữa; PGIM lo dầu cao lan sang giá các mặt hàng khác. Biên bản FOMC tháng 9 cho thấy Fed nhiều khả năng còn tăng lãi; thị trường hợp đồng tương lai nghiêng về tháng 12. Lịch tiếp theo: PPI và doanh số bán lẻ thứ Năm 15/10, phát biểu của Chủ tịch Fed Kevin Warsh cuối tuần này (theo Reuters).",
+   "reason": "Ngắn hạn (19:30 VN): điều quyết định là CPI LÕI. Lõi > 0,2% → kỳ vọng tăng lãi tháng 10/12 tăng, USD và lợi suất bật lên → vàng dễ giảm. Lõi ≤ 0,2% → củng cố kịch bản Fed đứng yên tháng 10 → USD/lợi suất hạ → vàng hồi. Số tổng cao do năng lượng đã được dự báo nên ít gây sốc hơn. Trung – dài hạn: lạm phát tổng 3,6% và tăng dần làm lãi suất thực còn cao lâu → áp lực lên vàng, nhưng nếu lạm phát vượt tầm kiểm soát thì vai trò chống lạm phát của vàng lại được chú ý.",
+   "source": {
+    "name": "CNBC – September CPI report: What to expect",
+    "url": "https://www.cnbc.com/2026/10/13/september-consumer-price-index-inflation.html"
+   },
+   "source2": {
+    "name": "Reuters (qua The Financial Express) – Gold rises on weaker dollar, lower oil",
+    "url": "https://today.thefinancialexpress.com.bd/print/gold-rises-on-weaker-dollar-lower-oil-1791910313"
+   },
+   "time_vn": "CNBC đăng 01:05 VN 14/10; CPI công bố 08:30 ET = 19:30 tối 14/10 giờ VN"
+  },
+  {
+   "date": "2026-10-14",
+   "category": "Fed",
+   "priority": 1,
+   "impact": "tăng",
+   "title": "Fed Williams (New York, có phiếu bầu): thêm một lần tăng lãi năm nay là phù hợp, không thấy cần tăng năm 2027 – DXY lùi về ~102,2",
+   "summary": "FXStreet (18:21 GMT 13/10 = 01:21 VN 14/10): Chủ tịch Fed New York John Williams nói các lực giảm lạm phát vẫn đang vận hành, thị trường lao động không góp phần đẩy lạm phát, áp lực giá chủ yếu từ AI và năng lượng; 'thêm một lần tăng lãi suất trong năm nay là phù hợp' và hiện không thấy cần tăng năm 2027. Cùng ngày, Thống đốc Christopher Waller (Reuters, 06:57 EDT 13/10 = 17:57 VN) nói lợi suất trái phiếu tăng là do tăng trưởng thực, đầu tư AI và lo ngại nợ công, không phải do kỳ vọng lạm phát – vốn vẫn 'neo vững'. USD: chỉ số DXY trên CNBC 102,215 (−0,36%), biên độ ngày 102,162–102,574, lùi khỏi đỉnh 18 tháng. Vàng COMEX GC=F (Yahoo, nến 5 phút): 01:00 VN 4.174,5 → 01:05 4.182,1 → 01:55 4.186,5 → 02:30 4.188,8.",
+   "reason": "Ngắn hạn: thông điệp 'chỉ còn một lần tăng rồi dừng' khiến USD hạ nhiệt, vàng COMEX bật khoảng 10–14 USD trong 1,5 giờ sau đó. Trung – dài hạn: nếu Fed xác nhận đỉnh lãi suất ở 4,00–4,25% và không tăng tiếp năm 2027, áp lực lãi suất lên vàng sẽ giảm dần; tuy nhiên Collins và Hammack vẫn diều hâu, nên CPI tối nay mới là phép thử.",
+   "source": {
+    "name": "FXStreet – Fed's Williams sees one final 2026 rate hike, none in 2027",
+    "url": "https://www.fxstreet.com/news/feds-williams-sees-one-final-2026-rate-hike-none-in-2027-202610131821"
+   },
+   "source2": {
+    "name": "Reuters (StreetInsider) – US inflation expectations are well anchored, Fed's Waller says",
+    "url": "https://www.streetinsider.com/Reuters/US+inflation+expectations+are+well+anchored%2C+Feds+Waller+says/27176744.html"
+   },
+   "time_vn": "Williams: tin 01:21 VN 14/10; Waller: 17:57 VN 13/10; đo vàng 01:00–02:30 VN 14/10"
+  },
+  {
+   "date": "2026-10-14",
+   "category": "Lợi suất",
+   "priority": 1,
+   "impact": "tăng",
+   "title": "Lợi suất Mỹ hạ từ đỉnh 24 năm khi giá năng lượng lùi: 10 năm ~5,19–5,22%, 2 năm ~4,77%, 30 năm ~5,56%",
+   "summary": "CNBC: lợi suất trái phiếu Mỹ giảm khi giá năng lượng hạ nhiệt, ngày thị trường trái phiếu mở lại sau lễ Columbus. Theo FinancialMarkets.com, lợi suất 10 năm giảm khoảng 4 điểm cơ bản về gần 5,20%, 2 năm (bám sát kỳ vọng Fed) về ~4,77%, 30 năm về ~5,56%. Dữ liệu Yahoo (^TNX): 10 năm 5,217% lúc 01:55 VN 14/10, so với 5,24% phiên trước. Bối cảnh: 10 năm vừa chạm mức cao nhất 24 năm tuần trước; Thống đốc Waller cho rằng mất vị thế trú ẩn của trái phiếu Mỹ có thể cộng thêm 50–70 điểm cơ bản vào lợi suất.",
+   "reason": "Ngắn hạn: lợi suất giảm làm chi phí cơ hội nắm giữ vàng thấp đi, hỗ trợ nhẹ. Nhưng mức 5,2% vẫn rất cao và có thể bật lại nếu CPI nóng. Trung – dài hạn: lợi suất thực cao kéo dài là lực cản lớn nhất của vàng năm nay; chỉ khi lợi suất 10 năm rơi rõ xuống dưới 5% thì vàng mới có nền tăng bền.",
+   "source": {
+    "name": "CNBC – U.S. Treasury yields fall as energy prices pull back",
+    "url": "https://www.cnbc.com/2026/10/13/us-treasurys-bonds-yields.html"
+   },
+   "source2": {
+    "name": "FinancialMarkets.com – Treasuries rally off 24-year highs, but a December Fed hike is still priced in",
+    "url": "https://www.financialmarkets.com/article/treasuries-rally-off-24-year-highs-but-a-december-fed-hike-is-still-priced-in"
+   },
+   "time_vn": "Phiên Mỹ 13/10 (19:30 VN 13/10 – 04:00 VN 14/10); ^TNX đo 01:55 VN 14/10"
+  },
+  {
+   "date": "2026-10-14",
+   "category": "Dầu mỏ",
+   "priority": 1,
+   "impact": "trung lập",
+   "title": "Dầu chốt phiên trái chiều: Brent 105,69 USD (−0,9%), WTI 94,14 USD (+0,4%, cao nhất từ 24/9)",
+   "summary": "Reuters (Scott DiSavino): Brent chốt 105,69 USD/thùng, giảm 96 cent so với mức 106,65 của thứ Hai (cao nhất kể từ 15/9); WTI tăng 40 cent lên 94,14 USD, giá chốt cao nhất kể từ 24/9. Kỳ vọng thỏa thuận diesel Mỹ – Nga giúp Nga bán thêm nhiên liệu kéo giá xuống, trong khi các vụ tấn công ở Ả Rập Xê Út và Yemen đe dọa nguồn cung giữ giá cao. Đầu phiên Á 14/10, Brent (BZ=F) lên 106,39 USD lúc 06:45 VN sau tin Aramco bị tấn công.",
+   "reason": "Ngắn hạn: dầu quanh 105–106 USD giữ kỳ vọng lạm phát cao trước CPI → hỗ trợ USD/lợi suất, bất lợi vàng. Trung – dài hạn: nếu dầu tiếp tục trên 100 USD vì chiến sự vùng Vịnh, Fed khó dừng tăng lãi; ngược lại nếu chiến tranh Iran kết thúc như ông Trump tuyên bố, dầu giảm mạnh, lạm phát hạ, đó là kịch bản tốt cho vàng qua kênh lãi suất.",
+   "source": {
+    "name": "Reuters (qua Financial Newsletter) – Oil prices settle mixed, focus on US-Russia diesel deal, Saudi Yemen attacks",
+    "url": "https://financialnewsletter.com/oil-prices-settle-mixed/"
+   },
+   "source2": {
+    "name": "Global Banking & Finance Review (Reuters) – Oil prices mixed amid US-Russia diesel deal",
+    "url": "https://www.globalbankingandfinance.com/oil-ticks-lower-russia-diesel-supply-prospects-counter-gulf/"
+   },
+   "time_vn": "Giá chốt NYMEX 14:30 ET 13/10 = 01:30 VN 14/10; Brent đầu phiên Á đo 06:45 VN 14/10"
+  },
+  {
+   "date": "2026-10-14",
+   "category": "Ngân hàng TW",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "Kazakhstan chuyển từ mua sang bán vàng: giảm tỷ trọng vàng trong dự trữ từ 78% xuống 75% trước cuối 2026",
+   "summary": "Bloomberg (qua Oninvest) và Kitco (đăng 15:37 UTC 13/10 = 22:37 VN): Phó Thống đốc NHTW Kazakhstan Aliya Moldabekova nói lợi suất trái phiếu Mỹ cao nhất 24 năm khiến USD hấp dẫn hơn và giảm sức hút của vàng; vàng đã chiếm khoảng 78% dự trữ ngoại hối (386 tấn, dự trữ 66,4 tỷ USD cuối tháng 9), 'giống danh mục một tài sản'. Mục tiêu giảm về 75% trước cuối năm, một nửa bằng bán quyền chọn và một nửa bán vàng vật chất (báo Kazakhstan ước khoảng 12 tấn, ~1,6 tỷ USD). Nếu vàng dưới 4.000 USD, tỷ trọng có thể tự giảm về mục tiêu.",
+   "reason": "Ngắn hạn: tin xấu về tâm lý vì NHTW mua vàng là trụ cột của đà tăng nhiều năm; khối lượng ~12 tấn không lớn nhưng tạo nguồn cung bán quanh vùng giá hiện tại. Trung – dài hạn: nếu thêm NHTW khác tái cân bằng khi lợi suất Mỹ cao, lực đỡ từ cầu chính phủ yếu đi; ngược lại Trung Quốc vẫn mua 23 tháng liên tiếp, nên chưa phải xu hướng chung. Mốc 4.000 USD là vùng cần theo dõi.",
+   "source": {
+    "name": "Kitco – 'Single-asset portfolio': Kazakhstan plans gold sales as holdings reach 78% of reserves",
+    "url": "https://www.kitco.com/news/article/2026-10-13/single-asset-portfolio-kazakhstan-plans-gold-sales-holdings-reach-78"
+   },
+   "source2": {
+    "name": "Oninvest (dẫn Bloomberg) – Kazakhstan switching from being one of the world's biggest gold buyers to a seller",
+    "url": "https://en.oninvest.com/article/kazakhstan-switching-from-being-one-of-the-world-s-biggest-gold-buyers-to-a-seller"
+   },
+   "time_vn": "Bloomberg đưa tin 12/10; Kitco đăng 22:37 VN 13/10"
+  },
+  {
+   "date": "2026-10-14",
+   "category": "Vàng",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "Sáng 14/10: vàng giao ngay ~4.158 USD, COMEX tháng 12 ~4.180 USD – giằng co chờ CPI 19:30",
+   "summary": "Giá vàng giao ngay (gold-api.com) 4.157,6 USD/oz lúc 06:55 VN 14/10. Vàng COMEX tháng 12 (GC=F, Yahoo) 4.179,8 USD lúc 06:45 VN; phiên 13/10 đi từ đỉnh ~4.222 USD (12:00 VN) xuống đáy ~4.171 (01:00 VN 14/10) rồi hồi về 4.180–4.189 sau phát biểu của Williams. Theo Reuters, giao ngay tăng 0,2% lên 4.178,97 USD lúc 9:19 sáng EDT (20:19 VN) nhờ USD và dầu giảm, nhưng không giữ được đà khi lợi suất và dầu bật lại chiều Mỹ. DXY 102,19 lúc 06:45 VN.",
+   "reason": "Ngắn hạn: vàng đi ngang – nghiêng giảm dưới vùng 4.180–4.200; nhà đầu tư thường đứng ngoài trước CPI. CPI lõi nóng có thể đẩy vàng thủng 4.150; CPI lõi dịu có thể kéo vàng về lại 4.200. Trung – dài hạn: USD gần đỉnh 18 tháng, lợi suất trên 5% và NHTW Kazakhstan bán ra là các lực cản; chiến sự vùng Vịnh là lực đỡ.",
+   "source": {
+    "name": "Reuters (qua The Financial Express) – Gold rises on weaker dollar, lower oil",
+    "url": "https://today.thefinancialexpress.com.bd/print/gold-rises-on-weaker-dollar-lower-oil-1791910313"
+   },
+   "source2": {
+    "name": "Kitco – Gold firms as dollar, yields and oil retreat before CPI (Kitco AM Report)",
+    "url": "https://www.kitco.com/news/article/2026-10-13/gold-firms-dollar-yields-and-oil-retreat-cpi-kitco-am-report"
+   },
+   "time_vn": "Giá đo 06:45–06:55 sáng 14/10 giờ VN"
+  },
+  {
+   "date": "2026-10-14",
    "category": "Ngân hàng TW",
    "title": "Fed Collins (Boston): sẽ cần tăng lãi thêm trước cuối 2026 – vàng COMEX tụt ~5 USD về quanh 4.181 sau phát biểu",
    "summary": "Chủ tịch Fed Boston Susan Collins phát biểu 4:00–4:45 chiều ET 13/10 (= 03:00–03:45 giờ VN 14/10) tại hội nghị ngân hàng khu vực Boston Fed. Reuters (16:01 ET): bà ủng hộ đợt tăng lãi tháng 9 lên 3,75–4,00% và hiện cho rằng 'sẽ phù hợp nếu tăng lãi thêm một chút trước cuối năm để đảm bảo lạm phát quay về mục tiêu 2% một cách kịp thời và bền vững'. Thời điểm hành động phụ thuộc dữ liệu tới. Bà lạc quan về tăng trưởng GDP và thị trường lao động gần toàn dụng, nhưng cảnh báo lạm phát tổng và lõi sẽ lại trên 2% vài tháng tới vì giá nhiên liệu tinh chế (jet, diesel, dầu sưởi), đầu tư AI, thuế quan và chiến tranh Trung Đông. CNBC chưa có bài cùng ngày; chưa thấy bản phát biểu đầy đủ trên trang Boston Fed. Phản ứng vàng (COMEX GC=F, Yahoo, nến 5 phút): 00:00 4.176,1 · 02:00 4.185,9 · 02:30 4.188,8 · 03:00 (bắt đầu) 4.186,2 · 03:15 4.183,0 · 03:20 chạm 4.180,7 · 03:30 4.180,8 · 03:40 4.181,2. Spot gold-api.com 4.160,3 USD lúc ~03:51 VN. DXY 102,19 (02:30) → 102,20 (03:00) → 102,21 (03:40). Lợi suất 10 năm (^TNX) dừng quanh 5,217% lúc 01:55 VN (phiên trái phiếu Mỹ đã hẹp).",
@@ -261,24 +387,6 @@
    "priority": 1
   },
   {
-   "date": "2026-10-12",
-   "category": "Lợi suất",
-   "title": "Lợi suất 10 năm Mỹ giữ 5,24% – gần mức cao nhất từ 2002; 20 năm 5,65%, 30 năm 5,60%",
-   "summary": "Thị trường trái phiếu tiền mặt Mỹ nghỉ lễ Columbus Day 12/10, lợi suất trái phiếu kho bạc 10 năm đứng ở khoảng 5,24% (CNBC), quanh mức cao nhất kể từ 2002. Theo đường cong lợi suất phiên thứ Sáu mà Kitco dẫn, kỳ hạn 20 năm ở 5,65% và 30 năm ở 5,60%. Kitco nhận định nhà đầu tư trái phiếu dài hạn đang đòi bù rủi ro lạm phát, rủi ro nguồn cung trái phiếu và rủi ro tài khóa cao hơn.",
-   "impact": "giảm",
-   "reason": "Lợi suất trên 5% làm tăng chi phí cơ hội của vàng (tài sản không sinh lãi). Thị trường trái phiếu mở cửa lại tối 13/10 giờ VN – nếu lợi suất tăng tiếp, vàng dễ bị ép; ngược lại, nếu nhà đầu tư coi nợ công Mỹ là rủi ro mất giá tiền tệ, đây có thể thành yếu tố hỗ trợ vàng về dài hạn.",
-   "source": {
-    "name": "CNBC – US10Y: U.S. 10 Year Treasury",
-    "url": "https://www.cnbc.com/quotes/US10Y"
-   },
-   "source2": {
-    "name": "Kitco – PM Report 12/10/2026",
-    "url": "https://www.kitco.com/news/article/2026-10-12/gold-silver-soften-markets-price-december-fed-hike-risk-kitco-pm-report"
-   },
-   "time_vn": "Thứ Hai 12/10 (Mỹ nghỉ lễ trái phiếu); phiên trái phiếu Mỹ mở lại ≈ tối 13/10 giờ VN",
-   "priority": 2
-  },
-  {
    "date": "2026-10-07",
    "category": "Ngân hàng TW",
    "title": "Trung Quốc mua vàng tháng thứ 23 liên tiếp: thêm khoảng 23 tấn trong tháng 9",
@@ -361,56 +469,6 @@
    "priority": 1
   },
   {
-   "date": "2026-10-10",
-   "category": "Chiến tranh",
-   "title": "Houthi tấn công sân bay Riyadh: ít nhất 12 người chết, hơn 300 người bị thương",
-   "summary": "Ngày 10/10, vụ tấn công thứ ba trong tuần vào sân bay quốc tế King Khalid (Riyadh) làm ít nhất 12 người chết, hơn 300 người bị thương – vụ tấn công đẫm máu nhất tại Ả Rập Xê Út trong hơn một thập kỷ; sân bay tạm dừng hoạt động. AP sau đó ghi nhận số người chết lên 13; Houthi cũng nhận tấn công cơ sở dầu khí ở miền đông Ả Rập Xê Út.",
-   "impact": "trung lập",
-   "reason": "Tác động hai chiều: rủi ro leo thang tạo nhu cầu trú ẩn, nhưng đồng thời đẩy giá dầu và lạm phát kỳ vọng lên – giữ lợi suất và USD cao, kìm vàng.",
-   "source": {
-    "name": "Reuters (qua Al-Monitor) – Houthi attack on Saudi airport kills 12",
-    "url": "https://www.al-monitor.com/originals/2026/10/houthi-attack-saudi-airport-kills-12-over-300-wounded-authorities-say"
-   },
-   "source2": {
-    "name": "AP – Saudis probe how defense systems failed",
-    "url": "https://apnews.com/article/saudi-yemen-houthis-riyadh-airport-40c6ab822df376688ce1a0955a044488"
-   },
-   "time_vn": "Ngày 10/10 giờ Riyadh (UTC+3, chậm hơn VN 4 giờ); nguồn không nêu giờ cụ thể",
-   "priority": 2
-  },
-  {
-   "date": "2026-10-09",
-   "category": "Lợi suất",
-   "title": "Lợi suất 30 năm hạ nhiệt từ đỉnh 2026, vàng hồi về gần 4.200 USD",
-   "summary": "Lợi suất trái phiếu Mỹ 30 năm đóng cửa 5,67% ngày 07/10 – mức cao nhất năm 2026 – rồi giảm về 5,60% ngày 08–09/10. Lợi suất 10 năm từ 5,28% xuống 5,24%. Hợp đồng vàng tương lai đóng cửa 4.216,3 USD ngày 09/10 (+47,1 USD), sau khi chạm đáy 4.091,2 USD giữa tuần.",
-   "impact": "tăng",
-   "reason": "Lợi suất giảm làm giảm chi phí cơ hội nắm giữ vàng (vàng không trả lãi); theo dõi từng ngày, vàng biến động ngược chiều lợi suất 30 năm.",
-   "source": {
-    "name": "US Treasury – Daily Yield Curve; FXRecap",
-    "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value=2026"
-   },
-   "source2": {
-    "name": "FXRecap: Gold rebounds as Treasury yields ease",
-    "url": "https://fxrecap.com/forex-news/top-stories/gold-rebounds-as-treasury-yields-ease"
-   },
-   "time_vn": "Giá đóng cửa phiên Mỹ 09/10 (≈ 04:00 sáng 10/10 giờ VN)",
-   "priority": 1
-  },
-  {
-   "date": "2026-10-08",
-   "category": "Trái phiếu",
-   "title": "Đấu giá 22 tỷ USD trái phiếu 30 năm: lợi suất 5,618% – cao nhất năm",
-   "summary": "Phiên đấu giá mở lại trái phiếu 30 năm ngày 08/10 trị giá 22 tỷ USD chốt ở 5,618%, tỷ lệ bid-to-cover 2,54 – lợi suất đấu giá 30 năm cao nhất năm 2026. Sau phiên đấu giá, lợi suất dài hạn hạ nhiệt.",
-   "impact": "trung lập",
-   "reason": "Lợi suất đấu giá cao phản ánh áp lực nguồn cung trái phiếu (gây sức ép lên vàng), nhưng nhu cầu đấu giá ổn định giúp lợi suất hạ sau đó – tác động hai chiều.",
-   "source": {
-    "name": "FXRecap (dẫn TreasuryDirect)",
-    "url": "https://fxrecap.com/forex-news/top-stories/gold-rebounds-as-treasury-yields-ease"
-   },
-   "time_vn": "Kết quả đấu giá 13:00 ET 08/10 = 00:00 ngày 09/10 giờ VN",
-   "priority": 2
-  },
-  {
    "date": "2026-10-09",
    "category": "Lợi suất",
    "title": "Lợi suất thực 10 năm (TIPS) ở 2,91% – cao hơn nhiều so với đầu năm",
@@ -487,24 +545,6 @@
    },
    "time_vn": "14:00 ET 28/10 = 01:00 ngày 29/10 giờ VN (họp báo 01:30)",
    "priority": 1
-  },
-  {
-   "date": "2026-10-09",
-   "category": "Tương quan",
-   "title": "Tương quan vàng – USD (DXY): DXY quanh 102, vàng giằng co 4.100–4.200",
-   "summary": "DXY đóng cửa 102,23 ngày 09/10 (102,04 ngày 01/10); giá vàng giao ngay đóng cửa 4.146,46 USD/oz ngày 09/10 (4.152,44 ngày 01/10). Tương quan nghịch vàng – DXY lịch sử khoảng -0,4 đến -0,6 (12 tháng), yếu đi trong giai đoạn ngân hàng trung ương mua vàng mạnh.",
-   "impact": "trung lập",
-   "reason": "USD đi ngang nên chưa tạo lực đẩy rõ ràng; lợi suất (đặc biệt lợi suất thực) đang là biến số chi phối hơn.",
-   "source": {
-    "name": "Exa Markets – DXY & XAUUSD (01–09/10/2026)",
-    "url": "https://exa.ai/library/markets/index/DXY?date=2026-10-12&view=series&from=2026-10-01"
-   },
-   "source2": {
-    "name": "Convex – DXY vs Gold",
-    "url": "https://convextrade.com/compare/dxy-vs-gold"
-   },
-   "time_vn": "Giá đóng cửa 09/10 (≈ 04:00 sáng 10/10 giờ VN)",
-   "priority": 2
   }
  ],
  "us_schedule": [
