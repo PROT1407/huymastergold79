@@ -31,3 +31,13 @@ Nội dung chỉ mang tính tham khảo, không phải lời khuyên đầu tư.
 - **Forex:** sửa `data/fund.json` và `data/follow-accounts.json` bằng số liệu thật, thêm `verify_url` (Myfxbook/FXBlue…) và đặt `"example": false` để ẩn nhãn "SỐ LIỆU VÍ DỤ MẪU".
 - **Lịch live:** sửa `data/live-schedule.json` (day 0=CN…6=T7, giờ VN). Khi đang live có thể điền `liveVideoId` để hiện khung chat.
 - **Tin vĩ mô:** thêm tin vào đầu mảng `items` trong `data/macro-news.json` (category: Lợi suất/Trái phiếu/Tương quan/Fed/FOMC/Chiến tranh – cập nhật hằng ngày gồm cả tin chiến tranh & địa chính trị ảnh hưởng vàng; impact: tăng/giảm/trung lập; luôn ghi nguồn uy tín có link – không đăng tin từ tài liệu nội bộ/cá nhân). Lịch FOMC ở `fomc.meetings`.
+
+## SEO – trang tĩnh cho Google (bắt buộc trước khi push)
+Nội dung chiến lược/tin vĩ mô/giá vàng được JS vẽ từ JSON nên Google đọc được rất ít. Script `scripts/build-seo.py` sinh trang HTML tĩnh:
+`bai/*.html` (nhận định H79 theo phiên, bản tin vĩ mô theo ngày, giá vàng trong nước theo ngày), `bai/index.html` (Kho bài viết), `sitemap.xml`, `robots.txt`, đồng bộ canonical/OG trang chính và khối "Bài viết mới" trên trang chủ.
+
+**Mọi routine cập nhật dữ liệu phải chạy lệnh sau ngay trước khi commit/push:**
+```
+python3 scripts/build-seo.py
+```
+Script idempotent (chạy lại không đổi gì nếu JSON không đổi), chỉ hiển thị nội dung có trong JSON, không dùng thư viện ngoài. Đổi tên miền: sửa `BASE_URL` ở đầu script rồi chạy lại.

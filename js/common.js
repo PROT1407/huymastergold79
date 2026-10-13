@@ -48,6 +48,7 @@
       ['kien-thuc.html#doc-bieu-do', 'Đọc biểu đồ cơ bản', 'Nến, hỗ trợ, MA, RSI'],
       ['kien-thuc.html#don-vi', 'Đơn vị & quy đổi', 'Lượng, chỉ, oz, gram'],
       ['kien-thuc.html#yeu-to', 'Yếu tố tác động giá vàng', 'USD, lãi suất, lạm phát']]],
+    ['bai', 'bai/index.html', '📰 Bài viết'],
     ['about', 'lien-he.html', '👤 Liên hệ']
   ];
   const menu = M.map(([k, href, label, sub, mega]) => `<li><a href="${href}" class="${k === page ? 'on' : ''}">${label}${sub ? ' ▾' : ''}</a>${sub ? `<div class="dd${mega ? ' mega' : ''}">${sub.map(s => `<a href="${s[0]}">${s[1]}<small>${s[2]}</small></a>`).join('')}</div>` : ''}</li>`).join('');

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /scripts/
+
+Sitemap: https://prot1407.github.io/huymastergold79/sitemap.xml
