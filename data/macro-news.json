@@ -55,6 +55,24 @@
   {
    "date": "2026-10-14",
    "category": "Ngân hàng TW",
+   "title": "Fed Collins (Boston): sẽ cần tăng lãi thêm trước cuối 2026 – vàng COMEX tụt ~5 USD về quanh 4.181 sau phát biểu",
+   "summary": "Chủ tịch Fed Boston Susan Collins phát biểu 4:00–4:45 chiều ET 13/10 (= 03:00–03:45 giờ VN 14/10) tại hội nghị ngân hàng khu vực Boston Fed. Reuters (16:01 ET): bà ủng hộ đợt tăng lãi tháng 9 lên 3,75–4,00% và hiện cho rằng 'sẽ phù hợp nếu tăng lãi thêm một chút trước cuối năm để đảm bảo lạm phát quay về mục tiêu 2% một cách kịp thời và bền vững'. Thời điểm hành động phụ thuộc dữ liệu tới. Bà lạc quan về tăng trưởng GDP và thị trường lao động gần toàn dụng, nhưng cảnh báo lạm phát tổng và lõi sẽ lại trên 2% vài tháng tới vì giá nhiên liệu tinh chế (jet, diesel, dầu sưởi), đầu tư AI, thuế quan và chiến tranh Trung Đông. CNBC chưa có bài cùng ngày; chưa thấy bản phát biểu đầy đủ trên trang Boston Fed. Phản ứng vàng (COMEX GC=F, Yahoo, nến 5 phút): 00:00 4.176,1 · 02:00 4.185,9 · 02:30 4.188,8 · 03:00 (bắt đầu) 4.186,2 · 03:15 4.183,0 · 03:20 chạm 4.180,7 · 03:30 4.180,8 · 03:40 4.181,2. Spot gold-api.com 4.160,3 USD lúc ~03:51 VN. DXY 102,19 (02:30) → 102,20 (03:00) → 102,21 (03:40). Lợi suất 10 năm (^TNX) dừng quanh 5,217% lúc 01:55 VN (phiên trái phiếu Mỹ đã hẹp).",
+   "impact": "giảm",
+   "reason": "Giọng diều hâu rõ: Collins xác nhận còn một lần tăng lãi trước cuối 2026 (thị trường đang nghiêng về tháng 12 hơn là họp 27–28/10). Theo lý thuyết, Fed còn thắt chặt + lợi suất cao bất lợi vàng ngắn hạn — thực tế GC=F giảm khoảng 5–8 USD (4.186 → ~4.181) trong 20–40 phút sau giờ mở màn. Dài hạn: nếu CPI 19:30 VN tối 14/10 nóng, xác suất tăng lãi tháng 12 tăng và vàng dễ tiếp tục chịu áp lực; nếu CPI dịu, bài của Collins ít tác động hơn vì bà không bỏ phiếu năm nay.",
+   "source": {
+    "name": "Reuters (StreetInsider) – Fed's Collins sees another rate hike on the table before end of 2026",
+    "url": "https://www.streetinsider.com/Reuters/Feds+Collins+sees+another+rate+hike+on+the+table+before+end+of+2026/27181026.html"
+   },
+   "source2": {
+    "name": "Boston Fed – 25th Annual Regional & Community Bankers Conference (Collins 4:00–4:45 p.m. ET)",
+    "url": "https://www.bostonfed.org/news-and-events/events/regional-community-bankers-conference/25th-annual-regional-and-community-bankers-conference.aspx"
+   },
+   "time_vn": "Collins phát biểu 03:00–03:45 ngày 14/10 giờ VN; Reuters 03:01 VN; đo vàng đến ~03:40 VN",
+   "priority": 1
+  },
+  {
+   "date": "2026-10-14",
+   "category": "Ngân hàng TW",
    "title": "Fed Barkin: lạm phát 2% 'không phải kỳ lân', Fed đạt được; thấy rõ tác động của đầu tư AI lên lạm phát – vàng gần như đứng yên quanh 4.180 USD",
    "summary": "Chủ tịch Fed Richmond Tom Barkin (không bỏ phiếu năm nay, bỏ phiếu 2027) phát biểu từ 00:00 giờ VN 14/10. Hai tít nhanh (FinancialJuice, Newsquawk): 00:16 VN 'lạm phát 2% không phải kỳ lân nào đó, đó là điều chúng tôi có thể đạt được'; 00:44 VN 'chúng tôi có thể thấy tác động của đầu tư AI lên lạm phát Mỹ'. Đến 00:53 VN, CNBC và Reuters chưa có bài; chưa có bài phát biểu đăng trên trang Fed Richmond. Phản ứng vàng (COMEX GC=F, Yahoo, nến 5 phút): 21:15 4.193,0 · 23:45 4.180,1 · 00:00 (bắt đầu phát biểu) 4.175,9 · 00:15 4.180,1 · 00:25 chạm 4.176,1 · 00:43 4.179,7. Vàng giao ngay (gold-api.com) 4.148,4 USD lúc 00:53 VN. Chỉ số USD (DXY) đi ngang 102,27 → 102,25; lợi suất 10 năm Mỹ 5,234% → 5,219%.",
    "impact": "trung lập",
