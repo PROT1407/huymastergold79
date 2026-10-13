@@ -53,6 +53,60 @@
  },
  "items": [
   {
+   "date": "2026-10-13",
+   "category": "Vàng",
+   "title": "Vàng hồi từ đáy đầu phiên Á, áp sát 4.200 USD: dầu hạ nhiệt, USD và lợi suất Mỹ giảm",
+   "summary": "Đầu phiên Á 13/10 vàng bị đẩy xuống quanh 4.170 USD (giá dầu cao, USD mạnh) rồi đảo chiều tăng. Reuters (qua The Edge Malaysia): vàng giao ngay +0,4% lên 4.185,69 USD/oz lúc 03:56 GMT (10:56 giờ VN); vàng tương lai tháng 12 +0,5% lên 4.209,90 USD. Lúc 05:46 GMT (12:46 VN) vàng giao ngay 4.189,73 USD (+0,56%), tương lai 4.216,87 USD. Theo Yahoo Finance, GC=F từ đáy 4.173,7 (khung 08:30 VN) lên 4.213,8 lúc 13:57 VN (≈ +1,0%); gold-api.com XAU 4.190,3 USD lúc 14:06 VN.",
+   "impact": "tăng",
+   "reason": "Giá dầu giảm làm dịu lo ngại lạm phát → bớt áp lực Fed thắt chặt, hỗ trợ vàng ngắn hạn. Kháng cự 4.204–4.218 USD (FXStreet); dài hạn vẫn phụ thuộc CPI Mỹ 14/10 và lập trường diều hâu của Fed.",
+   "source": {
+    "name": "The Edge Malaysia (Reuters) – Gold ticks up as oil eases; spotlight on US inflation data",
+    "url": "https://theedgemalaysia.com/node/821614"
+   },
+   "source2": {
+    "name": "FXStreet – Gold advances to $4,200 as USD eases; Fed hawkishness caps upside",
+    "url": "https://www.fxstreet.com/news/gold-bounces-off-4-150-amid-modest-usd-pullback-but-stays-in-two-week-old-range-202610130353"
+   },
+   "time_vn": "Sáng – trưa 13/10 giờ VN (10:56 và 12:46)",
+   "priority": 1
+  },
+  {
+   "date": "2026-10-13",
+   "category": "Tương quan",
+   "title": "USD lùi khỏi gần đỉnh 18 tháng (DXY 102,39), lợi suất 10 năm Mỹ giảm 5 điểm cơ bản về 5,192%",
+   "summary": "Reuters (Singapore, 13/10): chỉ số USD giảm 0,2% xuống 102,39 trong phiên Á do chốt lời; lợi suất trái phiếu Mỹ kỳ hạn 10 năm giảm 5 điểm cơ bản xuống 5,192% khi thị trường trái phiếu mở lại sau ngày nghỉ lễ thứ Hai. Không có dòng tiền trú ẩn đổ vào USD dù chứng khoán châu Á bán tháo (Kospi −7%, Nikkei −2,7%).",
+   "impact": "tăng",
+   "reason": "USD và lợi suất cùng giảm làm giảm chi phí cơ hội nắm giữ vàng → hỗ trợ ngắn hạn. Lợi suất 10 năm vẫn trên 5% nên dư địa tăng dài hạn bị giới hạn nếu Fed tiếp tục tăng lãi suất.",
+   "source": {
+    "name": "Global Banking & Finance Review (Reuters) – Dollar slips as oil prices sink, bond yields stabilise",
+    "url": "https://www.globalbankingandfinance.com/dollar-holds-near-18-month-high-geopolitical-risks-rise/"
+   },
+   "source2": {
+    "name": "investingLive – Asia-Pacific market news: Asian equities sold heavily, Kospi down 7%",
+    "url": "https://investinglive.com/news/investinglive-asia-pacific-market-news-asian-equities-sold-heavily-kospi-down-7/"
+   },
+   "time_vn": "Phiên Á 13/10 giờ VN",
+   "priority": 1
+  },
+  {
+   "date": "2026-10-13",
+   "category": "Dầu mỏ",
+   "title": "Dầu giảm sau 3 phiên tăng: Brent về ~105,2–105,8 USD nhờ kỳ vọng thêm diesel Nga, Ả Rập Xê Út mở rộng đường ống tránh Hormuz",
+   "summary": "Brent giảm 0,8–1,4% về khoảng 105,2–105,8 USD/thùng, WTI ~93 USD trong phiên Á 13/10. Nga đồng ý xuất thêm diesel theo đề nghị của ông Trump; Bộ trưởng Năng lượng Ả Rập Xê Út cho biết chuyển đổi đường ống khí sang chở dầu có thể thêm 1,2 triệu thùng/ngày trong 7–8 tuần, xuất qua Biển Đỏ tránh eo Hormuz. Rủi ro vẫn còn: Houthi tấn công Ả Rập Xê Út, tàu chở dầu bị tấn công ở Hormuz. Fed Cleveland Hammack (Bloomberg) ủng hộ điều chỉnh lãi suất nhỏ, thường xuyên hơn.",
+   "impact": "tăng",
+   "reason": "Dầu giảm → kỳ vọng lạm phát dịu → hỗ trợ vàng ngắn hạn. Nếu căng thẳng Trung Đông đẩy dầu lên lại, kênh lạm phát – Fed diều hâu sẽ lại gây áp lực lên vàng.",
+   "source": {
+    "name": "CNBC TV18 – Oil prices slip after three-day rally as West Asia war threatens supply recovery",
+    "url": "https://www.cnbctv18.com/market/commodities/oil-prices-brent-wti-crude-west-asia-war-supply-recovery-russian-diesel-exports-saudi-houthi-attack-106-dollars-20010376.htm"
+   },
+   "source2": {
+    "name": "CNBC TV18 – Asian stocks fall as AI selloff deepens ahead of US earnings",
+    "url": "https://www.cnbctv18.com/market/asian-stocks-share-price-msci-asia-pacific-kospi-nikkei-225-topix-hang-seng-gift-nifty-ai-selloff-us-earnings-20010379.htm"
+   },
+   "time_vn": "Phiên Á 13/10 giờ VN",
+   "priority": 1
+  },
+  {
    "date": "2026-10-12",
    "category": "Chiến tranh",
    "title": "Zelenskyy: Nga vi phạm 'ngừng bắn năng lượng'; Brent đóng cửa 106,65 USD, Iran chưa mở lại Hormuz",
