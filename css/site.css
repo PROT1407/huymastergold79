@@ -171,3 +171,8 @@ footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:24px}foote
 .vg-src{margin-top:14px}.vg-src ul{padding-left:18px}
 @media(max-width:640px){.vg-row2{grid-template-columns:1fr}.vg-grid{grid-template-columns:1fr}.vg-pk b{font-size:1.1rem}}
 @media(prefers-reduced-motion:reduce){.vg-line{animation:none;stroke-dashoffset:0}.vg-big,.vg-dot{animation:none}}
+/* Mobile overflow fixes (390px) */
+.grid>*,.live-grid>*{min-width:0}
+@media(max-width:640px){.chips{flex-wrap:wrap!important;overflow:visible!important;justify-content:center!important}.chips a,.chips button{flex:0 1 auto!important}
+.card{max-width:100%;padding:16px}.card h2,.card h3{flex-wrap:wrap}.unit-toggle{margin-left:0}
+.tbl{display:block;max-width:100%;overflow-x:auto}.card iframe{max-width:100%}.card p,.card a{overflow-wrap:anywhere}}
