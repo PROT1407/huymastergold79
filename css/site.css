@@ -197,3 +197,9 @@ footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:24px}foote
 .nt-qr{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;color:var(--muted)}.nt-qr img{width:120px;border-radius:12px;border:2px solid var(--gold)}
 @media(max-width:640px){.nt-qr{display:none}.nt-btns .btn{flex:1;text-align:center}}
 @media(prefers-reduced-motion:reduce){.sb.nt,.nt-bell,.rxb.pop{animation:none}}
+/* Bình luận Disqus */
+.cm-card{padding:20px;border-radius:20px;border:1px solid var(--line);background:linear-gradient(135deg,rgba(240,185,11,.1),var(--card) 50%);box-shadow:var(--shadow)}
+.cm-h{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;justify-content:space-between;margin-bottom:12px}.cm-h h2{font-size:1.35rem;font-weight:800;color:var(--gold)}
+#disqus_thread{background:#fff;border-radius:14px;padding:0 12px;min-height:0}#disqus_thread:not(:empty){padding:12px;min-height:200px}.cm-note{margin-top:10px}
+.sb.cm{background:#2e9fff;position:relative;font-size:1rem}.sb-n{position:absolute;top:-4px;right:-4px;min-width:18px;height:18px;padding:0 4px;border-radius:9px;background:var(--down);color:#fff;font-size:.66rem;display:grid;place-items:center;font-weight:800;line-height:1}
+@media(max-width:640px){.cm-card{padding:14px}#disqus_thread:not(:empty){padding:8px}}

@@ -37,15 +37,34 @@
     scan();
     if (!document.body.hasAttribute('data-engage')) return;
     const u = encodeURIComponent(location.href), t = encodeURIComponent(document.title);
+    const SN = 'huymastergold79', PG = (location.pathname.split('/').pop() || 'index.html'), PID = 'hmg79-' + PG.replace('.html', ''), PURL = 'https://prot1407.github.io/huymastergold79/' + PG;
     const bar = document.createElement('nav'); bar.className = 'sbar'; bar.setAttribute('aria-label', 'Chia sẻ');
     bar.innerHTML = `<a class="sb fb" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=${u}" title="Chia sẻ Facebook">f</a>
       <a class="sb za" target="_blank" rel="noopener" href="https://zalo.me/share?u=${u}" title="Chia sẻ Zalo">Zalo</a>
       <a class="sb tg" target="_blank" rel="noopener" href="https://t.me/share/url?url=${u}&text=${t}" title="Chia sẻ Telegram">✈</a>
       <button type="button" class="sb cp" title="Sao chép link">🔗</button>
+      <a class="sb cm" href="#binh-luan" title="Bình luận">💬<span class="disqus-comment-count sb-n" data-disqus-identifier="${PID}" data-disqus-url="${PURL}">0</span></a>
       <a class="sb nt" href="#nhan-tin" title="Nhận tin & thảo luận">🔔</a>`;
     document.body.appendChild(bar); document.body.classList.add('has-sbar');
     bar.querySelector('.cp').onclick = e => { const b = e.currentTarget; (navigator.clipboard ? navigator.clipboard.writeText(location.href) : Promise.reject()).then(() => { b.textContent = '✓'; b.classList.add('ok'); setTimeout(() => { b.textContent = '🔗'; b.classList.remove('ok'); }, 1500); }).catch(() => prompt('Sao chép link:', location.href)); };
     const main = document.querySelector('main');
+    /* Bình luận Disqus – chỉ tải khi cuộn tới / bấm */
+    if (main && !document.getElementById('binh-luan')) {
+      const cs = document.createElement('section'); cs.id = 'binh-luan'; cs.className = 'cm-card sec';
+      cs.innerHTML = `<div class="cm-h"><h2>💬 Bình luận</h2><span class="muted small">Đăng nhập bằng Google, Facebook, X hoặc tài khoản Disqus</span></div>
+        <button type="button" class="btn cm-load">💬 Xem & viết bình luận</button><div id="disqus_thread"></div>
+        <p class="small muted cm-note">Bình luận do Disqus cung cấp (có quảng cáo). Vui lòng trao đổi văn minh; nội dung không phải lời khuyên đầu tư.</p>`;
+      main.appendChild(cs);
+      let loaded = false;
+      const loadDisqus = () => { if (loaded) return; loaded = true; cs.querySelector('.cm-load').remove();
+        window.disqus_config = function () { this.page.url = PURL; this.page.identifier = PID; this.page.title = document.title; this.language = 'vi'; };
+        const d = document.createElement('script'); d.src = 'https://' + SN + '.disqus.com/embed.js'; d.setAttribute('data-timestamp', +new Date()); d.async = true; document.body.appendChild(d); };
+      cs.querySelector('.cm-load').onclick = loadDisqus;
+      if ('IntersectionObserver' in window) { const o = new IntersectionObserver(es => { if (es.some(x => x.isIntersecting)) { o.disconnect(); loadDisqus(); } }, { rootMargin: '300px' }); o.observe(cs); }
+      if (location.hash === '#binh-luan') loadDisqus();
+      bar.querySelector('.cm').addEventListener('click', loadDisqus);
+      const c = document.createElement('script'); c.id = 'dsq-count-scr'; c.src = 'https://' + SN + '.disqus.com/count.js'; c.async = true; document.body.appendChild(c);
+    }
     if (main && !document.getElementById('nhan-tin')) {
       const c = document.createElement('section'); c.id = 'nhan-tin'; c.className = 'nt-card sec';
       c.innerHTML = `<div class="nt-l"><span class="nt-bell">🔔</span><div><h2>Nhận tin vàng mỗi ngày</h2><p>Nhận định H79, tin vĩ mô và cảnh báo biến động – gửi thẳng tới điện thoại. Trao đổi, góp ý trực tiếp trong nhóm.</p>
