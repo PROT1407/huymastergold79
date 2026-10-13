@@ -1,6 +1,51 @@
 {
   "strategies": [
     {
+      "id": "2026-10-13-phien-au-1425",
+      "date": "2026-10-13",
+      "time": "14:25",
+      "session": "Phiên Âu",
+      "title": "Phiên Âu 13/10: vàng hồi lên 4.212, vượt EMA H4 nhưng D1 vẫn giảm – ưu tiên bán hồi 4.229 – 4.246 trước CPI",
+      "trend": "Giảm trên D1 (giá dưới EMA20 4.245,9 và EMA50 4.308,2); H4 hồi phục ngắn hạn – giá đã vượt lên trên EMA20/EMA50 H4 (4.196 – 4.198), tích lũy 4.207 – 4.225 từ trưa nay. Xu hướng lớn vẫn là giảm, nhịp hồi chỉ là kỹ thuật.",
+      "trendType": "down",
+      "support": [
+        4204,
+        4174,
+        4140
+      ],
+      "resistance": [
+        4229,
+        4242,
+        4268
+      ],
+      "entryZones": [
+        "Mua hồi ngắn (thăm dò, khối lượng nhỏ): 4.196 – 4.204 USD/oz (EMA20 H4 4.196,1 · EMA50 H4 4.197,7 · pivot P 4.203,7), dừng lỗ dưới 4.186 (dưới đáy nến 1h 09:00 VN 4.187,0); mục tiêu 4.224 – 4.229",
+        "Mua mạnh: 4.165 – 4.178 USD/oz (đáy 12/10 4.178,1 · đáy phiên Á 13/10 4.173,7 · đáy 01/10 4.169,4 · pivot S1 4.165,0), dừng lỗ dưới 4.148 (dưới đáy 05/10 4.150,4)"
+      ],
+      "sellZones": [
+        "Bán hồi (ưu tiên): 4.229 – 4.246 USD/oz (pivot R1 4.229,2 · đỉnh 09/10 4.233,7 · đỉnh 12/10 4.242,3 · EMA20 D1 4.245,9), dừng lỗ trên 4.262 (trên đỉnh swing 02/10 4.259,0); mục tiêu 4.204 rồi 4.178",
+        "Bán mạnh: 4.259 – 4.268 USD/oz (đỉnh swing 02/10 4.259,0 · pivot R2 4.267,9), dừng lỗ trên 4.296 (trên pivot R3 4.293,4)",
+        "Nến H4 đóng dưới 4.196 (thủng EMA H4) → bỏ lệnh mua hồi, chờ vùng 4.165 – 4.178; đóng cửa ngày trên 4.260 → bỏ kịch bản giảm"
+      ],
+      "scenarios": [
+        "Tin Mỹ (giờ VN, ForexFactory): hôm nay 13/10 không có tin đỏ · 19:30 thứ Tư 14/10 CPI (dự báo 0,6% m/m, 3,6% y/y; lõi 0,2% m/m, 2,5% y/y) · 19:30 thứ Năm 15/10 PPI (0,6% m/m, lõi 0,3%) + doanh số bán lẻ (0,3%, lõi 0,6%) · 10:30 thứ Sáu 16/10 Chủ tịch Fed Warsh phát biểu.",
+        "Phiên Âu chính: giữ trên 4.196 → giá có thể test vùng 4.229 – 4.242 (R1, đỉnh 09/10 và 12/10). Đây là vùng bán hồi ưu tiên khi xuất hiện nến H1 từ chối (râu trên dài/nhấn chìm giảm), mục tiêu 4.204 rồi 4.178.",
+        "Phá xuống: nến H4 đóng dưới 4.196 → nhịp hồi thất bại, giá quay về 4.174 – 4.165; thủng 4.165 → mở đường về 4.140 (pivot S2). Phá lên: nến H4 đóng trên 4.246 (vượt EMA20 D1) → mở đường 4.259 – 4.268, không đuổi mua, chờ giá hồi về kiểm tra lại.",
+        "Trước CPI thị trường dễ đi biên hẹp và quét 2 đầu: giảm khối lượng, hạn chế ôm lệnh qua 19:30 14/10; không vào lệnh trong 5 phút trước/sau giờ ra tin, chờ nến M15 đóng cửa xác nhận."
+      ],
+      "physicalAdvice": "Vàng đang có xu hướng giảm dài và sâu, trong trung – dài hạn có thể về dưới mốc 100 triệu/lượng. Người mua vàng vật chất nên chờ mốc này hoặc một thời điểm thích hợp hơn.",
+      "macro": [
+        "CNBC (Reuters, 13/10): đầu phiên Á vàng giao ngay giảm 0,2% về 4.164,45 USD (09:01 giờ VN) do USD neo gần đỉnh 18 tháng; CME FedWatch: 21% khả năng Fed tăng lãi suất tháng 10, 88% cho tháng 12. Chủ tịch Fed Cleveland Hammack muốn chuyển 'tương đối nhanh' sang lập trường thắt chặt hơn.",
+        "CNBC (Reuters): Ả Rập Xê Út hứng thêm loạt tên lửa/drone, sân bay Riyadh tiếp tục đóng sau vụ Houthi tấn công nhà ga – rủi ro địa chính trị Trung Đông vẫn cao.",
+        "Reuters (Singapore, 13/10): chỉ số USD giảm 0,2% về 102,39; lợi suất trái phiếu Mỹ 10 năm giảm 5 điểm cơ bản về 5,192%; Brent giảm 1,4% về 105,20 USD/thùng – dầu, USD và lợi suất cùng hạ nhiệt giúp vàng hồi.",
+        "Reuters (12:46 giờ VN): vàng giao ngay +0,56% lên 4.189,73 USD, vàng tương lai tháng 12 +0,63% lên 4.216,87 USD nhờ dầu giảm làm dịu lo ngại lạm phát; giới phân tích cảnh báo CPI nóng hơn dự báo sẽ kéo vàng giảm lại.",
+        "BofA (qua investingLive): dự báo vàng bình quân khoảng 4.000 USD trong quý IV, hồi lên khoảng 4.800 USD năm 2027; chỉ tạo đáy khi lo ngại lạm phát và chiến sự Iran hạ nhiệt và Fed dừng tăng lãi suất."
+      ],
+      "notes": "Số liệu kỹ thuật dùng hợp đồng vàng tương lai COMEX (GC=F, Yahoo Finance, trễ khoảng 10 phút); giá giao ngay XAU/USD thấp hơn khoảng 18 USD (gold-api.com: 4.194,2 lúc 14:21 ngày 13/10 giờ VN) – khi đặt lệnh XAU/USD hãy trừ khoảng 18 USD so với các mốc trên.",
+      "dataTime": "Dữ liệu: COMEX GC=F – giá 4.212,6 lúc 14:11 ngày 13/10/2026 giờ VN; D1: EMA20 4.245,9 · EMA50 4.308,2; H4 (ghép từ nến 1h): EMA20 4.196,1 · EMA50 4.197,7; pivot cổ điển từ phiên 12/10 (H 4.242,3 · L 4.178,1 · C 4.190,6).",
+      "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư."
+    },
+    {
       "id": "2026-10-13-phien-a-0725",
       "date": "2026-10-13",
       "time": "07:25",
