@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <p class="small muted">${e(pk.note)} – ${a(pk.source)}</p></div>` : ''}
       </div>
       <div class="card vg-an"><h3>📝 Nhận định H79</h3><ul>${(d.analysis || []).map(x => `<li>${e(x)}</li>`).join('')}</ul></div>
-      <div class="vg-adv"><b>💡 Lời khuyên:</b> ${e(d.advice)}</div>
+      <div class="vg-adv"><b>💡 Lời khuyên:</b> ${e(d.advice)}</div><div class="rx" data-rx="vn|${e((d.updated_vn || '').slice(-10))}"></div>
       <div class="small muted vg-src"><b>Nguồn & ghi chú:</b> Giá thương hiệu: ${vt} (tổng hợp SJC, DOJI, PNJ, Bảo Tín Minh Châu). Giá thế giới: ${a(d.sources.gold_api, 'gold-api.com')} lúc ${new Date(w.xau_time_utc).toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' })}; tỷ giá ${Math.round(w.usdvnd).toLocaleString('vi-VN')} VND/USD (${a(d.sources.fx, 'open.er-api.com')}, tỷ giá thị trường); quy đổi = USD/oz × USD/VND × 1,20565, chưa gồm thuế phí.
       ${(d.refs || []).map(r => `<div style="margin-top:6px">📰 ${a(r, r.name)}<ul>${(r.facts || []).map(f => `<li>${e(f)}</li>`).join('')}</ul></div>`).join('')}<p><i>Nội dung tham khảo, không phải lời khuyên đầu tư.</i></p></div>`;
   }).catch(err => { console.warn(err); ['vn-daily', 'vn-home'].forEach(i => { if ($(i)) $(i).innerHTML = '<p class="muted">Chưa tải được dữ liệu vàng trong nước.</p>'; }); });
