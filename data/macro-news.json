@@ -55,6 +55,56 @@
   {
    "date": "2026-10-13",
    "category": "Vàng",
+   "title": "Đầu phiên Mỹ: vàng giữ sắc xanh quanh 4.187 USD khi USD, lợi suất và dầu cùng lùi trước CPI",
+   "summary": "Kitco (12:54 GMT = 19:54 giờ VN): vàng giao ngay quanh 4.186,90 USD/oz (+0,39%), bạc 60,21 USD. Chỉ số USD lùi về ~102,3 sau khi chạm mức cao nhất từ tháng 4/2025; lợi suất 10 năm Mỹ quanh 5,19% khi trái phiếu giao dịch lại sau ngày nghỉ lễ. Dầu giảm khoảng 2%: Brent ~104,63 USD, WTI ~91,85 USD do kỳ vọng thêm diesel Nga, dù rủi ro Hormuz – Houthi vẫn còn. Nền dữ liệu: bảng lương tháng 9 chỉ +29.000 việc làm, thất nghiệp 4,2%; kỳ vọng lạm phát 1 năm (ĐH Michigan) lên 4,7%. Thị trường thấy khả năng Fed tăng lãi suất tháng 10 thấp nhưng vẫn đặt cược cao cho tháng 12.",
+   "impact": "tăng",
+   "reason": "Ngắn hạn: USD, lợi suất, dầu cùng giảm → hỗ trợ vàng; kháng cự 4.207 rồi vùng 4.217–4.227 USD, hỗ trợ 4.181 và 4.155 USD (Kitco). Quyết định là CPI 19:30 tối mai 14/10 giờ VN: CPI lõi nóng hơn dự báo dễ khiến vàng quay đầu giảm vì cược Fed tăng lãi tháng 12; CPI mát hơn mở đường vượt 4.227 USD. Dài hạn: rủi ro Vùng Vịnh vẫn giữ nhu cầu trú ẩn, nhưng lợi suất trên 5% còn là lực cản lớn.",
+   "source": {
+    "name": "Kitco – Gold firms as dollar, yields and oil retreat before CPI (Kitco AM Report)",
+    "url": "https://www.kitco.com/news/article/2026-10-13/gold-firms-dollar-yields-and-oil-retreat-cpi-kitco-am-report"
+   },
+   "source2": {
+    "name": "CNBC – The price of gold today, Oct. 13, 2026 (giao ngay 4.179,27 USD lúc 9:00 ET)",
+    "url": "https://www.cnbc.com/select/the-price-of-gold-today-oct-13-2026/"
+   },
+   "time_vn": "Kitco đăng 19:54 tối 13/10 giờ VN (trước giờ mở cửa phố Wall)",
+   "priority": 1
+  },
+  {
+   "date": "2026-10-13",
+   "category": "Lợi suất",
+   "title": "BlackRock nâng trái phiếu Mỹ lên 'tăng tỷ trọng' lần đầu sau ~6 năm, cho rằng thị trường cược Fed thắt chặt quá đà",
+   "summary": "CNBC: BlackRock (quản lý hơn 15.300 tỷ USD) nâng khuyến nghị trái phiếu Chính phủ Mỹ lên overweight, hạ cổ phiếu Mỹ về trung lập. Hãng cho rằng kỳ vọng Fed tăng thêm 160 điểm cơ bản trong 12 tháng tới là 'quá đà', ưu tiên trái phiếu ngắn hạn. Lợi suất 10 năm Mỹ đã tăng khoảng 110 điểm cơ bản từ đầu năm lên quanh 5,25%, phần lớn do giá năng lượng cao vì xung đột Trung Đông.",
+   "impact": "tăng",
+   "reason": "Nếu dòng tiền lớn quay lại mua trái phiếu và kỳ vọng Fed thắt chặt hạ nhiệt, lợi suất có thể đã gần đỉnh → giảm chi phí cơ hội nắm giữ vàng, hỗ trợ vàng trung – dài hạn. Ngắn hạn đây mới là quan điểm, chưa thay đổi lộ trình Fed; CPI tuần này vẫn quyết định.",
+   "source": {
+    "name": "CNBC – Time to lock in Treasury yields? BlackRock unveils bonds pivot",
+    "url": "https://www.cnbc.com/2026/10/13/blackrock-treasurys-bonds-us-equities.html"
+   },
+   "time_vn": "CNBC đăng 11:56 GMT = 18:56 tối 13/10 giờ VN",
+   "priority": 2
+  },
+  {
+   "date": "2026-10-13",
+   "category": "Trái phiếu",
+   "title": "IMF cảnh báo lợi suất trái phiếu chính phủ có thể tăng vọt 'mất trật tự' vì nợ công, lạm phát và vay nợ AI",
+   "summary": "CNBC: Báo cáo Ổn định Tài chính Toàn cầu (GFSR) của IMF công bố 13/10 tại Bangkok cảnh báo nợ kỷ lục khiến thị trường trái phiếu 'dễ tổn thương trước các cú sốc tài khóa và lạm phát'; tỷ trọng nắm giữ trái phiếu Mỹ của quỹ phòng hộ tăng lên khoảng 9% (2025) từ 4% (2022), có nguy cơ 'tháo chạy mất trật tự'. Các hyperscaler AI chiếm 10% lượng phát hành trái phiếu hạng đầu tư toàn cầu (từ dưới 1% năm 2024), cạnh tranh vốn với trái phiếu chính phủ.",
+   "impact": "trung lập",
+   "reason": "Ngắn hạn: lợi suất tăng vọt gây áp lực lên vàng (chi phí cơ hội cao, USD mạnh) và có thể kéo theo bán tháo tài sản để lấy thanh khoản. Dài hạn: rủi ro nợ công và niềm tin vào trái phiếu chính phủ suy giảm là lý do cốt lõi để ngân hàng trung ương và nhà đầu tư giữ vàng làm tài sản an toàn.",
+   "source": {
+    "name": "CNBC – IMF warns bond yields could see a 'disorderly' spike as debt, inflation risks worsen",
+    "url": "https://www.cnbc.com/2026/10/13/treasury-yields-imf-debt-inflation-.html"
+   },
+   "source2": {
+    "name": "IMF – Global Financial Stability Report, October 2026",
+    "url": "https://www.imf.org/en/publications/gfsr/issues/2026/10/13/global-financial-stability-report-october-2026"
+   },
+   "time_vn": "CNBC đăng 23:19 EDT 12/10 = 10:19 sáng 13/10 giờ VN",
+   "priority": 2
+  },
+  {
+   "date": "2026-10-13",
+   "category": "Vàng",
    "title": "Vàng hồi từ đáy đầu phiên Á, áp sát 4.200 USD: dầu hạ nhiệt, USD và lợi suất Mỹ giảm",
    "summary": "Đầu phiên Á 13/10 vàng bị đẩy xuống quanh 4.170 USD (giá dầu cao, USD mạnh) rồi đảo chiều tăng. Reuters (qua The Edge Malaysia): vàng giao ngay +0,4% lên 4.185,69 USD/oz lúc 03:56 GMT (10:56 giờ VN); vàng tương lai tháng 12 +0,5% lên 4.209,90 USD. Lúc 05:46 GMT (12:46 VN) vàng giao ngay 4.189,73 USD (+0,56%), tương lai 4.216,87 USD. Theo Yahoo Finance, GC=F từ đáy 4.173,7 (khung 08:30 VN) lên 4.213,8 lúc 13:57 VN (≈ +1,0%); gold-api.com XAU 4.190,3 USD lúc 14:06 VN.",
    "impact": "tăng",
