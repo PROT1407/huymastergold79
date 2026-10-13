@@ -136,7 +136,7 @@
       if ($('strategy')) {
         const want = new URLSearchParams(location.search).get('ngay'), show = s => { $('strategy').innerHTML = strategyHTML(s); arc.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.d === key(s))); };
         const arc = $('archive');
-        arc.innerHTML = list.map(s => `<button type="button" data-d="${H.esc(key(s))}"><b>${H.dateVN(s.date)}${s.time ? ' ' + H.esc(s.time) : ''}</b>${s.session ? ' · ' + H.esc(s.session) : ''} – ${H.esc(s.trend)}</button>`).join('');
+        arc.innerHTML = list.map(s => `<button type="button" data-d="${H.esc(key(s))}"><b>${H.dateVN(s.date)}${s.time ? ' ' + H.esc(s.time) : ''}</b>${s.session ? ' · ' + H.esc(s.session) : ''} – ${(() => { const m = s.summary || {}, t = TI[m.trend || s.trendType] || TI.side; return `${t[0]} ${H.esc(m.trendText || t[1])}${m.sell && m.sell.zone ? ' · 🔴 BÁN ' + H.esc(m.sell.zone) : ''}${m.buy && m.buy.zone ? ' · 🟢 MUA ' + H.esc(m.buy.zone) : ''}`; })()}</button>`).join('');
         arc.onclick = e => { const b = e.target.closest('button'); if (b) { show(list.find(s => key(s) === b.dataset.d)); scrollTo({ top: 0, behavior: 'smooth' }); } };
         show(list.find(s => key(s) === want) || list.find(s => s.date === want) || list[0]);
       }
