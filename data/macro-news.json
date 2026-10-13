@@ -1,6 +1,6 @@
 {
  "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC | Chiến tranh | Ngân hàng TW. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
- "updated": "2026-10-13",
+ "updated": "2026-10-14",
  "fomc": {
   "source": {
    "name": "Federal Reserve – FOMC calendars",
@@ -52,6 +52,24 @@
   ]
  },
  "items": [
+  {
+   "date": "2026-10-14",
+   "category": "Ngân hàng TW",
+   "title": "Fed Barkin: lạm phát 2% 'không phải kỳ lân', Fed đạt được; thấy rõ tác động của đầu tư AI lên lạm phát – vàng gần như đứng yên quanh 4.180 USD",
+   "summary": "Chủ tịch Fed Richmond Tom Barkin (không bỏ phiếu năm nay, bỏ phiếu 2027) phát biểu từ 00:00 giờ VN 14/10. Hai tít nhanh (FinancialJuice, Newsquawk): 00:16 VN 'lạm phát 2% không phải kỳ lân nào đó, đó là điều chúng tôi có thể đạt được'; 00:44 VN 'chúng tôi có thể thấy tác động của đầu tư AI lên lạm phát Mỹ'. Đến 00:53 VN, CNBC và Reuters chưa có bài; chưa có bài phát biểu đăng trên trang Fed Richmond. Phản ứng vàng (COMEX GC=F, Yahoo, nến 5 phút): 21:15 4.193,0 · 23:45 4.180,1 · 00:00 (bắt đầu phát biểu) 4.175,9 · 00:15 4.180,1 · 00:25 chạm 4.176,1 · 00:43 4.179,7. Vàng giao ngay (gold-api.com) 4.148,4 USD lúc 00:53 VN. Chỉ số USD (DXY) đi ngang 102,27 → 102,25; lợi suất 10 năm Mỹ 5,234% → 5,219%.",
+   "impact": "trung lập",
+   "reason": "Giọng hơi diều hâu nhưng không có tín hiệu mới về lãi suất: Barkin khẳng định quyết tâm đưa lạm phát về 2% và nói AI đang đẩy lạm phát lên, phù hợp với lập trường 'có thể phải tăng lãi thêm' ông nêu ngày 22/9. Theo lý thuyết, đây là yếu tố bất lợi nhẹ cho vàng, nhưng thực tế vàng chỉ dao động khoảng 4 USD (4.176 – 4.180), USD và lợi suất gần như không đổi, vì ông chưa bỏ phiếu và thị trường đang chờ CPI 19:30 tối 14/10. Áp lực giảm của vàng đã diễn ra trước bài phát biểu (từ 4.193 lúc 21:15 về 4.176 lúc 00:00). Dài hạn: Fed giữ cam kết 2% trong khi lợi suất 10 năm trên 5,2% vẫn là lực cản với vàng; nếu CPI nóng, cược Fed tăng lãi tháng 12 sẽ mạnh lên.",
+   "source": {
+    "name": "Newsquawk – Fed's Barkin says 2% inflation is not some unicorn, is something we can hit",
+    "url": "https://www.newsquawk.com/headlines/feds-barkin-says-2-inflation-is-not-some-unicorn-is-something-we-can-hit"
+   },
+   "source2": {
+    "name": "ForexFactory (FinancialJuice) – Fed's Barkin: 2% inflation not some unicorn, something we can hit",
+    "url": "https://www.forexfactory.com/news/1431264-feds-barkin-2-inflation-not-some-unicorn-something"
+   },
+   "time_vn": "Barkin phát biểu từ 00:00 ngày 14/10 giờ VN; tít 00:16 và 00:44 VN; đo vàng đến 00:53 VN",
+   "priority": 1
+  },
   {
    "date": "2026-10-13",
    "category": "Tương quan",
