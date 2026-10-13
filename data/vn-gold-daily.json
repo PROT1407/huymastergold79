@@ -1,0 +1,448 @@
+{
+ "peak": {
+  "label": "Đỉnh lịch sử vàng miếng SJC",
+  "buy": 188300000,
+  "sell": 191300000,
+  "date": "2026-01-29",
+  "note": "Mức cao nhất trong phiên 29/01/2026 (mua – bán 188,3 – 191,3 triệu đồng/lượng)",
+  "source": {
+   "name": "VietNamNet",
+   "url": "https://vietnamnet.vn/gia-vang-hom-nay-30-1-2026-tuot-doc-vang-mieng-sjc-giam-rat-manh-2486350.html"
+  }
+ },
+ "refs": [
+  {
+   "name": "Dân trí – Giá vàng lại giảm, người mua từ đỉnh vẫn đang lỗ 50 triệu đồng/lượng (07:16 13/10/2026)",
+   "url": "https://dantri.com.vn/kinh-doanh/gia-vang-lai-giam-nguoi-mua-tu-dinh-van-dang-lo-50-trieu-dongluong-20261013070218568.htm",
+   "facts": [
+    "Kết phiên 12/10: vàng miếng SJC 141,3 – 144,3 triệu đồng/lượng (−500.000 đồng); nhẫn 140,8 – 143,8 triệu (−500.000 đồng)",
+    "Sáng 13/10 vàng thế giới 4.173 USD/oz (−hơn 21 USD), quy đổi ≈ 131,4 triệu đồng/lượng; chênh trong nước – thế giới ≈ 13 triệu đồng/lượng",
+    "Người mua từ đỉnh tháng 1 đang lỗ khoảng 50 triệu đồng/lượng",
+    "CME FedWatch: xác suất Fed tăng lãi suất tháng 12 ở mức 87%; CPI Mỹ công bố 14/10"
+   ]
+  }
+ ],
+ "analysis": [
+  "Giá vàng trong nước tiếp tục trượt theo thế giới: USD tiến sát đỉnh 18 tháng và kỳ vọng Fed còn tăng lãi suất (FedWatch 87% cho tháng 12) khiến vàng khó bật lên bền vững.",
+  "Vàng miếng SJC hiện thấp hơn đỉnh 29/01 khoảng 50 triệu đồng/lượng, nhưng vẫn đắt hơn giá thế giới quy đổi hơn 10 triệu đồng/lượng – người mua đang trả một khoản 'phí chênh' lớn.",
+  "Chênh lệch mua – bán khoảng 3 triệu đồng/lượng: mua vào hôm nay, giá phải tăng hơn 3 triệu mới hòa vốn.",
+  "Tuần này có CPI (14/10), PPI và bán lẻ Mỹ (15/10): số liệu nóng có thể kéo vàng giảm tiếp; nên quan sát thay vì vội mua."
+ ],
+ "advice": "Vàng đang có xu hướng giảm dài và sâu, trong trung – dài hạn có thể về dưới mốc 100 triệu/lượng. Người mua vàng vật chất nên chờ mốc này hoặc một thời điểm thích hợp hơn.",
+ "_ghi_chu": "Phần giá/lịch sử/world do scripts/update-vn-gold.py tự sinh. peak/refs/analysis/advice: sửa tay mỗi sáng (chỉ số liệu có nguồn).",
+ "updated_vn": "11:22 13/10/2026",
+ "vt_time": "11:00 2026-10-13",
+ "rows": [
+  {
+   "code": "SJL1L10",
+   "brand": "SJC",
+   "type": "Vàng miếng SJC",
+   "group": "mieng",
+   "buy": 140500000,
+   "sell": 143500000,
+   "chg_buy": -800000,
+   "chg_sell": -800000
+  },
+  {
+   "code": "DOHNL",
+   "brand": "DOJI Hà Nội",
+   "type": "Vàng miếng SJC",
+   "group": "mieng",
+   "buy": 140500000,
+   "sell": 143500000,
+   "chg_buy": -800000,
+   "chg_sell": -800000
+  },
+  {
+   "code": "DOHCML",
+   "brand": "DOJI TP.HCM",
+   "type": "Vàng miếng SJC",
+   "group": "mieng",
+   "buy": 140500000,
+   "sell": 143500000,
+   "chg_buy": -800000,
+   "chg_sell": -800000
+  },
+  {
+   "code": "PQHNVM",
+   "brand": "PNJ Hà Nội",
+   "type": "Vàng miếng SJC",
+   "group": "mieng",
+   "buy": 140000000,
+   "sell": 143500000,
+   "chg_buy": -800000,
+   "chg_sell": -800000
+  },
+  {
+   "code": "BTSJC",
+   "brand": "Bảo Tín Minh Châu",
+   "type": "Vàng miếng SJC",
+   "group": "mieng",
+   "buy": 139000000,
+   "sell": 143500000,
+   "chg_buy": -400000,
+   "chg_sell": -800000
+  },
+  {
+   "code": "SJ9999",
+   "brand": "SJC",
+   "type": "Nhẫn tròn 9999",
+   "group": "nhan",
+   "buy": 140000000,
+   "sell": 143000000,
+   "chg_buy": -800000,
+   "chg_sell": -800000
+  },
+  {
+   "code": "PQHN24NTT",
+   "brand": "PNJ",
+   "type": "Nhẫn 24K",
+   "group": "nhan",
+   "buy": 140000000,
+   "sell": 143000000,
+   "chg_buy": -800000,
+   "chg_sell": -800000
+  },
+  {
+   "code": "BT9999NTT",
+   "brand": "Bảo Tín Minh Châu",
+   "type": "Nhẫn tròn 9999",
+   "group": "nhan",
+   "buy": 139000000,
+   "sell": 143000000,
+   "chg_buy": -400000,
+   "chg_sell": -400000
+  },
+  {
+   "code": "DOJINHTV",
+   "brand": "DOJI",
+   "type": "Nhẫn/trang sức 9999 (DOJI Jewelry)",
+   "group": "nhan",
+   "buy": 139500000,
+   "sell": 143500000,
+   "chg_buy": 0,
+   "chg_sell": 0
+  }
+ ],
+ "history": {
+  "SJL1L10": [
+   {
+    "date": "2026-09-14",
+    "buy": 142600000,
+    "sell": 145600000
+   },
+   {
+    "date": "2026-09-15",
+    "buy": 142300000,
+    "sell": 145300000
+   },
+   {
+    "date": "2026-09-16",
+    "buy": 143500000,
+    "sell": 146500000
+   },
+   {
+    "date": "2026-09-17",
+    "buy": 142800000,
+    "sell": 145800000
+   },
+   {
+    "date": "2026-09-18",
+    "buy": 144600000,
+    "sell": 147600000
+   },
+   {
+    "date": "2026-09-19",
+    "buy": 144600000,
+    "sell": 147600000
+   },
+   {
+    "date": "2026-09-20",
+    "buy": 144600000,
+    "sell": 147600000
+   },
+   {
+    "date": "2026-09-21",
+    "buy": 143600000,
+    "sell": 146600000
+   },
+   {
+    "date": "2026-09-22",
+    "buy": 141900000,
+    "sell": 144900000
+   },
+   {
+    "date": "2026-09-23",
+    "buy": 142500000,
+    "sell": 145500000
+   },
+   {
+    "date": "2026-09-24",
+    "buy": 141400000,
+    "sell": 144400000
+   },
+   {
+    "date": "2026-09-25",
+    "buy": 141400000,
+    "sell": 144400000
+   },
+   {
+    "date": "2026-09-26",
+    "buy": 141400000,
+    "sell": 144400000
+   },
+   {
+    "date": "2026-09-27",
+    "buy": 141400000,
+    "sell": 144400000
+   },
+   {
+    "date": "2026-09-28",
+    "buy": 139400000,
+    "sell": 142400000
+   },
+   {
+    "date": "2026-09-29",
+    "buy": 139500000,
+    "sell": 142500000
+   },
+   {
+    "date": "2026-09-30",
+    "buy": 141100000,
+    "sell": 144100000
+   },
+   {
+    "date": "2026-10-01",
+    "buy": 141300000,
+    "sell": 144300000
+   },
+   {
+    "date": "2026-10-02",
+    "buy": 141100000,
+    "sell": 144100000
+   },
+   {
+    "date": "2026-10-03",
+    "buy": 140500000,
+    "sell": 143500000
+   },
+   {
+    "date": "2026-10-04",
+    "buy": 140500000,
+    "sell": 143500000
+   },
+   {
+    "date": "2026-10-05",
+    "buy": 140500000,
+    "sell": 143500000
+   },
+   {
+    "date": "2026-10-06",
+    "buy": 140500000,
+    "sell": 143500000
+   },
+   {
+    "date": "2026-10-07",
+    "buy": 140000000,
+    "sell": 143000000
+   },
+   {
+    "date": "2026-10-08",
+    "buy": 140000000,
+    "sell": 143000000
+   },
+   {
+    "date": "2026-10-09",
+    "buy": 141800000,
+    "sell": 144800000
+   },
+   {
+    "date": "2026-10-10",
+    "buy": 141800000,
+    "sell": 144800000
+   },
+   {
+    "date": "2026-10-11",
+    "buy": 141800000,
+    "sell": 144800000
+   },
+   {
+    "date": "2026-10-12",
+    "buy": 141300000,
+    "sell": 144300000
+   },
+   {
+    "date": "2026-10-13",
+    "buy": 140500000,
+    "sell": 143500000
+   }
+  ],
+  "SJ9999": [
+   {
+    "date": "2026-09-14",
+    "buy": 142100000,
+    "sell": 145100000
+   },
+   {
+    "date": "2026-09-15",
+    "buy": 141800000,
+    "sell": 144800000
+   },
+   {
+    "date": "2026-09-16",
+    "buy": 143000000,
+    "sell": 146000000
+   },
+   {
+    "date": "2026-09-17",
+    "buy": 142300000,
+    "sell": 145300000
+   },
+   {
+    "date": "2026-09-18",
+    "buy": 144100000,
+    "sell": 147100000
+   },
+   {
+    "date": "2026-09-19",
+    "buy": 144100000,
+    "sell": 147100000
+   },
+   {
+    "date": "2026-09-20",
+    "buy": 144100000,
+    "sell": 147100000
+   },
+   {
+    "date": "2026-09-21",
+    "buy": 143100000,
+    "sell": 146100000
+   },
+   {
+    "date": "2026-09-22",
+    "buy": 141400000,
+    "sell": 144400000
+   },
+   {
+    "date": "2026-09-23",
+    "buy": 142000000,
+    "sell": 145000000
+   },
+   {
+    "date": "2026-09-24",
+    "buy": 140900000,
+    "sell": 143900000
+   },
+   {
+    "date": "2026-09-25",
+    "buy": 140900000,
+    "sell": 143900000
+   },
+   {
+    "date": "2026-09-26",
+    "buy": 140900000,
+    "sell": 143900000
+   },
+   {
+    "date": "2026-09-27",
+    "buy": 140900000,
+    "sell": 143900000
+   },
+   {
+    "date": "2026-09-28",
+    "buy": 138900000,
+    "sell": 141900000
+   },
+   {
+    "date": "2026-09-29",
+    "buy": 139000000,
+    "sell": 142000000
+   },
+   {
+    "date": "2026-09-30",
+    "buy": 140600000,
+    "sell": 143600000
+   },
+   {
+    "date": "2026-10-01",
+    "buy": 140800000,
+    "sell": 143800000
+   },
+   {
+    "date": "2026-10-02",
+    "buy": 140600000,
+    "sell": 143600000
+   },
+   {
+    "date": "2026-10-03",
+    "buy": 140000000,
+    "sell": 143000000
+   },
+   {
+    "date": "2026-10-04",
+    "buy": 140000000,
+    "sell": 143000000
+   },
+   {
+    "date": "2026-10-05",
+    "buy": 140000000,
+    "sell": 143000000
+   },
+   {
+    "date": "2026-10-06",
+    "buy": 140000000,
+    "sell": 143000000
+   },
+   {
+    "date": "2026-10-07",
+    "buy": 139500000,
+    "sell": 142500000
+   },
+   {
+    "date": "2026-10-08",
+    "buy": 139500000,
+    "sell": 142500000
+   },
+   {
+    "date": "2026-10-09",
+    "buy": 141300000,
+    "sell": 144300000
+   },
+   {
+    "date": "2026-10-10",
+    "buy": 141300000,
+    "sell": 144300000
+   },
+   {
+    "date": "2026-10-11",
+    "buy": 141300000,
+    "sell": 144300000
+   },
+   {
+    "date": "2026-10-12",
+    "buy": 140800000,
+    "sell": 143800000
+   },
+   {
+    "date": "2026-10-13",
+    "buy": 140000000,
+    "sell": 143000000
+   }
+  ]
+ },
+ "world": {
+  "xau_usd": 4193.200195,
+  "xau_time_utc": "2026-10-13T04:22:42Z",
+  "usdvnd": 25897.062624,
+  "fx_time_utc": "Mon, 12 Oct 2026 23:57:31 +0000",
+  "factor": 1.20565,
+  "vnd_per_luong": 130900000.0,
+  "gap_sjc_sell": 12600000.0,
+  "note": "USD/oz × USD/VND (tỷ giá thị trường open.er-api) × 1,20565; chưa gồm thuế, phí"
+ },
+ "sources": {
+  "vang_today": "https://www.vang.today/",
+  "gold_api": "https://gold-api.com/",
+  "fx": "https://open.er-api.com/"
+ }
+}
