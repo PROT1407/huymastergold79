@@ -1,6 +1,50 @@
 {
   "strategies": [
     {
+      "id": "2026-10-13-phien-my-2200",
+      "date": "2026-10-13",
+      "time": "22:00",
+      "session": "Phiên Mỹ",
+      "title": "H79 NHẬN ĐỊNH – Phiên Mỹ sau 22:00 13/10: kênh giảm trên 5m/30m, ưu tiên MUA tại BB90 dưới 4.145 – 4.154 và 4.106 – 4.120 (giá giao ngay)",
+      "trend": "Bộ lọc kênh H79 (MA34/MA89, giá giao ngay quy đổi, giá ~4.166): 5m – MA34 4.180 < MA89 4.186, giá dưới MA34, MA34 cắt xuống MA89 lúc 16:55 13/10 → kênh giảm. 15m – MA34 4.186 > MA89 4.181 (cắt lên 11:45 13/10) nhưng giá đã thủng MA34 → lẫn lộn. 30m – MA34 4.184 < MA89 4.186, giá dưới MA34, cắt xuống 00:30 13/10 → kênh giảm. Không có kênh tăng → không bán ở BB trên; kế hoạch là MUA tại BB90 dưới khung 45m – 3H. D1 giảm (giá dưới MA34 4.321 và MA89 4.249); H4 MA34 4.164 / MA89 4.191, MACD H4 vừa cắt xuống.",
+      "trendType": "down",
+      "support": [
+        4146,
+        4120,
+        4106
+      ],
+      "resistance": [
+        4184,
+        4209,
+        4222
+      ],
+      "entryZones": [
+        "Mua 1: 4.145 – 4.154 (BB90 dưới 45m 4.146 · pivot S1 4.145 · đáy hôm nay 4.154). Kích hoạt: RSI14 45m/1H về gần 30, MACD 12/26/9 cắt lên và histogram quay đầu dương. Dừng lỗ 4.135; mục tiêu 4.165 – 4.168 (BB giữa 1H/3H) rồi 4.180 – 4.184 (MA34 khung nhỏ · pivot P).",
+        "Mua 2 (mạnh hơn): 4.106 – 4.120 (BB90 dưới 1H/2H/3H 4.109 / 4.106 / 4.114 · pivot S2 4.120 · đáy 3 phiên 4.108). Kích hoạt như trên. Dừng lỗ 4.096; mục tiêu 4.145 rồi 4.165."
+      ],
+      "sellZones": [
+        "Vô hiệu kế hoạch mua: nến 3H đóng dưới 4.106 → bỏ mua, mục tiêu tiếp theo vùng đáy 5 phiên 4.071.",
+        "Chuyển sang BÁN: khi giá trở lại trên MA34 ở 5m/15m/30m và MA34 cắt lên MA89 (kênh tăng) → bán tại BB90 trên 4.215 – 4.227 (BB trên 45m 4.219 · 2H 4.217 · 3H 4.215 · 1H 4.227), hợp lưu R1 4.209 và đỉnh hôm qua/3 – 5 phiên 4.222; kích hoạt MACD cắt xuống + histogram quay âm, RSI gần 70; dừng lỗ 4.232; mục tiêu 4.184 rồi 4.146."
+      ],
+      "scenarios": [
+        "BB90 (dev 2) trên / giữa / dưới: 45m 4.219 / 4.182 / 4.146 · 1H 4.227 / 4.168 / 4.109 · 2H 4.217 / 4.162 / 4.106 · 3H 4.215 / 4.165 / 4.114.",
+        "MACD 12/26/9 và RSI14: 45m histogram -1,69, cắt xuống 20:30, RSI 42 · 1H hist -1,54, cắt xuống 20:00, RSI 44 · 2H hist -1,66, RSI 47 · 3H hist -1,39, RSI 49 – động lượng ngắn hạn nghiêng giảm, chưa quá bán.",
+        "Pivot cổ điển (từ phiên 12/10): P 4.184 · R1 4.209 · R2 4.248 · S1 4.145 · S2 4.120. Vùng cũ: hôm qua 4.222 / 4.158 · hôm nay 4.205 / 4.154 · 3 phiên 4.222 / 4.108 · 5 phiên 4.222 / 4.071.",
+        "Tin (giờ VN): 00:00 ngày 14/10 Barkin (Fed Richmond) · 03:00 ngày 14/10 Collins (Fed Boston) – giảm khối lượng, tránh vào lệnh sát giờ phát biểu. 19:30 ngày 14/10 CPI Mỹ – đóng lệnh hoặc dời dừng lỗ về hòa vốn trước tin; CPI nóng có thể phá 4.106, CPI nguội có thể kéo lên 4.209 – 4.222.",
+        "Rủi ro: lệnh mua đi ngược xu hướng D1 giảm – khối lượng nhỏ, chốt lời nhanh, luôn đặt dừng lỗ."
+      ],
+      "physicalAdvice": "Vàng đang có xu hướng giảm dài và sâu, trong trung – dài hạn có thể về dưới mốc 100 triệu/lượng. Người mua vàng vật chất nên chờ mốc này hoặc một thời điểm thích hợp hơn.",
+      "macro": [
+        "CNBC (Reuters, 13/10): vàng giảm nhẹ do USD neo gần đỉnh 18 tháng; thị trường chờ CPI thứ Tư và PPI thứ Năm. CPI, nhất là CPI lõi, nóng hơn dự báo có thể khiến vàng giảm thêm.",
+        "Reuters (13/10): Thống đốc Fed Waller nói kỳ vọng lạm phát vẫn 'được neo vững'; lợi suất dài hạn tăng lên đỉnh 24 năm chủ yếu do tăng trưởng, đầu tư AI và nợ công chứ không phải phần bù lạm phát. Ông giữ quan điểm Fed có thể tăng lãi suất thêm nếu lạm phát còn trên 2%, nhưng không nhất thiết ở các cuộc họp liên tiếp – nghiêng 'diều hâu', bất lợi cho vàng.",
+        "Yahoo Finance (13/10): vàng chật vật sau khi rời đỉnh tháng 9 trên 4.400 USD do USD mạnh, lợi suất tăng và kỳ vọng Fed thắt chặt; ngân hàng trung ương và quỹ ETF vàng vẫn mua tích lũy.",
+        "Liên thị trường (Yahoo, ~19:12 giờ VN): DXY 102,27 (phiên trước 102,59) – USD hạ nhiệt hỗ trợ nhẹ cho vàng; dầu WTI 92,29, Brent 104,74 USD/thùng (giảm khoảng 1,5 – 1,8%) giảm bớt lo ngại lạm phát; lợi suất Mỹ 10 năm vẫn quanh 5,24% – áp lực chính lên vàng."
+      ],
+      "notes": "Các mốc là giá giao ngay XAU/USD quy đổi = giá COMEX GC=F (Yahoo, trễ ~10 phút) trừ khoảng 20 USD (đo đồng thời lúc 21:56: GC 4.193,1 – giao ngay 4.173,0). Chênh lệch dao động 20 – 28 USD nên mức có thể lệch vài giá; chart sàn của bạn là chuẩn. MA là đường trung bình đơn (SMA).",
+      "dataTime": "Dữ liệu: GC=F nến 5m/15m/60m (45m, 2H, 3H, 4H ghép lại), cập nhật 21:52 ngày 13/10/2026 giờ VN (GC 4.194,3); giao ngay gold-api.com 4.166,7 lúc 22:11 VN.",
+      "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư."
+    },
+    {
       "id": "2026-10-13-phien-my-1922",
       "date": "2026-10-13",
       "time": "19:22",
