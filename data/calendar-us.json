@@ -5,8 +5,8 @@
   "url": "https://www.forexfactory.com/calendar",
   "feed": "https://nfs.faireconomy.media/ff_calendar_thisweek.json"
  },
- "updated_vn": "02:26 13/10/2026",
- "updated_utc": "2026-10-12T19:26:12Z",
+ "updated_vn": "07:28 13/10/2026",
+ "updated_utc": "2026-10-13T00:28:08Z",
  "has_actual": false,
  "events": [
   {
@@ -77,7 +77,7 @@
    "time_utc": "2026-10-15T12:30:00Z",
    "time_vn": "19:30 15/10/2026",
    "date_vn": "2026-10-15",
-   "forecast": "0.5%",
+   "forecast": "0.6%",
    "previous": "1.4%",
    "actual": ""
   },
@@ -89,7 +89,7 @@
    "time_utc": "2026-10-15T12:30:00Z",
    "time_vn": "19:30 15/10/2026",
    "date_vn": "2026-10-15",
-   "forecast": "0.5%",
+   "forecast": "0.6%",
    "previous": "0.4%",
    "actual": ""
   },
