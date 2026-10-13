@@ -41,3 +41,5 @@ Nội dung chiến lược/tin vĩ mô/giá vàng được JS vẽ từ JSON nê
 python3 scripts/build-seo.py
 ```
 Script idempotent (chạy lại không đổi gì nếu JSON không đổi), chỉ hiển thị nội dung có trong JSON, không dùng thư viện ngoài. Đổi tên miền: sửa `BASE_URL` ở đầu script rồi chạy lại.
+
+Tự động: workflow `.github/workflows/build-seo.yml` chạy script này khi push thay đổi `data/**` lên main và mỗi ngày 00:05 UTC, tự commit (github-actions[bot]) nếu có thay đổi. Chạy tay trước khi push vẫn nên làm để trang lên ngay.
