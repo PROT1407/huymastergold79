@@ -148,10 +148,10 @@
   if (box) {
     const KEY = 'hmg_symbol', q = new URLSearchParams(location.search).get('symbol');
     let symbol = (q || localStorage.getItem(KEY) || 'OANDA:XAUUSD').toUpperCase(), draw = null, data = null, cat = 0;
-    const cfg = t => ({ autosize: true, symbol, interval: /^(HNX|UPCOM|HOSE):/.test(symbol) ? 'D' : '60', timezone: 'Asia/Ho_Chi_Minh', theme: t, style: '1', locale: 'vi_VN',
+    const cfg = t => ({ autosize: true, symbol, interval: /^(HNX|UPCOM|HOSE):/.test(symbol) ? 'D' : '45', timezone: 'Asia/Ho_Chi_Minh', theme: t, style: '1', locale: 'vi_VN',
       allow_symbol_change: true, calendar: false, hide_side_toolbar: false, hide_top_toolbar: false, hide_legend: false, withdateranges: true, details: box.dataset.details !== 'false',
       show_popup_button: true, popup_width: '1200', popup_height: '750', save_image: true, hide_volume: false, backgroundColor: t === 'dark' ? 'rgba(13,17,23,1)' : 'rgba(255,253,247,1)',
-      studies: [{ id: 'MASimple@tv-basicstudies', inputs: { length: 20 } }, { id: 'MASimple@tv-basicstudies', inputs: { length: 50 } }, { id: 'BB@tv-basicstudies', inputs: {} }, { id: 'RSI@tv-basicstudies', inputs: { length: 14 } }, { id: 'MACD@tv-basicstudies', inputs: {} }],
+      studies: [{ id: 'BB@tv-basicstudies', inputs: { length: 90, mult: 2 } }, { id: 'MASimple@tv-basicstudies', inputs: { length: 34 } }, { id: 'MASimple@tv-basicstudies', inputs: { length: 89 } }, { id: 'MACD@tv-basicstudies', inputs: { fastLength: 12, slowLength: 26, signalLength: 9 } }, { id: 'RSI@tv-basicstudies', inputs: { length: 14 } }],
       support_host: 'https://www.tradingview.com' });
     H.lazy(box, () => { draw = H.tv(box, 'embed-widget-advanced-chart.js', cfg); });
     const mark = () => { document.querySelectorAll('[data-s]').forEach(c => c.classList.toggle('active', c.dataset.s === symbol)); if ($('cur-sym')) $('cur-sym').textContent = symbol; };
