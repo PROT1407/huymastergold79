@@ -109,18 +109,25 @@
 
   /* ---------- Chiến lược ---------- */
   const trendCls = { up: 'up', down: 'down', side: 'side' };
+  const TI = { up: ['🔺', 'Tăng'], down: ['🔻', 'Giảm'], side: ['↔️', 'Đi ngang'] };
+  function sumHTML(s) {
+    const m = s.summary; if (!m) return '';
+    const t = TI[m.trend || s.trendType] || TI.side, E = H.esc;
+    const z = (o, c, ic, lb) => o && o.zone ? `<div class="z ${c}">${ic} ${lb} <b>${E(o.zone)}</b>${o.sl ? ` <span class="k">| SL</span> ${E(o.sl)}` : ''}${o.tp ? ` <span class="k">| TP</span> ${E(o.tp)}` : ''}</div>` : '';
+    return `<div class="h79s"><div class="t ${m.trend || s.trendType || 'side'}">Xu hướng: ${t[0]} ${E(m.trendText || t[1])}</div>${z(m.sell, 'sell', '🔴', 'BÁN')}${z(m.buy, 'buy', '🟢', 'MUA')}${m.note ? `<div class="n">⚠️ ${E(m.note)}</div>` : ''}${m.priceNote ? `<div class="p">💲 ${m.price === 'spot' ? '✅' : '⚠️'} ${E(m.priceNote)}</div>` : ''}</div>`;
+  }
   function strategyHTML(s, compact) {
     const lv = `<div class="lv">${(s.support || []).map(v => `<span class="pill s">HT ${f(v)}</span>`).join('')}${(s.resistance || []).map(v => `<span class="pill r">KC ${f(v)}</span>`).join('')}</div>`;
     if (compact) return `<span class="tag">⚡ NHẬN ĐỊNH NHANH · ${s.session ? H.esc(s.session) + ' · ' : ''}${s.time ? H.esc(s.time) + ' ' : ''}${H.dateVN(s.date)}</span> <span class="badge ex">H79 NHẬN ĐỊNH</span>
-      <h2>${H.esc(s.title)}</h2><p>Xu hướng: <span class="badge ${trendCls[s.trendType] || 'side'}">${H.esc(s.trend)}</span></p>${lv}
-      <p class="small"><b>🏅 Lời khuyên:</b> ${H.esc(s.physicalAdvice)}</p>${s.dataTime ? `<p class="small muted" style="margin-top:6px">🕐 ${H.esc(s.dataTime)}</p>` : ''}${s.disclaimer ? `<p class="small muted"><i>${H.esc(s.disclaimer)}</i></p>` : ''}<a class="btn" style="margin-top:10px" href="chien-luoc.html">Xem kế hoạch đầy đủ →</a>`;
+      <h2>${H.esc(s.title)}</h2>${sumHTML(s)}${s.summary ? '<details class="h79more"><summary>Xem thêm</summary>' : ''}<p>Xu hướng: <span class="badge ${trendCls[s.trendType] || 'side'}">${H.esc(s.trend)}</span></p>${lv}
+      <p class="small"><b>🏅 Lời khuyên:</b> ${H.esc(s.physicalAdvice)}</p>${s.summary ? '</details>' : ''}${s.dataTime ? `<p class="small muted" style="margin-top:6px">🕐 ${H.esc(s.dataTime)}</p>` : ''}${s.disclaimer ? `<p class="small muted"><i>${H.esc(s.disclaimer)}</i></p>` : ''}<a class="btn" style="margin-top:10px" href="chien-luoc.html">Xem kế hoạch đầy đủ →</a>`;
     return `<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px"><div><span class="muted">📅 ${s.session ? H.esc(s.session) + ' · ' : ''}${s.time ? H.esc(s.time) + ' ' : ''}${H.dateVN(s.date)}</span><h2 style="font-size:1.4rem;color:var(--txt);margin:4px 0">${H.esc(s.title)}</h2></div>
-      <div><span class="badge ex">H79 NHẬN ĐỊNH</span> <span class="badge ${trendCls[s.trendType] || 'side'}">Xu hướng: ${H.esc(s.trend)}</span></div></div>
+      <div><span class="badge ex">H79 NHẬN ĐỊNH</span> <span class="badge ${trendCls[s.trendType] || 'side'}">Xu hướng: ${H.esc(s.trend)}</span></div></div>${sumHTML(s)}${s.summary ? '<details class="h79more"><summary>Xem thêm: chỉ báo, kịch bản, vĩ mô</summary>' : ''}
       <div class="grid g3" style="margin:14px 0">
         <div class="card"><h3>🟢 Hỗ trợ (USD/oz)</h3>${(s.support || []).map(v => `<span class="pill s">${f(v)}</span> `).join('')}</div>
         <div class="card"><h3>🔴 Kháng cự (USD/oz)</h3>${(s.resistance || []).map(v => `<span class="pill r">${f(v)}</span> `).join('')}</div>
         <div class="card"><h3>🎯 Vùng mua</h3><ul style="padding-left:18px">${(s.entryZones || []).map(z => `<li>${H.esc(z)}</li>`).join('')}</ul>${(s.sellZones || []).length ? `<h3 style="margin-top:10px">🔻 Vùng bán</h3><ul style="padding-left:18px">${s.sellZones.map(z => `<li>${H.esc(z)}</li>`).join('')}</ul>` : ''}</div></div>
-      ${(s.scenarios || []).length ? `<div class="card" style="margin:0 0 12px"><h3>🧭 Kế hoạch & kịch bản</h3><ul style="padding-left:18px">${s.scenarios.map(z => `<li>${H.esc(z)}</li>`).join('')}</ul></div>` : ''}<div class="note"><b>🏅 Lời khuyên:</b> ${H.esc(s.physicalAdvice)}</div>${(s.macro || []).length ? `<div class="card" style="margin-top:12px"><h3>🌐 Bối cảnh vĩ mô</h3><ul style="padding-left:18px" class="small">${s.macro.map(z => `<li>${H.esc(z)}</li>`).join('')}</ul></div>` : ''}${s.notes ? `<p class="muted small" style="margin-top:8px">📝 ${H.esc(s.notes)}</p>` : ''}${s.dataTime ? `<p class="small muted" style="margin-top:6px">🕐 ${H.esc(s.dataTime)}</p>` : ''}${s.disclaimer ? `<p class="small muted"><i>${H.esc(s.disclaimer)}</i></p>` : ''}<div class="rx" data-rx="cl|${H.esc(s.id || s.date)}"></div>${H.shareHTML('Chiến lược vàng ' + H.dateVN(s.date) + ' – HuymasterGold79')}`;
+      ${(s.scenarios || []).length ? `<div class="card" style="margin:0 0 12px"><h3>🧭 Kế hoạch & kịch bản</h3><ul style="padding-left:18px">${s.scenarios.map(z => `<li>${H.esc(z)}</li>`).join('')}</ul></div>` : ''}<div class="note"><b>🏅 Lời khuyên:</b> ${H.esc(s.physicalAdvice)}</div>${(s.macro || []).length ? `<div class="card" style="margin-top:12px"><h3>🌐 Bối cảnh vĩ mô</h3><ul style="padding-left:18px" class="small">${s.macro.map(z => `<li>${H.esc(z)}</li>`).join('')}</ul></div>` : ''}${s.notes ? `<p class="muted small" style="margin-top:8px">📝 ${H.esc(s.notes)}</p>` : ''}${s.dataTime ? `<p class="small muted" style="margin-top:6px">🕐 ${H.esc(s.dataTime)}</p>` : ''}${s.disclaimer ? `<p class="small muted"><i>${H.esc(s.disclaimer)}</i></p>` : ''}${s.summary ? '</details>' : ''}<div class="rx" data-rx="cl|${H.esc(s.id || s.date)}"></div>${H.shareHTML('Chiến lược vàng ' + H.dateVN(s.date) + ' – HuymasterGold79')}`;
   }
   if ($('quick') || $('strategy')) {
     H.getJSON('data/strategies.json').then(d => {

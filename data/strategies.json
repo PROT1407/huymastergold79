@@ -54,7 +54,24 @@
       ],
       "notes": "Các mốc là giá giao ngay XAU/USD quy đổi = giá COMEX GC=F (Yahoo, trễ ~10 phút) trừ khoảng 20 USD (đo đồng thời lúc 21:56: GC 4.193,1 – giao ngay 4.173,0). Chênh lệch dao động 20 – 28 USD nên mức có thể lệch vài giá; chart sàn của bạn là chuẩn. MA là đường trung bình đơn (SMA).",
       "dataTime": "Dữ liệu: GC=F nến 5m/15m/60m (45m, 2H, 3H, 4H ghép lại), cập nhật 21:52 ngày 13/10/2026 giờ VN (GC 4.194,3); giao ngay gold-api.com 4.166,7 lúc 22:11 VN.",
-      "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư."
+      "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+      "summary": {
+        "trend": "down",
+        "trendText": "Giảm",
+        "sell": {
+          "zone": "4.215 – 4.227 (chỉ khi chuyển kênh tăng)",
+          "sl": "4.232",
+          "tp": "4.184 → 4.146"
+        },
+        "buy": {
+          "zone": "4.145 – 4.154",
+          "sl": "4.135",
+          "tp": "4.165 – 4.168 → 4.180 – 4.184"
+        },
+        "note": "00:00 & 03:00 14/10 Barkin, Collins (Fed) phát biểu · 19:30 14/10 CPI Mỹ – dời SL về hòa vốn trước tin",
+        "price": "spot",
+        "priceNote": "Giá giao ngay XAU/USD (quy đổi)"
+      }
     },
     {
       "id": "2026-10-13-phien-my-1922",
@@ -98,7 +115,24 @@
       ],
       "notes": "Các mốc trên là giá vàng tương lai COMEX (GC=F, Yahoo Finance, trễ khoảng 10 phút). Giá giao ngay XAU/USD thấp hơn khoảng 26 USD (gold-api.com: 4.186,4 lúc 19:22 ngày 13/10 giờ VN) – khi đặt lệnh XAU/USD hãy trừ khoảng 25 USD (ví dụ vùng bán 4.225 – 4.246 ≈ 4.200 – 4.221 giao ngay; vùng mua 4.196 – 4.200 ≈ 4.171 – 4.175; vùng mua mạnh 4.165 – 4.178 ≈ 4.140 – 4.153 giao ngay).",
       "dataTime": "Dữ liệu: COMEX GC=F – giá 4.212,5 lúc 19:12 ngày 13/10/2026 giờ VN; D1: EMA20 4.245,9 · EMA50 4.305,8 · RSI 44; H4 (ghép từ nến 1h): EMA20 4.198,7 · EMA50 4.199,1 · RSI 57; H1: EMA20 4.206,6 · EMA50 4.201,2 · RSI 56; phiên 13/10: O 4.195,5 · H 4.224,8 · L 4.173,7; pivot cổ điển từ phiên 12/10 (H 4.242,3 · L 4.178,1 · C 4.190,6): P 4.203,7 · R1 4.229,2 · R2 4.267,9 · S1 4.165,0 · S2 4.139,5.",
-      "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư."
+      "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+      "summary": {
+        "trend": "down",
+        "trendText": "Giảm",
+        "sell": {
+          "zone": "4.225 – 4.246",
+          "sl": "4.262",
+          "tp": "4.205 → 4.180"
+        },
+        "buy": {
+          "zone": "4.196 – 4.200",
+          "sl": "4.186",
+          "tp": "4.215 – 4.224"
+        },
+        "note": "Đêm 13/10 không có tin đỏ · 19:30 14/10 CPI Mỹ",
+        "price": "futures",
+        "priceNote": "Giá vàng tương lai COMEX (GC=F), không phải giao ngay – XAU/USD giao ngay thấp hơn khoảng 25 USD"
+      }
     },
     {
       "id": "2026-10-13-phien-au-my-1810",
@@ -142,7 +176,24 @@
       ],
       "notes": "Các mốc trên là giá vàng tương lai COMEX (GC=F, Yahoo Finance, trễ khoảng 10 phút). Giá giao ngay XAU/USD thấp hơn khoảng 19 – 20 USD (gold-api.com: 4.185,1 lúc 18:06 ngày 13/10 giờ VN) – khi đặt lệnh XAU/USD hãy trừ khoảng 19 USD (ví dụ vùng bán 4.225 – 4.245 ≈ 4.206 – 4.226 giao ngay; vùng mua 4.165 – 4.178 ≈ 4.146 – 4.159 giao ngay).",
       "dataTime": "Dữ liệu: COMEX GC=F – giá 4.204,6 lúc 17:56 ngày 13/10/2026 giờ VN; D1: EMA20 4.245,1 · EMA50 4.305,4 · RSI 43; H4 (ghép từ nến 1h): EMA20 4.197,6 · EMA50 4.198,3 · RSI 54; H1: EMA20 4.204,9 · EMA50 4.200,1 · RSI 50; phiên 13/10: O 4.195,5 · H 4.224,8 · L 4.173,7; pivot cổ điển từ phiên 12/10 (H 4.242,3 · L 4.178,1 · C 4.190,6).",
-      "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư."
+      "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+      "summary": {
+        "trend": "down",
+        "trendText": "Giảm",
+        "sell": {
+          "zone": "4.225 – 4.245",
+          "sl": "4.262",
+          "tp": "4.205 → 4.180"
+        },
+        "buy": {
+          "zone": "4.196 – 4.200",
+          "sl": "4.186",
+          "tp": "4.215 – 4.224"
+        },
+        "note": "Tối 13/10 không có tin đỏ · 19:30 14/10 CPI Mỹ",
+        "price": "futures",
+        "priceNote": "Giá vàng tương lai COMEX (GC=F), không phải giao ngay – XAU/USD giao ngay thấp hơn khoảng 19 USD"
+      }
     },
     {
       "id": "2026-10-13-phien-au-1425",
@@ -187,7 +238,24 @@
       ],
       "notes": "Số liệu kỹ thuật dùng hợp đồng vàng tương lai COMEX (GC=F, Yahoo Finance, trễ khoảng 10 phút); giá giao ngay XAU/USD thấp hơn khoảng 18 USD (gold-api.com: 4.194,2 lúc 14:21 ngày 13/10 giờ VN) – khi đặt lệnh XAU/USD hãy trừ khoảng 18 USD so với các mốc trên.",
       "dataTime": "Dữ liệu: COMEX GC=F – giá 4.212,6 lúc 14:11 ngày 13/10/2026 giờ VN; D1: EMA20 4.245,9 · EMA50 4.308,2; H4 (ghép từ nến 1h): EMA20 4.196,1 · EMA50 4.197,7; pivot cổ điển từ phiên 12/10 (H 4.242,3 · L 4.178,1 · C 4.190,6).",
-      "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư."
+      "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+      "summary": {
+        "trend": "down",
+        "trendText": "Giảm",
+        "sell": {
+          "zone": "4.229 – 4.246",
+          "sl": "4.262",
+          "tp": "4.204 → 4.178"
+        },
+        "buy": {
+          "zone": "4.196 – 4.204",
+          "sl": "4.186",
+          "tp": "4.224 – 4.229"
+        },
+        "note": "13/10 không có tin đỏ · 19:30 14/10 CPI Mỹ – hạn chế ôm lệnh qua tin",
+        "price": "futures",
+        "priceNote": "Giá vàng tương lai COMEX (GC=F), không phải giao ngay – XAU/USD giao ngay thấp hơn khoảng 18 USD"
+      }
     },
     {
       "id": "2026-10-13-phien-a-0725",
@@ -232,7 +300,22 @@
       ],
       "notes": "Số liệu kỹ thuật dùng hợp đồng vàng tương lai COMEX (GC=F, Yahoo Finance); giá giao ngay XAU/USD thấp hơn khoảng 18 USD (gold-api.com: 4.168,8 lúc 07:22 ngày 13/10 giờ VN) – khi đặt lệnh XAU/USD hãy trừ khoảng 18 USD so với các mốc trên.",
       "dataTime": "Dữ liệu: COMEX GC=F – giá 4.187,1 lúc 07:12 ngày 13/10/2026 giờ VN; D1: EMA20 4.249,0 · EMA50 4.309,5; H4 (ghép từ nến 1h): EMA20 4.192,1 · EMA50 4.196,6; pivot cổ điển từ phiên 12/10 (H 4.242,3 · L 4.178,1 · C 4.195,9).",
-      "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư."
+      "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+      "summary": {
+        "trend": "down",
+        "trendText": "Giảm",
+        "sell": {
+          "zone": "4.197 – 4.206",
+          "sl": "4.230"
+        },
+        "buy": {
+          "zone": "4.168 – 4.178",
+          "sl": "4.148"
+        },
+        "note": "13/10 không có tin đỏ · 19:30 14/10 CPI Mỹ",
+        "price": "futures",
+        "priceNote": "Giá vàng tương lai COMEX (GC=F), không phải giao ngay – XAU/USD giao ngay thấp hơn khoảng 18 USD"
+      }
     },
     {
       "id": "2026-10-13-phien-my-0231",
@@ -277,7 +360,22 @@
       ],
       "notes": "Số liệu kỹ thuật dùng hợp đồng vàng tương lai COMEX (GC=F, Yahoo Finance); giá giao ngay XAU/USD thấp hơn khoảng 20 USD (gold-api.com: 4.168,2 lúc 02:32 ngày 13/10 giờ VN) – khi đặt lệnh XAU/USD hãy trừ khoảng 20 USD so với các mốc trên.",
       "dataTime": "Dữ liệu: COMEX GC=F – giá 4.188,2 lúc 02:22 ngày 13/10/2026 giờ VN; D1: EMA20 4.249,1 · EMA50 4.309,4; H4 (ghép từ nến 1h): EMA20 4.191,9 · EMA50 4.196,9; pivot cổ điển từ phiên 09/10 (H 4.233,7 · L 4.156,1 · C 4.216,3).",
-      "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư."
+      "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+      "summary": {
+        "trend": "down",
+        "trendText": "Giảm",
+        "sell": {
+          "zone": "4.197 – 4.205",
+          "sl": "4.230"
+        },
+        "buy": {
+          "zone": "4.170 – 4.178",
+          "sl": "4.148"
+        },
+        "note": "Tối 13/10 không có tin đỏ · 19:30 14/10 CPI Mỹ",
+        "price": "futures",
+        "priceNote": "Giá vàng tương lai COMEX (GC=F), không phải giao ngay – XAU/USD giao ngay thấp hơn khoảng 20 USD"
+      }
     },
     {
       "date": "2026-10-12",

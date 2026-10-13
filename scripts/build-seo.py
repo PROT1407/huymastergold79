@@ -130,6 +130,21 @@ def page(a, body):
 def card(h, inner):
     return f'<section class="card"><h2>{h}</h2>{inner}</section>' if inner else ""
 
+TI = {"up": ("🔺", "Tăng"), "down": ("🔻", "Giảm"), "side": ("↔️", "Đi ngang")}
+def summary_html(s):
+    m = s.get("summary")
+    if not m: return ""
+    tk = m.get("trend") or s.get("trendType") or "side"; ic, w = TI.get(tk, TI["side"])
+    def z(o, c, i, lb):
+        if not o or not o.get("zone"): return ""
+        return (f'<div class="z {c}">{i} {lb} <b>{e(o["zone"])}</b>' + (f' <span class="k">| SL</span> {e(o["sl"])}' if o.get("sl") else "")
+                + (f' <span class="k">| TP</span> {e(o["tp"])}' if o.get("tp") else "") + "</div>")
+    return (f'<section class="h79s"><div class="t {e(tk)}">Xu hướng: {ic} {e(m.get("trendText") or w)}</div>'
+            + z(m.get("sell"), "sell", "🔴", "BÁN") + z(m.get("buy"), "buy", "🟢", "MUA")
+            + (f'<div class="n">⚠️ {e(m["note"])}</div>' if m.get("note") else "")
+            + (f'<div class="p">💲 {"✅" if m.get("price") == "spot" else "⚠️"} {e(m["priceNote"])}</div>' if m.get("priceNote") else "")
+            + "</section>")
+
 def build_strategies():
     out = []
     for s in load("strategies.json").get("strategies", []):
@@ -146,6 +161,8 @@ def build_strategies():
                 + card("🧭 Kịch bản", ul(s.get("scenarios"))) + card("🌐 Vĩ mô", ul(s.get("macro")))
                 + card("🥇 Vàng vật chất", f'<p>{e(s["physicalAdvice"])}</p>' if s.get("physicalAdvice") else "")
                 + card("ℹ Nguồn dữ liệu", "".join(f'<p class="small muted">{e(s[k])}</p>' for k in ("dataTime", "notes", "disclaimer") if s.get(k))))
+        if s.get("summary"):
+            body = summary_html(s) + '<details class="h79more"><summary>Xem thêm: chỉ báo, kịch bản, vĩ mô</summary>' + body + "</details>"
         desc = f"Nhận định vàng {s.get('session','')} {dvn(s['date'])}{' lúc ' + t if t else ''}: " + (s.get("trend") or s["title"])
         out.append(dict(kind="nd", file=f, date=s["date"], sort=s["date"] + (t or "00:00"),
                         title=f"Nhận định vàng {dvn(s['date'])} – {s['title']}",

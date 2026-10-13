@@ -215,3 +215,18 @@ small.cut{color:var(--up)}small.hike{color:var(--down)}small.hold{color:var(--go
 .tbl-wrap{overflow-x:auto;max-width:100%}.fw-src{margin-top:10px}.fw-pending{padding:14px;border:1px dashed var(--line);border-radius:12px}
 .fw-gold{margin-top:12px;padding:12px 14px;border-left:3px solid var(--gold);background:rgba(240,185,11,.07);border-radius:10px;font-size:.92rem}
 @media(max-width:820px){.fw-grid{grid-template-columns:1fr}}
+
+/* H79 tóm tắt nhanh */
+.h79s{border:2px solid var(--line,#333);border-radius:14px;padding:14px 16px;margin:12px 0;font-size:1.15rem;line-height:1.5}
+.h79s .t{font-size:1.45rem;font-weight:800;margin-bottom:8px}
+.h79s .t.down{color:#ff5b5b}.h79s .t.up{color:#2ecc71}.h79s .t.side{color:#f5b041}
+.h79s .z{padding:9px 12px;border-radius:10px;margin:6px 0;font-weight:700;word-break:break-word}
+.h79s .z.sell{background:rgba(255,77,77,.14);border-left:5px solid #ff4d4d}
+.h79s .z.buy{background:rgba(46,204,113,.14);border-left:5px solid #2ecc71}
+.h79s .z b{font-size:1.2rem}.h79s .z .k{opacity:.75;font-weight:600;font-size:.9em}
+.h79s .n{margin-top:8px;color:#f5b041;font-weight:600}
+.h79s .p{margin-top:6px;font-size:.92rem;opacity:.85}
+details.h79more{margin-top:12px}
+details.h79more>summary{cursor:pointer;font-weight:700;font-size:1.05rem;padding:10px 14px;border:1px solid var(--line,#444);border-radius:10px;list-style:none}
+details.h79more>summary::before{content:"▸ "}details.h79more[open]>summary::before{content:"▾ "}
+@media(max-width:600px){.h79s{font-size:1.05rem;padding:12px}.h79s .t{font-size:1.3rem}}
