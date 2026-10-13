@@ -54,6 +54,38 @@
  "items": [
   {
    "date": "2026-10-13",
+   "category": "Tương quan",
+   "title": "Sau tin 21:00: doanh số nhà hiện hữu Mỹ tăng 1,5% lên 3,99 triệu, tốt hơn dự báo – vàng lùi về quanh 4.165 USD (giao ngay)",
+   "summary": "NAR (21:00 giờ VN 13/10): doanh số nhà hiện hữu tháng 9 tăng 1,5% so với tháng 8 lên 3,99 triệu căn (năm hóa), giảm 2,2% so với cùng kỳ; dự báo ForexFactory/Trading Economics 3,95 triệu, WSJ dự báo giảm 0,8%. Giá trung vị 417.500 USD (+1,3% so với cùng kỳ). Kinh tế trưởng NAR Lawrence Yun: tháng 8 và 9 vẫn là hai tháng bán chậm nhất năm, lãi vay mua nhà 30 năm đã vượt 7% gần đây. Phản ứng vàng (COMEX GC=F, Yahoo, giá mở nến 5 phút): 18:00 4.205,4 · 20:00 4.203,1 · 20:30 4.212,4 · 21:00 (ra tin) 4.192,5 · 21:30 4.190,6 · 22:00 4.190,4; đáy sau tin 4.185,9 lúc 21:20. Vàng giao ngay (gold-api.com) 4.164,7 USD lúc 22:17 giờ VN, thấp hơn GC khoảng 25 USD.",
+   "impact": "giảm",
+   "reason": "Đúng lý thuyết nhưng tác động nhỏ: số liệu nhà tốt hơn dự báo → USD được đỡ → vàng giảm nhẹ. Thực tế vàng đã quay đầu từ 20:40 (lúc phố Wall mở cửa), trước giờ ra tin, từ 4.212 về 4.192 (-0,47% trong 30 phút trước tin); sau tin chỉ đi ngang 4.186 – 4.196 (-0,05% sau 1 giờ). Đây là tin vàng (ít quan trọng), thị trường đang chờ CPI 19:30 tối 14/10. Dài hạn: lãi vay mua nhà trên 7% sẽ kéo thị trường nhà đất chậm lại, nếu kinh tế yếu đi thì Fed bớt áp lực tăng lãi – yếu tố hỗ trợ vàng về sau.",
+   "source": {
+    "name": "NAR – Home Sales Eke Out Uptick, But Mortgage Rate Threat Looms",
+    "url": "https://www.nar.realtor/news/real-estate-news/economy/home-sales-eke-out-uptick-but-mortgage-rate-threat-looms"
+   },
+   "source2": {
+    "name": "WSJ – Home Sales Rose in September for the First Time Since Spring",
+    "url": "https://www.wsj.com/economy/housing/home-sales-rose-in-september-for-the-first-time-since-spring-32a7d980"
+   },
+   "time_vn": "Tin ra 21:00 tối 13/10 giờ VN; đo phản ứng vàng đến 22:17 VN",
+   "priority": 2
+  },
+  {
+   "date": "2026-10-13",
+   "category": "Vàng",
+   "title": "Reuters: vàng nhích lên nhờ USD yếu và dầu giảm; StoneX dự báo phiên nhẹ trước CPI và phát biểu của Chủ tịch Fed Warsh",
+   "summary": "Reuters (qua Kitco, 13:19 GMT = 20:19 giờ VN): vàng giao ngay +0,2% lên 4.178,97 USD/oz, vàng tương lai tháng 12 +0,3% lên 4.202,70 USD. Bob Haberkorn (StoneX): 'USD và dầu cùng giảm sáng nay nên có hiệu ứng bập bênh', dự báo phiên nhẹ trước số liệu thứ Tư và thứ Năm. Thống đốc Fed Waller cho rằng lợi suất tăng phản ánh tăng trưởng mạnh hơn, kỳ vọng lạm phát vẫn 'được neo vững'. IMF cảnh báo nợ công cao và lợi suất có thể bị đẩy lên thêm bởi lạm phát do chiến tranh.",
+   "impact": "trung lập",
+   "reason": "Ngắn hạn: USD và dầu giảm hỗ trợ vàng, nhưng lợi suất vẫn cao và cược Fed tăng lãi giữ vàng dưới 4.200 USD (giao ngay). Sự kiện quyết định: CPI 19:30 ngày 14/10, PPI và phát biểu của Chủ tịch Warsh ngày 15/10. Dài hạn: cảnh báo nợ công của IMF củng cố vai trò tài sản an toàn của vàng.",
+   "source": {
+    "name": "Kitco (Reuters) – Gold rises on weaker dollar, lower oil ahead of US inflation data",
+    "url": "https://www.kitco.com/news/off-the-wire/2026-10-13/gold-rises-weaker-dollar-lower-oil-ahead-us-inflation-data"
+   },
+   "time_vn": "Reuters 20:19 tối 13/10 giờ VN",
+   "priority": 2
+  },
+  {
+   "date": "2026-10-13",
    "category": "Vàng",
    "title": "Đầu phiên Mỹ: vàng giữ sắc xanh quanh 4.187 USD khi USD, lợi suất và dầu cùng lùi trước CPI",
    "summary": "Kitco (12:54 GMT = 19:54 giờ VN): vàng giao ngay quanh 4.186,90 USD/oz (+0,39%), bạc 60,21 USD. Chỉ số USD lùi về ~102,3 sau khi chạm mức cao nhất từ tháng 4/2025; lợi suất 10 năm Mỹ quanh 5,19% khi trái phiếu giao dịch lại sau ngày nghỉ lễ. Dầu giảm khoảng 2%: Brent ~104,63 USD, WTI ~91,85 USD do kỳ vọng thêm diesel Nga, dù rủi ro Hormuz – Houthi vẫn còn. Nền dữ liệu: bảng lương tháng 9 chỉ +29.000 việc làm, thất nghiệp 4,2%; kỳ vọng lạm phát 1 năm (ĐH Michigan) lên 4,7%. Thị trường thấy khả năng Fed tăng lãi suất tháng 10 thấp nhưng vẫn đặt cược cao cho tháng 12.",
