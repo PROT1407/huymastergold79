@@ -23,7 +23,7 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "bai"
 MAIN_PAGES = ["index.html", "gia-vang.html", "chien-luoc.html", "bieu-do.html", "live.html",
               "tin-tuc.html", "lich-kinh-te.html", "kien-thuc.html", "quy-forex.html",
-              "tai-khoan-follow.html", "lien-he.html"]
+              "tai-khoan-follow.html", "ve-toi.html", "lien-he.html"]
 OLD_BASES = ["https://huymastergold79.com.vn/", "https://prot1407.github.io/huymastergold79/"]
 VN = dt.timezone(dt.timedelta(hours=7))
 TODAY = dt.datetime.now(VN).date().isoformat()

@@ -49,6 +49,7 @@
       ['kien-thuc.html#don-vi', 'Đơn vị & quy đổi', 'Lượng, chỉ, oz, gram'],
       ['kien-thuc.html#yeu-to', 'Yếu tố tác động giá vàng', 'USD, lãi suất, lạm phát']]],
     ['bai', 'bai/index.html', '📰 Bài viết'],
+    ['vetoi', 've-toi.html', '🙋 Về tôi'],
     ['about', 'lien-he.html', '👤 Liên hệ']
   ];
   const menu = M.map(([k, href, label, sub, mega]) => `<li><a href="${href}" class="${k === page ? 'on' : ''}">${label}${sub ? ' ▾' : ''}</a>${sub ? `<div class="dd${mega ? ' mega' : ''}">${sub.map(s => `<a href="${s[0]}">${s[1]}<small>${s[2]}</small></a>`).join('')}</div>` : ''}</li>`).join('');
@@ -71,7 +72,7 @@
         <p class="small" style="margin-top:8px">🔴 Kênh live: <a href="${H.YT_LIVE}" target="_blank" rel="noopener">TRADING LIVE XAUUSD</a></p></div>
       <div><h4>Giá vàng</h4><a href="gia-vang.html#bang-gia">Bảng giá trong nước</a><a href="gia-vang.html#quy-doi">Quy đổi thế giới</a><a href="gia-vang.html#may-tinh">Máy tính vàng</a><a href="gia-vang.html#chenh-lech">Chênh lệch SJC</a></div>
       <div><h4>Phân tích</h4><a href="live.html">🔴 Phòng Live</a><a href="chien-luoc.html">Chiến lược hôm nay</a><a href="bieu-do.html">Biểu đồ toàn màn hình</a><a href="lich-kinh-te.html">Lịch kinh tế</a><a href="tin-tuc.html">Tin tức</a><a href="quy-forex.html">Quỹ Forex</a><a href="tai-khoan-follow.html">Tài khoản Follow</a></div>
-      <div><h4>Thông tin</h4><a href="kien-thuc.html">Kiến thức</a><a href="lien-he.html">Về tôi</a><a href="lien-he.html#lien-he">Liên hệ</a><a href="mailto:${H.EMAIL}">${H.EMAIL}</a></div>
+      <div><h4>Thông tin</h4><a href="kien-thuc.html">Kiến thức</a><a href="ve-toi.html">Về tôi</a><a href="lien-he.html#lien-he">Liên hệ</a><a href="mailto:${H.EMAIL}">${H.EMAIL}</a></div>
     </div>
     <p class="disc">⚠ <b>Miễn trừ trách nhiệm:</b> Nội dung chỉ mang tính tham khảo, là quan điểm cá nhân, <b>không phải lời khuyên đầu tư</b>. Giá quy đổi là ước tính, chưa gồm thuế phí. Dữ liệu từ bên thứ ba (TradingView, gold-api.com, open.er-api.com, vang.today) có thể chậm hoặc sai lệch.<br>© ${new Date().getFullYear()} HuymasterGold79.com.vn</p>
   </div></footer>
