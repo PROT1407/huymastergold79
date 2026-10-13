@@ -1,6 +1,50 @@
 {
   "strategies": [
     {
+      "id": "2026-10-13-phien-my-1922",
+      "date": "2026-10-13",
+      "time": "19:22",
+      "session": "Phiên Mỹ",
+      "title": "Phiên Mỹ 13/10: vàng giữ 4.212 trên EMA H4, đêm nay không có tin đỏ – canh bán 4.225 – 4.246, mua 4.196 – 4.200 hoặc 4.165 – 4.178; tất cả chỉ là khởi động trước CPI 19:30 mai",
+      "trend": "Giảm trên D1 (giá 4.212,5 dưới EMA20 4.245,9 và EMA50 4.305,8; RSI14 D1 44). H4 trung tính nghiêng tăng nhẹ: giá trên EMA20/EMA50 H4 (4.198,7 / 4.199,1), RSI H4 57. H1: sau đỉnh trưa 4.224,8 giá đi ngang 4.204 – 4.218 suốt phiên Âu, đáy H1 thấp nhất 4.203,6 vẫn giữ trên pivot 4.203,7; giá trên EMA20 H1 4.206,6 và EMA50 H1 4.201,2, RSI H1 56 – đà hồi còn nhưng yếu, nằm dưới cản D1.",
+      "trendType": "down",
+      "support": [
+        4199,
+        4174,
+        4140
+      ],
+      "resistance": [
+        4225,
+        4246,
+        4268
+      ],
+      "entryZones": [
+        "Mua hồi ngắn: 4.196 – 4.200 USD/oz (EMA20/50 H4 4.198,7 – 4.199,1 · EMA50 H1 4.201,2 · pivot 4.203,7), cần nến H1 rút chân xác nhận; dừng lỗ dưới 4.186; mục tiêu 4.215 – 4.224",
+        "Mua mạnh: 4.165 – 4.178 USD/oz (đáy phiên Á 13/10 4.173,7 · đáy 12/10 4.178,1 · pivot S1 4.165,0), dừng lỗ dưới 4.148 (dưới đáy 05/10 4.150,4); mục tiêu 4.199 rồi 4.215"
+      ],
+      "sellZones": [
+        "Bán hồi (ưu tiên): 4.225 – 4.246 USD/oz (đỉnh hôm nay 4.224,8 · pivot R1 4.229,2 · đỉnh 12/10 4.242,3 · EMA20 D1 4.245,9), cần nến H1 từ chối; dừng lỗ trên 4.262 (trên đỉnh swing 02/10 4.259,0); mục tiêu 4.205 rồi 4.180",
+        "Bán theo phá vỡ: nến H1 đóng dưới 4.196 → bán khi giá hồi lên kiểm tra lại 4.196 – 4.200, dừng lỗ trên 4.212; mục tiêu 4.178 rồi 4.166",
+        "Nến H4 đóng trên 4.246 (vượt EMA20 D1) → tạm dừng bán; đóng cửa ngày trên 4.260 → bỏ kịch bản giảm"
+      ],
+      "scenarios": [
+        "Tin Mỹ đêm nay (giờ VN, ForexFactory): không có tin đỏ. 19:15 ADP việc làm hàng tuần (kỳ trước 23,8K) · 21:00 doanh số nhà hiện hữu (dự báo 3,95 triệu, trước 3,98 triệu) · 00:00 ngày 14/10 Barkin (Fed Richmond) · 03:00 ngày 14/10 Collins (Fed Boston). Tin đỏ gần nhất: 19:30 thứ Tư 14/10 CPI (dự báo 0,6% m/m, 3,6% y/y; lõi 0,2% m/m, 2,5% y/y), rồi 19:30 thứ Năm 15/10 PPI và doanh số bán lẻ.",
+        "Trước tin (19:30 – 21:00): mở cửa Mỹ (~20:30) hay quét 2 đầu. Giá quét lên 4.225 – 4.246 mà nến H1 để râu trên dài/nhấn chìm giảm → bán theo vùng bán hồi. Giá rơi về 4.196 – 4.200 mà giữ được → mua lướt ngắn, chốt sớm quanh 4.215.",
+        "Sau tin 21:00 (doanh số nhà): tin yếu hơn dự báo → USD, lợi suất hạ → vàng dễ test 4.225 – 4.242, chỉ bán khi có tín hiệu từ chối, không đuổi mua dưới cản D1. Tin mạnh hơn dự báo → USD tăng → vàng về 4.196; nến H1 đóng dưới 4.196 → mục tiêu 4.178 – 4.165, thủng 4.165 mở đường 4.140 (pivot S2).",
+        "Khuya (Barkin 00:00, Collins 03:00): giọng 'diều hâu' (ủng hộ tăng lãi suất tiếp) → USD mạnh, bất lợi cho vàng. Kịch bản phá lên: nến H4 đóng trên 4.246 → mục tiêu 4.259 – 4.268, chốt lời tại đó. Khối lượng nhỏ, không nên giữ lệnh lớn qua CPI 19:30 ngày 14/10."
+      ],
+      "physicalAdvice": "Vàng đang có xu hướng giảm dài và sâu, trong trung – dài hạn có thể về dưới mốc 100 triệu/lượng. Người mua vàng vật chất nên chờ mốc này hoặc một thời điểm thích hợp hơn.",
+      "macro": [
+        "CNBC (Reuters, 13/10): vàng giảm nhẹ do USD neo gần đỉnh 18 tháng; thị trường chờ CPI thứ Tư và PPI thứ Năm. CPI, nhất là CPI lõi, nóng hơn dự báo có thể khiến vàng giảm thêm.",
+        "Reuters (13/10): Thống đốc Fed Waller nói kỳ vọng lạm phát vẫn 'được neo vững'; lợi suất dài hạn tăng lên đỉnh 24 năm chủ yếu do tăng trưởng, đầu tư AI và nợ công chứ không phải phần bù lạm phát. Ông giữ quan điểm Fed có thể tăng lãi suất thêm nếu lạm phát còn trên 2%, nhưng không nhất thiết ở các cuộc họp liên tiếp – nghiêng 'diều hâu', bất lợi cho vàng.",
+        "Yahoo Finance (13/10): vàng chật vật sau khi rời đỉnh tháng 9 trên 4.400 USD do USD mạnh, lợi suất tăng và kỳ vọng Fed thắt chặt; ngân hàng trung ương và quỹ ETF vàng vẫn mua tích lũy.",
+        "Liên thị trường (Yahoo, ~19:12 giờ VN): DXY 102,27 (phiên trước 102,59) – USD hạ nhiệt hỗ trợ nhẹ cho vàng; dầu WTI 92,29, Brent 104,74 USD/thùng (giảm khoảng 1,5 – 1,8%) giảm bớt lo ngại lạm phát; lợi suất Mỹ 10 năm vẫn quanh 5,24% – áp lực chính lên vàng."
+      ],
+      "notes": "Các mốc trên là giá vàng tương lai COMEX (GC=F, Yahoo Finance, trễ khoảng 10 phút). Giá giao ngay XAU/USD thấp hơn khoảng 26 USD (gold-api.com: 4.186,4 lúc 19:22 ngày 13/10 giờ VN) – khi đặt lệnh XAU/USD hãy trừ khoảng 25 USD (ví dụ vùng bán 4.225 – 4.246 ≈ 4.200 – 4.221 giao ngay; vùng mua 4.196 – 4.200 ≈ 4.171 – 4.175; vùng mua mạnh 4.165 – 4.178 ≈ 4.140 – 4.153 giao ngay).",
+      "dataTime": "Dữ liệu: COMEX GC=F – giá 4.212,5 lúc 19:12 ngày 13/10/2026 giờ VN; D1: EMA20 4.245,9 · EMA50 4.305,8 · RSI 44; H4 (ghép từ nến 1h): EMA20 4.198,7 · EMA50 4.199,1 · RSI 57; H1: EMA20 4.206,6 · EMA50 4.201,2 · RSI 56; phiên 13/10: O 4.195,5 · H 4.224,8 · L 4.173,7; pivot cổ điển từ phiên 12/10 (H 4.242,3 · L 4.178,1 · C 4.190,6): P 4.203,7 · R1 4.229,2 · R2 4.267,9 · S1 4.165,0 · S2 4.139,5.",
+      "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư."
+    },
+    {
       "id": "2026-10-13-phien-au-my-1810",
       "date": "2026-10-13",
       "time": "18:10",
