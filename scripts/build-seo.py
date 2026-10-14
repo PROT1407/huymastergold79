@@ -24,6 +24,9 @@ OUT = ROOT / "bai"
 MAIN_PAGES = ["index.html", "gia-vang.html", "chien-luoc.html", "bieu-do.html", "live.html",
               "tin-tuc.html", "lich-kinh-te.html", "kien-thuc.html", "quy-forex.html",
               "tai-khoan-follow.html", "ve-toi.html", "lien-he.html"]
+# Trang tiếng Anh (en/, html lang="en"). Cặp VI <-> EN dùng cho hreflang (vi, en, x-default = VI) và sitemap.
+EN_PAGES = ["en/index.html", "en/h79-analysis.html", "en/about.html"]
+LANG_PAIRS = {"index.html": "en/index.html", "chien-luoc.html": "en/h79-analysis.html", "ve-toi.html": "en/about.html"}
 OLD_BASES = ["https://huymastergold79.com.vn/", "https://prot1407.github.io/huymastergold79/"]
 VN = dt.timezone(dt.timedelta(hours=7))
 TODAY = dt.datetime.now(VN).date().isoformat()
@@ -107,7 +110,7 @@ def page(a, body):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
 <script>document.documentElement.dataset.theme=localStorage.getItem('hmg_theme')||'dark'</script>
-<link rel="stylesheet" href="css/site.css?v=20261014a">
+<link rel="stylesheet" href="css/site.css?v=20261014b">
 {CSS}
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>
@@ -122,7 +125,7 @@ def page(a, body):
 <div class="seo-nav"><a class="btn" href="bai/index.html">📰 Kho bài viết</a><a class="btn ghost" href="chien-luoc.html">🎯 Chiến lược hôm nay</a><a class="btn ghost" href="gia-vang.html">💰 Giá vàng VN</a><a class="btn ghost" href="lich-kinh-te.html">📅 Lịch kinh tế</a><a class="btn ghost" href="live.html">🔴 Phòng Live</a></div>
 </article></main>
 <div id="site-footer"></div>
-<script src="js/common.js?v=20261014a"></script>
+<script src="js/common.js?v=20261014b"></script>
 </body>
 </html>
 """
@@ -272,6 +275,15 @@ def fix_main_pages(arts):
             if ob != BASE_URL:
                 s = re.sub(r'((?:rel="canonical" href|property="og:(?:url|image)" content)=")' + re.escape(ob), r"\1" + BASE_URL, s)
                 s = s.replace(f'"url":"{ob}"', f'"url":"{BASE_URL}"')
+        if p in LANG_PAIRS:  # hreflang alternates (idempotent: thay khối giữa marker)
+            vu = BASE_URL if p == "index.html" else BASE_URL + p
+            alt = (f'<!-- HREFLANG:START -->\n<link rel="alternate" hreflang="vi" href="{vu}">\n'
+                   f'<link rel="alternate" hreflang="en" href="{BASE_URL}{LANG_PAIRS[p]}">\n'
+                   f'<link rel="alternate" hreflang="x-default" href="{vu}">\n<!-- HREFLANG:END -->')
+            if "<!-- HREFLANG:START" in s:
+                s = re.sub(r"<!-- HREFLANG:START.*?<!-- HREFLANG:END -->", lambda _: alt, s, flags=re.S)
+            else:
+                s = re.sub(r'(<link rel="canonical"[^>]*>)', lambda m: m.group(1) + "\n" + alt, s, count=1)
         if p == "index.html":
             latest = "".join(f'<li><span class="badge side">{KIND[a["kind"]][0]} {KIND[a["kind"]][1]}</span> <a href="bai/{a["file"]}">{e(a["title"])}</a></li>' for a in arts[:6])
             block = (f'<!-- SEO-LATEST:START (tự sinh bởi scripts/build-seo.py) -->\n<section class="card sec"><h2>📰 Bài viết mới</h2>'
@@ -298,6 +310,7 @@ def main():
     fix_main_pages(arts)
     latest = arts[0]["date"] if arts else TODAY
     urls = [(BASE_URL if p == "index.html" else BASE_URL + p, latest, "daily", "1.0" if p == "index.html" else "0.8") for p in MAIN_PAGES if (ROOT / p).exists()]
+    urls += [(BASE_URL + p, latest, "daily", "0.7") for p in EN_PAGES if (ROOT / p).exists()]
     urls.append((BASE_URL + "bai/", latest, "daily", "0.8"))
     urls += [(BASE_URL + "bai/" + a["file"], a["date"], "weekly", "0.6") for a in arts]
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(

@@ -22,7 +22,20 @@
 
   /* ---- menu ---- */
   const page = document.body.dataset.page || 'home';
-  const M = [
+  const EN = H.EN = (document.documentElement.lang || '').toLowerCase().startsWith('en');
+  /* ---- VI/EN: cặp trang tương ứng (giữ đồng bộ với thẻ hreflang) ---- */
+  const LANG_PAIRS = H.LANG_PAIRS = { 'index.html': 'en/index.html', 'chien-luoc.html': 'en/h79-analysis.html', 've-toi.html': 'en/about.html' };
+  const curFile = (() => { const a = location.pathname.split('/').filter(Boolean); const f = /\.html$/.test(a[a.length - 1] || '') ? a.pop() : 'index.html'; return (EN ? 'en/' : (a[a.length - 1] === 'bai' ? 'bai/' : '')) + f; })();
+  const langHref = EN ? (Object.keys(LANG_PAIRS).find(k => LANG_PAIRS[k] === curFile) || 'index.html') : (LANG_PAIRS[curFile] || 'en/index.html');
+  const langBtn = `<a class="icon-btn lang-btn" href="${langHref}" hreflang="${EN ? 'vi' : 'en'}" lang="${EN ? 'vi' : 'en'}" title="${EN ? 'Tiếng Việt' : 'English version'}" aria-label="${EN ? 'Chuyển sang tiếng Việt' : 'Switch to English'}" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:800;font-size:.8rem;flex:0 0 auto">${EN ? 'VI' : 'EN'}</a>`;
+  const M_EN = [
+    ['enhome', 'en/index.html', '🏠 Home'],
+    ['strat', 'en/h79-analysis.html', '🎯 H79 Analysis'],
+    ['vetoi', 'en/about.html', '🙋 About'],
+    ['chart', 'bieu-do.html', '📈 Charts'],
+    ['live', 'live.html', '🔴 Live (VI)']
+  ];
+  const M = EN ? M_EN : [
     ['home', 'index.html', '🏠 Trang chủ'],
     ['gia', 'gia-vang.html', '💰 Giá vàng VN', [
       ['gia-vang.html#bang-gia', 'Bảng giá trong nước', 'SJC, PNJ, DOJI, Bảo Tín…'],
@@ -55,15 +68,27 @@
   const menu = M.map(([k, href, label, sub, mega]) => `<li><a href="${href}" class="${k === page ? 'on' : ''}">${label}${sub ? ' ▾' : ''}</a>${sub ? `<div class="dd${mega ? ' mega' : ''}">${sub.map(s => `<a href="${s[0]}">${s[1]}<small>${s[2]}</small></a>`).join('')}</div>` : ''}</li>`).join('');
 
   const hdr = `
-  <div class="pricebar" aria-label="Giá vàng"><div class="track" id="pb-track"><span>Đang tải giá vàng…</span></div></div>
+  <div class="pricebar" aria-label="${EN ? 'Gold prices' : 'Giá vàng'}"><div class="track" id="pb-track"><span>${EN ? 'Loading gold prices…' : 'Đang tải giá vàng…'}</span></div></div>
   <header class="hdr"><div class="wrap">
-    <a class="brand" href="index.html"><img src="assets/favicon.svg" width="34" height="34" alt="">Huymaster<b>Gold79</b></a>
+    <a class="brand" href="${EN ? 'en/index.html' : 'index.html'}"><img src="assets/favicon.svg" width="34" height="34" alt="">Huymaster<b>Gold79</b></a>
     <ul class="menu" id="menu">${menu}</ul>
     <a href="live.html" id="live-badge" class="live-badge" hidden>● LIVE</a>
-    <button class="icon-btn" id="theme-btn" title="Đổi giao diện sáng/tối" aria-label="Đổi giao diện">🌓</button>
+    ${langBtn}
+    <button class="icon-btn" id="theme-btn" title="${EN ? 'Light/dark theme' : 'Đổi giao diện sáng/tối'}" aria-label="${EN ? 'Toggle theme' : 'Đổi giao diện'}">🌓</button>
     <button class="icon-btn burger" id="burger" aria-label="Menu">☰</button>
   </div></header>`;
-  const ftr = `
+  const ftrEN = `
+  <footer><div class="wrap">
+    <div class="cols">
+      <div><a class="brand" href="en/index.html" style="display:flex"><img src="assets/favicon.svg" width="30" height="30" alt="">Huymaster<b>Gold79</b></a>
+        <p class="muted small" style="margin-top:8px">Independent gold (XAUUSD) analysis by Ngọc Huy, Vietnam.</p>
+        <div class="share"><a href="${H.YT}" target="_blank" rel="noopener">▶ YouTube</a><a class="tg-link" href="${H.TG}" target="_blank" rel="noopener">✈ Telegram</a><a href="mailto:${H.EMAIL}">✉ Email</a></div></div>
+      <div><h4>English</h4><a href="en/index.html">Home</a><a href="en/h79-analysis.html">H79 Analysis</a><a href="en/about.html">About</a></div>
+      <div><h4>Tiếng Việt</h4><a href="index.html">Trang chủ</a><a href="chien-luoc.html">Chiến lược</a><a href="ve-toi.html">Về tôi</a><a href="lien-he.html">Liên hệ</a></div>
+    </div>
+    <p class="disc">⚠ <b>Disclaimer:</b> All content is for information and education only and reflects personal opinion; it is <b>not investment advice</b>. Trading gold, forex and CFDs involves a high risk of loss. Past performance does not guarantee future results. Third-party data (TradingView, gold-api.com, Yahoo Finance) may be delayed or inaccurate.<br>© ${new Date().getFullYear()} HuymasterGold79</p>
+  </div></footer>`;
+  const ftr = EN ? ftrEN : `
   <footer><div class="wrap">
     <div class="cols">
       <div><a class="brand" href="index.html" style="display:flex"><img src="assets/favicon.svg" width="30" height="30" alt="">Huymaster<b>Gold79</b></a>
@@ -81,7 +106,7 @@
     <h3 style="color:var(--gold)">Kết bạn Zalo – Ngọc Huy</h3><img src="assets/zalo-qr.jpg" alt="Mã QR Zalo Ngọc Huy">
     <p class="muted small">Quét mã bằng Zalo để nhận chiến lược mỗi sáng</p><a class="btn zalo" href="${H.ZALO}" target="_blank" rel="noopener">Mở Zalo</a></div></div>`;
   document.getElementById('site-header').outerHTML = hdr;
-  document.getElementById('site-footer').outerHTML = ftr;
+  document.getElementById('site-footer').outerHTML = ftr + (EN ? `<div id="zalo-modal" class="modal" hidden><div class="modal-box"><button class="x" aria-label="Close">×</button><h3 style="color:var(--gold)">Zalo – Ngọc Huy</h3><img src="assets/zalo-qr.jpg" alt="Zalo QR code"><a class="btn zalo" href="${H.ZALO}" target="_blank" rel="noopener">Open Zalo</a></div></div>` : '');
 
   document.getElementById('burger').onclick = () => document.body.classList.toggle('nav-open');
   document.getElementById('theme-btn').onclick = () => {
@@ -151,11 +176,11 @@
   function renderBar() {
     const D = H.data, items = [];
     if (D.xau) items.push(`<span>🌍 XAU/USD ${H.fmt(D.xau, 1)}</span>`);
-    if (D.world) items.push(`<span>Quy đổi ${H.fmt(D.world / 1e6, 2)} tr/lượng</span>`);
+    if (D.world) items.push(EN ? `<span>VN equiv. ${H.fmt(D.world / 1e6, 2)}M VND/tael</span>` : `<span>Quy đổi ${H.fmt(D.world / 1e6, 2)} tr/lượng</span>`);
     D.rows.slice(0, 8).forEach(r => items.push(`<span>${H.esc(r.name)}: ${H.fmt(r.buy / 1e3)} – ${H.fmt(r.sell / 1e3)}${chg(r.change_sell)}</span>`));
-    if (D.gap) items.push(`<span>Chênh SJC: +${H.fmt(D.gap / 1e6, 2)} tr</span>`);
+    if (D.gap) items.push(`<span>${EN ? 'SJC premium' : 'Chênh SJC'}: +${H.fmt(D.gap / 1e6, 2)} tr</span>`);
     if (D.fx) items.push(`<span>USD/VND ${H.fmt(D.fx)}</span>`);
-    const html = items.join('') || '<span>Không tải được giá</span>';
+    const html = items.join('') || (EN ? '<span>Prices unavailable</span>' : '<span>Không tải được giá</span>');
     document.getElementById('pb-track').innerHTML = html + html;
   }
   /* ---- lịch live (giờ VN, GMT+7) ---- */

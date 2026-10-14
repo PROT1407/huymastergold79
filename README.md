@@ -43,3 +43,21 @@ python3 scripts/build-seo.py
 Script idempotent (chạy lại không đổi gì nếu JSON không đổi), chỉ hiển thị nội dung có trong JSON, không dùng thư viện ngoài. Đổi tên miền: sửa `BASE_URL` ở đầu script rồi chạy lại.
 
 Tự động: workflow `.github/workflows/build-seo.yml` chạy script này khi push thay đổi `data/**` lên main và mỗi ngày 00:05 UTC, tự commit (github-actions[bot]) nếu có thay đổi. Chạy tay trước khi push vẫn nên làm để trang lên ngay.
+
+## English version (`en/`) – trường `_en` trong `data/strategies.json`
+Trang tiếng Anh: `en/index.html`, `en/h79-analysis.html` (render bởi `js/en-h79.js`), `en/about.html`. Nút VI | EN và cặp trang ở `js/common.js` (`LANG_PAIRS`); hreflang + sitemap do `scripts/build-seo.py` sinh (`LANG_PAIRS`, `EN_PAGES`).
+
+**Routine H79 nên điền thêm các trường tiếng Anh (tùy chọn – thiếu thì trang EN tự fallback):**
+
+| Trường | Ý nghĩa | Fallback khi thiếu |
+|---|---|---|
+| `title_en` | Tiêu đề, bắt đầu "H79 ANALYSIS – …" | "H79 ANALYSIS – <session> <date>" |
+| `session_en` | "Asian session" / "European session" / "US session" / "European – US session" | dịch từ `session` |
+| `summary.trendText_en` | "Bearish" / "Bullish" / "Sideways" | dịch từ enum `summary.trend` |
+| `summary.sell.zone_en`, `summary.buy.zone_en` | chỉ cần khi `zone` có chữ tiếng Việt, ví dụ "(chỉ khi chuyển kênh tăng)" | số trong `zone` (bỏ phần chữ trong ngoặc) |
+| `summary.sell.sl_en` / `tp_en`, `summary.buy.sl_en` / `tp_en` | chỉ khi SL/TP có chữ | số của `sl` / `tp` |
+| `summary.note_en` | ⚠️ ghi chú 1 dòng (tin, giờ VN) | ẩn |
+| `summary.priceNote_en` | "Spot XAU/USD price (converted)" hoặc "COMEX gold futures price (GC=F), not spot – spot XAU/USD is about N USD lower" | câu chung theo `summary.price` |
+| `trend_en`, `entryZones_en[]`, `sellZones_en[]`, `scenarios_en[]`, `macro_en[]`, `physicalAdvice_en`, `notes_en`, `dataTime_en`, `disclaimer_en` | phần "See more" | ẩn + link bản tiếng Việt |
+
+Quy ước tiếng Anh: số kiểu Anh (4,211 – 4,221; 3.6%), giờ luôn là giờ Việt Nam (GMT+7), ngày "14 Oct". Số trong trường tiếng Việt (4.211) tự đổi sang 4,211 khi hiển thị. Không hứa lợi nhuận; số liệu quỹ/follow mẫu phải ghi rõ là mẫu.

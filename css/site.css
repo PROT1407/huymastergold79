@@ -230,3 +230,4 @@ details.h79more{margin-top:12px}
 details.h79more>summary{cursor:pointer;font-weight:700;font-size:1.05rem;padding:10px 14px;border:1px solid var(--line,#444);border-radius:10px;list-style:none}
 details.h79more>summary::before{content:"▸ "}details.h79more[open]>summary::before{content:"▾ "}
 @media(max-width:600px){.h79s{font-size:1.05rem;padding:12px}.h79s .t{font-size:1.3rem}}
+@media(max-width:560px){.hdr .wrap{gap:8px}.hdr .brand{font-size:1rem;gap:6px;min-width:0}.hdr .brand img{width:28px;height:28px}}
