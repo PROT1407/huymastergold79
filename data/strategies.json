@@ -1,6 +1,110 @@
 {
  "strategies": [
   {
+   "id": "2026-10-15-phien-a-0645",
+   "date": "2026-10-15",
+   "time": "06:45",
+   "session": "Phiên Á",
+   "session_en": "Asian session",
+   "headline": "Phiên Á 15/10: kênh giảm, ưu tiên mua 4.099 – 4.109 (giá ~4.108)",
+   "headline_en": "Asian session Oct 15: still bearish – prefer longs 4,099–4,109 (spot ~4,108)",
+   "title": "Phiên Á: kênh giảm 5m/15m/30m – ưu tiên MUA 4.099 – 4.109, chờ PPI/Retail 19:30",
+   "title_en": "Asian session: lower timeframes still bearish – prefer longs 4,099–4,109 ahead of PPI/retail at 8:30 AM ET",
+   "trend": "Bộ lọc kênh H79 (MA34/MA89, giá giao ngay ~4.108): 5m – giá 4.108 dưới MA34 4.110, MA34 trên MA89 4.102 (cắt lên lúc 02:50) nhưng giá chưa trên MA34 → kênh giảm. 15m – giá trên MA34 4.102 nhưng MA34 dưới MA89 4.133 (cắt xuống 23:45 13/10) → kênh giảm. 30m – giá dưới MA34 4.122 < MA89 4.158 → kênh giảm. Ưu tiên MUA tại BB90 dưới 45m–3H; chỉ bán khi hồi về kháng cự hoặc khung nhỏ chuyển tăng. D1 vẫn giảm (giá dưới MA34 ~4.311 và MA89 ~4.252).",
+   "trend_en": "H79 channel filter (MA34/MA89, spot ~4,108): 5m – price 4,108 below MA34 4,110; MA34 above MA89 4,102 (bullish cross 3:50 PM ET Oct 14) but price not above MA34 → bearish. 15m – price above MA34 4,102 but MA34 below MA89 4,133 (bearish cross 12:45 PM ET Oct 13) → bearish. 30m – price below MA34 4,122, MA34 below MA89 4,158 → bearish. Plan: buy dips at the lower BB90 on the 45m–3H; shorts only on a bounce into resistance or if lower timeframes flip bullish. Daily remains bearish (price below MA34 ~4,311 and MA89 ~4,252).",
+   "trendType": "down",
+   "support": [
+    4109,
+    4102,
+    4099,
+    4086,
+    4081
+   ],
+   "resistance": [
+    4113,
+    4119,
+    4123,
+    4133,
+    4163
+   ],
+   "entryZones": [
+    "Mua 1: 4.099 – 4.109 (BB90 dưới 2H 4.099 · 45m 4.102 · 1H 4.109 · Fib 0,786 sóng giảm CPI 4.166→4.081 ≈ 4.099). Vào giữa vùng ~4.104, dừng lỗ 4.089; mục tiêu 4.119 (đỉnh Á) rồi 4.123 (Fib 0,5 · pivot P). Kích hoạt: MACD 12/26/9 cắt lên (45m/1H vừa cắt lên ~02:30–05:00), RSI14 gần 30–40.",
+    "Mua 2 (mạnh hơn nếu tụt): 4.081 – 4.086 (đáy post-CPI 4.081 · đáy Á / BB90 dưới 4H 4.085). Dừng lỗ 4.071; mục tiêu 4.099 rồi 4.109."
+   ],
+   "entryZones_en": [
+    "Long 1: 4,099–4,109 (lower BB90 2H 4,099 · 45m 4,102 · 1H 4,109 · Fib 0.786 of the CPI down-leg 4,166→4,081 ≈ 4,099). Enter mid-zone ~4,104; stop 4,089; targets 4,119 (Asia high), then 4,123 (Fib 0.5 · pivot P). Trigger: bullish MACD (12/26/9) cross (45m/1H just crossed up ~3:30–6:00 PM ET Oct 14), RSI(14) near 30–40.",
+    "Long 2 (higher conviction on a flush): 4,081–4,086 (post-CPI low 4,081 · Asia low / 4H lower BB90 4,085). Stop 4,071; targets 4,099, then 4,109."
+   ],
+   "sellZones": [
+    "Bán (chỉ khi hồi và/hoặc 5m/15m/30m chuyển kênh tăng): 4.113 – 4.123 (Fib 0,618 sóng giảm ≈ 4.113 · đỉnh Á 4.119 · pivot P / Fib 0,5 ≈ 4.123). Vào giữa ~4.118, dừng lỗ 4.133; mục tiêu 4.109 rồi 4.099. Kích hoạt MACD cắt xuống + RSI gần 70.",
+    "Vô hiệu kế hoạch mua: nến 1H đóng dưới 4.071 → đứng ngoài; tham chiếu tiếp đáy 5 phiên / pivot S1 ~4.068."
+   ],
+   "sellZones_en": [
+    "Short (only on a bounce and/or if 5m/15m/30m flip bullish): 4,113–4,123 (Fib 0.618 of the down-leg ≈ 4,113 · Asia high 4,119 · pivot P / Fib 0.5 ≈ 4,123). Enter mid ~4,118; stop 4,133; targets 4,109, then 4,099. Trigger: bearish MACD cross with RSI near 70.",
+    "Long setup invalidated on a 1H close below 4,071 – stand aside; next reference is the 5-session / pivot S1 area near 4,068."
+   ],
+   "scenarios": [
+    "BB90 (dev 2) trên / giữa / dưới: 45m 4.230 / 4.166 / 4.102 · 1H 4.239 / 4.174 / 4.109 · 2H 4.223 / 4.161 / 4.099 · 3H 4.225 / 4.169 / 4.112 · 4H 4.281 / 4.183 / 4.085.",
+    "MACD 12/26/9 và RSI14: 45m và 1H vừa cắt lên (histogram dương nhẹ; RSI 45m ~40 · 1H ~37); 2H/3H/4H vẫn histogram âm, RSI ~34–36 – nghiêng giảm, chưa quá bán sâu. D1: MACD âm, RSI ~36.",
+    "Pivot cổ điển (phiên NY 14/10 từ 5m: H 4.176 L 4.081 C 4.108): P 4.122 · R1 4.163 · R2 4.218 · S1 4.068 · S2 4.027. Vùng cũ: post-CPI 4.166 / 4.081 · Á tới nay 4.119 / 4.085 · 3 phiên H 4.214 L 4.081 · 5 phiên H 4.220 L 4.081.",
+    "Tin (giờ VN): 19:30 hôm nay 15/10 PPI Mỹ và doanh số bán lẻ – đóng lệnh hoặc dời SL hòa vốn trước tin; tránh vào lệnh quanh giờ công bố. Thứ Sáu 16/10 Chủ tịch Fed Warsh phát biểu.",
+    "Rủi ro: mua ngược D1 giảm sau CPI nóng – khối lượng nhỏ, chốt lời nhanh, luôn đặt dừng lỗ. Basis GC − giao ngay ~14 USD có thể lệch vài giá."
+   ],
+   "scenarios_en": [
+    "BB90 (2 SD) upper / mid / lower: 45m 4,230 / 4,166 / 4,102 · 1H 4,239 / 4,174 / 4,109 · 2H 4,223 / 4,161 / 4,099 · 3H 4,225 / 4,169 / 4,112 · 4H 4,281 / 4,183 / 4,085.",
+    "MACD (12/26/9) and RSI(14): 45m and 1H just crossed up (histogram lightly positive; RSI 45m ~40 · 1H ~37); 2H/3H/4H still negative histogram, RSI ~34–36 – leaning bearish, not deeply oversold. Daily: MACD negative, RSI ~36.",
+    "Classic pivots (Oct 14 NY session from 5m: H 4,176 L 4,081 C 4,108): P 4,122 · R1 4,163 · R2 4,218 · S1 4,068 · S2 4,027. Prior ranges: post-CPI 4,166 / 4,081 · Asia so far 4,119 / 4,085 · 3-session H 4,214 L 4,081 · 5-session H 4,220 L 4,081.",
+    "Calendar: US PPI and retail sales Thu Oct 15, 8:30 AM ET – be flat or have stops at breakeven before the prints; avoid fresh entries around the release. Fed Chair Warsh speaks Fri Oct 16.",
+    "Risk: longs are counter-trend against a bearish daily after hot CPI – trade small, take profits quickly, always use a stop. GC−spot basis ~$14 can leave levels off by a few dollars."
+   ],
+   "macro": [
+    "CNBC (Reuters): vàng giảm hơn 1% sau CPI Mỹ nóng – USD mạnh và kỳ vọng Fed tăng lãi đè vàng. https://www.cnbc.com/2026/10/14/gold-prices-hold-firm-ahead-of-us-inflation-data.html",
+    "CNBC: USD lập đỉnh 18 tháng sau CPI nóng; FedWatch tăng xác suất tăng lãi tháng 10 – bất lợi cho vàng. https://www.cnbc.com/2026/10/14/dollar-languishes-as-focus-turns-to-cpi-fed-speakers.html",
+    "CNBC: lợi suất 10 năm quanh 5,19% sau phản ứng CPI; thị trường chờ PPI và doanh số bán lẻ sáng thứ Năm. https://www.cnbc.com/2026/10/14/us-treasury-yields-cpi-inflation-report.html",
+    "Kitco: spot vàng thủng dưới 4.100 sau CPI (0,6% m/m · 3,7% y/y; lõi 0,3%/2,6%); dầu WTI ~95, Brent ~106 giữ áp lực lạm phát năng lượng. https://www.kitco.com/news/article/2026-10-14/gold-falls-below-4100-silver-plunges-6-hot-cpi-boosts-fed-hike-bets-kitco"
+   ],
+   "macro_en": [
+    "CNBC (Reuters): gold drops more than 1% after hot U.S. CPI as a stronger dollar and higher Fed-hike odds weigh on bullion. https://www.cnbc.com/2026/10/14/gold-prices-hold-firm-ahead-of-us-inflation-data.html",
+    "CNBC: the dollar hits an 18-month high on the hot CPI print; FedWatch lifts October hike odds – a headwind for gold. https://www.cnbc.com/2026/10/14/dollar-languishes-as-focus-turns-to-cpi-fed-speakers.html",
+    "CNBC: the 10-year yield settles near 5.19% after the CPI spike; traders turn to Thursday’s PPI and retail sales. https://www.cnbc.com/2026/10/14/us-treasury-yields-cpi-inflation-report.html",
+    "Kitco: spot gold breaks below 4,100 after CPI (+0.6% m/m · 3.7% y/y; core +0.3% / 2.6%); WTI ~$95 and Brent ~$106 keep energy-led inflation pressure on. https://www.kitco.com/news/article/2026-10-14/gold-falls-below-4100-silver-plunges-6-hot-cpi-boosts-fed-hike-bets-kitco"
+   ],
+   "notes": "Các mốc là giá giao ngay XAU/USD quy đổi = COMEX GC=F (Yahoo, trễ ~10 phút) trừ khoảng 14 USD (GC 4.122,8 – giao ngay gold-api.com 4.108,4 lúc 06:48 VN). Chênh lệch dao động nên mức có thể lệch vài giá; chart sàn của bạn là chuẩn. MA là đường trung bình đơn (SMA).",
+   "notes_en": "Levels are spot XAU/USD derived from COMEX GC=F (Yahoo, ~10 min delay) minus about $14 (GC 4,122.8 vs. spot 4,108.4 from gold-api.com at 7:48 PM ET Oct 14). The basis moves around, so levels may be off by a few dollars – go by your broker's chart. MAs are simple (SMA).",
+   "dataTime": "Dữ liệu: GC=F nến 5m/15m/60m/1D (30m, 45m, 2H, 3H, 4H ghép lại), cập nhật ~06:37–06:48 ngày 15/10/2026 giờ VN (GC 4.122,8); giao ngay gold-api.com 4.108,4 lúc 06:48 VN.",
+   "dataTime_en": "Data: GC=F 5m/15m/60m/daily candles (30m, 45m, 2H, 3H, 4H resampled), as of ~7:37–7:48 PM ET Oct 14, 2026 (GC 4,122.8); spot 4,108.4 (gold-api.com) at 7:48 PM ET.",
+   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+   "physicalAdvice": "Vàng đã giảm mạnh sau CPI nóng và đang test lại đáy phiên ~4.083; xu hướng trung hạn vẫn giảm – người mua vàng vật chất có thể chờ nếu 4.070 thủng.",
+   "physicalAdvice_en": "Gold sold off hard on hot CPI and is retesting the session low near 4,083; the medium-term trend is still down – physical buyers may wait further if 4,070 breaks.",
+   "summary": {
+    "trend": "down",
+    "trendText": "Giảm",
+    "trendText_en": "Bearish",
+    "sell": {
+     "zone": "4.113 – 4.123 (khi hồi / khung nhỏ chuyển tăng)",
+     "sl": "4.133",
+     "tp": "4.109 → 4.099",
+     "zone_en": "4,113–4,123 (on a bounce / if lower timeframes flip bullish)",
+     "sl_en": "4,133",
+     "tp_en": "4,109 → 4,099"
+    },
+    "buy": {
+     "zone": "4.099 – 4.109",
+     "sl": "4.089",
+     "tp": "4.119 → 4.123",
+     "zone_en": "4,099–4,109",
+     "sl_en": "4,089",
+     "tp_en": "4,119 → 4,123"
+    },
+    "note": "19:30 hôm nay PPI + doanh số bán lẻ Mỹ – đóng/dời SL hòa vốn trước tin; tránh vào quanh giờ công bố",
+    "note_en": "US PPI + retail sales 8:30 AM ET – stops to breakeven or be flat before the prints; avoid fresh entries around the release",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD (quy đổi)",
+    "priceNote_en": "Levels are spot XAU/USD (converted from futures)"
+   }
+  },
+  {
    "id": "2026-10-14-phien-dem-2107",
    "date": "2026-10-14",
    "time": "22:37",
@@ -1209,64 +1313,6 @@
    ],
    "notes_en": "Technicals use COMEX gold futures (GC=F, Yahoo Finance); spot XAU/USD trades about $20 lower (gold-api.com: 4,168.2 at 3:32 PM ET Oct 12) – for XAU/USD orders subtract about $20 from the levels above.",
    "dataTime_en": "Data: COMEX GC=F – 4,188.2 at 3:22 PM ET Oct 12, 2026; daily: 20 EMA 4,249.1 · 50 EMA 4,309.4; H4 (built from 1h bars): 20 EMA 4,191.9 · 50 EMA 4,196.9; classic pivots from the Oct 9 session (H 4,233.7 · L 4,156.1 · C 4,216.3)."
-  },
-  {
-   "date": "2026-10-12",
-   "title": "Vàng hồi kỹ thuật nhưng vẫn dưới EMA ngày – giằng co 4.130–4.260",
-   "trend": "Giảm trung hạn (D1 dưới EMA20/EMA50), đi ngang ngắn hạn (H4)",
-   "trendType": "down",
-   "support": [
-    4170,
-    4128,
-    4091
-   ],
-   "resistance": [
-    4242,
-    4259,
-    4280
-   ],
-   "entryZones": [
-    "Mua thăm dò: 4.170 – 4.180 USD/oz (pivot S1 4.170,4 + đáy 01/10 4.169,4 + đáy phiên 12/10 4.178,1), dừng lỗ dưới 4.150",
-    "Mua mạnh: 4.125 – 4.131 USD/oz (đáy 08/10 4.128,1, đáy 06/10 4.130,7, pivot S2 4.124,4), dừng lỗ dưới 4.085 (đáy swing 07/10 4.091,2)"
-   ],
-   "sellZones": [
-    "Bán khi hồi lên 4.242 – 4.259 USD/oz (đỉnh phiên 12/10 4.242,3, pivot R1 4.248,0, đỉnh swing 02/10 4.259,0), dừng lỗ trên 4.285 (trên pivot R2 4.279,6)",
-    "Nếu đóng cửa ngày trên 4.260 → bỏ kịch bản bán; kháng cự kế tiếp 4.280 (pivot R2) và 4.326 (pivot R3)"
-   ],
-   "physicalAdvice": "Vàng đang có xu hướng giảm dài và sâu, trong trung – dài hạn có thể về dưới mốc 100 triệu/lượng. Người mua vàng vật chất nên chờ mốc này hoặc một thời điểm thích hợp hơn.",
-   "macro": [
-    "Lợi suất thực TIPS 10 năm 2,91% (09/10) – lực cản chi phí cơ hội cho vàng.",
-    "Lợi suất 30 năm hạ từ 5,67% (07/10) về 5,60% (08–09/10) – hỗ trợ nhịp hồi lên 4.216,3 ngày 09/10.",
-    "NFP tháng 9 chỉ +29.000, thất nghiệp 4,2% – giảm khả năng Fed tăng tiếp.",
-    "FOMC đã tăng lên 3,75–4,00% (16/09); dot plot trung vị 4,1% cuối 2026. Họp tiếp 27–28/10.",
-    "DXY 102,23 (09/10) đi ngang – chưa tạo lực đẩy rõ."
-   ],
-   "notes": "Số liệu kỹ thuật dùng hợp đồng vàng tương lai COMEX (GC=F, Yahoo Finance); giá giao ngay XAU/USD thường thấp hơn khoảng 20 USD (gold-api.com: 4.172,4 lúc 01:15 ngày 13/10 giờ VN).",
-   "dataTime": "Dữ liệu: COMEX GC=F – nến ngày tới 12/10/2026 (giá 4.194,8 lúc 01:05 ngày 13/10/2026 giờ VN); pivot cổ điển từ phiên 09/10 (H 4.233,7 · L 4.156,1 · C 4.216,3).",
-   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
-   "id": "2026-10-12",
-   "session": "Phiên Mỹ",
-   "title_en": "Gold bounces technically but stays under the daily EMAs – range 4,130–4,260",
-   "session_en": "New York session",
-   "trend_en": "Medium-term bearish (daily below the 20/50 EMA), short-term sideways (H4)",
-   "entryZones_en": [
-    "Probe long: 4,170–4,180 (pivot S1 4,170.4 + Oct 1 low 4,169.4 + Oct 12 session low 4,178.1), stop below 4,150",
-    "Stronger long: 4,125–4,131 (Oct 8 low 4,128.1, Oct 6 low 4,130.7, pivot S2 4,124.4), stop below 4,085 (Oct 7 swing low 4,091.2)"
-   ],
-   "sellZones_en": [
-    "Sell a rally into 4,242–4,259 (Oct 12 session high 4,242.3, pivot R1 4,248.0, Oct 2 swing high 4,259.0), stop above 4,285 (above pivot R2 4,279.6)",
-    "A daily close above 4,260 → short scenario off; next resistance 4,280 (pivot R2) and 4,326 (pivot R3)"
-   ],
-   "physicalAdvice_en": "Bigger picture, gold is in a long, deep downtrend and could go meaningfully lower over the medium to long term. Physical buyers may want to be patient and wait for a better entry.",
-   "macro_en": [
-    "10-year TIPS real yield 2.91% (Oct 9) – an opportunity-cost headwind for gold.",
-    "The 30-year yield eased from 5.67% (Oct 7) to 5.60% (Oct 8–9) – supporting the Oct 9 bounce to 4,216.3.",
-    "September payrolls just +29,000, unemployment 4.2% – lowers the odds of further Fed hikes.",
-    "The FOMC hiked to 3.75–4.00% (Sep 16); dot-plot median 4.1% for end-2026. Next meeting Oct 27–28.",
-    "DXY 102.23 (Oct 9), flat – no clear push either way."
-   ],
-   "notes_en": "Technicals use COMEX gold futures (GC=F, Yahoo Finance); spot XAU/USD usually trades about $20 lower (gold-api.com: 4,172.4 at 2:15 PM ET Oct 12).",
-   "dataTime_en": "Data: COMEX GC=F – daily bars through Oct 12, 2026 (4,194.8 at 2:05 PM ET Oct 12); classic pivots from the Oct 9 session (H 4,233.7 · L 4,156.1 · C 4,216.3)."
   }
  ]
 }
