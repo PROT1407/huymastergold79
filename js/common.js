@@ -12,10 +12,20 @@
   H.fmt = (n, d = 0) => (n == null || isNaN(n)) ? '—' : Number(n).toLocaleString(/^en/i.test(document.documentElement.lang) ? 'en-US' : 'vi-VN', { maximumFractionDigits: d, minimumFractionDigits: d });
   H.esc = t => String(t == null ? '' : t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   H.dateVN = s => { const [y, m, d] = s.split('-'); return `${d}/${m}/${y}`; };
-  H.getJSON = async u => { const r = await fetch(u, { cache: 'no-store' }); if (!r.ok) throw new Error(u + ' ' + r.status); return r.json(); };
+  /* fetch có timeout (mạng di động/Safari có thể treo request vô hạn) */
+  H.getJSON = (u, ms = 8000) => new Promise((ok, no) => {
+    let done = false; const ac = typeof AbortController === 'function' ? new AbortController() : null;
+    const t = setTimeout(() => { if (done) return; done = true; try { ac && ac.abort(); } catch (e) { } no(new Error(u + ' timeout')); }, ms);
+    fetch(u, ac ? { cache: 'no-store', signal: ac.signal } : { cache: 'no-store' })
+      .then(r => { if (!r.ok) throw new Error(u + ' ' + r.status); return r.json(); })
+      .then(j => { if (!done) { done = true; clearTimeout(t); ok(j); } }, e => { if (!done) { done = true; clearTimeout(t); no(e); } });
+  });
+  /* gốc site (để đường dẫn data/ đúng cả ở en/ và bai/) */
+  H.ROOT = (() => { const sc = document.currentScript || document.querySelector('script[src*="js/common.js"]'); return sc && sc.src ? sc.src.replace(/js\/common\.js.*$/, '') : ''; })();
+  H.ls = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) { } } };
 
   /* ---- giao diện ---- */
-  const saved = localStorage.getItem('hmg_theme');
+  const saved = H.ls.get('hmg_theme');
   H.theme = () => document.documentElement.dataset.theme === 'light' ? 'light' : 'dark';
   document.documentElement.dataset.theme = saved || 'dark';
   H.onTheme = [];
@@ -111,7 +121,7 @@
   document.getElementById('burger').onclick = () => document.body.classList.toggle('nav-open');
   document.getElementById('theme-btn').onclick = () => {
     const t = H.theme() === 'dark' ? 'light' : 'dark';
-    document.documentElement.dataset.theme = t; localStorage.setItem('hmg_theme', t);
+    document.documentElement.dataset.theme = t; H.ls.set('hmg_theme', t);
     H.onTheme.forEach(f => f(t));
   };
   const modal = document.getElementById('zalo-modal');
@@ -148,34 +158,53 @@
   H.data = { xau: null, xag: null, btc: null, fx: null, rows: [], vnSrc: '', time: null };
   H.subs = [];
   async function safe(p) { try { return await p; } catch (e) { console.warn(e.message || e); return null; } }
-  H.refresh = async function () {
-    const [g, s, b, f, v] = await Promise.all([
-      safe(H.getJSON('https://api.gold-api.com/price/XAU')), safe(H.getJSON('https://api.gold-api.com/price/XAG')), safe(H.getJSON('https://api.gold-api.com/price/BTC')),
-      safe(H.getJSON('https://open.er-api.com/v6/latest/USD')), safe(H.getJSON('https://www.vang.today/api/prices'))]);
+  const TK = 'hmg_ticker_v1';
+  function computeDerived() {
     const D = H.data;
-    if (g) D.xau = g.price; if (s) D.xag = s.price; if (b) D.btc = b.price; if (f && f.rates) { const R = f.rates; D.fx = R.VND;
-      if (R.EUR && R.JPY && R.GBP && R.CAD && R.SEK && R.CHF) { D.eur = 1 / R.EUR; D.jpy = R.JPY; D.dxy = 50.14348112 * Math.pow(R.EUR, 0.576) * Math.pow(R.JPY, 0.136) * Math.pow(R.GBP, 0.119) * Math.pow(R.CAD, 0.091) * Math.pow(R.SEK, 0.042) * Math.pow(R.CHF, 0.036); } }
-    if (v && v.prices) {
-      D.rows = BRANDS.filter(k => v.prices[k[0]] && v.prices[k[0]].sell).map(k => ({ ...v.prices[k[0]], name: k[1], type: k[2] }));
-      D.vnSrc = 'vang.today · ' + (v.time || '') + ' ' + (v.date ? H.dateVN(v.date) : '');
-    }
-    if (!D.rows.length) {
-      const j = await safe(H.getJSON('data/vn-prices.json'));
-      if (j) { D.rows = j.prices.map(r => ({ name: r.name, type: /nhẫn/i.test(r.name) ? 'nhan' : 'mieng', buy: r.buy, sell: r.sell, change_buy: 0, change_sell: 0 })); D.vnSrc = 'Nhập tay · ' + new Date(j.updated).toLocaleString('vi-VN'); }
-    }
     D.world = D.xau && D.fx ? D.xau * D.fx * H.LUONG : null;
     const sjc = D.rows.find(r => r.name === 'SJC'); D.sjcSell = sjc ? sjc.sell : null;
     D.gap = D.world && D.sjcSell ? D.sjcSell - D.world : null;
-    D.time = new Date();
-    if (D.world && D.sjcSell) { // lưu lịch sử chênh lệch mỗi ngày trên trình duyệt
-      const k = 'hmg_gap', h = JSON.parse(localStorage.getItem(k) || '{}'); h[D.time.toISOString().slice(0, 10)] = { world: Math.round(D.world), sjc: D.sjcSell }; localStorage.setItem(k, JSON.stringify(h));
+  }
+  function saveCache() {
+    const D = H.data; H.ls.set(TK, JSON.stringify({ t: Date.now(), xau: D.xau, xag: D.xag, btc: D.btc, fx: D.fx, eur: D.eur, jpy: D.jpy, dxy: D.dxy, rows: D.live_rows ? D.rows : [], vnSrc: D.live_rows ? D.vnSrc : '' }));
+  }
+  function loadCache() { try { return JSON.parse(H.ls.get(TK) || 'null'); } catch (e) { return null; } }
+  H.refresh = async function () {
+    const D = H.data; let live = 0;
+    const upd = () => { computeDerived(); D.stale = null; renderBar(); };
+    const job = (u, f) => safe(H.getJSON(u)).then(j => { if (j) { try { if (f(j) !== false) { live++; upd(); } } catch (e) { console.warn(e); } } });
+    await Promise.all([
+      job('https://api.gold-api.com/price/XAU', g => { if (!g.price) return false; D.xau = g.price; }),
+      job('https://api.gold-api.com/price/XAG', g => { if (!g.price) return false; D.xag = g.price; }),
+      job('https://api.gold-api.com/price/BTC', g => { if (!g.price) return false; D.btc = g.price; }),
+      job('https://open.er-api.com/v6/latest/USD', f => { if (!f.rates) return false; const R = f.rates; D.fx = R.VND;
+        if (R.EUR && R.JPY && R.GBP && R.CAD && R.SEK && R.CHF) { D.eur = 1 / R.EUR; D.jpy = R.JPY; D.dxy = 50.14348112 * Math.pow(R.EUR, 0.576) * Math.pow(R.JPY, 0.136) * Math.pow(R.GBP, 0.119) * Math.pow(R.CAD, 0.091) * Math.pow(R.SEK, 0.042) * Math.pow(R.CHF, 0.036); } }),
+      EN ? null : job('https://www.vang.today/api/prices', v => { if (!v.prices) return false;
+        const rows = BRANDS.filter(k => v.prices[k[0]] && v.prices[k[0]].sell).map(k => Object.assign({}, v.prices[k[0]], { name: k[1], type: k[2] }));
+        if (!rows.length) return false; D.rows = rows; D.live_rows = true; D.rowsStale = null; D.fallback = null;
+        D.vnSrc = 'vang.today · ' + (v.time || '') + ' ' + (v.date ? H.dateVN(v.date) : ''); })]);
+    if (!EN && !D.rows.length) { // dự phòng: giá nhập tay trong data/vn-prices.json (giá thật, có ghi thời điểm)
+      const j = await safe(H.getJSON(H.ROOT + 'data/vn-prices.json'));
+      if (j && j.prices) { D.rows = j.prices.map(r => ({ name: r.name, type: /nhẫn/i.test(r.name) ? 'nhan' : 'mieng', buy: r.buy, sell: r.sell, change_buy: 0, change_sell: 0 })); D.vnSrc = 'Nhập tay · ' + new Date(j.updated).toLocaleString('vi-VN'); D.fallback = j.updated; }
     }
+    computeDerived();
+    if (live) { D.time = new Date(); saveCache(); }
+    else if (!D.time) { // không có nguồn trực tuyến nào: dùng giá đã lưu lần trước (ghi rõ thời điểm)
+      const c = loadCache();
+      if (c) { ['xau', 'xag', 'btc', 'fx', 'eur', 'jpy', 'dxy'].forEach(k => { if (D[k] == null && c[k] != null) D[k] = c[k]; }); if (!D.rows.length && c.rows && c.rows.length) { D.rows = c.rows; D.vnSrc = c.vnSrc; D.rowsStale = c.t; } D.stale = c.t; computeDerived(); }
+    }
+    if (D.world && D.sjcSell && D.live_rows && live) { // lưu lịch sử chênh lệch mỗi ngày trên trình duyệt
+      try { const k = 'hmg_gap', h = JSON.parse(H.ls.get(k) || '{}'); h[D.time.toISOString().slice(0, 10)] = { world: Math.round(D.world), sjc: D.sjcSell }; H.ls.set(k, JSON.stringify(h)); } catch (e) { }
+    }
+    D.settled = true;
     renderBar(); H.subs.forEach(fn => { try { fn(D); } catch (e) { console.error(e); } });
   };
   H.sub = fn => { H.subs.push(fn); if (H.data.time) fn(H.data); };
   function chg(n) { if (!n) return ''; return `<small class="${n > 0 ? 'u' : 'd'}">${n > 0 ? '▲' : '▼'}${H.fmt(Math.abs(n) / 1000)}k</small>`; }
   function renderBar() {
-    const D = H.data, items = [];
+    const D = H.data, items = [], tr = document.getElementById('pb-track'); if (!tr) return;
+    const st = D.stale ? `<span class="pb-stale">${EN ? 'Last saved' : 'Giá lưu lúc'} ${new Date(D.stale).toLocaleString(EN ? 'en-US' : 'vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' })}</span>` : (!EN && D.rowsStale && !D.live_rows ? `<span class="pb-stale">Giá trong nước lưu lúc ${new Date(D.rowsStale).toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' })}</span>` : !EN && D.fallback && !D.live_rows ? `<span class="pb-stale">${H.esc(D.vnSrc)}</span>` : '');
+    if (st) items.push(st);
     if (EN) { // EN pages: international ticker only (no domestic VN gold brands)
       if (D.xau) items.push(`<span>XAU/USD ${H.fmt(D.xau, 2)}</span>`);
       if (D.xag) items.push(`<span>Silver (XAG/USD) ${H.fmt(D.xag, 2)}</span>`);
@@ -183,16 +212,18 @@
       if (D.eur) items.push(`<span>EUR/USD ${H.fmt(D.eur, 4)}</span>`);
       if (D.jpy) items.push(`<span>USD/JPY ${H.fmt(D.jpy, 2)}</span>`);
       if (D.btc) items.push(`<span>BTC/USD ${H.fmt(D.btc)}</span>`);
-      const h = items.join('') || '<span>Prices unavailable</span>';
-      document.getElementById('pb-track').innerHTML = h + h; return;
+      if (!items.length && !D.settled) return;
+      const h = items.join('') || '<span>Prices temporarily unavailable – retrying…</span>';
+      tr.innerHTML = h + h; return;
     }
     if (D.xau) items.push(`<span>🌍 XAU/USD ${H.fmt(D.xau, 1)}</span>`);
     if (D.world) items.push(EN ? `<span>VN equiv. ${H.fmt(D.world / 1e6, 2)}M VND/tael</span>` : `<span>Quy đổi ${H.fmt(D.world / 1e6, 2)} tr/lượng</span>`);
     D.rows.slice(0, 8).forEach(r => items.push(`<span>${H.esc(r.name)}: ${H.fmt(r.buy / 1e3)} – ${H.fmt(r.sell / 1e3)}${chg(r.change_sell)}</span>`));
     if (D.gap) items.push(`<span>${EN ? 'SJC premium' : 'Chênh SJC'}: +${H.fmt(D.gap / 1e6, 2)} tr</span>`);
     if (D.fx) items.push(`<span>USD/VND ${H.fmt(D.fx)}</span>`);
-    const html = items.join('') || (EN ? '<span>Prices unavailable</span>' : '<span>Không tải được giá</span>');
-    document.getElementById('pb-track').innerHTML = html + html;
+    if (!items.length && !D.settled) return;
+    const html = items.join('') || '<span>Tạm thời chưa tải được giá – đang thử lại…</span>';
+    tr.innerHTML = html + html;
   }
   /* ---- lịch live (giờ VN, GMT+7) ---- */
   H.liveNext = function (sessions, now = Date.now()) {
@@ -212,5 +243,8 @@
   H.gcal = n => { const z = d => d.toISOString().replace(/[-:]|\.\d{3}/g, ''); return 'https://calendar.google.com/calendar/render?action=TEMPLATE&text=' + encodeURIComponent(n.title) + '&dates=' + z(n.start) + '/' + z(n.end) + '&details=' + encodeURIComponent((n.desc || '') + '\nXem tại: https://www.youtube.com/@tradinglivexauusd4647/live') + '&recur=' + encodeURIComponent('RRULE:FREQ=WEEKLY') + '&ctz=Asia/Ho_Chi_Minh'; };
   H.schedule = H.getJSON('data/live-schedule.json').catch(() => null);
   H.schedule.then(sc => { if (!sc) return; const tick = () => { const n = H.liveNext(sc.sessions); document.getElementById('live-badge').hidden = !(n && n.live); }; tick(); setInterval(tick, 30000); });
-  H.refresh(); setInterval(H.refresh, 60000);
+  { const c = loadCache(); if (c && Date.now() - c.t < 3 * 864e5) { // hiển thị ngay giá đã lưu trong lúc chờ API
+      ['xau', 'xag', 'btc', 'fx', 'eur', 'jpy', 'dxy'].forEach(k => { if (c[k] != null) H.data[k] = c[k]; }); if (c.rows && c.rows.length) { H.data.rows = c.rows; H.data.vnSrc = c.vnSrc; H.data.rowsStale = c.t; } H.data.stale = c.t; computeDerived(); try { renderBar(); } catch (e) { } } }
+  setTimeout(() => { if (!H.data.settled) { H.data.settled = true; try { renderBar(); } catch (e) { } } }, 12000); // không bao giờ kẹt ở "Đang tải"
+  H.refresh().catch(e => { console.error(e); H.data.settled = true; renderBar(); }); setInterval(() => H.refresh().catch(console.error), 60000);
 })();

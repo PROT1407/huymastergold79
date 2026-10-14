@@ -110,7 +110,7 @@ def page(a, body):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
 <script>document.documentElement.dataset.theme=localStorage.getItem('hmg_theme')||'dark'</script>
-<link rel="stylesheet" href="css/site.css?v=20261014c">
+<link rel="stylesheet" href="css/site.css?v=20261014d">
 {CSS}
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 </head>
@@ -125,7 +125,7 @@ def page(a, body):
 <div class="seo-nav"><a class="btn" href="bai/index.html">📰 Kho bài viết</a><a class="btn ghost" href="chien-luoc.html">🎯 Chiến lược hôm nay</a><a class="btn ghost" href="gia-vang.html">💰 Giá vàng VN</a><a class="btn ghost" href="lich-kinh-te.html">📅 Lịch kinh tế</a><a class="btn ghost" href="live.html">🔴 Phòng Live</a></div>
 </article></main>
 <div id="site-footer"></div>
-<script src="js/common.js?v=20261014c"></script>
+<script src="js/common.js?v=20261014d"></script>
 </body>
 </html>
 """
