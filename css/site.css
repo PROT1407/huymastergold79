@@ -231,3 +231,5 @@ details.h79more>summary{cursor:pointer;font-weight:700;font-size:1.05rem;padding
 details.h79more>summary::before{content:"▸ "}details.h79more[open]>summary::before{content:"▾ "}
 @media(max-width:600px){.h79s{font-size:1.05rem;padding:12px}.h79s .t{font-size:1.3rem}}
 @media(max-width:560px){.hdr .wrap{gap:8px}.hdr .brand{font-size:1rem;gap:6px;min-width:0}.hdr .brand img{width:28px;height:28px}}
+.h79art{font-size:1.08rem;line-height:1.7;margin:10px 0 14px}.h79art h2{margin:0 0 10px}.h79art p{margin:0 0 10px}
+.h79src{margin:12px 0}.h79src ul{padding-left:18px}.h79src a{word-break:break-word}

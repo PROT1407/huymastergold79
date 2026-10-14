@@ -34,7 +34,7 @@ LANG_PAIRS = {"index.html": "en/index.html", "chien-luoc.html": "en/h79-analysis
 # Bài tiếng Anh tĩnh: en/posts/ (giữ đồng bộ với POST_SES trong js/common.js)
 OUT_EN = ROOT / "en" / "posts"
 POST_SES = {"phien-au-my": "london-ny-overlap", "phien-au": "london-session", "phien-my": "new-york-session", "phien-a": "asian-session"}
-ASSET_V = "20261014g"  # cache-busting cho css/js trong trang sinh tự động
+ASSET_V = "20261014h"  # cache-busting cho css/js trong trang sinh tự động
 OLD_BASES = ["https://huymastergold79.com.vn/", "https://prot1407.github.io/huymastergold79/"]
 VN = dt.timezone(dt.timedelta(hours=7))
 TODAY = dt.datetime.now(VN).date().isoformat()
@@ -161,6 +161,15 @@ def summary_html(s):
             + (f'<div class="p">💲 {"✅" if m.get("price") == "spot" else "⚠️"} {e(m["priceNote"])}</div>' if m.get("priceNote") else "")
             + "</section>")
 
+def article_html(a, en=False):
+    if not a or not a.get("sections"): return ""
+    h = f'<article class="h79art"><h2>{e(a.get("title",""))}</h2>' + "".join(f'<p><b>{e(x.get("h",""))}:</b> {e(x.get("p",""))}</p>' for x in a["sections"])
+    return h + "</article>"
+
+def article_src(a, en=False):
+    if not a or not a.get("sources"): return ""
+    return f'<div class="h79src"><h3>{"Sources" if en else "Nguồn"}</h3><ul>' + "".join(f'<li><a href="{e(x["url"])}" target="_blank" rel="noopener nofollow">{e(x.get("name") or x["url"])}</a></li>' for x in a["sources"]) + "</ul></div>"
+
 def build_strategies():
     out = []
     for s in load("strategies.json").get("strategies", []):
@@ -178,7 +187,7 @@ def build_strategies():
                 + card("🥇 Vàng vật chất", f'<p>{e(s["physicalAdvice"])}</p>' if s.get("physicalAdvice") else "")
                 + card("ℹ Nguồn dữ liệu", "".join(f'<p class="small muted">{e(s[k])}</p>' for k in ("dataTime", "notes", "disclaimer") if s.get(k))))
         if s.get("summary"):
-            body = summary_html(s) + '<details class="h79more"><summary>Xem thêm: chỉ báo, kịch bản, vĩ mô</summary>' + body + "</details>"
+            body = article_html(s.get("article")) + summary_html(s) + article_src(s.get("article")) + '<details class="h79more"><summary>Xem thêm: chỉ báo, kịch bản, vĩ mô</summary>' + body + "</details>"
         desc = f"Nhận định vàng {s.get('session','')} {dvn(s['date'])}{' lúc ' + t if t else ''}: " + (s.get("trend") or s["title"])
         out.append(dict(kind="nd", file=f, date=s["date"], sort=s["date"] + (t or "00:00"),
                         title=f"Nhận định vàng {dvn(s['date'])} – {s['title']}",
@@ -437,7 +446,7 @@ def build_en(arts):
             desc = f"H79 gold (XAU/USD) plan – {ses}, {wt}: " + (s.get("trend_en") or title)
             x = dict(path=a["en"], vi="bai/" + a["file"], date=a["date"], sort=a["sort"], kind="H79 Gold Plan", title=title,
                      desc=desc[:157].rstrip() + ("…" if len(desc) > 157 else ""), pub=t.isoformat(), when=f"{ses} · {wt}")
-            x["body"] = en_head(x, "🎯 H79 Gold Plan") + en_summary(s) + body
+            x["body"] = en_head(x, "🎯 H79 Gold Plan") + article_html(s.get("article_en"), True) + en_summary(s) + article_src(s.get("article_en"), True) + body
         elif a["kind"] == "vm":
             its = sorted([i for i in macro if i.get("date") == a["date"] and i.get("title_en")], key=lambda i: i.get("priority", 9))
             if not its: continue

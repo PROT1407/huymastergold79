@@ -96,7 +96,127 @@
         "CNBC: oil rises as Saudi–Houthi tensions escalate. https://www.cnbc.com/2026/10/14/oil-rises-amid-growing-tensions-between-saudis-and-iran-backed-houthis.html"
       ],
       "notes_en": "Spot XAU/USD prices, ET. Intraday history converted from 5-minute data using a measured spot basis of $21–23 (used $22); may differ by 1–2 points from your broker's chart.",
-      "dataTime_en": "Updated 7:00 AM ET, Oct 14, 2026."
+      "dataTime_en": "Updated 7:00 AM ET, Oct 14, 2026.",
+      "url": "bai/2026-10-14-nhan-dinh-vang-phien-au-1800.html",
+      "article": {
+        "title": "XÃ LUẬN VÀNG 14/10 – Từ phiên Á đến hết sáng Âu",
+        "sections": [
+          {
+            "h": "Đêm qua",
+            "p": "Phiên Mỹ 13/10 vàng giảm từ 4.193 (19:30) xuống 4.148 (00:50), đóng cửa quanh 4.162 – phiên giảm thứ hai liên tiếp, tổng cộng khoảng 0,8% sau hai phiên."
+          },
+          {
+            "h": "Phiên Á",
+            "p": "Mở cửa 05:00 ở 4.163, giá chưa bật ngay mà bị ép xuống đáy Á 4.145 lúc 08:45. Sau đó vàng hồi lên đỉnh Á 4.172 lúc 10:15 – khoảng 5 giờ sau mở cửa – nhờ phát biểu ôn hòa của ông Williams. Từ đỉnh này lực bán quay lại, nối tiếp nhịp giảm của đêm qua, phiên Á khép lại ở 4.149."
+          },
+          {
+            "h": "Sáng phiên Âu",
+            "p": "Đỉnh 4.159 lúc 15:15, đáy 4.141 lúc 17:25 – thấp nhất trong ngày. Giá quanh 4.144 lúc 17:50; lúc 18:05 giao ngay ở 4.138."
+          },
+          {
+            "h": "Vì sao giá giảm",
+            "p": "USD (DXY ~102,1) hơi yếu và lợi suất dài hạn Mỹ giảm 3–4 bps nên vàng không rơi sâu. Nhưng Brent trên 106 USD do các vụ tấn công mới ở Trung Đông làm lo ngại lạm phát quay lại. Ông Williams (Fed New York) thấy cần thêm một lần tăng lãi năm nay nhưng không tăng thêm trong 2027; Waller và Goolsbee nghiêng diều hâu khi lo áp lực giá từ đầu tư AI. Thị trường định giá khoảng 90% khả năng Fed tăng lãi vào tháng 12 – lãi suất cao vẫn là lực đè lên vàng."
+          },
+          {
+            "h": "Tâm điểm tối nay",
+            "p": "CPI Mỹ tháng 9 lúc 19:30: dự báo CPI chung 3,6% y/y; CPI lõi +0,2% m/m và 2,5% y/y. CPI nóng hơn dự báo sẽ đẩy USD và lợi suất lên, gây áp lực cho vàng; CPI mềm sẽ hỗ trợ vàng hồi."
+          },
+          {
+            "h": "Kỹ thuật khung 45m",
+            "p": "Giá nằm dưới MA34 (4.162) và MA89 (4.176), bám sát dải dưới BB90 dev2 (4.142; giữa 4.176, trên 4.211). Pivot ngày: P 4.171 · R1 4.194 · S1 4.139 · S2 4.116. Chiều Âu và lúc Mỹ mở cửa nhiều khả năng giằng co 4.139 – 4.163 chờ CPI: CPI lõi nóng dễ thủng S1 về 4.116, CPI mềm có thể hồi về vùng MA34/pivot 4.162 – 4.171."
+          }
+        ],
+        "sources": [
+          {
+            "name": "CNBC – Gold holds firm ahead of US inflation data",
+            "url": "https://www.cnbc.com/2026/10/14/gold-prices-hold-firm-ahead-of-us-inflation-data.html"
+          },
+          {
+            "name": "CNBC – Oil rises amid Saudi–Houthi tensions",
+            "url": "https://www.cnbc.com/2026/10/14/oil-rises-amid-growing-tensions-between-saudis-and-iran-backed-houthis.html"
+          },
+          {
+            "name": "Investing.com – Gold falls as traders weigh Fed outlook",
+            "url": "https://ng.investing.com/news/commodities-news/gold-holds-twoday-slide-as-fed-signals-one-more-hike-us-cpi-in-focus-2734947"
+          },
+          {
+            "name": "Bloomberg via Moneyweb – Gold steady as Fed official's remarks temper hike bets",
+            "url": "https://www.moneyweb.co.za/mineweb/gold-steady-as-fed-officials-remarks-temper-rate-hike-bets/"
+          },
+          {
+            "name": "FXStreet – Bonds stabilize ahead of US CPI",
+            "url": "https://www.fxstreet.com/analysis/bonds-stabilize-ahead-of-us-cpi-as-dovish-fed-rhetoric-weighs-on-the-dollar-202610140649"
+          },
+          {
+            "name": "FXStreet – US CPI set to drive Dollar, Gold volatility",
+            "url": "https://www.fxstreet.com/analysis/us-cpi-set-to-drive-dollar-gold-and-crypto-volatility-202610140827"
+          },
+          {
+            "name": "FXStreet – US CPI in focus ahead of October FOMC",
+            "url": "https://www.fxstreet.com/analysis/us-cpi-in-focus-ahead-of-october-fomc-meeting-202610140548"
+          }
+        ]
+      },
+      "url_en": "en/posts/2026-10-14-gold-plan-london-session-1800.html",
+      "article_en": {
+        "title": "Gold Commentary, Oct 14 – From the Asian Open Through the London Morning",
+        "sections": [
+          {
+            "h": "Overnight",
+            "p": "Tuesday's US session sold gold off from 4,193 (8:30 AM ET) to 4,148 (1:50 PM ET), settling near 4,162 – a second straight down day, roughly 0.8% lower over two sessions."
+          },
+          {
+            "h": "Asian session",
+            "p": "Gold opened at 4,163 at 6:00 PM ET and slipped to the Asian low of 4,145 at 9:45 PM ET before bouncing to the Asian high of 4,172 at 11:15 PM ET – about five hours after the open – on dovish comments from the NY Fed's Williams. Sellers then picked the prior move back up, and Asia closed at 4,149."
+          },
+          {
+            "h": "London morning",
+            "p": "High of 4,159 at 4:15 AM ET, low of 4,141 at 6:25 AM ET – the low of the day. Gold was around 4,144 at 6:50 AM ET, with spot at 4,138 at 7:05 AM ET."
+          },
+          {
+            "h": "Why gold is lower",
+            "p": "A slightly softer dollar (DXY ~102.1) and long-end Treasury yields down 3–4 bps kept the slide contained. But Brent above $106 on renewed Middle East attacks revived inflation worries. Williams sees one more hike this year but none in 2027, while Waller and Goolsbee leaned hawkish on AI-driven price pressure. Markets price roughly 90% odds of a December hike – higher rates remain the main headwind for gold."
+          },
+          {
+            "h": "Today's main event",
+            "p": "September CPI at 8:30 AM ET: headline est. 3.6% y/y; core est. +0.2% m/m and 2.5% y/y. A hot print would lift the dollar and yields and pressure gold; a soft one would support a bounce."
+          },
+          {
+            "h": "45-minute technicals",
+            "p": "Price is below MA34 (4,162) and MA89 (4,176), hugging the lower BB90 (2 SD) at 4,142 (mid 4,176, upper 4,211). Daily pivots: P 4,171 · R1 4,194 · S1 4,139 · S2 4,116. Into the NY open, expect chop between 4,139 and 4,163 until CPI: a hot core print could break S1 toward 4,116; a soft one could lift price back to 4,162–4,171."
+          }
+        ],
+        "sources": [
+          {
+            "name": "CNBC – Gold holds firm ahead of US inflation data",
+            "url": "https://www.cnbc.com/2026/10/14/gold-prices-hold-firm-ahead-of-us-inflation-data.html"
+          },
+          {
+            "name": "CNBC – Oil rises amid Saudi–Houthi tensions",
+            "url": "https://www.cnbc.com/2026/10/14/oil-rises-amid-growing-tensions-between-saudis-and-iran-backed-houthis.html"
+          },
+          {
+            "name": "Investing.com – Gold falls as traders weigh Fed outlook",
+            "url": "https://ng.investing.com/news/commodities-news/gold-holds-twoday-slide-as-fed-signals-one-more-hike-us-cpi-in-focus-2734947"
+          },
+          {
+            "name": "Bloomberg via Moneyweb – Gold steady as Fed official's remarks temper hike bets",
+            "url": "https://www.moneyweb.co.za/mineweb/gold-steady-as-fed-officials-remarks-temper-rate-hike-bets/"
+          },
+          {
+            "name": "FXStreet – Bonds stabilize ahead of US CPI",
+            "url": "https://www.fxstreet.com/analysis/bonds-stabilize-ahead-of-us-cpi-as-dovish-fed-rhetoric-weighs-on-the-dollar-202610140649"
+          },
+          {
+            "name": "FXStreet – US CPI set to drive Dollar, Gold volatility",
+            "url": "https://www.fxstreet.com/analysis/us-cpi-set-to-drive-dollar-gold-and-crypto-volatility-202610140827"
+          },
+          {
+            "name": "FXStreet – US CPI in focus ahead of October FOMC",
+            "url": "https://www.fxstreet.com/analysis/us-cpi-in-focus-ahead-of-october-fomc-meeting-202610140548"
+          }
+        ]
+      }
     },
     {
       "id": "2026-10-14-phien-au-1358",
