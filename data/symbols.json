@@ -7,15 +7,18 @@
    "symbols": [
     {
      "s": "OANDA:XAUUSD",
-     "n": "Vàng / USD"
+     "n": "Vàng / USD",
+     "n_en": "Gold / USD"
     },
     {
      "s": "OANDA:XAGUSD",
-     "n": "Bạc / USD"
+     "n": "Bạc / USD",
+     "n_en": "Silver / USD"
     },
     {
      "s": "OANDA:XPTUSD",
-     "n": "Bạch kim / USD"
+     "n": "Bạch kim / USD",
+     "n_en": "Platinum / USD"
     },
     {
      "s": "OANDA:XPDUSD",
@@ -23,15 +26,18 @@
     },
     {
      "s": "TVC:GOLD",
-     "n": "Vàng CFD (TVC)"
+     "n": "Vàng CFD (TVC)",
+     "n_en": "Gold CFD (TVC)"
     },
     {
      "s": "TVC:SILVER",
-     "n": "Bạc CFD (TVC)"
+     "n": "Bạc CFD (TVC)",
+     "n_en": "Silver CFD (TVC)"
     },
     {
      "s": "TVC:PLATINUM",
-     "n": "Bạch kim CFD"
+     "n": "Bạch kim CFD",
+     "n_en": "Platinum CFD"
     },
     {
      "s": "TVC:PALLADIUM",
@@ -39,41 +45,51 @@
     },
     {
      "s": "OANDA:XAUEUR",
-     "n": "Vàng / EUR"
+     "n": "Vàng / EUR",
+     "n_en": "Gold / EUR"
     },
     {
      "s": "OANDA:XAUJPY",
-     "n": "Vàng / JPY"
+     "n": "Vàng / JPY",
+     "n_en": "Gold / JPY"
     },
     {
      "s": "OANDA:XAUAUD",
-     "n": "Vàng / AUD"
+     "n": "Vàng / AUD",
+     "n_en": "Gold / AUD"
     },
     {
      "s": "OANDA:XAUGBP",
-     "n": "Vàng / GBP"
+     "n": "Vàng / GBP",
+     "n_en": "Gold / GBP"
     },
     {
      "s": "OANDA:XAUXAG",
-     "n": "Tỷ lệ Vàng/Bạc"
+     "n": "Tỷ lệ Vàng/Bạc",
+     "n_en": "Gold/Silver ratio"
     },
     {
      "s": "AMEX:GLD",
-     "n": "Quỹ SPDR Gold (GLD)"
+     "n": "Quỹ SPDR Gold (GLD)",
+     "n_en": "SPDR Gold Shares (GLD)"
     },
     {
      "s": "AMEX:SLV",
-     "n": "Quỹ iShares Silver (SLV)"
+     "n": "Quỹ iShares Silver (SLV)",
+     "n_en": "iShares Silver Trust (SLV)"
     },
     {
      "s": "AMEX:GDX",
-     "n": "Quỹ cổ phiếu mỏ vàng GDX"
+     "n": "Quỹ cổ phiếu mỏ vàng GDX",
+     "n_en": "Gold Miners ETF (GDX)"
     },
     {
      "s": "CAPITALCOM:PLATINUM",
-     "n": "Bạch kim (Capital.com)"
+     "n": "Bạch kim (Capital.com)",
+     "n_en": "Platinum (Capital.com)"
     }
-   ]
+   ],
+   "name_en": "Precious metals"
   },
   {
    "name": "Chứng khoán VN",
@@ -84,7 +100,8 @@
     },
     {
      "s": "AMEX:VNM",
-     "n": "ETF VanEck Vietnam (Mỹ)"
+     "n": "ETF VanEck Vietnam (Mỹ)",
+     "n_en": "VanEck Vietnam ETF (US)"
     },
     {
      "s": "HNX:SHS",
@@ -104,7 +121,8 @@
     },
     {
      "s": "AMEX:VNAM",
-     "n": "ETF Global X MSCI Vietnam"
+     "n": "ETF Global X MSCI Vietnam",
+     "n_en": "Global X MSCI Vietnam ETF"
     },
     {
      "s": "HNX:MBS",
@@ -222,208 +240,258 @@
      "s": "UPCOM:FOX",
      "n": "FOX"
     }
-   ]
+   ],
+   "name_en": "Vietnam stocks"
   },
   {
    "name": "Nông sản",
    "symbols": [
     {
      "s": "OANDA:CORNUSD",
-     "n": "Ngô (CFD)"
+     "n": "Ngô (CFD)",
+     "n_en": "Corn (CFD)"
     },
     {
      "s": "OANDA:WHEATUSD",
-     "n": "Lúa mì (CFD)"
+     "n": "Lúa mì (CFD)",
+     "n_en": "Wheat (CFD)"
     },
     {
      "s": "OANDA:SOYBNUSD",
-     "n": "Đậu tương (CFD)"
+     "n": "Đậu tương (CFD)",
+     "n_en": "Soybeans (CFD)"
     },
     {
      "s": "OANDA:SUGARUSD",
-     "n": "Đường (CFD)"
+     "n": "Đường (CFD)",
+     "n_en": "Sugar (CFD)"
     },
     {
      "s": "CAPITALCOM:COFFEEARABICA",
-     "n": "Cà phê Arabica (CFD)"
+     "n": "Cà phê Arabica (CFD)",
+     "n_en": "Arabica coffee (CFD)"
     },
     {
      "s": "CAPITALCOM:COFFEE",
-     "n": "Cà phê (CFD)"
+     "n": "Cà phê (CFD)",
+     "n_en": "Coffee (CFD)"
     },
     {
      "s": "CAPITALCOM:COCOA",
-     "n": "Ca cao (CFD)"
+     "n": "Ca cao (CFD)",
+     "n_en": "Cocoa (CFD)"
     },
     {
      "s": "CAPITALCOM:COTTON",
-     "n": "Bông (CFD)"
+     "n": "Bông (CFD)",
+     "n_en": "Cotton (CFD)"
     },
     {
      "s": "CAPITALCOM:SUGAR",
-     "n": "Đường (CFD)"
+     "n": "Đường (CFD)",
+     "n_en": "Sugar (CFD)"
     },
     {
      "s": "CAPITALCOM:ORANGEJUICE",
-     "n": "Nước cam (CFD)"
+     "n": "Nước cam (CFD)",
+     "n_en": "Orange juice (CFD)"
     },
     {
      "s": "CAPITALCOM:OATS",
-     "n": "Yến mạch (CFD)"
+     "n": "Yến mạch (CFD)",
+     "n_en": "Oats (CFD)"
     },
     {
      "s": "CAPITALCOM:SOYBEANOIL",
-     "n": "Dầu đậu tương (CFD)"
+     "n": "Dầu đậu tương (CFD)",
+     "n_en": "Soybean oil (CFD)"
     },
     {
      "s": "CAPITALCOM:SOYBEANMEAL",
-     "n": "Khô đậu tương (CFD)"
+     "n": "Khô đậu tương (CFD)",
+     "n_en": "Soybean meal (CFD)"
     },
     {
      "s": "CAPITALCOM:LIVECATTLE",
-     "n": "Bò sống (CFD)"
+     "n": "Bò sống (CFD)",
+     "n_en": "Live cattle (CFD)"
     },
     {
      "s": "CAPITALCOM:LEANHOGS",
-     "n": "Heo nạc (CFD)"
+     "n": "Heo nạc (CFD)",
+     "n_en": "Lean hogs (CFD)"
     },
     {
      "s": "CAPITALCOM:LUMBER",
-     "n": "Gỗ xẻ (CFD)"
+     "n": "Gỗ xẻ (CFD)",
+     "n_en": "Lumber (CFD)"
     },
     {
      "s": "PEPPERSTONE:COFFEE",
-     "n": "Cà phê (Pepperstone)"
+     "n": "Cà phê (Pepperstone)",
+     "n_en": "Coffee (Pepperstone)"
     },
     {
      "s": "PEPPERSTONE:COCOA",
-     "n": "Ca cao (Pepperstone)"
+     "n": "Ca cao (Pepperstone)",
+     "n_en": "Cocoa (Pepperstone)"
     },
     {
      "s": "PEPPERSTONE:CORN",
-     "n": "Ngô (Pepperstone)"
+     "n": "Ngô (Pepperstone)",
+     "n_en": "Corn (Pepperstone)"
     },
     {
      "s": "PEPPERSTONE:SOYBEANS",
-     "n": "Đậu tương (Pepperstone)"
+     "n": "Đậu tương (Pepperstone)",
+     "n_en": "Soybeans (Pepperstone)"
     },
     {
      "s": "PEPPERSTONE:WHEAT",
-     "n": "Lúa mì (Pepperstone)"
+     "n": "Lúa mì (Pepperstone)",
+     "n_en": "Wheat (Pepperstone)"
     },
     {
      "s": "PEPPERSTONE:COTTON",
-     "n": "Bông (Pepperstone)"
+     "n": "Bông (Pepperstone)",
+     "n_en": "Cotton (Pepperstone)"
     },
     {
      "s": "PEPPERSTONE:SUGAR",
-     "n": "Đường (Pepperstone)"
+     "n": "Đường (Pepperstone)",
+     "n_en": "Sugar (Pepperstone)"
     },
     {
      "s": "AMEX:DBA",
-     "n": "Quỹ nông sản DBA"
+     "n": "Quỹ nông sản DBA",
+     "n_en": "Agriculture ETF (DBA)"
     },
     {
      "s": "AMEX:CORN",
-     "n": "Quỹ Ngô CORN"
+     "n": "Quỹ Ngô CORN",
+     "n_en": "Corn ETF (CORN)"
     },
     {
      "s": "AMEX:WEAT",
-     "n": "Quỹ Lúa mì WEAT"
+     "n": "Quỹ Lúa mì WEAT",
+     "n_en": "Wheat ETF (WEAT)"
     },
     {
      "s": "AMEX:SOYB",
-     "n": "Quỹ Đậu tương SOYB"
+     "n": "Quỹ Đậu tương SOYB",
+     "n_en": "Soybean ETF (SOYB)"
     }
-   ]
+   ],
+   "name_en": "Agriculture"
   },
   {
    "name": "Năng lượng",
    "symbols": [
     {
      "s": "TVC:USOIL",
-     "n": "Dầu WTI (CFD)"
+     "n": "Dầu WTI (CFD)",
+     "n_en": "WTI crude (CFD)"
     },
     {
      "s": "TVC:UKOIL",
-     "n": "Dầu Brent (CFD)"
+     "n": "Dầu Brent (CFD)",
+     "n_en": "Brent crude (CFD)"
     },
     {
      "s": "OANDA:NATGASUSD",
-     "n": "Khí tự nhiên (CFD)"
+     "n": "Khí tự nhiên (CFD)",
+     "n_en": "Natural gas (CFD)"
     },
     {
      "s": "OANDA:WTICOUSD",
-     "n": "Dầu WTI (OANDA)"
+     "n": "Dầu WTI (OANDA)",
+     "n_en": "WTI crude (OANDA)"
     },
     {
      "s": "OANDA:BCOUSD",
-     "n": "Dầu Brent (OANDA)"
+     "n": "Dầu Brent (OANDA)",
+     "n_en": "Brent crude (OANDA)"
     },
     {
      "s": "CAPITALCOM:GASOLINE",
-     "n": "Xăng (CFD)"
+     "n": "Xăng (CFD)",
+     "n_en": "Gasoline (CFD)"
     },
     {
      "s": "CAPITALCOM:HEATINGOIL",
-     "n": "Dầu sưởi (CFD)"
+     "n": "Dầu sưởi (CFD)",
+     "n_en": "Heating oil (CFD)"
     },
     {
      "s": "AMEX:USO",
-     "n": "Quỹ dầu USO"
+     "n": "Quỹ dầu USO",
+     "n_en": "Oil ETF (USO)"
     },
     {
      "s": "AMEX:UNG",
-     "n": "Quỹ khí UNG"
+     "n": "Quỹ khí UNG",
+     "n_en": "Natural gas ETF (UNG)"
     },
     {
      "s": "AMEX:XLE",
-     "n": "Quỹ năng lượng XLE"
+     "n": "Quỹ năng lượng XLE",
+     "n_en": "Energy ETF (XLE)"
     }
-   ]
+   ],
+   "name_en": "Energy"
   },
   {
    "name": "Kim loại công nghiệp",
    "symbols": [
     {
      "s": "OANDA:XCUUSD",
-     "n": "Đồng (CFD)"
+     "n": "Đồng (CFD)",
+     "n_en": "Copper (CFD)"
     },
     {
      "s": "CAPITALCOM:COPPER",
-     "n": "Đồng (Capital.com)"
+     "n": "Đồng (Capital.com)",
+     "n_en": "Copper (Capital.com)"
     },
     {
      "s": "CAPITALCOM:ALUMINUM",
-     "n": "Nhôm (CFD)"
+     "n": "Nhôm (CFD)",
+     "n_en": "Aluminum (CFD)"
     },
     {
      "s": "CAPITALCOM:NICKEL",
-     "n": "Niken (CFD)"
+     "n": "Niken (CFD)",
+     "n_en": "Nickel (CFD)"
     },
     {
      "s": "CAPITALCOM:LEAD",
-     "n": "Chì (CFD)"
+     "n": "Chì (CFD)",
+     "n_en": "Lead (CFD)"
     },
     {
      "s": "PEPPERSTONE:COPPER",
-     "n": "Đồng (Pepperstone)"
+     "n": "Đồng (Pepperstone)",
+     "n_en": "Copper (Pepperstone)"
     },
     {
      "s": "AMEX:CPER",
-     "n": "Quỹ Đồng CPER"
+     "n": "Quỹ Đồng CPER",
+     "n_en": "Copper ETF (CPER)"
     },
     {
      "s": "AMEX:SLX",
-     "n": "Quỹ thép SLX"
+     "n": "Quỹ thép SLX",
+     "n_en": "Steel ETF (SLX)"
     },
     {
      "s": "AMEX:URA",
-     "n": "Quỹ Uranium URA"
+     "n": "Quỹ Uranium URA",
+     "n_en": "Uranium ETF (URA)"
     },
     {
      "s": "AMEX:LIT",
-     "n": "Quỹ Lithium LIT"
+     "n": "Quỹ Lithium LIT",
+     "n_en": "Lithium ETF (LIT)"
     },
     {
      "s": "NYSE:FCX",
@@ -439,9 +507,11 @@
     },
     {
      "s": "PEPPERSTONE:ZINC",
-     "n": "Kẽm (Pepperstone)"
+     "n": "Kẽm (Pepperstone)",
+     "n_en": "Zinc (Pepperstone)"
     }
-   ]
+   ],
+   "name_en": "Industrial metals"
   },
   {
    "name": "Chỉ số & tỷ giá",
@@ -452,11 +522,13 @@
     },
     {
      "s": "AMEX:SPY",
-     "n": "Quỹ SPY"
+     "n": "Quỹ SPY",
+     "n_en": "SPDR S&P 500 ETF (SPY)"
     },
     {
      "s": "NASDAQ:QQQ",
-     "n": "Quỹ QQQ"
+     "n": "Quỹ QQQ",
+     "n_en": "Invesco QQQ"
     },
     {
      "s": "FX_IDC:USDVND",
@@ -504,19 +576,23 @@
     },
     {
      "s": "CAPITALCOM:DXY",
-     "n": "Chỉ số USD (DXY)"
+     "n": "Chỉ số USD (DXY)",
+     "n_en": "US Dollar Index (DXY)"
     },
     {
      "s": "PEPPERSTONE:USDX",
-     "n": "Chỉ số USD (Pepperstone)"
+     "n": "Chỉ số USD (Pepperstone)",
+     "n_en": "US Dollar Index (Pepperstone)"
     },
     {
      "s": "OANDA:USB10YUSD",
-     "n": "TP Mỹ 10 năm (CFD giá)"
+     "n": "TP Mỹ 10 năm (CFD giá)",
+     "n_en": "US 10-year Treasury (price CFD)"
     },
     {
      "s": "OANDA:USB02YUSD",
-     "n": "TP Mỹ 2 năm (CFD giá)"
+     "n": "TP Mỹ 2 năm (CFD giá)",
+     "n_en": "US 2-year Treasury (price CFD)"
     },
     {
      "s": "CAPITALCOM:US500",
@@ -548,7 +624,8 @@
     },
     {
      "s": "CAPITALCOM:DE40",
-     "n": "DAX Đức (CFD)"
+     "n": "DAX Đức (CFD)",
+     "n_en": "Germany DAX (CFD)"
     },
     {
      "s": "CAPITALCOM:UK100",
@@ -558,7 +635,8 @@
      "s": "CAPITALCOM:VIX",
      "n": "VIX (CFD)"
     }
-   ]
+   ],
+   "name_en": "Indices & FX"
   },
   {
    "name": "Crypto",
@@ -585,460 +663,583 @@
     },
     {
      "s": "BINANCE:PAXGUSDT",
-     "n": "PAX Gold (vàng token)"
+     "n": "PAX Gold (vàng token)",
+     "n_en": "PAX Gold (tokenized gold)"
     },
     {
      "s": "BINANCE:DOGEUSDT",
      "n": "Dogecoin"
     }
-   ]
+   ],
+   "name_en": "Crypto"
   }
  ],
  "external": [
   {
    "s": "COMEX:GC1!",
    "n": "HĐTL Vàng COMEX",
-   "cat": "Kim loại quý"
+   "cat": "Kim loại quý",
+   "n_en": "COMEX gold futures",
+   "cat_en": "Precious metals"
   },
   {
    "s": "COMEX:SI1!",
    "n": "HĐTL Bạc COMEX",
-   "cat": "Kim loại quý"
+   "cat": "Kim loại quý",
+   "n_en": "COMEX silver futures",
+   "cat_en": "Precious metals"
   },
   {
    "s": "NYMEX:PL1!",
    "n": "HĐTL Bạch kim",
-   "cat": "Kim loại quý"
+   "cat": "Kim loại quý",
+   "n_en": "Platinum futures",
+   "cat_en": "Precious metals"
   },
   {
    "s": "NYMEX:PA1!",
    "n": "HĐTL Palladium",
-   "cat": "Kim loại quý"
+   "cat": "Kim loại quý",
+   "n_en": "Palladium futures",
+   "cat_en": "Precious metals"
   },
   {
    "s": "HOSE:VNINDEX",
    "n": "VN-Index",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:VN30",
    "n": "VN30",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:VCB",
    "n": "VCB",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:VIC",
    "n": "VIC",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:VHM",
    "n": "VHM",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:HPG",
    "n": "HPG",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:FPT",
    "n": "FPT",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:MWG",
    "n": "MWG",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:VNM",
    "n": "VNM",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:TCB",
    "n": "TCB",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:MBB",
    "n": "MBB",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:ACB",
    "n": "ACB",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:SSI",
    "n": "SSI",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:VPB",
    "n": "VPB",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:GAS",
    "n": "GAS",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:MSN",
    "n": "MSN",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:PNJ",
    "n": "PNJ",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:BID",
    "n": "BID",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:CTG",
    "n": "CTG",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:VRE",
    "n": "VRE",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:PLX",
    "n": "PLX",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:SAB",
    "n": "SAB",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:POW",
    "n": "POW",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:VJC",
    "n": "VJC",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:GVR",
    "n": "GVR",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:BCM",
    "n": "BCM",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:HDB",
    "n": "HDB",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:STB",
    "n": "STB",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:TPB",
    "n": "TPB",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:VIB",
    "n": "VIB",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:SHB",
    "n": "SHB",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:LPB",
    "n": "LPB",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:SSB",
    "n": "SSB",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:REE",
    "n": "REE",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:DGC",
    "n": "DGC",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:DCM",
    "n": "DCM",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:DPM",
    "n": "DPM",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:KDH",
    "n": "KDH",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:NVL",
    "n": "NVL",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:PDR",
    "n": "PDR",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:DXG",
    "n": "DXG",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:GMD",
    "n": "GMD",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:HSG",
    "n": "HSG",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:NKG",
    "n": "NKG",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:VND",
    "n": "VND",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:HCM",
    "n": "HCM",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:VCI",
    "n": "VCI",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:KBC",
    "n": "KBC",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:FRT",
    "n": "FRT",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:DGW",
    "n": "DGW",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "HOSE:PVD",
    "n": "PVD",
-   "cat": "Chứng khoán VN"
+   "cat": "Chứng khoán VN",
+   "cat_en": "Vietnam stocks"
   },
   {
    "s": "ICEUS:KC1!",
    "n": "HĐTL Cà phê Arabica",
-   "cat": "Nông sản"
+   "cat": "Nông sản",
+   "n_en": "Arabica coffee futures",
+   "cat_en": "Agriculture"
   },
   {
    "s": "ICEEUR:RC1!",
    "n": "HĐTL Cà phê Robusta",
-   "cat": "Nông sản"
+   "cat": "Nông sản",
+   "n_en": "Robusta coffee futures",
+   "cat_en": "Agriculture"
   },
   {
    "s": "ICEUS:CC1!",
    "n": "HĐTL Ca cao",
-   "cat": "Nông sản"
+   "cat": "Nông sản",
+   "n_en": "Cocoa futures",
+   "cat_en": "Agriculture"
   },
   {
    "s": "ICEUS:SB1!",
    "n": "HĐTL Đường",
-   "cat": "Nông sản"
+   "cat": "Nông sản",
+   "n_en": "Sugar futures",
+   "cat_en": "Agriculture"
   },
   {
    "s": "CBOT:ZC1!",
    "n": "HĐTL Ngô",
-   "cat": "Nông sản"
+   "cat": "Nông sản",
+   "n_en": "Corn futures",
+   "cat_en": "Agriculture"
   },
   {
    "s": "CBOT:ZW1!",
    "n": "HĐTL Lúa mì",
-   "cat": "Nông sản"
+   "cat": "Nông sản",
+   "n_en": "Wheat futures",
+   "cat_en": "Agriculture"
   },
   {
    "s": "CBOT:ZS1!",
    "n": "HĐTL Đậu tương",
-   "cat": "Nông sản"
+   "cat": "Nông sản",
+   "n_en": "Soybean futures",
+   "cat_en": "Agriculture"
   },
   {
    "s": "CBOT:ZL1!",
    "n": "HĐTL Dầu đậu tương",
-   "cat": "Nông sản"
+   "cat": "Nông sản",
+   "n_en": "Soybean oil futures",
+   "cat_en": "Agriculture"
   },
   {
    "s": "CBOT:ZM1!",
    "n": "HĐTL Khô đậu tương",
-   "cat": "Nông sản"
+   "cat": "Nông sản",
+   "n_en": "Soybean meal futures",
+   "cat_en": "Agriculture"
   },
   {
    "s": "CBOT:ZR1!",
    "n": "HĐTL Gạo thô",
-   "cat": "Nông sản"
+   "cat": "Nông sản",
+   "n_en": "Rough rice futures",
+   "cat_en": "Agriculture"
   },
   {
    "s": "ICEUS:CT1!",
    "n": "HĐTL Bông",
-   "cat": "Nông sản"
+   "cat": "Nông sản",
+   "n_en": "Cotton futures",
+   "cat_en": "Agriculture"
   },
   {
    "s": "ICEUS:OJ1!",
    "n": "HĐTL Nước cam",
-   "cat": "Nông sản"
+   "cat": "Nông sản",
+   "n_en": "Orange juice futures",
+   "cat_en": "Agriculture"
   },
   {
    "s": "CME:LE1!",
    "n": "HĐTL Bò sống",
-   "cat": "Nông sản"
+   "cat": "Nông sản",
+   "n_en": "Live cattle futures",
+   "cat_en": "Agriculture"
   },
   {
    "s": "CME:HE1!",
    "n": "HĐTL Heo nạc",
-   "cat": "Nông sản"
+   "cat": "Nông sản",
+   "n_en": "Lean hog futures",
+   "cat_en": "Agriculture"
   },
   {
    "s": "SGX:TF1!",
    "n": "HĐTL Cao su SGX",
-   "cat": "Nông sản"
+   "cat": "Nông sản",
+   "n_en": "SGX rubber futures",
+   "cat_en": "Agriculture"
   },
   {
    "s": "NYMEX:CL1!",
    "n": "HĐTL Dầu WTI",
-   "cat": "Năng lượng"
+   "cat": "Năng lượng",
+   "n_en": "WTI crude futures",
+   "cat_en": "Energy"
   },
   {
    "s": "ICEEUR:BRN1!",
    "n": "HĐTL Dầu Brent",
-   "cat": "Năng lượng"
+   "cat": "Năng lượng",
+   "n_en": "Brent crude futures",
+   "cat_en": "Energy"
   },
   {
    "s": "NYMEX:NG1!",
    "n": "HĐTL Khí tự nhiên",
-   "cat": "Năng lượng"
+   "cat": "Năng lượng",
+   "n_en": "Natural gas futures",
+   "cat_en": "Energy"
   },
   {
    "s": "NYMEX:RB1!",
    "n": "HĐTL Xăng RBOB",
-   "cat": "Năng lượng"
+   "cat": "Năng lượng",
+   "n_en": "RBOB gasoline futures",
+   "cat_en": "Energy"
   },
   {
    "s": "NYMEX:HO1!",
    "n": "HĐTL Dầu sưởi",
-   "cat": "Năng lượng"
+   "cat": "Năng lượng",
+   "n_en": "Heating oil futures",
+   "cat_en": "Energy"
   },
   {
    "s": "COMEX:HG1!",
    "n": "HĐTL Đồng COMEX",
-   "cat": "Kim loại công nghiệp"
+   "cat": "Kim loại công nghiệp",
+   "n_en": "COMEX copper futures",
+   "cat_en": "Industrial metals"
   },
   {
    "s": "SGX:FEF1!",
    "n": "HĐTL Quặng sắt SGX",
-   "cat": "Kim loại công nghiệp"
+   "cat": "Kim loại công nghiệp",
+   "n_en": "SGX iron ore futures",
+   "cat_en": "Industrial metals"
   },
   {
    "s": "COMEX:ALI1!",
    "n": "HĐTL Nhôm COMEX",
-   "cat": "Kim loại công nghiệp"
+   "cat": "Kim loại công nghiệp",
+   "n_en": "COMEX aluminum futures",
+   "cat_en": "Industrial metals"
   },
   {
    "s": "TVC:DXY",
    "n": "Chỉ số USD (DXY)",
-   "cat": "Chỉ số & tỷ giá"
+   "cat": "Chỉ số & tỷ giá",
+   "n_en": "US Dollar Index (DXY)",
+   "cat_en": "Indices & FX"
   },
   {
    "s": "TVC:US10Y",
    "n": "Lợi suất TP Mỹ 10 năm",
-   "cat": "Chỉ số & tỷ giá"
+   "cat": "Chỉ số & tỷ giá",
+   "n_en": "US 10-year Treasury yield",
+   "cat_en": "Indices & FX"
   },
   {
    "s": "TVC:US02Y",
    "n": "Lợi suất TP Mỹ 2 năm",
-   "cat": "Chỉ số & tỷ giá"
+   "cat": "Chỉ số & tỷ giá",
+   "n_en": "US 2-year Treasury yield",
+   "cat_en": "Indices & FX"
   },
   {
    "s": "SP:SPX",
    "n": "S&P 500",
-   "cat": "Chỉ số & tỷ giá"
+   "cat": "Chỉ số & tỷ giá",
+   "cat_en": "Indices & FX"
   },
   {
    "s": "NASDAQ:NDX",
    "n": "Nasdaq 100",
-   "cat": "Chỉ số & tỷ giá"
+   "cat": "Chỉ số & tỷ giá",
+   "cat_en": "Indices & FX"
   },
   {
    "s": "TVC:DJI",
    "n": "Dow Jones",
-   "cat": "Chỉ số & tỷ giá"
+   "cat": "Chỉ số & tỷ giá",
+   "cat_en": "Indices & FX"
   },
   {
    "s": "TVC:NI225",
    "n": "Nikkei 225",
-   "cat": "Chỉ số & tỷ giá"
+   "cat": "Chỉ số & tỷ giá",
+   "cat_en": "Indices & FX"
   },
   {
    "s": "TVC:HSI",
    "n": "Hang Seng",
-   "cat": "Chỉ số & tỷ giá"
+   "cat": "Chỉ số & tỷ giá",
+   "cat_en": "Indices & FX"
   },
   {
    "s": "TVC:DAX",
    "n": "DAX Đức",
-   "cat": "Chỉ số & tỷ giá"
+   "cat": "Chỉ số & tỷ giá",
+   "n_en": "Germany DAX",
+   "cat_en": "Indices & FX"
   },
   {
    "s": "TVC:UKX",
    "n": "FTSE 100",
-   "cat": "Chỉ số & tỷ giá"
+   "cat": "Chỉ số & tỷ giá",
+   "cat_en": "Indices & FX"
   },
   {
    "s": "TVC:VIX",
    "n": "Chỉ số sợ hãi VIX",
-   "cat": "Chỉ số & tỷ giá"
+   "cat": "Chỉ số & tỷ giá",
+   "n_en": "VIX volatility index",
+   "cat_en": "Indices & FX"
   }
  ]
 }

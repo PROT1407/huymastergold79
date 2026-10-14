@@ -8,7 +8,9 @@
   "source": {
    "name": "VietNamNet",
    "url": "https://vietnamnet.vn/gia-vang-hom-nay-30-1-2026-tuot-doc-vang-mieng-sjc-giam-rat-manh-2486350.html"
-  }
+  },
+  "note_en": "Intraday record on Jan 29, 2026 (bid/ask 188.3–191.3 million VND per tael)",
+  "label_en": "SJC bar all-time high"
  },
  "refs": [
   {
@@ -19,6 +21,13 @@
     "Vàng thế giới giao ngay mất gần 30 USD, còn khoảng 4.149 USD/oz – phiên giảm thứ 3 liên tiếp; quy đổi ≈ 130,4 triệu đồng/lượng, thấp hơn trong nước gần 14 triệu",
     "Áp lực đến từ USD mạnh (gần đỉnh 18 tháng) và giá dầu cao; thị trường chờ số liệu lạm phát Mỹ",
     "CME FedWatch: xác suất Fed tăng lãi suất tháng 10 khoảng 19%, tháng 12 khoảng 85%"
+   ],
+   "name_en": "Dan Tri – Domestic and world gold prices fall together (Oct 14, 2026)",
+   "facts_en": [
+    "Oct 13 close: SJC bars 141.3–144.3 million VND per tael, a 3 million bid/ask spread; intraday quotes were briefly cut to 140.5–143.5 million before recovering",
+    "Spot gold lost almost $30 to about $4,149/oz – a third straight decline; ≈ 130.4 million VND per tael, nearly 14 million below the local price",
+    "Pressure came from a strong dollar (near an 18-month high) and high oil; the market is waiting on US inflation data",
+    "CME FedWatch: about 19% odds of an October hike and about 85% for December"
    ]
   }
  ],
@@ -438,11 +447,19 @@
   "factor": 1.20565,
   "vnd_per_luong": 129500000.0,
   "gap_sjc_sell": 14800000.0,
-  "note": "USD/oz × USD/VND (tỷ giá thị trường open.er-api) × 1,20565; chưa gồm thuế, phí"
+  "note": "USD/oz × USD/VND (tỷ giá thị trường open.er-api) × 1,20565; chưa gồm thuế, phí",
+  "note_en": "USD/oz × USD/VND (open.er-api market rate) × 1.20565; excludes taxes and fees"
  },
  "sources": {
   "vang_today": "https://www.vang.today/",
   "gold_api": "https://gold-api.com/",
   "fx": "https://open.er-api.com/"
- }
+ },
+ "analysis_en": [
+  "SJC bars were quoted at 141.3–144.3 million VND per tael on the morning of Oct 14 (Vietnam), unchanged from the Oct 13 close; SJC rings held at 140.8–143.8 million – about 0.8 million above the temporarily cut quote posted a day earlier.",
+  "World gold slipped to about $4,147/oz (vs. ≈ $4,193 a day earlier), worth only ≈ 129.5 million VND per tael, so the SJC premium over world gold widened to ≈ 14.8 million VND (from ≈ 12.6 million): local prices are falling more slowly than the global market.",
+  "A buyer at the 191.3 million VND peak (Jan 29, 2026) selling back today at the 141.3 million bid would be down about 50 million VND per tael (≈ 26%).",
+  "US CPI is out at 8:30 AM ET Oct 14; FedWatch still leans toward a December hike (≈ 85%) – a hot print could push gold lower, and the wide premium leaves new local buyers exposed on two fronts."
+ ],
+ "advice_en": "Gold is in a long, deep downtrend and could go meaningfully lower over the medium to long term. Physical buyers may want to be patient and wait for a better entry."
 }

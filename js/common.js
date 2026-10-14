@@ -34,16 +34,36 @@
   const page = document.body.dataset.page || 'home';
   const EN = H.EN = (document.documentElement.lang || '').toLowerCase().startsWith('en');
   /* ---- VI/EN: cặp trang tương ứng (giữ đồng bộ với thẻ hreflang) ---- */
-  const LANG_PAIRS = H.LANG_PAIRS = { 'index.html': 'en/index.html', 'chien-luoc.html': 'en/h79-analysis.html', 've-toi.html': 'en/about.html' };
-  const curFile = (() => { const a = location.pathname.split('/').filter(Boolean); const f = /\.html$/.test(a[a.length - 1] || '') ? a.pop() : 'index.html'; return (EN ? 'en/' : (a[a.length - 1] === 'bai' ? 'bai/' : '')) + f; })();
-  const langHref = EN ? (Object.keys(LANG_PAIRS).find(k => LANG_PAIRS[k] === curFile) || 'index.html') : (LANG_PAIRS[curFile] || 'en/index.html');
+  const LANG_PAIRS = H.LANG_PAIRS = { 'index.html': 'en/index.html', 'chien-luoc.html': 'en/h79-analysis.html', 've-toi.html': 'en/about.html',
+    'tin-tuc.html': 'en/news.html', 'lich-kinh-te.html': 'en/economic-calendar.html', 'gia-vang.html': 'en/vietnam-gold-market.html', 'bieu-do.html': 'en/charts.html',
+    'kien-thuc.html': 'en/learn.html', 'live.html': 'en/live.html', 'quy-forex.html': 'en/trading-fund.html', 'tai-khoan-follow.html': 'en/copy-trading.html',
+    'lien-he.html': 'en/contact.html', 'bai/index.html': 'en/posts/index.html' };
+  /* bài tĩnh: bai/<date>-nhan-dinh-vang-<phiên>[-hhmm].html <-> en/posts/<date>-gold-plan-<session>[-hhmm].html; tin vĩ mô <-> gold-macro-news (khớp scripts/build-seo.py) */
+  const POST_SES = [['phien-au-my', 'london-ny-overlap'], ['phien-au', 'london-session'], ['phien-my', 'new-york-session'], ['phien-a', 'asian-session']];
+  const postEN = f => { let m = /^bai\/(\d{4}-\d\d-\d\d)-nhan-dinh-vang-(phien-[a-z-]+?)(-\d{4})?\.html$/.exec(f); if (m) { const s = POST_SES.find(x => x[0] === m[2]); return s ? `en/posts/${m[1]}-gold-plan-${s[1]}${m[3] || ''}.html` : null; }
+    m = /^bai\/(\d{4}-\d\d-\d\d)-tin-vi-mo-anh-huong-gia-vang\.html$/.exec(f); return m ? `en/posts/${m[1]}-gold-macro-news.html` : null; };
+  const postVI = f => { let m = /^en\/posts\/(\d{4}-\d\d-\d\d)-gold-plan-([a-z-]+?)(-\d{4})?\.html$/.exec(f); if (m) { const s = POST_SES.find(x => x[1] === m[2]); return s ? `bai/${m[1]}-nhan-dinh-vang-${s[0]}${m[3] || ''}.html` : null; }
+    m = /^en\/posts\/(\d{4}-\d\d-\d\d)-gold-macro-news\.html$/.exec(f); return m ? `bai/${m[1]}-tin-vi-mo-anh-huong-gia-vang.html` : null; };
+  const curFile = (() => { const a = location.pathname.split('/').filter(Boolean); const f = /\.html$/.test(a[a.length - 1] || '') ? a.pop() : 'index.html'; const dir = a[a.length - 1]; return (EN ? (dir === 'posts' ? 'en/posts/' : 'en/') : (dir === 'bai' ? 'bai/' : '')) + f; })();
+  const langHref = EN ? (Object.keys(LANG_PAIRS).find(k => LANG_PAIRS[k] === curFile) || postVI(curFile) || (curFile.startsWith('en/posts/') ? 'bai/index.html' : 'index.html'))
+    : (LANG_PAIRS[curFile] || postEN(curFile) || (curFile.startsWith('bai/') ? 'en/posts/index.html' : 'en/index.html'));
   const langBtn = `<a class="icon-btn lang-btn" href="${langHref}" hreflang="${EN ? 'vi' : 'en'}" lang="${EN ? 'vi' : 'en'}" title="${EN ? 'Tiếng Việt' : 'English version'}" aria-label="${EN ? 'Chuyển sang tiếng Việt' : 'Switch to English'}" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:800;font-size:.8rem;flex:0 0 auto">${EN ? 'VI' : 'EN'}</a>`;
   const M_EN = [
     ['enhome', 'en/index.html', '🏠 Home'],
     ['strat', 'en/h79-analysis.html', '🎯 H79 Gold Plan'],
+    ['market', 'en/news.html', '🌐 Markets', [
+      ['en/news.html', 'Macro news & FedWatch', 'Fed, yields, dollar, geopolitics'],
+      ['en/economic-calendar.html', 'US economic calendar', 'CPI, NFP, FOMC – times in ET'],
+      ['en/vietnam-gold-market.html', 'Vietnam gold market', 'SJC premium over spot']]],
+    ['chart', 'en/charts.html', '📈 Charts'],
+    ['live', 'en/live.html', '🔴 Live'],
+    ['forex', 'en/trading-fund.html', '💱 Trading', [
+      ['en/trading-fund.html', 'Trading fund model', 'Risk rules and roadmap'],
+      ['en/copy-trading.html', 'Copy trading', 'Follow the H79 account']]],
+    ['learn', 'en/learn.html', '📚 Learn'],
+    ['bai', 'en/posts/index.html', '📰 Archive'],
     ['vetoi', 'en/about.html', '🙋 About'],
-    ['chart', 'bieu-do.html', '📈 Charts'],
-    ['live', 'live.html', '🔴 Live (VI)']
+    ['about', 'en/contact.html', '✉ Contact']
   ];
   const M = EN ? M_EN : [
     ['home', 'index.html', '🏠 Trang chủ'],
@@ -82,7 +102,7 @@
   <header class="hdr"><div class="wrap">
     <a class="brand" href="${EN ? 'en/index.html' : 'index.html'}"><img src="assets/favicon.svg" width="34" height="34" alt="">Huymaster<b>Gold79</b></a>
     <ul class="menu" id="menu">${menu}</ul>
-    <a href="live.html" id="live-badge" class="live-badge" hidden>● LIVE</a>
+    <a href="${EN ? 'en/live.html' : 'live.html'}" id="live-badge" class="live-badge" hidden>● LIVE</a>
     ${langBtn}
     <button class="icon-btn" id="theme-btn" title="${EN ? 'Light/dark theme' : 'Đổi giao diện sáng/tối'}" aria-label="${EN ? 'Toggle theme' : 'Đổi giao diện'}">🌓</button>
     <button class="icon-btn burger" id="burger" aria-label="Menu">☰</button>
@@ -91,10 +111,10 @@
   <footer><div class="wrap">
     <div class="cols">
       <div><a class="brand" href="en/index.html" style="display:flex"><img src="assets/favicon.svg" width="30" height="30" alt="">Huymaster<b>Gold79</b></a>
-        <p class="muted small" style="margin-top:8px">Independent gold (XAUUSD) analysis by Ngọc Huy, Vietnam.</p>
+        <p class="muted small" style="margin-top:8px">Independent gold (XAU/USD) analysis by Ngọc Huy.</p>
         <div class="share"><a href="${H.YT}" target="_blank" rel="noopener">▶ YouTube</a><a class="tg-link" href="${H.TG}" target="_blank" rel="noopener">✈ Telegram</a><a href="mailto:${H.EMAIL}">✉ Email</a></div></div>
-      <div><h4>English</h4><a href="en/index.html">Home</a><a href="en/h79-analysis.html">H79 Gold Plan</a><a href="en/about.html">About</a></div>
-      <div><h4>Tiếng Việt</h4><a href="index.html">Trang chủ</a><a href="chien-luoc.html">Chiến lược</a><a href="ve-toi.html">Về tôi</a><a href="lien-he.html">Liên hệ</a></div>
+      <div><h4>Analysis</h4><a href="en/h79-analysis.html">H79 Gold Plan</a><a href="en/news.html">Macro news & FedWatch</a><a href="en/economic-calendar.html">Economic calendar</a><a href="en/charts.html">Charts</a><a href="en/live.html">Live room</a><a href="en/posts/index.html">Archive</a></div>
+      <div><h4>More</h4><a href="en/vietnam-gold-market.html">Vietnam gold market</a><a href="en/trading-fund.html">Trading fund model</a><a href="en/copy-trading.html">Copy trading</a><a href="en/learn.html">Learn</a><a href="en/about.html">About</a><a href="en/contact.html">Contact</a><a href="index.html" hreflang="vi" lang="vi">Tiếng Việt</a></div>
     </div>
     <p class="disc">⚠ <b>Disclaimer:</b> All content is for information and education only and reflects personal opinion; it is <b>not investment advice</b>. Trading gold, forex and CFDs involves a high risk of loss. Past performance does not guarantee future results. Third-party data (TradingView, gold-api.com, Yahoo Finance) may be delayed or inaccurate.<br>© ${new Date().getFullYear()} HuymasterGold79</p>
   </div></footer>`;

@@ -39,6 +39,37 @@ def vi(title):
     for k, n, x in VI:
         if k.lower() in title.lower(): return n, x
     return '', ''
+# English explanation for EN pages (en/economic-calendar.html) – same keywords, US-trader voice
+EN = {
+ 'Non-Farm Employment Change': 'Headline jobs number. A beat lifts the dollar and usually hits gold; a miss is gold-supportive.',
+ 'Unemployment Rate': 'A rising jobless rate boosts rate-cut/pause bets – typically supportive for gold.',
+ 'Average Hourly Earnings': 'Hot wage growth means sticky inflation and a more hawkish Fed – a headwind for gold.',
+ 'Core CPI': 'The print the Fed watches most closely. Above forecast → yields and the dollar jump → gold usually sells off.',
+ 'CPI': 'Hotter inflation raises the odds the Fed hikes or holds high for longer – pressure on gold.',
+ 'Core PCE': "The Fed's preferred inflation gauge. Above forecast → hawkish Fed → bearish gold.",
+ 'PCE': 'Consumer inflation gauge; trades much like CPI.',
+ 'Core PPI': 'Early read on pipeline inflation heading to consumers.',
+ 'PPI': 'Rising input costs can feed into CPI down the line.',
+ 'Core Retail Sales': 'Strong spending = resilient economy, less reason to ease → firmer dollar.',
+ 'Retail Sales': 'Gauges US consumer spending; a beat is usually a negative for gold.',
+ 'Federal Funds Rate': 'The biggest event of the month. A hike or hawkish hold weighs on gold; a cut supports it.',
+ 'FOMC': 'Signals on the rate path – expect sharp moves in gold.',
+ 'Fed Chair': 'High-risk event: any hint on rates can whip gold and the dollar.',
+ 'Speaks': 'Hawkish tone → dollar up, gold down; dovish tone → supportive for gold.',
+ 'GDP': 'Strong growth gives the Fed less reason to ease → firmer dollar.',
+ 'ISM Manufacturing': 'Above 50 = expansion; big surprises move the dollar and gold.',
+ 'ISM Services': 'Services are the bulk of the US economy; the prices-paid component matters for inflation.',
+ 'Unemployment Claims': 'Out every Thursday; a jump signals a softer labor market → supportive for gold.',
+ 'JOLTS': 'Measures labor demand; falling openings make Fed easing more likely.',
+ 'Philly Fed': 'Regional manufacturing survey, an early read on ISM.',
+ 'Empire State': 'New York regional manufacturing survey.',
+ 'Consumer Sentiment': 'Includes inflation expectations the Fed tracks closely.',
+ 'Bank Holiday': 'Thin liquidity; US bond markets may be closed.',
+}
+def en(title):
+    for k, _n, _x in VI:
+        if k.lower() in title.lower(): return EN.get(k, '')
+    return ''
 def main():
     req = urllib.request.Request(URL, headers={'User-Agent': 'Mozilla/5.0 (huymastergold79 calendar)'})
     raw = json.load(urllib.request.urlopen(req, timeout=30))
@@ -48,7 +79,7 @@ def main():
         if x.get('country') != 'USD' or x.get('impact') != 'High': continue
         t = dt.datetime.fromisoformat(x['date']).astimezone(VN)
         n, ex = vi(x['title'])
-        ev.append({'title': x['title'], 'title_vi': n, 'explain': ex, 'impact': x['impact'],
+        ev.append({'title': x['title'], 'title_vi': n, 'explain': ex, 'explain_en': en(x['title']), 'impact': x['impact'],
                    'time_utc': t.astimezone(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
                    'time_vn': t.strftime('%H:%M %d/%m/%Y'), 'date_vn': t.strftime('%Y-%m-%d'),
                    'forecast': x.get('forecast', ''), 'previous': x.get('previous', ''), 'actual': x.get('actual', '')})

@@ -13,7 +13,9 @@
       "time": "19:00",
       "duration": 120,
       "title": "Phòng live nhận định – Vàng trước phiên Mỹ",
-      "desc": "Nhận định XAU/USD trước phiên Mỹ, kịch bản tuần, vùng mua vàng vật chất, hỏi đáp trực tiếp (19:00–21:00 giờ VN)."
+      "desc": "Nhận định XAU/USD trước phiên Mỹ, kịch bản tuần, vùng mua vàng vật chất, hỏi đáp trực tiếp (19:00–21:00 giờ VN).",
+      "title_en": "Live gold room – setting up for the New York session",
+      "desc_en": "XAU/USD read ahead of the New York session, the weekly game plan and live Q&A."
     }
   ],
   "topics": [
@@ -21,5 +23,11 @@
     "Chênh lệch SJC – thế giới: lúc nào nên mua nhẫn 9999?",
     "Đọc biểu đồ XAU/USD khung H4 cho người mới",
     "Hỏi đáp trực tiếp: quản lý vốn khi giá biến động mạnh"
+  ],
+  "topics_en": [
+    "The Fed and rates: how will gold react?",
+    "Gold vs. real yields and the dollar: what's driving price right now",
+    "Reading the XAU/USD H4 chart, for newer traders",
+    "Live Q&A: managing risk when volatility spikes"
   ]
 }

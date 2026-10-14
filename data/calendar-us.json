@@ -19,7 +19,8 @@
    "date_vn": "2026-10-14",
    "forecast": "0.2%",
    "previous": "0.3%",
-   "actual": ""
+   "actual": "",
+   "explain_en": "The print the Fed watches most closely. Above forecast → yields and the dollar jump → gold usually sells off."
   },
   {
    "title": "Core CPI y/y",
@@ -31,7 +32,8 @@
    "date_vn": "2026-10-14",
    "forecast": "2.5%",
    "previous": "2.4%",
-   "actual": ""
+   "actual": "",
+   "explain_en": "The print the Fed watches most closely. Above forecast → yields and the dollar jump → gold usually sells off."
   },
   {
    "title": "CPI m/m",
@@ -43,7 +45,8 @@
    "date_vn": "2026-10-14",
    "forecast": "0.6%",
    "previous": "0.4%",
-   "actual": ""
+   "actual": "",
+   "explain_en": "Hotter inflation raises the odds the Fed hikes or holds high for longer – pressure on gold."
   },
   {
    "title": "CPI y/y",
@@ -55,7 +58,8 @@
    "date_vn": "2026-10-14",
    "forecast": "3.6%",
    "previous": "3.4%",
-   "actual": ""
+   "actual": "",
+   "explain_en": "Hotter inflation raises the odds the Fed hikes or holds high for longer – pressure on gold."
   },
   {
    "title": "Core PPI m/m",
@@ -67,7 +71,8 @@
    "date_vn": "2026-10-15",
    "forecast": "0.3%",
    "previous": "0.2%",
-   "actual": ""
+   "actual": "",
+   "explain_en": "Early read on pipeline inflation heading to consumers."
   },
   {
    "title": "Core Retail Sales m/m",
@@ -79,7 +84,8 @@
    "date_vn": "2026-10-15",
    "forecast": "0.6%",
    "previous": "1.4%",
-   "actual": ""
+   "actual": "",
+   "explain_en": "Strong spending = resilient economy, less reason to ease → firmer dollar."
   },
   {
    "title": "PPI m/m",
@@ -91,7 +97,8 @@
    "date_vn": "2026-10-15",
    "forecast": "0.6%",
    "previous": "0.4%",
-   "actual": ""
+   "actual": "",
+   "explain_en": "Rising input costs can feed into CPI down the line."
   },
   {
    "title": "Retail Sales m/m",
@@ -103,7 +110,8 @@
    "date_vn": "2026-10-15",
    "forecast": "0.3%",
    "previous": "1.2%",
-   "actual": ""
+   "actual": "",
+   "explain_en": "Gauges US consumer spending; a beat is usually a negative for gold."
   },
   {
    "title": "Fed Chairman Warsh Speaks",
@@ -115,7 +123,8 @@
    "date_vn": "2026-10-16",
    "forecast": "",
    "previous": "",
-   "actual": ""
+   "actual": "",
+   "explain_en": "High-risk event: any hint on rates can whip gold and the dollar."
   }
  ]
 }

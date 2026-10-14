@@ -4,15 +4,56 @@
   "title": "Quỹ Forex HuymasterGold79",
   "intro": "Xây dựng quỹ giao dịch vàng (XAU/USD) và ngoại tệ theo kỷ luật quản lý vốn chặt chẽ, minh bạch kết quả từng tháng.",
   "summary": [
-    { "label": "Vốn khởi điểm", "value": "10.000 USD (ví dụ)" },
-    { "label": "Rủi ro tối đa / lệnh", "value": "1% tài khoản" },
-    { "label": "Sụt giảm tối đa cho phép", "value": "15%" },
-    { "label": "Sản phẩm chính", "value": "XAU/USD, EUR/USD" }
+    {
+      "label": "Vốn khởi điểm",
+      "value": "10.000 USD (ví dụ)",
+      "label_en": "Starting capital",
+      "value_en": "$10,000 (sample)"
+    },
+    {
+      "label": "Rủi ro tối đa / lệnh",
+      "value": "1% tài khoản",
+      "label_en": "Max risk per trade",
+      "value_en": "1% of equity"
+    },
+    {
+      "label": "Sụt giảm tối đa cho phép",
+      "value": "15%",
+      "label_en": "Max allowed drawdown",
+      "value_en": "15%"
+    },
+    {
+      "label": "Sản phẩm chính",
+      "value": "XAU/USD, EUR/USD",
+      "label_en": "Core markets",
+      "value_en": "XAU/USD, EUR/USD"
+    }
   ],
   "roadmap": [
-    { "phase": "Giai đoạn 1 – Nền tảng", "time": "Tháng 1–3", "desc": "Giao dịch tài khoản nhỏ, ghi nhật ký 100% lệnh, chứng minh hệ thống có kỳ vọng dương." },
-    { "phase": "Giai đoạn 2 – Ổn định", "time": "Tháng 4–9", "desc": "Tăng vốn từng bước khi sụt giảm < 10% và tỷ lệ lợi nhuận/rủi ro ổn định." },
-    { "phase": "Giai đoạn 3 – Mở rộng", "time": "Từ tháng 10", "desc": "Công khai kết quả có xác minh bên thứ ba, mở cho người theo dõi tham gia qua tài khoản follow." }
+    {
+      "phase": "Giai đoạn 1 – Nền tảng",
+      "time": "Tháng 1–3",
+      "desc": "Giao dịch tài khoản nhỏ, ghi nhật ký 100% lệnh, chứng minh hệ thống có kỳ vọng dương.",
+      "phase_en": "Phase 1 – Foundation",
+      "time_en": "Months 1–3",
+      "desc_en": "Trade a small account, journal 100% of trades, and prove the system has a positive expectancy."
+    },
+    {
+      "phase": "Giai đoạn 2 – Ổn định",
+      "time": "Tháng 4–9",
+      "desc": "Tăng vốn từng bước khi sụt giảm < 10% và tỷ lệ lợi nhuận/rủi ro ổn định.",
+      "phase_en": "Phase 2 – Consistency",
+      "time_en": "Months 4–9",
+      "desc_en": "Scale up step by step while drawdown stays under 10% and reward-to-risk holds steady."
+    },
+    {
+      "phase": "Giai đoạn 3 – Mở rộng",
+      "time": "Từ tháng 10",
+      "desc": "Công khai kết quả có xác minh bên thứ ba, mở cho người theo dõi tham gia qua tài khoản follow.",
+      "phase_en": "Phase 3 – Scale",
+      "time_en": "Month 10 onward",
+      "desc_en": "Publish third-party-verified results and open the strategy to followers through a copy-trading account."
+    }
   ],
   "risk_rules": [
     "Không rủi ro quá 1% vốn cho mỗi lệnh; luôn đặt dừng lỗ (stop loss).",
@@ -22,8 +63,38 @@
     "Rút lợi nhuận định kỳ, tách bạch vốn quỹ và tiền cá nhân."
   ],
   "performance": [
-    { "month": "2026-07", "return_pct": 2.1, "max_dd_pct": 3.4, "trades": 18, "note": "Ví dụ" },
-    { "month": "2026-08", "return_pct": -1.2, "max_dd_pct": 4.8, "trades": 22, "note": "Ví dụ" },
-    { "month": "2026-09", "return_pct": 3.0, "max_dd_pct": 2.9, "trades": 15, "note": "Ví dụ" }
+    {
+      "month": "2026-07",
+      "return_pct": 2.1,
+      "max_dd_pct": 3.4,
+      "trades": 18,
+      "note": "Ví dụ",
+      "note_en": "Sample"
+    },
+    {
+      "month": "2026-08",
+      "return_pct": -1.2,
+      "max_dd_pct": 4.8,
+      "trades": 22,
+      "note": "Ví dụ",
+      "note_en": "Sample"
+    },
+    {
+      "month": "2026-09",
+      "return_pct": 3.0,
+      "max_dd_pct": 2.9,
+      "trades": 15,
+      "note": "Ví dụ",
+      "note_en": "Sample"
+    }
+  ],
+  "title_en": "HuymasterGold79 trading fund (model)",
+  "intro_en": "A model for running a gold (XAU/USD) and FX trading account like a fund: strict risk limits, a written process and month-by-month reporting.",
+  "risk_rules_en": [
+    "Never risk more than 1% of equity per trade; always use a stop.",
+    "Stop trading for the day at −3% and for the week at −6%.",
+    "No new positions 15 minutes either side of tier-1 data (CPI, NFP, FOMC).",
+    "No averaging down, no revenge trading, leverage capped at 1:100.",
+    "Withdraw profits regularly and keep trading capital separate from personal money."
   ]
 }

@@ -2,19 +2,91 @@
   "_ghi_chu": "TOÀN BỘ SỐ LIỆU LÀ VÍ DỤ MẪU. Thay bằng tài khoản thật (sàn, nền tảng copy, link xác minh) và đặt example=false.",
   "example": true,
   "steps": [
-    { "title": "Liên hệ qua Zalo", "desc": "Nhắn Ngọc Huy để được tư vấn mức vốn, khẩu vị rủi ro và kiểm tra sự phù hợp." },
-    { "title": "Mở tài khoản tại sàn được cấp phép", "desc": "Chọn sàn có giấy phép từ cơ quan quản lý uy tín; tự đứng tên và tự quản lý tiền của bạn." },
-    { "title": "Kết nối nền tảng copy/follow", "desc": "Đăng ký theo dõi tài khoản chiến lược trên nền tảng copy trade của sàn (ví dụ: MT4/MT5 Signals hoặc nền tảng riêng của sàn)." },
-    { "title": "Thiết lập tỷ lệ & giới hạn lỗ", "desc": "Chọn tỷ lệ sao chép nhỏ, đặt mức dừng sao chép khi tài khoản sụt giảm (ví dụ 20%)." },
-    { "title": "Theo dõi & đánh giá định kỳ", "desc": "Xem báo cáo hằng tuần; có thể dừng theo dõi bất cứ lúc nào." }
+    {
+      "title": "Liên hệ qua Zalo",
+      "desc": "Nhắn Ngọc Huy để được tư vấn mức vốn, khẩu vị rủi ro và kiểm tra sự phù hợp.",
+      "title_en": "Reach out first",
+      "desc_en": "Message Ngọc Huy to talk through account size, risk tolerance and whether copy trading fits you."
+    },
+    {
+      "title": "Mở tài khoản tại sàn được cấp phép",
+      "desc": "Chọn sàn có giấy phép từ cơ quan quản lý uy tín; tự đứng tên và tự quản lý tiền của bạn.",
+      "title_en": "Open an account with a regulated broker",
+      "desc_en": "Pick a broker licensed by a reputable regulator; the account is in your name and you control the money."
+    },
+    {
+      "title": "Kết nối nền tảng copy/follow",
+      "desc": "Đăng ký theo dõi tài khoản chiến lược trên nền tảng copy trade của sàn (ví dụ: MT4/MT5 Signals hoặc nền tảng riêng của sàn).",
+      "title_en": "Connect the copy platform",
+      "desc_en": "Subscribe to the strategy account on the broker's copy-trading platform (e.g. MT4/MT5 Signals or the broker's own platform)."
+    },
+    {
+      "title": "Thiết lập tỷ lệ & giới hạn lỗ",
+      "desc": "Chọn tỷ lệ sao chép nhỏ, đặt mức dừng sao chép khi tài khoản sụt giảm (ví dụ 20%).",
+      "title_en": "Set allocation and a loss limit",
+      "desc_en": "Start with a small copy ratio and set the platform to stop copying at a set drawdown (e.g. 20%)."
+    },
+    {
+      "title": "Theo dõi & đánh giá định kỳ",
+      "desc": "Xem báo cáo hằng tuần; có thể dừng theo dõi bất cứ lúc nào.",
+      "title_en": "Review regularly",
+      "desc_en": "Check the weekly report; you can stop copying at any time."
+    }
   ],
   "accounts": [
-    { "name": "Tài khoản Vàng An toàn (VÍ DỤ)", "platform": "MT5 – (cập nhật tên sàn)", "style": "XAU/USD, rủi ro thấp", "min_deposit": "500 USD", "gain_pct": 12.5, "max_dd_pct": 8.2, "months": 6, "followers": 0, "verify_url": "", "status": "Mẫu – chưa hoạt động" },
-    { "name": "Tài khoản Tăng trưởng (VÍ DỤ)", "platform": "MT4 – (cập nhật tên sàn)", "style": "XAU/USD + EUR/USD, rủi ro trung bình", "min_deposit": "1.000 USD", "gain_pct": 21.0, "max_dd_pct": 14.6, "months": 6, "followers": 0, "verify_url": "", "status": "Mẫu – chưa hoạt động" }
+    {
+      "name": "Tài khoản Vàng An toàn (VÍ DỤ)",
+      "platform": "MT5 – (cập nhật tên sàn)",
+      "style": "XAU/USD, rủi ro thấp",
+      "min_deposit": "500 USD",
+      "gain_pct": 12.5,
+      "max_dd_pct": 8.2,
+      "months": 6,
+      "followers": 0,
+      "verify_url": "",
+      "status": "Mẫu – chưa hoạt động",
+      "name_en": "Gold Conservative (SAMPLE)",
+      "platform_en": "MT5 – (broker TBA)",
+      "style_en": "XAU/USD, low risk",
+      "min_deposit_en": "$500",
+      "status_en": "Sample – not live"
+    },
+    {
+      "name": "Tài khoản Tăng trưởng (VÍ DỤ)",
+      "platform": "MT4 – (cập nhật tên sàn)",
+      "style": "XAU/USD + EUR/USD, rủi ro trung bình",
+      "min_deposit": "1.000 USD",
+      "gain_pct": 21.0,
+      "max_dd_pct": 14.6,
+      "months": 6,
+      "followers": 0,
+      "verify_url": "",
+      "status": "Mẫu – chưa hoạt động",
+      "name_en": "Growth (SAMPLE)",
+      "platform_en": "MT4 – (broker TBA)",
+      "style_en": "XAU/USD + EUR/USD, medium risk",
+      "min_deposit_en": "$1,000",
+      "status_en": "Sample – not live"
+    }
   ],
   "faq": [
-    { "q": "Tiền của tôi có chuyển cho HuymasterGold79 không?", "a": "Không. Bạn tự mở tài khoản đứng tên mình tại sàn; chỉ các lệnh được sao chép. Không ai được yêu cầu bạn chuyển tiền cá nhân." },
-    { "q": "Có cam kết lợi nhuận không?", "a": "Không có bất kỳ cam kết lợi nhuận nào. Kết quả quá khứ không đảm bảo kết quả tương lai; bạn có thể mất một phần hoặc toàn bộ vốn." },
-    { "q": "Tôi có thể dừng theo dõi khi nào?", "a": "Bất cứ lúc nào, ngay trên nền tảng copy của sàn." }
+    {
+      "q": "Tiền của tôi có chuyển cho HuymasterGold79 không?",
+      "a": "Không. Bạn tự mở tài khoản đứng tên mình tại sàn; chỉ các lệnh được sao chép. Không ai được yêu cầu bạn chuyển tiền cá nhân.",
+      "q_en": "Does my money go to HuymasterGold79?",
+      "a_en": "No. You open an account in your own name with the broker; only the trades are copied. Nobody should ever ask you to send money to an individual."
+    },
+    {
+      "q": "Có cam kết lợi nhuận không?",
+      "a": "Không có bất kỳ cam kết lợi nhuận nào. Kết quả quá khứ không đảm bảo kết quả tương lai; bạn có thể mất một phần hoặc toàn bộ vốn.",
+      "q_en": "Are returns guaranteed?",
+      "a_en": "No. There is no guarantee of any return. Past performance does not guarantee future results, and you can lose some or all of your capital."
+    },
+    {
+      "q": "Tôi có thể dừng theo dõi khi nào?",
+      "a": "Bất cứ lúc nào, ngay trên nền tảng copy của sàn.",
+      "q_en": "When can I stop copying?",
+      "a_en": "Any time, directly on the broker's copy platform."
+    }
   ]
 }

@@ -45,7 +45,7 @@ Script idempotent (chạy lại không đổi gì nếu JSON không đổi), ch�
 Tự động: workflow `.github/workflows/build-seo.yml` chạy script này khi push thay đổi `data/**` lên main và mỗi ngày 00:05 UTC, tự commit (github-actions[bot]) nếu có thay đổi. Chạy tay trước khi push vẫn nên làm để trang lên ngay.
 
 ## English version (`en/`) – trường `_en` trong `data/strategies.json`
-Trang tiếng Anh: `en/index.html`, `en/h79-analysis.html` (render bởi `js/en-h79.js`), `en/about.html`. Nút VI | EN và cặp trang ở `js/common.js` (`LANG_PAIRS`); hreflang + sitemap do `scripts/build-seo.py` sinh (`LANG_PAIRS`, `EN_PAGES`).
+Trang tiếng Anh (cặp VI ↔ EN): `index` ↔ `en/index.html`, `nhan-dinh-h79` ↔ `en/h79-analysis.html` (render bởi `js/en-h79.js`), `tin-tuc` ↔ `en/news.html`, `lich-kinh-te` ↔ `en/economic-calendar.html`, `gia-vang` ↔ `en/vietnam-gold-market.html`, `bieu-do` ↔ `en/charts.html`, `live` ↔ `en/live.html`, `kien-thuc` ↔ `en/learn.html`, `quy-forex` ↔ `en/trading-fund.html`, `tai-khoan-follow` ↔ `en/copy-trading.html`, `gioi-thieu` ↔ `en/about.html`, `lien-he` ↔ `en/contact.html`, `bai/index.html` ↔ `en/posts/index.html`. Trang dữ liệu EN render bởi `js/en-pages.js`; bài tĩnh `en/posts/*.html` (nhận định H79 + bản tin vĩ mô có `title_en`) do `scripts/build-seo.py` sinh. Nút VI | EN và cặp trang ở `js/common.js` (`LANG_PAIRS`); hreflang + sitemap do `scripts/build-seo.py` sinh (`LANG_PAIRS`, `EN_PAGES`).
 
 **Routine H79 nên điền thêm các trường tiếng Anh (tùy chọn – thiếu thì trang EN tự fallback):**
 
@@ -66,3 +66,20 @@ Quy ước tiếng Anh (bắt buộc cho mọi trường `_en`): viết như tra
 - Thuật ngữ: Bias, Sell zone / Buy zone, Long / Short, Stop, Targets, "stops to breakeven", "be flat before the print", "buy dips", "sell rallies", "daily is bearish". Không dùng "SL/TP", "giá giao ngay quy đổi", đơn vị VND/lượng.
 - Phiên: Asian session (Tokyo), London session, New York session, London/NY overlap.
 Không hứa lợi nhuận; số liệu quỹ/follow mẫu phải ghi rõ là mẫu. Ticker trang EN chỉ hiện XAU/USD, Silver, DXY (ước tính), EUR/USD, USD/JPY, BTC – không có giá vàng trong nước.
+
+### Trường `_en` ở các file dữ liệu khác (routine nên điền khi thêm/sửa mục)
+Trang EN **ẩn** mục chưa có bản tiếng Anh (không hiện tiếng Việt), nên routine phải điền `_en` cho mục mới. Quy ước tiếng Anh như trên (giờ ET, số kiểu Mỹ, không VND/lượng ngoài trang giá vàng VN).
+
+| File | Trường `_en` | Ghi chú |
+|---|---|---|
+| `data/macro-news.json` | `items[].title_en` (bắt buộc để hiện trên EN), `summary_en`, `reason_en`, `time_en`, `check_en` (tùy chọn); `items[].source.name_en`, `source2.name_en` (khi tên nguồn có chữ Việt); `fomc.note_en`, `fomc.meetings[].result_en`, `us_schedule[].event_en` | `time_en` ghi giờ ET, ví dụ "Oct 13, 8:30 AM ET" |
+| `data/strategies.json` | xem bảng ở trên | |
+| `data/calendar-us.json` | `events[].explain_en` | `scripts/update-calendar.py` tự điền theo từ điển `EN` |
+| `data/fedwatch.json` | `label_en` (tùy chọn), `source.name_en` | nhãn tự suy từ `decision` |
+| `data/symbols.json` | `categories[].name_en`, `symbols[].n_en`, `external[].n_en`, `external[].cat_en` | |
+| `data/fund.json` | `title_en`, `intro_en`, `summary[].label_en` / `value_en`, `roadmap[].phase_en` / `time_en` / `desc_en`, `risk_rules_en[]`, `performance[].note_en` | trang EN gắn nhãn SAMPLE |
+| `data/follow-accounts.json` | `steps[].title_en` / `desc_en`, `accounts[].name_en` / `platform_en` / `style_en` / `min_deposit_en` / `status_en`, `faq[].q_en` / `a_en` | trang EN gắn nhãn SAMPLE |
+| `data/live-schedule.json` | `sessions[].title_en` / `desc_en`, `topics_en[]` | giờ live tự đổi sang ET |
+| `data/vn-gold-daily.json` | `analysis_en[]`, `advice_en`, `peak.label_en` / `note_en`, `refs[].name_en` / `facts_en`, `world.note_en`, `*.source.name_en` | chỉ dùng ở `en/vietnam-gold-market.html` |
+
+Cache-busting: đổi `?v=` trên mọi trang (kể cả `en/`, `en/posts/`, `bai/`) và `ASSET_V` trong `scripts/build-seo.py` cùng lúc.
