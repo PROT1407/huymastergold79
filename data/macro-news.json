@@ -56,6 +56,50 @@
   "items": [
     {
       "date": "2026-10-14",
+      "category": "Tương quan",
+      "priority": 1,
+      "impact": "giảm",
+      "title": "3 giờ sau CPI: vàng giao ngay ~4.083–4.086 (−1,7%) – DXY giữ ~102,8, lợi suất hạ nhẹ về ~5,24",
+      "summary": "CNBC (cập nhật sau tin): vàng giao ngay giảm khoảng 1,7% xuống ~4.086 USD/oz – thấp nhất từ 7/10; futures tháng 12 ~4.109. GC=F (Yahoo 5m): 30 phút sau CPI ~4.109 → 1 giờ sau hồi ~4.124 (cao 4.128) → 3 giờ sau ~4.112 → ~4.106 lúc ~11:49 ET. gold-api.com ~4.083 lúc ~11:59 ET. DXY (Yahoo) giữ quanh 102,83–102,89 (trước tin ~102,21). Lợi suất 10Y (^TNX) từ đỉnh ~5,32 sau tin về ~5,24–5,25 lúc 3 giờ sau – USD vẫn mạnh dù lợi suất hạ nhẹ. Brent ~105,7; WTI ~95. Đúng lý thuyết ngắn hạn: CPI lõi/yoy nóng → Fed hike bets ↑ → USD mạnh → vàng giảm; hồi 1 giờ sau chạm kháng cự rồi bị bán.",
+      "reason": "Ngắn hạn: lực chính vẫn là USD mạnh sau CPI nóng; vàng test lại đáy phiên quanh 4.083. Trung hạn: nếu DXY giữ trên 102,5 và kỳ vọng tăng lãi tháng 10/12 không hạ, vàng khó hồi bền trừ khi có cú sốc địa chính trị mới.",
+      "source": {
+        "name": "CNBC – Gold drops over 1% as hot U.S. inflation data boosts Fed hike bets",
+        "url": "https://www.cnbc.com/2026/10/14/gold-prices-hold-firm-ahead-of-us-inflation-data.html"
+      },
+      "source2": {
+        "name": "Yahoo Finance – GC=F / DX-Y.NYB / ^TNX 5-minute (14 Oct 2026)",
+        "url": "https://finance.yahoo.com/quote/GC%3DF/"
+      },
+      "time_vn": "19:30–22:59 14/10/2026 (đo giá đến ~3 giờ sau CPI)",
+      "title_en": "3h after CPI: spot gold ~4,083–4,086 (−1.7%) – DXY holds ~102.8, 10Y eases to ~5.24",
+      "summary_en": "CNBC (post-print update): spot gold down about 1.7% to ~$4,086/oz – lowest since Oct 7; December futures near $4,109. GC=F (Yahoo 5m): ~4,109 thirty minutes after CPI → bounced to ~4,124 (high 4,128) one hour after → ~4,112 three hours after → ~4,106 around 11:49 AM ET. gold-api.com ~4,083 near 11:59 AM ET. DXY (Yahoo) held around 102.83–102.89 (pre-print ~102.21). The 10-year yield (~^TNX) rolled from a post-print spike near 5.32 back to ~5.24–5.25 by the 3h mark – dollar still firm even as yields eased. Brent ~$105.70; WTI ~$95. Near-term story fits the textbook: hot core/yoy CPI → Fed hike bets up → firmer USD → gold lower; the 1h bounce tagged resistance then sold.",
+      "reason_en": "Near term: the main pressure remains a strong dollar after hot CPI; gold is retesting the session low near 4,083. Medium term: if DXY holds above 102.5 and October/December hike odds stay elevated, sustained rebounds are hard without a fresh geopolitical shock.",
+      "time_en": "Oct 14, 8:30 AM–11:59 AM ET (marks through ~3h after CPI)"
+    },
+    {
+      "date": "2026-10-14",
+      "category": "Fed",
+      "priority": 1,
+      "impact": "giảm",
+      "title": "CNBC: sau CPI nóng, xác suất Fed tăng lãi tháng 10 ~54% · tháng 12 >95% · ~40% khả năng tăng 0,5 điểm",
+      "summary": "CNBC (Fred Imbert, ~9:46 AM ET 14/10): sau số CPI tháng 9 nóng hơn dự báo (3,7% y/y; lõi 2,6%), thị trường futures (CME FedWatch) nâng xác suất tăng 0,25 điểm tại họp 27–28/10 lên ~53,7% từ chỉ ~22,1% một ngày trước. Xác suất có ít nhất một lần tăng trước cuối năm >95%; trong đó ~40% khả năng lãi suất cao hơn 0,5 điểm phần trăm trong năm (gấp đôi so với hôm trước). Cổ phiếu đảo chiều giảm; lợi suất trái phiếu tăng mạnh ngay sau tin. Nhiều chiến lược gia (Janus Henderson, Franklin Templeton, LPL…) nói số liệu làm phức tạp kỳ vọng Fed ‘nghỉ’ tháng 10 và củng cố kịch bản ‘cao lâu hơn’ – bất lợi cho vàng vì chi phí cơ hội giữ tài sản không lãi suất tăng.",
+      "reason": "Ngắn hạn: kỳ vọng tăng lãi ↑ → USD/lợi suất ↑ → vàng ↓ (đã thấy sau tin). Trung – dài hạn: nếu Fed Warsh phải tăng thêm tháng 10 hoặc 12 (thậm chí 50 bp), lợi suất thực dương kéo dài sẽ tiếp tục đè vàng trừ khi dầu/chiến tranh tạo cầu trú ẩn đủ mạnh để bù.",
+      "source": {
+        "name": "CNBC – Fed may now have to hike twice or increase by a half point in December, traders bet",
+        "url": "https://www.cnbc.com/2026/10/14/fed-may-now-have-to-hike-twice-or-increase-by-a-half-point-in-december-traders-bet.html"
+      },
+      "source2": {
+        "name": "CNBC – CPI inflation report September 2026",
+        "url": "https://www.cnbc.com/2026/10/14/cpi-inflation-report-september-2026.html"
+      },
+      "time_vn": "~21:46–22:37 14/10/2026 (bài CNBC ~9:46 AM ET; phản ứng thị trường đến ~3h sau CPI)",
+      "title_en": "CNBC: after hot CPI, October Fed hike odds ~54% · December >95% · ~40% chance of a 50 bp move",
+      "summary_en": "CNBC (Fred Imbert, ~9:46 AM ET Oct 14): after hotter-than-expected September CPI (3.7% y/y; core 2.6%), CME FedWatch October 27–28 quarter-point hike odds jumped to ~53.7% from just ~22.1% a day earlier. Odds of at least one hike before year-end exceed 95%, including a ~40% chance rates are 50 bp higher this year (double the prior day’s odds). Stocks rolled over; Treasury yields spiked right after the print. Strategists (Janus Henderson, Franklin Templeton, LPL and others) say the data complicates a ‘skip October’ narrative and reinforces ‘higher for longer’ – a headwind for gold via a higher opportunity cost of holding a non-yielding asset.",
+      "reason_en": "Near term: higher hike odds → firmer USD/yields → gold lower (already seen post-print). Medium term: if Chair Warsh’s Fed has to hike in October or December (even 50 bp), sustained positive real yields keep pressure on gold unless oil/war safe-haven demand is strong enough to offset.",
+      "time_en": "Oct 14, ~9:46–11:37 AM ET (CNBC piece ~9:46 AM ET; market marks through ~3h after CPI)"
+    },
+    {
+      "date": "2026-10-14",
       "category": "Lạm phát",
       "priority": 1,
       "impact": "giảm",

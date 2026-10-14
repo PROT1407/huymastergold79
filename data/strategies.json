@@ -3,12 +3,12 @@
   {
    "id": "2026-10-14-phien-dem-2107",
    "date": "2026-10-14",
-   "time": "21:07",
+   "time": "22:37",
    "session": "Phiên đêm",
-   "title": "Phiên đêm sau CPI: kênh giảm, canh mua 4.075 – 4.085",
-   "headline": "Vàng phiên đêm 14/10: ưu tiên mua 4.075 – 4.085",
-   "headline_en": "Gold night session Oct 14: prefer longs at 4,075–4,085",
-   "trend": "Bộ lọc kênh H79 ~1,5 giờ sau CPI (giao ngay ~4.094, gold-api.com 21:15 VN): 5m/15m/30m – giá dưới MA34 và MA34 dưới MA89 → vẫn kênh giảm, chưa chuyển. CPI nóng (BLS) đã in: tổng 0,6% m/m / 3,7% y/y; lõi 0,3% m/m / 2,6% y/y. GC=F (Yahoo): 30 phút trước tin ~4.168 → nến tin thấp 4.135/đóng 4.137 → 30 phút sau ~4.109 → đáy phiên ~4.102 GC (~4.083 giao ngay) → hiện ~4.113 GC. DXY ~102,86; lợi suất 10Y (~^TNX) ~5,29. RSI 45m–3H đã quá bán (19–29). Ưu tiên MUA quanh đáy phiên; chỉ bán khi hồi vào kháng cự cũ và khung nhỏ chững/chuyển.",
+   "title": "3 giờ sau CPI: kênh giảm, giá chạm Mua 4.075 – 4.085",
+   "headline": "Vàng 3h sau CPI 14/10: ~4.083, ưu tiên mua 4.075 – 4.085",
+   "headline_en": "Gold 3h after Oct 14 CPI: ~4,083 – prefer longs at 4,075–4,085",
+   "trend": "Bộ lọc kênh H79 ~3 giờ sau CPI (giao ngay ~4.083, gold-api.com 22:59 VN / ~11:59 ET): 5m/15m/30m – giá dưới MA34 và MA34 dưới MA89 → vẫn kênh giảm, chưa chuyển. CPI nóng (BLS) đã in: tổng 0,6% m/m / 3,7% y/y; lõi 0,3% m/m / 2,6% y/y. GC=F (Yahoo 5m): 30m trước ~4.168 → nến tin thấp 4.135/đóng 4.137 → 30m sau ~4.109 → 1h sau hồi ~4.124 (cao 4.128) → 3h sau ~4.112 → hiện ~4.106. Giao ngay: đáy phiên ~4.083 trở lại quanh Mua 1. DXY ~102,83 (3h sau ~102,89); lợi suất 10Y (~^TNX) từ đỉnh ~5,32 sau tin về ~5,24. CNBC: spot ~4.086 (−1,7%), kỳ vọng Fed tăng lãi tháng 10 ~54%, tháng 12 >95%. Ưu tiên MUA tại 4.075–4.085; bán chỉ khi hồi 4.102–4.115 (đã thử 1h sau rồi bị bán).",
    "trendType": "down",
    "support": [
     4085,
@@ -26,32 +26,32 @@
     4145
    ],
    "entryZones": [
-    "Mua 1: 4.075 – 4.085 (đáy phiên Mỹ/đêm ~4.083 · BB90 dưới 4H ~4.083 · đáy 7/10 ~4.073 · tâm lý 4.080; BB90 dưới 45m–3H đã bị xuyên – chờ test lại đáy). Vào giữa vùng ~4.080, dừng lỗ 4.065; mục tiêu 4.102 (Fib 0,786 sóng tăng 4.070→4.221) rồi 4.115 (BB dưới 3H cũ).",
+    "Mua 1: 4.075 – 4.085 (đáy phiên Mỹ/đêm ~4.083 · BB90 dưới 4H ~4.083 · đáy 7/10 ~4.073 · tâm lý 4.080; giá đang test lại vùng này ~3h sau CPI). Vào giữa vùng ~4.080, dừng lỗ 4.065; mục tiêu 4.102 (Fib 0,786 sóng tăng 4.070→4.221) rồi 4.115.",
     "Mua 2 (nếu gãy 4.075): đứng ngoài chờ nến 1H đóng; tham chiếu tiếp ~4.050 – 4.060 – chưa đủ confluence BB+Fib+đáy 3 ngày để đặt lệnh chờ."
    ],
    "sellZones": [
-    "Bán (chỉ khi hồi và 5m/15m/30m chững hoặc chuyển kênh tăng): 4.102 – 4.115 (Fib 0,786 sóng tăng 4.070→4.221 · BB90 dưới 2H ~4.104 / 3H ~4.115 đã thành kháng cự). Vào giữa vùng ~4.108, dừng lỗ 4.125; mục tiêu 4.094 rồi 4.083 (đáy phiên).",
-    "Bán phụ (nếu hồi sâu hơn): 4.125 – 4.135 (BB dưới 1H/45m cũ · pivot S1 vùng). Vô hiệu kế hoạch mua: nến 1H đóng dưới 4.065 → đứng ngoài."
+    "Bán (chỉ khi hồi và 5m/15m/30m chững hoặc chuyển kênh tăng): 4.102 – 4.115 (Fib 0,786 · BB90 dưới 2H/3H cũ; 1h sau CPI GC hồi ~4.124 ≈ giao ngay ~4.100–4.104 rồi bị bán – vùng này đang kháng cự). Vào giữa vùng ~4.108, dừng lỗ 4.125; mục tiêu 4.094 rồi 4.083.",
+    "Bán phụ (nếu hồi sâu hơn): 4.125 – 4.135 (BB dưới 1H/45m cũ). Vô hiệu kế hoạch mua: nến 1H đóng dưới 4.065 → đứng ngoài."
    ],
    "scenarios": [
-    "Sau CPI 19:30 → phiên đêm: BLS in tổng 0,6% m/m (đúng dự báo) / 3,7% y/y (nóng hơn 3,6%); lõi 0,3% m/m (nóng hơn 0,2%) / 2,6% y/y (nóng hơn 2,5%). USD và lợi suất bật → vàng thủng Mua 1–2 cũ. Timeline GC=F (Yahoo 5m): 3h trước ~4.165 · 1h trước ~4.163 · 30m trước ~4.168 · nến tin thấp 4.135/đóng 4.137 · 30m sau ~4.109 · 1,5h sau / đầu phiên NY ~4.112; giao ngay gold-api ~4.094 (21:15 VN), CNBC spot ~4.096 (9:00 ET). DXY ~102,86; ^TNX ~5,29. Kế hoạch đêm: canh Mua 4.075–4.085; bán chỉ khi hồi 4.102–4.115.",
+    "Sau CPI 19:30 → 3 giờ sau: BLS in tổng 0,6% m/m (đúng dự báo) / 3,7% y/y (nóng hơn 3,6%); lõi 0,3% m/m (nóng hơn 0,2%) / 2,6% y/y (nóng hơn 2,5%). USD và lợi suất bật → vàng thủng Mua 1–2 cũ, đúng lý thuyết (CPI nóng → USD/lợi suất↑ → vàng↓). Timeline GC=F (Yahoo 5m): 3h trước ~4.165 · 1h trước ~4.163 · 30m trước ~4.168 · nến tin thấp 4.135/đóng 4.137 · 30m sau ~4.109 · 1h sau hồi ~4.124 (cao 4.128) · 3h sau ~4.112 · hiện ~4.106. Giao ngay gold-api ~4.083 (22:59 VN); CNBC spot ~4.086 (−1,7%, đáy từ 7/10). DXY: trước tin ~102,21 → 30m sau ~102,83 → 1h sau ~102,74 → 3h sau ~102,89 → hiện ~102,83. ^TNX: trước tin ~5,19 → 30m sau ~5,32 → 1h sau ~5,30 → 3h sau ~5,25 → hiện ~5,24 (lợi suất hạ nhẹ sau đỉnh). Brent ~105,7; WTI ~95. CNBC: thị trường nâng xác suất Fed tăng lãi tháng 10 ~54% (từ ~22%), tháng 12 >95%, ~40% khả năng tăng 0,5 điểm trong năm. Hồi 1h sau chạm vùng Bán 4.102–4.115 rồi bị đẩy xuống – kháng cự giữ. Kế hoạch: canh Mua 4.075–4.085 (giá đang test); bán chỉ khi hồi lại 4.102–4.115.",
     "BB90 (dev 2, quy đổi giao ngay, basis GC−spot ~18): 45m 4.222 / 4.176 / 4.130 · 1H 4.225 / 4.175 / 4.125 · 2H 4.216 / 4.160 / 4.104 · 3H 4.218 / 4.167 / 4.115 · 4H dưới ~4.083 (trùng đáy phiên).",
-    "MACD 12/26/9 và RSI14 (tham khảo): histogram âm 45m–4H; RSI 45m 19 · 1H 22 · 2H 24 · 3H 29 – quá bán ngắn hạn, dễ có hồi kỹ thuật nhưng kênh vẫn giảm.",
+    "MACD 12/26/9 và RSI14 (tham khảo): histogram vẫn âm 45m–4H; RSI đã quá bán lúc 1,5h sau tin, hồi 1h sau CPI rồi giảm lại – kênh vẫn giảm, không đổi bộ lọc.",
     "Pivot cổ điển (phiên 13/10, giao ngay): P 4.172 · R1 4.193 · R2 4.228 · S1 4.138 · S2 4.117. Vùng cũ: hôm nay 4.175 / 4.083 · 13/10 4.207 / 4.152 · 12/10 4.224 / 4.160 · 5 phiên ~4.224 / 4.073.",
-    "Lịch tin đỏ USD (ForexFactory, giờ VN): đã xong CPI 19:30 14/10. Tiếp: 19:30 15/10 PPI, PPI lõi, doanh số bán lẻ; 10:30 16/10 Chủ tịch Fed Warsh phát biểu. Không vào lệnh mới sát tin – spread giãn.",
+    "Lịch tin đỏ USD (ForexFactory, giờ VN): đã xong CPI 19:30 14/10. Chiều Mỹ còn Beige Book ~02:00 15/10 VN (2:00 PM ET 14/10) và phát biểu Barkin/Goolsbee (sau giờ này). Tiếp: 19:30 15/10 PPI, PPI lõi, doanh số bán lẻ; 10:30 16/10 Chủ tịch Fed Warsh. Không vào lệnh mới sát tin.",
     "Rủi ro: lệnh mua đi ngược xu hướng D1 giảm – khối lượng nhỏ, chốt lời nhanh, luôn đặt dừng lỗ."
    ],
-   "physicalAdvice": "Vàng vừa giảm mạnh sau CPI nóng; xu hướng trung hạn vẫn giảm – người mua vàng vật chất có thể chờ thêm nếu 4.070 thủng.",
-   "physicalAdvice_en": "Gold just sold off hard on hot CPI; the medium-term trend is still down – physical buyers may wait further if 4,070 breaks.",
+   "physicalAdvice": "Vàng đã giảm mạnh sau CPI nóng và đang test lại đáy phiên ~4.083; xu hướng trung hạn vẫn giảm – người mua vàng vật chất có thể chờ nếu 4.070 thủng.",
+   "physicalAdvice_en": "Gold sold off hard on hot CPI and is retesting the session low near 4,083; the medium-term trend is still down – physical buyers may wait further if 4,070 breaks.",
    "macro": [
     "BLS: CPI tháng 9 – tổng +0,6% m/m / +3,7% y/y; lõi +0,3% m/m / +2,6% y/y; xăng +9,1% tháng. https://www.bls.gov/news.release/cpi.nr0.htm",
-    "CNBC Select: giá vàng giao ngay ~4.095,81 USD/oz lúc 9:00 ET ngày 14/10 (thấp hơn ~4.179 cùng giờ hôm trước). https://www.cnbc.com/select/the-price-of-gold-today-oct-14-2026/",
-    "CNBC (video 14/10): xác nhận giá tiêu dùng +0,6% tháng, lạm phát năm 3,7%. https://www.cnbc.com/video/2026/10/14/consumer-prices-rose-0-point-6-percent-in-september-putting-annual-inflation-rate-at-3-point-7-percent.html",
-    "Kitco AM: vàng giao ngay ~4.110 sau CPI nóng, kỳ vọng Fed tăng lãi cuối năm tăng; Brent ~106,6 USD. https://www.kitco.com/news/article/2026-10-14/gold-silver-drop-hotter-cpi-revives-fed-rate-pressure-kitco-am-report",
-    "FXStreet: XAU/USD quanh 4.100–4.102, giảm ~1,4–1,5% trong ngày; hỗ trợ 4.100 rồi vùng thấp hơn. https://www.fxstreet.com/news/gold-slides-for-third-consecutive-day-as-us-inflation-data-take-centre-stage-202610141056"
+    "CNBC: vàng giao ngay giảm ~1,7% xuống ~4.086 USD/oz (đáy từ 7/10); futures ~4.109; DXY +0,4%. https://www.cnbc.com/2026/10/14/gold-prices-hold-firm-ahead-of-us-inflation-data.html",
+    "CNBC: sau CPI, xác suất Fed tăng lãi tháng 10 ~54% (từ ~22%); tháng 12 >95%; ~40% khả năng tăng 0,5 điểm trong năm. https://www.cnbc.com/2026/10/14/fed-may-now-have-to-hike-twice-or-increase-by-a-half-point-in-december-traders-bet.html",
+    "Kitco AM: vàng giao ngay giảm sau CPI nóng, kỳ vọng Fed thắt chặt cuối năm tăng; Brent quanh 105–106 USD. https://www.kitco.com/news/article/2026-10-14/gold-silver-drop-hotter-cpi-revives-fed-rate-pressure-kitco-am-report",
+    "FXStreet: XAU/USD quanh 4.090–4.100, giảm ~1,5% trong ngày; hỗ trợ 4.100 rồi thấp hơn. https://www.fxstreet.com/news/gold-slides-for-third-consecutive-day-as-us-inflation-data-take-centre-stage-202610141056"
    ],
-   "notes": "Giá giao ngay XAU/USD: gold-api.com ~4.094,4 lúc 21:15 VN; CNBC spot ~4.095,8 lúc 9:00 ET. COMEX GC=F (Yahoo) ~4.112,6 lúc 21:06 VN – basis GC − giao ngay ~18 USD. Mức giá có thể lệch vài giá tùy sàn. MA là đường trung bình đơn (SMA).",
-   "dataTime": "Cập nhật 21:07 ngày 14/10/2026 giờ VN (~30 phút sau mở cửa NY, ~1,5 giờ sau CPI 19:30). Nến GC=F Yahoo 5m/15m/1H; giao ngay gold-api.com; DXY/^TNX Yahoo.",
+   "notes": "Giá giao ngay XAU/USD: gold-api.com ~4.082,5–4.086,7 lúc 22:55–22:59 VN; CNBC spot ~4.086. COMEX GC=F (Yahoo) ~4.106 lúc ~22:49 VN – basis GC − giao ngay ~20–24 USD. Timeline OHLC dùng GC=F; mức công bố là giao ngay. MA là đường trung bình đơn (SMA).",
+   "dataTime": "Cập nhật 22:37 ngày 14/10/2026 giờ VN (~3 giờ sau CPI 19:30). Nến GC=F Yahoo 5m; giao ngay gold-api.com; DXY/^TNX Yahoo; tin CNBC.",
    "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
    "summary": {
     "trend": "down",
@@ -73,41 +73,41 @@
      "sl_en": "4,065",
      "tp_en": "4,102 → 4,115"
     },
-    "note": "CPI nóng đã in – giá tạo đáy phiên ~4.083; ưu tiên mua đáy, chốt lời nhanh",
-    "note_en": "Hot CPI printed – session low near 4,083; prefer the low buy, take profits quickly",
+    "note": "3h sau CPI nóng – giá test lại Mua 4.075–4.085 (~4.083); hồi 1h đã chạm Bán rồi bị đẩy",
+    "note_en": "3h after hot CPI – price retesting the 4,075–4,085 buy (~4,083); 1h bounce tagged the short zone then sold",
     "price": "spot",
     "priceNote": "Giá giao ngay XAU/USD",
     "priceNote_en": "Spot XAU/USD prices"
    },
    "session_en": "Night session",
    "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
-   "title_en": "Night session after CPI: still bearish – buy 4,075–4,085",
-   "trend_en": "H79 channel filter ~1.5h after CPI (spot ~4,094, gold-api.com 10:15 AM ET): 5m/15m/30m – price below MA34 and MA34 below MA89 → still bearish, no flip. Hot CPI (BLS): headline +0.6% m/m / 3.7% y/y; core +0.3% m/m / 2.6% y/y. GC=F (Yahoo): ~4,168 thirty minutes before the print → print-bar low 4,135/close 4,137 → ~4,109 thirty minutes later → session low ~4,102 GC (~4,083 spot) → now ~4,113 GC. DXY ~102.86; 10-year yield (~^TNX) ~5.29. RSI on 45m–3H is oversold (19–29). Plan: buy near the session low; only short a bounce into former support-turned-resistance if the lower timeframes stall or flip.",
+   "title_en": "3h after CPI: still bearish – price tagging the 4,075–4,085 buy",
+   "trend_en": "H79 channel filter ~3h after CPI (spot ~4,083, gold-api.com ~11:59 AM ET): 5m/15m/30m – price below MA34 and MA34 below MA89 → still bearish, no flip. Hot CPI (BLS): headline +0.6% m/m / 3.7% y/y; core +0.3% m/m / 2.6% y/y. GC=F (Yahoo 5m): ~4,168 thirty minutes before → print-bar low 4,135/close 4,137 → ~4,109 thirty minutes later → bounced to ~4,124 (high 4,128) one hour after → ~4,112 three hours after → now ~4,106. Spot retesting the session low near ~4,083. DXY ~102.83 (three hours after ~102.89); 10-year yield (~^TNX) rolled from a post-print spike near 5.32 back to ~5.24. CNBC: spot ~$4,086 (−1.7%), October hike odds ~54%, December >95%. Plan: buy 4,075–4,085; only short a bounce at 4,102–4,115 (that zone was tagged on the 1h bounce, then sold).",
    "entryZones_en": [
-    "Long 1: 4,075–4,085 (NY/night session low ~4,083 · 4H lower BB90 ~4,083 · Oct 7 low ~4,073 · round-number 4,080; 45m–3H lower BB90 already sliced – wait for a retest of the low). Entry around 4,080, stop 4,065. Targets 4,102 (78.6% of the 4,070→4,221 rally), then 4,115 (old 3H lower BB).",
+    "Long 1: 4,075–4,085 (NY/night session low ~4,083 · 4H lower BB90 ~4,083 · Oct 7 low ~4,073 · round-number 4,080; price is retesting this zone ~3h after CPI). Entry around 4,080, stop 4,065. Targets 4,102 (78.6% of the 4,070→4,221 rally), then 4,115.",
     "Long 2 (if 4,075 breaks): stand aside until a 1H close; next reference ~4,050–4,060 – not enough BB+Fib+3-day-low confluence yet for a limit order."
    ],
    "sellZones_en": [
-    "Short only on a bounce that stalls or if the 5m/15m/30m flip bullish: 4,102–4,115 (78.6% of the 4,070→4,221 rally · old 2H lower BB ~4,104 / 3H ~4,115 now resistance). Entry around 4,108, stop 4,125. Targets 4,094, then 4,083 (session low).",
-    "Secondary short if the bounce runs farther: 4,125–4,135 (old 1H/45m lower BB · pivot S1 area). Long setup invalidated on a 1H close below 4,065 – stand aside."
+    "Short only on a bounce that stalls or if the 5m/15m/30m flip bullish: 4,102–4,115 (78.6% Fib · old 2H/3H lower BB; the 1h post-CPI bounce tagged GC ~4,124 ≈ spot ~4,100–4,104 then sold – zone acting as resistance). Entry around 4,108, stop 4,125. Targets 4,094, then 4,083.",
+    "Secondary short if the bounce runs farther: 4,125–4,135 (old 1H/45m lower BB). Long setup invalidated on a 1H close below 4,065 – stand aside."
    ],
    "scenarios_en": [
-    "Post CPI 8:30 AM ET into the night session: BLS printed headline +0.6% m/m (in line) / 3.7% y/y (hot vs 3.6%); core +0.3% m/m (hot vs +0.2%) / 2.6% y/y (hot vs 2.5%). Dollar and yields jumped → gold sliced the prior Long 1–2 zones. GC=F (Yahoo 5m): 3h before ~4,165 · 1h before ~4,163 · 30m before ~4,168 · print-bar low 4,135/close 4,137 · 30m after ~4,109 · ~1.5h after / NY open ~4,112; gold-api spot ~4,094 (10:15 AM ET), CNBC spot ~4,096 (9:00 AM ET). DXY ~102.86; ^TNX ~5.29. Night plan: buy 4,075–4,085; short only a bounce at 4,102–4,115.",
+    "Post CPI 8:30 AM ET through 3 hours later: BLS printed headline +0.6% m/m (in line) / 3.7% y/y (hot vs 3.6%); core +0.3% m/m (hot vs +0.2%) / 2.6% y/y (hot vs 2.5%). Dollar and yields jumped → gold sliced the prior Long 1–2 zones, matching the textbook link (hot CPI → firmer USD/yields → gold lower). GC=F (Yahoo 5m): 3h before ~4,165 · 1h before ~4,163 · 30m before ~4,168 · print-bar low 4,135/close 4,137 · 30m after ~4,109 · 1h after bounce ~4,124 (high 4,128) · 3h after ~4,112 · now ~4,106. gold-api spot ~4,083 (~11:59 AM ET); CNBC spot ~$4,086 (−1.7%, lowest since Oct 7). DXY: pre-print ~102.21 → 30m after ~102.83 → 1h after ~102.74 → 3h after ~102.89 → now ~102.83. ^TNX: pre-print ~5.19 → 30m after ~5.32 → 1h after ~5.30 → 3h after ~5.25 → now ~5.24 (yields eased off the spike). Brent ~$105.70; WTI ~$95. CNBC: October hike odds ~54% (from ~22%), December >95%, ~40% chance of a 50 bp move this year. The 1h bounce tagged the 4,102–4,115 short zone then sold – resistance held. Plan: buy 4,075–4,085 (price is testing it); short only a retest of 4,102–4,115.",
     "BB90 (2 SD, spot-converted, GC−spot basis ~18): 45m 4,222 / 4,176 / 4,130 · 1H 4,225 / 4,175 / 4,125 · 2H 4,216 / 4,160 / 4,104 · 3H 4,218 / 4,167 / 4,115 · 4H lower ~4,083 (matches the session low).",
-    "MACD (12/26/9) and RSI(14), for reference: histogram negative on 45m through 4H; RSI 45m 19 · 1H 22 · 2H 24 · 3H 29 – short-term oversold, a technical bounce is possible but the channel is still bearish.",
+    "MACD (12/26/9) and RSI(14), for reference: histogram still negative on 45m through 4H; RSI was oversold ~1.5h after the print, bounced with the 1h recovery, then rolled again – channel still bearish.",
     "Classic pivots (Oct 13, spot): P 4,172 · R1 4,193 · R2 4,228 · S1 4,138 · S2 4,117. Prior ranges: today 4,175 / 4,083 · Oct 13 4,207 / 4,152 · Oct 12 4,224 / 4,160 · 5-session ~4,224 / 4,073.",
-    "High-impact USD calendar (ForexFactory, ET): CPI done at 8:30 AM ET Oct 14. Next: Thu Oct 15, 8:30 AM – PPI, core PPI, retail sales. Fri Oct 16 – Fed Chair Warsh speaks. No new trades into the next red prints; spreads blow out.",
+    "High-impact USD calendar (ForexFactory, ET): CPI done at 8:30 AM ET Oct 14. Still ahead today: Beige Book at 2:00 PM ET; Fed speakers Barkin/Goolsbee later in the session. Next red: Thu Oct 15, 8:30 AM – PPI, core PPI, retail sales. Fri Oct 16 – Fed Chair Warsh speaks. No new trades into the next red prints; spreads blow out.",
     "Risk: longs are counter-trend against a bearish daily – trade small, take profits quickly, always use a stop."
    ],
    "macro_en": [
     "BLS: September CPI – headline +0.6% m/m / +3.7% y/y; core +0.3% m/m / +2.6% y/y; gasoline +9.1% on the month. https://www.bls.gov/news.release/cpi.nr0.htm",
-    "CNBC Select: spot gold ~$4,095.81/oz at 9:00 AM ET on Oct 14 (vs ~$4,179 at the same time Tuesday). https://www.cnbc.com/select/the-price-of-gold-today-oct-14-2026/",
-    "CNBC (video Oct 14): confirms consumer prices +0.6% on the month, annual inflation 3.7%. https://www.cnbc.com/video/2026/10/14/consumer-prices-rose-0-point-6-percent-in-september-putting-annual-inflation-rate-at-3-point-7-percent.html",
-    "Kitco AM: spot gold near $4,110 after hot CPI as year-end Fed hike odds firm; Brent near $106.60. https://www.kitco.com/news/article/2026-10-14/gold-silver-drop-hotter-cpi-revives-fed-rate-pressure-kitco-am-report",
-    "FXStreet: XAU/USD around 4,100–4,102, down ~1.4–1.5% on the day; support at 4,100 then lower. https://www.fxstreet.com/news/gold-slides-for-third-consecutive-day-as-us-inflation-data-take-centre-stage-202610141056"
+    "CNBC: spot gold down ~1.7% to ~$4,086/oz (lowest since Oct 7); Dec futures ~$4,109; DXY +0.4%. https://www.cnbc.com/2026/10/14/gold-prices-hold-firm-ahead-of-us-inflation-data.html",
+    "CNBC: post-CPI, October hike odds ~54% (from ~22%); December >95%; ~40% chance of a 50 bp move this year. https://www.cnbc.com/2026/10/14/fed-may-now-have-to-hike-twice-or-increase-by-a-half-point-in-december-traders-bet.html",
+    "Kitco AM: spot gold dropped after hot CPI as year-end Fed tightening odds firm; Brent near $105–106. https://www.kitco.com/news/article/2026-10-14/gold-silver-drop-hotter-cpi-revives-fed-rate-pressure-kitco-am-report",
+    "FXStreet: XAU/USD around 4,090–4,100, down ~1.5% on the day; support at 4,100 then lower. https://www.fxstreet.com/news/gold-slides-for-third-consecutive-day-as-us-inflation-data-take-centre-stage-202610141056"
    ],
-   "notes_en": "Spot XAU/USD: gold-api.com ~4,094.4 at 10:15 AM ET; CNBC spot ~4,095.8 at 9:00 AM ET. COMEX GC=F (Yahoo) ~4,112.6 at 10:06 AM ET – GC−spot basis ~$18. Levels may differ by a few dollars by broker. MAs are simple (SMA).",
-   "dataTime_en": "As of 10:07 AM ET, Oct 14, 2026 (~30 min after the NY open, ~1.5h after the 8:30 AM ET CPI). GC=F Yahoo 5m/15m/1H; spot gold-api.com; DXY/^TNX Yahoo."
+   "notes_en": "Spot XAU/USD: gold-api.com ~4,082.5–4,086.7 around 11:55–11:59 AM ET; CNBC spot ~$4,086. COMEX GC=F (Yahoo) ~4,106 around 11:49 AM ET – GC−spot basis ~$20–24. OHLC timeline uses GC=F; published levels are spot. MAs are simple (SMA).",
+   "dataTime_en": "As of 11:37 AM ET, Oct 14, 2026 (~3h after the 8:30 AM ET CPI). GC=F Yahoo 5m; spot gold-api.com; DXY/^TNX Yahoo; CNBC wires."
   },
   {
    "id": "2026-10-14-phien-my-1920",
@@ -143,7 +143,7 @@
     "Bán phụ (nếu hồi sâu hơn): 4.127 – 4.140 (Fib 0,618 sóng tăng · BB90 dưới 45m/1H cũ). Vô hiệu kế hoạch mua: nến 1H đóng dưới 4.060 → đứng ngoài."
    ],
    "scenarios": [
-    "Sau tin CPI 19:30: BLS in tổng 0,6% m/m (đúng dự báo) / 3,7% y/y (nóng hơn 3,6%); lõi 0,3% m/m (nóng hơn 0,2%) / 2,6% y/y (nóng hơn 2,5%). Đúng kịch bản nóng đã viết → USD và lợi suất bật, vàng thủng Mua 1 (4.135–4.146) rồi Mua 2 (4.102–4.115). GC=F (Yahoo 5m): 3h trước ~4.165 · 1h trước ~4.163 · 30m trước ~4.168 · nến tin thấp 4.135/đóng 4.137 · 30m sau ~4.109; giao ngay Kitco ~4.107 (12:43 UTC), gold-api ~4.085 (20:18 VN). DXY +~0,5 điểm, ^TNX +~12 bp. Kế hoạch mới: canh Mua 4.070–4.082; bán chỉ khi hồi 4.102–4.115.",
+    "Sau tin CPI 19:30 (cập nhật đủ 1h/3h sau): BLS in tổng 0,6% m/m (đúng dự báo) / 3,7% y/y (nóng hơn 3,6%); lõi 0,3% m/m (nóng hơn 0,2%) / 2,6% y/y (nóng hơn 2,5%). Đúng kịch bản nóng → USD và lợi suất bật, vàng thủng Mua 1 (4.135–4.146) rồi Mua 2 (4.102–4.115). GC=F (Yahoo 5m): 3h trước ~4.165 · 1h trước ~4.163 · 30m trước ~4.168 · nến tin thấp 4.135/đóng 4.137 · 30m sau ~4.109 · 1h sau hồi ~4.124 (cao 4.128) · 3h sau ~4.112 · ~22:49 VN ~4.106; giao ngay gold-api ~4.083 (22:59 VN), CNBC spot ~4.086. DXY ~102,21 → ~102,83 (30m) → ~102,74 (1h) → ~102,89 (3h); ^TNX ~5,19 → ~5,32 → ~5,30 → ~5,25. Kế hoạch: canh Mua 4.070–4.082 (đêm siết 4.075–4.085); bán chỉ khi hồi 4.102–4.115.",
     "BB90 (dev 2) trên / giữa / dưới: 45m 4.212 / 4.176 / 4.140 · 1H 4.214 / 4.175 / 4.135 · 2H 4.211 / 4.159 / 4.106 · 3H 4.214 / 4.165 / 4.115.",
     "MACD 12/26/9 và RSI14 (tham khảo): histogram âm ở 45m – 4H (45m cắt xuống 13:00, 1H 12:00 hôm nay; 2H, 3H âm từ 12/10); RSI 45m 43 · 1H 42 · 2H 41 · 3H 43 – nghiêng giảm, chưa quá bán.",
     "Pivot cổ điển (phiên 13/10): P 4.170 · R1 4.190 · R2 4.225 · S1 4.135 · S2 4.115. Vùng cũ: hôm nay 4.172 / 4.137 · 13/10 4.204 / 4.149 · 12/10 4.221 / 4.157 · 5 phiên 4.221 / 4.070.",
@@ -199,7 +199,7 @@
     "Secondary short if the bounce runs farther: 4,127–4,140 (61.8% of the up-leg · old 45m/1H lower BB90). Long setup invalidated on a 1H close below 4,060 – stand aside."
    ],
    "scenarios_en": [
-    "Post CPI 8:30 AM ET: BLS printed headline +0.6% m/m (in line) / 3.7% y/y (hot vs 3.6%); core +0.3% m/m (hot vs +0.2%) / 2.6% y/y (hot vs 2.5%). Hot scenario played out → dollar and yields jumped, gold sliced Long 1 (4,135–4,146) then Long 2 (4,102–4,115). GC=F (Yahoo 5m): 3h before ~4,165 · 1h before ~4,163 · 30m before ~4,168 · print-bar low 4,135/close 4,137 · 30m after ~4,109; Kitco spot ~4,107 (8:43 AM ET), gold-api ~4,085 (9:18 AM ET). DXY +~0.5, 10Y (~^TNX) +~12 bp. New plan: buy 4,070–4,082; short only a bounce at 4,102–4,115.",
+    "Post CPI 8:30 AM ET (timeline completed through 1h/3h after): BLS printed headline +0.6% m/m (in line) / 3.7% y/y (hot vs 3.6%); core +0.3% m/m (hot vs +0.2%) / 2.6% y/y (hot vs 2.5%). Hot scenario played out → dollar and yields jumped, gold sliced Long 1 (4,135–4,146) then Long 2 (4,102–4,115). GC=F (Yahoo 5m): 3h before ~4,165 · 1h before ~4,163 · 30m before ~4,168 · print-bar low 4,135/close 4,137 · 30m after ~4,109 · 1h after bounce ~4,124 (high 4,128) · 3h after ~4,112 · ~11:49 AM ET ~4,106; gold-api spot ~4,083 (~11:59 AM ET), CNBC spot ~$4,086. DXY ~102.21 → ~102.83 (30m) → ~102.74 (1h) → ~102.89 (3h); ^TNX ~5.19 → ~5.32 → ~5.30 → ~5.25. Plan: buy 4,070–4,082 (night session tightened to 4,075–4,085); short only a bounce at 4,102–4,115.",
     "BB90 (2 SD) upper / mid / lower: 45m 4,212 / 4,176 / 4,140 · 1H 4,214 / 4,175 / 4,135 · 2H 4,211 / 4,159 / 4,106 · 3H 4,214 / 4,165 / 4,115.",
     "MACD (12/26/9) and RSI(14), for reference: histogram negative on 45m through 4H (45m crossed down at 2:00 AM ET, 1H at 1:00 AM ET today; 2H and 3H negative since Oct 12); RSI 45m 43 · 1H 42 · 2H 41 · 3H 43 – leaning bearish, not oversold.",
     "Classic pivots (Oct 13): P 4,170 · R1 4,190 · R2 4,225 · S1 4,135 · S2 4,115. Prior ranges: today 4,172 / 4,137 · Oct 13 4,204 / 4,149 · Oct 12 4,221 / 4,157 · 5-session 4,221 / 4,070.",
