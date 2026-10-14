@@ -1,6 +1,104 @@
 {
   "strategies": [
     {
+      "id": "2026-10-14-phien-au-1800",
+      "date": "2026-10-14",
+      "time": "18:00",
+      "session": "Phiên Âu",
+      "title": "H79 XÃ LUẬN – Vàng 14/10: phiên Á hồi lên 4.172 rồi giảm tiếp, sáng Âu chạm đáy ngày 4.141 – chờ CPI 19:30 (giá giao ngay)",
+      "trend": "Đêm 13/10 vàng giảm từ 4.193 (19:30) về 4.148 (00:50), đóng 4.162 – phiên giảm thứ hai liên tiếp. Phiên Á mở 05:00 ở 4.163, bị ép xuống đáy Á 4.145 lúc 08:45, rồi hồi lên đỉnh Á 4.172 lúc 10:15 (khoảng 5 giờ sau mở cửa) nhờ phát biểu ôn hòa của Williams. Từ đỉnh, lực bán quay lại nối tiếp nhịp giảm đêm qua, phiên Á đóng 4.149. Sáng Âu: đỉnh 4.159 (15:15), đáy 4.141 (17:25) – thấp nhất ngày; giá ~4.144 lúc 17:50 (gold-api.com 4.138 lúc 18:05). Khung 45m: giá dưới MA34 4.162 và MA89 4.176, sát BB90 dưới 4.142 → xu hướng giảm.",
+      "trendType": "down",
+      "support": [
+        4141,
+        4139,
+        4123,
+        4116
+      ],
+      "resistance": [
+        4162,
+        4171,
+        4176,
+        4194
+      ],
+      "entryZones": [
+        "Mua: 4.116 – 4.123 (pivot S2 4.116 · dưới BB90 45m 4.142 và đáy ngày 4.141). Dừng lỗ 4.106; mục tiêu 4.140 rồi 4.153."
+      ],
+      "sellZones": [
+        "Bán: 4.162 – 4.171 (MA34 45m 4.162 · pivot P 4.171 · đỉnh Á 4.172). Dừng lỗ 4.180; mục tiêu 4.148 rồi 4.140."
+      ],
+      "scenarios": [
+        "BB90 (dev 2) 45m trên / giữa / dưới: 4.211 / 4.176 / 4.142. MA34 4.162 · MA89 4.176 (45m).",
+        "Pivot cổ điển (phiên 13/10, đỉnh 4.203 / đáy 4.148 / đóng 4.162): P 4.171 · R1 4.194 · S1 4.139 · S2 4.116.",
+        "Chiều Âu – mở cửa Mỹ: nhiều khả năng giằng co 4.139 – 4.163 chờ CPI. CPI lõi nóng hơn dự báo → dễ thủng S1 4.139 về 4.116; CPI mềm → hồi về MA34/pivot 4.162 – 4.171.",
+        "Tin (giờ VN): 19:30 CPI Mỹ tháng 9 – dự báo chung 3,6% y/y; lõi 0,2% m/m, 2,5% y/y."
+      ],
+      "physicalAdvice": "Vàng vẫn trong xu hướng giảm trung hạn; người mua vàng vật chất nên kiên nhẫn chờ vùng giá tốt hơn.",
+      "macro": [
+        "Investing.com: vàng giảm khi thị trường cân nhắc lộ trình Fed trước CPI; DXY ~102,1; Brent trên 106 USD do tấn công mới ở Trung Đông. https://ng.investing.com/news/commodities-news/gold-holds-twoday-slide-as-fed-signals-one-more-hike-us-cpi-in-focus-2734947",
+        "Bloomberg (Moneyweb): Williams (Fed New York) thấy cần thêm một lần tăng lãi năm nay nhưng không tăng thêm 2027; lợi suất Mỹ giảm nhẹ, swap định giá ~90% khả năng tăng lãi tháng 12. https://www.moneyweb.co.za/mineweb/gold-steady-as-fed-officials-remarks-temper-rate-hike-bets/",
+        "FXStreet: trái phiếu Mỹ hồi, lợi suất kỳ hạn 10–30 năm giảm 3–4 bps; Waller nêu tác động của lợi suất dài hạn. https://www.fxstreet.com/analysis/bonds-stabilize-ahead-of-us-cpi-as-dovish-fed-rhetoric-weighs-on-the-dollar-202610140649",
+        "FXStreet: CPI nóng hỗ trợ USD và lợi suất, gây áp lực lên vàng; CPI mềm hỗ trợ vàng. https://www.fxstreet.com/analysis/us-cpi-set-to-drive-dollar-gold-and-crypto-volatility-202610140827",
+        "CNBC: vàng đi ngang chờ dữ liệu lạm phát Mỹ. https://www.cnbc.com/2026/10/14/gold-prices-hold-firm-ahead-of-us-inflation-data.html",
+        "CNBC: dầu tăng khi căng thẳng Ả Rập Xê Út – Houthi leo thang. https://www.cnbc.com/2026/10/14/oil-rises-amid-growing-tensions-between-saudis-and-iran-backed-houthis.html"
+      ],
+      "notes": "Giá giao ngay XAU/USD, giờ Việt Nam. Mức lịch sử trong ngày quy đổi từ dữ liệu 5 phút với chênh lệch giao ngay đo được 21–23 USD (dùng 22) – có thể lệch 1–2 giá so với chart sàn.",
+      "dataTime": "Cập nhật 18:00 ngày 14/10/2026 giờ VN.",
+      "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+      "summary": {
+        "trend": "down",
+        "trendText": "Giảm",
+        "sell": {
+          "zone": "4.162 – 4.171",
+          "sl": "4.180",
+          "tp": "4.148 → 4.140",
+          "zone_en": "4,162–4,171",
+          "sl_en": "4,180",
+          "tp_en": "4,148 → 4,140"
+        },
+        "buy": {
+          "zone": "4.116 – 4.123",
+          "sl": "4.106",
+          "tp": "4.140 → 4.153",
+          "zone_en": "4,116–4,123",
+          "sl_en": "4,106",
+          "tp_en": "4,140 → 4,153"
+        },
+        "note": "19:30 CPI Mỹ (lõi dự báo 0,2% m/m, 2,5% y/y) – tránh vào lệnh sát giờ tin, spread giãn mạnh",
+        "price": "spot",
+        "priceNote": "Giá giao ngay XAU/USD",
+        "trendText_en": "Bearish",
+        "note_en": "US CPI 8:30 AM ET (core est. +0.2% m/m, 2.5% y/y) – avoid new entries right around the print; spreads widen",
+        "priceNote_en": "Spot XAU/USD prices"
+      },
+      "session_en": "London session",
+      "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+      "title_en": "H79 Gold Commentary – Oct 14: Asian bounce to 4,172 fades, London morning tags day low 4,141 ahead of CPI at 8:30 AM ET (spot)",
+      "trend_en": "Tuesday's US session sold off from 4,193 (8:30 AM ET) to 4,148 (1:50 PM ET), settling around 4,162 – a second straight down day. The Asian open (6:00 PM ET) came in at 4,163, dipped to the Asian low of 4,145 at 9:45 PM ET, then bounced to the Asian high of 4,172 at 11:15 PM ET (about 5 hours after the open) on dovish comments from the NY Fed's Williams. Sellers then resumed the prior move, with Asia closing at 4,149. London morning: high 4,159 (4:15 AM ET), low 4,141 (6:25 AM ET), the low of the day; last ~4,144 at 6:50 AM ET (gold-api.com 4,138 at 7:05 AM ET). 45m: price below MA34 4,162 and MA89 4,176, hugging the lower BB90 at 4,142 – bearish.",
+      "entryZones_en": [
+        "Long: 4,116–4,123 (pivot S2 4,116 · below the 45m lower BB90 4,142 and day low 4,141). Stop 4,106. Targets 4,140, then 4,153."
+      ],
+      "sellZones_en": [
+        "Short: 4,162–4,171 (45m MA34 4,162 · pivot P 4,171 · Asian high 4,172). Stop 4,180. Targets 4,148, then 4,140."
+      ],
+      "scenarios_en": [
+        "45m BB90 (2 SD) upper / mid / lower: 4,211 / 4,176 / 4,142. MA34 4,162 · MA89 4,176 (45m).",
+        "Classic pivots (Oct 13 session, high 4,203 / low 4,148 / close 4,162): P 4,171 · R1 4,194 · S1 4,139 · S2 4,116.",
+        "Rest of London into the NY open: likely chop between 4,139 and 4,163 until CPI. A hot core print could break S1 4,139 toward 4,116; a soft print could lift price back to 4,162–4,171.",
+        "Calendar: September US CPI 8:30 AM ET – headline est. 3.6% y/y; core est. +0.2% m/m, 2.5% y/y."
+      ],
+      "physicalAdvice_en": "Gold remains in a medium-term downtrend; physical buyers may want to be patient.",
+      "macro_en": [
+        "Investing.com: gold slips as traders weigh the Fed outlook ahead of CPI; DXY ~102.1; Brent above $106 on renewed Middle East attacks. https://ng.investing.com/news/commodities-news/gold-holds-twoday-slide-as-fed-signals-one-more-hike-us-cpi-in-focus-2734947",
+        "Bloomberg (via Moneyweb): NY Fed's Williams sees one more hike this year but none in 2027; Treasury yields edge lower, swaps price ~90% odds of a December hike. https://www.moneyweb.co.za/mineweb/gold-steady-as-fed-officials-remarks-temper-rate-hike-bets/",
+        "FXStreet: Treasuries rebound, 10- to 30-year yields down 3–4 bps; Waller cites the impact of long-term yields. https://www.fxstreet.com/analysis/bonds-stabilize-ahead-of-us-cpi-as-dovish-fed-rhetoric-weighs-on-the-dollar-202610140649",
+        "FXStreet: a hot CPI would lift the dollar and yields and pressure gold; a soft one would support it. https://www.fxstreet.com/analysis/us-cpi-set-to-drive-dollar-gold-and-crypto-volatility-202610140827",
+        "CNBC: gold holds steady ahead of US inflation data. https://www.cnbc.com/2026/10/14/gold-prices-hold-firm-ahead-of-us-inflation-data.html",
+        "CNBC: oil rises as Saudi–Houthi tensions escalate. https://www.cnbc.com/2026/10/14/oil-rises-amid-growing-tensions-between-saudis-and-iran-backed-houthis.html"
+      ],
+      "notes_en": "Spot XAU/USD prices, ET. Intraday history converted from 5-minute data using a measured spot basis of $21–23 (used $22); may differ by 1–2 points from your broker's chart.",
+      "dataTime_en": "Updated 7:00 AM ET, Oct 14, 2026."
+    },
+    {
       "id": "2026-10-14-phien-au-1358",
       "date": "2026-10-14",
       "time": "13:58",
