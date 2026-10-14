@@ -1,6 +1,6 @@
 {
   "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC | Chiến tranh | Ngân hàng TW. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
-  "updated": "2026-10-14",
+  "updated": "2026-10-15",
   "fomc": {
     "source": {
       "name": "Federal Reserve – FOMC calendars",
@@ -54,6 +54,90 @@
     "note_en": "Decision at 2:00 PM ET on day two of the meeting, press conference at 2:30 PM ET. * = with economic projections (dot plot)."
   },
   "items": [
+    {
+      "date": "2026-10-15",
+      "category": "Tương quan",
+      "priority": 1,
+      "impact": "giảm",
+      "title": "Chốt phiên Mỹ sau CPI: vàng giao ngay ~4.093 (−1,5%) · bạc −6,5% · DXY +0,4% – phiên giảm thứ 3 liên tiếp",
+      "summary": "CNBC (cập nhật sau phiên 14/10): vàng giao ngay giảm 1,5% xuống 4.093,03 USD/oz – thấp nhất từ 7/10; futures tháng 12 giảm 1,5% về 4.115,50 USD. Bạc giao ngay −6,5% còn 55,60 USD/oz; bạch kim −3,5% (~1.604), palladium −2,7% (~1.095). Chỉ số USD tăng ~0,4%; lợi suất 10 năm Mỹ cũng tăng. David Meger (High Ridge Futures): số CPI nóng hơn mục tiêu Fed → khả năng tăng lãi cao hơn → USD mạnh đè vàng. CNBC ghi CME FedWatch ~35% tăng lãi tháng 10 (từ ~22% trước tin) và ~90% có ít nhất một lần tăng trước cuối năm. Julius Baer (Carsten Menke): dài hạn vàng vẫn được NHTW mua và lo nợ công Mỹ đỡ. GMT Eight (phiên NY muộn): giao ngay ~4.103,80 (−1,37%), COMEX ~4.121,90 (−1,46%).",
+      "reason": "Ngắn hạn: CPI lõi nóng → kỳ vọng tăng lãi ↑ → USD/lợi suất ↑ → vàng giảm đúng lý thuyết; bạc bán tháo mạnh hơn vì vừa trú ẩn vừa công nghiệp. Trung hạn: nếu DXY giữ trên 102,5 và xác suất tăng lãi tháng 12 còn rất cao, vàng khó hồi bền trừ cú sốc địa chính trị mới. Theo dõi PPI + doanh số bán lẻ 08:30 ET sáng 15/10 (19:30 VN).",
+      "source": {
+        "name": "CNBC – Gold drops over 1% as hot U.S. inflation data boosts Fed hike bets",
+        "url": "https://www.cnbc.com/2026/10/14/gold-prices-hold-firm-ahead-of-us-inflation-data.html"
+      },
+      "source2": {
+        "name": "GMT Eight – International gold −1.4%, silver −6%+ (late NY)",
+        "url": "https://www.gmt8press.com/flash/detail/1556981"
+      },
+      "time_vn": "Chốt phiên NY 14/10 (≈ 04:00 VN 15/10); CNBC cập nhật sau phiên; GMT Eight ghi phiên NY muộn",
+      "title_en": "Post-CPI New York settle: spot gold ~$4,093 (−1.5%) · silver −6.5% · DXY +0.4% – third straight down day",
+      "summary_en": "CNBC (post-session Oct 14 update): spot gold fell 1.5% to $4,093.03/oz – lowest since Oct 7; December futures −1.5% to $4,115.50. Spot silver −6.5% to $55.60; platinum −3.5% (~$1,604), palladium −2.7% (~$1,095). The dollar index rose about 0.4%; the 10-year yield also climbed. High Ridge Futures' David Meger: hotter-than-target CPI → higher hike odds → firmer USD pressure on gold. CNBC cited CME FedWatch at ~35% for an October hike (from ~22% pre-print) and ~90% odds of at least one hike before year-end. Julius Baer's Carsten Menke: longer term, central-bank buying and US debt concerns should support gold again. GMT Eight (late NY): spot ~$4,103.80 (−1.37%), COMEX ~$4,121.90 (−1.46%).",
+      "reason_en": "Near term: hot core CPI → hike odds up → firmer USD/yields → gold lower, textbook; silver sold harder as both a monetary and industrial metal. Medium term: if DXY holds above 102.5 and December hike odds stay elevated, sustained rebounds need a fresh geopolitical shock. Next up: PPI and retail sales at 8:30 AM ET Oct 15.",
+      "time_en": "New York settle Oct 14; CNBC post-session update; GMT Eight late-NY marks"
+    },
+    {
+      "date": "2026-10-15",
+      "category": "Fed",
+      "priority": 1,
+      "impact": "giảm",
+      "title": "FedWatch cuối phiên 14/10: giữ lãi tháng 10 69% · tăng 25bps 31% – tháng 12: giữ 11% · +25bps 63% · +50bps 26%",
+      "summary": "Investing.com Fed Rate Monitor (dựa trên CME 30-Day Fed Funds futures), cập nhật 19:15 ET 14/10 (sau phản ứng CPI): họp 28/10 – giữ 3,75–4,00% = 69,0% (hôm trước 79,3%), tăng lên 4,00–4,25% = 31,0% (hôm trước 20,7%). Họp 9/12 – giữ 11,4%; tích lũy +25bps = 62,7%; tích lũy +50bps = 25,9%. So với đỉnh trong phiên (CNBC sớm ghi ~54% tăng tháng 10), thị trường đã hạ bớt kỳ vọng tăng ngay tháng 10 nhưng vẫn định giá cao khả năng thắt chặt thêm trước cuối năm. CNBC (bài vàng sau phiên) ghi ~35% tăng tháng 10 / ~90% có ít nhất một lần tăng trước cuối năm – cùng hướng với bản Investing.com.",
+      "reason": "Ngắn hạn: xác suất tăng tháng 10 ~31% vẫn cao hơn trước CPI (~20–22%) → USD/lợi suất được đỡ → vàng chịu áp lực. Trung hạn: kịch bản 'cao lâu hơn' (tháng 12 gần chắc có thêm thắt chặt, ~26% khả năng +50bps tích lũy) tiếp tục bất lợi vàng qua kênh lãi suất thực, trừ khi PPI/doanh số bán lẻ dịu hoặc địa chính trị đẩy cầu trú ẩn.",
+      "source": {
+        "name": "Investing.com – Fed Rate Monitor (CME Fed Funds futures)",
+        "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+      },
+      "source2": {
+        "name": "CNBC – Gold drops over 1% as hot U.S. inflation data boosts Fed hike bets",
+        "url": "https://www.cnbc.com/2026/10/14/gold-prices-hold-firm-ahead-of-us-inflation-data.html"
+      },
+      "time_vn": "Investing.com cập nhật 19:15 ET 14/10 = 07:15 sáng 15/10 giờ VN",
+      "title_en": "End-of-day FedWatch Oct 14: October hold 69% · 25 bp hike 31% – December: hold 11% · +25 bp 63% · +50 bp 26%",
+      "summary_en": "Investing.com Fed Rate Monitor (CME 30-Day Fed Funds futures), updated 7:15 PM ET Oct 14 (after the CPI reaction): Oct 28 meeting – hold at 3.75–4.00% = 69.0% (prior day 79.3%), hike to 4.00–4.25% = 31.0% (prior day 20.7%). Dec 9 – hold 11.4%; cumulative +25 bp = 62.7%; cumulative +50 bp = 25.9%. Versus the intraday spike (CNBC earlier cited ~54% for an October hike), markets dialed back an immediate October move but still price a high chance of more tightening before year-end. CNBC's post-session gold wrap put October hike odds near 35% and at-least-one-hike-by-year-end near 90% – same direction as the Investing.com snapshot.",
+      "reason_en": "Near term: ~31% October hike odds are still well above the pre-CPI ~20–22% → supports the dollar and yields → headwind for gold. Medium term: 'higher for longer' (December almost priced for more tightening, ~26% chance of +50 bp cumulative) keeps real-rate pressure on gold unless PPI/retail sales cool or geopolitics reignites a safe-haven bid.",
+      "time_en": "Investing.com updated Oct 14, 7:15 PM ET"
+    },
+    {
+      "date": "2026-10-15",
+      "category": "Dầu mỏ",
+      "priority": 1,
+      "impact": "trung lập",
+      "title": "Dầu chốt phiên 14/10 tăng: Brent 106,06 USD · WTI 95,09 USD – Aramco bị tấn công + IEA cảnh báo diesel",
+      "summary": "CNBC: Brent tăng 37 cent chốt 106,06 USD/thùng; WTI tăng 95 cent chốt 95,09 USD. Bộ Năng lượng Ả Rập Xê Út xác nhận tòa nhà hành chính Aramco ở Dhahran bị tấn công (không thương vong). IEA (báo cáo tháng 10) cảnh báo thắt chặt thị trường diesel có thể kéo dài sang 2027; tấn công mới ở Ả Rập Xê Út đe dọa đà phục hồi nguồn cung. CENTCOM bác tuyên bố của Tư lệnh Hải quân IRGC rằng Iran kiểm soát eo Hormuz. Paul Tudor Jones (CNBC Squawk Box): vẫn long dầu, có thể tăng thêm 20–25 USD nếu xung đột Iran chưa dịu trước midterm Mỹ.",
+      "reason": "Ngắn hạn: dầu cao → CPI/PPI năng lượng nóng → củng cố kỳ vọng Fed thắt chặt → bất lợi vàng qua USD/lợi suất; đồng thời rủi ro Vịnh là lực trú ẩn nhẹ. Hai lực trái chiều – phiên 14/10 lực USD/lợi suất thắng nên vàng giảm dù dầu tăng. Trung hạn: nếu Brent giữ trên 105–106 và Hormuz/Houthi leo thang, Fed khó 'nghỉ' lâu → vàng chịu áp lực lãi suất trừ khi chiến sự tạo cầu trú ẩn đủ mạnh.",
+      "source": {
+        "name": "CNBC – Oil rises amid growing tensions between Saudis and Iran-backed Houthis",
+        "url": "https://www.cnbc.com/2026/10/14/oil-rises-amid-growing-tensions-between-saudis-and-iran-backed-houthis.html"
+      },
+      "source2": {
+        "name": "Xinhua – Crude futures settle higher (WTI 95.09, Brent 106.06)",
+        "url": "https://english.news.cn/20261015/76f1091f2b45466b9ffff67eb7598067/c.html"
+      },
+      "time_vn": "Chốt NYMEX/ICE 14/10 (≈ 01:30–04:00 VN 15/10); CNBC cập nhật trong/sau phiên",
+      "title_en": "Oil settles higher Oct 14: Brent $106.06 · WTI $95.09 – Aramco attack + IEA diesel warning",
+      "summary_en": "CNBC: Brent rose 37 cents to settle at $106.06/bbl; WTI gained 95 cents to $95.09. Saudi Energy Ministry confirmed an Aramco administrative building in Dhahran was attacked (no casualties). The IEA's October Oil Market Report warned diesel constraints could run into 2027; fresh attacks on Saudi Arabia threaten the supply-side recovery. CENTCOM rejected the IRGC Navy commander's claim that Iran controls the Strait of Hormuz. Paul Tudor Jones (CNBC Squawk Box): still long oil, sees another $20–25 upside if the Iran conflict isn't eased before US midterms.",
+      "reason_en": "Near term: firmer oil → hotter energy CPI/PPI → supports Fed-tightening bets → headwind for gold via the dollar and yields; Gulf risk is a mild safe-haven offset. The two forces clashed on Oct 14 – USD/yields won, so gold fell even as crude rose. Medium term: if Brent holds above $105–106 and Hormuz/Houthi risks escalate, the Fed struggles to 'skip' for long → rate pressure on gold unless the war bid is strong enough to offset.",
+      "time_en": "NYMEX/ICE settle Oct 14; CNBC session/post-session wrap"
+    },
+    {
+      "date": "2026-10-15",
+      "category": "Fed",
+      "priority": 2,
+      "impact": "trung lập",
+      "title": "Fed Bowman: còn thời gian chờ xem thị trường và kinh tế sau đợt tăng tháng 9 trước khi quyết định bước tiếp",
+      "summary": "CNBC (bài vàng sau CPI 14/10): Phó Chủ tịch Fed phụ trách giám sát Michelle Bowman nói ngân hàng trung ương còn thời gian để chờ xem thị trường tài chính và nền kinh tế diễn biến thế nào sau đợt tăng lãi tháng 9 trước khi quyết định có hành động thêm hay không. Thông điệp 'không vội' dịu hơn một phần phản ứng diều hâu ngay sau CPI, phù hợp với việc FedWatch cuối phiên hạ xác suất tăng tháng 10 từ đỉnh trong ngày về ~31–35%.",
+      "reason": "Ngắn hạn: giọng thận trọng của Bowman hỗ trợ nhẹ kịch bản Fed 'nghỉ' tháng 10 – giảm bớt áp lực USD lên vàng so với đỉnh phản ứng CPI. Trung hạn: bà không phủ nhận khả năng tăng thêm; PPI và doanh số bán lẻ 15/10 cùng phát biểu Chủ tịch Warsh mới là phép thử tiếp theo.",
+      "source": {
+        "name": "CNBC – Gold drops over 1% as hot U.S. inflation data boosts Fed hike bets",
+        "url": "https://www.cnbc.com/2026/10/14/gold-prices-hold-firm-ahead-of-us-inflation-data.html"
+      },
+      "time_vn": "Trích trong bài CNBC cập nhật sau phiên 14/10 (đăng/ cập nhật xuyên phiên Mỹ → sáng 15/10 giờ VN)",
+      "title_en": "Fed's Bowman: time to wait and see how markets and the economy evolve after the September hike",
+      "summary_en": "CNBC (post-CPI gold wrap Oct 14): Fed Vice Chair for Supervision Michelle Bowman said the central bank has time to wait and see how financial markets and the economy evolve after September's rate rise before deciding on further action. That 'no rush' tone softens part of the hawkish post-CPI impulse and fits the end-of-day FedWatch pullback in October hike odds from the intraday spike toward ~31–35%.",
+      "reason_en": "Near term: Bowman's cautious tone mildly supports an October 'skip' – a bit less USD pressure on gold than the peak CPI reaction. Medium term: she didn't rule out another hike; Thursday's PPI and retail sales, plus Chair Warsh, are the next tests.",
+      "time_en": "Cited in CNBC's Oct 14 post-session gold update"
+    },
     {
       "date": "2026-10-14",
       "category": "Tương quan",
@@ -166,28 +250,6 @@
     },
     {
       "date": "2026-10-14",
-      "category": "Lạm phát",
-      "priority": 1,
-      "impact": "trung lập",
-      "title": "CNBC: CPI tháng 9 Mỹ (19:30 tối nay giờ VN) dự báo +0,6% tháng, 3,6% năm; lõi +0,2% tháng, 2,5% năm",
-      "summary": "CNBC (đăng 14:05 EDT 13/10 = 01:05 sáng 14/10 giờ VN), theo khảo sát Dow Jones: CPI tổng tháng 9 dự báo tăng 0,6% so với tháng trước và 3,6% so với cùng kỳ, cho thấy lạm phát đang tăng tốc, xa mục tiêu 2% của Fed. CPI lõi (bỏ thực phẩm, năng lượng) dự báo +0,2% tháng, 2,5% năm. Chuyên gia RSM cảnh báo giá dầu có thể đẩy số tổng cao hơn nữa; PGIM lo dầu cao lan sang giá các mặt hàng khác. Biên bản FOMC tháng 9 cho thấy Fed nhiều khả năng còn tăng lãi; thị trường hợp đồng tương lai nghiêng về tháng 12. Lịch tiếp theo: PPI và doanh số bán lẻ thứ Năm 15/10, phát biểu của Chủ tịch Fed Kevin Warsh cuối tuần này (theo Reuters).",
-      "reason": "Ngắn hạn (19:30 VN): điều quyết định là CPI LÕI. Lõi > 0,2% → kỳ vọng tăng lãi tháng 10/12 tăng, USD và lợi suất bật lên → vàng dễ giảm. Lõi ≤ 0,2% → củng cố kịch bản Fed đứng yên tháng 10 → USD/lợi suất hạ → vàng hồi. Số tổng cao do năng lượng đã được dự báo nên ít gây sốc hơn. Trung – dài hạn: lạm phát tổng 3,6% và tăng dần làm lãi suất thực còn cao lâu → áp lực lên vàng, nhưng nếu lạm phát vượt tầm kiểm soát thì vai trò chống lạm phát của vàng lại được chú ý.",
-      "source": {
-        "name": "CNBC – September CPI report: What to expect",
-        "url": "https://www.cnbc.com/2026/10/13/september-consumer-price-index-inflation.html"
-      },
-      "source2": {
-        "name": "Reuters (qua The Financial Express) – Gold rises on weaker dollar, lower oil",
-        "url": "https://today.thefinancialexpress.com.bd/print/gold-rises-on-weaker-dollar-lower-oil-1791910313"
-      },
-      "time_vn": "CNBC đăng 01:05 VN 14/10; CPI công bố 08:30 ET = 19:30 tối 14/10 giờ VN",
-      "title_en": "CNBC: September CPI (8:30 AM ET today) seen +0.6% m/m, 3.6% y/y; core +0.2% m/m, 2.5% y/y",
-      "summary_en": "CNBC (posted 2:05 PM ET Oct 13), citing the Dow Jones survey: headline September CPI is expected to rise 0.6% m/m and 3.6% y/y – inflation re-accelerating and well above the Fed's 2% target. Core CPI (ex food and energy) is seen +0.2% m/m, 2.5% y/y. RSM warned oil could push the headline number even higher; PGIM worries high crude spills into other prices. The September FOMC minutes suggest the Fed likely still has a hike left; futures lean toward December. Next up: PPI and retail sales Thursday Oct 15, and remarks from Fed Chair Kevin Warsh later this week (per Reuters).",
-      "reason_en": "Into the 8:30 AM ET print, CORE is what matters. Core above 0.2% → October/December hike odds rise, the dollar and yields pop → gold likely sells off. Core at or below 0.2% → supports a Fed hold in October → dollar and yields ease → gold bounces. A hot headline driven by energy is already expected, so it's less of a shock. Bigger picture: 3.6% headline inflation and rising keeps real rates high for longer – a headwind for gold – but if inflation looks out of control, gold's inflation-hedge role comes back into focus.",
-      "time_en": "CNBC posted Oct 13, 2:05 PM ET; CPI out Oct 14, 8:30 AM ET"
-    },
-    {
-      "date": "2026-10-14",
       "category": "Fed",
       "priority": 1,
       "impact": "tăng",
@@ -207,50 +269,6 @@
       "summary_en": "FXStreet (2:21 PM ET Oct 13): New York Fed President John Williams said disinflationary forces are still at work, the labor market isn't adding to inflation, and price pressure is coming mainly from AI and energy; 'one more rate increase this year is appropriate' and he currently sees no need to hike in 2027. The same day, Governor Christopher Waller (Reuters, 6:57 AM ET) said rising Treasury yields reflect real growth, AI investment and debt concerns – not inflation expectations, which remain 'well anchored'. Dollar: DXY on CNBC 102.215 (−0.36%), day range 102.162–102.574, backing off an 18-month high. COMEX gold (GC=F, Yahoo, 5-min bars): 2:00 PM ET 4,174.5 → 2:05 PM 4,182.1 → 2:55 PM 4,186.5 → 3:30 PM 4,188.8.",
       "reason_en": "Near term: a 'one more and done' message cooled the dollar and COMEX gold bounced about $10–14 over the next 90 minutes. Bigger picture: if the Fed confirms a terminal rate of 4.00–4.25% with no hikes in 2027, rate pressure on gold should fade over time; but Collins and Hammack are still hawkish, so today's CPI is the real test.",
       "time_en": "Williams: Oct 13, 2:21 PM ET; Waller: Oct 13, 6:57 AM ET; gold measured 2:00–3:30 PM ET Oct 13"
-    },
-    {
-      "date": "2026-10-14",
-      "category": "Lợi suất",
-      "priority": 1,
-      "impact": "tăng",
-      "title": "Lợi suất Mỹ hạ từ đỉnh 24 năm khi giá năng lượng lùi: 10 năm ~5,19–5,22%, 2 năm ~4,77%, 30 năm ~5,56%",
-      "summary": "CNBC: lợi suất trái phiếu Mỹ giảm khi giá năng lượng hạ nhiệt, ngày thị trường trái phiếu mở lại sau lễ Columbus. Theo FinancialMarkets.com, lợi suất 10 năm giảm khoảng 4 điểm cơ bản về gần 5,20%, 2 năm (bám sát kỳ vọng Fed) về ~4,77%, 30 năm về ~5,56%. Dữ liệu Yahoo (^TNX): 10 năm 5,217% lúc 01:55 VN 14/10, so với 5,24% phiên trước. Bối cảnh: 10 năm vừa chạm mức cao nhất 24 năm tuần trước; Thống đốc Waller cho rằng mất vị thế trú ẩn của trái phiếu Mỹ có thể cộng thêm 50–70 điểm cơ bản vào lợi suất.",
-      "reason": "Ngắn hạn: lợi suất giảm làm chi phí cơ hội nắm giữ vàng thấp đi, hỗ trợ nhẹ. Nhưng mức 5,2% vẫn rất cao và có thể bật lại nếu CPI nóng. Trung – dài hạn: lợi suất thực cao kéo dài là lực cản lớn nhất của vàng năm nay; chỉ khi lợi suất 10 năm rơi rõ xuống dưới 5% thì vàng mới có nền tăng bền.",
-      "source": {
-        "name": "CNBC – U.S. Treasury yields fall as energy prices pull back",
-        "url": "https://www.cnbc.com/2026/10/13/us-treasurys-bonds-yields.html"
-      },
-      "source2": {
-        "name": "FinancialMarkets.com – Treasuries rally off 24-year highs, but a December Fed hike is still priced in",
-        "url": "https://www.financialmarkets.com/article/treasuries-rally-off-24-year-highs-but-a-december-fed-hike-is-still-priced-in"
-      },
-      "time_vn": "Phiên Mỹ 13/10 (19:30 VN 13/10 – 04:00 VN 14/10); ^TNX đo 01:55 VN 14/10",
-      "title_en": "Treasury yields ease from 24-year highs as energy prices pull back: 10-year ~5.19–5.22%, 2-year ~4.77%, 30-year ~5.56%",
-      "summary_en": "CNBC: Treasury yields fell as energy prices cooled, with the bond market reopening after Columbus Day. Per FinancialMarkets.com, the 10-year dropped about 4 bps to near 5.20%, the 2-year (most sensitive to Fed expectations) to ~4.77%, and the 30-year to ~5.56%. Yahoo data (^TNX): 10-year at 5.217% at 2:55 PM ET Oct 13 vs. 5.24% the prior session. Context: the 10-year just hit a 24-year high last week; Governor Waller said a loss of Treasuries' safe-haven status could add 50–70 bps to yields.",
-      "reason_en": "Near term: lower yields cut the opportunity cost of holding gold – a mild tailwind. But 5.2% is still very high and can snap back on a hot CPI. Bigger picture: persistently high real yields are gold's biggest headwind this year; gold needs the 10-year clearly below 5% to build a durable base.",
-      "time_en": "New York session Oct 13 (8:30 AM–5:00 PM ET); ^TNX quoted 2:55 PM ET"
-    },
-    {
-      "date": "2026-10-14",
-      "category": "Dầu mỏ",
-      "priority": 1,
-      "impact": "trung lập",
-      "title": "Dầu chốt phiên trái chiều: Brent 105,69 USD (−0,9%), WTI 94,14 USD (+0,4%, cao nhất từ 24/9)",
-      "summary": "Reuters (Scott DiSavino): Brent chốt 105,69 USD/thùng, giảm 96 cent so với mức 106,65 của thứ Hai (cao nhất kể từ 15/9); WTI tăng 40 cent lên 94,14 USD, giá chốt cao nhất kể từ 24/9. Kỳ vọng thỏa thuận diesel Mỹ – Nga giúp Nga bán thêm nhiên liệu kéo giá xuống, trong khi các vụ tấn công ở Ả Rập Xê Út và Yemen đe dọa nguồn cung giữ giá cao. Đầu phiên Á 14/10, Brent (BZ=F) lên 106,39 USD lúc 06:45 VN sau tin Aramco bị tấn công.",
-      "reason": "Ngắn hạn: dầu quanh 105–106 USD giữ kỳ vọng lạm phát cao trước CPI → hỗ trợ USD/lợi suất, bất lợi vàng. Trung – dài hạn: nếu dầu tiếp tục trên 100 USD vì chiến sự vùng Vịnh, Fed khó dừng tăng lãi; ngược lại nếu chiến tranh Iran kết thúc như ông Trump tuyên bố, dầu giảm mạnh, lạm phát hạ, đó là kịch bản tốt cho vàng qua kênh lãi suất.",
-      "source": {
-        "name": "Reuters (qua Financial Newsletter) – Oil prices settle mixed, focus on US-Russia diesel deal, Saudi Yemen attacks",
-        "url": "https://financialnewsletter.com/oil-prices-settle-mixed/"
-      },
-      "source2": {
-        "name": "Global Banking & Finance Review (Reuters) – Oil prices mixed amid US-Russia diesel deal",
-        "url": "https://www.globalbankingandfinance.com/oil-ticks-lower-russia-diesel-supply-prospects-counter-gulf/"
-      },
-      "time_vn": "Giá chốt NYMEX 14:30 ET 13/10 = 01:30 VN 14/10; Brent đầu phiên Á đo 06:45 VN 14/10",
-      "title_en": "Oil settles mixed: Brent $105.69 (−0.9%), WTI $94.14 (+0.4%, highest settle since Sep 24)",
-      "summary_en": "Reuters (Scott DiSavino): Brent settled at $105.69/bbl, down 96 cents from Monday's $106.65 (its highest since Sep 15); WTI rose 40 cents to $94.14, its highest settle since Sep 24. Hopes for a US–Russia diesel deal that would let Russia sell more fuel weighed on prices, while attacks in Saudi Arabia and Yemen threatening supply kept them elevated. Early in the Asian session Brent (BZ=F) rose to $106.39 at 7:45 PM ET after the Aramco attack.",
-      "reason_en": "Near term: crude around $105–106 keeps inflation expectations high going into CPI → supports the dollar and yields, a headwind for gold. Bigger picture: if oil stays above $100 on the Gulf conflict, the Fed will struggle to stop hiking; if the Iran war ends as President Trump has claimed, oil drops hard, inflation cools – the bullish scenario for gold through the rates channel.",
-      "time_en": "NYMEX settle 2:30 PM ET Oct 13; Brent early-Asia quote 7:45 PM ET Oct 13"
     },
     {
       "date": "2026-10-14",
@@ -274,28 +292,6 @@
       "summary_en": "Bloomberg (via Oninvest) and Kitco (posted 11:37 AM ET Oct 13): Kazakhstan central bank Deputy Governor Aliya Moldabekova said 24-year-high Treasury yields make the dollar more attractive and gold less so; gold already makes up about 78% of FX reserves (386 tonnes, $66.4B in reserves at end-September) – 'like a single-asset portfolio'. The target is 75% by year-end, half via selling options and half via physical sales (local press estimates roughly 12 tonnes, ~$1.6B). If gold drops below $4,000, the share could fall to target on its own.",
       "reason_en": "Near term: bad for sentiment, since central-bank buying has been a pillar of the multi-year rally; ~12 tonnes isn't large, but it adds supply around current prices. Bigger picture: if other central banks rebalance while US yields are high, official-sector support weakens; on the other hand China has bought 23 months in a row, so it's not a broad trend yet. $4,000 is the level to watch.",
       "time_en": "Bloomberg reported Oct 12; Kitco posted Oct 13, 11:37 AM ET"
-    },
-    {
-      "date": "2026-10-14",
-      "category": "Vàng",
-      "priority": 1,
-      "impact": "giảm",
-      "title": "Sáng 14/10: vàng giao ngay ~4.158 USD, COMEX tháng 12 ~4.180 USD – giằng co chờ CPI 19:30",
-      "summary": "Giá vàng giao ngay (gold-api.com) 4.157,6 USD/oz lúc 06:55 VN 14/10. Vàng COMEX tháng 12 (GC=F, Yahoo) 4.179,8 USD lúc 06:45 VN; phiên 13/10 đi từ đỉnh ~4.222 USD (12:00 VN) xuống đáy ~4.171 (01:00 VN 14/10) rồi hồi về 4.180–4.189 sau phát biểu của Williams. Theo Reuters, giao ngay tăng 0,2% lên 4.178,97 USD lúc 9:19 sáng EDT (20:19 VN) nhờ USD và dầu giảm, nhưng không giữ được đà khi lợi suất và dầu bật lại chiều Mỹ. DXY 102,19 lúc 06:45 VN.",
-      "reason": "Ngắn hạn: vàng đi ngang – nghiêng giảm dưới vùng 4.180–4.200; nhà đầu tư thường đứng ngoài trước CPI. CPI lõi nóng có thể đẩy vàng thủng 4.150; CPI lõi dịu có thể kéo vàng về lại 4.200. Trung – dài hạn: USD gần đỉnh 18 tháng, lợi suất trên 5% và NHTW Kazakhstan bán ra là các lực cản; chiến sự vùng Vịnh là lực đỡ.",
-      "source": {
-        "name": "Reuters (qua The Financial Express) – Gold rises on weaker dollar, lower oil",
-        "url": "https://today.thefinancialexpress.com.bd/print/gold-rises-on-weaker-dollar-lower-oil-1791910313"
-      },
-      "source2": {
-        "name": "Kitco – Gold firms as dollar, yields and oil retreat before CPI (Kitco AM Report)",
-        "url": "https://www.kitco.com/news/article/2026-10-13/gold-firms-dollar-yields-and-oil-retreat-cpi-kitco-am-report"
-      },
-      "time_vn": "Giá đo 06:45–06:55 sáng 14/10 giờ VN",
-      "title_en": "Overnight into Oct 14: spot gold ~$4,158, December COMEX ~$4,180 – chopping ahead of CPI at 8:30 AM ET",
-      "summary_en": "Spot gold (gold-api.com) $4,157.60/oz at 7:55 PM ET Oct 13. December COMEX gold (GC=F, Yahoo) $4,179.80 at 7:45 PM ET; on Oct 13 it slid from a ~$4,222 high (1:00 AM ET) to a ~$4,171 low (2:00 PM ET), then bounced to $4,180–4,189 after Williams spoke. Per Reuters, spot rose 0.2% to $4,178.97 at 9:19 AM ET on a softer dollar and oil, but couldn't hold the gains as yields and crude bounced in the New York afternoon. DXY 102.19 at 7:45 PM ET.",
-      "reason_en": "Near term: sideways with a bearish tilt below $4,180–4,200; most traders sit on their hands before CPI. A hot core print could push gold through $4,150; a soft core could lift it back to $4,200. Bigger picture: the dollar near an 18-month high, yields above 5% and Kazakhstan selling are headwinds; the Gulf conflict is the support.",
-      "time_en": "Prices taken 7:45–7:55 PM ET Oct 13"
     },
     {
       "date": "2026-10-14",
@@ -343,68 +339,6 @@
     },
     {
       "date": "2026-10-13",
-      "category": "Tương quan",
-      "title": "Sau tin 21:00: doanh số nhà hiện hữu Mỹ tăng 1,5% lên 3,99 triệu, tốt hơn dự báo – vàng lùi về quanh 4.165 USD (giao ngay)",
-      "summary": "NAR (21:00 giờ VN 13/10): doanh số nhà hiện hữu tháng 9 tăng 1,5% so với tháng 8 lên 3,99 triệu căn (năm hóa), giảm 2,2% so với cùng kỳ; dự báo ForexFactory/Trading Economics 3,95 triệu, WSJ dự báo giảm 0,8%. Giá trung vị 417.500 USD (+1,3% so với cùng kỳ). Kinh tế trưởng NAR Lawrence Yun: tháng 8 và 9 vẫn là hai tháng bán chậm nhất năm, lãi vay mua nhà 30 năm đã vượt 7% gần đây. Phản ứng vàng (COMEX GC=F, Yahoo, giá mở nến 5 phút): 18:00 4.205,4 · 20:00 4.203,1 · 20:30 4.212,4 · 21:00 (ra tin) 4.192,5 · 21:30 4.190,6 · 22:00 4.190,4; đáy sau tin 4.185,9 lúc 21:20. Vàng giao ngay (gold-api.com) 4.164,7 USD lúc 22:17 giờ VN, thấp hơn GC khoảng 25 USD.",
-      "impact": "giảm",
-      "reason": "Đúng lý thuyết nhưng tác động nhỏ: số liệu nhà tốt hơn dự báo → USD được đỡ → vàng giảm nhẹ. Thực tế vàng đã quay đầu từ 20:40 (lúc phố Wall mở cửa), trước giờ ra tin, từ 4.212 về 4.192 (-0,47% trong 30 phút trước tin); sau tin chỉ đi ngang 4.186 – 4.196 (-0,05% sau 1 giờ). Đây là tin vàng (ít quan trọng), thị trường đang chờ CPI 19:30 tối 14/10. Dài hạn: lãi vay mua nhà trên 7% sẽ kéo thị trường nhà đất chậm lại, nếu kinh tế yếu đi thì Fed bớt áp lực tăng lãi – yếu tố hỗ trợ vàng về sau.",
-      "source": {
-        "name": "NAR – Home Sales Eke Out Uptick, But Mortgage Rate Threat Looms",
-        "url": "https://www.nar.realtor/news/real-estate-news/economy/home-sales-eke-out-uptick-but-mortgage-rate-threat-looms"
-      },
-      "source2": {
-        "name": "WSJ – Home Sales Rose in September for the First Time Since Spring",
-        "url": "https://www.wsj.com/economy/housing/home-sales-rose-in-september-for-the-first-time-since-spring-32a7d980"
-      },
-      "time_vn": "Tin ra 21:00 tối 13/10 giờ VN; đo phản ứng vàng đến 22:17 VN",
-      "priority": 2,
-      "title_en": "After the 10:00 AM ET release: existing home sales +1.5% to 3.99M, beating forecasts – spot gold eases to around $4,165",
-      "summary_en": "NAR (10:00 AM ET Oct 13): September existing home sales rose 1.5% m/m to a 3.99M annualized pace, down 2.2% y/y; ForexFactory/Trading Economics expected 3.95M, WSJ expected −0.8%. Median price $417,500 (+1.3% y/y). NAR chief economist Lawrence Yun: August and September were still the two slowest months of the year, and the 30-year mortgage rate recently topped 7%. Gold reaction (COMEX GC=F, Yahoo, 5-min opens, ET): 7:00 AM 4,205.4 · 9:00 AM 4,203.1 · 9:30 AM 4,212.4 · 10:00 AM (release) 4,192.5 · 10:30 AM 4,190.6 · 11:00 AM 4,190.4; post-release low 4,185.9 at 10:20 AM. Spot (gold-api.com) $4,164.70 at 11:17 AM ET, about $25 under GC.",
-      "reason_en": "Textbook direction, small move: better-than-expected housing → dollar supported → gold slightly lower. In reality gold turned at 9:40 AM ET (the Wall Street open), before the data, sliding from 4,212 to 4,192 (−0.47% in the 30 minutes before); after the release it just chopped 4,186–4,196 (−0.05% after an hour). A low-tier release – the market is focused on Wednesday's 8:30 AM ET CPI. Bigger picture: 7%+ mortgage rates should slow housing; a weaker economy would ease pressure on the Fed to hike – supportive for gold down the road.",
-      "time_en": "Released Oct 13, 10:00 AM ET; gold reaction tracked to 11:17 AM ET"
-    },
-    {
-      "date": "2026-10-13",
-      "category": "Vàng",
-      "title": "Reuters: vàng nhích lên nhờ USD yếu và dầu giảm; StoneX dự báo phiên nhẹ trước CPI và phát biểu của Chủ tịch Fed Warsh",
-      "summary": "Reuters (qua Kitco, 13:19 GMT = 20:19 giờ VN): vàng giao ngay +0,2% lên 4.178,97 USD/oz, vàng tương lai tháng 12 +0,3% lên 4.202,70 USD. Bob Haberkorn (StoneX): 'USD và dầu cùng giảm sáng nay nên có hiệu ứng bập bênh', dự báo phiên nhẹ trước số liệu thứ Tư và thứ Năm. Thống đốc Fed Waller cho rằng lợi suất tăng phản ánh tăng trưởng mạnh hơn, kỳ vọng lạm phát vẫn 'được neo vững'. IMF cảnh báo nợ công cao và lợi suất có thể bị đẩy lên thêm bởi lạm phát do chiến tranh.",
-      "impact": "trung lập",
-      "reason": "Ngắn hạn: USD và dầu giảm hỗ trợ vàng, nhưng lợi suất vẫn cao và cược Fed tăng lãi giữ vàng dưới 4.200 USD (giao ngay). Sự kiện quyết định: CPI 19:30 ngày 14/10, PPI và phát biểu của Chủ tịch Warsh ngày 15/10. Dài hạn: cảnh báo nợ công của IMF củng cố vai trò tài sản an toàn của vàng.",
-      "source": {
-        "name": "Kitco (Reuters) – Gold rises on weaker dollar, lower oil ahead of US inflation data",
-        "url": "https://www.kitco.com/news/off-the-wire/2026-10-13/gold-rises-weaker-dollar-lower-oil-ahead-us-inflation-data"
-      },
-      "time_vn": "Reuters 20:19 tối 13/10 giờ VN",
-      "priority": 2,
-      "title_en": "Reuters: gold edges up on a softer dollar and lower oil; StoneX expects a quiet session ahead of CPI and Fed Chair Warsh",
-      "summary_en": "Reuters (via Kitco, 9:19 AM ET): spot gold +0.2% at $4,178.97/oz, December futures +0.3% at $4,202.70. StoneX's Bob Haberkorn: 'the dollar and oil are both lower this morning, so there's a seesaw effect', expecting a light session ahead of Wednesday's and Thursday's data. Fed Governor Waller said rising yields reflect stronger growth and inflation expectations remain 'well anchored'. The IMF warned of high public debt and that yields could be pushed higher by war-driven inflation.",
-      "reason_en": "Near term: a softer dollar and oil help gold, but high yields and Fed hike bets keep spot below $4,200. Key events: CPI Oct 14 at 8:30 AM ET, then PPI and Chair Warsh on Oct 15. Bigger picture: the IMF's debt warning reinforces gold's safe-asset role.",
-      "time_en": "Reuters Oct 13, 9:19 AM ET"
-    },
-    {
-      "date": "2026-10-13",
-      "category": "Vàng",
-      "title": "Đầu phiên Mỹ: vàng giữ sắc xanh quanh 4.187 USD khi USD, lợi suất và dầu cùng lùi trước CPI",
-      "summary": "Kitco (12:54 GMT = 19:54 giờ VN): vàng giao ngay quanh 4.186,90 USD/oz (+0,39%), bạc 60,21 USD. Chỉ số USD lùi về ~102,3 sau khi chạm mức cao nhất từ tháng 4/2025; lợi suất 10 năm Mỹ quanh 5,19% khi trái phiếu giao dịch lại sau ngày nghỉ lễ. Dầu giảm khoảng 2%: Brent ~104,63 USD, WTI ~91,85 USD do kỳ vọng thêm diesel Nga, dù rủi ro Hormuz – Houthi vẫn còn. Nền dữ liệu: bảng lương tháng 9 chỉ +29.000 việc làm, thất nghiệp 4,2%; kỳ vọng lạm phát 1 năm (ĐH Michigan) lên 4,7%. Thị trường thấy khả năng Fed tăng lãi suất tháng 10 thấp nhưng vẫn đặt cược cao cho tháng 12.",
-      "impact": "tăng",
-      "reason": "Ngắn hạn: USD, lợi suất, dầu cùng giảm → hỗ trợ vàng; kháng cự 4.207 rồi vùng 4.217–4.227 USD, hỗ trợ 4.181 và 4.155 USD (Kitco). Quyết định là CPI 19:30 tối mai 14/10 giờ VN: CPI lõi nóng hơn dự báo dễ khiến vàng quay đầu giảm vì cược Fed tăng lãi tháng 12; CPI mát hơn mở đường vượt 4.227 USD. Dài hạn: rủi ro Vùng Vịnh vẫn giữ nhu cầu trú ẩn, nhưng lợi suất trên 5% còn là lực cản lớn.",
-      "source": {
-        "name": "Kitco – Gold firms as dollar, yields and oil retreat before CPI (Kitco AM Report)",
-        "url": "https://www.kitco.com/news/article/2026-10-13/gold-firms-dollar-yields-and-oil-retreat-cpi-kitco-am-report"
-      },
-      "source2": {
-        "name": "CNBC – The price of gold today, Oct. 13, 2026 (giao ngay 4.179,27 USD lúc 9:00 ET)",
-        "url": "https://www.cnbc.com/select/the-price-of-gold-today-oct-13-2026/"
-      },
-      "time_vn": "Kitco đăng 19:54 tối 13/10 giờ VN (trước giờ mở cửa phố Wall)",
-      "priority": 1,
-      "title_en": "Early New York: gold holds green around $4,187 as the dollar, yields and oil all back off ahead of CPI",
-      "summary_en": "Kitco (8:54 AM ET): spot gold around $4,186.90/oz (+0.39%), silver $60.21. The dollar index eased to ~102.3 after touching its highest since April 2025; the 10-year Treasury yield sat near 5.19% as bonds traded again after the holiday. Oil fell about 2%: Brent ~$104.63, WTI ~$91.85 on hopes of more Russian diesel, though Hormuz and Houthi risks remain. Backdrop: September payrolls just +29,000, unemployment 4.2%; Michigan 1-year inflation expectations up to 4.7%. The market sees low odds of an October hike but still prices a high chance in December.",
-      "reason_en": "Near term: a softer dollar, yields and oil support gold; resistance 4,207 then 4,217–4,227, support 4,181 and 4,155 (Kitco). The decider is CPI at 8:30 AM ET Wednesday: a hotter core print could flip gold lower on December hike bets; a cooler print opens the way above 4,227. Bigger picture: Gulf risk keeps a safe-haven bid, but yields above 5% are still a major headwind.",
-      "time_en": "Kitco posted Oct 13, 8:54 AM ET (before the Wall Street open)"
-    },
-    {
-      "date": "2026-10-13",
       "category": "Lợi suất",
       "title": "BlackRock nâng trái phiếu Mỹ lên 'tăng tỷ trọng' lần đầu sau ~6 năm, cho rằng thị trường cược Fed thắt chặt quá đà",
       "summary": "CNBC: BlackRock (quản lý hơn 15.300 tỷ USD) nâng khuyến nghị trái phiếu Chính phủ Mỹ lên overweight, hạ cổ phiếu Mỹ về trung lập. Hãng cho rằng kỳ vọng Fed tăng thêm 160 điểm cơ bản trong 12 tháng tới là 'quá đà', ưu tiên trái phiếu ngắn hạn. Lợi suất 10 năm Mỹ đã tăng khoảng 110 điểm cơ bản từ đầu năm lên quanh 5,25%, phần lớn do giá năng lượng cao vì xung đột Trung Đông.",
@@ -444,116 +378,6 @@
       "time_en": "CNBC posted Oct 12, 11:19 PM ET"
     },
     {
-      "date": "2026-10-13",
-      "category": "Vàng",
-      "title": "Vàng hồi từ đáy đầu phiên Á, áp sát 4.200 USD: dầu hạ nhiệt, USD và lợi suất Mỹ giảm",
-      "summary": "Đầu phiên Á 13/10 vàng bị đẩy xuống quanh 4.170 USD (giá dầu cao, USD mạnh) rồi đảo chiều tăng. Reuters (qua The Edge Malaysia): vàng giao ngay +0,4% lên 4.185,69 USD/oz lúc 03:56 GMT (10:56 giờ VN); vàng tương lai tháng 12 +0,5% lên 4.209,90 USD. Lúc 05:46 GMT (12:46 VN) vàng giao ngay 4.189,73 USD (+0,56%), tương lai 4.216,87 USD. Theo Yahoo Finance, GC=F từ đáy 4.173,7 (khung 08:30 VN) lên 4.213,8 lúc 13:57 VN (≈ +1,0%); gold-api.com XAU 4.190,3 USD lúc 14:06 VN.",
-      "impact": "tăng",
-      "reason": "Giá dầu giảm làm dịu lo ngại lạm phát → bớt áp lực Fed thắt chặt, hỗ trợ vàng ngắn hạn. Kháng cự 4.204–4.218 USD (FXStreet); dài hạn vẫn phụ thuộc CPI Mỹ 14/10 và lập trường diều hâu của Fed.",
-      "source": {
-        "name": "The Edge Malaysia (Reuters) – Gold ticks up as oil eases; spotlight on US inflation data",
-        "url": "https://theedgemalaysia.com/node/821614"
-      },
-      "source2": {
-        "name": "FXStreet – Gold advances to $4,200 as USD eases; Fed hawkishness caps upside",
-        "url": "https://www.fxstreet.com/news/gold-bounces-off-4-150-amid-modest-usd-pullback-but-stays-in-two-week-old-range-202610130353"
-      },
-      "time_vn": "Sáng – trưa 13/10 giờ VN (10:56 và 12:46)",
-      "priority": 1,
-      "title_en": "Gold rebounds off its early-Asia low toward $4,200: oil cools, the dollar and Treasury yields ease",
-      "summary_en": "Early in the Asian session on Oct 13 gold was pushed down to around $4,170 (high oil, strong dollar) before turning higher. Reuters (via The Edge Malaysia): spot gold +0.4% at $4,185.69/oz at 03:56 GMT (11:56 PM ET Oct 12); December futures +0.5% at $4,209.90. At 05:46 GMT (1:46 AM ET) spot was $4,189.73 (+0.56%), futures $4,216.87. Per Yahoo Finance, GC=F climbed from a 4,173.7 low (9:30 PM ET bar) to 4,213.8 at 2:57 AM ET (≈ +1.0%); gold-api.com XAU $4,190.30 at 3:06 AM ET.",
-      "reason_en": "Lower oil eases inflation worries → less pressure for Fed tightening, supportive near term. Resistance 4,204–4,218 (FXStreet); the bigger picture still hinges on US CPI on Oct 14 and the Fed's hawkish stance.",
-      "time_en": "Asian session, late evening Oct 12 to early morning Oct 13 ET"
-    },
-    {
-      "date": "2026-10-13",
-      "category": "Tương quan",
-      "title": "USD lùi khỏi gần đỉnh 18 tháng (DXY 102,39), lợi suất 10 năm Mỹ giảm 5 điểm cơ bản về 5,192%",
-      "summary": "Reuters (Singapore, 13/10): chỉ số USD giảm 0,2% xuống 102,39 trong phiên Á do chốt lời; lợi suất trái phiếu Mỹ kỳ hạn 10 năm giảm 5 điểm cơ bản xuống 5,192% khi thị trường trái phiếu mở lại sau ngày nghỉ lễ thứ Hai. Không có dòng tiền trú ẩn đổ vào USD dù chứng khoán châu Á bán tháo (Kospi −7%, Nikkei −2,7%).",
-      "impact": "tăng",
-      "reason": "USD và lợi suất cùng giảm làm giảm chi phí cơ hội nắm giữ vàng → hỗ trợ ngắn hạn. Lợi suất 10 năm vẫn trên 5% nên dư địa tăng dài hạn bị giới hạn nếu Fed tiếp tục tăng lãi suất.",
-      "source": {
-        "name": "Global Banking & Finance Review (Reuters) – Dollar slips as oil prices sink, bond yields stabilise",
-        "url": "https://www.globalbankingandfinance.com/dollar-holds-near-18-month-high-geopolitical-risks-rise/"
-      },
-      "source2": {
-        "name": "investingLive – Asia-Pacific market news: Asian equities sold heavily, Kospi down 7%",
-        "url": "https://investinglive.com/news/investinglive-asia-pacific-market-news-asian-equities-sold-heavily-kospi-down-7/"
-      },
-      "time_vn": "Phiên Á 13/10 giờ VN",
-      "priority": 1,
-      "title_en": "Dollar backs off near 18-month highs (DXY 102.39); 10-year Treasury yield down 5 bps to 5.192%",
-      "summary_en": "Reuters (Singapore, Oct 13): the dollar index fell 0.2% to 102.39 in Asian trade on profit-taking; the 10-year Treasury yield dropped 5 bps to 5.192% as bonds reopened after Monday's holiday. No safe-haven flows into the dollar despite a selloff in Asian stocks (Kospi −7%, Nikkei −2.7%).",
-      "reason_en": "A softer dollar and lower yields cut the opportunity cost of holding gold → supportive near term. The 10-year is still above 5%, so upside is capped if the Fed keeps hiking.",
-      "time_en": "Asian session, evening Oct 12 ET"
-    },
-    {
-      "date": "2026-10-13",
-      "category": "Dầu mỏ",
-      "title": "Dầu giảm sau 3 phiên tăng: Brent về ~105,2–105,8 USD nhờ kỳ vọng thêm diesel Nga, Ả Rập Xê Út mở rộng đường ống tránh Hormuz",
-      "summary": "Brent giảm 0,8–1,4% về khoảng 105,2–105,8 USD/thùng, WTI ~93 USD trong phiên Á 13/10. Nga đồng ý xuất thêm diesel theo đề nghị của ông Trump; Bộ trưởng Năng lượng Ả Rập Xê Út cho biết chuyển đổi đường ống khí sang chở dầu có thể thêm 1,2 triệu thùng/ngày trong 7–8 tuần, xuất qua Biển Đỏ tránh eo Hormuz. Rủi ro vẫn còn: Houthi tấn công Ả Rập Xê Út, tàu chở dầu bị tấn công ở Hormuz. Fed Cleveland Hammack (Bloomberg) ủng hộ điều chỉnh lãi suất nhỏ, thường xuyên hơn.",
-      "impact": "tăng",
-      "reason": "Dầu giảm → kỳ vọng lạm phát dịu → hỗ trợ vàng ngắn hạn. Nếu căng thẳng Trung Đông đẩy dầu lên lại, kênh lạm phát – Fed diều hâu sẽ lại gây áp lực lên vàng.",
-      "source": {
-        "name": "CNBC TV18 – Oil prices slip after three-day rally as West Asia war threatens supply recovery",
-        "url": "https://www.cnbctv18.com/market/commodities/oil-prices-brent-wti-crude-west-asia-war-supply-recovery-russian-diesel-exports-saudi-houthi-attack-106-dollars-20010376.htm"
-      },
-      "source2": {
-        "name": "CNBC TV18 – Asian stocks fall as AI selloff deepens ahead of US earnings",
-        "url": "https://www.cnbctv18.com/market/asian-stocks-share-price-msci-asia-pacific-kospi-nikkei-225-topix-hang-seng-gift-nifty-ai-selloff-us-earnings-20010379.htm"
-      },
-      "time_vn": "Phiên Á 13/10 giờ VN",
-      "priority": 1,
-      "title_en": "Oil snaps a 3-day rally: Brent back to ~$105.20–105.80 on more Russian diesel and a Saudi pipeline bypassing Hormuz",
-      "summary_en": "Brent fell 0.8–1.4% to about $105.20–105.80/bbl, WTI ~$93 in Asian trade on Oct 13. Russia agreed to export more diesel at President Trump's request; the Saudi energy minister said converting a gas pipeline to carry oil could add 1.2M bpd within 7–8 weeks, shipped via the Red Sea to avoid Hormuz. Risks remain: Houthi attacks on Saudi Arabia, tankers hit in Hormuz. Cleveland Fed's Hammack (Bloomberg) favors smaller, more frequent rate moves.",
-      "reason_en": "Lower oil → cooler inflation expectations → supportive for gold near term. If Middle East tensions push crude back up, the inflation-to-hawkish-Fed channel will weigh on gold again.",
-      "time_en": "Asian session, evening Oct 12 ET"
-    },
-    {
-      "date": "2026-10-12",
-      "category": "Chiến tranh",
-      "title": "Zelenskyy: Nga vi phạm 'ngừng bắn năng lượng'; Brent đóng cửa 106,65 USD, Iran chưa mở lại Hormuz",
-      "summary": "Chỉ vài giờ sau khi ông Trump tuyên bố 'ngừng bắn năng lượng' Nga – Ukraine, Tổng thống Zelenskyy cho biết riêng thứ Hai 12/10 Nga đã tấn công 6 cơ sở năng lượng của Ukraine; Điện Kremlin nói các liên lạc vẫn đang diễn ra (CNBC). Cùng lúc, Houthi tiếp tục bắn drone và tên lửa vào Ả Rập Xê Út sau vụ tấn công sân bay Riyadh. Giá dầu đảo chiều từ giảm sang tăng: Brent đóng cửa +1,8% lên 106,65 USD/thùng, WTI +2% lên 93,74 USD. Kitco dẫn lời quan chức an ninh Iran Mohsen Rezaei: phản hồi mới nhất của Mỹ với 7 điều kiện để mở lại eo biển Hormuz là 'chưa đủ', chưa đàm phán khi các điều kiện chưa được đáp ứng.",
-      "impact": "giảm",
-      "reason": "Chiến sự kéo dài tạo nhu cầu trú ẩn, nhưng kênh 'dầu tăng → lạm phát → Fed tăng lãi suất → USD và lợi suất cao' đang lấn át: vàng không giữ được đỉnh 1 tuần đầu phiên. Nếu Hormuz có tín hiệu mở lại, dầu giảm có thể giúp vàng hồi.",
-      "source": {
-        "name": "CNBC – Brent tops $106 after Saudi airport attack, Ukraine says Russia violated energy ceasefire",
-        "url": "https://www.cnbc.com/2026/10/12/oil-prics-today-iran-us-saudi-arabia-crude-.html"
-      },
-      "source2": {
-        "name": "CNBC – Zelenskyy accuses Russia of violating Trump's energy ceasefire",
-        "url": "https://www.cnbc.com/2026/10/12/russia-ukraine-energy-ceasefire-trump.html"
-      },
-      "time_vn": "Phát biểu của Zelenskyy: thứ Hai 12/10 (≈ chiều – tối 12/10 giờ VN); giá dầu chốt phiên ≈ 01:30 sáng 13/10 giờ VN",
-      "priority": 1,
-      "title_en": "Zelenskyy: Russia broke the 'energy ceasefire'; Brent settles at $106.65, Iran still hasn't reopened Hormuz",
-      "summary_en": "Hours after President Trump announced a Russia–Ukraine 'energy ceasefire', President Zelenskyy said Russia hit six Ukrainian energy facilities on Monday Oct 12 alone; the Kremlin said contacts are ongoing (CNBC). Meanwhile the Houthis kept firing drones and missiles at Saudi Arabia after the Riyadh airport attack. Oil flipped from losses to gains: Brent settled +1.8% at $106.65/bbl, WTI +2% at $93.74. Kitco quoted Iranian security official Mohsen Rezaei: the latest US response to Iran's seven conditions for reopening the Strait of Hormuz is 'not enough', and there will be no talks until the conditions are met.",
-      "reason_en": "A drawn-out war creates safe-haven demand, but the 'oil up → inflation → Fed hikes → strong dollar and yields' channel is winning: gold couldn't hold its early one-week high. Any sign Hormuz reopens would pull oil lower and could help gold recover.",
-      "time_en": "Zelenskyy's remarks: Monday Oct 12 (early morning to midday ET); oil settled 2:30 PM ET Oct 12"
-    },
-    {
-      "date": "2026-10-12",
-      "category": "Tương quan",
-      "title": "USD giữ gần đỉnh 18 tháng (DXY 102,57); vàng đóng phiên thứ Hai giảm 0,6% về quanh 4.169 USD",
-      "summary": "CNBC (Reuters): chỉ số USD tăng 0,3% lên 102,57 – ngay dưới đỉnh 18 tháng của tuần trước – nhờ dòng tiền trú ẩn khi xung đột Trung Đông leo thang và đồng euro yếu (lo ngại tài chính công Pháp, chênh lệch lợi suất Pháp – Đức 140 điểm cơ bản). Số liệu CFTC cho thấy vị thế đặt cược USD tăng lên khoảng 36 tỷ USD trong tuần tới 7/10, từ 8,4 tỷ USD ba tuần trước. CME FedWatch: 81% khả năng Fed giữ lãi suất tháng 10. Kitco: sau giờ đóng cửa thứ Hai, vàng giao ngay quanh 4.168,90 USD/oz (−0,59%), bạc 60,12 USD (−0,96%); thị trường thấy khoảng 87,7% khả năng Fed tăng lãi suất ít nhất một lần trước tháng 12.",
-      "impact": "giảm",
-      "reason": "USD mạnh khiến vàng đắt hơn với người mua ngoài Mỹ và đi cùng kỳ vọng Fed thắt chặt → áp lực giảm. Kitco: mốc cần giữ 4.175 rồi 4.155 USD; kháng cự 4.221–4.227 USD. CPI tháng 9 (19:30 thứ Tư 14/10 giờ VN) là phép thử chính.",
-      "source": {
-        "name": "CNBC – Dollar hovers near 18-month high as Gulf unrest, U.S. inflation keep investors on edge",
-        "url": "https://www.cnbc.com/2026/10/12/dollar-stays-near-18-month-high-as-mideast-conflict-inflation-data-in-focus.html"
-      },
-      "source2": {
-        "name": "Kitco – Gold, silver soften as markets price in December Fed hike risk (PM Report 12/10)",
-        "url": "https://www.kitco.com/news/article/2026-10-12/gold-silver-soften-markets-price-december-fed-hike-risk-kitco-pm-report"
-      },
-      "time_vn": "CNBC đăng 00:06 EDT 12/10 = 11:06 trưa 12/10 giờ VN; giá vàng sau đóng cửa Mỹ ≈ 04:00 sáng 13/10 giờ VN",
-      "priority": 1,
-      "title_en": "Dollar holds near an 18-month high (DXY 102.57); gold ends Monday down 0.6% around $4,169",
-      "summary_en": "CNBC (Reuters): the dollar index rose 0.3% to 102.57 – just under last week's 18-month high – on safe-haven flows as the Middle East conflict escalated and a weak euro (French fiscal worries, the France–Germany spread at 140 bps). CFTC data show net dollar longs rose to about $36B in the week to Oct 7, from $8.4B three weeks earlier. CME FedWatch: 81% odds of an October hold. Kitco: after Monday's close spot gold was around $4,168.90/oz (−0.59%), silver $60.12 (−0.96%); the market sees about 87.7% odds of at least one Fed hike by December.",
-      "reason_en": "A strong dollar makes gold pricier for non-US buyers and goes hand in hand with Fed tightening bets → downside pressure. Kitco: 4,175 then 4,155 need to hold; resistance 4,221–4,227. September CPI (Wed Oct 14, 8:30 AM ET) is the main test.",
-      "time_en": "CNBC posted Oct 12, 12:06 AM ET; gold quoted after the US close, ~5:00 PM ET Oct 12"
-    },
-    {
       "date": "2026-10-07",
       "category": "Ngân hàng TW",
       "title": "Trung Quốc mua vàng tháng thứ 23 liên tiếp: thêm khoảng 23 tấn trong tháng 9",
@@ -570,91 +394,6 @@
       "summary_en": "Reuters: the People's Bank of China's gold reserves rose to 77.47M oz at end-September from 76.73M oz at end-August – an addition of 740,000 oz (≈ 23 tonnes), more than in August – extending the buying streak to 23 months. The value of its gold reserves fell from $350.08B to $323.52B as gold dropped more than 6% in September.",
       "reason_en": "Steady central-bank buying even into weakness puts a floor under gold at lower prices, though the dollar and yields still drive the short term.",
       "time_en": "PBOC released Wednesday Oct 7 (Beijing time) – before 10:44 PM ET Oct 6"
-    },
-    {
-      "date": "2026-10-12",
-      "category": "Fed",
-      "title": "Fed Hammack: cần chính sách thắt chặt hơn, tăng lãi suất 'từng bước nhỏ nhưng nhanh'",
-      "summary": "Chủ tịch Fed Cleveland Beth Hammack (thành viên bỏ phiếu FOMC 2026) phát biểu tại hội nghị NABE ngày 12/10: 'lập trường chính sách thắt chặt là phù hợp' để đưa lạm phát về 2%, và bà muốn 'điều chỉnh nhỏ, làm tương đối nhanh' thay vì chờ rồi phải sửa sai mạnh hơn. Bà cảnh báo lạm phát cao kéo dài làm tăng nguy cơ 'tâm lý lạm phát' bám rễ; PCE tháng 8 ở 3,4%, PCE lõi 3%. Theo CME FedWatch (CNBC dẫn), thị trường thấy hơn 78% khả năng Fed giữ lãi suất trong tháng 10 nhưng gần 88% khả năng tăng vào tháng 12.",
-      "impact": "giảm",
-      "reason": "Giọng điệu 'diều hâu' củng cố kỳ vọng Fed tăng lãi suất tiếp → lợi suất và USD được hỗ trợ, tăng chi phí cơ hội nắm giữ vàng. Áp lực có thể mạnh thêm nếu CPI thứ Tư 14/10 (19:30 giờ VN) cao hơn dự báo.",
-      "source": {
-        "name": "CNBC – Fed's Hammack: higher rates could be needed",
-        "url": "https://www.cnbc.com/2026/10/12/beth-hammack-fed-inflation-policy.html"
-      },
-      "source2": {
-        "name": "Fed Cleveland – Bài phát biểu 12/10/2026 (PDF)",
-        "url": "https://www.clevelandfed.org/-/media/project/clevelandfedtenant/clevelandfedsite/collections/speeches/sp-20261012-trimming-the-sails-communicating-my-reaction-function.pdf",
-        "name_en": "Cleveland Fed – Speech, Oct 12, 2026 (PDF)"
-      },
-      "time_vn": "CNBC đăng 13:08 EDT 12/10 = 00:08 ngày 13/10 giờ VN",
-      "priority": 1,
-      "title_en": "Fed's Hammack: policy needs to be tighter – hike in 'small but quick steps'",
-      "summary_en": "Cleveland Fed President Beth Hammack (a 2026 FOMC voter) told the NABE conference on Oct 12 that 'a restrictive policy stance is appropriate' to get inflation back to 2%, and she favors 'small adjustments, made relatively quickly' rather than waiting and having to correct harder later. She warned persistent high inflation raises the risk of an inflation psychology taking hold; August PCE was 3.4%, core PCE 3%. Per CME FedWatch (cited by CNBC), the market sees over 78% odds of an October hold but nearly 88% odds of a December hike.",
-      "reason_en": "A hawkish tone reinforces expectations of more Fed hikes → supports yields and the dollar, raising the opportunity cost of holding gold. Pressure could build if Wednesday's CPI (Oct 14, 8:30 AM ET) comes in hot.",
-      "time_en": "CNBC posted Oct 12, 1:08 PM ET"
-    },
-    {
-      "date": "2026-10-12",
-      "category": "Chiến tranh",
-      "title": "Iran tấn công thêm siêu tàu dầu ở Hormuz; USD gần đỉnh 18 tháng, vàng mất mốc 4.200 USD",
-      "summary": "Hải quân Vệ binh Cách mạng Iran (IRGC) cho biết sáng thứ Hai 12/10 đã đánh trúng một siêu tàu dầu cố đi qua eo biển Hormuz khi tắt bộ phát tín hiệu, khiến tàu bốc cháy (AFP) – vụ thứ 3 trong 2 ngày theo IRGC. Kitco: vàng giao ngay có lúc vượt 4.200 USD trong phiên châu Á rồi lùi về khoảng 4.156 USD trước phiên Mỹ (giảm gần 1%); chỉ số USD (DXY) quanh 102,2 – gần mức cao nhất khoảng 18 tháng; Brent quanh 105 USD, WTI trên 92 USD/thùng. Thị trường trái phiếu Mỹ nghỉ lễ Columbus Day.",
-      "impact": "giảm",
-      "reason": "Rủi ro chiến sự hỗ trợ nhu cầu trú ẩn, nhưng dầu cao giữ lạm phát cao → kỳ vọng Fed tăng lãi suất (khoảng 85% khả năng tăng trước tháng 12 theo Kitco) và USD mạnh đang lấn át – vàng chịu sức ép trước CPI.",
-      "source": {
-        "name": "Kitco – Gold struggles as US dollar nears 18-month high (12/10/2026)",
-        "url": "https://www.kitco.com/news/article/2026-10-12/gold-prices-struggle-hold-early-gains-us-dollar-nears-18-month-high-bond"
-      },
-      "source2": {
-        "name": "AFP (qua The Hindu) – Iran Guards say struck vessel in Hormuz",
-        "url": "https://www.thehindu.com/news/international/iran-guards-say-struck-vessel-in-strait-of-hormuz/article71576235.ece"
-      },
-      "time_vn": "Sáng 12/10 giờ Tehran (≈ trưa – chiều 12/10 giờ VN); giá vàng: trước phiên Mỹ ≈ 19:00–20:00 tối 12/10 giờ VN",
-      "priority": 1,
-      "title_en": "Iran hits another supertanker in Hormuz; dollar near 18-month high, gold loses $4,200",
-      "summary_en": "Iran's IRGC Navy said Monday morning Oct 12 it struck a supertanker trying to transit the Strait of Hormuz with its transponder off, setting it on fire (AFP) – the third such incident in two days per the IRGC. Kitco: spot gold briefly topped $4,200 in Asian trade before slipping to about $4,156 ahead of the New York open (down nearly 1%); DXY around 102.2, near its highest in about 18 months; Brent around $105, WTI above $92/bbl. The Treasury market was closed for Columbus Day.",
-      "reason_en": "War risk supports safe-haven demand, but high oil keeps inflation elevated → Fed hike expectations (about 85% odds of a hike by December per Kitco) and a strong dollar are winning out – gold under pressure ahead of CPI.",
-      "time_en": "Monday morning Oct 12, Tehran time (≈ late night Oct 11 to early Oct 12 ET); gold quoted ahead of the NY open ≈ 8:00–9:00 AM ET Oct 12"
-    },
-    {
-      "date": "2026-10-12",
-      "category": "Chiến tranh",
-      "title": "Vàng đảo chiều giảm khi dầu, diesel tăng lại do Houthi tấn công Ả Rập Xê Út",
-      "summary": "Phiên thứ Hai 12/10, giá vàng đảo chiều mất phần tăng đầu phiên khi dầu thô tăng và diesel Mỹ hồi phục (sau khi giảm 3% hôm thứ Sáu xuống 4,74 USD/gallon), dù ông Trump nới trừng phạt diesel Nga và tuyên bố 'ngừng bắn năng lượng' Nga – Ukraine. Lo ngại xung đột lan rộng tăng sau khi Houthi nhận tấn công sân bay Riyadh và hai cơ sở của Saudi Aramco; ông Trump gợi ý Mỹ có thể tham gia không kích Houthi cùng Ả Rập Xê Út.",
-      "impact": "giảm",
-      "reason": "Kênh 'dầu → lạm phát → lãi suất': căng thẳng Trung Đông đẩy giá dầu lên, củng cố khả năng Fed tăng lãi suất – bất lợi cho vàng. Heraeus: 'vàng vẫn chịu sức ép khi căng thẳng Trung Đông tiếp tục đẩy giá dầu lên'.",
-      "source": {
-        "name": "BullionVault – Gold News 12/10/2026",
-        "url": "https://www.bullionvault.com/gold-news/gold-price-news/gold-diesel-trump-101220261"
-      },
-      "time_vn": "Phiên châu Âu – Mỹ ngày 12/10 (chiều – tối 12/10 giờ VN)",
-      "priority": 1,
-      "title_en": "Gold reverses lower as oil and diesel rebound on Houthi attacks on Saudi Arabia",
-      "summary_en": "On Monday Oct 12 gold gave up its early gains as crude rose and US diesel recovered (after a 3% drop Friday to $4.74/gal), even though President Trump eased sanctions on Russian diesel and announced a Russia–Ukraine 'energy ceasefire'. Fears of a wider conflict grew after the Houthis claimed attacks on Riyadh airport and two Saudi Aramco facilities; Trump suggested the US could join Saudi Arabia in striking the Houthis.",
-      "reason_en": "The 'oil → inflation → rates' channel: Middle East tension lifts crude and reinforces the case for Fed hikes – bearish for gold. Heraeus: 'gold remains under pressure as Middle East tensions keep pushing oil prices higher'.",
-      "time_en": "London and New York sessions Oct 12 (early morning to midday ET)"
-    },
-    {
-      "date": "2026-10-12",
-      "category": "Chiến tranh",
-      "title": "Ông Trump tuyên bố 'ngừng bắn năng lượng' Nga – Ukraine; vàng nhích lên quanh 4.200 USD",
-      "summary": "Chủ nhật 11/10, Tổng thống Trump đăng rằng Nga và Ukraine đã đồng ý 'ngừng bắn năng lượng' có hiệu lực ngay, nhưng không nêu chi tiết. Ukraine ủng hộ nếu Nga tuân thủ và cáo buộc Nga vẫn tấn công cơ sở năng lượng ở Kyiv, Kharkiv; Điện Kremlin nói các liên lạc đang tiếp diễn. Đầu phiên châu Á 12/10, XAU/USD tăng 0,3% lên 4.206,86 USD/oz (00:30 GMT).",
-      "impact": "trung lập",
-      "reason": "Hy vọng giảm áp lực nguồn cung nhiên liệu (giảm lạm phát) đối trọng với rủi ro Trung Đông; ANZ lưu ý rủi ro lạm phát có thể hạn chế đà tăng nếu khiến Fed thắt chặt thêm.",
-      "source": {
-        "name": "Investing.com – Gold edges higher near $4,200",
-        "url": "https://uk.investing.com/news/commodities-news/gold-edges-higher-near-4200-as-traders-weigh-energy-truce-mideast-risks-4904437"
-      },
-      "source2": {
-        "name": "BBC – Trump says Ukraine and Russia have agreed 'energy ceasefire'",
-        "url": "https://www.bbc.com/news/articles/c6pvg4jyz1m0o"
-      },
-      "time_vn": "Giá vàng: 00:30 GMT 12/10 = 07:30 sáng 12/10 giờ VN (tuyên bố của ông Trump: Chủ nhật 11/10 giờ Mỹ)",
-      "priority": 1,
-      "title_en": "Trump announces a Russia–Ukraine 'energy ceasefire'; gold edges up around $4,200",
-      "summary_en": "On Sunday Oct 11 President Trump posted that Russia and Ukraine had agreed to an 'energy ceasefire' effective immediately, without giving details. Ukraine said it would comply if Russia does and accused Russia of still hitting energy facilities in Kyiv and Kharkiv; the Kremlin said contacts are ongoing. Early in Asian trade on Oct 12, XAU/USD rose 0.3% to $4,206.86/oz (00:30 GMT).",
-      "reason_en": "Hopes of easing fuel-supply pressure (lower inflation) offset Middle East risk; ANZ noted inflation risk could cap gains if it pushes the Fed to tighten further.",
-      "time_en": "Gold quoted 00:30 GMT Oct 12 = 8:30 PM ET Oct 11 (Trump's post: Sunday Oct 11, US time)"
     },
     {
       "date": "2026-10-09",
