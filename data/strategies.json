@@ -5,8 +5,8 @@
       "date": "2026-10-14",
       "time": "18:00",
       "session": "Phiên Âu",
-      "title": "H79 XÃ LUẬN – Vàng 14/10: phiên Á hồi lên 4.172 rồi giảm tiếp, sáng Âu chạm đáy ngày 4.141 – chờ CPI 19:30 (giá giao ngay)",
-      "trend": "Đêm 13/10 vàng giảm từ 4.193 (19:30) về 4.148 (00:50), đóng 4.162 – phiên giảm thứ hai liên tiếp. Phiên Á mở 05:00 ở 4.163, bị ép xuống đáy Á 4.145 lúc 08:45, rồi hồi lên đỉnh Á 4.172 lúc 10:15 (khoảng 5 giờ sau mở cửa) nhờ phát biểu ôn hòa của Williams. Từ đỉnh, lực bán quay lại nối tiếp nhịp giảm đêm qua, phiên Á đóng 4.149. Sáng Âu: đỉnh 4.159 (15:15), đáy 4.141 (17:25) – thấp nhất ngày; giá ~4.144 lúc 17:50 (gold-api.com 4.138 lúc 18:05). Khung 45m: giá dưới MA34 4.162 và MA89 4.176, sát BB90 dưới 4.142 → xu hướng giảm.",
+      "title": "Vàng 14/10: hồi phiên Á rồi giảm tiếp, chờ CPI tối nay",
+      "trend": "Đêm 13/10 vàng giảm từ 4.193 (19:30) về 4.148 (00:50), đóng 4.162 – phiên giảm thứ hai liên tiếp. Phiên Á mở 05:00 ở 4.163, bị ép xuống đáy Á 4.145 lúc 08:45, rồi hồi lên đỉnh Á 4.172 lúc 10:15 (khoảng 5 giờ sau mở cửa) nhờ phát biểu ôn hòa của Williams. Từ đỉnh, lực bán quay lại nối tiếp nhịp giảm đêm qua, phiên Á đóng 4.149. Sáng Âu: đỉnh 4.159 (15:15), đáy 4.141 (17:25) – thấp nhất ngày; giá ~4.144 lúc 17:50. Khung 45m: giá dưới MA34 4.162 và MA89 4.176, sát BB90 dưới 4.142 → xu hướng giảm.",
       "trendType": "down",
       "support": [
         4141,
@@ -41,7 +41,7 @@
         "CNBC: vàng đi ngang chờ dữ liệu lạm phát Mỹ. https://www.cnbc.com/2026/10/14/gold-prices-hold-firm-ahead-of-us-inflation-data.html",
         "CNBC: dầu tăng khi căng thẳng Ả Rập Xê Út – Houthi leo thang. https://www.cnbc.com/2026/10/14/oil-rises-amid-growing-tensions-between-saudis-and-iran-backed-houthis.html"
       ],
-      "notes": "Giá giao ngay XAU/USD, giờ Việt Nam. Mức lịch sử trong ngày quy đổi từ dữ liệu 5 phút với chênh lệch giao ngay đo được 21–23 USD (dùng 22) – có thể lệch 1–2 giá so với chart sàn.",
+      "notes": "Giá giao ngay XAU/USD, giờ VN. Mức giá có thể lệch 1–2 giá tùy sàn.",
       "dataTime": "Cập nhật 18:00 ngày 14/10/2026 giờ VN.",
       "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
       "summary": {
@@ -72,8 +72,8 @@
       },
       "session_en": "London session",
       "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
-      "title_en": "H79 Gold Commentary – Oct 14: Asian bounce to 4,172 fades, London morning tags day low 4,141 ahead of CPI at 8:30 AM ET (spot)",
-      "trend_en": "Tuesday's US session sold off from 4,193 (8:30 AM ET) to 4,148 (1:50 PM ET), settling around 4,162 – a second straight down day. The Asian open (6:00 PM ET) came in at 4,163, dipped to the Asian low of 4,145 at 9:45 PM ET, then bounced to the Asian high of 4,172 at 11:15 PM ET (about 5 hours after the open) on dovish comments from the NY Fed's Williams. Sellers then resumed the prior move, with Asia closing at 4,149. London morning: high 4,159 (4:15 AM ET), low 4,141 (6:25 AM ET), the low of the day; last ~4,144 at 6:50 AM ET (gold-api.com 4,138 at 7:05 AM ET). 45m: price below MA34 4,162 and MA89 4,176, hugging the lower BB90 at 4,142 – bearish.",
+      "title_en": "Gold Fades Its Asian Bounce, Slips to a Fresh Daily Low Ahead of CPI",
+      "trend_en": "Tuesday's US session sold off from 4,193 (8:30 AM ET) to 4,148 (1:50 PM ET), settling around 4,162 – a second straight down day. The Asian open (6:00 PM ET) came in at 4,163, dipped to the Asian low of 4,145 at 9:45 PM ET, then bounced to the Asian high of 4,172 at 11:15 PM ET (about 5 hours after the open) on dovish comments from the NY Fed's Williams. Sellers then resumed the prior move, with Asia closing at 4,149. London morning: high 4,159 (4:15 AM ET), low 4,141 (6:25 AM ET), the low of the day; last ~4,144 at 6:50 AM ET. 45m: price below MA34 4,162 and MA89 4,176, hugging the lower BB90 at 4,142 – bearish.",
       "entryZones_en": [
         "Long: 4,116–4,123 (pivot S2 4,116 · below the 45m lower BB90 4,142 and day low 4,141). Stop 4,106. Targets 4,140, then 4,153."
       ],
@@ -95,11 +95,10 @@
         "CNBC: gold holds steady ahead of US inflation data. https://www.cnbc.com/2026/10/14/gold-prices-hold-firm-ahead-of-us-inflation-data.html",
         "CNBC: oil rises as Saudi–Houthi tensions escalate. https://www.cnbc.com/2026/10/14/oil-rises-amid-growing-tensions-between-saudis-and-iran-backed-houthis.html"
       ],
-      "notes_en": "Spot XAU/USD prices, ET. Intraday history converted from 5-minute data using a measured spot basis of $21–23 (used $22); may differ by 1–2 points from your broker's chart.",
+      "notes_en": "Spot XAU/USD prices, ET. Levels may differ by a point or two between brokers.",
       "dataTime_en": "Updated 7:00 AM ET, Oct 14, 2026.",
       "url": "bai/2026-10-14-nhan-dinh-vang-phien-au-1800.html",
       "article": {
-        "title": "XÃ LUẬN VÀNG 14/10 – Từ phiên Á đến hết sáng Âu",
         "sections": [
           {
             "h": "Đêm qua",
@@ -111,7 +110,7 @@
           },
           {
             "h": "Sáng phiên Âu",
-            "p": "Đỉnh 4.159 lúc 15:15, đáy 4.141 lúc 17:25 – thấp nhất trong ngày. Giá quanh 4.144 lúc 17:50; lúc 18:05 giao ngay ở 4.138."
+            "p": "Đỉnh 4.159 lúc 15:15, đáy 4.141 lúc 17:25 – thấp nhất trong ngày. Gần 18:00 giá còn quanh 4.138 – 4.144."
           },
           {
             "h": "Vì sao giá giảm",
@@ -159,7 +158,6 @@
       },
       "url_en": "en/posts/2026-10-14-gold-plan-london-session-1800.html",
       "article_en": {
-        "title": "Gold Commentary, Oct 14 – From the Asian Open Through the London Morning",
         "sections": [
           {
             "h": "Overnight",
@@ -171,7 +169,7 @@
           },
           {
             "h": "London morning",
-            "p": "High of 4,159 at 4:15 AM ET, low of 4,141 at 6:25 AM ET – the low of the day. Gold was around 4,144 at 6:50 AM ET, with spot at 4,138 at 7:05 AM ET."
+            "p": "High of 4,159 at 4:15 AM ET, low of 4,141 at 6:25 AM ET – the low of the day. Heading into 7:00 AM ET, gold was hovering around 4,138–4,144."
           },
           {
             "h": "Why gold is lower",
@@ -216,7 +214,9 @@
             "url": "https://www.fxstreet.com/analysis/us-cpi-in-focus-ahead-of-october-fomc-meeting-202610140548"
           }
         ]
-      }
+      },
+      "headline": "Vàng 14/10: hồi phiên Á rồi giảm tiếp, chờ CPI tối nay",
+      "headline_en": "Gold Fades Its Asian Bounce, Slips to a Fresh Daily Low Ahead of CPI"
     },
     {
       "id": "2026-10-14-phien-au-1358",

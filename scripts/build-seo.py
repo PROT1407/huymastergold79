@@ -34,7 +34,7 @@ LANG_PAIRS = {"index.html": "en/index.html", "chien-luoc.html": "en/h79-analysis
 # Bài tiếng Anh tĩnh: en/posts/ (giữ đồng bộ với POST_SES trong js/common.js)
 OUT_EN = ROOT / "en" / "posts"
 POST_SES = {"phien-au-my": "london-ny-overlap", "phien-au": "london-session", "phien-my": "new-york-session", "phien-a": "asian-session"}
-ASSET_V = "20261014h"  # cache-busting cho css/js trong trang sinh tự động
+ASSET_V = "20261014i"  # cache-busting cho css/js trong trang sinh tự động
 OLD_BASES = ["https://huymastergold79.com.vn/", "https://prot1407.github.io/huymastergold79/"]
 VN = dt.timezone(dt.timedelta(hours=7))
 TODAY = dt.datetime.now(VN).date().isoformat()
@@ -126,7 +126,7 @@ def page(a, body):
 <div id="site-header"></div>
 <main class="wrap"><article class="seo-art">
 <nav class="seo-bc"><a href="index.html">Trang chủ</a> › <a href="bai/index.html">Kho bài viết</a> › {e(kname)}</nav>
-<div class="seo-meta" style="margin-top:10px"><span class="badge side">{icon} {e(kname)}</span><time datetime="{a['pub']}">{e(a['when'])}</time><span class="muted">· {AUTHOR} / {SITE}</span></div>
+<div class="seo-meta" style="margin-top:10px"><span class="badge side">{icon} {e(kname)}</span><time datetime="{a['pub']}">{e(a['when'])}</time><span class="muted">· {AUTHOR}</span></div>
 <h1>{e(a['title'])}</h1>
 {body}
 <p class="muted small" style="margin-top:14px">⚠ Nội dung chỉ mang tính tham khảo, là quan điểm cá nhân, không phải lời khuyên đầu tư.</p>
@@ -163,7 +163,7 @@ def summary_html(s):
 
 def article_html(a, en=False):
     if not a or not a.get("sections"): return ""
-    h = f'<article class="h79art"><h2>{e(a.get("title",""))}</h2>' + "".join(f'<p><b>{e(x.get("h",""))}:</b> {e(x.get("p",""))}</p>' for x in a["sections"])
+    h = '<article class="h79art">' + (f'<h2>{e(a["title"])}</h2>' if a.get("title") else "") + "".join(f'<p><b>{e(x.get("h",""))}:</b> {e(x.get("p",""))}</p>' for x in a["sections"])
     return h + "</article>"
 
 def article_src(a, en=False):
@@ -190,10 +190,10 @@ def build_strategies():
             body = article_html(s.get("article")) + summary_html(s) + article_src(s.get("article")) + '<details class="h79more"><summary>Xem thêm: chỉ báo, kịch bản, vĩ mô</summary>' + body + "</details>"
         desc = f"Nhận định vàng {s.get('session','')} {dvn(s['date'])}{' lúc ' + t if t else ''}: " + (s.get("trend") or s["title"])
         out.append(dict(kind="nd", file=f, date=s["date"], sort=s["date"] + (t or "00:00"),
-                        title=f"Nhận định vàng {dvn(s['date'])} – {s['title']}",
+                        title=s.get("headline") or (s["title"] if re.search(r"\d{1,2}/\d{1,2}", s["title"]) else f"Nhận định vàng {dvn(s['date'])} – {s['title']}"),
                         desc=desc[:157].rstrip() + ("…" if len(desc) > 157 else ""),
                         pub=f"{s['date']}T{t or '00:00'}:00+07:00",
-                        when=f"{s.get('session','')} · {t + ' ' if t else ''}{dvn(s['date'])} (giờ VN)", body=body))
+                        when=f"{s.get('session','')} · {t + ' ' if t else ''}{dvn(s['date'])[:5]}", body=body))
         out[-1]["en"] = en_post_file(f)
     return out
 
@@ -433,7 +433,7 @@ def build_en(arts):
             s = next((x for k, x in strat.items() if a["pub"].startswith(x["date"] + "T" + (x.get("time") or "00:00"))), None)
             if not s or not (s.get("title_en") or s.get("summary")): continue
             t = vn_dt(s["date"], s.get("time")); ses = SES_EN.get(s.get("session_en")) or s.get("session_en") or SES_EN.get(s.get("session"), "")
-            title = s.get("title_en") or f"H79 Gold Plan – {ses}, {et_str(t, False)}"
+            title = s.get("headline_en") or s.get("title_en") or f"H79 Gold Plan – {ses}, {et_str(t, False)}"
             lv = "".join(f'<span class="s">S {en_num(num(x))}</span>' for x in s.get("support", [])) + "".join(f'<span class="r">R {en_num(num(x))}</span>' for x in s.get("resistance", []))
             body = (card("📊 Trend read", f'<p>{e(s["trend_en"])}</p>' if s.get("trend_en") else "")
                     + card("📍 Support / resistance (USD/oz)", f'<div class="seo-lv">{lv}</div>' if lv else "")
