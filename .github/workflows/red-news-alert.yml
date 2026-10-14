@@ -1,0 +1,47 @@
+name: red-news-alert
+# Cảnh báo tin đỏ Mỹ trước giờ ra tin (Telegram @HTFXGROUP + OneSignal nếu có). Xem scripts/red-news-alert.py
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Chỉ log, không gửi (1/0)'
+        default: '1'
+      now_utc:
+        description: 'Giả lập thời điểm (ISO UTC, để test), vd 2026-10-14T12:15:00Z'
+        default: ''
+permissions:
+  contents: read
+concurrency:
+  group: red-news-alert
+  cancel-in-progress: false
+jobs:
+  alert:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with: { sparse-checkout: "data/calendar-us.json\nscripts/red-news-alert.py", sparse-checkout-cone-mode: false }
+      - name: Khôi phục trạng thái đã gửi
+        uses: actions/cache/restore@v4
+        with:
+          path: .alert-state.json
+          key: red-alert-state-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: red-alert-state-
+      - name: Gửi cảnh báo
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: '-1001396622973'
+          ONESIGNAL_APP_ID: ${{ vars.ONESIGNAL_APP_ID || secrets.ONESIGNAL_APP_ID }}
+          ONESIGNAL_REST_KEY: ${{ secrets.ONESIGNAL_REST_KEY }}
+          ALERT_STATE: .alert-state.json
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || '0' }}
+          NOW_UTC: ${{ inputs.now_utc }}
+        run: python3 scripts/red-news-alert.py
+      - name: Lưu trạng thái
+        if: always() && hashFiles('.alert-state.json') != ''
+        uses: actions/cache/save@v4
+        with:
+          path: .alert-state.json
+          key: red-alert-state-${{ github.run_id }}-${{ github.run_attempt }}

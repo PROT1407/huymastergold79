@@ -83,3 +83,8 @@ Trang EN **ẩn** mục chưa có bản tiếng Anh (không hiện tiếng Việ
 | `data/vn-gold-daily.json` | `analysis_en[]`, `advice_en`, `peak.label_en` / `note_en`, `refs[].name_en` / `facts_en`, `world.note_en`, `*.source.name_en` | chỉ dùng ở `en/vietnam-gold-market.html` |
 
 Cache-busting: đổi `?v=` trên mọi trang (kể cả `en/`, `en/posts/`, `bai/`) và `ASSET_V` trong `scripts/build-seo.py` cùng lúc.
+
+## Cảnh báo tin đỏ Mỹ (tự động)
+- `.github/workflows/red-news-alert.yml` chạy mỗi 5 phút → `scripts/red-news-alert.py` đọc `data/calendar-us.json`, gửi 1 tin Telegram (chat -1001396622973) cho mỗi mốc giờ có tin High trong 0–20 phút tới. Chống trùng bằng `.alert-state.json` giữ qua `actions/cache`. Chạy tay: Actions → red-news-alert → Run workflow (mặc định dry_run=1, chỉ log; `now_utc` để giả lập).
+- Banner web: `js/news-alert.js` (tự tải từ `js/common.js`), hiện 15' trước → 5' sau tin.
+- OneSignal (đang TẮT): điền `ONESIGNAL_APP_ID` trong `js/push-config.js` để bật web push; thêm repo variable/secret `ONESIGNAL_APP_ID` + secret `ONESIGNAL_REST_KEY` để workflow gửi push. Worker: `/huymastergold79/OneSignalSDKWorker.js`, scope `/huymastergold79/` (GitHub Pages project site không phục vụ được file ở gốc domain `prot1407.github.io/`, nên OneSignal phải cấu hình đúng path/scope này; trong OneSignal Dashboard chọn "Custom Code", Site URL `https://prot1407.github.io`, và nếu dùng chung domain với project khác thì scope phải tách riêng).

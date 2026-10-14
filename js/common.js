@@ -266,4 +266,7 @@
       ['xau', 'xag', 'btc', 'fx', 'eur', 'jpy', 'dxy'].forEach(k => { if (c[k] != null) H.data[k] = c[k]; }); if (c.rows && c.rows.length) { H.data.rows = c.rows; H.data.vnSrc = c.vnSrc; H.data.rowsStale = c.t; } H.data.stale = c.t; computeDerived(); try { renderBar(); } catch (e) { } } }
   setTimeout(() => { if (!H.data.settled) { H.data.settled = true; try { renderBar(); } catch (e) { } } }, 12000); // không bao giờ kẹt ở "Đang tải"
   H.refresh().catch(e => { console.error(e); H.data.settled = true; renderBar(); }); setInterval(() => H.refresh().catch(console.error), 60000);
+  /* banner tin đỏ + web push (tùy chọn) */
+  H.V = '20261014j';
+  ['js/news-alert.js', 'js/push.js'].forEach(f => { const x = document.createElement('script'); x.src = H.ROOT + f + '?v=' + H.V; x.defer = true; document.head.appendChild(x); });
 })();
