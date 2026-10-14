@@ -1,6 +1,6 @@
 /* HuymasterGold79 – English page renderers (en/*.html). VI pages never load this file.
-   Data stays in Vietnam time (Asia/Ho_Chi_Minh) in JSON; everything is shown in US Eastern (America/New_York, auto DST).
-   Reads optional *_en fields; items without English copy are left out rather than shown in Vietnamese. */
+   Data stays in UTC+7 in JSON; everything is shown in US Eastern (America/New_York, auto DST).
+   Reads optional *_en fields; items without English copy are left out rather than shown untranslated. */
 (function () {
   'use strict';
   const H = window.HMG, $ = id => document.getElementById(id), E = H.esc, NY = 'America/New_York';
@@ -11,7 +11,7 @@
   const dayKey = d => new Intl.DateTimeFormat('en-CA', { timeZone: NY }).format(d);
   const loc = d => new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeStyle: 'short' }).format(d);
   const tm = d => `<time datetime="${d.toISOString()}" title="Your local time: ${E(loc(d))}">${E(et(d))}</time>`;
-  // "07:23 14/10/2026" or "2026-10-14 06:55 (UTC+7)" (Vietnam time) -> Date
+  // "07:23 14/10/2026" or "2026-10-14 06:55 (UTC+7)" (UTC+7) -> Date
   const vnParse = s => { let m = /(\d\d):(\d\d) (\d\d)\/(\d\d)\/(\d{4})/.exec(s || ''); if (m) return new Date(Date.UTC(+m[5], m[4] - 1, +m[3], m[1] - 7, +m[2]));
     m = /(\d{4})-(\d\d)-(\d\d) (\d\d):(\d\d)/.exec(s || ''); if (m) return new Date(Date.UTC(+m[1], m[2] - 1, +m[3], m[4] - 7, +m[5])); return null; };
   const ymd = s => { const [y, m, d] = s.split('-').map(Number); return new Date(Date.UTC(y, m - 1, d, 12)); };
@@ -150,7 +150,7 @@
     tick(); setInterval(tick, 1000); setInterval(draw, 60000);
   }).catch(err => { console.warn(err); if ($('ffcal')) { $('ffcal').innerHTML = "<p class=\"muted\">Couldn't load the ForexFactory data – see the TradingView calendar below.</p>"; const fb = $('tv-fallback'); if (fb) fb.open = true; } });
 
-  /* ---------- Live room (data/live-schedule.json; session times are Vietnam time in the data) ---------- */
+  /* ---------- Live room (data/live-schedule.json; session times are UTC+7 in the data) ---------- */
   if (document.querySelector('[data-cd]') || $('sched') || $('player')) {
     const CH = H.YT_LIVE_ID, UU = 'UU' + CH.slice(2);
     H.schedule.then(sc => {
@@ -196,37 +196,4 @@
     $('fl-faq').innerHTML = d.faq.filter(q => q.q_en).map(q => `<details class="card" style="margin-bottom:10px"><summary>${E(q.q_en)}</summary><p style="margin-top:8px">${E(q.a_en)}</p></details>`).join('');
   }).catch(err => { console.warn(err); $('fl-acc').textContent = "Couldn't load the account data."; });
 
-  /* ---------- Vietnam gold market / SJC premium (data/vn-gold-daily.json + live feeds) ---------- */
-  const OZ_PER_TAEL = H.LUONG; // 1 tael (37.5 g) = 1.20565 troy oz
-  const usdOz = (vnd, fx) => fx ? vnd / fx / OZ_PER_TAEL : null;
-  if ($('vn-market')) H.getJSON('data/vn-gold-daily.json').then(d => {
-    const w = d.world, fx = w.usdvnd, sjc = d.rows.find(r => r.code === 'SJL1L10'), ring = d.rows.find(r => r.code === 'SJ9999');
-    const prem = r => usdOz(r.sell, fx) - w.xau_usd, premPct = r => prem(r) / w.xau_usd * 100;
-    const BR = { 'Vàng miếng SJC': 'SJC bar', 'Nhẫn tròn 9999': '9999 ring', 'Nhẫn 24K': '24K ring', 'Nhẫn/trang sức 9999 (DOJI Jewelry)': '9999 ring/jewelry' };
-    const brand = s => s.replace('Hà Nội', 'Hanoi').replace('TP.HCM', 'HCMC').replace('Bảo Tín Minh Châu', 'Bao Tin Minh Chau');
-    const upd = vnParse(d.updated_vn), wt = new Date(w.xau_time_utc);
-    const rows = d.rows.map(r => `<tr><td style="text-align:left"><b>${E(brand(r.brand))}</b><br><small class="muted">${E(BR[r.type] || r.type)}</small></td><td>$${f(usdOz(r.buy, fx))}</td><td><b>$${f(usdOz(r.sell, fx))}</b></td><td class="${prem(r) > 0 ? 'down' : 'up'}">+$${f(prem(r))} <small>(${f(premPct(r), 1)}%)</small></td><td class="muted">${f(r.buy / 1e6, 1)} / ${f(r.sell / 1e6, 1)}</td></tr>`).join('');
-    const hs = d.history.SJL1L10 || [];
-    let chart = '';
-    if (hs.length > 2) { const v = hs.map(x => usdOz(x.sell, fx)), mn = Math.min(...v) - 20, mx = Math.max(...v) + 20, W = 600, Hh = 180, X = i => 40 + i * (W - 50) / (v.length - 1), Y = y => 10 + (mx - y) / (mx - mn) * (Hh - 30);
-      chart = `<svg viewBox="0 0 ${W} ${Hh}" class="vg-chart" role="img" aria-label="SJC bar ask price, USD/oz equivalent, 30 days"><path d="${v.map((y, i) => (i ? 'L' : 'M') + X(i).toFixed(1) + ' ' + Y(y).toFixed(1)).join(' ')}" fill="none" stroke="#f0b90b" stroke-width="2.5" class="vg-line"/><text x="40" y="${Hh - 4}" class="vg-ax">${E(dShort(hs[0].date).replace(/, \d{4}/, ''))}</text><text x="${W - 10}" y="${Hh - 4}" text-anchor="end" class="vg-ax">${E(dShort(hs[hs.length - 1].date).replace(/, \d{4}/, ''))}</text><text x="2" y="${Y(mx - 20) + 4}" class="vg-ax">$${f(mx - 20)}</text><text x="2" y="${Y(mn + 20) + 4}" class="vg-ax">$${f(mn + 20)}</text></svg><p class="small muted">SJC bar ask, 30 days, converted at today's USD/VND rate (${f(fx)}), so the line reflects local-price moves only.</p>`; }
-    const pk = d.peak;
-    $('vn-market').innerHTML = `<div class="vg-hero">
-      <div class="vg-big"><span>🧱 SJC 1-tael bar (ask)</span><b>$${f(usdOz(sjc.sell, fx))}/oz</b><small>equivalent · bid $${f(usdOz(sjc.buy, fx))}</small></div>
-      <div class="vg-big gap"><span>⚖ SJC premium over spot</span><b>+$${f(prem(sjc))}/oz</b><small>${f(premPct(sjc), 1)}% over XAU/USD $${f(w.xau_usd, 2)}</small></div>
-      ${ring ? `<div class="vg-big"><span>💍 SJC 9999 ring (ask)</span><b>$${f(usdOz(ring.sell, fx))}/oz</b><small>premium +$${f(prem(ring))} (${f(premPct(ring), 1)}%)</small></div>` : ''}</div>
-      <p class="small muted">Snapshot ${upd ? tm(upd) : ''} · spot XAU/USD (gold-api.com) ${tm(wt)} · USD/VND ${f(fx)} (open.er-api.com market rate). Converted at 1 tael = 37.5 g = 1.20565 troy oz; excludes taxes and fees.</p>
-      <div class="grid g2 sec" style="gap:16px"><div class="card"><h3>🏪 Dealer quotes, USD/oz equivalent</h3><div class="tbl-wrap"><table class="tbl"><thead><tr><th>Dealer</th><th>Bid</th><th>Ask</th><th>Premium (ask)</th><th>VND m/tael bid/ask</th></tr></thead><tbody>${rows}</tbody></table></div><p class="small muted" style="margin-top:6px">Quotes via <a href="${E(d.sources.vang_today)}" target="_blank" rel="noopener">vang.today ↗</a> (aggregating SJC, DOJI, PNJ, Bao Tin Minh Chau).</p></div>
-      <div class="card"><h3>📈 SJC bar, last 30 days</h3>${chart || '<p class="muted small">Not enough data yet.</p>'}</div></div>
-      ${(d.analysis_en || []).length ? `<div class="card vg-an sec"><h3>📝 Market read</h3><ul>${d.analysis_en.map(x => `<li>${E(x)}</li>`).join('')}</ul></div>` : ''}
-      ${pk && pk.note_en ? `<div class="card sec"><h3>🏔 ${E(pk.label_en || 'All-time high')}</h3><p>${E(pk.note_en)} ≈ $${f(usdOz(pk.sell, fx))}/oz at today's FX rate. A buyer at that peak selling at today's bid would be down about ${f((pk.sell - sjc.buy) / pk.sell * 100, 1)}%.</p><p class="small muted">Source: ${src(pk.source)}</p></div>` : ''}
-      ${d.advice_en ? `<div class="vg-adv"><b>💡 Takeaway:</b> ${E(d.advice_en)}</div>` : ''}
-      ${(d.refs || []).filter(r => r.facts_en).map(r => `<div class="small muted" style="margin-top:10px">📰 <a href="${E(r.url)}" target="_blank" rel="noopener">${E(r.name_en)} ↗</a> (Vietnamese)<ul>${r.facts_en.map(x => `<li>${E(x)}</li>`).join('')}</ul></div>`).join('')}`;
-  }).catch(err => { console.warn(err); $('vn-market').innerHTML = '<p class="muted">Couldn\'t load Vietnam market data.</p>'; });
-  if ($('vg-live')) H.sub(D => {
-    const s = D.rows.find(r => r.name === 'SJC');
-    $('vg-live').innerHTML = D.xau && D.fx && s ? `<div class="mini-out"><div><span>Spot XAU/USD</span><b>$${f(D.xau, 2)}</b></div><div class="r"><span>SJC ask (USD/oz eq.)</span><b>$${f(usdOz(s.sell, D.fx))}</b></div><div><span>Live premium</span><b>+$${f(usdOz(s.sell, D.fx) - D.xau)} (${f((usdOz(s.sell, D.fx) / D.xau - 1) * 100, 1)}%)</b></div><div class="r"><span>USD/VND</span><b>${f(D.fx)}</b></div></div><p class="small muted">Refreshes every 60 seconds · ${E(et(D.time))}</p>` : '<p class="muted small">Live quotes unavailable right now.</p>';
-  });
-  if ($('cv-oz')) { const run = () => { const oz = +$('cv-oz').value, fx = +$('cv-fx').value; $('cv-out').textContent = oz && fx ? f(oz * fx * OZ_PER_TAEL / 1e6, 1) + ' million VND per tael' : '—'; };
-    H.sub(D => { if (!$('cv-oz').value && D.xau) $('cv-oz').value = D.xau.toFixed(1); if (!$('cv-fx').value && D.fx) $('cv-fx').value = Math.round(D.fx); run(); }); $('cv-oz').oninput = $('cv-fx').oninput = run; }
 })();

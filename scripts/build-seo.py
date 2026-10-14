@@ -25,16 +25,16 @@ MAIN_PAGES = ["index.html", "gia-vang.html", "chien-luoc.html", "bieu-do.html", 
               "tin-tuc.html", "lich-kinh-te.html", "kien-thuc.html", "quy-forex.html",
               "tai-khoan-follow.html", "ve-toi.html", "lien-he.html"]
 # Trang tiếng Anh (en/, html lang="en"). Cặp VI <-> EN dùng cho hreflang (vi, en, x-default = VI) và sitemap.
-EN_PAGES = ["en/index.html", "en/h79-analysis.html", "en/news.html", "en/economic-calendar.html", "en/vietnam-gold-market.html",
+EN_PAGES = ["en/index.html", "en/h79-analysis.html", "en/news.html", "en/economic-calendar.html",
             "en/charts.html", "en/live.html", "en/learn.html", "en/trading-fund.html", "en/copy-trading.html", "en/about.html", "en/contact.html"]
 LANG_PAIRS = {"index.html": "en/index.html", "chien-luoc.html": "en/h79-analysis.html", "ve-toi.html": "en/about.html",
-              "tin-tuc.html": "en/news.html", "lich-kinh-te.html": "en/economic-calendar.html", "gia-vang.html": "en/vietnam-gold-market.html",
+              "tin-tuc.html": "en/news.html", "lich-kinh-te.html": "en/economic-calendar.html",
               "bieu-do.html": "en/charts.html", "kien-thuc.html": "en/learn.html", "live.html": "en/live.html", "quy-forex.html": "en/trading-fund.html",
               "tai-khoan-follow.html": "en/copy-trading.html", "lien-he.html": "en/contact.html"}
 # Bài tiếng Anh tĩnh: en/posts/ (giữ đồng bộ với POST_SES trong js/common.js)
 OUT_EN = ROOT / "en" / "posts"
 POST_SES = {"phien-au-my": "london-ny-overlap", "phien-au": "london-session", "phien-my": "new-york-session", "phien-a": "asian-session"}
-ASSET_V = "20261014e"  # cache-busting cho css/js trong trang sinh tự động
+ASSET_V = "20261014f"  # cache-busting cho css/js trong trang sinh tự động
 OLD_BASES = ["https://huymastergold79.com.vn/", "https://prot1407.github.io/huymastergold79/"]
 VN = dt.timezone(dt.timedelta(hours=7))
 TODAY = dt.datetime.now(VN).date().isoformat()
@@ -305,6 +305,8 @@ def fix_main_pages(arts):
                 s = re.sub(r"<!-- HREFLANG:START.*?<!-- HREFLANG:END -->", lambda _: alt, s, flags=re.S)
             else:
                 s = re.sub(r'(<link rel="canonical"[^>]*>)', lambda m: m.group(1) + "\n" + alt, s, count=1)
+        else:  # không còn cặp EN: bỏ khối hreflang cũ
+            s = re.sub(r"\n?<!-- HREFLANG:START.*?<!-- HREFLANG:END -->", "", s, flags=re.S)
         if p == "index.html":
             latest = "".join(f'<li><span class="badge side">{KIND[a["kind"]][0]} {KIND[a["kind"]][1]}</span> <a href="bai/{a["file"]}">{e(a["title"])}</a></li>' for a in arts[:6])
             block = (f'<!-- SEO-LATEST:START (tự sinh bởi scripts/build-seo.py) -->\n<section class="card sec"><h2>📰 Bài viết mới</h2>'

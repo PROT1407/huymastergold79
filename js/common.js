@@ -35,7 +35,7 @@
   const EN = H.EN = (document.documentElement.lang || '').toLowerCase().startsWith('en');
   /* ---- VI/EN: cặp trang tương ứng (giữ đồng bộ với thẻ hreflang) ---- */
   const LANG_PAIRS = H.LANG_PAIRS = { 'index.html': 'en/index.html', 'chien-luoc.html': 'en/h79-analysis.html', 've-toi.html': 'en/about.html',
-    'tin-tuc.html': 'en/news.html', 'lich-kinh-te.html': 'en/economic-calendar.html', 'gia-vang.html': 'en/vietnam-gold-market.html', 'bieu-do.html': 'en/charts.html',
+    'tin-tuc.html': 'en/news.html', 'lich-kinh-te.html': 'en/economic-calendar.html', 'bieu-do.html': 'en/charts.html',
     'kien-thuc.html': 'en/learn.html', 'live.html': 'en/live.html', 'quy-forex.html': 'en/trading-fund.html', 'tai-khoan-follow.html': 'en/copy-trading.html',
     'lien-he.html': 'en/contact.html', 'bai/index.html': 'en/posts/index.html' };
   /* bài tĩnh: bai/<date>-nhan-dinh-vang-<phiên>[-hhmm].html <-> en/posts/<date>-gold-plan-<session>[-hhmm].html; tin vĩ mô <-> gold-macro-news (khớp scripts/build-seo.py) */
@@ -53,8 +53,7 @@
     ['strat', 'en/h79-analysis.html', '🎯 H79 Gold Plan'],
     ['market', 'en/news.html', '🌐 Markets', [
       ['en/news.html', 'Macro news & FedWatch', 'Fed, yields, dollar, geopolitics'],
-      ['en/economic-calendar.html', 'US economic calendar', 'CPI, NFP, FOMC – times in ET'],
-      ['en/vietnam-gold-market.html', 'Vietnam gold market', 'SJC premium over spot']]],
+      ['en/economic-calendar.html', 'US economic calendar', 'CPI, NFP, FOMC – times in ET']]],
     ['chart', 'en/charts.html', '📈 Charts'],
     ['live', 'en/live.html', '🔴 Live'],
     ['forex', 'en/trading-fund.html', '💱 Trading', [
@@ -114,7 +113,7 @@
         <p class="muted small" style="margin-top:8px">Independent gold (XAU/USD) analysis by Ngọc Huy.</p>
         <div class="share"><a href="${H.YT}" target="_blank" rel="noopener">▶ YouTube</a><a class="tg-link" href="${H.TG}" target="_blank" rel="noopener">✈ Telegram</a><a href="mailto:${H.EMAIL}">✉ Email</a></div></div>
       <div><h4>Analysis</h4><a href="en/h79-analysis.html">H79 Gold Plan</a><a href="en/news.html">Macro news & FedWatch</a><a href="en/economic-calendar.html">Economic calendar</a><a href="en/charts.html">Charts</a><a href="en/live.html">Live room</a><a href="en/posts/index.html">Archive</a></div>
-      <div><h4>More</h4><a href="en/vietnam-gold-market.html">Vietnam gold market</a><a href="en/trading-fund.html">Trading fund model</a><a href="en/copy-trading.html">Copy trading</a><a href="en/learn.html">Learn</a><a href="en/about.html">About</a><a href="en/contact.html">Contact</a><a href="index.html" hreflang="vi" lang="vi">Tiếng Việt</a></div>
+      <div><h4>More</h4><a href="en/trading-fund.html">Trading fund model</a><a href="en/copy-trading.html">Copy trading</a><a href="en/learn.html">Learn</a><a href="en/about.html">About</a><a href="en/contact.html">Contact</a><a href="index.html" hreflang="vi" lang="vi">Tiếng Việt</a></div>
     </div>
     <p class="disc">⚠ <b>Disclaimer:</b> All content is for information and education only and reflects personal opinion; it is <b>not investment advice</b>. Trading gold, forex and CFDs involves a high risk of loss. Past performance does not guarantee future results. Third-party data (TradingView, gold-api.com, Yahoo Finance) may be delayed or inaccurate.<br>© ${new Date().getFullYear()} HuymasterGold79</p>
   </div></footer>`;
@@ -237,9 +236,9 @@
       tr.innerHTML = h + h; return;
     }
     if (D.xau) items.push(`<span>🌍 XAU/USD ${H.fmt(D.xau, 1)}</span>`);
-    if (D.world) items.push(EN ? `<span>VN equiv. ${H.fmt(D.world / 1e6, 2)}M VND/tael</span>` : `<span>Quy đổi ${H.fmt(D.world / 1e6, 2)} tr/lượng</span>`);
+    if (D.world) items.push(`<span>Quy đổi ${H.fmt(D.world / 1e6, 2)} tr/lượng</span>`);
     D.rows.slice(0, 8).forEach(r => items.push(`<span>${H.esc(r.name)}: ${H.fmt(r.buy / 1e3)} – ${H.fmt(r.sell / 1e3)}${chg(r.change_sell)}</span>`));
-    if (D.gap) items.push(`<span>${EN ? 'SJC premium' : 'Chênh SJC'}: +${H.fmt(D.gap / 1e6, 2)} tr</span>`);
+    if (D.gap) items.push(`<span>Chênh SJC: +${H.fmt(D.gap / 1e6, 2)} tr</span>`);
     if (D.fx) items.push(`<span>USD/VND ${H.fmt(D.fx)}</span>`);
     if (!items.length && !D.settled) return;
     const html = items.join('') || '<span>Tạm thời chưa tải được giá – đang thử lại…</span>';
