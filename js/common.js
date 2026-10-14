@@ -39,7 +39,7 @@
     'kien-thuc.html': 'en/learn.html', 'live.html': 'en/live.html', 'quy-forex.html': 'en/trading-fund.html', 'tai-khoan-follow.html': 'en/copy-trading.html',
     'lien-he.html': 'en/contact.html', 'bai/index.html': 'en/posts/index.html' };
   /* bài tĩnh: bai/<date>-nhan-dinh-vang-<phiên>[-hhmm].html <-> en/posts/<date>-gold-plan-<session>[-hhmm].html; tin vĩ mô <-> gold-macro-news (khớp scripts/build-seo.py) */
-  const POST_SES = [['phien-au-my', 'london-ny-overlap'], ['phien-au', 'london-session'], ['phien-my', 'new-york-session'], ['phien-a', 'asian-session']];
+  const POST_SES = [['phien-au-my', 'london-ny-overlap'], ['phien-au', 'london-session'], ['phien-my', 'new-york-session'], ['phien-a', 'asian-session'], ['phien-dem', 'night-session']];
   const postEN = f => { let m = /^bai\/(\d{4}-\d\d-\d\d)-nhan-dinh-vang-(phien-[a-z-]+?)(-\d{4})?\.html$/.exec(f); if (m) { const s = POST_SES.find(x => x[0] === m[2]); return s ? `en/posts/${m[1]}-gold-plan-${s[1]}${m[3] || ''}.html` : null; }
     m = /^bai\/(\d{4}-\d\d-\d\d)-tin-vi-mo-anh-huong-gia-vang\.html$/.exec(f); return m ? `en/posts/${m[1]}-gold-macro-news.html` : null; };
   const postVI = f => { let m = /^en\/posts\/(\d{4}-\d\d-\d\d)-gold-plan-([a-z-]+?)(-\d{4})?\.html$/.exec(f); if (m) { const s = POST_SES.find(x => x[1] === m[2]); return s ? `bai/${m[1]}-nhan-dinh-vang-${s[0]}${m[3] || ''}.html` : null; }

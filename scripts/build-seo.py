@@ -33,7 +33,7 @@ LANG_PAIRS = {"index.html": "en/index.html", "chien-luoc.html": "en/h79-analysis
               "tai-khoan-follow.html": "en/copy-trading.html", "lien-he.html": "en/contact.html"}
 # Bài tiếng Anh tĩnh: en/posts/ (giữ đồng bộ với POST_SES trong js/common.js)
 OUT_EN = ROOT / "en" / "posts"
-POST_SES = {"phien-au-my": "london-ny-overlap", "phien-au": "london-session", "phien-my": "new-york-session", "phien-a": "asian-session"}
+POST_SES = {"phien-au-my": "london-ny-overlap", "phien-au": "london-session", "phien-my": "new-york-session", "phien-a": "asian-session", "phien-dem": "night-session"}
 ASSET_V = "20261014i"  # cache-busting cho css/js trong trang sinh tự động
 OLD_BASES = ["https://huymastergold79.com.vn/", "https://prot1407.github.io/huymastergold79/"]
 VN = dt.timezone(dt.timedelta(hours=7))
@@ -331,7 +331,7 @@ def fix_main_pages(arts):
 # Dữ liệu giữ giờ VN; bài EN hiển thị giờ US Eastern (tự tính DST) và chỉ dùng trường *_en (không trộn tiếng Việt).
 from zoneinfo import ZoneInfo
 NY = ZoneInfo("America/New_York")
-SES_EN = {"Phiên Á": "Asian session (Tokyo)", "Phiên Âu": "London session", "Phiên Mỹ": "New York session", "Phiên Âu – Mỹ": "London/NY overlap"}
+SES_EN = {"Phiên Á": "Asian session (Tokyo)", "Phiên Âu": "London session", "Phiên Mỹ": "New York session", "Phiên Âu – Mỹ": "London/NY overlap", "Phiên đêm": "Night session"}
 CAT_EN = {"Chiến tranh": "War & geopolitics", "Lạm phát": "Inflation", "Fed": "Fed", "FOMC": "FOMC", "Lợi suất": "Yields", "Trái phiếu": "Bonds",
           "Tương quan": "Cross-asset", "Ngân hàng TW": "Central banks", "Vàng": "Gold", "Dầu mỏ": "Oil"}
 VI_CHARS = re.compile(r"[ăâđêôơưạảấầẩẫậắằẳẵặẹẻẽếềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]", re.I)
