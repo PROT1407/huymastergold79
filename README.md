@@ -51,13 +51,18 @@ Trang tiếng Anh: `en/index.html`, `en/h79-analysis.html` (render bởi `js/en-
 
 | Trường | Ý nghĩa | Fallback khi thiếu |
 |---|---|---|
-| `title_en` | Tiêu đề, bắt đầu "H79 ANALYSIS – …" | "H79 ANALYSIS – <session> <date>" |
-| `session_en` | "Asian session" / "European session" / "US session" / "European – US session" | dịch từ `session` |
+| `title_en` | Tiêu đề kiểu trader Mỹ, ví dụ "H79 Gold Plan – Asian session, Oct 14: …" | "H79 Gold Plan – <session>, <Oct 14, 2026>" |
+| `session_en` | "Asian session (Tokyo)" / "London session" / "New York session" / "London/NY overlap" | map từ `session` (giá trị cũ cũng tự đổi) |
 | `summary.trendText_en` | "Bearish" / "Bullish" / "Sideways" | dịch từ enum `summary.trend` |
 | `summary.sell.zone_en`, `summary.buy.zone_en` | chỉ cần khi `zone` có chữ tiếng Việt, ví dụ "(chỉ khi chuyển kênh tăng)" | số trong `zone` (bỏ phần chữ trong ngoặc) |
 | `summary.sell.sl_en` / `tp_en`, `summary.buy.sl_en` / `tp_en` | chỉ khi SL/TP có chữ | số của `sl` / `tp` |
-| `summary.note_en` | ⚠️ ghi chú 1 dòng (tin, giờ VN) | ẩn |
+| `summary.note_en` | rủi ro chính 1 dòng, giờ ET, ví dụ "US CPI 8:30 AM ET (est. 3.6% y/y) – stops to breakeven before the print" (trang tự thêm "Key risk:") | ẩn |
 | `summary.priceNote_en` | "Spot XAU/USD price (converted)" hoặc "COMEX gold futures price (GC=F), not spot – spot XAU/USD is about N USD lower" | câu chung theo `summary.price` |
 | `trend_en`, `entryZones_en[]`, `sellZones_en[]`, `scenarios_en[]`, `macro_en[]`, `physicalAdvice_en`, `notes_en`, `dataTime_en`, `disclaimer_en` | phần "See more" | ẩn + link bản tiếng Việt |
 
-Quy ước tiếng Anh: số kiểu Anh (4,211 – 4,221; 3.6%), giờ luôn là giờ Việt Nam (GMT+7), ngày "14 Oct". Số trong trường tiếng Việt (4.211) tự đổi sang 4,211 khi hiển thị. Không hứa lợi nhuận; số liệu quỹ/follow mẫu phải ghi rõ là mẫu.
+Quy ước tiếng Anh (bắt buộc cho mọi trường `_en`): viết như trader Mỹ viết, không dịch từng chữ.
+- **Giờ: luôn là US Eastern (ET)**, tự tính DST (EDT = giờ VN − 11h, EST từ CN đầu tháng 11 = giờ VN − 12h), dạng "8:30 AM ET", "Oct 13, 9:30 PM ET" – **không** ghi "Vietnam time"/"GMT+7"/"19:30". Trường `date`/`time` gốc vẫn là giờ VN; trang EN tự đổi sang ET (hover hiện giờ địa phương của người đọc).
+- Ngày "Oct 14" / "Oct 14, 2026"; số kiểu Mỹ 4,211.50; khoảng giá "4,211–4,221"; tiền "$21".
+- Thuật ngữ: Bias, Sell zone / Buy zone, Long / Short, Stop, Targets, "stops to breakeven", "be flat before the print", "buy dips", "sell rallies", "daily is bearish". Không dùng "SL/TP", "giá giao ngay quy đổi", đơn vị VND/lượng.
+- Phiên: Asian session (Tokyo), London session, New York session, London/NY overlap.
+Không hứa lợi nhuận; số liệu quỹ/follow mẫu phải ghi rõ là mẫu. Ticker trang EN chỉ hiện XAU/USD, Silver, DXY (ước tính), EUR/USD, USD/JPY, BTC – không có giá vàng trong nước.

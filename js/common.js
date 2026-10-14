@@ -9,7 +9,7 @@
   H.YT_LIVE_ID = 'UC3wvszVefYJJ5S5V9t1kUtA';
   H.EMAIL = 'Huydaigia1407@gmail.com';
   H.LUONG = 37.5 / 31.1035; // 1,20565
-  H.fmt = (n, d = 0) => (n == null || isNaN(n)) ? '—' : Number(n).toLocaleString('vi-VN', { maximumFractionDigits: d, minimumFractionDigits: d });
+  H.fmt = (n, d = 0) => (n == null || isNaN(n)) ? '—' : Number(n).toLocaleString(/^en/i.test(document.documentElement.lang) ? 'en-US' : 'vi-VN', { maximumFractionDigits: d, minimumFractionDigits: d });
   H.esc = t => String(t == null ? '' : t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   H.dateVN = s => { const [y, m, d] = s.split('-'); return `${d}/${m}/${y}`; };
   H.getJSON = async u => { const r = await fetch(u, { cache: 'no-store' }); if (!r.ok) throw new Error(u + ' ' + r.status); return r.json(); };
@@ -30,7 +30,7 @@
   const langBtn = `<a class="icon-btn lang-btn" href="${langHref}" hreflang="${EN ? 'vi' : 'en'}" lang="${EN ? 'vi' : 'en'}" title="${EN ? 'Tiếng Việt' : 'English version'}" aria-label="${EN ? 'Chuyển sang tiếng Việt' : 'Switch to English'}" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:800;font-size:.8rem;flex:0 0 auto">${EN ? 'VI' : 'EN'}</a>`;
   const M_EN = [
     ['enhome', 'en/index.html', '🏠 Home'],
-    ['strat', 'en/h79-analysis.html', '🎯 H79 Analysis'],
+    ['strat', 'en/h79-analysis.html', '🎯 H79 Gold Plan'],
     ['vetoi', 'en/about.html', '🙋 About'],
     ['chart', 'bieu-do.html', '📈 Charts'],
     ['live', 'live.html', '🔴 Live (VI)']
@@ -83,7 +83,7 @@
       <div><a class="brand" href="en/index.html" style="display:flex"><img src="assets/favicon.svg" width="30" height="30" alt="">Huymaster<b>Gold79</b></a>
         <p class="muted small" style="margin-top:8px">Independent gold (XAUUSD) analysis by Ngọc Huy, Vietnam.</p>
         <div class="share"><a href="${H.YT}" target="_blank" rel="noopener">▶ YouTube</a><a class="tg-link" href="${H.TG}" target="_blank" rel="noopener">✈ Telegram</a><a href="mailto:${H.EMAIL}">✉ Email</a></div></div>
-      <div><h4>English</h4><a href="en/index.html">Home</a><a href="en/h79-analysis.html">H79 Analysis</a><a href="en/about.html">About</a></div>
+      <div><h4>English</h4><a href="en/index.html">Home</a><a href="en/h79-analysis.html">H79 Gold Plan</a><a href="en/about.html">About</a></div>
       <div><h4>Tiếng Việt</h4><a href="index.html">Trang chủ</a><a href="chien-luoc.html">Chiến lược</a><a href="ve-toi.html">Về tôi</a><a href="lien-he.html">Liên hệ</a></div>
     </div>
     <p class="disc">⚠ <b>Disclaimer:</b> All content is for information and education only and reflects personal opinion; it is <b>not investment advice</b>. Trading gold, forex and CFDs involves a high risk of loss. Past performance does not guarantee future results. Third-party data (TradingView, gold-api.com, Yahoo Finance) may be delayed or inaccurate.<br>© ${new Date().getFullYear()} HuymasterGold79</p>
@@ -153,7 +153,8 @@
       safe(H.getJSON('https://api.gold-api.com/price/XAU')), safe(H.getJSON('https://api.gold-api.com/price/XAG')), safe(H.getJSON('https://api.gold-api.com/price/BTC')),
       safe(H.getJSON('https://open.er-api.com/v6/latest/USD')), safe(H.getJSON('https://www.vang.today/api/prices'))]);
     const D = H.data;
-    if (g) D.xau = g.price; if (s) D.xag = s.price; if (b) D.btc = b.price; if (f && f.rates) D.fx = f.rates.VND;
+    if (g) D.xau = g.price; if (s) D.xag = s.price; if (b) D.btc = b.price; if (f && f.rates) { const R = f.rates; D.fx = R.VND;
+      if (R.EUR && R.JPY && R.GBP && R.CAD && R.SEK && R.CHF) { D.eur = 1 / R.EUR; D.jpy = R.JPY; D.dxy = 50.14348112 * Math.pow(R.EUR, 0.576) * Math.pow(R.JPY, 0.136) * Math.pow(R.GBP, 0.119) * Math.pow(R.CAD, 0.091) * Math.pow(R.SEK, 0.042) * Math.pow(R.CHF, 0.036); } }
     if (v && v.prices) {
       D.rows = BRANDS.filter(k => v.prices[k[0]] && v.prices[k[0]].sell).map(k => ({ ...v.prices[k[0]], name: k[1], type: k[2] }));
       D.vnSrc = 'vang.today · ' + (v.time || '') + ' ' + (v.date ? H.dateVN(v.date) : '');
@@ -175,6 +176,16 @@
   function chg(n) { if (!n) return ''; return `<small class="${n > 0 ? 'u' : 'd'}">${n > 0 ? '▲' : '▼'}${H.fmt(Math.abs(n) / 1000)}k</small>`; }
   function renderBar() {
     const D = H.data, items = [];
+    if (EN) { // EN pages: international ticker only (no domestic VN gold brands)
+      if (D.xau) items.push(`<span>XAU/USD ${H.fmt(D.xau, 2)}</span>`);
+      if (D.xag) items.push(`<span>Silver (XAG/USD) ${H.fmt(D.xag, 2)}</span>`);
+      if (D.dxy) items.push(`<span title="Computed from daily FX reference rates">DXY ~${H.fmt(D.dxy, 2)}</span>`);
+      if (D.eur) items.push(`<span>EUR/USD ${H.fmt(D.eur, 4)}</span>`);
+      if (D.jpy) items.push(`<span>USD/JPY ${H.fmt(D.jpy, 2)}</span>`);
+      if (D.btc) items.push(`<span>BTC/USD ${H.fmt(D.btc)}</span>`);
+      const h = items.join('') || '<span>Prices unavailable</span>';
+      document.getElementById('pb-track').innerHTML = h + h; return;
+    }
     if (D.xau) items.push(`<span>🌍 XAU/USD ${H.fmt(D.xau, 1)}</span>`);
     if (D.world) items.push(EN ? `<span>VN equiv. ${H.fmt(D.world / 1e6, 2)}M VND/tael</span>` : `<span>Quy đổi ${H.fmt(D.world / 1e6, 2)} tr/lượng</span>`);
     D.rows.slice(0, 8).forEach(r => items.push(`<span>${H.esc(r.name)}: ${H.fmt(r.buy / 1e3)} – ${H.fmt(r.sell / 1e3)}${chg(r.change_sell)}</span>`));
