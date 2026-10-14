@@ -1,6 +1,70 @@
 {
   "strategies": [
     {
+      "id": "2026-10-14-phien-a-0713",
+      "date": "2026-10-14",
+      "time": "07:13",
+      "session": "Phiên Á",
+      "title": "H79 NHẬN ĐỊNH – Phiên Á 14/10: kênh 15m/30m giảm, ưu tiên MUA tại BB90 dưới 4.140 – 4.154 và 4.106 – 4.121 (giá giao ngay), chờ CPI 19:30",
+      "trend": "Bộ lọc kênh H79 (MA34/MA89, giá giao ngay quy đổi ~4.163): 5m – MA34 4.161 vừa cắt lên MA89 4.161 lúc 07:05 (hai đường đi ngang, tín hiệu yếu). 15m – MA34 4.161 < MA89 4.176, cắt xuống 23:45 13/10 → kênh giảm. 30m – giá dưới MA34 4.172 < MA89 4.177 → kênh giảm. Ưu tiên MUA tại BB90 dưới khung 45m – 3H, chưa bán ở BB trên. D1 giảm (giá dưới MA34 ~4.320 và MA89 ~4.247).",
+      "trendType": "down",
+      "support": [
+        4154,
+        4140,
+        4117,
+        4106
+      ],
+      "resistance": [
+        4172,
+        4195,
+        4212,
+        4221
+      ],
+      "entryZones": [
+        "Mua 1: 4.140 – 4.154 (BB90 dưới 45m 4.154 · đáy 13/10 4.149 · pivot S1 4.140). Kích hoạt: MACD 12/26/9 cắt lên, RSI14 gần 30. Dừng lỗ 4.130; mục tiêu 4.171 – 4.172 (BB giữa 1H · pivot P) rồi 4.183 (BB giữa 45m).",
+        "Mua 2 (mạnh hơn): 4.106 – 4.121 (BB90 dưới 1H 4.121 · 3H 4.115 · 2H 4.106 · pivot S2 4.117). Dừng lỗ 4.096; mục tiêu 4.140 rồi 4.165."
+      ],
+      "sellZones": [
+        "Vô hiệu kế hoạch mua: nến 3H đóng dưới 4.106 → bỏ mua, vùng tiếp theo đáy 5 phiên 4.070.",
+        "Chỉ BÁN khi 5m/15m/30m chuyển kênh tăng (giá trên MA34, MA34 cắt lên MA89): bán 4.211 – 4.221 (BB90 trên 45m 4.212 · 2H 4.211 · 3H 4.214 · 1H 4.221 · đỉnh 3 phiên 4.221), kích hoạt MACD cắt xuống + RSI gần 70; dừng lỗ 4.232; mục tiêu 4.183 rồi 4.154."
+      ],
+      "scenarios": [
+        "BB90 (dev 2) trên / giữa / dưới: 45m 4.212 / 4.183 / 4.154 · 1H 4.221 / 4.171 / 4.121 · 2H 4.211 / 4.159 / 4.106 · 3H 4.214 / 4.165 / 4.115.",
+        "MACD 12/26/9 và RSI14: histogram âm ở cả 4 khung (45m cắt xuống 20:30 13/10, 1H 20:00 13/10); RSI 45m 44 · 1H 44 · 2H 45 · 3H 47 – nghiêng giảm, chưa quá bán, chưa có tín hiệu mua.",
+        "Pivot cổ điển (phiên 13/10): P 4.172 · R1 4.195 · R2 4.227 · S1 4.140 · S2 4.117. Vùng cũ: 13/10 4.204 / 4.149 · 12/10 4.221 / 4.157 · 3 phiên 4.221 / 4.135 · 5 phiên 4.221 / 4.070.",
+        "Tin (giờ VN): 19:30 14/10 CPI Mỹ (dự báo 0,6% m/m, 3,6% y/y; lõi 0,2% / 2,5%) – đóng lệnh hoặc dời dừng lỗ về hòa vốn trước tin. 19:30 15/10 PPI và doanh số bán lẻ.",
+        "Rủi ro: lệnh mua đi ngược xu hướng D1 giảm – khối lượng nhỏ, chốt lời nhanh, luôn đặt dừng lỗ."
+      ],
+      "physicalAdvice": "Vàng đang có xu hướng giảm dài và sâu, trong trung – dài hạn có thể về dưới mốc 100 triệu/lượng. Người mua vàng vật chất nên chờ mốc này hoặc một thời điểm thích hợp hơn.",
+      "macro": [
+        "CNBC: CPI tháng 9 Mỹ (19:30 tối nay) dự báo +0,6% m/m, 3,6% y/y; lõi +0,2% / 2,5%. CPI nóng hơn dự báo → lợi suất, USD tăng → vàng dễ giảm. https://www.cnbc.com/2026/10/13/september-consumer-price-index-inflation.html",
+        "CNBC: lợi suất Mỹ 10 năm hạ về ~5,20% từ đỉnh 24 năm khi giá năng lượng lùi – hỗ trợ nhẹ cho vàng. https://www.cnbc.com/2026/10/13/us-treasurys-bonds-yields.html",
+        "Reuters: Fed Collins (03:00 14/10) cho rằng cần tăng lãi thêm trước cuối 2026; Williams (01:21) thấy thêm một lần tăng năm nay là phù hợp – nghiêng diều hâu, đè vàng. https://www.streetinsider.com/Reuters/Feds+Collins+sees+another+rate+hike+on+the+table+before+end+of+2026/27181026.html",
+        "Reuters: tên lửa Houthi trúng tòa nhà Aramco ở Dhahran rạng sáng 14/10, Brent ~106 USD – rủi ro chiến tranh giữ cầu trú ẩn nhưng dầu cao đẩy kỳ vọng lạm phát. https://www.al-monitor.com/originals/2026/10/missile-hits-headquarters-saudi-aramco-source-says-houthi-conflict-escalates",
+        "Kitco: Kazakhstan chuyển sang bán vàng dự trữ (giảm tỷ trọng từ 78% xuống 75%) – bất lợi tâm lý cho vàng. https://www.kitco.com/news/article/2026-10-13/single-asset-portfolio-kazakhstan-plans-gold-sales-holdings-reach-78"
+      ],
+      "notes": "Các mốc là giá giao ngay XAU/USD quy đổi = COMEX GC=F (Yahoo, trễ ~10 phút) trừ khoảng 21 USD (GC 4.184,4 lúc 07:11 – giao ngay gold-api.com 4.163,5 lúc 07:21). Chênh lệch dao động nên mức có thể lệch vài giá; chart sàn của bạn là chuẩn. MA là đường trung bình đơn (SMA).",
+      "dataTime": "Dữ liệu: GC=F nến 5m/15m/60m/1D (30m, 45m, 2H, 3H, 4H ghép lại), cập nhật 07:10 ngày 14/10/2026 giờ VN (GC 4.183,9); giao ngay gold-api.com 4.163,5 lúc 07:21 VN.",
+      "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+      "summary": {
+        "trend": "down",
+        "trendText": "Giảm",
+        "sell": {
+          "zone": "4.211 – 4.221 (chỉ khi chuyển kênh tăng)",
+          "sl": "4.232",
+          "tp": "4.183 → 4.154"
+        },
+        "buy": {
+          "zone": "4.140 – 4.154",
+          "sl": "4.130",
+          "tp": "4.172 → 4.183"
+        },
+        "note": "19:30 tối nay CPI Mỹ (dự báo 3,6% y/y) – dời SL về hòa vốn hoặc đóng lệnh trước tin",
+        "price": "spot",
+        "priceNote": "Giá giao ngay XAU/USD (quy đổi)"
+      }
+    },
+    {
       "id": "2026-10-13-phien-my-2200",
       "date": "2026-10-13",
       "time": "22:00",
