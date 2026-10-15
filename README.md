@@ -21,6 +21,7 @@ Header, menu, thanh giá vàng chạy chữ, footer, nút Zalo nổi được t�
 ## Cập nhật hằng ngày
 - **Kết quả kế hoạch H79:** `data/h79-results.json` – mỗi lần cập nhật nhận định, đánh dấu kế hoạch mở trước (win nếu TP1 trước SL, loss nếu SL trước, hết phiên kèm P/L; ghi zone_filled và MFE).
 - **Kiểu bài cập nhật sau tin / xã luận ngắn (áp dụng bài mới):** một tiêu đề ngắn + tối đa ~4 gạch đầu dòng đậm (diễn biến → vì sao một dòng → kế hoạch H79); giữ link nguồn; mọi timeline/chỉ báo/vĩ mô dài để sau nút 「Xem thêm」. Không viết tường thuật dài phía trên fold. VN giữ giờ VN; EN viết độc lập (giờ ET, số kiểu Mỹ, nhãn phiên NY).
+- **Xác nhận vào lệnh BÁN (bắt buộc cho mọi kế hoạch mới):** VN: «Vào khi giá vào vùng bán và có nến 45m hoặc 1H đóng đỏ xác nhận, hoặc nến 1H đâm xuyên lên BB giữa rồi đóng lại dưới band.» EN: «Enter once price is in the zone and a 45m or 1H candle closes red, or a 1H candle pierces above the BB90 mid and closes back below it.» Cấm dùng nến 15m/30m đóng đỏ / red 15m/30m close làm điều kiện vào lệnh. Có thể nhắc 15m/30m trong phân tích kỹ thuật (MA, MACD, kênh) nhưng không phải trigger vào lệnh.
 - **Chiến lược:** thêm mục mới vào `data/strategies.json` (cấu trúc giống v1). Xoá các mục `"example": true`.
 - **Giá trong nước:** tự lấy từ vang.today; dự phòng `data/vn-prices.json`.
 - **Lịch sử chênh lệch:** `data/gap-history.json` hiện là DỮ LIỆU VÍ DỤ – thay bằng số liệu thật `{ "date", "world", "sjc" }` (VND/lượng) và đặt `"example": false`. Trình duyệt người xem cũng tự ghi lại 1 điểm/ngày.
@@ -60,7 +61,8 @@ Trang tiếng Anh (cặp VI ↔ EN): `index` ↔ `en/index.html`, `nhan-dinh-h79
 | `summary.sell.sl_en` / `tp_en`, `summary.buy.sl_en` / `tp_en` | chỉ khi SL/TP có chữ | số của `sl` / `tp` |
 | `summary.note_en` | rủi ro chính 1 dòng, giờ ET, ví dụ "US CPI 8:30 AM ET (est. 3.6% y/y) – stops to breakeven before the print" (trang tự thêm "Key risk:") | ẩn |
 | `summary.priceNote_en` | "Spot XAU/USD price (converted)" hoặc "COMEX gold futures price (GC=F), not spot – spot XAU/USD is about N USD lower" | câu chung theo `summary.price` |
-| `trend_en`, `entryZones_en[]`, `sellZones_en[]`, `scenarios_en[]`, `macro_en[]`, `physicalAdvice_en`, `notes_en`, `dataTime_en`, `disclaimer_en` | phần "See more" | ẩn + link bản tiếng Việt |
+| `trend_en`, `entryZones_en[]`, `sellZones_en[]`, `scenarios_en[]`, `macro_en[]`, `notes_en`, `dataTime_en`, `disclaimer_en` | phần "See more" | ẩn + link bản tiếng Việt |
+| `physicalAdvice` (VN only) | "🏅 Lời khuyên" trên bản VI | **không** render trên EN (không dùng `physicalAdvice_en`) |
 
 Quy ước tiếng Anh (bắt buộc cho mọi trường `_en`): viết như trader Mỹ viết, không dịch từng chữ.
 - **Giờ: luôn là US Eastern (ET)**, tự tính DST (EDT = giờ VN − 11h, EST từ CN đầu tháng 11 = giờ VN − 12h), dạng "8:30 AM ET", "Oct 13, 9:30 PM ET" – **không** ghi "Vietnam time"/"GMT+7"/"19:30". Trường `date`/`time` gốc vẫn là giờ VN; trang EN tự đổi sang ET (hover hiện giờ địa phương của người đọc).

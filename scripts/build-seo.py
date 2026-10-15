@@ -34,7 +34,7 @@ LANG_PAIRS = {"index.html": "en/index.html", "chien-luoc.html": "en/h79-analysis
 # Bài tiếng Anh tĩnh: en/posts/ (giữ đồng bộ với POST_SES trong js/common.js)
 OUT_EN = ROOT / "en" / "posts"
 POST_SES = {"phien-au-my": "london-ny-overlap", "phien-au": "london-session", "phien-my": "new-york-session", "phien-a": "asian-session", "phien-dem": "night-session"}
-ASSET_V = "20261015m"  # cache-busting cho css/js trong trang sinh tự động
+ASSET_V = "20261015n"  # cache-busting cho css/js trong trang sinh tự động
 OLD_BASES = ["https://huymastergold79.com.vn/", "https://prot1407.github.io/huymastergold79/"]
 VN = dt.timezone(dt.timedelta(hours=7))
 TODAY = dt.datetime.now(VN).date().isoformat()
@@ -490,7 +490,6 @@ def build_en(arts):
                     + card("📍 Support / resistance (USD/oz)", f'<div class="seo-lv">{lv}</div>' if lv else "")
                     + card("🟢 Long setups", ul(s.get("entryZones_en"))) + card("🔴 Short setups &amp; invalidation", ul(s.get("sellZones_en")))
                     + card("🧭 Levels, indicators &amp; scenarios", ul(s.get("scenarios_en"))) + card("🌐 Macro backdrop", ul(s.get("macro_en")))
-                    + card("🥇 Physical gold", f'<p>{e(s["physicalAdvice_en"])}</p>' if s.get("physicalAdvice_en") else "")
                     + card("ℹ Data notes", "".join(f'<p class="small muted">{e(s[k])}</p>' for k in ("dataTime_en", "notes_en", "disclaimer_en") if s.get(k))))
             if s.get("summary") and body: body = '<details class="h79more" open><summary>Full breakdown: indicators, scenarios, macro</summary>' + body + "</details>"
             wt = et_str(t, bool(s.get("time")))
