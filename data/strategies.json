@@ -1,6 +1,104 @@
 {
  "strategies": [
   {
+   "id": "2026-10-15-phien-a-0800",
+   "date": "2026-10-15",
+   "time": "08:00",
+   "session": "Phiên Á",
+   "session_en": "Asian session",
+   "headline": "Vàng 15/10: hồi sau CPI, chờ xác nhận đảo chiều",
+   "headline_en": "Gold Oct 15: post-CPI bounce, reversal not confirmed yet",
+   "title": "Vàng 15/10: hồi sau CPI, chờ xác nhận đảo chiều",
+   "title_en": "Gold Oct 15: post-CPI bounce, reversal not confirmed yet",
+   "image": "img/charts/gold-2026-10-15-plan.png",
+   "image_alt": "Biểu đồ vàng 45m 15/10 với vùng bán 4.165–4.175 và vùng mua 4.115–4.123",
+   "image_en": "img/charts/gold-2026-10-15-plan-en.png",
+   "image_alt_en": "Gold 45-minute chart Oct 15 with sell zone 4,165–4,175 and buy zone 4,115–4,123",
+   "trend": "Hồi trong xu hướng giảm, mới 5m lên kênh tăng. Vàng bật mạnh từ vùng mua 4.099–4.109 lên ~4.142 nhờ USD và lợi suất Mỹ hạ nhiệt sau phiên bán tháo vì CPI. 5m: giá trên MA34 4.114, MA34 đã cắt lên MA89 4.102. 15m/30m/45m/1H: giá trên MA34 nhưng MA34 vẫn dưới MA89 (15m 4.100/4.127 · 30m 4.116/4.152 · 45m 4.129/4.158 · 1H 4.138/4.169) – chưa xác nhận đảo chiều.",
+   "trend_en": "Bounce within a downtrend; only the 5-minute has turned up. Gold rallied from the 4,099–4,109 buy zone to about 4,142 as the dollar and Treasury yields eased after the CPI sell-off. 5m: price above MA34 4,114, MA34 crossed above MA89 4,102. 15m/30m/45m/1H: price above MA34 but MA34 still below MA89 (15m 4,100/4,127 · 30m 4,116/4,152 · 45m 4,129/4,158 · 1H 4,138/4,169) – reversal not confirmed.",
+   "trendType": "down",
+   "support": [
+    4123,
+    4118,
+    4115,
+    4110,
+    4105
+   ],
+   "resistance": [
+    4148,
+    4158,
+    4169,
+    4175,
+    4185
+   ],
+   "entryZones": [
+    "Mua 4.115 – 4.123 (Fib 38,2% sóng 4.075→4.145 ≈ 4.118 · MA34 30m 4.116 · MA34 5m 4.114). Dừng lỗ 4.105; mục tiêu 4.150 rồi 4.169."
+   ],
+   "entryZones_en": [
+    "Buy 4,115–4,123 (38.2% retracement of 4,075→4,145 ≈ 4,118 · 30m MA34 4,116 · 5m MA34 4,114). Stop 4,105; targets 4,150, then 4,169."
+   ],
+   "sellZones": [
+    "Bán 4.165 – 4.175 (MA89 + BB90 giữa 1H 4.169 · MA34 3H 4.169). Dừng lỗ 4.185; mục tiêu 4.140 rồi 4.127. Đóng nến 1H trên 4.175 thì hủy lệnh bán."
+   ],
+   "sellZones_en": [
+    "Sell 4,165–4,175 (1H MA89 and BB90 mid 4,169 · 3H MA34 4,169). Stop 4,185; targets 4,140, then 4,127. A 1H close above 4,175 cancels the short."
+   ],
+   "scenarios": [
+    "BB90 (dev 2) trên / giữa / dưới: 15m 4.188 / 4.127 / 4.067 · 30m 4.221 / 4.152 / 4.083 · 45m 4.219 / 4.158 / 4.097 · 1H 4.233 / 4.169 / 4.105.",
+    "MACD 12/26/9: 5m 9,8/7,0 · 15m 7,7/3,3 · 30m −0,1/−7,0 · 45m −5,4/−12,1 · 1H −12,2/−16,4. RSI14: 5m 80 · 15m 75 · 30m 66 · 45m 60 · 1H 57.",
+    "Đỉnh/đáy 3 ngày 4.222 / 4.075; ngày 14/10 4.173 / 4.075. Pivot ngày: P 4.111 · R1 4.148 · R2 4.210 · S1 4.049.",
+    "Nếu 15m/30m MA34 cắt lên MA89 và 1H đóng trên 4.175 → khả năng đổi xu hướng 3 ngày, chuyển sang ưu tiên mua hồi về MA34/BB giữa."
+   ],
+   "scenarios_en": [
+    "BB90 (2 SD) upper / mid / lower: 15m 4,188 / 4,127 / 4,067 · 30m 4,221 / 4,152 / 4,083 · 45m 4,219 / 4,158 / 4,097 · 1H 4,233 / 4,169 / 4,105.",
+    "MACD (12/26/9): 5m 9.8/7.0 · 15m 7.7/3.3 · 30m −0.1/−7.0 · 45m −5.4/−12.1 · 1H −12.2/−16.4. RSI(14): 5m 80 · 15m 75 · 30m 66 · 45m 60 · 1H 57.",
+    "3-day high/low 4,222 / 4,075; Oct 14 range 4,173 / 4,075. Daily pivots: P 4,111 · R1 4,148 · R2 4,210 · S1 4,049.",
+    "If 15m/30m MA34 crosses above MA89 and a 1H candle closes above 4,175, a multi-day trend change is in play – then favor buying pullbacks to MA34/BB mid."
+   ],
+   "macro": [
+    "CNBC (Reuters): vàng giảm hơn 1% ngày 14/10 sau CPI Mỹ nóng (0,6% m/m), kỳ vọng Fed tăng lãi tháng 10 tăng. https://www.cnbc.com/2026/10/14/gold-prices-hold-firm-ahead-of-us-inflation-data.html",
+    "ET Now: sáng 15/10 vàng hồi ~0,8% lên ~4.137 khi DXY giảm 0,3% về 102,2, lợi suất 10 năm giảm, Brent lùi về ~105,6. https://www.etnownews.com/markets/gold-price-today-gold-climbs-near-usd-4150-as-dollar-us-yields-weaken-silver-gains-article-156342167"
+   ],
+   "macro_en": [
+    "CNBC (Reuters): gold fell more than 1% on Oct 14 after a hot U.S. CPI (0.6% m/m) lifted Fed-hike bets. https://www.cnbc.com/2026/10/14/gold-prices-hold-firm-ahead-of-us-inflation-data.html",
+    "ET Now: gold rebounded about 0.8% to ~4,137 early Oct 15 as the dollar index slipped 0.3% to 102.2, Treasury yields eased and Brent dipped to ~$105.6. https://www.etnownews.com/markets/gold-price-today-gold-climbs-near-usd-4150-as-dollar-us-yields-weaken-silver-gains-article-156342167"
+   ],
+   "notes": "Các mốc là giá giao ngay XAU/USD = COMEX GC=F trừ 20 USD (GC 4.161,8 – giao ngay gold-api.com 4.141,8 lúc 07:50 VN).",
+   "notes_en": "Levels are spot XAU/USD = COMEX GC=F minus $20 (GC 4,161.8 vs. spot 4,141.8 from gold-api.com at 7:50 PM ET Oct 14).",
+   "dataTime": "Dữ liệu: GC=F nến 5m (ghép 15m/30m/45m/1H/2H/3H), cập nhật 07:50 ngày 15/10/2026 giờ VN.",
+   "dataTime_en": "Data: GC=F 5-minute candles (resampled to 15m/30m/45m/1H/2H/3H), as of 7:50 PM ET Oct 14, 2026.",
+   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+   "physicalAdvice": "Giá đã hồi khỏi đáy sau CPI nhưng xu hướng lớn vẫn giảm – người mua vàng vật chất nên chờ nhịp chỉnh về 4.115–4.123.",
+   "physicalAdvice_en": "Gold has bounced off the post-CPI low but the bigger trend is still down – physical buyers may wait for a dip toward 4,115–4,123.",
+   "summary": {
+    "trend": "down",
+    "trendText": "Hồi trong xu hướng giảm, mới 5m lên kênh tăng",
+    "trendText_en": "Bounce within a downtrend – only the 5m has turned up",
+    "sell": {
+     "zone": "4.165 – 4.175",
+     "sl": "4.185",
+     "tp": "4.140 → 4.127",
+     "zone_en": "4,165–4,175",
+     "sl_en": "4,185",
+     "tp_en": "4,140 → 4,127"
+    },
+    "buy": {
+     "zone": "4.115 – 4.123",
+     "sl": "4.105",
+     "tp": "4.150 → 4.169",
+     "zone_en": "4,115–4,123",
+     "sl_en": "4,105",
+     "tp_en": "4,150 → 4,169"
+    },
+    "note": "PPI + Bán lẻ Mỹ 19:30 VN, đóng trên 4.175 hủy lệnh bán",
+    "note_en": "U.S. PPI + Retail Sales at 8:30 AM ET; a close above 4,175 cancels the short",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD (quy đổi)",
+    "priceNote_en": "Levels are spot XAU/USD (converted from futures)"
+   }
+  },
+  {
    "id": "2026-10-15-phien-a-0645",
    "date": "2026-10-15",
    "time": "06:45",

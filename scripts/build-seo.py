@@ -34,7 +34,7 @@ LANG_PAIRS = {"index.html": "en/index.html", "chien-luoc.html": "en/h79-analysis
 # Bài tiếng Anh tĩnh: en/posts/ (giữ đồng bộ với POST_SES trong js/common.js)
 OUT_EN = ROOT / "en" / "posts"
 POST_SES = {"phien-au-my": "london-ny-overlap", "phien-au": "london-session", "phien-my": "new-york-session", "phien-a": "asian-session", "phien-dem": "night-session"}
-ASSET_V = "20261014j"  # cache-busting cho css/js trong trang sinh tự động
+ASSET_V = "20261015a"  # cache-busting cho css/js trong trang sinh tự động
 OLD_BASES = ["https://huymastergold79.com.vn/", "https://prot1407.github.io/huymastergold79/"]
 VN = dt.timezone(dt.timedelta(hours=7))
 TODAY = dt.datetime.now(VN).date().isoformat()
@@ -92,7 +92,7 @@ def page(a, body):
     url = BASE_URL + "bai/" + a["file"]
     ld = {"@context": "https://schema.org", "@type": "NewsArticle", "headline": a["title"][:110],
           "description": a["desc"], "datePublished": a["pub"], "dateModified": a["pub"], "inLanguage": "vi",
-          "mainEntityOfPage": url, "url": url, "image": [BASE_URL + "assets/og-image.svg"],
+          "mainEntityOfPage": url, "url": url, "image": [BASE_URL + a.get("img", "assets/og-image.svg")],
           "author": {"@type": "Person", "name": AUTHOR, "url": BASE_URL + "lien-he.html"},
           "publisher": {"@type": "Organization", "name": SITE, "url": BASE_URL,
                         "logo": {"@type": "ImageObject", "url": BASE_URL + "assets/favicon.svg"}}}
@@ -111,7 +111,7 @@ def page(a, body):
 <link rel="canonical" href="{url}">{alt_links(url, a.get("en"))}
 <meta name="theme-color" content="#0d1117">
 <meta property="og:type" content="article"><meta property="og:locale" content="vi_VN"><meta property="og:site_name" content="{SITE}">
-<meta property="og:title" content="{e(a['title'])}"><meta property="og:description" content="{e(a['desc'])}"><meta property="og:url" content="{url}"><meta property="og:image" content="{BASE_URL}assets/og-image.svg">
+<meta property="og:title" content="{e(a['title'])}"><meta property="og:description" content="{e(a['desc'])}"><meta property="og:url" content="{url}"><meta property="og:image" content="{BASE_URL}{a.get('img', 'assets/og-image.svg')}">
 <meta property="article:published_time" content="{a['pub']}"><meta property="article:author" content="{AUTHOR}"><meta property="article:section" content="{kname}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -147,6 +147,12 @@ def card(h, inner):
     return f'<section class="card"><h2>{h}</h2>{inner}</section>' if inner else ""
 
 TI = {"up": ("🔺", "Tăng"), "down": ("🔻", "Giảm"), "side": ("↔️", "Đi ngang")}
+def img_html(s, en=False):
+    src = (s.get("image_en") if en else None) or s.get("image")
+    if not src: return ""
+    alt = (s.get("image_alt_en") if en else s.get("image_alt")) or ("Gold chart" if en else "Biểu đồ vàng")
+    return f'<figure class="h79img"><a href="{e(src)}" target="_blank" rel="noopener"><img src="{e(src)}" alt="{e(alt)}" loading="lazy" width="1600" height="900"></a></figure>'
+
 def summary_html(s):
     m = s.get("summary")
     if not m: return ""
@@ -159,7 +165,7 @@ def summary_html(s):
             + z(m.get("sell"), "sell", "🔴", "BÁN") + z(m.get("buy"), "buy", "🟢", "MUA")
             + (f'<div class="n">⚠️ {e(m["note"])}</div>' if m.get("note") else "")
             + (f'<div class="p">💲 {"✅" if m.get("price") == "spot" else "⚠️"} {e(m["priceNote"])}</div>' if m.get("priceNote") else "")
-            + "</section>")
+            + "</section>" + img_html(s))
 
 def article_html(a, en=False):
     if not a or not a.get("sections"): return ""
@@ -194,6 +200,7 @@ def build_strategies():
                         desc=desc[:157].rstrip() + ("…" if len(desc) > 157 else ""),
                         pub=f"{s['date']}T{t or '00:00'}:00+07:00",
                         when=f"{s.get('session','')} · {t + ' ' if t else ''}{dvn(s['date'])[:5]}", body=body))
+        if s.get("image"): out[-1]["img"] = s["image"]
         out[-1]["en"] = en_post_file(f)
     return out
 
@@ -359,7 +366,7 @@ def en_page(a, body):
     url = BASE_URL + a["path"]; vi = BASE_URL + a["vi"] if a.get("vi") else None
     ld = {"@context": "https://schema.org", "@type": a.get("type", "NewsArticle"), "headline": a["title"][:110], "description": a["desc"],
           "datePublished": a["pub"], "dateModified": a["pub"], "inLanguage": "en", "mainEntityOfPage": url, "url": url,
-          "image": [BASE_URL + "assets/og-image.svg"], "author": {"@type": "Person", "name": AUTHOR, "url": BASE_URL + "en/about.html"},
+          "image": [BASE_URL + a.get("img", "assets/og-image.svg")], "author": {"@type": "Person", "name": AUTHOR, "url": BASE_URL + "en/about.html"},
           "publisher": {"@type": "Organization", "name": SITE, "url": BASE_URL + "en/", "logo": {"@type": "ImageObject", "url": BASE_URL + "assets/favicon.svg"}}}
     alt = (f'\n<link rel="alternate" hreflang="vi" href="{vi}">\n<link rel="alternate" hreflang="en" href="{url}">\n<link rel="alternate" hreflang="x-default" href="{vi}">' if vi else "")
     og = "website" if a.get("type") == "CollectionPage" else "article"
@@ -376,7 +383,7 @@ def en_page(a, body):
 <link rel="canonical" href="{url}">{alt}
 <meta name="theme-color" content="#0d1117">
 <meta property="og:type" content="{og}"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="{SITE}">
-<meta property="og:title" content="{e(a['title'])}"><meta property="og:description" content="{e(a['desc'])}"><meta property="og:url" content="{url}"><meta property="og:image" content="{BASE_URL}assets/og-image.svg">
+<meta property="og:title" content="{e(a['title'])}"><meta property="og:description" content="{e(a['desc'])}"><meta property="og:url" content="{url}"><meta property="og:image" content="{BASE_URL}{a.get('img', 'assets/og-image.svg')}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -420,7 +427,7 @@ def en_summary(s):
     note = re.sub(r"(?i)^key risk:\s*", "", m.get("note_en") or "")
     return (f'<section class="h79s"><div class="t {e(tk)}">Bias: {ic} {e(m.get("trendText_en") or w)}</div>' + z(m.get("sell"), "sell", "🔴", "Sell zone")
             + z(m.get("buy"), "buy", "🟢", "Buy zone") + (f'<div class="n">⚠️ Key risk: {e(note)}</div>' if note else "")
-            + (f'<div class="p">💲 {"✅" if m.get("price") == "spot" else "⚠️"} {e(pn)}</div>' if pn else "") + "</section>")
+            + (f'<div class="p">💲 {"✅" if m.get("price") == "spot" else "⚠️"} {e(pn)}</div>' if pn else "") + "</section>" + img_html(s, True))
 
 def build_en(arts):
     OUT_EN.mkdir(parents=True, exist_ok=True)
@@ -446,6 +453,7 @@ def build_en(arts):
             desc = f"H79 gold (XAU/USD) plan – {ses}, {wt}: " + (s.get("trend_en") or title)
             x = dict(path=a["en"], vi="bai/" + a["file"], date=a["date"], sort=a["sort"], kind="H79 Gold Plan", title=title,
                      desc=desc[:157].rstrip() + ("…" if len(desc) > 157 else ""), pub=t.isoformat(), when=f"{ses} · {wt}")
+            if s.get("image_en") or s.get("image"): x["img"] = s.get("image_en") or s["image"]
             x["body"] = en_head(x, "🎯 H79 Gold Plan") + article_html(s.get("article_en"), True) + en_summary(s) + article_src(s.get("article_en"), True) + body
         elif a["kind"] == "vm":
             its = sorted([i for i in macro if i.get("date") == a["date"] and i.get("title_en")], key=lambda i: i.get("priority", 9))

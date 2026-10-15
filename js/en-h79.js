@@ -26,7 +26,7 @@
     const tk = m.trend || s.trendType || 'side', t = TI[tk] || TI.side;
     const z = (o, c, ic, lb) => o && o.zone ? `<div class="z ${c}">${ic} ${lb} <b>${E(zoneTxt(o))}</b>${o.sl ? ` <span class="k">· Stop</span> ${E(num(o.sl_en || o.sl))}` : ''}${o.tp ? ` <span class="k">· Targets</span> ${E(num(o.tp_en || o.tp))}` : ''}</div>` : '';
     const pn = m.priceNote_en || (m.price === 'spot' ? 'Levels are spot XAU/USD' : m.price === 'futures' ? 'Levels are COMEX gold futures (GC=F), not spot' : '');
-    return `<div class="h79s"><div class="t ${tk}">Bias: ${t[0]} ${E(m.trendText_en || t[1])}</div>${z(m.sell, 'sell', '🔴', 'Sell zone')}${z(m.buy, 'buy', '🟢', 'Buy zone')}${m.note_en ? `<div class="n">⚠️ Key risk: ${E(m.note_en.replace(/^key risk:\s*/i, ''))}</div>` : ''}${pn ? `<div class="p">💲 ${m.price === 'spot' ? '✅' : '⚠️'} ${E(pn)}</div>` : ''}</div>`;
+    return `<div class="h79s"><div class="t ${tk}">Bias: ${t[0]} ${E(m.trendText_en || t[1])}</div>${z(m.sell, 'sell', '🔴', 'Sell zone')}${z(m.buy, 'buy', '🟢', 'Buy zone')}${m.note_en ? `<div class="n">⚠️ Key risk: ${E(m.note_en.replace(/^key risk:\s*/i, ''))}</div>` : ''}${pn ? `<div class="p">💲 ${m.price === 'spot' ? '✅' : '⚠️'} ${E(pn)}</div>` : ''}</div>${s.image ? `<figure class="h79img"><a href="${E(s.image_en || s.image)}" target="_blank" rel="noopener"><img src="${E(s.image_en || s.image)}" alt="${E(s.image_alt_en || 'Gold chart')}" loading="lazy" width="1600" height="900"></a></figure>` : ''}`;
   }
   const list = (arr, h) => arr && arr.length ? `<div class="card" style="margin:0 0 12px"><h3>${h}</h3><ul style="padding-left:18px">${arr.map(x => `<li>${E(x)}</li>`).join('')}</ul></div>` : '';
   const viLink = s => `chien-luoc.html?ngay=${encodeURIComponent(s.id || s.date)}`;

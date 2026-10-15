@@ -233,3 +233,5 @@ details.h79more>summary::before{content:"▸ "}details.h79more[open]>summary::be
 @media(max-width:560px){.hdr .wrap{gap:8px}.hdr .brand{font-size:1rem;gap:6px;min-width:0}.hdr .brand img{width:28px;height:28px}}
 .h79art{font-size:1.08rem;line-height:1.7;margin:10px 0 14px}.h79art h2{margin:0 0 10px}.h79art p{margin:0 0 10px}
 .h79src{margin:12px 0}.h79src ul{padding-left:18px}.h79src a{word-break:break-word}
+
+.h79img{margin:12px 0}.h79img img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line,#333)}
