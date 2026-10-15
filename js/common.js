@@ -199,7 +199,7 @@
       job('https://open.er-api.com/v6/latest/USD', f => { if (!f.rates) return false; const R = f.rates; D.fx = R.VND;
         if (R.EUR && R.JPY && R.GBP && R.CAD && R.SEK && R.CHF) { D.eur = 1 / R.EUR; D.jpy = R.JPY; D.dxy = 50.14348112 * Math.pow(R.EUR, 0.576) * Math.pow(R.JPY, 0.136) * Math.pow(R.GBP, 0.119) * Math.pow(R.CAD, 0.091) * Math.pow(R.SEK, 0.042) * Math.pow(R.CHF, 0.036); } }),
       EN ? null : job('https://www.vang.today/api/prices', v => { if (!v.prices) return false;
-        const rows = BRANDS.filter(k => v.prices[k[0]] && v.prices[k[0]].sell).map(k => Object.assign({}, v.prices[k[0]], { name: k[1], type: k[2] }));
+        const rows = BRANDS.filter(k => v.prices[k[0]] && v.prices[k[0]].sell).map(k => Object.assign({}, v.prices[k[0]], { code: k[0], name: k[1], type: k[2] }));
         if (!rows.length) return false; D.rows = rows; D.live_rows = true; D.rowsStale = null; D.fallback = null;
         D.vnSrc = 'vang.today · ' + (v.time || '') + ' ' + (v.date ? H.dateVN(v.date) : ''); })]);
     if (!EN && !D.rows.length) { // dự phòng: giá nhập tay trong data/vn-prices.json (giá thật, có ghi thời điểm)
