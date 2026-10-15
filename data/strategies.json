@@ -1,6 +1,187 @@
 {
  "strategies": [
   {
+   "id": "2026-10-15-phien-au-1345",
+   "date": "2026-10-15",
+   "time": "13:45",
+   "session": "Phiên Âu",
+   "session_en": "London session",
+   "headline": "Phiên Âu: 45m–4H dưới BB giữa, 15m kênh tăng = hồi – ưu tiên BÁN 4.155 – 4.168",
+   "headline_en": "London: 45m–4H below BB mid, 15m up-channel = pullback – sell 4,155–4,168",
+   "title": "H79 NHẬN ĐỊNH – Phiên Âu 15/10: xu hướng giảm còn nguyên, hồi 15m yếu dưới BB giữa – ưu tiên BÁN 4.155 – 4.168, MUA 4.097 – 4.110 (giá giao ngay)",
+   "title_en": "H79 Gold Plan – London session, Oct 15: downtrend intact, soft 15m bounce under the mid-band – sell 4,155–4,168, buy 4,097–4,110 (spot)",
+   "image": "img/charts/gold-2026-10-15-london.png",
+   "image_alt": "Biểu đồ vàng 45m phiên Âu 15/10: vùng bán 4.155–4.168, vùng mua 4.097–4.110",
+   "image_en": "img/charts/gold-2026-10-15-london-en.png",
+   "image_alt_en": "Gold 45-minute chart London Oct 15: sell zone 4,155–4,168, buy zone 4,097–4,110",
+   "trend": "Bộ lọc H79 (giá giao ngay ~4.135): 45m/1H/2H/3H/4H đều dưới BB90 giữa (4.157 / 4.166 / 4.155 / 4.162 / 4.174) → xu hướng chính giảm. 15m kênh tăng (giá 4.135 trên MA34 4.127, MA34 trên MA89 4.123, cắt lên 12:45) = hồi trong downtrend. 5m mixed: giá dưới MA34 4.142, MA34 vẫn trên MA89 4.130. 30m mixed (MA34 4.114 dưới MA89 4.146). Hồi phiên Á chạm ~4.153 rồi kéo lại 4.135 – đúng kịch bản stall dưới cụm BB giữa/MA89. Ưu tiên BÁN khi hồi lại BB giữa; MUA tại BB dưới.",
+   "trend_en": "H79 filter (spot ~4,135): 45m/1H/2H/3H/4H all trade below the BB90 mid (4,157 / 4,166 / 4,155 / 4,162 / 4,174) → primary downtrend. The 15-minute is in an up-channel (price 4,135 above MA34 4,127, MA34 above MA89 4,123, bullish cross 12:45 AM ET) = pullback inside the downtrend. 5-minute is mixed: price under MA34 4,142 while MA34 still above MA89 4,130. 30-minute mixed (MA34 4,114 below MA89 4,146). The Asian bounce tagged ~4,153 and rolled back to 4,135 – classic stall under the mid-band/MA89 cluster. Plan: sell the next bounce into the mid-band; buy only at the lower band.",
+   "trendType": "down",
+   "support": [
+    4135,
+    4125,
+    4111,
+    4102,
+    4097,
+    4079
+   ],
+   "resistance": [
+    4143,
+    4148,
+    4157,
+    4166,
+    4175
+   ],
+   "entryZones": [
+    "Mua 4.097 – 4.110 (BB90 dưới 45m 4.097 · 1H 4.102 · 2H 4.094 · 3H 4.102 · gần đáy hôm nay 4.079). Kích hoạt: MACD 12/26/9 cắt lên, RSI14 gần 30. Dừng lỗ 4.087; mục tiêu 4.140 rồi 4.156 (BB giữa 45m/2H). Hỗ trợ gần 4.135 là vùng đã khớp kế hoạch trưa – không đuổi mua tại giá."
+   ],
+   "entryZones_en": [
+    "Long 4,097–4,110 (lower BB90: 45m 4,097 · 1H 4,102 · 2H 4,094 · 3H 4,102 · near today's low 4,079). Trigger: bullish MACD (12/26/9) cross, RSI(14) near 30. Stop 4,087. Targets 4,140 then 4,156 (45m/2H BB mid). Near support at 4,135 already filled the midday buy – do not chase longs here."
+   ],
+   "sellZones": [
+    "Bán 4.155 – 4.168 (BB90 giữa 45m 4.157 · 2H 4.155 · 1H 4.166 · MA89 45m 4.156). Kích hoạt: nến 45m hoặc 30m đâm trên giữa rồi đóng đỏ dưới giữa, MACD cắt xuống, RSI gần 70. Dừng lỗ 4.178; mục tiêu 4.140 rồi 4.125. Đóng 1H trên 4.175 hủy lệnh bán / xác nhận đảo chiều."
+   ],
+   "sellZones_en": [
+    "Short 4,155–4,168 (BB90 mid: 45m 4,157 · 2H 4,155 · 1H 4,166 · 45m MA89 4,156). Trigger: 45m or 30m poke above the mid-band then a red close back below, bearish MACD cross, RSI near 70. Stop 4,178. Targets 4,140 then 4,125. A 1-hour close above 4,175 cancels the short / confirms a reversal."
+   ],
+   "scenarios": [
+    "BB90 (dev 2) trên / giữa / dưới: 45m 4.216 / 4.157 / 4.097 · 1H 4.229 / 4.166 / 4.102 · 2H 4.217 / 4.155 / 4.094 · 3H 4.221 / 4.162 / 4.102.",
+    "MACD 12/26/9: 45m hist +5,2 (cắt lên 03:30) · 1H +6,2 · 2H +3,3 · 3H −1,6. RSI14: 5m 39 · 15m 53 · 30m 56 · 45m 54 · 1H 52 – trung tính, chưa quá mua.",
+    "Pivot cổ điển (14/10): P 4.111 · R1 4.147 · R2 4.210 · S1 4.049 · S2 4.013. Phiên Á hôm nay: cao ~4.153, thấp ~4.079. Kế hoạch trưa: Bán 4.165–4.175 chưa khớp; Mua 4.135–4.143 đã khớp, MFE ~10 giá, chưa tới TP1 4.157.",
+    "Tin (giờ VN): 19:30 15/10 PPI + doanh số bán lẻ Mỹ (PPI dự báo 0,6% m/m; bán lẻ 0,3%) – đóng lệnh hoặc dời SL hòa vốn trước tin. Thứ Sáu 16/10 Chủ tịch Fed Warsh phát biểu.",
+    "Rủi ro: 15m còn kênh tăng nên hồi có thể kéo dài tới 4.166–4.175; lệnh bán đi cùng xu hướng lớn nhưng chờ xác nhận đóng đỏ dưới BB giữa."
+   ],
+   "scenarios_en": [
+    "BB90 (2 SD) upper / mid / lower: 45m 4,216 / 4,157 / 4,097 · 1H 4,229 / 4,166 / 4,102 · 2H 4,217 / 4,155 / 4,094 · 3H 4,221 / 4,162 / 4,102.",
+    "MACD (12/26/9): 45m hist +5.2 (bullish cross 4:30 PM ET Oct 14) · 1H +6.2 · 2H +3.3 · 3H −1.6. RSI(14): 5m 39 · 15m 53 · 30m 56 · 45m 54 · 1H 52 – neutral, not overbought.",
+    "Classic pivots (Oct 14): P 4,111 · R1 4,147 · R2 4,210 · S1 4,049 · S2 4,013. Asian range today: high ~4,153, low ~4,079. Midday plan: sell 4,165–4,175 not filled; buy 4,135–4,143 filled, MFE ~10 points, short of TP1 4,157.",
+    "Calendar: U.S. PPI + Retail Sales Thu Oct 15, 8:30 AM ET (PPI est. +0.6% m/m; retail +0.3%) – be flat or stops to breakeven before the print. Fed Chair Warsh speaks Fri Oct 16.",
+    "Risk: the 15m up-channel can extend the bounce toward 4,166–4,175; shorts align with the higher-timeframe downtrend but wait for a red close back below the mid-band."
+   ],
+   "physicalAdvice": "Vàng đang có xu hướng giảm dài và sâu, trong trung – dài hạn có thể về dưới mốc 100 triệu/lượng. Người mua vàng vật chất nên chờ mốc này hoặc một thời điểm thích hợp hơn.",
+   "physicalAdvice_en": "Bigger picture, gold is in a long, deep downtrend and could go meaningfully lower over the medium to long term. Physical buyers may want to be patient and wait for a better entry.",
+   "macro": [
+    "Octa: vàng hồi trên 4.150 khi lợi suất Mỹ và USD lùi từ đỉnh sau CPI; rủi ro năng lượng và Hormuz vẫn giữ kỳ vọng Fed tăng lãi – tập trung vào PPI hôm nay. https://www.octabroker.com/markets/news/view/1274827/",
+    "Moneycontrol: dầu giảm (Brent ~104,7; WTI ~94,1); DXY ~102,1 (−0,1%) lùi từ đỉnh 18 tháng; vàng +1% từ đáy 1 tuần nhờ USD yếu. https://www.moneycontrol.com/news/business/markets/commodity-corner-oil-slips-on-supply-outlook-gold-rebounds-over-1-as-dollar-eases-14052447.html",
+    "ForexFactory: 19:30 VN hôm nay PPI + Bán lẻ Mỹ (High) – tin đỏ phiên Mỹ. https://www.forexfactory.com/calendar"
+   ],
+   "macro_en": [
+    "Octa: gold rallies back above 4,150 as U.S. yields and the dollar retreat from post-CPI highs; energy/Hormuz risks keep Fed hike bets alive – focus on today's PPI. https://www.octabroker.com/markets/news/view/1274827/",
+    "Moneycontrol: oil slips (Brent ~$104.7; WTI ~$94.1); DXY ~102.1 (−0.1%) off an 18-month high; gold +1% from a one-week low on a softer dollar. https://www.moneycontrol.com/news/business/markets/commodity-corner-oil-slips-on-supply-outlook-gold-rebounds-over-1-as-dollar-eases-14052447.html",
+    "ForexFactory: U.S. PPI + Retail Sales 8:30 AM ET today (High impact) – the red-folder risk for the New York open. https://www.forexfactory.com/calendar"
+   ],
+   "market_picture": {
+    "text": "Khẩu vị rủi ro vẫn thận trọng sau đợt bán chip châu Á; USD và lợi suất lùi nhẹ từ đỉnh sau CPI (DXY ~102,2; US10Y ~5,19%), giúp vàng giữ trên 4.130 nhưng chưa đảo chiều. Brent ~104,5 (−1,3%) khi thị trường cân cung Hormuz với tín hiệu nới trừng phạt tàu. PPI + bán lẻ 19:30 VN là phép thử cho nhịp hồi – nóng sẽ ép vàng xuống lại BB dưới.",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "~102,2 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "5,19% ↓",
+      "dir": "down"
+     },
+     {
+      "k": "Brent",
+      "v": "104,5 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "Rủi ro",
+      "v": "Thận trọng",
+      "dir": "flat"
+     }
+    ],
+    "sources": [
+     {
+      "name": "Octa",
+      "url": "https://www.octabroker.com/markets/news/view/1274827/"
+     },
+     {
+      "name": "Moneycontrol",
+      "url": "https://www.moneycontrol.com/news/business/markets/commodity-corner-oil-slips-on-supply-outlook-gold-rebounds-over-1-as-dollar-eases-14052447.html"
+     },
+     {
+      "name": "ForexFactory",
+      "url": "https://www.forexfactory.com/calendar"
+     }
+    ]
+   },
+   "market_picture_en": {
+    "text": "Risk appetite stays cautious after the Asia chip rout; the dollar and yields eased off post-CPI highs (DXY ~102.2; US10Y ~5.19%), letting gold hold above 4,130 without confirming a reversal. Brent ~$104.5 (−1.3%) as markets weigh Hormuz supply risk against signals of tanker-sanctions relief. PPI + retail sales at 8:30 AM ET is the test for this bounce – a hot print would push gold back toward the lower band.",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "~102.2 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "5.19% ↓",
+      "dir": "down"
+     },
+     {
+      "k": "Brent",
+      "v": "104.5 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "Risk",
+      "v": "Cautious",
+      "dir": "flat"
+     }
+    ],
+    "sources": [
+     {
+      "name": "Octa",
+      "url": "https://www.octabroker.com/markets/news/view/1274827/"
+     },
+     {
+      "name": "Moneycontrol",
+      "url": "https://www.moneycontrol.com/news/business/markets/commodity-corner-oil-slips-on-supply-outlook-gold-rebounds-over-1-as-dollar-eases-14052447.html"
+     },
+     {
+      "name": "ForexFactory",
+      "url": "https://www.forexfactory.com/calendar"
+     }
+    ]
+   },
+   "notes": "Các mốc là giá giao ngay XAU/USD quy đổi = COMEX GC=F (Yahoo) trừ ~20,2 USD (GC 4.155,4 – giao ngay gold-api.com 4.135,2 lúc 13:40–13:52 VN). Chênh lệch dao động nên mức có thể lệch vài giá; chart sàn của bạn là chuẩn. MA là đường trung bình đơn (SMA).",
+   "notes_en": "Levels are spot XAU/USD derived from COMEX GC=F (Yahoo) minus about $20.20 (GC 4,155.4 vs. spot 4,135.2 from gold-api.com at 2:40–2:52 AM ET). The basis moves around, so levels may be off by a few dollars – go by your broker's chart. MAs are simple (SMA).",
+   "dataTime": "Dữ liệu: GC=F nến 5m/15m/60m/1D (30m, 45m, 2H, 3H, 4H ghép lại), cập nhật 13:40 ngày 15/10/2026 giờ VN (GC 4.155,4); giao ngay gold-api.com 4.135,2 lúc 13:52 VN.",
+   "dataTime_en": "Data: GC=F 5m/15m/60m/daily candles (30m, 45m, 2H, 3H, 4H resampled), as of 2:40 AM ET Oct 15, 2026 (GC 4,155.4); spot 4,135.2 (gold-api.com) at 2:52 AM ET.",
+   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+   "summary": {
+    "trend": "down",
+    "trendText": "Hồi yếu trong xu hướng giảm",
+    "trendText_en": "Soft bounce in a downtrend",
+    "sell": {
+     "zone": "4.155 – 4.168",
+     "sl": "4.178",
+     "tp": "4.140 → 4.125",
+     "zone_en": "4,155–4,168",
+     "sl_en": "4,178",
+     "tp_en": "TP1 4,140 → TP2 4,125"
+    },
+    "buy": {
+     "zone": "4.097 – 4.110",
+     "sl": "4.087",
+     "tp": "4.140 → 4.156",
+     "zone_en": "4,097–4,110",
+     "sl_en": "4,087",
+     "tp_en": "TP1 4,140 → TP2 4,156"
+    },
+    "note": "PPI + Bán lẻ Mỹ 19:30 VN – đóng lệnh hoặc dời SL hòa vốn trước tin",
+    "note_en": "U.S. PPI + Retail Sales at 8:30 AM ET – close or move stops to breakeven before the release",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD (quy đổi)",
+    "priceNote_en": "Levels are spot XAU/USD (converted from futures)"
+   }
+  },
+  {
    "id": "2026-10-15-phien-a-1005",
    "date": "2026-10-15",
    "time": "10:05",

@@ -19,6 +19,7 @@ Website tĩnh, không cần build. Kéo thả cả thư mục (hoặc file zip) 
 Header, menu, thanh giá vàng chạy chữ, footer, nút Zalo nổi được tạo bởi `js/common.js` (sửa menu ở mảng `M`). Các chức năng nằm trong `js/app.js`. Giao diện sáng/tối: nút 🌓.
 
 ## Cập nhật hằng ngày
+- **Kết quả kế hoạch H79:** `data/h79-results.json` – mỗi lần cập nhật nhận định, đánh dấu kế hoạch mở trước (win nếu TP1 trước SL, loss nếu SL trước, hết phiên kèm P/L; ghi zone_filled và MFE).
 - **Chiến lược:** thêm mục mới vào `data/strategies.json` (cấu trúc giống v1). Xoá các mục `"example": true`.
 - **Giá trong nước:** tự lấy từ vang.today; dự phòng `data/vn-prices.json`.
 - **Lịch sử chênh lệch:** `data/gap-history.json` hiện là DỮ LIỆU VÍ DỤ – thay bằng số liệu thật `{ "date", "world", "sjc" }` (VND/lượng) và đặt `"example": false`. Trình duyệt người xem cũng tự ghi lại 1 điểm/ngày.

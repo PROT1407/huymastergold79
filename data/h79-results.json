@@ -1,0 +1,70 @@
+{
+  "_note": "Nhật ký kết quả kế hoạch H79. Win = TP1 trước SL; loss = SL trước; hết phiên = P/L tại lúc đánh giá. MFE tính bằng giá ($1/oz).",
+  "plans": [
+    {
+      "id": "2026-10-15-phien-a-0645",
+      "date": "2026-10-15",
+      "session": "Phiên Á",
+      "evaluated_at_vn": "13:45 15/10/2026",
+      "price_ref": "spot",
+      "sell": {
+        "zone": "4.113 – 4.123",
+        "zone_filled": true,
+        "result": "loss",
+        "mfe": 8.7,
+        "shortfall_to_tp1": 0.3,
+        "note": "Khớp bán khi hồi; MFE ~9 giá (gần TP1 thiếu ~0–1 giá) rồi breakout ngược chạm SL 4.133"
+      },
+      "buy": {
+        "zone": "4.099 – 4.109",
+        "zone_filled": true,
+        "result": "win",
+        "mfe": 48.6,
+        "note": "Khớp mua; TP1 4.119 chạm trước SL – thắng"
+      }
+    },
+    {
+      "id": "2026-10-15-phien-a-0800",
+      "date": "2026-10-15",
+      "session": "Phiên Á",
+      "evaluated_at_vn": "13:45 15/10/2026",
+      "price_ref": "spot",
+      "sell": {
+        "zone": "4.165 – 4.175",
+        "zone_filled": false,
+        "result": "chưa khớp",
+        "mfe": null,
+        "note": "Cao sau kế hoạch ~4.153 – chưa chạm"
+      },
+      "buy": {
+        "zone": "4.115 – 4.123",
+        "zone_filled": false,
+        "result": "chưa khớp",
+        "mfe": null,
+        "note": "Thấp sau kế hoạch ~4.133 – chưa chạm vùng mua"
+      }
+    },
+    {
+      "id": "2026-10-15-phien-a-1005",
+      "date": "2026-10-15",
+      "session": "Phiên Á (trưa)",
+      "evaluated_at_vn": "13:45 15/10/2026",
+      "price_ref": "spot",
+      "sell": {
+        "zone": "4.165 – 4.175",
+        "zone_filled": false,
+        "result": "chưa khớp",
+        "mfe": null,
+        "note": "Sau công bố cao nhất ~4.149 – chưa chạm vùng bán"
+      },
+      "buy": {
+        "zone": "4.135 – 4.143",
+        "zone_filled": true,
+        "result": "hết phiên",
+        "mfe": 9.7,
+        "shortfall_to_tp1": 8.3,
+        "note": "Khớp vùng mua; đạt ~10/18 tới TP1 4.157 (thiếu ~8 giá); đang quanh 4.135"
+      }
+    }
+  ]
+}
