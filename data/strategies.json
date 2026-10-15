@@ -1,6 +1,114 @@
 {
  "strategies": [
   {
+   "id": "2026-10-15-phien-au-1640",
+   "date": "2026-10-15",
+   "time": "16:40",
+   "session": "Phiên Âu",
+   "session_en": "London session",
+   "url": "bai/2026-10-15-nhan-dinh-vang-phien-au-1640.html",
+   "url_en": "en/posts/2026-10-15-gold-plan-london-session-1640.html",
+   "headline": "Vàng 16:40 ngày 15/10: thế giới lên 4.159, SJC vẫn đứng 143,3 triệu",
+   "title": "Vàng 16:40 ngày 15/10: thế giới lên 4.159, SJC vẫn đứng 143,3 triệu",
+   "headline_en": "Gold, Oct 15 London: spot at $4,159, up about $54 as the dollar and yields slide",
+   "title_en": "Gold, Oct 15 London: spot at $4,159, up about $54 as the dollar and yields slide",
+   "trendType": "up",
+   "trend": "Vàng thế giới tăng ~1,3% trong ngày nhờ USD và lợi suất Mỹ giảm; vàng miếng SJC chưa đổi giá, 140,3 – 143,3 triệu đồng/lượng.",
+   "trend_en": "Spot gold is up about 1.3% on the day as the dollar and Treasury yields fall.",
+   "physicalAdvice": "Giá SJC chưa theo kịp nhịp tăng thế giới và vẫn cao hơn quy đổi ~13,5 triệu/lượng. Ai cần mua thì chia nhỏ, không mua dồn trước tin PPI tối nay; đang giữ vàng thì chưa cần bán vội ở giá mua vào 140,3 triệu.",
+   "summary": {
+    "trend": "up",
+    "trendText": "Thế giới tăng, trong nước đứng giá",
+    "note": "19:30 tối nay Mỹ ra PPI và bán lẻ – giá có thể đảo chiều mạnh.",
+    "priceNote": "Giao ngay gold-api.com 4.159,1 USD/oz lúc 16:39",
+    "price": "spot"
+   },
+   "article": {
+    "sections": [
+     {
+      "h": "Vàng trong nước",
+      "p": "Lúc 16:40, PNJ niêm yết vàng miếng SJC 140,3 triệu mua vào – 143,3 triệu bán ra mỗi lượng (SJC chính thức tạm không truy cập được nên dùng bảng giá PNJ). So với sáng nay: 0 / 0 đồng. So với chốt phiên hôm qua 14/10: 0 / 0 đồng; so với sáng hôm qua (141,3 – 144,3 triệu): −1.000.000 / −1.000.000 đồng."
+     },
+     {
+      "h": "Biên độ trong ngày",
+      "p": "Từ sáng tới giờ giá SJC chỉ có một mức 140,3 – 143,3 triệu, chưa điều chỉnh lần nào. Chênh mua – bán 3 triệu đồng/lượng."
+     },
+     {
+      "h": "So với thế giới",
+      "p": "Giao ngay 4.159,1 USD/oz (gold-api.com, 16:39) × tỷ giá 25.890 đồng/USD (open.er-api) × 1,20565 ≈ 129,8 triệu đồng/lượng. Giá bán SJC cao hơn ≈ 13,5 triệu đồng/lượng (sáng nay ≈ 14,1 triệu). Chênh hẹp lại vì thế giới tăng còn SJC đứng yên."
+     },
+     {
+      "h": "Vàng thế giới hôm nay",
+      "p": "Giao ngay 4.159 USD/oz, tăng ~54 USD (+1,3%) so với chốt phiên trước 4.105 (CNBC). Mở cửa 4.144,6, thấp nhất 4.131,9, cao nhất 4.161,1."
+     },
+     {
+      "h": "Vì sao vàng tăng",
+      "p": "1) USD hạ nhiệt: DXY 101,96 (−0,58%) sau đỉnh 18 tháng hôm qua (CNBC). 2) Lợi suất trái phiếu Mỹ 10 năm giảm còn 5,08% (−11 điểm cơ bản, CNBC) – giữ vàng đỡ thiệt hơn. 3) Fed: Daly nói chưa cần tăng lãi ở cuộc họp 27–28/10, Bowman muốn chờ thêm; xác suất tăng lãi tháng 10 khoảng 32% (FedWatch, theo Reuters/CNBC)."
+     }
+    ],
+    "sources": [
+     {
+      "name": "PNJ – Bảng giá vàng",
+      "url": "https://giavang.pnj.com.vn/"
+     },
+     {
+      "name": "CNBC – Gold rebounds from one-week low as dollar slips",
+      "url": "https://www.cnbc.com/2026/10/15/gold-rebounds-from-one-week-low-as-dollar-slips.html"
+     },
+     {
+      "name": "CNBC – Dollar falls from 18-month high despite hot CPI",
+      "url": "https://www.cnbc.com/2026/10/15/dollar-falls-from-18-month-high-despite-hot-cpi-as-fed-curb-hike-bets.html"
+     },
+     {
+      "name": "CNBC – U.S. Treasury yields: investors await more economic data",
+      "url": "https://www.cnbc.com/2026/10/15/us-treasury-yields-investors-economic-data-.html"
+     },
+     {
+      "name": "CNBC – Gold spot (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     },
+     {
+      "name": "gold-api.com – XAU",
+      "url": "https://gold-api.com/"
+     }
+    ]
+   },
+   "article_en": {
+    "sections": [
+     {
+      "h": "Where gold is",
+      "p": "As of 5:39 AM ET, spot gold is $4,159.10/oz (gold-api.com), up about $54 (+1.3%) from the prior close of $4,105 (CNBC). Today's range so far: $4,131.92–$4,161.12, after opening at $4,144.60."
+     },
+     {
+      "h": "Why it is rising",
+      "p": "1) The dollar is cooling: DXY 101.96 (−0.58%) after an 18-month high yesterday (CNBC). 2) The U.S. 10-year yield is down to 5.08% (−11 bps, CNBC), lowering the cost of holding gold. 3) Fed: Daly said no hike is needed at the Oct. 27–28 meeting and Bowman wants to wait; odds of an October hike are about 32% (CME FedWatch, via Reuters/CNBC)."
+     },
+     {
+      "h": "What to watch",
+      "p": "U.S. PPI and retail sales at 8:30 AM ET. A hot print can lift the dollar and yields and pull gold back fast. Keep size small into the release."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Gold rebounds from one-week low as dollar slips",
+      "url": "https://www.cnbc.com/2026/10/15/gold-rebounds-from-one-week-low-as-dollar-slips.html"
+     },
+     {
+      "name": "CNBC – Dollar falls from 18-month high despite hot CPI",
+      "url": "https://www.cnbc.com/2026/10/15/dollar-falls-from-18-month-high-despite-hot-cpi-as-fed-curb-hike-bets.html"
+     },
+     {
+      "name": "CNBC – U.S. Treasury yields: investors await more economic data",
+      "url": "https://www.cnbc.com/2026/10/15/us-treasury-yields-investors-economic-data-.html"
+     },
+     {
+      "name": "gold-api.com – XAU",
+      "url": "https://gold-api.com/"
+     }
+    ]
+   }
+  },
+  {
    "id": "2026-10-15-phien-au-1547",
    "date": "2026-10-15",
    "time": "15:47",
