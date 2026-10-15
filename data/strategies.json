@@ -1,6 +1,360 @@
 {
  "strategies": [
   {
+   "id": "2026-10-15-phien-au-1747",
+   "date": "2026-10-15",
+   "time": "17:47",
+   "session": "Phiên Âu",
+   "session_en": "London session",
+   "url": "bai/2026-10-15-nhan-dinh-vang-phien-au-1747.html",
+   "url_en": "en/posts/2026-10-15-gold-plan-london-session-1747.html",
+   "headline": "Vàng 15/10: hồi hết cú rơi sau CPI, hai lần khựng ở 4.160 chờ PPI",
+   "headline_en": "Gold Erases Its Post-CPI Drop but Stalls Twice at 4,160 Ahead of PPI",
+   "title": "Vàng 15/10: hồi hết cú rơi sau CPI, hai lần khựng ở 4.160 chờ PPI",
+   "title_en": "Gold Erases Its Post-CPI Drop but Stalls Twice at 4,160 Ahead of PPI",
+   "image": "img/charts/gold-2026-10-15-xa-luan-1747.png",
+   "image_alt": "Biểu đồ vàng 45m 15/10: hồi hai lần chững ở 4.160, vùng bán 4.160–4.170, vùng mua 4.091–4.101",
+   "image_en": "img/charts/gold-2026-10-15-xa-luan-1747-en.png",
+   "image_alt_en": "Gold 45-minute chart Oct 15: rebound stalls twice at 4,160; sell zone 4,160–4,170, buy zone 4,091–4,101",
+   "trend": "Xu hướng chính vẫn giảm: 1H/3H/4H dưới BB90 giữa (4.160 / 4.159 / 4.171), 2H sát giữa 4.154. Vàng hồi hết cú rơi sau CPI (4.074 → 4.161) nhờ USD và lợi suất giảm, nhưng hai lần khựng ở 4.160–4.161 (đỉnh Á 10:00, đỉnh Âu 16:35). 15m kênh tăng = nhịp hồi; 45m vừa nhích trên BB giữa 4.151, MACD 45m yếu dần. Giá ~4.154 lúc 17:50.",
+   "trend_en": "Primary trend still down: the 1H/3H/4H trade below their BB90 mid (4,160 / 4,159 / 4,171), with the 2H right at its mid (4,154). Gold has erased the post-CPI drop (4,074 → 4,161) on a softer dollar and lower yields, but stalled twice at 4,160–4,161 (Asian high 11:00 PM ET, London high 5:35 AM ET). The 15m up-channel is a pullback; the 45m has just edged above its 4,151 mid and its MACD is fading. Spot ~4,154 at 6:50 AM ET.",
+   "trendType": "down",
+   "support": [
+    4154,
+    4151,
+    4141,
+    4136,
+    4114,
+    4101,
+    4091
+   ],
+   "resistance": [
+    4160,
+    4161,
+    4171,
+    4180,
+    4202
+   ],
+   "sellZones": [
+    "Bán 4.160 – 4.170 (BB90 giữa 1H 4.160 · 3H 4.159 · MA89 1H 4.159 · đỉnh Á 4.161 / đỉnh Âu 4.160 · BB90 giữa 4H 4.171 = Fib 78,6% 4.171). Kích hoạt: nến 45m/30m đóng đỏ lại dưới 4.160, MACD 45m cắt xuống. Dừng lỗ 4.180 (trên vùng 10 giá ≈ ATR 45m). TP1 4.153 (≈82% quãng đường tới BB90 giữa 45m 4.151), TP2 4.141 (BB90 giữa / MA89 30m). Nến 1H đóng trên 4.171 thì hủy lệnh bán."
+   ],
+   "sellZones_en": [
+    "Short 4,160–4,170 (BB90 mid: 1H 4,160 · 3H 4,159 · 1H MA89 4,159 · Asian high 4,161 / London high 4,160 · 4H BB90 mid 4,171 = 78.6% Fib 4,171). Trigger: red 45m/30m close back below 4,160 with a bearish 45m MACD cross. SL 4,180 (10 above the zone ≈ 45m ATR). TP1 4,153 (≈82% of the way to the 45m BB90 mid 4,151), TP2 4,141 (30m BB90 mid / MA89). A 1H close above 4,171 cancels the short."
+   ],
+   "entryZones": [
+    "Mua 4.091 – 4.101 (BB90 dưới 45m 4.091 · 2H 4.092 · 1H 4.099 · đáy Á 4.100). Chỉ vào sau tin, khi MACD 45m cắt lên và RSI14 gần 30. Dừng lỗ 4.081 (trên đáy 14/10 4.074). TP1 4.141 (≈82% quãng đường tới BB90 giữa 45m 4.151), TP2 4.154 (BB90 giữa 2H)."
+   ],
+   "entryZones_en": [
+    "Long 4,091–4,101 (lower BB90: 45m 4,091 · 2H 4,092 · 1H 4,099 · Asian low 4,100). Only after the data, on a bullish 45m MACD cross with RSI(14) near 30. SL 4,081 (above the Oct 14 low of 4,074). TP1 4,141 (≈82% of the way to the 45m BB90 mid 4,151), TP2 4,154 (2H BB90 mid)."
+   ],
+   "scenarios": [
+    "Diễn biến giao ngay: 19:25 (14/10) 4.153,7 · 19:45 4.087 · 23:05 đáy 4.074,1 · 04:00 đóng 4.105,2 · 05:00 mở Á 4.104 · 06:05 đáy Á 4.099,9 · 10:00 đỉnh Á 4.161,1 · 13:55 đóng Á 4.135,7 · 14:00 mở Âu 4.136 · 16:35 đỉnh Âu 4.160,2 · 17:50 ~4.154.",
+    "BB90 (dev 2) trên / giữa / dưới: 45m 4.211 / 4.151 / 4.091 · 1H 4.220 / 4.160 / 4.099 · 2H 4.215 / 4.154 / 4.092 · 3H 4.214 / 4.159 / 4.104 · 4H 4.262 / 4.171 / 4.081.",
+    "MA34 / MA89: 5m 4.155 / 4.148 · 15m 4.147 / 4.121 · 30m 4.130 / 4.141 · 45m 4.122 / 4.151 · 1H 4.129 / 4.159 · 2H 4.151 / 4.154 · 3H 4.164 / 4.159 · 4H 4.160 / 4.170.",
+    "MACD 12/26/9 histogram / RSI14: 45m +2,4 / 61 · 1H +5,1 / 60 · 2H +6,0 / 54 · 3H +1,7 / 51 · 4H −1,6 / 50 – chưa quá mua, chưa có cắt xuống.",
+    "Pivot cổ điển (phiên 14/10: cao 4.162,4 · thấp 4.074,1 · đóng 4.105,2): P 4.114 · R1 4.154 · R2 4.202 · S1 4.065 · S2 4.026.",
+    "Liên thị trường 05:00 → 17:58: DXY 102,53 → 102,06 (đáy 101,88 lúc 09:55); US10Y 5,19% → 5,085%; Brent 106,0 → 104,6 (đáy 103,4 lúc 15:20).",
+    "PPI nóng → vàng về 4.141 rồi 4.136 (Fib 50%), sâu hơn 4.114 (pivot P) và vùng mua 4.091–4.101. PPI mềm → thử 4.160–4.171; nến 1H đóng trên 4.171 mở đường lên 4.197–4.202 (đỉnh 13/10 · R2).",
+    "Quy tắc tin đỏ: không vào lệnh 19:00–19:45; sau tin chỉ bán khi 30m/45m đóng đỏ dưới BB giữa; nếu vàng đóng trên BB giữa thì đứng ngoài phiên."
+   ],
+   "scenarios_en": [
+    "Spot path: 8:25 AM ET Oct 14 4,153.70 · 8:45 AM 4,087 · 12:05 PM low 4,074.10 · 5:00 PM settle 4,105.20 · 6:00 PM Asian open 4,104 · 7:05 PM Asian low 4,099.90 · 11:00 PM Asian high 4,161.10 · 2:55 AM Asian close 4,135.70 · 3:00 AM London open 4,136 · 5:35 AM London high 4,160.20 · 6:50 AM ~4,154.",
+    "BB90 (2 SD) upper / mid / lower: 45m 4,211 / 4,151 / 4,091 · 1H 4,220 / 4,160 / 4,099 · 2H 4,215 / 4,154 / 4,092 · 3H 4,214 / 4,159 / 4,104 · 4H 4,262 / 4,171 / 4,081.",
+    "MA34 / MA89: 5m 4,155 / 4,148 · 15m 4,147 / 4,121 · 30m 4,130 / 4,141 · 45m 4,122 / 4,151 · 1H 4,129 / 4,159 · 2H 4,151 / 4,154 · 3H 4,164 / 4,159 · 4H 4,160 / 4,170.",
+    "MACD (12/26/9) histogram / RSI(14): 45m +2.4 / 61 · 1H +5.1 / 60 · 2H +6.0 / 54 · 3H +1.7 / 51 · 4H −1.6 / 50 – not overbought, no bearish cross yet.",
+    "Classic pivots (Oct 14 session: high 4,162.40 · low 4,074.10 · close 4,105.20): P 4,114 · R1 4,154 · R2 4,202 · S1 4,065 · S2 4,026.",
+    "Cross-asset, 6:00 PM ET → 6:58 AM ET: DXY 102.53 → 102.06 (low 101.88 at 10:55 PM ET); US10Y 5.19% → 5.085%; Brent 106.0 → 104.60 (low 103.40 at 4:20 AM ET).",
+    "Hot PPI → back to 4,141, then 4,136 (50% Fib), deeper 4,114 (pivot P) and the 4,091–4,101 buy zone. Soft PPI → test of 4,160–4,171; a 1H close above 4,171 opens 4,197–4,202 (Oct 13 high · R2).",
+    "Red-news rule: no new trades 8:00–8:45 AM ET; after the data, short only on a red 30m/45m close below the BB mid; if gold closes above the mid, sit the session out."
+   ],
+   "macro": [
+    "CNBC (Reuters): vàng tăng hơn 1% nhờ USD và lợi suất yếu; FedWatch ~29% khả năng tăng lãi tháng 10 (22% trước CPI); Saxo: kỹ thuật vẫn mong manh. https://www.cnbc.com/2026/10/15/gold-rebounds-from-one-week-low-as-dollar-slips.html",
+    "CNBC (Reuters): USD rời đỉnh 18 tháng, DXY ~102,03; lợi suất 10 năm 5,089% – thấp nhất 3 tuần; Daly, Bowman hạ kỳ vọng tăng lãi tháng 10; Warsh phát biểu thứ Sáu. https://www.cnbc.com/2026/10/15/dollar-pulls-back-from-18-month-high-as-treasury-yields-fall-fed-hike-bets-ease.html",
+    "CNBC Daily Open: tàu GFS Pride (Singapore) bị đánh chìm ở Hormuz, Iran dọa tấn công tàu chiến Mỹ; CPI tháng 9 tăng 3,7% y/y. https://www.cnbc.com/2026/10/15/cnbc-daily-hormuz-iran-starlink-tsmc.html",
+    "Reuters (Investing.com): dầu giảm ~2% khi Mỹ tính nới trừng phạt tàu chở dầu 'đội tàu bóng tối'; Brent ~103,8. https://www.investing.com/news/commodities-news/oil-prices-fall-as-investors-weigh-supply-outlook-middle-east-tensions-4950372",
+    "Reuters (Yahoo Finance): Daly – Fed nhiều khả năng còn phải tăng lãi nhưng không cần vội ở cuộc họp 27–28/10. https://finance.yahoo.com/economy/policy/articles/exclusive-feds-daly-says-rate-001531165.html",
+    "Dow Jones (Morningstar): lợi suất 10 năm Mỹ và Bund Đức xuống thấp nhất nhiều tuần khi cú sốc CPI lắng xuống, dầu giảm. https://www.morningstar.com/news/dow-jones/202610151913/treasury-eurozone-bond-yields-fall-to-multiweek-lows-as-us-inflation-shock-fades-update",
+    "ForexFactory: 19:30 PPI, PPI lõi, bán lẻ, bán lẻ lõi (tin đỏ); 10:30 16/10 Chủ tịch Fed Warsh phát biểu (tin đỏ). https://www.forexfactory.com/calendar"
+   ],
+   "macro_en": [
+    "CNBC (Reuters): gold climbs over 1% on a softer dollar and yields; FedWatch ~29% odds of an October hike (22% before CPI); Saxo calls the technical outlook fragile. https://www.cnbc.com/2026/10/15/gold-rebounds-from-one-week-low-as-dollar-slips.html",
+    "CNBC (Reuters): the dollar pulls back from an 18-month high, DXY ~102.03; 10-year yield 5.089%, a three-week low; Daly and Bowman temper October hike bets; Warsh speaks Friday in Bangkok. https://www.cnbc.com/2026/10/15/dollar-pulls-back-from-18-month-high-as-treasury-yields-fall-fed-hike-bets-ease.html",
+    "CNBC Daily Open: Singapore's GFS Pride sunk in the Strait of Hormuz, Iran threatens U.S. warships; September CPI +3.7% y/y. https://www.cnbc.com/2026/10/15/cnbc-daily-hormuz-iran-starlink-tsmc.html",
+    "Reuters (via Investing.com): oil slides ~2% as Washington weighs easing sanctions on 'shadow fleet' tankers; Brent ~103.80. https://www.investing.com/news/commodities-news/oil-prices-fall-as-investors-weigh-supply-outlook-middle-east-tensions-4950372",
+    "Reuters (via Yahoo Finance): Daly says more hikes are likely needed, but not urgently at the Oct. 27–28 meeting. https://finance.yahoo.com/economy/policy/articles/exclusive-feds-daly-says-rate-001531165.html",
+    "Dow Jones (via Morningstar): Treasury and Bund yields fall to multiweek lows as the CPI shock fades and oil slips. https://www.morningstar.com/news/dow-jones/202610151913/treasury-eurozone-bond-yields-fall-to-multiweek-lows-as-us-inflation-shock-fades-update",
+    "ForexFactory: PPI, core PPI, retail sales and core retail sales at 8:30 AM ET (high impact); Fed Chair Warsh speaks at 11:30 PM ET (high impact). https://www.forexfactory.com/calendar"
+   ],
+   "market_picture": {
+    "text": "Thị trường né rủi ro khi cổ phiếu công nghệ châu Á bị bán tháo, tiền chạy vào trái phiếu: lợi suất 10 năm Mỹ 5,085% – thấp nhất 3 tuần, DXY 102,06 (−0,5%). Brent 104,6 (−1,4%) vì Mỹ tính nới trừng phạt tàu dầu, dù eo Hormuz vẫn có tàu bị đánh chìm. Fed (Daly, Bowman) chưa vội tăng lãi tháng 10, FedWatch còn ~29%. PPI và bán lẻ 19:30 là phép thử cho nhịp hồi của vàng.",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "102,06 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "5,085% ↓",
+      "dir": "down"
+     },
+     {
+      "k": "Brent",
+      "v": "104,6 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "Fed T10",
+      "v": "~29%",
+      "dir": "down"
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – USD & lợi suất",
+      "url": "https://www.cnbc.com/2026/10/15/dollar-pulls-back-from-18-month-high-as-treasury-yields-fall-fed-hike-bets-ease.html"
+     },
+     {
+      "name": "CNBC – Vàng",
+      "url": "https://www.cnbc.com/2026/10/15/gold-rebounds-from-one-week-low-as-dollar-slips.html"
+     },
+     {
+      "name": "CNBC – Hormuz",
+      "url": "https://www.cnbc.com/2026/10/15/cnbc-daily-hormuz-iran-starlink-tsmc.html"
+     },
+     {
+      "name": "Reuters – Dầu",
+      "url": "https://www.investing.com/news/commodities-news/oil-prices-fall-as-investors-weigh-supply-outlook-middle-east-tensions-4950372"
+     }
+    ]
+   },
+   "market_picture_en": {
+    "text": "Risk-off as Asian tech stocks sold off, sending money into bonds: the U.S. 10-year yield is at 5.085%, a three-week low, and the DXY at 102.06 (−0.5%). Brent is at 104.60 (−1.4%) as Washington weighs easing tanker sanctions, even with ships still being sunk near Hormuz. Fed officials (Daly, Bowman) are in no rush to hike in October, with FedWatch at ~29%. PPI and retail sales at 8:30 AM ET are the test for gold's bounce.",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "102.06 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "5.085% ↓",
+      "dir": "down"
+     },
+     {
+      "k": "Brent",
+      "v": "104.60 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "Oct hike odds",
+      "v": "~29%",
+      "dir": "down"
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Dollar & yields",
+      "url": "https://www.cnbc.com/2026/10/15/dollar-pulls-back-from-18-month-high-as-treasury-yields-fall-fed-hike-bets-ease.html"
+     },
+     {
+      "name": "CNBC – Gold",
+      "url": "https://www.cnbc.com/2026/10/15/gold-rebounds-from-one-week-low-as-dollar-slips.html"
+     },
+     {
+      "name": "CNBC – Hormuz",
+      "url": "https://www.cnbc.com/2026/10/15/cnbc-daily-hormuz-iran-starlink-tsmc.html"
+     },
+     {
+      "name": "Reuters – Oil",
+      "url": "https://www.investing.com/news/commodities-news/oil-prices-fall-as-investors-weigh-supply-outlook-middle-east-tensions-4950372"
+     }
+    ]
+   },
+   "physicalAdvice": "Vàng đang có xu hướng giảm dài và sâu, trong trung – dài hạn có thể về dưới mốc 100 triệu/lượng. Người mua vàng vật chất nên chờ mốc này hoặc một thời điểm thích hợp hơn.",
+   "physicalAdvice_en": "Bigger picture, gold is in a long, deep downtrend and could go meaningfully lower over the medium to long term. Physical buyers may want to be patient and wait for a better entry.",
+   "notes": "Các mốc là giá giao ngay XAU/USD (CNBC XAU= 4.153,7 lúc 17:58; gold-api.com 4.155,5–4.156 lúc 17:59–18:00). Khung 2H/3H/4H tính từ COMEX GC=F trừ 21,8 USD – mức chênh đo được giữa GC=F và giao ngay 14:00–17:45. Mức có thể lệch 1–2 giá tùy sàn. MA là SMA.",
+   "notes_en": "Levels are spot XAU/USD (CNBC XAU= 4,153.74 at 6:58 AM ET; gold-api.com 4,155.50–4,156 at 6:59–7:00 AM ET). The 2H/3H/4H frames use COMEX GC=F minus $21.80, the futures-spot gap measured from 3:00 to 6:45 AM ET. Levels may differ by a point or two between brokers. MAs are simple.",
+   "dataTime": "Cập nhật 17:47–18:00 ngày 15/10/2026 giờ VN. Nến 5m giao ngay (CNBC XAU=, ghép 15m/30m/45m/1H); 2H/3H/4H từ GC=F; DXY, US10Y, US2Y, Brent từ CNBC; lịch tin ForexFactory.",
+   "dataTime_en": "Updated 6:47–7:00 AM ET, Oct 15, 2026. Spot 5-minute bars (CNBC XAU=, resampled to 15m/30m/45m/1H); 2H/3H/4H from GC=F; DXY, US10Y, US2Y and Brent from CNBC; calendar from ForexFactory.",
+   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+   "summary": {
+    "trend": "down",
+    "trendText": "Hồi chững ở 4.160 – xu hướng chính giảm",
+    "trendText_en": "Bounce stalls at 4,160 – primary trend down",
+    "sell": {
+     "zone": "4.160 – 4.170",
+     "sl": "4.180",
+     "tp": "4.153 → 4.141",
+     "zone_en": "4,160–4,170",
+     "sl_en": "4,180",
+     "tp_en": "TP1 4,153 → TP2 4,141"
+    },
+    "buy": {
+     "zone": "4.091 – 4.101",
+     "sl": "4.081",
+     "tp": "4.141 → 4.154",
+     "zone_en": "4,091–4,101",
+     "sl_en": "4,081",
+     "tp_en": "TP1 4,141 → TP2 4,154"
+    },
+    "note": "19:30 PPI + Bán lẻ Mỹ – không vào lệnh 19:00–19:45; sau tin chỉ BÁN khi nến 30m/45m đóng đỏ dưới BB giữa; nến 1H đóng trên 4.171 thì bỏ lệnh bán",
+    "note_en": "U.S. PPI + Retail Sales 8:30 AM ET – no new trades 8:00–8:45 AM ET; after the print, SELL only on a red 30m/45m close below the BB mid; a 1H close above 4,171 cancels the short",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD",
+    "priceNote_en": "Spot XAU/USD prices"
+   },
+   "article": {
+    "sections": [
+     {
+      "h": "Đêm qua",
+      "p": "CPI Mỹ tháng 9 ra lúc 19:30 tăng 3,7% so với cùng kỳ, cao hơn dự báo 3,6%, chủ yếu do giá xăng. Vàng đang ở 4.153,7 (19:25) thì bị bán mạnh xuống 4.087 chỉ sau 15 phút, rồi trượt tiếp về 4.074,1 lúc 23:05 – thấp nhất kể từ 7/10. Phiên Mỹ đóng cửa 4.105,2 lúc 04:00, cả ngày 14/10 giảm khoảng 1,3%."
+     },
+     {
+      "h": "Phiên Á",
+      "p": "Mở cửa 05:00 ở 4.104, giá dò xuống đáy Á 4.099,9 lúc 06:05 rồi bật mạnh từ 07:10: chỉ trong 10 phút vàng vọt từ 4.116 lên 4.142, đúng lúc bài phỏng vấn của bà Daly (Fed San Francisco) được đăng – Fed có thể còn phải tăng lãi nhưng không cần vội ở tháng 10. Nhịp thứ hai 09:45–10:00 đưa giá lên đỉnh Á 4.161,1 lúc 10:00, cùng lúc DXY chạm đáy 101,88. Sau đỉnh, lực chốt lời kéo giá về 4.131,9 lúc 13:00; phiên Á đóng 4.135,7 – vẫn tăng khoảng 32 giá so với mở cửa."
+     },
+     {
+      "h": "Sáng phiên Âu",
+      "p": "Mở 14:00 ở 4.136, giá đi lên đều: vượt 4.150 lúc 15:00–15:15 và lên đỉnh 4.160,2 lúc 16:35 – thấp hơn đỉnh Á đúng 1 giá. Cả hai lần chạm 4.160–4.161 đều bị bán xuống. Lúc 17:50 giá quanh 4.154 (gold-api.com 4.155,5–4.156 lúc 17:59–18:00), tăng khoảng 49 giá (+1,2%) so với giá chốt hôm qua 4.105. Như vậy vàng đã lấy lại toàn bộ cú rơi sau CPI."
+     },
+     {
+      "h": "Vì sao giá tăng",
+      "p": "Thứ nhất, USD hạ nhiệt: DXY từ 102,53 đầu phiên Á xuống 102,06 (−0,5%), rời đỉnh 18 tháng lập hôm qua. Thứ hai, lợi suất 10 năm Mỹ còn 5,085% (−10,5 điểm cơ bản), thấp nhất 3 tuần, 2 năm 4,74% – tiền trú ẩn chảy vào trái phiếu khi cổ phiếu công nghệ châu Á bị bán tháo. Thứ ba, Fed bớt diều hâu: Daly nói chưa cần tăng lãi ở cuộc họp 27–28/10, Bowman muốn chờ thêm; FedWatch còn khoảng 29% khả năng tăng lãi tháng 10, từ mức 50% ngay sau CPI. Thứ tư, dầu giảm: Brent từ 106 về 104,6 (đáy 103,4 lúc 15:20) khi Mỹ tính nới trừng phạt nhóm tàu chở dầu bị cấm vận, dù eo Hormuz vẫn nóng – tàu GFS Pride của Singapore bị đánh chìm, Iran dọa tấn công tàu chiến Mỹ. Dầu hạ bớt lo lạm phát. Dù vậy, Ole Hansen (Saxo) vẫn cho rằng bức tranh kỹ thuật của vàng còn mong manh."
+     },
+     {
+      "h": "Tâm điểm tối nay",
+      "p": "19:30: PPI tháng 9 (dự báo +0,6% m/m, kỳ trước 0,4%), PPI lõi (+0,3%, trước 0,2%), doanh số bán lẻ (+0,3%, trước 1,2%) và bán lẻ lõi (+0,6%, trước 1,4%) – cả bốn đều là tin đỏ trên ForexFactory; cùng giờ có đơn trợ cấp thất nghiệp (dự báo 199K) và chỉ số Philly Fed (28,2). PPI nóng cộng bán lẻ mạnh sẽ kéo USD và lợi suất bật lại, vàng dễ mất nhịp hồi; PPI mềm có thể giúp vàng thử lại vùng 4.160–4.171. 10:30 sáng mai (16/10) Chủ tịch Fed Warsh phát biểu tại hội nghị IMF – World Bank, cũng là tin đỏ."
+     },
+     {
+      "h": "Kỹ thuật khung 45m",
+      "p": "Giá 4.154 vừa nhích lên trên BB90 giữa 45m (4.151) và MA89 (4.151), MA34 còn thấp ở 4.122; dải trên 4.211, dải dưới 4.091. MACD 45m dương nhưng histogram thu hẹp dần (+7,9 lúc 10:45 xuống +2,4), RSI14 61 – lực hồi đang yếu đi. Khung lớn: BB90 giữa 1H 4.160 (MA89 4.159), 3H 4.159 và 4H 4.171 (MA89 4.170) vẫn nằm trên giá, 2H đứng sát giữa 4.154 → xu hướng chính vẫn giảm. Bộ lọc H79: 15m kênh tăng (giá > MA34 4.147 > MA89 4.121), 5m dẹt quanh MA34 4.155, 30m chưa thành kênh tăng (MA34 4.130 còn dưới MA89 4.141) → đây là nhịp hồi trong xu hướng giảm, dễ dừng ở cụm BB giữa/MA89 khung lớn 4.159–4.171. Pivot ngày: P 4.114 · R1 4.154 · R2 4.202 · S1 4.065. Fib sóng giảm 4.197 (13/10) → 4.074: 50% 4.136, 61,8% 4.150 (đã vượt), 78,6% 4.171 – trùng BB giữa 4H. Tín hiệu BÁN đẹp: nến 45m/30m đâm vào 4.160–4.170 rồi đóng đỏ lại dưới 4.160, chắc hơn khi 45m đóng dưới BB giữa 4.151."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Gold climbs over 1% on softer dollar, yields ahead of U.S. inflation data",
+      "url": "https://www.cnbc.com/2026/10/15/gold-rebounds-from-one-week-low-as-dollar-slips.html"
+     },
+     {
+      "name": "CNBC – Dollar pulls back from 18-month high as Treasury yields fall; Fed hike bets ease",
+      "url": "https://www.cnbc.com/2026/10/15/dollar-pulls-back-from-18-month-high-as-treasury-yields-fall-fed-hike-bets-ease.html"
+     },
+     {
+      "name": "CNBC – U.S. Treasury yields: investors await more economic data",
+      "url": "https://www.cnbc.com/2026/10/15/us-treasury-yields-investors-economic-data-.html"
+     },
+     {
+      "name": "CNBC – Oil prices today: Brent, WTI fall",
+      "url": "https://www.cnbc.com/2026/10/15/oil-prices-today-brent-wti.html"
+     },
+     {
+      "name": "CNBC Daily Open – Who controls the Strait of Hormuz?",
+      "url": "https://www.cnbc.com/2026/10/15/cnbc-daily-hormuz-iran-starlink-tsmc.html"
+     },
+     {
+      "name": "Reuters (Yahoo Finance) – Fed's Daly says rate hikes likely needed, but not urgently",
+      "url": "https://finance.yahoo.com/economy/policy/articles/exclusive-feds-daly-says-rate-001531165.html"
+     },
+     {
+      "name": "Reuters (Investing.com) – Oil slides as US weighs easing sanctions on 'shadow fleet'",
+      "url": "https://www.investing.com/news/commodities-news/oil-prices-fall-as-investors-weigh-supply-outlook-middle-east-tensions-4950372"
+     },
+     {
+      "name": "Dow Jones (Morningstar) – Treasury, Bund yields fall to multiweek lows",
+      "url": "https://www.morningstar.com/news/dow-jones/202610151913/treasury-eurozone-bond-yields-fall-to-multiweek-lows-as-us-inflation-shock-fades-update"
+     },
+     {
+      "name": "Saxo – Market Quick Take 15/10/2026",
+      "url": "https://www.home.saxo/en-gb/content/articles/macro/market-quick-take---risk-sentiment-crumbling-us-treasuries-a-safe-haven---15-october-2026-15102026"
+     },
+     {
+      "name": "ForexFactory – Lịch kinh tế",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "article_en": {
+    "sections": [
+     {
+      "h": "Overnight",
+      "p": "September CPI landed at 8:30 AM ET Wednesday at 3.7% y/y, above the 3.6% consensus, driven mostly by gasoline. Gold was at 4,153.70 at 8:25 AM ET and got hit down to 4,087 within 15 minutes, then slid to 4,074.10 at 12:05 PM ET – its lowest since Oct. 7. It settled at 4,105.20 at 5:00 PM ET, down about 1.3% on the day."
+     },
+     {
+      "h": "Asian session",
+      "p": "Gold opened at 4,104 at 6:00 PM ET and dipped to the Asian low of 4,099.90 at 7:05 PM ET before ripping higher from 8:10 PM ET: in ten minutes it ran from 4,116 to 4,142 as San Francisco Fed President Mary Daly's interview hit the wires – more hikes are likely, but there's no rush in October. A second leg at 10:45–11:00 PM ET carried it to the Asian high of 4,161.10 at 11:00 PM ET, right as the DXY bottomed at 101.88. Profit-taking pulled it back to 4,131.90 by 2:00 AM ET, and Asia closed at 4,135.70 – still up about $32 from the open."
+     },
+     {
+      "h": "London morning",
+      "p": "London opened at 4,136 at 3:00 AM ET and gold climbed steadily, clearing 4,150 at 4:00–4:15 AM ET and peaking at 4,160.20 at 5:35 AM ET – exactly a dollar shy of the Asian high. Both runs at 4,160–4,161 were sold. At 6:50 AM ET gold was hovering near 4,154 (gold-api.com 4,155.50–4,156 at 6:59–7:00 AM ET), up about $49 (+1.2%) from yesterday's 4,105 settle. In other words, the entire post-CPI drop has been erased."
+     },
+     {
+      "h": "Why gold is higher",
+      "p": "First, the dollar cooled: the DXY slipped from 102.53 at the Asian open to 102.06 (−0.5%), backing off Wednesday's 18-month high. Second, the 10-year Treasury yield fell to 5.085% (−10.5 bps), a three-week low, with the 2-year at 4.74% – haven money rotated into bonds as Asian tech stocks sold off. Third, the Fed sounded less hawkish: Daly sees no need to hike at the Oct. 27–28 meeting and Bowman wants to wait; FedWatch now shows about 29% odds of an October hike, down from 50% right after CPI. Fourth, oil eased: Brent dropped from 106 to 104.60 (low of 103.40 at 4:20 AM ET) as Washington weighs easing sanctions on 'shadow fleet' tankers, even though Hormuz remains hot – Singapore's GFS Pride was sunk and Iran threatened U.S. warships. Cheaper oil takes some heat off inflation fears. Still, Saxo's Ole Hansen calls gold's technical outlook fragile."
+     },
+     {
+      "h": "Today's main event",
+      "p": "8:30 AM ET: September PPI (est. +0.6% m/m, prior 0.4%), core PPI (+0.3%, prior 0.2%), retail sales (+0.3%, prior 1.2%) and core retail sales (+0.6%, prior 1.4%) – all four high-impact on ForexFactory – plus initial jobless claims (est. 199K) and the Philly Fed index (est. 28.2). A hot PPI with strong spending would lift the dollar and yields and likely cap the bounce; a soft print could send gold back to test 4,160–4,171. Fed Chair Kevin Warsh speaks at 11:30 PM ET at the IMF–World Bank meetings, another high-impact event."
+     },
+     {
+      "h": "45-minute technicals",
+      "p": "At 4,154, gold has just edged above the 45m BB90 mid (4,151) and MA89 (4,151), with MA34 well below at 4,122; upper band 4,211, lower band 4,091. The 45m MACD is positive but the histogram keeps shrinking (+7.9 at 11:45 PM ET to +2.4) and RSI(14) sits at 61 – the bounce is losing steam. Higher timeframes: the BB90 mid on the 1H (4,160, MA89 4,159), 3H (4,159) and 4H (4,171, MA89 4,170) all sit above price, with the 2H right at its mid (4,154) – the primary trend is still down. H79 filter: the 15m is in an up-channel (price > MA34 4,147 > MA89 4,121), the 5m is flattening around MA34 4,155, and the 30m has not confirmed (MA34 4,130 still below MA89 4,141) – a pullback inside a downtrend that tends to stall at the higher-timeframe mid/MA89 cluster at 4,159–4,171. Daily pivots: P 4,114 · R1 4,154 · R2 4,202 · S1 4,065. Fibonacci of the 4,197 (Oct 13) → 4,074 drop: 50% 4,136, 61.8% 4,150 (already cleared), 78.6% 4,171 – matching the 4H mid. The clean SELL setup: a 45m/30m poke into 4,160–4,170 followed by a red close back below 4,160, stronger still on a 45m close below the 4,151 mid."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Gold climbs over 1% on softer dollar, yields ahead of U.S. inflation data",
+      "url": "https://www.cnbc.com/2026/10/15/gold-rebounds-from-one-week-low-as-dollar-slips.html"
+     },
+     {
+      "name": "CNBC – Dollar pulls back from 18-month high as Treasury yields fall; Fed hike bets ease",
+      "url": "https://www.cnbc.com/2026/10/15/dollar-pulls-back-from-18-month-high-as-treasury-yields-fall-fed-hike-bets-ease.html"
+     },
+     {
+      "name": "CNBC – U.S. Treasury yields: investors await more economic data",
+      "url": "https://www.cnbc.com/2026/10/15/us-treasury-yields-investors-economic-data-.html"
+     },
+     {
+      "name": "CNBC – Oil prices today: Brent, WTI fall",
+      "url": "https://www.cnbc.com/2026/10/15/oil-prices-today-brent-wti.html"
+     },
+     {
+      "name": "CNBC Daily Open – Who controls the Strait of Hormuz?",
+      "url": "https://www.cnbc.com/2026/10/15/cnbc-daily-hormuz-iran-starlink-tsmc.html"
+     },
+     {
+      "name": "Reuters (Yahoo Finance) – Fed's Daly says rate hikes likely needed, but not urgently",
+      "url": "https://finance.yahoo.com/economy/policy/articles/exclusive-feds-daly-says-rate-001531165.html"
+     },
+     {
+      "name": "Reuters (Investing.com) – Oil slides as US weighs easing sanctions on 'shadow fleet'",
+      "url": "https://www.investing.com/news/commodities-news/oil-prices-fall-as-investors-weigh-supply-outlook-middle-east-tensions-4950372"
+     },
+     {
+      "name": "Dow Jones (Morningstar) – Treasury, Bund yields fall to multiweek lows",
+      "url": "https://www.morningstar.com/news/dow-jones/202610151913/treasury-eurozone-bond-yields-fall-to-multiweek-lows-as-us-inflation-shock-fades-update"
+     },
+     {
+      "name": "Saxo – Market Quick Take, Oct 15, 2026",
+      "url": "https://www.home.saxo/en-gb/content/articles/macro/market-quick-take---risk-sentiment-crumbling-us-treasuries-a-safe-haven---15-october-2026-15102026"
+     },
+     {
+      "name": "ForexFactory – Economic calendar",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   }
+  },
+  {
    "id": "2026-10-15-phien-au-1640",
    "date": "2026-10-15",
    "time": "16:40",

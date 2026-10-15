@@ -34,7 +34,7 @@ LANG_PAIRS = {"index.html": "en/index.html", "chien-luoc.html": "en/h79-analysis
 # Bài tiếng Anh tĩnh: en/posts/ (giữ đồng bộ với POST_SES trong js/common.js)
 OUT_EN = ROOT / "en" / "posts"
 POST_SES = {"phien-au-my": "london-ny-overlap", "phien-au": "london-session", "phien-my": "new-york-session", "phien-a": "asian-session", "phien-dem": "night-session"}
-ASSET_V = "20261015g"  # cache-busting cho css/js trong trang sinh tự động
+ASSET_V = "20261015i"  # cache-busting cho css/js trong trang sinh tự động
 OLD_BASES = ["https://huymastergold79.com.vn/", "https://prot1407.github.io/huymastergold79/"]
 VN = dt.timezone(dt.timedelta(hours=7))
 TODAY = dt.datetime.now(VN).date().isoformat()
@@ -430,12 +430,12 @@ def en_summary(s):
         return z
     def z(o, c, i, lb):
         if not o or not o.get("zone"): return ""
-        return (f'<div class="z {c}">{i} {lb} <b>{e(zone(o))}</b>' + (f' <span class="k">· Stop</span> {e(en_num(o.get("sl_en") or o["sl"]))}' if o.get("sl") else "")
-                + (f' <span class="k">· Targets</span> {e(en_num(o.get("tp_en") or o["tp"]))}' if o.get("tp") else "") + "</div>")
+        return (f'<div class="z {c}">{i} {lb} <b>{e(zone(o))}</b>' + (f' <span class="k">| SL</span> {e(o.get("sl_en") or en_num(o["sl"]))}' if o.get("sl") else "")
+                + ((lambda tp: f' <span class="k">|</span> {e(tp)}' if tp.startswith("TP") else f' <span class="k">| TP</span> {e(tp)}')(o.get("tp_en") or en_num(o["tp"])) if o.get("tp") else "") + "</div>")
     pn = m.get("priceNote_en") or {"spot": "Levels are spot XAU/USD", "futures": "Levels are COMEX gold futures (GC=F), not spot"}.get(m.get("price"), "")
     note = re.sub(r"(?i)^key risk:\s*", "", m.get("note_en") or "")
-    return img_html(s, True) + (f'<section class="h79s"><div class="t {e(tk)}">Bias: {ic} {e(m.get("trendText_en") or w)}</div>' + z(m.get("sell"), "sell", "🔴", "Sell zone")
-            + z(m.get("buy"), "buy", "🟢", "Buy zone") + (f'<div class="n">⚠️ Key risk: {e(note)}</div>' if note else "")
+    return img_html(s, True) + (f'<section class="h79s"><div class="t {e(tk)}">Bias: {ic} {e(m.get("trendText_en") or w)}</div>' + z(m.get("sell"), "sell", "🔴", "SELL zone")
+            + z(m.get("buy"), "buy", "🟢", "BUY zone") + (f'<div class="n">⚠️ Key risk: {e(note)}</div>' if note else "")
             + (f'<div class="p">💲 {"✅" if m.get("price") == "spot" else "⚠️"} {e(pn)}</div>' if pn else "") + "</section>") + mp_html(s, True)
 
 def build_en(arts):
