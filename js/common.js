@@ -267,6 +267,6 @@
   setTimeout(() => { if (!H.data.settled) { H.data.settled = true; try { renderBar(); } catch (e) { } } }, 12000); // không bao giờ kẹt ở "Đang tải"
   H.refresh().catch(e => { console.error(e); H.data.settled = true; renderBar(); }); setInterval(() => H.refresh().catch(console.error), 60000);
   /* banner tin đỏ + web push (tùy chọn) */
-  H.V = '20261015o';
+  H.V = '20261015p';
   ['js/news-alert.js', 'js/push.js'].forEach(f => { const x = document.createElement('script'); x.src = H.ROOT + f + '?v=' + H.V; x.defer = true; document.head.appendChild(x); });
 })();

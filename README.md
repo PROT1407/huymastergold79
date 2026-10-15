@@ -25,8 +25,8 @@ Header, menu, thanh giá vàng chạy chữ, footer, nút Zalo nổi được t�
   1. `Kết quả tin: …` (thực tế vs dự báo) · 2. `Diễn biến: …` (giá lúc ra tin → đáy/đỉnh kèm giờ → giá hiện tại) · 3. `Vì sao: …` (1 câu) · 4. `Mốc giá: kháng cự … , hỗ trợ … → …` · 5. `Rủi ro: …` (tin đỏ sắp tới, khối lượng).
   EN: The data / The tape / Why / Levels / Risk – giọng nhà phân tích Mỹ độc lập, giờ ET, số kiểu Mỹ (4,154.8). Khi `brief`, trang chỉ hiện 5 dòng này + Lời khuyên + miễn trừ; **không** dump BB90/MA/MACD/pivot/Fib/liên thị trường hay timeline dài vào chữ – giá trị chỉ báo chỉ vẽ trên biểu đồ (chart). Giữ khung kế hoạch BÁN/MUA (`summary`) và danh sách nguồn (`article.sources`). Không bịa số.
 - **Lời khuyên H79 (mặc định cho mọi bài nhận định XAU – không áp dụng `gia-vang.html` / hộp vàng trong nước):**
-  - VN `physicalAdvice`: «Thị trường hồi lên vùng bán thì canh SELL, thị trường giảm về vùng mua thì canh BUY – luôn có SL, để mình và bạn cùng thắng.» (nhãn trang: 💡 Lời khuyên)
-  - EN `physicalAdvice_en`: «Sell the rallies into the sell zone, buy the dips into the buy zone – always with a stop. Trade the plan, and we win together.» (nhãn trang: 💡 Our take)
+  - VN `physicalAdvice`: «Đi theo kế hoạch, tôn trọng SL, bảo vệ vốn. Xu hướng là bạn đồng hành.» (nhãn trang: 💡 Lời khuyên)
+  - EN `physicalAdvice_en`: «Trade the plan, respect your stop, protect your capital. The trend is your friend.» (nhãn trang: 💡 Our take)
 - **Xác nhận vào lệnh BÁN (bắt buộc cho mọi kế hoạch mới):** VN: «Vào khi giá vào vùng bán và có nến 45m hoặc 1H đóng đỏ xác nhận, hoặc nến 1H đâm xuyên lên BB giữa rồi đóng lại dưới band.» EN: «Enter once price is in the zone and a 45m or 1H candle closes red, or a 1H candle pierces above the BB90 mid and closes back below it.» Cấm dùng nến 15m/30m đóng đỏ / red 15m/30m close làm điều kiện vào lệnh. Có thể nhắc 15m/30m trong phân tích kỹ thuật (MA, MACD, kênh) nhưng không phải trigger vào lệnh.
 - **Chiến lược:** thêm mục mới vào `data/strategies.json` (cấu trúc giống v1). Xoá các mục `"example": true`.
 - **Giá trong nước:** tự lấy từ vang.today; dự phòng `data/vn-prices.json`.

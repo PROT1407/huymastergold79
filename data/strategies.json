@@ -175,8 +175,8 @@
           }
         ]
       },
-      "physicalAdvice": "Thị trường hồi lên vùng bán thì canh SELL, thị trường giảm về vùng mua thì canh BUY – luôn có SL, để mình và bạn cùng thắng.",
-      "physicalAdvice_en": "Sell the rallies into the sell zone, buy the dips into the buy zone – always with a stop. Trade the plan, and we win together.",
+      "physicalAdvice": "Đi theo kế hoạch, tôn trọng SL, bảo vệ vốn. Xu hướng là bạn đồng hành.",
+      "physicalAdvice_en": "Trade the plan, respect your stop, protect your capital. The trend is your friend.",
       "notes": "Các mốc là giá giao ngay XAU/USD (CNBC XAU= 4.145,1 lúc 21:17; gold-api.com 4.147,7 lúc 21:19). Khung 2H/3H/4H tính từ COMEX GC=F trừ 21,5 USD – chênh trung bình đo được giữa GC=F và giao ngay trong 6 giờ gần nhất. Mức có thể lệch 1–2 giá tùy sàn. MA là SMA.",
       "notes_en": "Levels are spot XAU/USD (CNBC XAU= 4,145.10 at 10:17 AM ET; gold-api.com 4,147.70 at 10:19 AM ET). The 2H/3H/4H frames use COMEX GC=F minus $21.50, the average futures-spot gap over the last six hours. Levels may differ by a point or two between brokers. MAs are simple.",
       "dataTime": "Cập nhật 21:17–21:20 ngày 15/10/2026 giờ VN. Nến 5m giao ngay CNBC XAU= (ghép 15m/30m/45m/1H); 2H/3H/4H từ GC=F (Yahoo); US10Y, DXY, Brent, Nasdaq/S&P tương lai từ CNBC và Yahoo; lịch tin ForexFactory. Cập nhật Sau tin 3h ~22:37 VN: nến 5m CNBC XAU= đến ~22:55, GC=F Yahoo, DXY/US10Y/Nasdaq/WTI CNBC ~11:59 AM ET.",
@@ -506,8 +506,8 @@
           }
         ]
       },
-      "physicalAdvice": "Thị trường hồi lên vùng bán thì canh SELL, thị trường giảm về vùng mua thì canh BUY – luôn có SL, để mình và bạn cùng thắng.",
-      "physicalAdvice_en": "Sell the rallies into the sell zone, buy the dips into the buy zone – always with a stop. Trade the plan, and we win together.",
+      "physicalAdvice": "Đi theo kế hoạch, tôn trọng SL, bảo vệ vốn. Xu hướng là bạn đồng hành.",
+      "physicalAdvice_en": "Trade the plan, respect your stop, protect your capital. The trend is your friend.",
       "notes": "Các mốc là giá giao ngay XAU/USD (CNBC XAU= 4.149,6 nến 19:13–19:17, 4.151,7 lúc 19:19; gold-api.com 4.151,8 lúc 19:18 và 4.155,3 lúc 19:21). Khung 2H/3H/4H tính từ COMEX GC=F trừ 21,8 USD – mức chênh trung bình đo được giữa GC=F và giao ngay từ 14:00 đến 19:10. Mức có thể lệch 1–2 giá tùy sàn. MA là SMA.",
       "notes_en": "Levels are spot XAU/USD (CNBC XAU= 4,149.64 on the 8:13–8:17 AM ET bar, 4,151.66 at 8:19 AM ET; gold-api.com 4,151.80 at 8:18 AM ET and 4,155.30 at 8:21 AM ET). The 2H/3H/4H frames use COMEX GC=F minus $21.80, the average futures-spot gap measured from 3:00 to 8:10 AM ET. Levels may differ by a point or two between brokers. MAs are simple.",
       "dataTime": "Cập nhật 19:15–19:22 ngày 15/10/2026 giờ VN, trước tin 19:30. Nến 5m giao ngay (CNBC XAU=, ghép 15m/30m/45m/1H); 2H/3H/4H từ GC=F (Yahoo); DXY, US10Y, US2Y, Brent từ CNBC; lịch tin ForexFactory. Cập nhật sau tin 20:35 VN: nến 5m giao ngay CNBC XAU= đến 20:34, GC=F Yahoo, DXY/US10Y/Nasdaq tương lai CNBC lúc 20:34. Bổ sung 3h sau tin ~22:37 VN: mở nến 5m 22:30 = 4.154,4 (+0,11%).",
@@ -863,8 +863,8 @@
           }
         ]
       },
-      "physicalAdvice": "Thị trường hồi lên vùng bán thì canh SELL, thị trường giảm về vùng mua thì canh BUY – luôn có SL, để mình và bạn cùng thắng.",
-      "physicalAdvice_en": "Sell the rallies into the sell zone, buy the dips into the buy zone – always with a stop. Trade the plan, and we win together.",
+      "physicalAdvice": "Đi theo kế hoạch, tôn trọng SL, bảo vệ vốn. Xu hướng là bạn đồng hành.",
+      "physicalAdvice_en": "Trade the plan, respect your stop, protect your capital. The trend is your friend.",
       "notes": "Các mốc là giá giao ngay XAU/USD (CNBC XAU= 4.153,7 lúc 17:58; gold-api.com 4.155,5–4.156 lúc 17:59–18:00). Khung 2H/3H/4H tính từ COMEX GC=F trừ 21,8 USD – mức chênh đo được giữa GC=F và giao ngay 14:00–17:45. Mức có thể lệch 1–2 giá tùy sàn. MA là SMA.",
       "notes_en": "Levels are spot XAU/USD (CNBC XAU= 4,153.74 at 6:58 AM ET; gold-api.com 4,155.50–4,156 at 6:59–7:00 AM ET). The 2H/3H/4H frames use COMEX GC=F minus $21.80, the futures-spot gap measured from 3:00 to 6:45 AM ET. Levels may differ by a point or two between brokers. MAs are simple.",
       "dataTime": "Cập nhật 17:47–18:00 ngày 15/10/2026 giờ VN. Nến 5m giao ngay (CNBC XAU=, ghép 15m/30m/45m/1H); 2H/3H/4H từ GC=F; DXY, US10Y, US2Y, Brent từ CNBC; lịch tin ForexFactory.",
@@ -1302,8 +1302,8 @@
         "Levels: resistance 4,155–4,168 (45m/2H BB mid); support 4,140 → 4,125 → 4,097–4,110.",
         "Risk: no entries 8:00–8:45 AM ET; a 1H close above 4,175 cancels the short."
       ],
-      "physicalAdvice": "Thị trường hồi lên vùng bán thì canh SELL, thị trường giảm về vùng mua thì canh BUY – luôn có SL, để mình và bạn cùng thắng.",
-      "physicalAdvice_en": "Sell the rallies into the sell zone, buy the dips into the buy zone – always with a stop. Trade the plan, and we win together.",
+      "physicalAdvice": "Đi theo kế hoạch, tôn trọng SL, bảo vệ vốn. Xu hướng là bạn đồng hành.",
+      "physicalAdvice_en": "Trade the plan, respect your stop, protect your capital. The trend is your friend.",
       "macro": [
         "CNBC: USD rời đỉnh 18 tháng dù CPI nóng; lợi suất 10 năm xuống thấp nhất 3 tuần; quan chức Fed giảm kỳ vọng tăng lãi tháng 10. https://www.cnbc.com/2026/10/15/dollar-falls-from-18-month-high-despite-hot-cpi-as-fed-curb-hike-bets.html",
         "CNBC (Reuters): vàng hồi từ đáy 1 tuần khi USD yếu; FedWatch ~27% khả năng tăng lãi tháng 10; chờ PPI, bán lẻ. https://www.cnbc.com/2026/10/15/gold-rebounds-from-one-week-low-as-dollar-slips.html",
@@ -1486,8 +1486,8 @@
         "Levels: sell 4,155–4,168, buy 4,097–4,110; pivot P 4,111 · R1 4,147 · S1 4,049.",
         "Risk: PPI + retail 8:30 AM ET; the 15m up-channel can extend toward 4,166–4,175 – wait for a red close below the mid."
       ],
-      "physicalAdvice": "Thị trường hồi lên vùng bán thì canh SELL, thị trường giảm về vùng mua thì canh BUY – luôn có SL, để mình và bạn cùng thắng.",
-      "physicalAdvice_en": "Sell the rallies into the sell zone, buy the dips into the buy zone – always with a stop. Trade the plan, and we win together.",
+      "physicalAdvice": "Đi theo kế hoạch, tôn trọng SL, bảo vệ vốn. Xu hướng là bạn đồng hành.",
+      "physicalAdvice_en": "Trade the plan, respect your stop, protect your capital. The trend is your friend.",
       "macro": [
         "Octa: vàng hồi trên 4.150 khi lợi suất Mỹ và USD lùi từ đỉnh sau CPI; rủi ro năng lượng và Hormuz vẫn giữ kỳ vọng Fed tăng lãi – tập trung vào PPI hôm nay. https://www.octabroker.com/markets/news/view/1274827/",
         "Moneycontrol: dầu giảm (Brent ~104,7; WTI ~94,1); DXY ~102,1 (−0,1%) lùi từ đỉnh 18 tháng; vàng +1% từ đáy 1 tuần nhờ USD yếu. https://www.moneycontrol.com/news/business/markets/commodity-corner-oil-slips-on-supply-outlook-gold-rebounds-over-1-as-dollar-eases-14052447.html",
@@ -1686,8 +1686,8 @@
       "dataTime_en": "Data: GC=F 5-minute candles (resampled 15m–3H), through 10:50 PM ET Oct 14, 2026.",
       "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
       "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
-      "physicalAdvice": "Thị trường hồi lên vùng bán thì canh SELL, thị trường giảm về vùng mua thì canh BUY – luôn có SL, để mình và bạn cùng thắng.",
-      "physicalAdvice_en": "Sell the rallies into the sell zone, buy the dips into the buy zone – always with a stop. Trade the plan, and we win together.",
+      "physicalAdvice": "Đi theo kế hoạch, tôn trọng SL, bảo vệ vốn. Xu hướng là bạn đồng hành.",
+      "physicalAdvice_en": "Trade the plan, respect your stop, protect your capital. The trend is your friend.",
       "summary": {
         "trend": "down",
         "trendText": "Hồi mạnh trong xu hướng giảm, chờ xác nhận trên 4.175",
@@ -1873,8 +1873,8 @@
       "dataTime_en": "Data: GC=F 5-minute candles (resampled to 15m/30m/45m/1H/2H/3H), as of 7:50 PM ET Oct 14, 2026.",
       "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
       "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
-      "physicalAdvice": "Thị trường hồi lên vùng bán thì canh SELL, thị trường giảm về vùng mua thì canh BUY – luôn có SL, để mình và bạn cùng thắng.",
-      "physicalAdvice_en": "Sell the rallies into the sell zone, buy the dips into the buy zone – always with a stop. Trade the plan, and we win together.",
+      "physicalAdvice": "Đi theo kế hoạch, tôn trọng SL, bảo vệ vốn. Xu hướng là bạn đồng hành.",
+      "physicalAdvice_en": "Trade the plan, respect your stop, protect your capital. The trend is your friend.",
       "summary": {
         "trend": "down",
         "trendText": "Hồi trong xu hướng giảm, mới 5m lên kênh tăng",
@@ -1978,8 +1978,8 @@
       "dataTime_en": "Data: GC=F 5m/15m/60m/daily candles (30m, 45m, 2H, 3H, 4H resampled), as of ~7:37–7:48 PM ET Oct 14, 2026 (GC 4,122.8); spot 4,108.4 (gold-api.com) at 7:48 PM ET.",
       "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
       "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
-      "physicalAdvice": "Thị trường hồi lên vùng bán thì canh SELL, thị trường giảm về vùng mua thì canh BUY – luôn có SL, để mình và bạn cùng thắng.",
-      "physicalAdvice_en": "Sell the rallies into the sell zone, buy the dips into the buy zone – always with a stop. Trade the plan, and we win together.",
+      "physicalAdvice": "Đi theo kế hoạch, tôn trọng SL, bảo vệ vốn. Xu hướng là bạn đồng hành.",
+      "physicalAdvice_en": "Trade the plan, respect your stop, protect your capital. The trend is your friend.",
       "summary": {
         "trend": "down",
         "trendText": "Giảm",
@@ -2048,8 +2048,8 @@
         "Mốc giá: mua 4.075–4.085 (đang test); bán hồi 4.102–4.115; hỗ trợ 4.070 → 4.060.",
         "Rủi ro: mua ngược D1 – khối lượng nhỏ; tiếp theo PPI 15/10 và Warsh 16/10."
       ],
-      "physicalAdvice": "Thị trường hồi lên vùng bán thì canh SELL, thị trường giảm về vùng mua thì canh BUY – luôn có SL, để mình và bạn cùng thắng.",
-      "physicalAdvice_en": "Sell the rallies into the sell zone, buy the dips into the buy zone – always with a stop. Trade the plan, and we win together.",
+      "physicalAdvice": "Đi theo kế hoạch, tôn trọng SL, bảo vệ vốn. Xu hướng là bạn đồng hành.",
+      "physicalAdvice_en": "Trade the plan, respect your stop, protect your capital. The trend is your friend.",
       "macro": [
         "BLS: CPI tháng 9 – tổng +0,6% m/m / +3,7% y/y; lõi +0,3% m/m / +2,6% y/y; xăng +9,1% tháng. https://www.bls.gov/news.release/cpi.nr0.htm",
         "CNBC: vàng giao ngay giảm ~1,7% xuống ~4.086 USD/oz (đáy từ 7/10); futures ~4.109; DXY +0,4%. https://www.cnbc.com/2026/10/14/gold-prices-hold-firm-ahead-of-us-inflation-data.html",
@@ -2156,7 +2156,7 @@
         "Mốc giá: mua 4.070–4.082, bán hồi 4.102–4.115; hỗ trợ 4.060 → 4.040.",
         "Rủi ro: mua ngược D1 – khối lượng nhỏ; PPI 15/10 19:30, Warsh 16/10."
       ],
-      "physicalAdvice": "Thị trường hồi lên vùng bán thì canh SELL, thị trường giảm về vùng mua thì canh BUY – luôn có SL, để mình và bạn cùng thắng.",
+      "physicalAdvice": "Đi theo kế hoạch, tôn trọng SL, bảo vệ vốn. Xu hướng là bạn đồng hành.",
       "macro": [
         "BLS: CPI tháng 9 – tổng +0,6% m/m / +3,7% y/y; lõi (trừ thực phẩm & năng lượng) +0,3% m/m / +2,6% y/y; xăng +9,1% tháng. https://www.bls.gov/news.release/cpi.nr0.htm",
         "CNBC (video 14/10): xác nhận giá tiêu dùng +0,6% tháng, lạm phát năm 3,7%. https://www.cnbc.com/video/2026/10/14/consumer-prices-rose-0-point-6-percent-in-september-putting-annual-inflation-rate-at-3-point-7-percent.html",
@@ -2211,7 +2211,7 @@
         "Levels: buy 4,070–4,082, sell bounce 4,102–4,115; support 4,060 → 4,040.",
         "Risk: counter-trend vs a bearish daily – size small; PPI Oct 15 8:30 AM ET, Warsh Oct 16."
       ],
-      "physicalAdvice_en": "Sell the rallies into the sell zone, buy the dips into the buy zone – always with a stop. Trade the plan, and we win together.",
+      "physicalAdvice_en": "Trade the plan, respect your stop, protect your capital. The trend is your friend.",
       "macro_en": [
         "BLS: September CPI – headline +0.6% m/m / +3.7% y/y; all items less food and energy +0.3% m/m / +2.6% y/y; gasoline +9.1% on the month. https://www.bls.gov/news.release/cpi.nr0.htm",
         "CNBC (Oct 14 video): confirms consumer prices +0.6% on the month, annual inflation at 3.7%. https://www.cnbc.com/video/2026/10/14/consumer-prices-rose-0-point-6-percent-in-september-putting-annual-inflation-rate-at-3-point-7-percent.html",
@@ -2255,7 +2255,7 @@
         "Mốc giá: bán 4.162–4.171, mua 4.116–4.123; S1 4.139 · S2 4.116 · pivot P 4.171.",
         "Rủi ro: tránh vào lệnh sát CPI; lõi nóng dễ thủng 4.139 về 4.116."
       ],
-      "physicalAdvice": "Thị trường hồi lên vùng bán thì canh SELL, thị trường giảm về vùng mua thì canh BUY – luôn có SL, để mình và bạn cùng thắng.",
+      "physicalAdvice": "Đi theo kế hoạch, tôn trọng SL, bảo vệ vốn. Xu hướng là bạn đồng hành.",
       "macro": [
         "Investing.com: vàng giảm khi thị trường cân nhắc lộ trình Fed trước CPI; DXY ~102,1; Brent trên 106 USD do tấn công mới ở Trung Đông. https://ng.investing.com/news/commodities-news/gold-holds-twoday-slide-as-fed-signals-one-more-hike-us-cpi-in-focus-2734947",
         "Bloomberg (Moneyweb): Williams (Fed New York) thấy cần thêm một lần tăng lãi năm nay nhưng không tăng thêm 2027; lợi suất Mỹ giảm nhẹ, swap định giá ~90% khả năng tăng lãi tháng 12. https://www.moneyweb.co.za/mineweb/gold-steady-as-fed-officials-remarks-temper-rate-hike-bets/",
@@ -2310,7 +2310,7 @@
         "Levels: sell 4,162–4,171, buy 4,116–4,123; S1 4,139 · S2 4,116 · pivot P 4,171.",
         "Risk: stay flat into CPI; a hot core can break 4,139 toward 4,116."
       ],
-      "physicalAdvice_en": "Sell the rallies into the sell zone, buy the dips into the buy zone – always with a stop. Trade the plan, and we win together.",
+      "physicalAdvice_en": "Trade the plan, respect your stop, protect your capital. The trend is your friend.",
       "macro_en": [
         "Investing.com: gold slips as traders weigh the Fed outlook ahead of CPI; DXY ~102.1; Brent above $106 on renewed Middle East attacks. https://ng.investing.com/news/commodities-news/gold-holds-twoday-slide-as-fed-signals-one-more-hike-us-cpi-in-focus-2734947",
         "Bloomberg (via Moneyweb): NY Fed's Williams sees one more hike this year but none in 2027; Treasury yields edge lower, swaps price ~90% odds of a December hike. https://www.moneyweb.co.za/mineweb/gold-steady-as-fed-officials-remarks-temper-rate-hike-bets/",
@@ -2480,7 +2480,7 @@
         "Mốc giá: mua 4.135–4.148 (và 4.106–4.129); bán chỉ khi chuyển kênh tăng 4.211–4.221; pivot S1 4.135 · P 4.170.",
         "Rủi ro: mua ngược D1 – khối lượng nhỏ; đóng/dời SL hòa vốn trước CPI."
       ],
-      "physicalAdvice": "Thị trường hồi lên vùng bán thì canh SELL, thị trường giảm về vùng mua thì canh BUY – luôn có SL, để mình và bạn cùng thắng.",
+      "physicalAdvice": "Đi theo kế hoạch, tôn trọng SL, bảo vệ vốn. Xu hướng là bạn đồng hành.",
       "macro": [
         "CNBC (Reuters): vàng đi ngang chờ CPI, giao ngay ~4.159 lúc 09:51; FedWatch: 23% khả năng Fed tăng lãi tháng 10, 88% vào tháng 12 – CPI yếu sẽ là chất xúc tác tăng cho vàng. https://www.cnbc.com/2026/10/14/gold-prices-hold-firm-ahead-of-us-inflation-data.html",
         "CNBC: dầu tăng khi xung đột Houthi – Ả Rập Xê Út leo thang, Brent ~107 USD, WTI ~95 USD – dầu cao đẩy kỳ vọng lạm phát, củng cố khả năng Fed tăng lãi, bất lợi cho vàng. https://www.cnbc.com/2026/10/14/oil-rises-amid-growing-tensions-between-saudis-and-iran-backed-houthis.html",
@@ -2534,7 +2534,7 @@
         "Levels: buy 4,135–4,148 (and 4,106–4,129); sell only if channels flip 4,211–4,221; pivot S1 4,135 · P 4,170.",
         "Risk: counter-trend vs a bearish daily – size small; flat or stops to breakeven before CPI."
       ],
-      "physicalAdvice_en": "Sell the rallies into the sell zone, buy the dips into the buy zone – always with a stop. Trade the plan, and we win together.",
+      "physicalAdvice_en": "Trade the plan, respect your stop, protect your capital. The trend is your friend.",
       "macro_en": [
         "CNBC (Reuters): gold flat ahead of CPI, spot ~4,159 at 10:51 PM ET; CME FedWatch prices a 23% chance of an October hike and 88% for December – a soft print would be the bullish catalyst for gold. https://www.cnbc.com/2026/10/14/gold-prices-hold-firm-ahead-of-us-inflation-data.html",
         "CNBC: oil climbs as Houthi–Saudi fighting escalates, Brent ~$107, WTI ~$95 – higher energy lifts inflation expectations and the case for another Fed hike, a headwind for gold. https://www.cnbc.com/2026/10/14/oil-rises-amid-growing-tensions-between-saudis-and-iran-backed-houthis.html",
@@ -2579,7 +2579,7 @@
         "Mốc giá: mua 4.140–4.154 (và 4.106–4.121); bán chỉ khi chuyển kênh 4.211–4.221; pivot S1 4.140 · P 4.172.",
         "Rủi ro: mua ngược D1 – khối lượng nhỏ; dời SL hòa vốn trước CPI."
       ],
-      "physicalAdvice": "Thị trường hồi lên vùng bán thì canh SELL, thị trường giảm về vùng mua thì canh BUY – luôn có SL, để mình và bạn cùng thắng.",
+      "physicalAdvice": "Đi theo kế hoạch, tôn trọng SL, bảo vệ vốn. Xu hướng là bạn đồng hành.",
       "macro": [
         "CNBC: CPI tháng 9 Mỹ (19:30 tối nay) dự báo +0,6% m/m, 3,6% y/y; lõi +0,2% / 2,5%. CPI nóng hơn dự báo → lợi suất, USD tăng → vàng dễ giảm. https://www.cnbc.com/2026/10/13/september-consumer-price-index-inflation.html",
         "CNBC: lợi suất Mỹ 10 năm hạ về ~5,20% từ đỉnh 24 năm khi giá năng lượng lùi – hỗ trợ nhẹ cho vàng. https://www.cnbc.com/2026/10/13/us-treasurys-bonds-yields.html",
@@ -2630,7 +2630,7 @@
         "Levels: buy 4,140–4,154 (and 4,106–4,121); sell only if channels flip 4,211–4,221; pivot S1 4,140 · P 4,172.",
         "Risk: counter-trend vs a bearish daily – size small; stops to breakeven before CPI."
       ],
-      "physicalAdvice_en": "Sell the rallies into the sell zone, buy the dips into the buy zone – always with a stop. Trade the plan, and we win together.",
+      "physicalAdvice_en": "Trade the plan, respect your stop, protect your capital. The trend is your friend.",
       "macro_en": [
         "CNBC: September CPI (8:30 AM ET today) is expected at +0.6% m/m, 3.6% y/y; core +0.2% / 2.5%. A hot print means higher yields and a firmer dollar – bearish for gold. https://www.cnbc.com/2026/10/13/september-consumer-price-index-inflation.html",
         "CNBC: the 10-year Treasury yield eased to ~5.20% from a 24-year high as energy prices pulled back – mildly supportive for gold. https://www.cnbc.com/2026/10/13/us-treasurys-bonds-yields.html",
@@ -2675,7 +2675,7 @@
         "Mốc giá: mua 4.145–4.154 (và 4.106–4.120); bán chỉ khi chuyển kênh 4.215–4.227; pivot S1 4.145 · P 4.184.",
         "Rủi ro: Barkin 00:00 / Collins 03:00; CPI 19:30 14/10 – mua ngược D1, khối lượng nhỏ."
       ],
-      "physicalAdvice": "Thị trường hồi lên vùng bán thì canh SELL, thị trường giảm về vùng mua thì canh BUY – luôn có SL, để mình và bạn cùng thắng.",
+      "physicalAdvice": "Đi theo kế hoạch, tôn trọng SL, bảo vệ vốn. Xu hướng là bạn đồng hành.",
       "macro": [
         "📊 SAU TIN 21:00 – Doanh số nhà hiện hữu Mỹ (NAR): 3,99 triệu (+1,5% m/m) – dự báo 3,95 triệu, kỳ trước 3,98 triệu → TỐT HƠN DỰ BÁO (tin vàng, ít quan trọng). https://www.nar.realtor/news/real-estate-news/economy/home-sales-eke-out-uptick-but-mortgage-rate-threat-looms",
         "Bảng giá vàng COMEX GC=F (giá mở nến 5m, giờ VN) – so với lúc ra tin 4.192,5: 3h trước 18:00 4.205,4 (-0,31%) · 1h trước 20:00 4.203,1 (-0,25%) · 30 phút trước 20:30 4.212,4 (-0,47%) · RA TIN 21:00 4.192,5 · 30 phút sau 21:30 4.190,6 (-0,05%) · 1h sau 22:00 4.190,4 (-0,05%) · 3h sau (00:00 ngày 14/10) chưa tới. Đáy sau tin 4.185,9 (21:20). Giao ngay gold-api.com 4.164,7 lúc 22:17 (thấp hơn GC ~25 USD).",
@@ -2737,7 +2737,7 @@
         "Levels: buy 4,145–4,154 (and 4,106–4,120); sell only if channels flip 4,215–4,227; pivot S1 4,145 · P 4,184.",
         "Risk: Barkin 1:00 PM / Collins 4:00 PM ET; CPI Wed 8:30 AM ET – counter-trend longs, size small."
       ],
-      "physicalAdvice_en": "Sell the rallies into the sell zone, buy the dips into the buy zone – always with a stop. Trade the plan, and we win together.",
+      "physicalAdvice_en": "Trade the plan, respect your stop, protect your capital. The trend is your friend.",
       "macro_en": [
         "📊 AFTER THE 10:00 AM ET RELEASE – US existing home sales (NAR): 3.99M (+1.5% m/m) vs. 3.95M expected, 3.98M prior → BEAT (low-tier release). https://www.nar.realtor/news/real-estate-news/economy/home-sales-eke-out-uptick-but-mortgage-rate-threat-looms",
         "COMEX GC=F (5m opens, ET) vs. 4,192.5 at the release: 3h before (7:00 AM) 4,205.4 (−0.31%) · 1h before (9:00 AM) 4,203.1 (−0.25%) · 30 min before (9:30 AM) 4,212.4 (−0.47%) · RELEASE 10:00 AM 4,192.5 · 30 min after (10:30 AM) 4,190.6 (−0.05%) · 1h after (11:00 AM) 4,190.4 (−0.05%) · 3h after (1:00 PM) not yet. Post-release low 4,185.9 (10:20 AM). Spot (gold-api.com) 4,164.7 at 11:17 AM ET (about $25 under GC).",
@@ -2794,7 +2794,7 @@
         "Mốc giá: bán 4.225–4.246, mua 4.196–4.200 (hoặc 4.165–4.178); thủng 4.165 → 4.140 (pivot S2).",
         "Rủi ro: khối lượng nhỏ; không ôm lệnh lớn qua CPI 19:30 14/10 (dự báo 3,6% y/y)."
       ],
-      "physicalAdvice": "Thị trường hồi lên vùng bán thì canh SELL, thị trường giảm về vùng mua thì canh BUY – luôn có SL, để mình và bạn cùng thắng.",
+      "physicalAdvice": "Đi theo kế hoạch, tôn trọng SL, bảo vệ vốn. Xu hướng là bạn đồng hành.",
       "macro": [
         "CNBC (Reuters, 13/10): vàng giảm nhẹ do USD neo gần đỉnh 18 tháng; thị trường chờ CPI thứ Tư và PPI thứ Năm. CPI, nhất là CPI lõi, nóng hơn dự báo có thể khiến vàng giảm thêm.",
         "Reuters (13/10): Thống đốc Fed Waller nói kỳ vọng lạm phát vẫn 'được neo vững'; lợi suất dài hạn tăng lên đỉnh 24 năm chủ yếu do tăng trưởng, đầu tư AI và nợ công chứ không phải phần bù lạm phát. Ông giữ quan điểm Fed có thể tăng lãi suất thêm nếu lạm phát còn trên 2%, nhưng không nhất thiết ở các cuộc họp liên tiếp – nghiêng 'diều hâu', bất lợi cho vàng.",
@@ -2844,7 +2844,7 @@
         "Levels: sell 4,225–4,246, buy 4,196–4,200 (or 4,165–4,178); break of 4,165 → 4,140 (pivot S2).",
         "Risk: size small; don't carry size through CPI Wed 8:30 AM ET (est. 3.6% y/y)."
       ],
-      "physicalAdvice_en": "Sell the rallies into the sell zone, buy the dips into the buy zone – always with a stop. Trade the plan, and we win together.",
+      "physicalAdvice_en": "Trade the plan, respect your stop, protect your capital. The trend is your friend.",
       "macro_en": [
         "CNBC (Reuters, Oct 13): gold slips as the dollar holds near an 18-month high; the market is waiting on Wednesday's CPI and Thursday's PPI. A hotter CPI, especially core, could push gold lower.",
         "Reuters (Oct 13): Fed Governor Waller says inflation expectations remain 'well anchored'; the rise in long yields to 24-year highs is mostly growth, AI investment and public debt rather than inflation premium. He still sees room for more hikes if inflation stays above 2%, though not necessarily at consecutive meetings – leaning hawkish, a negative for gold.",
@@ -2889,7 +2889,7 @@
         "Mốc giá: bán hồi 4.225–4.245 → 4.205 rồi 4.180; mua chỉ 4.165–4.178; thủng 4.165 → 4.140.",
         "Rủi ro: biên hẹp trước CPI – khối lượng nhỏ; không giữ lệnh lớn qua 19:30 14/10."
       ],
-      "physicalAdvice": "Thị trường hồi lên vùng bán thì canh SELL, thị trường giảm về vùng mua thì canh BUY – luôn có SL, để mình và bạn cùng thắng.",
+      "physicalAdvice": "Đi theo kế hoạch, tôn trọng SL, bảo vệ vốn. Xu hướng là bạn đồng hành.",
       "macro": [
         "CNBC (Reuters, 13/10): vàng giảm nhẹ do USD neo gần đỉnh 18 tháng; thị trường chờ CPI thứ Tư và PPI thứ Năm. Kyle Rodda (Capital.com): CPI, nhất là CPI lõi, nóng hơn dự báo có thể khiến vàng giảm thêm. CME FedWatch: 21% khả năng Fed tăng lãi suất tháng 10, 88% cho tháng 12; Hammack (Fed Cleveland) ủng hộ chính sách thắt chặt.",
         "Investing.com (13/10): vàng và bạc cùng giảm trước CPI; bạc giao ngay giảm 0,5% về 60,01 USD/oz.",
@@ -2939,7 +2939,7 @@
         "Levels: sell rallies 4,225–4,245 → 4,205 then 4,180; buy only 4,165–4,178; break of 4,165 → 4,140.",
         "Risk: pre-CPI ranges run stops both ways – size small; don't carry through Wed 8:30 AM ET."
       ],
-      "physicalAdvice_en": "Sell the rallies into the sell zone, buy the dips into the buy zone – always with a stop. Trade the plan, and we win together.",
+      "physicalAdvice_en": "Trade the plan, respect your stop, protect your capital. The trend is your friend.",
       "macro_en": [
         "CNBC (Reuters, Oct 13): gold slips as the dollar holds near an 18-month high; the market is waiting on Wednesday's CPI and Thursday's PPI. Kyle Rodda (Capital.com): a hotter CPI, especially core, could push gold lower. CME FedWatch: 21% odds of an October hike, 88% by December; Hammack (Cleveland Fed) backs tighter policy.",
         "Investing.com (Oct 13): gold and silver both slip ahead of CPI; spot silver down 0.5% at $60.01/oz.",
@@ -2984,7 +2984,7 @@
         "Mốc giá: bán hồi 4.229–4.246 (R1/đỉnh 09–12/10) → 4.204 rồi 4.178; mua 4.196–4.204.",
         "Rủi ro: giảm khối lượng trước CPI 19:30 14/10; không vào lệnh 5 phút sát tin."
       ],
-      "physicalAdvice": "Thị trường hồi lên vùng bán thì canh SELL, thị trường giảm về vùng mua thì canh BUY – luôn có SL, để mình và bạn cùng thắng.",
+      "physicalAdvice": "Đi theo kế hoạch, tôn trọng SL, bảo vệ vốn. Xu hướng là bạn đồng hành.",
       "macro": [
         "CNBC (Reuters, 13/10): đầu phiên Á vàng giao ngay giảm 0,2% về 4.164,45 USD (09:01 giờ VN) do USD neo gần đỉnh 18 tháng; CME FedWatch: 21% khả năng Fed tăng lãi suất tháng 10, 88% cho tháng 12. Chủ tịch Fed Cleveland Hammack muốn chuyển 'tương đối nhanh' sang lập trường thắt chặt hơn.",
         "CNBC (Reuters): Ả Rập Xê Út hứng thêm loạt tên lửa/drone, sân bay Riyadh tiếp tục đóng sau vụ Houthi tấn công nhà ga – rủi ro địa chính trị Trung Đông vẫn cao.",
@@ -3035,7 +3035,7 @@
         "Levels: sell rallies 4,229–4,246 (R1 / Oct 9–12 highs) → 4,204 then 4,178; buy 4,196–4,204.",
         "Risk: size down into CPI Wed 8:30 AM ET; no entries 5 minutes either side of a release."
       ],
-      "physicalAdvice_en": "Sell the rallies into the sell zone, buy the dips into the buy zone – always with a stop. Trade the plan, and we win together.",
+      "physicalAdvice_en": "Trade the plan, respect your stop, protect your capital. The trend is your friend.",
       "macro_en": [
         "CNBC (Reuters, Oct 13): early in Asia spot gold fell 0.2% to $4,164.45 (10:01 PM ET Oct 12) as the dollar held near an 18-month high; CME FedWatch: 21% odds of an October hike, 88% by December. Cleveland Fed's Hammack wants to move 'relatively quickly' to a tighter stance.",
         "CNBC (Reuters): Saudi Arabia faced another wave of missiles/drones and Riyadh airport stayed closed after the Houthi strike on a terminal – Middle East risk remains high.",
@@ -3081,7 +3081,7 @@
         "Mốc giá: bán hồi dưới 4.205 → 4.178 rồi 4.169; mua 4.168–4.178; thủng 4.169 → 4.141.",
         "Rủi ro: thanh khoản Á mỏng; CPI 19:30 14/10 (dự báo 3,6% y/y) – chờ M15 đóng xác nhận."
       ],
-      "physicalAdvice": "Thị trường hồi lên vùng bán thì canh SELL, thị trường giảm về vùng mua thì canh BUY – luôn có SL, để mình và bạn cùng thắng.",
+      "physicalAdvice": "Đi theo kế hoạch, tôn trọng SL, bảo vệ vốn. Xu hướng là bạn đồng hành.",
       "macro": [
         "CNBC (Reuters, 12/10): chỉ số USD tăng 0,3% lên 102,57, ngay dưới đỉnh 18 tháng; CME FedWatch cho 81% khả năng Fed giữ lãi suất tháng 10. Kitco: vàng đóng phiên thứ Hai giảm 0,6% về quanh 4.169 USD.",
         "CNBC: lợi suất trái phiếu kho bạc Mỹ 10 năm quanh 5,24% – gần mức cao nhất từ 2002 (thị trường trái phiếu nghỉ lễ Columbus Day 12/10); lãi suất cao tiếp tục đè giá vàng.",
@@ -3130,7 +3130,7 @@
         "Levels: sell rallies under 4,205 → 4,178 then 4,169; buy 4,168–4,178; break of 4,169 → 4,141.",
         "Risk: thin Asian liquidity; CPI Wed 8:30 AM ET (est. 3.6% y/y) – wait for an M15 close to confirm."
       ],
-      "physicalAdvice_en": "Sell the rallies into the sell zone, buy the dips into the buy zone – always with a stop. Trade the plan, and we win together.",
+      "physicalAdvice_en": "Trade the plan, respect your stop, protect your capital. The trend is your friend.",
       "macro_en": [
         "CNBC (Reuters, Oct 12): the dollar index rose 0.3% to 102.57, just under an 18-month high; CME FedWatch shows 81% odds of an October hold. Kitco: gold closed Monday down 0.6% around $4,169.",
         "CNBC: the 10-year Treasury yield around 5.24% – near its highest since 2002 (bond market closed for Columbus Day Oct 12); high rates keep weighing on gold.",
@@ -3176,7 +3176,7 @@
         "Mốc giá: bán hồi dưới 4.202 → 4.178 rồi 4.170; mua 4.170–4.178; thủng 4.170 → 4.128–4.091.",
         "Rủi ro: CPI 19:30 14/10 (dự báo 3,6% y/y); nóng → dễ thủng 4.170; mềm → có thể bật 4.242–4.259."
       ],
-      "physicalAdvice": "Thị trường hồi lên vùng bán thì canh SELL, thị trường giảm về vùng mua thì canh BUY – luôn có SL, để mình và bạn cùng thắng.",
+      "physicalAdvice": "Đi theo kế hoạch, tôn trọng SL, bảo vệ vốn. Xu hướng là bạn đồng hành.",
       "macro": [
         "CNBC/Reuters (12/10): đầu phiên Á vàng giao ngay lên 4.206 USD/oz, cao nhất từ 02/10, nhờ dầu và USD yếu sau tuyên bố 'ngừng bắn năng lượng' Nga – Ukraine; sau đó hạ nhiệt khi thị trường chờ CPI thứ Tư.",
         "FXStreet (02:08 13/10 giờ VN): XAU/USD giảm khoảng 1,5% về 4.163 USD; dầu WTI vượt 93 USD do Houthi tấn công Ả Rập Xê Út và Iran tấn công tàu ở eo Hormuz – kênh 'dầu → lạm phát → lãi suất' bất lợi cho vàng.",
@@ -3224,7 +3224,7 @@
         "Levels: sell rallies under 4,202 → 4,178 then 4,170; buy 4,170–4,178; break of 4,170 → 4,128–4,091.",
         "Risk: CPI Wed 8:30 AM ET (est. 3.6% y/y); hot → break 4,170; soft → pop toward 4,242–4,259."
       ],
-      "physicalAdvice_en": "Sell the rallies into the sell zone, buy the dips into the buy zone – always with a stop. Trade the plan, and we win together.",
+      "physicalAdvice_en": "Trade the plan, respect your stop, protect your capital. The trend is your friend.",
       "macro_en": [
         "CNBC/Reuters (Oct 12): early in Asia spot gold rose to $4,206/oz, its highest since Oct 2, on softer oil and the dollar after the Russia–Ukraine 'energy ceasefire' announcement; it then cooled as the market waits on Wednesday's CPI.",
         "FXStreet (3:08 PM ET Oct 12): XAU/USD down about 1.5% at $4,163; WTI above $93 after Houthi attacks on Saudi Arabia and Iran hitting ships in Hormuz – the 'oil → inflation → rates' channel is bearish for gold.",
