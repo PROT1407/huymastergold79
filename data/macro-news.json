@@ -59,9 +59,9 @@
       "category": "Vàng",
       "priority": 1,
       "impact": "trung lập",
-      "title": "3h sau PPI/bán lẻ: vàng ổn định 4.154,4 (+0,11% vs tin) sau khi chạm 4.167 – lợi suất hồi nhẹ từ đáy",
-      "summary": "Đường giá CNBC XAU= (mở nến 5m): ra tin 19:30 4.149,8 → 1h sau 20:30 4.156,2 (+0,15%) → 3h sau 22:30 4.154,4 (+0,11%); đỉnh sau tin 4.167,09 lúc 20:15; quanh 22:55 đóng ~4.150. PPI +1,3% và bán lẻ +0,8% nóng hơn dự báo, nhưng vàng vẫn tăng so với lúc ra tin vì lợi suất 10 năm và DXY đã giảm (trú ẩn khỏi cổ phiếu AI); sau đó US10Y nhích về 5,098% (−9,2 điểm trong ngày), DXY 102,14 (−0,40%), Nasdaq tương lai −0,63% → giá hạ từ đỉnh về ~4.150–4.154. COMEX GC=F 3h sau 4.175,6. Xác suất Fed tăng lãi tháng 10 ~30–34% (CME qua CNBC).",
-      "reason": "Ngắn hạn: PPI nóng lẽ ra đè vàng nhưng dòng trú ẩn kéo lợi suất/DXY xuống nên vàng vẫn xanh sau 3h; nếu lợi suất tiếp tục hồi, nhịp 4.167 dễ mất. Dài hạn: lạm phát sản xuất 6,3% y/y và xác suất tăng lãi tháng 10 vẫn là áp lực; chiến tranh Iran vừa đẩy PPI năng lượng vừa giữ cầu trú ẩn. Theo dõi Chủ tịch Fed Warsh 10:30 sáng 16/10.",
+      "title": "3h sau tin Mỹ: vàng ~4.154 (+0,11%), H79 vẫn BÁN 4.150–4.160",
+      "summary": "Diễn biến: ra tin 4.149,8 → đỉnh 4.167 → 3h sau ~4.154 (+0,11% vs tin). Vì sao: PPI/bán lẻ nóng nhưng lợi suất 10Y và DXY giảm khi tiền thoát cổ phiếu AI; sau đó lợi suất nhích lại nên vàng hạ từ đỉnh. Kế hoạch: H79 vẫn BÁN 4.150–4.160, SL 4.171.",
+      "reason": "PPI nóng lẽ ra đè vàng, nhưng trú ẩn khỏi AI kéo lợi suất/DXY xuống nên giá vẫn xanh sau 3h; lợi suất hồi nhẹ làm mất đỉnh 4.167. Theo dõi Warsh 10:30 sáng 16/10.",
       "source": {
         "name": "CNBC – Gold rebounds from one-week low as dollar slips",
         "url": "https://www.cnbc.com/2026/10/15/gold-rebounds-from-one-week-low-as-dollar-slips.html"
@@ -71,9 +71,9 @@
         "url": "https://www.cnbc.com/2026/10/15/september-producer-price-index-retail-sales-data.html"
       },
       "time_vn": "22:30–22:37 VN 15/10/2026 (mốc 3h sau tin 19:30)",
-      "title_en": "3h after PPI/retail: gold settled at 4,154.40 (+0.11% vs the print) after tagging 4,167 – yields bounced off their lows",
-      "summary_en": "CNBC XAU= 5-minute opens: release 8:30 AM ET 4,149.80 → 1h after 9:30 AM ET 4,156.20 (+0.15%) → 3h after 11:30 AM ET 4,154.40 (+0.11%); post-data high 4,167.09 at 9:15 AM ET; near 11:55 AM ET spot closed ~4,150. PPI +1.3% and retail sales +0.8% ran hot, yet gold stayed up vs the print as the 10-year yield and DXY fell on an AI equity flight-to-quality; yields then edged back to 5.098% (−9.2 bps on the day), DXY 102.14 (−0.40%), Nasdaq futures −0.63%, cooling gold from the high to ~4,150–4,154. COMEX GC=F 3h open 4,175.6. October Fed hike odds ~30–34% (CME via CNBC).",
-      "reason_en": "Near term: hot PPI should have crushed gold, but haven flows pulled yields and the DXY lower, so bullion was still green three hours later; if yields keep recovering, the 4,167 spike is at risk. Longer term: 6.3% y/y producer inflation and ~30–34% October hike odds remain a headwind; the Iran war both feeds energy PPI and supports haven demand. Next: Fed Chair Warsh at 11:30 PM ET.",
+      "title_en": "3h after U.S. data: gold ~4,154 (+0.11%), H79 still selling 4,150–4,160",
+      "summary_en": "Move: release 4,149.8 → peak 4,167 → ~4,154 at 3h (+0.11% vs the print). Why: hot PPI/retail, but the 10Y yield and DXY fell as money fled AI stocks; yields later ticked back, so gold eased from the peak. Plan: H79 still SELL 4,150–4,160, stop 4,171.",
+      "reason_en": "Hot PPI should have crushed gold, but the AI flight-to-quality pulled yields and the DXY lower — bullion was still green three hours later; the yield bounce then capped the 4,167 spike. Next: Fed Chair Warsh at 11:30 PM ET.",
       "time_en": "Oct 15, 11:30–11:37 AM ET (3h after the 8:30 AM ET prints)"
     },
     {
