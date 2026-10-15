@@ -110,11 +110,17 @@
   /* ---------- Chiến lược ---------- */
   const trendCls = { up: 'up', down: 'down', side: 'side' };
   const TI = { up: ['🔺', 'Tăng'], down: ['🔻', 'Giảm'], side: ['↔️', 'Đi ngang'] };
+  function mpHTML(s) {
+    const m = s.market_picture, X = H.esc; if (!m || !m.text) return '';
+    const chips = (m.chips || []).map(c => `<span class="chip ${X(c.dir || '')}"><b>${X(c.k)}</b> ${X(c.v)}</span>`).join('');
+    const src = (m.sources || []).map(x => `<a href="${X(x.url)}" target="_blank" rel="noopener nofollow">${X(x.name)}</a>`).join(' · ');
+    return `<section class="h79mp"><h3>🌍 Bức tranh chung</h3>${chips ? `<div class="chips">${chips}</div>` : ''}<p>${X(m.text)}</p>${src ? `<p class="src">Nguồn: ${src}</p>` : ''}</section>`;
+  }
   function sumHTML(s) {
     const m = s.summary; if (!m) return '';
     const t = TI[m.trend || s.trendType] || TI.side, E = H.esc;
     const z = (o, c, ic, lb) => o && o.zone ? `<div class="z ${c}">${ic} ${lb} <b>${E(o.zone)}</b>${o.sl ? ` <span class="k">| SL</span> ${E(o.sl)}` : ''}${o.tp ? ` <span class="k">| TP</span> ${E(o.tp)}` : ''}</div>` : '';
-    return `<div class="h79s"><div class="t ${m.trend || s.trendType || 'side'}">Xu hướng: ${t[0]} ${E(m.trendText || t[1])}</div>${z(m.sell, 'sell', '🔴', 'BÁN')}${z(m.buy, 'buy', '🟢', 'MUA')}${m.note ? `<div class="n">⚠️ ${E(m.note)}</div>` : ''}${m.priceNote ? `<div class="p">💲 ${m.price === 'spot' ? '✅' : '⚠️'} ${E(m.priceNote)}</div>` : ''}</div>${s.image ? `<figure class="h79img"><a href="${E(s.image)}" target="_blank" rel="noopener"><img src="${E(s.image)}" alt="${E(s.image_alt || 'Biểu đồ vàng')}" loading="lazy" width="1600" height="900"></a></figure>` : ''}`;
+    return `${s.image ? `<figure class="h79img"><a href="${E(s.image)}" target="_blank" rel="noopener"><img src="${E(s.image)}" alt="${E(s.image_alt || 'Biểu đồ vàng')}" loading="lazy" width="1600" height="900"></a></figure>` : ''}<div class="h79s"><div class="t ${m.trend || s.trendType || 'side'}">Xu hướng: ${t[0]} ${E(m.trendText || t[1])}</div>${z(m.sell, 'sell', '🔴', 'BÁN')}${z(m.buy, 'buy', '🟢', 'MUA')}${m.note ? `<div class="n">⚠️ ${E(m.note)}</div>` : ''}${m.priceNote ? `<div class="p">💲 ${m.price === 'spot' ? '✅' : '⚠️'} ${E(m.priceNote)}</div>` : ''}</div>${mpHTML(s)}`;
   }
   function strategyHTML(s, compact) {
     const lv = `<div class="lv">${(s.support || []).map(v => `<span class="pill s">HT ${f(v)}</span>`).join('')}${(s.resistance || []).map(v => `<span class="pill r">KC ${f(v)}</span>`).join('')}</div>`;

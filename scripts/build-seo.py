@@ -34,7 +34,7 @@ LANG_PAIRS = {"index.html": "en/index.html", "chien-luoc.html": "en/h79-analysis
 # Bài tiếng Anh tĩnh: en/posts/ (giữ đồng bộ với POST_SES trong js/common.js)
 OUT_EN = ROOT / "en" / "posts"
 POST_SES = {"phien-au-my": "london-ny-overlap", "phien-au": "london-session", "phien-my": "new-york-session", "phien-a": "asian-session", "phien-dem": "night-session"}
-ASSET_V = "20261015b"  # cache-busting cho css/js trong trang sinh tự động
+ASSET_V = "20261015c"  # cache-busting cho css/js trong trang sinh tự động
 OLD_BASES = ["https://huymastergold79.com.vn/", "https://prot1407.github.io/huymastergold79/"]
 VN = dt.timezone(dt.timedelta(hours=7))
 TODAY = dt.datetime.now(VN).date().isoformat()
@@ -153,6 +153,14 @@ def img_html(s, en=False):
     alt = (s.get("image_alt_en") if en else s.get("image_alt")) or ("Gold chart" if en else "Biểu đồ vàng")
     return f'<figure class="h79img"><a href="{e(src)}" target="_blank" rel="noopener"><img src="{e(src)}" alt="{e(alt)}" loading="lazy" width="1600" height="900"></a></figure>'
 
+def mp_html(s, en=False):
+    m = s.get("market_picture_en" if en else "market_picture")
+    if not m or not m.get("text"): return ""
+    chips = "".join(f'<span class="chip {e(c.get("dir", ""))}"><b>{e(c["k"])}</b> {e(c["v"])}</span>' for c in m.get("chips", []))
+    src = " · ".join(f'<a href="{e(x["url"])}" target="_blank" rel="noopener nofollow">{e(x["name"])}</a>' for x in m.get("sources", []))
+    return (f'<section class="h79mp"><h3>{"🌍 Market Picture" if en else "🌍 Bức tranh chung"}</h3>' + (f'<div class="chips">{chips}</div>' if chips else "")
+            + f'<p>{e(m["text"])}</p>' + (f'<p class="src">{"Sources" if en else "Nguồn"}: {src}</p>' if src else "") + "</section>")
+
 def summary_html(s):
     m = s.get("summary")
     if not m: return ""
@@ -161,11 +169,11 @@ def summary_html(s):
         if not o or not o.get("zone"): return ""
         return (f'<div class="z {c}">{i} {lb} <b>{e(o["zone"])}</b>' + (f' <span class="k">| SL</span> {e(o["sl"])}' if o.get("sl") else "")
                 + (f' <span class="k">| TP</span> {e(o["tp"])}' if o.get("tp") else "") + "</div>")
-    return (f'<section class="h79s"><div class="t {e(tk)}">Xu hướng: {ic} {e(m.get("trendText") or w)}</div>'
+    return img_html(s) + (f'<section class="h79s"><div class="t {e(tk)}">Xu hướng: {ic} {e(m.get("trendText") or w)}</div>'
             + z(m.get("sell"), "sell", "🔴", "BÁN") + z(m.get("buy"), "buy", "🟢", "MUA")
             + (f'<div class="n">⚠️ {e(m["note"])}</div>' if m.get("note") else "")
             + (f'<div class="p">💲 {"✅" if m.get("price") == "spot" else "⚠️"} {e(m["priceNote"])}</div>' if m.get("priceNote") else "")
-            + "</section>" + img_html(s))
+            + "</section>") + mp_html(s)
 
 def article_html(a, en=False):
     if not a or not a.get("sections"): return ""
@@ -425,9 +433,9 @@ def en_summary(s):
                 + (f' <span class="k">· Targets</span> {e(en_num(o.get("tp_en") or o["tp"]))}' if o.get("tp") else "") + "</div>")
     pn = m.get("priceNote_en") or {"spot": "Levels are spot XAU/USD", "futures": "Levels are COMEX gold futures (GC=F), not spot"}.get(m.get("price"), "")
     note = re.sub(r"(?i)^key risk:\s*", "", m.get("note_en") or "")
-    return (f'<section class="h79s"><div class="t {e(tk)}">Bias: {ic} {e(m.get("trendText_en") or w)}</div>' + z(m.get("sell"), "sell", "🔴", "Sell zone")
+    return img_html(s, True) + (f'<section class="h79s"><div class="t {e(tk)}">Bias: {ic} {e(m.get("trendText_en") or w)}</div>' + z(m.get("sell"), "sell", "🔴", "Sell zone")
             + z(m.get("buy"), "buy", "🟢", "Buy zone") + (f'<div class="n">⚠️ Key risk: {e(note)}</div>' if note else "")
-            + (f'<div class="p">💲 {"✅" if m.get("price") == "spot" else "⚠️"} {e(pn)}</div>' if pn else "") + "</section>" + img_html(s, True))
+            + (f'<div class="p">💲 {"✅" if m.get("price") == "spot" else "⚠️"} {e(pn)}</div>' if pn else "") + "</section>") + mp_html(s, True)
 
 def build_en(arts):
     OUT_EN.mkdir(parents=True, exist_ok=True)

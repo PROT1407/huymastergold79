@@ -57,16 +57,14 @@
     "CNBC TV18: Kospi −8%, Nikkei −4% do làn sóng bán cổ phiếu AI/chip sau CPI Mỹ nóng. https://www.cnbctv18.com/market/asian-market-updates-nikkei-kospi-crash-ai-funding-chip-stocks-sell-off-gift-nifty-20012218.htm",
     "CNBC TV18: vàng COMEX +1,39% lên 4.165,1. https://www.cnbctv18.com/market/commodities/comex-gold-silver-rates-rise-over-1-pc-key-levels-to-watch-20012221.htm",
     "Saxo: lợi suất thực 10 năm 2,88%; Brent đóng trên 106 sau vụ Houthi tấn công Saudi (có tin trúng trụ sở Aramco) và Iran tăng tấn công tàu ở Hormuz. https://www.home.saxo/en-sg/content/articles/macro/asia-market-quick-take-15-october-2026-15102026",
-    "MUFG: DXY lùi về 102,50 sau khi lên 102,95; USD vẫn khá chắc ngắn hạn. https://www.mufgresearch.com/fx/asia-fx-talk-15-october-2026/",
-    "Bức tranh: rủi ro yếu (cổ phiếu châu Á giảm sâu), tiền vào trái phiếu kéo lợi suất và USD xuống – vàng hồi gần hết mức giảm sau CPI. Dầu hạ nhẹ nhưng rủi ro Hormuz/Aramco còn cao; kỳ vọng Fed tăng lãi vẫn nguyên, PPI tối nay là phép thử."
+    "MUFG: DXY lùi về 102,50 sau khi lên 102,95; USD vẫn khá chắc ngắn hạn. https://www.mufgresearch.com/fx/asia-fx-talk-15-october-2026/"
    ],
    "macro_en": [
     "Bloomberg: Asian stocks slid on a chip rout and Treasuries caught a haven bid – 10-year yield down to 5.11%, 2-year 4.72%; Bloomberg Dollar Index −0.3%; Brent −1.1% to $104.94; spot gold $4,143.70 (+0.9%). https://www.swissinfo.ch/eng/stock-losses-deepen-on-chip-rout%2c-treasuries-rise%3a-markets-wrap/92218059",
     "CNBC TV18: Kospi −8%, Nikkei −4% as the AI/chip selloff spread after the hot U.S. CPI. https://www.cnbctv18.com/market/asian-market-updates-nikkei-kospi-crash-ai-funding-chip-stocks-sell-off-gift-nifty-20012218.htm",
     "CNBC TV18: COMEX gold +1.39% to $4,165.10. https://www.cnbctv18.com/market/commodities/comex-gold-silver-rates-rise-over-1-pc-key-levels-to-watch-20012221.htm",
     "Saxo: 10-year real yield at 2.88%; Brent settled above $106 after Houthi strikes on Saudi Arabia (reported hit on Aramco HQ) and stepped-up Iranian attacks on tankers in Hormuz. https://www.home.saxo/en-sg/content/articles/macro/asia-market-quick-take-15-october-2026-15102026",
-    "MUFG: DXY eased to 102.50 after touching 102.95; the dollar stays fairly firm near term. https://www.mufgresearch.com/fx/asia-fx-talk-15-october-2026/",
-    "Big picture: risk appetite is weak, haven flows into Treasuries are pulling yields and the dollar lower, and gold has recovered most of its post-CPI drop. Oil has cooled but Gulf risk remains; Fed-hike pricing is intact, so this morning's PPI is the real test."
+    "MUFG: DXY eased to 102.50 after touching 102.95; the dollar stays fairly firm near term. https://www.mufgresearch.com/fx/asia-fx-talk-15-october-2026/"
    ],
    "notes": "Giá giao ngay XAU/USD = GC=F trừ ~20 USD (đo sáng 15/10; GC Yahoo trễ ~15 phút). Giao ngay gold-api.com 4.155 lúc 10:08 VN.",
    "notes_en": "Spot XAU/USD = GC=F minus ~$20 (measured earlier; Yahoo futures data ~15 min delayed). Spot 4,155 (gold-api.com) at 11:08 PM ET Oct 14.",
@@ -101,6 +99,92 @@
     "price": "spot",
     "priceNote": "Giá giao ngay XAU/USD (quy đổi)",
     "priceNote_en": "Levels are spot XAU/USD (converted from futures)"
+   },
+   "market_picture": {
+    "text": "Khẩu vị rủi ro yếu khi cổ phiếu châu Á bị bán tháo theo nhóm chip (Kospi −8%, Nikkei −4%). Tiền trú ẩn chảy vào trái phiếu Mỹ, kéo lợi suất 10 năm về ~5,11% và DXY về ~102,5, giúp vàng hồi gần hết mức giảm sau CPI. Dầu hạ nhẹ (Brent ~105) nhưng rủi ro Hormuz/Aramco còn cao. Kỳ vọng Fed tăng lãi vẫn nguyên – PPI tối nay là phép thử cho nhịp hồi.",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "~102,5 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "5,11% ↓",
+      "dir": "down"
+     },
+     {
+      "k": "Brent",
+      "v": "104,9 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "Rủi ro",
+      "v": "Né rủi ro ↑",
+      "dir": "up"
+     }
+    ],
+    "sources": [
+     {
+      "name": "Bloomberg (swissinfo)",
+      "url": "https://www.swissinfo.ch/eng/stock-losses-deepen-on-chip-rout%2c-treasuries-rise%3a-markets-wrap/92218059"
+     },
+     {
+      "name": "CNBC TV18",
+      "url": "https://www.cnbctv18.com/market/asian-market-updates-nikkei-kospi-crash-ai-funding-chip-stocks-sell-off-gift-nifty-20012218.htm"
+     },
+     {
+      "name": "Saxo",
+      "url": "https://www.home.saxo/en-sg/content/articles/macro/asia-market-quick-take-15-october-2026-15102026"
+     },
+     {
+      "name": "MUFG",
+      "url": "https://www.mufgresearch.com/fx/asia-fx-talk-15-october-2026/"
+     }
+    ]
+   },
+   "market_picture_en": {
+    "text": "Risk appetite is weak as Asian stocks sold off on a chip rout (Kospi −8%, Nikkei −4%). Haven flows into Treasuries pulled the 10-year yield to about 5.11% and the dollar index to about 102.5, helping gold recover most of its post-CPI drop. Oil has cooled (Brent near $105) but Hormuz/Aramco risk remains high. Fed-hike pricing is intact, so this morning's PPI is the real test for the bounce.",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "~102.5 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "5.11% ↓",
+      "dir": "down"
+     },
+     {
+      "k": "Brent",
+      "v": "$104.9 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "Risk",
+      "v": "Risk-off ↑",
+      "dir": "up"
+     }
+    ],
+    "sources": [
+     {
+      "name": "Bloomberg (swissinfo)",
+      "url": "https://www.swissinfo.ch/eng/stock-losses-deepen-on-chip-rout%2c-treasuries-rise%3a-markets-wrap/92218059"
+     },
+     {
+      "name": "CNBC TV18",
+      "url": "https://www.cnbctv18.com/market/asian-market-updates-nikkei-kospi-crash-ai-funding-chip-stocks-sell-off-gift-nifty-20012218.htm"
+     },
+     {
+      "name": "Saxo",
+      "url": "https://www.home.saxo/en-sg/content/articles/macro/asia-market-quick-take-15-october-2026-15102026"
+     },
+     {
+      "name": "MUFG",
+      "url": "https://www.mufgresearch.com/fx/asia-fx-talk-15-october-2026/"
+     }
+    ]
    }
   },
   {
