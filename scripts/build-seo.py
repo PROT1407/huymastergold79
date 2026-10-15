@@ -209,7 +209,8 @@ def build_strategies():
                         pub=f"{s['date']}T{t or '00:00'}:00+07:00",
                         when=f"{s.get('session','')} · {t + ' ' if t else ''}{dvn(s['date'])[:5]}", body=body))
         if s.get("image"): out[-1]["img"] = s["image"]
-        out[-1]["en"] = en_post_file(f)
+        # Bài chỉ VN (không có trường *_en, vd bản tin vàng trong nước) thì không tạo bản EN
+        out[-1]["en"] = en_post_file(f) if any(s.get(k) for k in ("url_en", "headline_en", "title_en")) else None
     return out
 
 def en_post_file(vi_file):
