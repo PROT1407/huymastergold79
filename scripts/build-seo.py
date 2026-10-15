@@ -212,8 +212,12 @@ def build_strategies():
                 + card("🧭 Kịch bản", ul(s.get("scenarios"))) + card("🌐 Vĩ mô", ul(s.get("macro")))
                 + card("🥇 Vàng vật chất", f'<p>{e(s["physicalAdvice"])}</p>' if s.get("physicalAdvice") else "")
                 + card("ℹ Nguồn dữ liệu", "".join(f'<p class="small muted">{e(s[k])}</p>' for k in ("dataTime", "notes", "disclaimer") if s.get(k))))
+        if s.get("brief"):  # Xem thêm gọn: ~5 dòng (kết quả tin / diễn biến / vì sao / mốc giá / rủi ro); chỉ báo chỉ nằm trên chart
+            body = (card("🧭 Kế hoạch &amp; kịch bản", ul(s.get("scenarios")))
+                    + card("🥇 Vàng vật chất", f'<p>{e(s["physicalAdvice"])}</p>' if s.get("physicalAdvice") else "")
+                    + (f'<p class="small muted">{e(s["disclaimer"])}</p>' if s.get("disclaimer") else ""))
         if s.get("summary"):
-            body = article_html(s.get("article")) + summary_html(s) + article_src(s.get("article")) + '<details class="h79more"><summary>Xem thêm: chỉ báo, kịch bản, vĩ mô</summary>' + body + "</details>"
+            body = article_html(s.get("article")) + summary_html(s) + article_src(s.get("article")) + '<details class="h79more"><summary>' + ("Xem thêm" if s.get("brief") else "Xem thêm: chỉ báo, kịch bản, vĩ mô") + '</summary>' + body + "</details>"
         desc = f"Nhận định vàng {s.get('session','')} {dvn(s['date'])}{' lúc ' + t if t else ''}: " + (s.get("trend") or s["title"])
         out.append(dict(kind="nd", file=f, date=s["date"], sort=s["date"] + (t or "00:00"),
                         title=s.get("headline") or (s["title"] if re.search(r"\d{1,2}/\d{1,2}", s["title"]) else f"Nhận định vàng {dvn(s['date'])} – {s['title']}"),
@@ -491,7 +495,9 @@ def build_en(arts):
                     + card("🟢 Long setups", ul(s.get("entryZones_en"))) + card("🔴 Short setups &amp; invalidation", ul(s.get("sellZones_en")))
                     + card("🧭 Levels, indicators &amp; scenarios", ul(s.get("scenarios_en"))) + card("🌐 Macro backdrop", ul(s.get("macro_en")))
                     + card("ℹ Data notes", "".join(f'<p class="small muted">{e(s[k])}</p>' for k in ("dataTime_en", "notes_en", "disclaimer_en") if s.get(k))))
-            if s.get("summary") and body: body = '<details class="h79more" open><summary>Full breakdown: indicators, scenarios, macro</summary>' + body + "</details>"
+            if s.get("brief"):
+                body = card("🧭 Plan &amp; scenarios", ul(s.get("scenarios_en"))) + (f'<p class="small muted">{e(s["disclaimer_en"])}</p>' if s.get("disclaimer_en") else "")
+            if s.get("summary") and body: body = '<details class="h79more" open><summary>' + ("More details" if s.get("brief") else "Full breakdown: indicators, scenarios, macro") + '</summary>' + body + "</details>"
             wt = et_str(t, bool(s.get("time")))
             desc = f"H79 gold (XAU/USD) plan – {ses}, {wt}: " + (s.get("trend_en") or title)
             x = dict(path=a["en"], vi="bai/" + a["file"], date=a["date"], sort=a["sort"], kind="H79 Gold Plan", title=title,
