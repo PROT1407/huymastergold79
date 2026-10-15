@@ -34,7 +34,7 @@ LANG_PAIRS = {"index.html": "en/index.html", "chien-luoc.html": "en/h79-analysis
 # Bài tiếng Anh tĩnh: en/posts/ (giữ đồng bộ với POST_SES trong js/common.js)
 OUT_EN = ROOT / "en" / "posts"
 POST_SES = {"phien-au-my": "london-ny-overlap", "phien-au": "london-session", "phien-my": "new-york-session", "phien-a": "asian-session", "phien-dem": "night-session"}
-ASSET_V = "20261015k"  # cache-busting cho css/js trong trang sinh tự động
+ASSET_V = "20261015m"  # cache-busting cho css/js trong trang sinh tự động
 OLD_BASES = ["https://huymastergold79.com.vn/", "https://prot1407.github.io/huymastergold79/"]
 VN = dt.timezone(dt.timedelta(hours=7))
 TODAY = dt.datetime.now(VN).date().isoformat()
@@ -359,7 +359,28 @@ def fix_main_pages(arts):
 # Dữ liệu giữ giờ VN; bài EN hiển thị giờ US Eastern (tự tính DST) và chỉ dùng trường *_en (không trộn tiếng Việt).
 from zoneinfo import ZoneInfo
 NY = ZoneInfo("America/New_York")
-SES_EN = {"Phiên Á": "Asian session (Tokyo)", "Phiên Âu": "London session", "Phiên Mỹ": "New York session", "Phiên Âu – Mỹ": "London/NY overlap", "Phiên đêm": "Night session"}
+# Legacy VN→EN map (fallback only). Prefer et_session_label() from the post's ET clock.
+SES_EN = {"Phiên Á": "Asian session (ET evening)", "Phiên Âu": "London session (ET early morning)", "Phiên Mỹ": "New York session", "Phiên Âu – Mỹ": "London/NY overlap", "Phiên đêm": "New York morning session (US open)",
+          "Night session": "New York morning session (US open)", "NY session": "New York session", "Asian session": "Asian session (ET evening)", "Asian session (Tokyo)": "Asian session (ET evening)",
+          "London session": "London session (ET early morning)", "New York session": "New York session", "European session": "London session (ET early morning)"}
+
+def et_session_label(t):
+    """EN session label from US Eastern clock (DST via America/New_York). Never use VN-centric names like Night session.
+    before 9:30 ET = New York pre-market (from 8:00); 9:30–11:30 = NY morning (US open); 11:30–14:00 = midday;
+    14:00–17:00 = afternoon/late; else Asian (ET evening) or London (ET early morning)."""
+    x = t.astimezone(NY)
+    mins = x.hour * 60 + x.minute
+    if 9 * 60 + 30 <= mins < 11 * 60 + 30:
+        return "New York morning session (US open)"
+    if 11 * 60 + 30 <= mins < 14 * 60:
+        return "New York midday session"
+    if 14 * 60 <= mins < 17 * 60:
+        return "New York afternoon / late session"
+    if 8 * 60 <= mins < 9 * 60 + 30:
+        return "New York pre-market"
+    if 2 * 60 <= mins < 8 * 60:
+        return "London session (ET early morning)"
+    return "Asian session (ET evening)"
 CAT_EN = {"Chiến tranh": "War & geopolitics", "Lạm phát": "Inflation", "Fed": "Fed", "FOMC": "FOMC", "Lợi suất": "Yields", "Trái phiếu": "Bonds",
           "Tương quan": "Cross-asset", "Ngân hàng TW": "Central banks", "Vàng": "Gold", "Dầu mỏ": "Oil"}
 VI_CHARS = re.compile(r"[ăâđêôơưạảấầẩẫậắằẳẵặẹẻẽếềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]", re.I)
@@ -460,7 +481,9 @@ def build_en(arts):
         if a["kind"] == "nd":
             s = next((x for k, x in strat.items() if a["pub"].startswith(x["date"] + "T" + (x.get("time") or "00:00"))), None)
             if not s or not (s.get("title_en") or s.get("summary")): continue
-            t = vn_dt(s["date"], s.get("time")); ses = SES_EN.get(s.get("session_en")) or s.get("session_en") or SES_EN.get(s.get("session"), "")
+            t = vn_dt(s["date"], s.get("time"))
+            # Always derive EN session label from ET clock (fixes Phiên đêm → NY morning, etc.)
+            ses = et_session_label(t) if s.get("time") else (SES_EN.get(s.get("session_en")) or SES_EN.get(s.get("session")) or s.get("session_en") or "")
             title = s.get("headline_en") or s.get("title_en") or f"H79 Gold Plan – {ses}, {et_str(t, False)}"
             lv = "".join(f'<span class="s">S {en_num(num(x))}</span>' for x in s.get("support", [])) + "".join(f'<span class="r">R {en_num(num(x))}</span>' for x in s.get("resistance", []))
             body = (card("📊 Trend read", f'<p>{e(s["trend_en"])}</p>' if s.get("trend_en") else "")

@@ -5,21 +5,30 @@
   'use strict';
   const H = window.HMG, E = H.esc, $ = id => document.getElementById(id);
   const TI = { up: ['🔺', 'Bullish'], down: ['🔻', 'Bearish'], side: ['↔️', 'Sideways'] };
-  // market-native session names; also normalizes older session_en values
-  const SES = { 'Phiên Á': 'Asian session (Tokyo)', 'Phiên Âu': 'London session', 'Phiên Mỹ': 'New York session', 'Phiên Âu – Mỹ': 'London/NY overlap',
-    'Asian session': 'Asian session (Tokyo)', 'European session': 'London session', 'US session': 'New York session', 'European – US session': 'London/NY overlap' };
-  // Post times in data are Vietnam time (Asia/Ho_Chi_Minh, fixed UTC+7, no DST) -> shown in US Eastern with automatic DST
+  // EN session labels from US Eastern clock (never VN-centric "Night session" / phiên đêm).
+  // Post times in data are Vietnam time (UTC+7, no DST) -> America/New_York (DST auto).
   const vnDate = s => { const [y, m, d] = s.date.split('-').map(Number), [hh, mm] = (s.time || '12:00').split(':').map(Number); return new Date(Date.UTC(y, m - 1, d, hh - 7, mm)); };
   const fET = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
   const fETd = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', month: 'short', day: 'numeric', year: 'numeric' });
   const fLoc = new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeStyle: 'short' });
+  const fETparts = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit', hour12: false });
+  const etMins = d => { const p = Object.fromEntries(fETparts.formatToParts(d).filter(x => x.type !== 'literal').map(x => [x.type, x.value])); return (+p.hour) * 60 + (+p.minute); };
+  const etSessionLabel = d => {
+    const m = etMins(d);
+    if (m >= 9 * 60 + 30 && m < 11 * 60 + 30) return 'New York morning session (US open)';
+    if (m >= 11 * 60 + 30 && m < 14 * 60) return 'New York midday session';
+    if (m >= 14 * 60 && m < 17 * 60) return 'New York afternoon / late session';
+    if (m >= 8 * 60 && m < 9 * 60 + 30) return 'New York pre-market';
+    if (m >= 2 * 60 && m < 8 * 60) return 'London session (ET early morning)';
+    return 'Asian session (ET evening)';
+  };
   const etTime = s => s.time ? fET.format(vnDate(s)) + ' ET' : fETd.format(vnDate(s));
   const tip = s => s.time ? ` title="Your local time: ${E(fLoc.format(vnDate(s)))}"` : '';
   const num = t => String(t == null ? '' : t).replace(/(\d)\.(\d{3})(?!\d)/g, '$1,$2'); // VN thousands "." → ","
   const hasVi = t => /[ăâđêôơưạảấầẩẫậắằẳẵặẹẻẽếềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]/i.test(t || '');
   const pick = (o, k) => o[k + '_en'];
   const when = s => `<time datetime="${vnDate(s).toISOString()}"${tip(s)}>${E(etTime(s))}</time>`;
-  const ses = s => E(SES[s.session_en] || s.session_en || SES[s.session] || '');
+  const ses = s => E(s.time ? etSessionLabel(vnDate(s)) : (s.session_en || ''));
   const zoneTxt = o => o.zone_en || (hasVi(o.zone) ? num(o.zone.replace(/\s*\(.*?\)\s*/g, ' ').trim()) : num(o.zone));
   function mpHTML(s) {
     const m = s.market_picture_en, X = H.esc; if (!m || !m.text) return '';

@@ -53,7 +53,7 @@ Trang tiếng Anh (cặp VI ↔ EN): `index` ↔ `en/index.html`, `nhan-dinh-h79
 | Trường | Ý nghĩa | Fallback khi thiếu |
 |---|---|---|
 | `title_en` | Tiêu đề kiểu trader Mỹ, ví dụ "H79 Gold Plan – Asian session, Oct 14: …" | "H79 Gold Plan – <session>, <Oct 14, 2026>" |
-| `session_en` | "Asian session (Tokyo)" / "London session" / "New York session" / "London/NY overlap" | map từ `session` (giá trị cũ cũng tự đổi) |
+| `session_en` | ET-based US label (see below) – never "Night session" | `build-seo.py` / `en-h79.js` tự suy từ giờ ET nếu thiếu |
 | `summary.trendText_en` | "Bearish" / "Bullish" / "Sideways" | dịch từ enum `summary.trend` |
 | `summary.sell.zone_en`, `summary.buy.zone_en` | chỉ cần khi `zone` có chữ tiếng Việt, ví dụ "(chỉ khi chuyển kênh tăng)" | số trong `zone` (bỏ phần chữ trong ngoặc) |
 | `summary.sell.sl_en` / `tp_en`, `summary.buy.sl_en` / `tp_en` | chỉ khi SL/TP có chữ | số của `sl` / `tp` |
@@ -65,7 +65,13 @@ Quy ước tiếng Anh (bắt buộc cho mọi trường `_en`): viết như tra
 - **Giờ: luôn là US Eastern (ET)**, tự tính DST (EDT = giờ VN − 11h, EST từ CN đầu tháng 11 = giờ VN − 12h), dạng "8:30 AM ET", "Oct 13, 9:30 PM ET" – **không** ghi "Vietnam time"/"GMT+7"/"19:30". Trường `date`/`time` gốc vẫn là giờ VN; trang EN tự đổi sang ET (hover hiện giờ địa phương của người đọc).
 - Ngày "Oct 14" / "Oct 14, 2026"; số kiểu Mỹ 4,211.50; khoảng giá "4,211–4,221"; tiền "$21".
 - Thuật ngữ: Bias, Sell zone / Buy zone, Long / Short, Stop, Targets, "stops to breakeven", "be flat before the print", "buy dips", "sell rallies", "daily is bearish". Không dùng "SL/TP", "giá giao ngay quy đổi", đơn vị VND/lượng.
-- Phiên: Asian session (Tokyo), London session, New York session, London/NY overlap.
+- Phiên EN (bắt buộc – theo giờ ET của bài, không theo tên phiên VN): convert giờ VN → ET (EDT: VN = ET+11; sau 1/11 EST: VN = ET+12; dùng `America/New_York`). Nhãn:
+  - trước 9:30 AM ET (từ ~8:00) = **New York pre-market**
+  - 9:30–11:30 AM ET = **New York morning session (US open)**
+  - 11:30 AM–2:00 PM ET = **New York midday session**
+  - 2:00–5:00 PM ET = **New York afternoon / late session**
+  - ngoài giờ Mỹ: **Asian session (ET evening)** hoặc **London session (ET early morning)** kèm giờ ET
+  - Cấm trên EN: "Night session" / "phiên đêm" / "Asia/Europe" khung giờ VN. Trang VI giữ nguyên phiên Á/Âu/Mỹ/đêm.
 Không hứa lợi nhuận; số liệu quỹ/follow mẫu phải ghi rõ là mẫu. Ticker trang EN chỉ hiện XAU/USD, Silver, DXY (ước tính), EUR/USD, USD/JPY, BTC – không có giá vàng trong nước.
 
 ### Trường `_en` ở các file dữ liệu khác (routine nên điền khi thêm/sửa mục)
