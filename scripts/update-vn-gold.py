@@ -109,12 +109,15 @@ def main():
     sjc = next(r for r in rows if r['code'] == 'SJL1L10')
     now = dt.datetime.now(VN)
     out = dict(old)
-    out.update({'_ghi_chu': 'Phần giá/lịch sử/world/sjc_compare do scripts/update-vn-gold.py tự sinh. peak/refs/analysis/advice/world_news/quick_advice: sửa tay (chỉ số liệu có nguồn).',
+    out.update({'_ghi_chu': 'Phần giá/lịch sử/world/sjc_compare do scripts/update-vn-gold.py tự sinh. peak/refs/analysis/advice/world_news/quick_advice: sửa tay (chỉ số liệu có nguồn). world_news: mỗi mục {text (1 dòng tiếng Việt), source:{name,url}, intl}; luôn giữ ≥1 nguồn quốc tế (ưu tiên CNBC, rồi Reuters/Kitco/Bloomberg), bài trong ngày, link đã kiểm tra.',
         'updated_vn': now.strftime('%H:%M %d/%m/%Y'), 'vt_time': f"{cur['time']} {cur['date']}",
         'rows': rows, 'official_ok': OK, 'official_fail': FAIL, 'history': hist, 'sjc_compare': cmp_, 'row_sources': {k: {'name': v[0], 'url': v[1]} for k, v in SRC.items()},
         'world': {'xau_usd': xau['price'], 'xau_time_utc': xau['updatedAt'], 'usdvnd': usdvnd, 'fx_time_utc': fx['time_last_update_utc'], 'factor': K, 'vnd_per_luong': world_vnd,
                   'gap_sjc_sell': sjc['sell'] - world_vnd, 'note': 'USD/oz × USD/VND (tỷ giá thị trường open.er-api) × 1,20565; chưa gồm thuế, phí'},
         'sources': {'vang_today': 'https://www.vang.today/', 'gold_api': 'https://gold-api.com/', 'fx': 'https://open.er-api.com/'}})
+    INTL = ('cnbc', 'reuters', 'kitco', 'bloomberg')
+    if not any(any(k in ((n.get('source') or {}).get('name', '') + (n.get('source') or {}).get('url', '')).lower() for k in INTL) for n in out.get('world_news', [])):
+        print('CẢNH BÁO: world_news chưa có nguồn quốc tế (CNBC/Reuters/Kitco/Bloomberg) – routine cần bổ sung 1 mục.')
     json.dump(out, open(OUT, 'w'), ensure_ascii=False, indent=1)
     print('SJC', sjc['buy'], sjc['sell'], 'TG quy đổi', world_vnd, 'chênh', sjc['sell'] - world_vnd)
 if __name__ == '__main__': main()

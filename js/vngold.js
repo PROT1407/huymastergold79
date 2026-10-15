@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
     const tipsBox = `<div class="card bt-box"><h3>💡 Mẹo cho người mua</h3><p class="small muted">Tự tính từ bảng giá lúc ${e(d.updated_vn || '')}, đơn vị triệu đồng/lượng.</p>
       <div class="bt-grid">${tipGrp('mieng', '🧱 Vàng miếng')}${tipGrp('nhan', '💍 Vàng nhẫn')}</div>
-      <p class="bt-note">🏪 Tiệm nhỏ không niêm yết: so với giá các hãng lớn trên đây. Nếu bán cao hơn SJC hoặc chênh mua–bán trên 5 triệu là dễ bị hớ. Luôn hỏi cả giá mua vào và bán ra trước khi xuống tiền.</p></div>`;
+      <p class="bt-note">🏪 Tiệm nhỏ: so giá với các hãng lớn phía trên. Hỏi cả giá mua vào và bán ra; chênh lệch càng nhỏ càng có lợi cho người mua.</p></div>`;
     const dl = sjc.chg_sell || 0, hl = dl === 0 ? `Hôm nay vàng miếng SJC <b>đứng giá</b> ở ${tr(sjc.sell)} triệu/lượng (bán ra)` : `Hôm nay vàng miếng SJC <b>${dl > 0 ? 'tăng' : 'giảm'} ${tr(Math.abs(dl))} triệu/lượng</b>, bán ra ${tr(sjc.sell)} triệu`;
     const C = d.sjc_compare || {}, cmpBox = (k, lb) => { const x = C[k]; if (!x) return `<div class="vg-q"><small>${lb}</small><b class="muted">chưa đủ dữ liệu</b></div>`; const v = sjc.sell - x.sell;
       return `<div class="vg-q ${v > 0 ? 'up' : v < 0 ? 'down' : ''}"><small>${lb} (${H.dateVN(x.date).slice(0, 5)}: ${tr(x.sell)})</small><b>${v > 0 ? '▲ +' : v < 0 ? '▼ −' : '= '}${tr(Math.abs(v))} tr</b></div>`; };

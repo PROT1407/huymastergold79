@@ -38,7 +38,7 @@
   "Thị trường trong nước đang 'neo' sau nhịp giảm 14/10, trong khi thế giới còn dao động sau CPI Mỹ; tối nay còn PPI và bán lẻ Mỹ – người mua mới vẫn chịu rủi ro kép từ giá quốc tế và khoảng chênh cao."
  ],
  "advice": "Vàng đang có xu hướng giảm dài và sâu, trong trung – dài hạn có thể về dưới mốc 100 triệu/lượng. Người mua vàng vật chất nên chờ mốc này hoặc một thời điểm thích hợp hơn.",
- "_ghi_chu": "Phần giá/lịch sử/world/sjc_compare do scripts/update-vn-gold.py tự sinh. peak/refs/analysis/advice/world_news/quick_advice: sửa tay (chỉ số liệu có nguồn).",
+ "_ghi_chu": "Phần giá/lịch sử/world/sjc_compare do scripts/update-vn-gold.py tự sinh. peak/refs/analysis/advice/world_news/quick_advice: sửa tay (chỉ số liệu có nguồn). world_news: mỗi mục {text (1 dòng tiếng Việt), source:{name,url}, intl}; luôn giữ ≥1 nguồn quốc tế (ưu tiên CNBC, rồi Reuters/Kitco/Bloomberg), bài trong ngày, link đã kiểm tra.",
  "updated_vn": "17:29 15/10/2026",
  "vt_time": "17:00 2026-10-15",
  "rows": [
@@ -624,14 +624,24 @@
    "source": {
     "name": "VietNamNet",
     "url": "https://vietnamnet.vn/gia-vang-hom-nay-15-10-lao-doc-sjc-lien-tuc-boc-hoi-2564880.html"
-   }
+   },
+   "intl": false
   },
   {
    "text": "Kỳ vọng Fed tăng lãi suất tháng 12 tăng mạnh sau CPI; tối 15/10 (giờ VN) Mỹ công bố PPI và doanh số bán lẻ – dễ gây biến động mạnh.",
    "source": {
     "name": "VietNamNet",
     "url": "https://vietnamnet.vn/gia-vang-hom-nay-15-10-lao-doc-sjc-lien-tuc-boc-hoi-2564880.html"
-   }
+   },
+   "intl": false
+  },
+  {
+   "text": "CNBC (Reuters): vàng giao ngay 15/10 tăng 1,2% lên 4.156,11 USD/oz nhờ USD và lợi suất trái phiếu Mỹ giảm; thị trường chờ PPI, doanh số bán lẻ Mỹ.",
+   "source": {
+    "name": "CNBC",
+    "url": "https://www.cnbc.com/2026/10/15/gold-rebounds-from-one-week-low-as-dollar-slips.html"
+   },
+   "intl": true
   }
  ],
  "quick_advice": "Giá SJC đang cao hơn thế giới quy đổi khoảng 13,5 triệu/lượng, chưa nên mua đuổi; nếu cần mua, hãy chia nhỏ và chờ chênh lệch thu hẹp.",
@@ -643,5 +653,6 @@
   "SJC",
   "DOJI",
   "BTMC"
- ]
+ ],
+ "world_news_rules": "Giữ ≥1 mục nguồn quốc tế (CNBC ưu tiên, rồi Reuters/Kitco/Bloomberg), bài trong ngày, link đã kiểm tra, 1 dòng tiếng Việt, không bịa số."
 }
