@@ -4,6 +4,7 @@
 Chạy bởi .github/workflows/red-news-alert.yml mỗi 5 phút. Cửa sổ: 0 < phút tới tin <= WINDOW_MIN
 (mặc định 20, chịu được cron GitHub trễ vài phút). Chống trùng: state file (ALERT_STATE,
 mặc định data/alert-state.json) lưu khóa = time_utc đã gửi; workflow giữ file qua actions/cache.
+Tin Telegram: khối English/ET trước, khối tiếng Việt sau (một tin song ngữ).
 Env: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, ONESIGNAL_APP_ID, ONESIGNAL_REST_KEY, DRY_RUN=1, NOW_UTC (test).
 """
 import json, os, sys, urllib.request
@@ -32,13 +33,19 @@ def post(url, payload, headers=None):
         return r.status, r.read()[:300]
 
 
-def fmt(e):
+def fmt_en(e):
+    en = e.get("title") or ""
+    bits = [f"Forecast {e['forecast']}" if e.get("forecast") else "", f"Previous {e['previous']}" if e.get("previous") else ""]
+    bits = " · ".join(b for b in bits if b)
+    return "📌 " + en + (f"  ({bits})" if bits else "")
+
+
+def fmt_vi(e):
     en = e.get("title") or ""
     vi = e.get("title_vi") or en
-    name = f"{vi} | {en}" if vi != en else en
-    bits = [f"Dự báo/Forecast {e['forecast']}" if e.get("forecast") else "", f"Kỳ trước/Previous {e['previous']}" if e.get("previous") else ""]
+    bits = [f"Dự báo {e['forecast']}" if e.get("forecast") else "", f"Kỳ trước {e['previous']}" if e.get("previous") else ""]
     bits = " · ".join(b for b in bits if b)
-    return "📌 " + name + (f"  ({bits})" if bits else "")
+    return "📌 " + vi + (f"  ({bits})" if bits else "")
 
 
 def et_str(dt):
@@ -46,14 +53,31 @@ def et_str(dt):
     return f"{t.hour % 12 or 12}:{t:%M} {'AM' if t.hour < 12 else 'PM'} ET"
 
 
-def build_text(when, mins, lines):
-    return ("🚨 TIN ĐỎ MỸ SẮP RA | RED NEWS ALERT\n"
-            f"⏰ {when.astimezone(VN):%H:%M} VN · {et_str(when)} (còn ~{mins} phút | in ~{mins} min)\n"
-            + "\n".join(lines) + "\n"
-            "⚠️ Vàng dễ giật mạnh 2 chiều, giảm khối lượng, chờ nến ổn định\n"
-            "   Expect sharp two-way swings in gold. Trim size, wait for the dust to settle\n"
-            f"👉 Lịch tin | Calendar: {CAL_VI} | {CAL_EN}\n"
-            "— Ngọc Huy · HuymasterGold79")
+def build_text(when, mins, evs):
+    """English/ET block first, Vietnamese block below (single bilingual message)."""
+    seen_en, lines_en = set(), []
+    seen_vi, lines_vi = set(), []
+    for e in evs:
+        le, lv = fmt_en(e), fmt_vi(e)
+        if le not in seen_en:
+            seen_en.add(le); lines_en.append(le)
+        if lv not in seen_vi:
+            seen_vi.add(lv); lines_vi.append(lv)
+    en_block = (
+        "🚨 RED NEWS ALERT\n"
+        f"⏰ {et_str(when)} (in ~{mins} min)\n"
+        + "\n".join(lines_en) + "\n"
+        "⚠️ Expect sharp two-way swings in gold. Trim size, wait for the dust to settle\n"
+        f"👉 Calendar: {CAL_EN}"
+    )
+    vi_block = (
+        "🚨 TIN ĐỎ MỸ SẮP RA\n"
+        f"⏰ {when.astimezone(VN):%H:%M} VN (còn ~{mins} phút)\n"
+        + "\n".join(lines_vi) + "\n"
+        "⚠️ Vàng dễ giật mạnh 2 chiều, giảm khối lượng, chờ nến ổn định\n"
+        f"👉 Lịch tin: {CAL_VI}"
+    )
+    return en_block + "\n\n" + vi_block + "\n— Ngọc Huy · HuymasterGold79"
 
 
 def main():
@@ -78,13 +102,8 @@ def main():
     for t, evs in sorted(groups.items()):
         when = parse(t)
         mins = max(1, round((when - now).total_seconds() / 60))
-        seen, lines = set(), []
-        for e in evs:
-            line = fmt(e)
-            if line not in seen:
-                seen.add(line); lines.append(line)
         hhmm = when.astimezone(VN).strftime("%H:%M")
-        text = build_text(when, mins, lines)
+        text = build_text(when, mins, evs)
         print("---- message ----\n" + text + "\n-----------------")
         ok = False
         if DRY:
@@ -108,7 +127,7 @@ def main():
                               "headings": {"en": f"⚠️ US high-impact data in {mins} min", "vi": f"⚠️ {mins} phút nữa ra tin đỏ Mỹ"},
                               "contents": {"en": f"{names_en} – avoid trading right before the release.",
                                            "vi": f"{hhmm} VN: {names} – tránh vào lệnh sát giờ tin."},
-                              "url": SITE + "lich-kinh-te.html", "ttl": 1200},
+                              "url": SITE + "en/economic-calendar.html", "ttl": 1200},
                              {"Authorization": f"Key {os_key}"})
                 print("onesignal:", st); ok = True
             except Exception as ex:
