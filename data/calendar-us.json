@@ -5,8 +5,8 @@
   "url": "https://www.forexfactory.com/calendar",
   "feed": "https://nfs.faireconomy.media/ff_calendar_thisweek.json"
  },
- "updated_vn": "07:31 15/10/2026",
- "updated_utc": "2026-10-15T00:31:21Z",
+ "updated_vn": "19:31 15/10/2026",
+ "updated_utc": "2026-10-15T12:31:13Z",
  "has_actual": true,
  "events": [
   {
@@ -72,7 +72,7 @@
    "date_vn": "2026-10-15",
    "forecast": "0.3%",
    "previous": "0.2%",
-   "actual": ""
+   "actual": "0.7%"
   },
   {
    "title": "Core Retail Sales m/m",
@@ -85,7 +85,7 @@
    "date_vn": "2026-10-15",
    "forecast": "0.6%",
    "previous": "1.4%",
-   "actual": ""
+   "actual": "0.9%"
   },
   {
    "title": "PPI m/m",
@@ -98,7 +98,7 @@
    "date_vn": "2026-10-15",
    "forecast": "0.6%",
    "previous": "0.4%",
-   "actual": ""
+   "actual": "1.3%"
   },
   {
    "title": "Retail Sales m/m",
@@ -111,7 +111,7 @@
    "date_vn": "2026-10-15",
    "forecast": "0.3%",
    "previous": "1.2%",
-   "actual": ""
+   "actual": "0.8%"
   },
   {
    "title": "Fed Chairman Warsh Speaks",

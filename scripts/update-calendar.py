@@ -84,11 +84,21 @@ def main():
                    'time_vn': t.strftime('%H:%M %d/%m/%Y'), 'date_vn': t.strftime('%Y-%m-%d'),
                    'forecast': x.get('forecast', ''), 'previous': x.get('previous', ''), 'actual': x.get('actual', '')})
     ev.sort(key=lambda e: e['time_utc'])
+    # Giữ lại số thực tế đã điền tay (từ nguồn uy tín) khi feed không có 'actual'
+    try:
+        old = {(o['title'], o['time_utc']): o for o in json.load(open(OUT)).get('events', [])}
+    except Exception:
+        old = {}
+    for e in ev:
+        o = old.get((e['title'], e['time_utc']))
+        if o and not e['actual'] and o.get('actual'):
+            for k, v in o.items():
+                if k.startswith('actual'): e[k] = v
     now = dt.datetime.now(VN)
     out = {'_ghi_chu': 'Tự sinh bởi scripts/update-calendar.py từ ForexFactory – đừng sửa tay. Giờ: Asia/Ho_Chi_Minh.',
            'source': {'name': 'ForexFactory', 'url': 'https://www.forexfactory.com/calendar', 'feed': URL},
            'updated_vn': now.strftime('%H:%M %d/%m/%Y'), 'updated_utc': now.astimezone(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
-           'has_actual': any('actual' in x for x in raw), 'events': ev}
+           'has_actual': any(e.get('actual') for e in ev), 'events': ev}
     json.dump(out, open(OUT, 'w'), ensure_ascii=False, indent=1)
     print(f'{len(ev)} sự kiện USD (High) → {OUT}')
 if __name__ == '__main__': main()
