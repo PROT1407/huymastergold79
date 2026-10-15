@@ -8,7 +8,17 @@ document.addEventListener('DOMContentLoaded', function () {
   const a = (s, t) => `<a href="${e(s.url || s)}" target="_blank" rel="noopener">${e(t || s.name)} ↗</a>`;
   H.getJSON('data/vn-gold-daily.json').then(d => {
     const sjc = d.rows.find(r => r.code === 'SJL1L10'), ring = d.rows.find(r => r.code === 'SJ9999'), w = d.world, pk = d.peak;
-    const srcA = r => r && r.src_url ? a({ url: r.src_url, name: r.src_name }) : '–', vt = srcA(sjc), loss = pk && sjc.buy ? pk.sell - sjc.buy : null;
+    const al = (u, n) => `<a href="${e(u)}" target="_blank" rel="noopener">${e(n)}</a>`;
+    const srcA = r => {
+      if (!r || !r.src_url) return '–';
+      if (r.src_mode === 'chain') {
+        const via = (r.src_via || []).map(x => al(x.url, x.name)).join(' / ');
+        return `${e(r.src_brand)} (${al(r.src_url, r.src_host)}) · qua ${via}`;
+      }
+      if (r.src_mode === 'direct') return `${e(r.src_brand)} (${al(r.src_url, r.src_host)}) – trực tiếp`;
+      return a({ url: r.src_url, name: r.src_name });
+    };
+    const vt = srcA(sjc), loss = pk && sjc.buy ? pk.sell - sjc.buy : null;
     const head = `<div class="vg-hero">
       <div class="vg-big"><span>🧱 Vàng miếng SJC</span><b>${tr(sjc.buy)} – ${tr(sjc.sell)}</b><small>triệu đồng/lượng (mua – bán) ${chg(sjc.chg_sell)}</small></div>
       ${ring ? `<div class="vg-big"><span>💍 Nhẫn tròn 9999 SJC</span><b>${tr(ring.buy)} – ${tr(ring.sell)}</b><small>triệu đồng/lượng ${chg(ring.chg_sell)}</small></div>` : ''}
@@ -82,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
       <div class="card vg-an"><h3>📝 Nhận định H79</h3><ul>${(d.analysis || []).map(x => `<li>${e(x)}</li>`).join('')}</ul></div>
       <div class="vg-adv"><b>💡 Lời khuyên:</b> ${e(d.advice)}</div><div class="rx" data-rx="vn|${e((d.updated_vn || '').slice(-10))}"></div>
-      <div class="small muted vg-src"><b>Nguồn & ghi chú:</b> SJC, DOJI, Bảo Tín Minh Châu: đọc từ trang công khai ${a('https://webgia.com/gia-vang/', 'webgia.com')}; PNJ, Phú Quý, Mi Hồng: website chính thức (dự phòng webgia.com) – nguồn ghi ở từng dòng. Ô không đọc được hiển thị "–". Đơn vị: triệu đồng/lượng; Phú Quý/Mi Hồng niêm yết theo chỉ, đã nhân 10. "± hôm qua" so với giá chốt ngày giao dịch trước đã lưu (Phú Quý, Mi Hồng: bắt đầu lưu từ 15/10). Biểu đồ: dữ liệu lưu hằng ngày của H79. Giá thế giới: ${a(d.sources.gold_api, 'gold-api.com')} lúc ${new Date(w.xau_time_utc).toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' })}; tỷ giá ${a(d.sources.fx, 'open.er-api.com')}.
+      <div class="small muted vg-src"><b>Nguồn & ghi chú:</b> SJC, DOJI, Bảo Tín Minh Châu: web chính thức (sjc.com.vn / doji.vn / btmc.vn) · qua ${a('https://giavang.org/', 'giavang.org')} / ${a('https://webgia.com/gia-vang/', 'webgia.com')}; PNJ, Phú Quý, Mi Hồng: website chính thức – trực tiếp (dự phòng cùng chuỗi qua giavang.org / webgia.com) – nguồn ghi ở từng dòng. Ô không đọc được hiển thị "–". Đơn vị: triệu đồng/lượng; Phú Quý/Mi Hồng niêm yết theo chỉ, đã nhân 10. "± hôm qua" so với giá chốt ngày giao dịch trước đã lưu (Phú Quý, Mi Hồng: bắt đầu lưu từ 15/10). Biểu đồ: dữ liệu lưu hằng ngày của H79. Giá thế giới: ${a(d.sources.gold_api, 'gold-api.com')} lúc ${new Date(w.xau_time_utc).toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' })}; tỷ giá ${a(d.sources.fx, 'open.er-api.com')}.
       ${(d.refs || []).map(r => `<div style="margin-top:6px">📰 ${a(r, r.name)}<ul>${(r.facts || []).map(f => `<li>${e(f)}</li>`).join('')}</ul></div>`).join('')}<p><i>Nội dung tham khảo, không phải lời khuyên đầu tư.</i></p></div>`;
   }).catch(err => { console.warn(err); ['vn-daily', 'vn-home'].forEach(i => { if ($(i)) $(i).innerHTML = '<p class="muted">Chưa tải được dữ liệu vàng trong nước.</p>'; }); });
 });

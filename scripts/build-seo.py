@@ -34,7 +34,7 @@ LANG_PAIRS = {"index.html": "en/index.html", "chien-luoc.html": "en/h79-analysis
 # Bài tiếng Anh tĩnh: en/posts/ (giữ đồng bộ với POST_SES trong js/common.js)
 OUT_EN = ROOT / "en" / "posts"
 POST_SES = {"phien-au-my": "london-ny-overlap", "phien-au": "london-session", "phien-my": "new-york-session", "phien-a": "asian-session", "phien-dem": "night-session"}
-ASSET_V = "20261015j"  # cache-busting cho css/js trong trang sinh tự động
+ASSET_V = "20261015k"  # cache-busting cho css/js trong trang sinh tự động
 OLD_BASES = ["https://huymastergold79.com.vn/", "https://prot1407.github.io/huymastergold79/"]
 VN = dt.timezone(dt.timedelta(hours=7))
 TODAY = dt.datetime.now(VN).date().isoformat()
@@ -65,6 +65,18 @@ def num(v):
 def src_link(s):
     if not s or not s.get("url"): return e((s or {}).get("name", ""))
     return f'<a href="{e(s["url"])}" target="_blank" rel="noopener nofollow">{e(s.get("name") or s["url"])}</a>'
+
+def row_src(r):
+    """Nhãn nguồn từng dòng: brand (official) · qua giavang.org / webgia.com, hoặc – trực tiếp."""
+    if not r: return "–"
+    if r.get("src_mode") == "chain":
+        brand = src_link({"name": r.get("src_host"), "url": r.get("src_url")})
+        via = " / ".join(src_link(x) for x in (r.get("src_via") or []) if x)
+        return f'{e(r.get("src_brand"))} ({brand}) · qua {via}'
+    if r.get("src_mode") == "direct":
+        brand = src_link({"name": r.get("src_host"), "url": r.get("src_url")})
+        return f'{e(r.get("src_brand"))} ({brand}) – trực tiếp'
+    return src_link({"name": r.get("src_name"), "url": r.get("src_url")})
 
 def ul(items, cls=""):
     items = [i for i in (items or []) if i]
@@ -262,7 +274,7 @@ def build_vngold():
         is_cur = d == today_d
         body = ""
         if is_cur and g.get("rows"):
-            trs = "".join(f'<tr><td>{e(r.get("brand"))}</td><td>{e(r.get("type"))}</td><td><b>{money(r.get("buy"))}</b></td><td><b>{money(r.get("sell"))}</b></td><td>{chg(r.get("chg_sell")) if r.get("sell") else "–"}</td><td><small><a href="{e(r.get("src_url",""))}" target="_blank" rel="noopener nofollow">{e(r.get("src_name",""))}</a></small></td></tr>' for r in g["rows"])
+            trs = "".join(f'<tr><td>{e(r.get("brand"))}</td><td>{e(r.get("type"))}</td><td><b>{money(r.get("buy"))}</b></td><td><b>{money(r.get("sell"))}</b></td><td>{chg(r.get("chg_sell")) if r.get("sell") else "–"}</td><td><small>{row_src(r)}</small></td></tr>' for r in g["rows"])
             body += card(f"🧱 Bảng giá lúc {e(g.get('updated_vn',''))} (đồng/lượng)",
                          f'<div class="seo-tw"><table class="seo-tbl"><tr><th>Thương hiệu</th><th>Loại</th><th>Mua</th><th>Bán</th><th>± bán</th><th>Nguồn</th></tr>{trs}</table></div>'
                          f'<p class="small muted">Nguồn ghi ở từng dòng; ô không đọc được để “–”.</p>')
