@@ -34,7 +34,7 @@ LANG_PAIRS = {"index.html": "en/index.html", "chien-luoc.html": "en/h79-analysis
 # Bài tiếng Anh tĩnh: en/posts/ (giữ đồng bộ với POST_SES trong js/common.js)
 OUT_EN = ROOT / "en" / "posts"
 POST_SES = {"phien-au-my": "london-ny-overlap", "phien-au": "london-session", "phien-my": "new-york-session", "phien-a": "asian-session", "phien-dem": "night-session"}
-ASSET_V = "20261015n"  # cache-busting cho css/js trong trang sinh tự động
+ASSET_V = "20261015o"  # cache-busting cho css/js trong trang sinh tự động
 OLD_BASES = ["https://huymastergold79.com.vn/", "https://prot1407.github.io/huymastergold79/"]
 VN = dt.timezone(dt.timedelta(hours=7))
 TODAY = dt.datetime.now(VN).date().isoformat()
@@ -210,11 +210,11 @@ def build_strategies():
                 + card("📍 Hỗ trợ / Kháng cự (USD/oz)", f'<div class="seo-lv">{lv}</div>' if lv else "")
                 + card("🟢 Vùng mua", ul(s.get("entryZones"))) + card("🔴 Vùng bán", ul(s.get("sellZones")))
                 + card("🧭 Kịch bản", ul(s.get("scenarios"))) + card("🌐 Vĩ mô", ul(s.get("macro")))
-                + card("🥇 Vàng vật chất", f'<p>{e(s["physicalAdvice"])}</p>' if s.get("physicalAdvice") else "")
+                + card("💡 Lời khuyên", f'<p>{e(s["physicalAdvice"])}</p>' if s.get("physicalAdvice") else "")
                 + card("ℹ Nguồn dữ liệu", "".join(f'<p class="small muted">{e(s[k])}</p>' for k in ("dataTime", "notes", "disclaimer") if s.get(k))))
         if s.get("brief"):  # Xem thêm gọn: ~5 dòng (kết quả tin / diễn biến / vì sao / mốc giá / rủi ro); chỉ báo chỉ nằm trên chart
             body = (card("🧭 Kế hoạch &amp; kịch bản", ul(s.get("scenarios")))
-                    + card("🥇 Vàng vật chất", f'<p>{e(s["physicalAdvice"])}</p>' if s.get("physicalAdvice") else "")
+                    + card("💡 Lời khuyên", f'<p>{e(s["physicalAdvice"])}</p>' if s.get("physicalAdvice") else "")
                     + (f'<p class="small muted">{e(s["disclaimer"])}</p>' if s.get("disclaimer") else ""))
         if s.get("summary"):
             body = article_html(s.get("article")) + summary_html(s) + article_src(s.get("article")) + '<details class="h79more"><summary>' + ("Xem thêm" if s.get("brief") else "Xem thêm: chỉ báo, kịch bản, vĩ mô") + '</summary>' + body + "</details>"
@@ -494,9 +494,12 @@ def build_en(arts):
                     + card("📍 Support / resistance (USD/oz)", f'<div class="seo-lv">{lv}</div>' if lv else "")
                     + card("🟢 Long setups", ul(s.get("entryZones_en"))) + card("🔴 Short setups &amp; invalidation", ul(s.get("sellZones_en")))
                     + card("🧭 Levels, indicators &amp; scenarios", ul(s.get("scenarios_en"))) + card("🌐 Macro backdrop", ul(s.get("macro_en")))
+                    + card("💡 Our take", f'<p>{e(s["physicalAdvice_en"] or s.get("physicalAdvice", ""))}</p>' if (s.get("physicalAdvice_en") or s.get("physicalAdvice")) else "")
                     + card("ℹ Data notes", "".join(f'<p class="small muted">{e(s[k])}</p>' for k in ("dataTime_en", "notes_en", "disclaimer_en") if s.get(k))))
             if s.get("brief"):
-                body = card("🧭 Plan &amp; scenarios", ul(s.get("scenarios_en"))) + (f'<p class="small muted">{e(s["disclaimer_en"])}</p>' if s.get("disclaimer_en") else "")
+                body = (card("🧭 Plan &amp; scenarios", ul(s.get("scenarios_en")))
+                        + card("💡 Our take", f'<p>{e(s["physicalAdvice_en"] or s.get("physicalAdvice", ""))}</p>' if (s.get("physicalAdvice_en") or s.get("physicalAdvice")) else "")
+                        + (f'<p class="small muted">{e(s["disclaimer_en"])}</p>' if s.get("disclaimer_en") else ""))
             if s.get("summary") and body: body = '<details class="h79more" open><summary>' + ("More details" if s.get("brief") else "Full breakdown: indicators, scenarios, macro") + '</summary>' + body + "</details>"
             wt = et_str(t, bool(s.get("time")))
             desc = f"H79 gold (XAU/USD) plan – {ses}, {wt}: " + (s.get("trend_en") or title)

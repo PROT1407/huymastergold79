@@ -24,6 +24,9 @@ Header, menu, thanh giá vàng chạy chữ, footer, nút Zalo nổi được t�
 - **Mục 「Xem thêm」 / 🧭 Kế hoạch & kịch bản (bắt buộc cho bài mới):** đặt `"brief": true` và viết `scenarios` / `scenarios_en` tối đa **5 dòng ngắn** theo mẫu:
   1. `Kết quả tin: …` (thực tế vs dự báo) · 2. `Diễn biến: …` (giá lúc ra tin → đáy/đỉnh kèm giờ → giá hiện tại) · 3. `Vì sao: …` (1 câu) · 4. `Mốc giá: kháng cự … , hỗ trợ … → …` · 5. `Rủi ro: …` (tin đỏ sắp tới, khối lượng).
   EN: The data / The tape / Why / Levels / Risk – giọng nhà phân tích Mỹ độc lập, giờ ET, số kiểu Mỹ (4,154.8). Khi `brief`, trang chỉ hiện 5 dòng này + Lời khuyên + miễn trừ; **không** dump BB90/MA/MACD/pivot/Fib/liên thị trường hay timeline dài vào chữ – giá trị chỉ báo chỉ vẽ trên biểu đồ (chart). Giữ khung kế hoạch BÁN/MUA (`summary`) và danh sách nguồn (`article.sources`). Không bịa số.
+- **Lời khuyên H79 (mặc định cho mọi bài nhận định XAU – không áp dụng `gia-vang.html` / hộp vàng trong nước):**
+  - VN `physicalAdvice`: «Thị trường hồi lên vùng bán thì canh SELL, thị trường giảm về vùng mua thì canh BUY – luôn có SL, để mình và bạn cùng thắng.» (nhãn trang: 💡 Lời khuyên)
+  - EN `physicalAdvice_en`: «Sell the rallies into the sell zone, buy the dips into the buy zone – always with a stop. Trade the plan, and we win together.» (nhãn trang: 💡 Our take)
 - **Xác nhận vào lệnh BÁN (bắt buộc cho mọi kế hoạch mới):** VN: «Vào khi giá vào vùng bán và có nến 45m hoặc 1H đóng đỏ xác nhận, hoặc nến 1H đâm xuyên lên BB giữa rồi đóng lại dưới band.» EN: «Enter once price is in the zone and a 45m or 1H candle closes red, or a 1H candle pierces above the BB90 mid and closes back below it.» Cấm dùng nến 15m/30m đóng đỏ / red 15m/30m close làm điều kiện vào lệnh. Có thể nhắc 15m/30m trong phân tích kỹ thuật (MA, MACD, kênh) nhưng không phải trigger vào lệnh.
 - **Chiến lược:** thêm mục mới vào `data/strategies.json` (cấu trúc giống v1). Xoá các mục `"example": true`.
 - **Giá trong nước:** tự lấy từ vang.today; dự phòng `data/vn-prices.json`.
@@ -65,7 +68,7 @@ Trang tiếng Anh (cặp VI ↔ EN): `index` ↔ `en/index.html`, `nhan-dinh-h79
 | `summary.note_en` | rủi ro chính 1 dòng, giờ ET, ví dụ "US CPI 8:30 AM ET (est. 3.6% y/y) – stops to breakeven before the print" (trang tự thêm "Key risk:") | ẩn |
 | `summary.priceNote_en` | "Spot XAU/USD price (converted)" hoặc "COMEX gold futures price (GC=F), not spot – spot XAU/USD is about N USD lower" | câu chung theo `summary.price` |
 | `trend_en`, `entryZones_en[]`, `sellZones_en[]`, `scenarios_en[]`, `macro_en[]`, `notes_en`, `dataTime_en`, `disclaimer_en` | phần "See more" | ẩn + link bản tiếng Việt |
-| `physicalAdvice` (VN only) | "🏅 Lời khuyên" trên bản VI | **không** render trên EN (không dùng `physicalAdvice_en`) |
+| `physicalAdvice` / `physicalAdvice_en` | "💡 Lời khuyên" (VI) / "💡 Our take" (EN) – **cả hai bản đều hiện** | mặc định cho bài H79 mới (xem dưới) |
 
 Quy ước tiếng Anh (bắt buộc cho mọi trường `_en`): viết như trader Mỹ viết, không dịch từng chữ.
 - **Giờ: luôn là US Eastern (ET)**, tự tính DST (EDT = giờ VN − 11h, EST từ CN đầu tháng 11 = giờ VN − 12h), dạng "8:30 AM ET", "Oct 13, 9:30 PM ET" – **không** ghi "Vietnam time"/"GMT+7"/"19:30". Trường `date`/`time` gốc vẫn là giờ VN; trang EN tự đổi sang ET (hover hiện giờ địa phương của người đọc).

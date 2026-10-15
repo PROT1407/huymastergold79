@@ -46,13 +46,17 @@
   const list = (arr, h) => arr && arr.length ? `<div class="card" style="margin:0 0 12px"><h3>${h}</h3><ul style="padding-left:18px">${arr.map(x => `<li>${E(x)}</li>`).join('')}</ul></div>` : '';
   const viLink = s => `chien-luoc.html?ngay=${encodeURIComponent(s.id || s.date)}`;
   function details(s) {
+    if (s.brief) {
+      return `${list(s.scenarios_en, '🧭 Plan & scenarios')}${s.physicalAdvice_en || s.physicalAdvice ? `<div class="note"><b>💡 Our take:</b> ${E(s.physicalAdvice_en || s.physicalAdvice)}</div>` : ''}${s.dataTime_en ? `<p class="small muted">🕐 ${E(s.dataTime_en)}</p>` : ''}`;
+    }
     const lv = `<div class="grid g3" style="margin:14px 0"><div class="card"><h3>🟢 Support (USD/oz)</h3>${(s.support || []).map(v => `<span class="pill s">${num(H.fmt(v))}</span> `).join('')}</div><div class="card"><h3>🔴 Resistance (USD/oz)</h3>${(s.resistance || []).map(v => `<span class="pill r">${num(H.fmt(v))}</span> `).join('')}</div></div>`;
     const any = s.trend_en || s.entryZones_en || s.scenarios_en;
-    return `${s.trend_en ? `<p><b>Trend read:</b> ${E(s.trend_en)}</p>` : ''}${lv}${list(s.entryZones_en, '🎯 Long setups')}${list(s.sellZones_en, '🔻 Short setups & invalidation')}${list(s.scenarios_en, '🧭 Levels, indicators & scenarios')}${list(s.macro_en, '🌐 Macro backdrop')}${s.notes_en ? `<p class="muted small" style="margin-top:8px">📝 ${E(s.notes_en)}</p>` : ''}${s.dataTime_en ? `<p class="small muted">🕐 ${E(s.dataTime_en)}</p>` : ''}${any ? '' : `<p class="small muted">No detailed breakdown was published for this plan.</p>`}`;
+    return `${s.trend_en ? `<p><b>Trend read:</b> ${E(s.trend_en)}</p>` : ''}${lv}${list(s.entryZones_en, '🎯 Long setups')}${list(s.sellZones_en, '🔻 Short setups & invalidation')}${list(s.scenarios_en, '🧭 Levels, indicators & scenarios')}${list(s.macro_en, '🌐 Macro backdrop')}${s.physicalAdvice_en || s.physicalAdvice ? `<div class="note"><b>💡 Our take:</b> ${E(s.physicalAdvice_en || s.physicalAdvice)}</div>` : ''}${s.notes_en ? `<p class="muted small" style="margin-top:8px">📝 ${E(s.notes_en)}</p>` : ''}${s.dataTime_en ? `<p class="small muted">🕐 ${E(s.dataTime_en)}</p>` : ''}${any ? '' : `<p class="small muted">No detailed breakdown was published for this plan.</p>`}`;
   }
   const title = s => s.title_en || `H79 Gold Plan – ${ses(s) || 'XAUUSD'}, ${fETd.format(vnDate(s))}`;
   function full(s) {
-    return `<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px"><div><span class="muted">📅 ${ses(s) ? ses(s) + ' · ' : ''}${when(s)}</span><h2 style="font-size:1.4rem;color:var(--txt);margin:4px 0">${E(title(s))}</h2></div><div><span class="badge ex">H79 PLAN</span></div></div>${sumHTML(s)}<details class="h79more"><summary>Full breakdown: indicators, scenarios, macro</summary>${details(s)}</details><p class="small muted" style="margin-top:8px"><i>${E(s.disclaimer_en || 'Technical analysis for educational purposes only – not investment advice.')}</i></p>`;
+    const sumLabel = s.brief ? 'More details' : 'Full breakdown: indicators, scenarios, macro';
+    return `<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px"><div><span class="muted">📅 ${ses(s) ? ses(s) + ' · ' : ''}${when(s)}</span><h2 style="font-size:1.4rem;color:var(--txt);margin:4px 0">${E(title(s))}</h2></div><div><span class="badge ex">H79 PLAN</span></div></div>${sumHTML(s)}<details class="h79more"><summary>${sumLabel}</summary>${details(s)}</details><p class="small muted" style="margin-top:8px"><i>${E(s.disclaimer_en || 'Technical analysis for educational purposes only – not investment advice.')}</i></p>`;
   }
   function compact(s) {
     return `<span class="tag">⚡ ${ses(s) ? ses(s) + ' · ' : ''}${when(s)}</span> <span class="badge ex">H79 PLAN</span><h2>${E(title(s))}</h2>${sumHTML(s)}<a class="btn" style="margin-top:10px" href="en/h79-analysis.html">See the full plan →</a>`;
