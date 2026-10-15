@@ -27,6 +27,10 @@ Header, menu, thanh giá vàng chạy chữ, footer, nút Zalo nổi được t�
 - **Lời khuyên H79 (mặc định cho mọi bài nhận định XAU – không áp dụng `gia-vang.html` / hộp vàng trong nước):**
   - VN `physicalAdvice`: «Làm theo kế hoạch, đừng chạy theo nến tin.» (nhãn trang: 💡 Lời khuyên)
   - EN `physicalAdvice_en`: «Trade the plan, not the noise.» (nhãn trang: 💡 Our take)
+- **Hộp 「🌍 Bức tranh chung」 / 「🌍 Market Picture」 (`market_picture` / `market_picture_en`):** chips liên thị trường (chỉ hiện khi có số trong JSON – **không bịa**). Mỗi chip: `{"k","v","dir"}` với `dir` = `up` | `down` | `""` (mũi tên so với phiên trước / prior close). Khóa chip ưu tiên (thêm khi có số; thiếu thì **bỏ chip đó**):
+  - `DXY` · `US10Y` · `Brent` · `Nasdaq` (hoặc `Nasdaq TL` / `Nasdaq fut.`) · **`S&P 500`** · **`VIX`**
+  - VN (`market_picture.chips`): số kiểu VN (1.234,5; 7.742 −0,36%). EN (`market_picture_en.chips`): **số kiểu Mỹ** (1,234.5; 7,742 −0.36%).
+  - **Routine H79 – lấy thêm cùng các số liên thị trường khác:** VIX từ CNBC `.VIX` hoặc Yahoo `^VIX`; S&P 500 từ CNBC `.SPX` (chỉ số) hoặc `ES=F` / CNBC `@SP.1` (tương lai, ghi rõ futures trong `v` nếu dùng). Nguồn cũ: DXY `.DXY` / `DX-Y.NYB`, US10Y, Brent `@LCO.1` / `BZ=F`, Nasdaq `@NQ.1` / NQ=F. Chỉ ghi chip khi quote thành công; không điền placeholder.
 - **Xác nhận vào lệnh BÁN (bắt buộc cho mọi kế hoạch mới):** VN: «Vào khi giá vào vùng bán và có nến 45m hoặc 1H đóng đỏ xác nhận, hoặc nến 1H đâm xuyên lên BB giữa rồi đóng lại dưới band.» EN: «Enter once price is in the zone and a 45m or 1H candle closes red, or a 1H candle pierces above the BB90 mid and closes back below it.» Cấm dùng nến 15m/30m đóng đỏ / red 15m/30m close làm điều kiện vào lệnh. Có thể nhắc 15m/30m trong phân tích kỹ thuật (MA, MACD, kênh) nhưng không phải trigger vào lệnh.
 - **Chiến lược:** thêm mục mới vào `data/strategies.json` (cấu trúc giống v1). Xoá các mục `"example": true`.
 - **Giá trong nước:** tự lấy từ vang.today; dự phòng `data/vn-prices.json`.
@@ -89,7 +93,7 @@ Trang EN **ẩn** mục chưa có bản tiếng Anh (không hiện tiếng Việ
 | File | Trường `_en` | Ghi chú |
 |---|---|---|
 | `data/macro-news.json` | `items[].title_en` (bắt buộc để hiện trên EN), `summary_en`, `reason_en`, `time_en`, `check_en` (tùy chọn); `items[].source.name_en`, `source2.name_en` (khi tên nguồn có chữ Việt); `fomc.note_en`, `fomc.meetings[].result_en`, `us_schedule[].event_en` | `time_en` ghi giờ ET, ví dụ "Oct 13, 8:30 AM ET" |
-| `data/strategies.json` | xem bảng ở trên | |
+| `data/strategies.json` | xem bảng ở trên; `market_picture` / `market_picture_en` chips (DXY, US10Y, Brent, Nasdaq, S&P 500, VIX – omit when missing) | |
 | `data/calendar-us.json` | `events[].explain_en` | `scripts/update-calendar.py` tự điền theo từ điển `EN` |
 | `data/fedwatch.json` | `label_en` (tùy chọn), `source.name_en` | nhãn tự suy từ `decision` |
 | `data/symbols.json` | `categories[].name_en`, `symbols[].n_en`, `external[].n_en`, `external[].cat_en` | |

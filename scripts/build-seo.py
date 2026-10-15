@@ -34,7 +34,7 @@ LANG_PAIRS = {"index.html": "en/index.html", "chien-luoc.html": "en/h79-analysis
 # Bài tiếng Anh tĩnh: en/posts/ (giữ đồng bộ với POST_SES trong js/common.js)
 OUT_EN = ROOT / "en" / "posts"
 POST_SES = {"phien-au-my": "london-ny-overlap", "phien-au": "london-session", "phien-my": "new-york-session", "phien-a": "asian-session", "phien-dem": "night-session"}
-ASSET_V = "20261015r"  # cache-busting cho css/js trong trang sinh tự động
+ASSET_V = "20261015s"  # cache-busting cho css/js trong trang sinh tự động
 OLD_BASES = ["https://huymastergold79.com.vn/", "https://prot1407.github.io/huymastergold79/"]
 VN = dt.timezone(dt.timedelta(hours=7))
 TODAY = dt.datetime.now(VN).date().isoformat()
@@ -177,6 +177,11 @@ def mp_asof(s, en=False):
     return f'<p class="mp-asof">{e(label)}</p>'
 
 def mp_html(s, en=False):
+    """Render market_picture box. chips[] from JSON only — omit missing keys, never invent.
+
+    Preferred chip keys (future posts): DXY, US10Y, Brent, Nasdaq, S&P 500, VIX.
+    Each: {"k","v","dir"} with dir in up|down|"" (vs prior close). EN uses US number format.
+    """
     m = s.get("market_picture_en" if en else "market_picture")
     if not m or not m.get("text"): return ""
     # dir comes from JSON (vs prior close); do not invent directions here

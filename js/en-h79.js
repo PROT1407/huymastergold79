@@ -32,6 +32,7 @@
   const zoneTxt = o => o.zone_en || (hasVi(o.zone) ? num(o.zone.replace(/\s*\(.*?\)\s*/g, ' ').trim()) : num(o.zone));
   function mpHTML(s) {
     const m = s.market_picture_en, X = H.esc; if (!m || !m.text) return '';
+    // chips from JSON only (preferred: DXY, US10Y, Brent, Nasdaq, S&P 500, VIX); omit when missing — never invent
     // dir from JSON = vs prior close; do not invent directions
     const chips = (m.chips || []).map(c => `<span class="chip ${X(c.dir || '')}"><b>${X(c.k)}</b> ${X(c.v)}</span>`).join('');
     const src = (m.sources || []).map(x => `<a href="${X(x.url)}" target="_blank" rel="noopener nofollow">${X(x.name)}</a>`).join(' · ');
