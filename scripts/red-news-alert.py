@@ -8,6 +8,7 @@ Env: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, ONESIGNAL_APP_ID, ONESIGNAL_REST_KEY,
 """
 import json, os, sys, urllib.request
 from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 
 CAL = os.environ.get("CALENDAR", "data/calendar-us.json")
 STATE = os.environ.get("ALERT_STATE", "data/alert-state.json")
@@ -15,7 +16,10 @@ WINDOW = float(os.environ.get("WINDOW_MIN", "20"))
 DRY = os.environ.get("DRY_RUN", "0") in ("1", "true", "yes")
 CHAT = os.environ.get("TELEGRAM_CHAT_ID", "-1001396622973")
 SITE = "https://prot1407.github.io/huymastergold79/"
-VN = timezone(timedelta(hours=7))
+VN = ZoneInfo("Asia/Ho_Chi_Minh")
+ET = ZoneInfo("America/New_York")  # tự xử lý giờ mùa hè/đông (DST)
+CAL_VI = SITE + "lich-kinh-te.html"
+CAL_EN = SITE + "en/economic-calendar.html"
 
 
 def parse(t):
@@ -29,13 +33,27 @@ def post(url, payload, headers=None):
 
 
 def fmt(e):
-    s = e.get("title_vi") or e.get("title")
-    for suf, vi in ((" m/m", " (so tháng trước)"), (" y/y", " (so cùng kỳ năm)"), (" q/q", " (so quý trước)")):
-        if (e.get("title") or "").endswith(suf) and e.get("title_vi"):
-            s += vi
-    bits = [f"dự báo {e['forecast']}" if e.get("forecast") else "", f"kỳ trước {e['previous']}" if e.get("previous") else ""]
-    bits = ", ".join(b for b in bits if b)
-    return s + (f" – {bits}" if bits else "")
+    en = e.get("title") or ""
+    vi = e.get("title_vi") or en
+    name = f"{vi} | {en}" if vi != en else en
+    bits = [f"Dự báo/Forecast {e['forecast']}" if e.get("forecast") else "", f"Kỳ trước/Previous {e['previous']}" if e.get("previous") else ""]
+    bits = " · ".join(b for b in bits if b)
+    return "📌 " + name + (f"  ({bits})" if bits else "")
+
+
+def et_str(dt):
+    t = dt.astimezone(ET)
+    return f"{t.hour % 12 or 12}:{t:%M} {'AM' if t.hour < 12 else 'PM'} ET"
+
+
+def build_text(when, mins, lines):
+    return ("🚨 TIN ĐỎ MỸ SẮP RA | RED NEWS ALERT\n"
+            f"⏰ {when.astimezone(VN):%H:%M} VN · {et_str(when)} (còn ~{mins} phút | in ~{mins} min)\n"
+            + "\n".join(lines) + "\n"
+            "⚠️ Vàng dễ giật mạnh 2 chiều, giảm khối lượng, chờ nến ổn định\n"
+            "   Expect sharp two-way swings in gold. Trim size, wait for the dust to settle\n"
+            f"👉 Lịch tin | Calendar: {CAL_VI} | {CAL_EN}\n"
+            "— Ngọc Huy · HuymasterGold79")
 
 
 def main():
@@ -66,9 +84,7 @@ def main():
             if line not in seen:
                 seen.add(line); lines.append(line)
         hhmm = when.astimezone(VN).strftime("%H:%M")
-        body = "; ".join(lines) if len(lines) == 1 else "\n" + "\n".join("• " + l for l in lines)
-        text = (f"⚠️ {mins} phút nữa ({hhmm} VN) ra tin đỏ Mỹ: {body}\n"
-                f"Tránh vào lệnh sát giờ tin, spread giãn.\n👉 Lịch kinh tế: {SITE}lich-kinh-te.html")
+        text = build_text(when, mins, lines)
         print("---- message ----\n" + text + "\n-----------------")
         ok = False
         if DRY:
