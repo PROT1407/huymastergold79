@@ -8,6 +8,7 @@ import json, os, sys, urllib.request, datetime as dt
 from zoneinfo import ZoneInfo
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'data', 'vn-gold-daily.json')
+HIST = os.path.join(ROOT, 'data', 'vn-gold-history.json')  # giá chốt mỗi ngày theo mã: {code: {date: {buy, sell}}}
 VN = ZoneInfo('Asia/Ho_Chi_Minh'); K = 1.20565
 VT = 'https://www.vang.today/api/prices'
 def get(u):
@@ -22,6 +23,22 @@ def main():
     if not cur.get('success'): sys.exit('vang.today lỗi – giữ file cũ')
     P = cur['prices']
     rows = [{'code': c, 'brand': b, 'type': t, 'group': g, 'buy': P[c]['buy'], 'sell': P[c]['sell'], 'chg_buy': P[c]['change_buy'], 'chg_sell': P[c]['change_sell']} for c, b, t, g in ROWS if c in P and P[c].get('sell')]
+    today = dt.datetime.now(VN).date().isoformat()
+    H = json.load(open(HIST)) if os.path.exists(HIST) else {}
+    for c, *_ in ROWS:  # bổ sung lịch sử thật từ vang.today (giá cuối ngày), không ghi đè ngày đã lưu trừ hôm nay
+        try:
+            for x in get(f'{VT}?type={c}&days=10')['history']:
+                q = x['prices'].get(c)
+                if q and q.get('sell') and (x['date'] == today or x['date'] not in H.get(c, {})):
+                    H.setdefault(c, {})[x['date']] = {'buy': q['buy'], 'sell': q['sell']}
+        except Exception as ex: print('hist lỗi', c, ex)
+    for r in rows:  # giá hiện tại = chốt tạm của hôm nay; so với ngày giao dịch trước đó đã lưu
+        h = H.setdefault(r['code'], {}); h[today] = {'buy': r['buy'], 'sell': r['sell']}
+        prev = sorted(d for d in h if d < today)
+        if prev:
+            pv = h[prev[-1]]; r.update(chg_buy=r['buy'] - pv['buy'], chg_sell=r['sell'] - pv['sell'], prev_date=prev[-1], prev_buy=pv['buy'], prev_sell=pv['sell'])
+    H = {c: dict(sorted(v.items())[-400:]) for c, v in H.items()}
+    json.dump(H, open(HIST, 'w'), ensure_ascii=False, indent=1)
     hist = {}
     for c in ('SJL1L10', 'SJ9999'):
         h = get(f'{VT}?type={c}&days=30')['history']

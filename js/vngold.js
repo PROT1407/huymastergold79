@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <p class="small muted">Giá: ${vt} lúc ${e(d.vt_time)} · <a href="gia-vang.html#vn-daily">Xem phân tích đầy đủ →</a></p>`;
     }
     if (!$('vn-daily')) return;
-    const tbl = g => `<table class="tbl vg-tbl"><thead><tr><th>Thương hiệu</th><th>Mua</th><th>Bán</th><th>So hôm qua</th></tr></thead><tbody>${d.rows.filter(r => r.group === g).map(r => `<tr><td><b>${e(r.brand)}</b><br><small class="muted">${e(r.type)}</small></td><td>${tr(r.buy)}</td><td><b>${tr(r.sell)}</b></td><td>${chg(r.chg_sell)}</td></tr>`).join('')}</tbody></table>`;
+    const tbl = g => `<table class="tbl vg-tbl"><thead><tr><th>Thương hiệu</th><th>Mua</th><th>Bán</th><th>So hôm qua</th></tr></thead><tbody>${d.rows.filter(r => r.group === g).map(r => `<tr><td><b>${e(r.brand)}</b><br><small class="muted">${e(r.type)}</small></td><td>${tr(r.buy)}</td><td><b>${tr(r.sell)}</b></td><td>${chg(r.chg_sell)}${r.prev_date ? `<br><small class="muted">vs ${e(r.prev_date.slice(8)+'/'+r.prev_date.slice(5,7))}: ${tr(r.prev_sell)}</small>` : ''}</td></tr>`).join('')}</tbody></table>`;
     const hs = d.history.SJL1L10 || [], hr = d.history.SJ9999 || [];
     let chart = '';
     if (hs.length > 2) {

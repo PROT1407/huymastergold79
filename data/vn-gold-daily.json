@@ -39,8 +39,8 @@
  ],
  "advice": "Vàng đang có xu hướng giảm dài và sâu, trong trung – dài hạn có thể về dưới mốc 100 triệu/lượng. Người mua vàng vật chất nên chờ mốc này hoặc một thời điểm thích hợp hơn.",
  "_ghi_chu": "Phần giá/lịch sử/world do scripts/update-vn-gold.py tự sinh. peak/refs/analysis/advice: sửa tay mỗi sáng (chỉ số liệu có nguồn).",
- "updated_vn": "08:45 15/10/2026",
- "vt_time": "08:30 2026-10-15",
+ "updated_vn": "16:49 15/10/2026",
+ "vt_time": "16:30 2026-10-15",
  "rows": [
   {
    "code": "SJL1L10",
@@ -50,7 +50,10 @@
    "buy": 140300000,
    "sell": 143300000,
    "chg_buy": 0,
-   "chg_sell": 0
+   "chg_sell": 0,
+   "prev_date": "2026-10-14",
+   "prev_buy": 140300000,
+   "prev_sell": 143300000
   },
   {
    "code": "DOHNL",
@@ -60,7 +63,10 @@
    "buy": 140300000,
    "sell": 143300000,
    "chg_buy": 0,
-   "chg_sell": 0
+   "chg_sell": 0,
+   "prev_date": "2026-10-14",
+   "prev_buy": 140300000,
+   "prev_sell": 143300000
   },
   {
    "code": "DOHCML",
@@ -70,7 +76,10 @@
    "buy": 140300000,
    "sell": 143300000,
    "chg_buy": 0,
-   "chg_sell": 0
+   "chg_sell": 0,
+   "prev_date": "2026-10-14",
+   "prev_buy": 140300000,
+   "prev_sell": 143300000
   },
   {
    "code": "PQHNVM",
@@ -80,17 +89,23 @@
    "buy": 139800000,
    "sell": 143300000,
    "chg_buy": 0,
-   "chg_sell": 0
+   "chg_sell": 0,
+   "prev_date": "2026-10-14",
+   "prev_buy": 139800000,
+   "prev_sell": 143300000
   },
   {
    "code": "BTSJC",
    "brand": "Bảo Tín Minh Châu",
    "type": "Vàng miếng SJC",
    "group": "mieng",
-   "buy": 138800000,
+   "buy": 138200000,
    "sell": 143300000,
-   "chg_buy": 0,
-   "chg_sell": 0
+   "chg_buy": -600000,
+   "chg_sell": 0,
+   "prev_date": "2026-10-14",
+   "prev_buy": 138800000,
+   "prev_sell": 143300000
   },
   {
    "code": "SJ9999",
@@ -100,7 +115,10 @@
    "buy": 139800000,
    "sell": 142800000,
    "chg_buy": 0,
-   "chg_sell": 0
+   "chg_sell": 0,
+   "prev_date": "2026-10-14",
+   "prev_buy": 139800000,
+   "prev_sell": 142800000
   },
   {
    "code": "PQHN24NTT",
@@ -110,17 +128,23 @@
    "buy": 139800000,
    "sell": 142800000,
    "chg_buy": 0,
-   "chg_sell": 0
+   "chg_sell": 0,
+   "prev_date": "2026-10-14",
+   "prev_buy": 139800000,
+   "prev_sell": 142800000
   },
   {
    "code": "BT9999NTT",
    "brand": "Bảo Tín Minh Châu",
    "type": "Nhẫn tròn 9999",
    "group": "nhan",
-   "buy": 138800000,
-   "sell": 142800000,
-   "chg_buy": 0,
-   "chg_sell": 0
+   "buy": 138200000,
+   "sell": 142200000,
+   "chg_buy": -600000,
+   "chg_sell": -600000,
+   "prev_date": "2026-10-14",
+   "prev_buy": 138800000,
+   "prev_sell": 142800000
   },
   {
    "code": "DOJINHTV",
@@ -130,7 +154,10 @@
    "buy": 139000000,
    "sell": 143000000,
    "chg_buy": 0,
-   "chg_sell": 0
+   "chg_sell": 0,
+   "prev_date": "2026-10-14",
+   "prev_buy": 139000000,
+   "prev_sell": 143000000
   }
  ],
  "history": {
@@ -440,13 +467,13 @@
   ]
  },
  "world": {
-  "xau_usd": 4140.200195,
-  "xau_time_utc": "2026-10-15T01:45:27Z",
+  "xau_usd": 4155.299805,
+  "xau_time_utc": "2026-10-15T09:49:14Z",
   "usdvnd": 25890.201508,
   "fx_time_utc": "Thu, 15 Oct 2026 00:02:31 +0000",
   "factor": 1.20565,
-  "vnd_per_luong": 129200000.0,
-  "gap_sjc_sell": 14100000.0,
+  "vnd_per_luong": 129700000.0,
+  "gap_sjc_sell": 13600000.0,
   "note": "USD/oz × USD/VND (tỷ giá thị trường open.er-api) × 1,20565; chưa gồm thuế, phí"
  },
  "sources": {
