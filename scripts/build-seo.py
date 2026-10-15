@@ -34,7 +34,7 @@ LANG_PAIRS = {"index.html": "en/index.html", "chien-luoc.html": "en/h79-analysis
 # Bài tiếng Anh tĩnh: en/posts/ (giữ đồng bộ với POST_SES trong js/common.js)
 OUT_EN = ROOT / "en" / "posts"
 POST_SES = {"phien-au-my": "london-ny-overlap", "phien-au": "london-session", "phien-my": "new-york-session", "phien-a": "asian-session", "phien-dem": "night-session"}
-ASSET_V = "20261015i"  # cache-busting cho css/js trong trang sinh tự động
+ASSET_V = "20261015j"  # cache-busting cho css/js trong trang sinh tự động
 OLD_BASES = ["https://huymastergold79.com.vn/", "https://prot1407.github.io/huymastergold79/"]
 VN = dt.timezone(dt.timedelta(hours=7))
 TODAY = dt.datetime.now(VN).date().isoformat()
@@ -254,23 +254,23 @@ def build_vngold():
         prev = None
         for p in sorted(arr, key=lambda x: x["date"]):
             days.setdefault(p["date"], []).append((code, p, prev)); prev = p
-    m = re.match(r"(\d\d:\d\d) (\d{4}-\d\d-\d\d)", g.get("vt_time", ""))
-    today_d, today_t = (m.group(2), m.group(1)) if m else (None, None)
+    m = re.match(r"(\d\d:\d\d) (\d\d)/(\d\d)/(\d{4})", g.get("updated_vn", ""))
+    today_d, today_t = (f"{m.group(4)}-{m.group(3)}-{m.group(2)}", m.group(1)) if m else (None, None)
     if today_d and g.get("rows"): days.setdefault(today_d, [])
     out = []
     for d, lst in days.items():
         is_cur = d == today_d
         body = ""
         if is_cur and g.get("rows"):
-            trs = "".join(f'<tr><td>{e(r.get("brand"))}</td><td>{e(r.get("type"))}</td><td><b>{money(r.get("buy"))}</b></td><td><b>{money(r.get("sell"))}</b></td><td>{chg(r.get("chg_sell"))}</td></tr>' for r in g["rows"])
+            trs = "".join(f'<tr><td>{e(r.get("brand"))}</td><td>{e(r.get("type"))}</td><td><b>{money(r.get("buy"))}</b></td><td><b>{money(r.get("sell"))}</b></td><td>{chg(r.get("chg_sell")) if r.get("sell") else "–"}</td><td><small><a href="{e(r.get("src_url",""))}" target="_blank" rel="noopener nofollow">{e(r.get("src_name",""))}</a></small></td></tr>' for r in g["rows"])
             body += card(f"🧱 Bảng giá lúc {e(g.get('updated_vn',''))} (đồng/lượng)",
-                         f'<div class="seo-tw"><table class="seo-tbl"><tr><th>Thương hiệu</th><th>Loại</th><th>Mua</th><th>Bán</th><th>± bán</th></tr>{trs}</table></div>'
-                         f'<p class="small muted">Nguồn: <a href="{e(g.get("sources",{}).get("vang_today","https://www.vang.today/"))}" target="_blank" rel="noopener nofollow">vang.today</a></p>')
+                         f'<div class="seo-tw"><table class="seo-tbl"><tr><th>Thương hiệu</th><th>Loại</th><th>Mua</th><th>Bán</th><th>± bán</th><th>Nguồn</th></tr>{trs}</table></div>'
+                         f'<p class="small muted">Nguồn ghi ở từng dòng; ô không đọc được để “–”.</p>')
         else:
             trs = "".join(f'<tr><td>{e(names.get(c, c))}</td><td><b>{money(p.get("buy"))}</b></td><td><b>{money(p.get("sell"))}</b></td><td>{chg(p["sell"] - pv["sell"]) if pv and p.get("sell") and pv.get("sell") else "—"}</td></tr>' for c, p, pv in lst)
             body += card(f"🧱 Giá chốt ngày {dvn(d)} (đồng/lượng)",
                          f'<div class="seo-tw"><table class="seo-tbl"><tr><th>Loại vàng</th><th>Mua</th><th>Bán</th><th>± bán so với hôm trước</th></tr>{trs}</table></div>'
-                         f'<p class="small muted">Nguồn: <a href="{e(g.get("sources",{}).get("vang_today","https://www.vang.today/"))}" target="_blank" rel="noopener nofollow">vang.today</a> (lịch sử giá)</p>')
+                         f'<p class="small muted">Nguồn: Dữ liệu lưu hằng ngày của H79</p>')
         if is_cur:
             w = g.get("world") or {}
             if w.get("xau_usd"):

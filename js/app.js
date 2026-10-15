@@ -17,11 +17,11 @@
   const unit = { v: localStorage.getItem('hmg_unit') || 'luong' };
   function table(type) {
     const D = H.data, div = unit.v === 'chi' ? 10 : 1, VD = VDAY ? VDAY.rows : [], byC = {}; VD.forEach(r => byC[r.code] = r);
-    // ± so với giá chốt ngày giao dịch trước (data/vn-gold-daily.json), không dùng thay đổi trong ngày của vang.today
+    // ± so với giá chốt ngày giao dịch trước (data/vn-gold-daily.json), giá từ data/vn-gold-daily.json
     let rows = D.rows.filter(r => !type || r.type === type).map(r => { const v = byC[r.code]; return v && v.prev_sell != null ? Object.assign({}, r, { change_buy: r.buy - v.prev_buy, change_sell: r.sell - v.prev_sell }) : Object.assign({}, r, { change_buy: null, change_sell: null }); });
     if (D.rows.length) rows = rows.concat(VD.filter(r => (r.co === 'Phú Quý' || r.co === 'Mi Hồng') && (!type || r.group === type)).map(r => ({ name: r.brand + (r.group === 'nhan' ? ' ' + r.type.replace(/^Nhẫn tròn Phú Quý /, 'nhẫn ') : ' SJC'), buy: r.buy, sell: r.sell, change_buy: r.chg_buy, change_sell: r.chg_sell })));
     const c = n => n == null ? '<span class="chg muted">–</span>' : n ? `<span class="chg ${n > 0 ? 'up' : 'down'}">${n > 0 ? '▲' : '▼'}${f(Math.abs(n) / div / 1000)}</span>` : '<span class="chg muted">=0</span>';
-    return `<table class="tbl"><thead><tr><th>Thương hiệu</th><th>Mua vào</th><th>Bán ra</th><th>Tăng/giảm</th></tr></thead><tbody>${rows.map(r => `<tr><td><b>${H.esc(r.name)}</b></td><td>${f(r.buy / div / 1000)}</td><td><b>${f(r.sell / div / 1000)}</b></td><td>${c(r.change_buy)} ${c(r.change_sell)}</td></tr>`).join('') || '<tr><td colspan="4">Đang tải…</td></tr>'}</tbody></table><p class="muted small" style="margin-top:6px">Đơn vị: nghìn đồng/${unit.v === 'chi' ? 'chỉ' : 'lượng'}</p>`;
+    return `<table class="tbl"><thead><tr><th>Thương hiệu</th><th>Mua vào</th><th>Bán ra</th><th>Tăng/giảm</th></tr></thead><tbody>${rows.map(r => `<tr><td><b>${H.esc(r.name)}</b></td><td>${r.buy == null ? '–' : f(r.buy / div / 1000)}</td><td><b>${r.sell == null ? '–' : f(r.sell / div / 1000)}</b></td><td>${c(r.change_buy)} ${c(r.change_sell)}</td></tr>`).join('') || '<tr><td colspan="4">Đang tải…</td></tr>'}</tbody></table><p class="muted small" style="margin-top:6px">Đơn vị: nghìn đồng/${unit.v === 'chi' ? 'chỉ' : 'lượng'}</p>`;
   }
   function drawTables() { document.querySelectorAll('[data-table]').forEach(el => el.innerHTML = table(el.dataset.table)); document.querySelectorAll('.unit-toggle button').forEach(b => b.classList.toggle('on', b.dataset.u === unit.v)); }
   document.addEventListener('click', e => { const b = e.target.closest('.unit-toggle button'); if (b) { unit.v = b.dataset.u; localStorage.setItem('hmg_unit', unit.v); drawTables(); } });

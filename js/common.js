@@ -128,7 +128,7 @@
       <div><h4>Phân tích</h4><a href="live.html">🔴 Phòng Live</a><a href="chien-luoc.html">Chiến lược hôm nay</a><a href="bieu-do.html">Biểu đồ toàn màn hình</a><a href="lich-kinh-te.html">Lịch kinh tế</a><a href="tin-tuc.html">Tin tức</a><a href="quy-forex.html">Quỹ Forex</a><a href="tai-khoan-follow.html">Tài khoản Follow</a></div>
       <div><h4>Thông tin</h4><a href="kien-thuc.html">Kiến thức</a><a href="ve-toi.html">Về tôi</a><a href="lien-he.html#lien-he">Liên hệ</a><a href="mailto:${H.EMAIL}">${H.EMAIL}</a></div>
     </div>
-    <p class="disc">⚠ <b>Miễn trừ trách nhiệm:</b> Nội dung chỉ mang tính tham khảo, là quan điểm cá nhân, <b>không phải lời khuyên đầu tư</b>. Giá quy đổi là ước tính, chưa gồm thuế phí. Dữ liệu từ bên thứ ba (TradingView, gold-api.com, open.er-api.com, vang.today) có thể chậm hoặc sai lệch.<br>© ${new Date().getFullYear()} HuymasterGold79.com.vn</p>
+    <p class="disc">⚠ <b>Miễn trừ trách nhiệm:</b> Nội dung chỉ mang tính tham khảo, là quan điểm cá nhân, <b>không phải lời khuyên đầu tư</b>. Giá quy đổi là ước tính, chưa gồm thuế phí. Dữ liệu từ bên thứ ba (TradingView, gold-api.com, open.er-api.com, webgia.com, website các thương hiệu) có thể chậm hoặc sai lệch.<br>© ${new Date().getFullYear()} HuymasterGold79.com.vn</p>
   </div></footer>
   <button class="zfloat" data-zalo aria-label="Kết bạn Zalo">Zalo</button>
   <div id="zalo-modal" class="modal" hidden><div class="modal-box"><button class="x" aria-label="Đóng">×</button>
@@ -198,10 +198,10 @@
       job('https://api.gold-api.com/price/BTC', g => { if (!g.price) return false; D.btc = g.price; }),
       job('https://open.er-api.com/v6/latest/USD', f => { if (!f.rates) return false; const R = f.rates; D.fx = R.VND;
         if (R.EUR && R.JPY && R.GBP && R.CAD && R.SEK && R.CHF) { D.eur = 1 / R.EUR; D.jpy = R.JPY; D.dxy = 50.14348112 * Math.pow(R.EUR, 0.576) * Math.pow(R.JPY, 0.136) * Math.pow(R.GBP, 0.119) * Math.pow(R.CAD, 0.091) * Math.pow(R.SEK, 0.042) * Math.pow(R.CHF, 0.036); } }),
-      EN ? null : job('https://www.vang.today/api/prices', v => { if (!v.prices) return false;
-        const rows = BRANDS.filter(k => v.prices[k[0]] && v.prices[k[0]].sell).map(k => Object.assign({}, v.prices[k[0]], { code: k[0], name: k[1], type: k[2] }));
+      EN ? null : job(H.ROOT + 'data/vn-gold-daily.json', v => { if (!v.rows) return false; const m = {}; v.rows.forEach(r => m[r.code] = r);
+        const rows = BRANDS.filter(k => m[k[0]] && m[k[0]].sell).map(k => ({ code: k[0], name: k[1], type: k[2], buy: m[k[0]].buy, sell: m[k[0]].sell, change_buy: m[k[0]].chg_buy, change_sell: m[k[0]].chg_sell }));
         if (!rows.length) return false; D.rows = rows; D.live_rows = true; D.rowsStale = null; D.fallback = null;
-        D.vnSrc = 'vang.today · ' + (v.time || '') + ' ' + (v.date ? H.dateVN(v.date) : ''); })]);
+        D.vnSrc = 'webgia.com & web chính thức · ' + (v.updated_vn || ''); })]);
     if (!EN && !D.rows.length) { // dự phòng: giá nhập tay trong data/vn-prices.json (giá thật, có ghi thời điểm)
       const j = await safe(H.getJSON(H.ROOT + 'data/vn-prices.json'));
       if (j && j.prices) { D.rows = j.prices.map(r => ({ name: r.name, type: /nhẫn/i.test(r.name) ? 'nhan' : 'mieng', buy: r.buy, sell: r.sell, change_buy: 0, change_sell: 0 })); D.vnSrc = 'Nhập tay · ' + new Date(j.updated).toLocaleString('vi-VN'); D.fallback = j.updated; }

@@ -3,12 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
   'use strict';
   const H = window.HMG, $ = id => document.getElementById(id), e = H.esc;
   if (!$('vn-daily') && !$('vn-home')) return;
-  const tr = v => (v / 1e6).toLocaleString('vi-VN', { minimumFractionDigits: 1, maximumFractionDigits: 2 });
+  const tr = v => v == null || isNaN(v) ? '–' : (v / 1e6).toLocaleString('vi-VN', { minimumFractionDigits: 1, maximumFractionDigits: 2 });
   const chg = v => !v ? '<span class="vg-ch side">= 0</span>' : `<span class="vg-ch ${v > 0 ? 'up' : 'down'}">${v > 0 ? '▲' : '▼'} ${(Math.abs(v) / 1e3).toLocaleString('vi-VN')}k</span>`;
   const a = (s, t) => `<a href="${e(s.url || s)}" target="_blank" rel="noopener">${e(t || s.name)} ↗</a>`;
   H.getJSON('data/vn-gold-daily.json').then(d => {
     const sjc = d.rows.find(r => r.code === 'SJL1L10'), ring = d.rows.find(r => r.code === 'SJ9999'), w = d.world, pk = d.peak;
-    const vt = a(d.sources.vang_today, 'vang.today'), loss = pk ? pk.sell - sjc.buy : 0;
+    const srcA = r => r && r.src_url ? a({ url: r.src_url, name: r.src_name }) : '–', vt = srcA(sjc), loss = pk && sjc.buy ? pk.sell - sjc.buy : null;
     const head = `<div class="vg-hero">
       <div class="vg-big"><span>🧱 Vàng miếng SJC</span><b>${tr(sjc.buy)} – ${tr(sjc.sell)}</b><small>triệu đồng/lượng (mua – bán) ${chg(sjc.chg_sell)}</small></div>
       ${ring ? `<div class="vg-big"><span>💍 Nhẫn tròn 9999 SJC</span><b>${tr(ring.buy)} – ${tr(ring.sell)}</b><small>triệu đồng/lượng ${chg(ring.chg_sell)}</small></div>` : ''}
@@ -16,18 +16,17 @@ document.addEventListener('DOMContentLoaded', function () {
     if ($('vn-home')) {
       $('vn-home').innerHTML = `<div class="vg-head ${sjc.chg_sell > 0 ? 'up' : sjc.chg_sell < 0 ? 'down' : 'side'}">Hôm nay vàng miếng SJC ${sjc.chg_sell ? `<b>${sjc.chg_sell > 0 ? 'tăng' : 'giảm'} ${tr(Math.abs(sjc.chg_sell))} triệu/lượng</b>` : '<b>đứng giá</b>'}</div>` + head + `<div class="vg-row2">${pk ? `<div class="vg-peak mini"><b>📉 Người mua đỉnh ${H.dateVN(pk.date)} (${tr(pk.sell)} tr) đang lỗ ≈ ${tr(loss)} triệu/lượng</b></div>` : ''}
         <div class="vg-adv mini"><b>💡 Lời khuyên:</b> ${e(d.advice)}</div></div>
-        <p class="small muted">Giá: ${vt} lúc ${e(d.vt_time)} · <a href="gia-vang.html#vn-daily">Xem phân tích đầy đủ →</a></p>`;
+        <p class="small muted">Nguồn: ${vt}${d.price_time ? ` lúc ${e(d.price_time)}` : ''} · <a href="gia-vang.html#vn-daily">Xem phân tích đầy đủ →</a></p>`;
     }
     if (!$('vn-daily')) return;
-    const RS = d.row_sources || { vt: { name: 'vang.today', url: d.sources.vang_today } };
     const chg2 = v => v == null ? '<span class="vg-ch side">chưa có</span>' : chg(v);
     const BR = [['SJC', '🏛 SJC'], ['DOJI', '🔷 DOJI'], ['PNJ', '💎 PNJ'], ['BTMC', '🟡 Bảo Tín Minh Châu'], ['Phú Quý', '🟠 Phú Quý'], ['Mi Hồng', '🌸 Mi Hồng']];
     const coOf = r => r.co || (/DOJI/.test(r.brand) ? 'DOJI' : /PNJ/.test(r.brand) ? 'PNJ' : /Bảo Tín/.test(r.brand) ? 'BTMC' : r.brand);
     const brandCard = ([co, title]) => {
       const rs = d.rows.filter(r => coOf(r) === co); if (!rs.length) return '';
-      const sk = rs[0].src || 'vt', so = RS[sk] || RS.vt;
-      return `<div class="card vg-b"><h3>${e(title)}</h3><table class="tbl vg-tbl"><thead><tr><th>Loại</th><th>Mua</th><th>Bán</th><th>± hôm qua</th><th>Chênh M–B</th><th>Cao hơn TG</th></tr></thead><tbody>${rs.map(r => `<tr><td>${e(r.type)}${r.brand !== co && r.brand !== title.slice(3) ? `<br><small class="muted">${e(r.brand)}</small>` : ''}</td><td>${tr(r.buy)}</td><td><b>${tr(r.sell)}</b></td><td>${chg2(r.chg_sell)}</td><td>${tr(r.sell - r.buy)}</td><td>${r.sell && w.vnd_per_luong ? `<span class="vg-ch down">+${tr(r.sell - w.vnd_per_luong)}</span>` : '–'}</td></tr>`).join('')}</tbody></table>
-        <p class="small muted">Nguồn: ${a(so)}${rs[0].src_time ? ` · ${e(rs[0].src_time)}` : ''}</p></div>`;
+      const srcs = [...new Map(rs.filter(r => r.src_url).map(r => [r.src_name, r])).values()];
+      return `<div class="card vg-b"><h3>${e(title)}</h3><table class="tbl vg-tbl"><thead><tr><th>Loại</th><th>Mua</th><th>Bán</th><th>± hôm qua</th><th>Chênh M–B</th><th>Cao hơn TG</th></tr></thead><tbody>${rs.map(r => `<tr><td>${e(r.type)}${r.brand !== co && r.brand !== title.slice(3) ? `<br><small class="muted">${e(r.brand)}</small>` : ''}<br><small class="muted">Nguồn: ${srcA(r)}</small></td><td>${tr(r.buy)}</td><td><b>${tr(r.sell)}</b></td><td>${r.sell == null ? '–' : chg2(r.chg_sell)}</td><td>${r.sell == null ? '–' : tr(r.sell - r.buy)}</td><td>${r.sell && w.vnd_per_luong ? `<span class="vg-ch down">+${tr(r.sell - w.vnd_per_luong)}</span>` : '–'}</td></tr>`).join('')}</tbody></table>
+        <p class="small muted">Nguồn: ${srcs.map(r => srcA(r) + (r.src_time ? ` · ${e(r.src_time)}` : '')).join('; ') || '–'}</p></div>`;
     };
 
     const tipGrp = (g, title) => {
@@ -54,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const dl = sjc.chg_sell || 0, hl = dl === 0 ? `Hôm nay vàng miếng SJC <b>đứng giá</b> ở ${tr(sjc.sell)} triệu/lượng (bán ra)` : `Hôm nay vàng miếng SJC <b>${dl > 0 ? 'tăng' : 'giảm'} ${tr(Math.abs(dl))} triệu/lượng</b>, bán ra ${tr(sjc.sell)} triệu`;
     const C = d.sjc_compare || {}, cmpBox = (k, lb) => { const x = C[k]; if (!x) return `<div class="vg-q"><small>${lb}</small><b class="muted">chưa đủ dữ liệu</b></div>`; const v = sjc.sell - x.sell;
       return `<div class="vg-q ${v > 0 ? 'up' : v < 0 ? 'down' : ''}"><small>${lb} (${H.dateVN(x.date).slice(0, 5)}: ${tr(x.sell)})</small><b>${v > 0 ? '▲ +' : v < 0 ? '▼ −' : '= '}${tr(Math.abs(v))} tr</b></div>`; };
-    const gp = w.gap_sjc_sell / w.vnd_per_luong * 100, verdict = gp > 8 ? ['đắt', 'Mua lúc này ĐẮT so với thế giới – trả thêm khoảng'] : gp > 3 ? ['hơi đắt', 'Mua lúc này HƠI ĐẮT so với thế giới – trả thêm khoảng'] : ['hợp lý', 'Mua lúc này tương đối HỢP LÝ so với thế giới – chênh chỉ'];
+    const gp = w.gap_sjc_sell == null ? 0 : w.gap_sjc_sell / w.vnd_per_luong * 100, verdict = gp > 8 ? ['đắt', 'Mua lúc này ĐẮT so với thế giới – trả thêm khoảng'] : gp > 3 ? ['hơi đắt', 'Mua lúc này HƠI ĐẮT so với thế giới – trả thêm khoảng'] : ['hợp lý', 'Mua lúc này tương đối HỢP LÝ so với thế giới – chênh chỉ'];
     const hs = d.history.SJL1L10 || [];
     let chart = '';
     if (hs.length > 2) {
@@ -65,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
         <text x="44" y="${Hh - 6}" class="vg-ax">${H.dateVN(hs[0].date).slice(0, 5)}</text><text x="${W - 12}" y="${Hh - 6}" text-anchor="end" class="vg-ax">${H.dateVN(hs[hs.length - 1].date).slice(0, 5)}</text>
         <text x="2" y="${Y(Math.max(...v)) + 4}" class="vg-ax">${tr(Math.max(...v))}</text><text x="2" y="${Y(Math.min(...v)) + 4}" class="vg-ax">${tr(Math.min(...v))}</text>
         <circle cx="${X(hs.length - 1)}" cy="${Y(v[v.length - 1])}" r="5" fill="#e0a800" class="vg-dot"/></svg>
-        <p class="small muted">SJC miếng – giá bán ra ${hs.length} ngày gần nhất, triệu đồng/lượng · Nguồn ${vt}</p>`;
+        <p class="small muted">SJC miếng – giá bán ra ${hs.length} ngày gần nhất, triệu đồng/lượng · ${e(d.history_note || 'Dữ liệu lưu hằng ngày của H79')}</p>`;
     }
     $('vn-daily').innerHTML = `<div class="vg-top"><span class="vg-tag">☀ VÀNG TRONG NƯỚC HÔM NAY</span><span class="muted small">Cập nhật ${e(d.updated_vn)} (giờ VN)</span></div>
       <div class="vg-head ${dl > 0 ? 'up' : dl < 0 ? 'down' : 'side'}">${dl > 0 ? '📈' : dl < 0 ? '📉' : '➖'} ${hl}</div>
@@ -83,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
       </div>
       <div class="card vg-an"><h3>📝 Nhận định H79</h3><ul>${(d.analysis || []).map(x => `<li>${e(x)}</li>`).join('')}</ul></div>
       <div class="vg-adv"><b>💡 Lời khuyên:</b> ${e(d.advice)}</div><div class="rx" data-rx="vn|${e((d.updated_vn || '').slice(-10))}"></div>
-      <div class="small muted vg-src"><b>Nguồn & ghi chú:</b> SJC, DOJI, PNJ, Bảo Tín Minh Châu: ${vt}; Phú Quý: ${a(RS.pq || 'https://phuquygroup.vn/', 'phuquygroup.vn')} (website chính thức); Mi Hồng: ${a(RS.mh || 'https://webgia.com/gia-vang/mi-hong/', 'webgia.com')}. Đơn vị: triệu đồng/lượng; Phú Quý/Mi Hồng niêm yết theo chỉ, đã nhân 10. "± hôm qua" so với giá chốt ngày giao dịch trước đã lưu (Phú Quý, Mi Hồng: bắt đầu lưu từ 15/10). Giá thế giới: ${a(d.sources.gold_api, 'gold-api.com')} lúc ${new Date(w.xau_time_utc).toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' })}; tỷ giá ${a(d.sources.fx, 'open.er-api.com')}.
+      <div class="small muted vg-src"><b>Nguồn & ghi chú:</b> SJC, DOJI, Bảo Tín Minh Châu: đọc từ trang công khai ${a('https://webgia.com/gia-vang/', 'webgia.com')}; PNJ, Phú Quý, Mi Hồng: website chính thức (dự phòng webgia.com) – nguồn ghi ở từng dòng. Ô không đọc được hiển thị "–". Đơn vị: triệu đồng/lượng; Phú Quý/Mi Hồng niêm yết theo chỉ, đã nhân 10. "± hôm qua" so với giá chốt ngày giao dịch trước đã lưu (Phú Quý, Mi Hồng: bắt đầu lưu từ 15/10). Biểu đồ: dữ liệu lưu hằng ngày của H79. Giá thế giới: ${a(d.sources.gold_api, 'gold-api.com')} lúc ${new Date(w.xau_time_utc).toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' })}; tỷ giá ${a(d.sources.fx, 'open.er-api.com')}.
       ${(d.refs || []).map(r => `<div style="margin-top:6px">📰 ${a(r, r.name)}<ul>${(r.facts || []).map(f => `<li>${e(f)}</li>`).join('')}</ul></div>`).join('')}<p><i>Nội dung tham khảo, không phải lời khuyên đầu tư.</i></p></div>`;
   }).catch(err => { console.warn(err); ['vn-daily', 'vn-home'].forEach(i => { if ($(i)) $(i).innerHTML = '<p class="muted">Chưa tải được dữ liệu vàng trong nước.</p>'; }); });
 });
