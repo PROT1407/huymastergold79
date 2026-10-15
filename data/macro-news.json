@@ -56,6 +56,138 @@
   "items": [
     {
       "date": "2026-10-15",
+      "category": "Vàng",
+      "priority": 1,
+      "impact": "tăng",
+      "title": "Vàng hồi hơn 1% trong phiên Á: giao ngay ~4.159 lúc 09:57 VN – USD rời đỉnh 18 tháng, chờ PPI + bán lẻ 19:30",
+      "summary": "CNBC (Reuters): vàng giao ngay tăng 1,3% lên 4.158,63 USD/oz lúc 02:57 GMT (09:57 VN), hồi từ đáy thấp nhất kể từ 7/10 lập hôm qua; futures tháng 12 +1,8% lên 4.180 USD. USD trượt sau khi chạm đỉnh 18 tháng qua đêm. CME FedWatch: xác suất tăng lãi tháng 10 ~27% (trước CPI 22%). Kyle Rodda (Capital.com): vùng quan trọng là ngay dưới 4.000 – nếu dữ liệu tiếp tục mạnh khiến Fed phải tăng gấp, thị trường sẽ nhắm lại vùng này. Investing.com lúc 04:59 GMT (11:59 VN): XAU/USD +1% ở 4.146,48, DXY −0,5% còn 102,09. Đến 13:45 VN, gold-api.com báo ~4.135,5 – vàng đã nhả bớt một phần đà hồi trước phiên Âu.",
+      "reason": "Ngắn hạn: USD và lợi suất hạ nhiệt sau phản ứng quá đà với CPI → vàng hồi kỹ thuật, nhưng mới chỉ lấy lại khoảng một nửa cú giảm hôm qua và đang hụt hơi dưới 4.160. PPI + doanh số bán lẻ 19:30 VN là phép thử: số nóng dễ đẩy vàng quay lại 4.100 và thấp hơn. Dài hạn: lực mua của NHTW và cầu trú ẩn (Iran, nợ công) vẫn đỡ, nhưng chừng nào Fed còn nghiêng về tăng thêm thì vàng khó lấy lại xu hướng tăng bền.",
+      "source": {
+        "name": "CNBC (Reuters) – Gold rebounds from one-week low as dollar slips",
+        "url": "https://www.cnbc.com/2026/10/15/gold-rebounds-from-one-week-low-as-dollar-slips.html"
+      },
+      "source2": {
+        "name": "Investing.com – Gold rebounds 1% as hotter U.S. inflation stokes Fed rate-hike fears",
+        "url": "https://ph.investing.com/news/commodities-news/gold-rebounds-after-inflationdriven-selloff-as-fed-ratehike-bets-rise-2629455"
+      },
+      "time_vn": "09:57 VN (giá CNBC/Reuters) → 11:59 VN (Investing.com) → 13:45 VN (gold-api.com) 15/10/2026",
+      "title_en": "Gold bounces 1%+ in Asia: spot near $4,159 as the dollar backs off an 18-month high – PPI and retail sales on deck",
+      "summary_en": "CNBC (Reuters): spot gold rose 1.3% to $4,158.63/oz at 10:57 PM ET, rebounding from Wednesday's lowest level since Oct 7; December futures gained 1.8% to $4,180. The dollar slipped after tagging an 18-month high overnight. CME FedWatch puts October hike odds near 27%, up from 22% before CPI. Capital.com's Kyle Rodda flagged the area just below $4,000 as the critical level if data stays hot enough to force an urgent Fed hike. Investing.com at 12:59 AM ET had XAU/USD up 1% at $4,146.48 with DXY down 0.5% at 102.09. By 2:45 AM ET, gold-api.com showed spot near $4,135.50, so part of the bounce has already faded heading into London.",
+      "reason_en": "Near term: a relief bounce as the dollar and yields unwind part of the CPI overshoot, but gold has only retraced about half of Wednesday's drop and is stalling below $4,160. The 8:30 AM ET PPI and retail sales prints are the test; hot numbers could send it back toward $4,100 and lower. Longer term: central bank buying and haven demand (Iran, fiscal worries) still underpin bullion, but as long as the Fed leans toward more hikes, a durable uptrend is hard to rebuild.",
+      "time_en": "Oct 14, 10:57 PM ET to Oct 15, 2:45 AM ET"
+    },
+    {
+      "date": "2026-10-15",
+      "category": "Lợi suất",
+      "priority": 1,
+      "impact": "tăng",
+      "title": "Trái phiếu Mỹ hồi mạnh trong phiên Á: lợi suất 10 năm thấp hơn 21 điểm cơ bản so với đỉnh sau CPI – USD giảm, vàng được đỡ",
+      "summary": "investingLive (bản tin phiên Á, 10:22 VN): trái phiếu Mỹ nối dài đà hồi, đẩy lợi suất 10 năm xuống thấp hơn 21 điểm cơ bản so với đỉnh lập sau CPI hôm qua; USD giảm so với hầu hết đồng tiền chính, vàng tăng khoảng 40 USD. Tâm lý với trái phiếu được hỗ trợ thêm bởi bài Bloomberg cho rằng Trung Quốc có thể đang nắm nhiều nợ Mỹ hơn số liệu chính thức, thông qua tổ chức lưu ký ở nước khác – lượng chứng khoán Mỹ do Canada nắm giữ đã tăng lên gần 600 tỷ USD. Thông tin này chưa được xác nhận. Yahoo Finance: chỉ số USD (DX-Y.NYB) ~102,09 lúc 13:00 VN, so với 102,55 phiên trước.",
+      "reason": "Ngắn hạn: lợi suất giảm làm chi phí cơ hội giữ vàng giảm, USD yếu đi → hỗ trợ trực tiếp cho đà hồi của vàng. Nếu phiên Mỹ lợi suất tiếp tục hạ và DXY lùi dưới 102 thì đà hồi có thể kéo dài. Trung hạn: nếu thông tin Trung Quốc vẫn âm thầm giữ trái phiếu Mỹ được xác nhận, nỗi lo cầu ngoại suy yếu giảm bớt → bớt áp lực lợi suất dài hạn, nhưng cũng làm giảm câu chuyện 'phi đô la hóa' vốn là một trụ đỡ của vàng.",
+      "source": {
+        "name": "investingLive – Asia-Pacific market news: Treasury rally sinks dollar, lifts gold",
+        "url": "https://investinglive.com/news/investinglive-asia-pacific-market-news-treasury-rally-sinks-dollar-lifts-gold/"
+      },
+      "source2": {
+        "name": "investingLive – Talk grows that China is routing US Treasury holdings through Canada (Bloomberg)",
+        "url": "https://investinglive.com/news/talk-grows-that-china-is-routing-us-treasury-holdings-through-canada-bloomberg/"
+      },
+      "time_vn": "08:19–10:22 VN 15/10/2026 (DXY Yahoo lúc 13:00 VN)",
+      "title_en": "Treasuries rally in Asia: 10-year yield 21 bp off its post-CPI high – dollar slips, gold catches a bid",
+      "summary_en": "investingLive (Asia wrap, 11:22 PM ET): Treasuries extended their rebound, taking the 10-year yield 21 bp below the high it hit after Wednesday's CPI; the dollar fell against most majors and gold rallied about $40. A Bloomberg report that China may hold more U.S. debt than official data show, parked with custodians outside the U.S., added support; Canada's reported holdings of U.S. securities have climbed to nearly $600 billion. The report is unconfirmed. Yahoo Finance had the dollar index (DX-Y.NYB) at about 102.09 at 2:00 AM ET versus a 102.55 prior close.",
+      "reason_en": "Near term: lower yields cut the opportunity cost of holding gold and a softer dollar adds fuel, so the bounce has a tailwind as long as yields keep drifting lower; a DXY break below 102 in New York would confirm it. Medium term: if China really is still holding Treasuries quietly, worries about fading foreign demand ease, which caps long-end yields but also takes some air out of the de-dollarization story that has supported gold.",
+      "time_en": "Oct 14, 9:19–11:22 PM ET (DXY as of 2:00 AM ET Oct 15)"
+    },
+    {
+      "date": "2026-10-15",
+      "category": "Chiến tranh",
+      "priority": 1,
+      "impact": "tăng",
+      "title": "Hormuz nóng lên: tàu container Singapore bị đánh chìm, IRGC 'đếm từng khoảnh khắc' để tấn công tàu chiến Mỹ – có tin Iran sơ tán căn cứ quân sự",
+      "summary": "CNBC Daily Open (08:35 VN): tàu container GFS Pride treo cờ Singapore bị một vật thể không xác định bắn trúng, cháy và chìm ở eo biển Hormuz; 21 thủy thủ được sơ tán an toàn. Tàu thứ hai GFS Giselle cũng trúng đòn, hư thân nhưng về được nơi neo an toàn. Cơ quan Hàng hải Singapore gọi các vụ tấn công là vi phạm luật quốc tế. Iran nói đang 'đếm từng khoảnh khắc' để tấn công tàu chiến Mỹ; Bộ Tư lệnh Trung tâm Mỹ (CENTCOM) khẳng định lực lượng Mỹ và đồng minh vẫn kiểm soát eo biển. investingLive (07:40 VN): có tin chưa được xác nhận rằng Vệ binh Cách mạng Iran (IRGC) ra lệnh sơ tán một số căn cứ quân sự, và quan chức Iran nói với các nhà ngoại giao khu vực rằng họ '100% chắc chắn' Mỹ sắp tấn công.",
+      "reason": "Ngắn hạn: rủi ro leo thang Mỹ – Iran tăng → cầu trú ẩn hỗ trợ vàng, đặc biệt nếu tin sơ tán căn cứ được xác nhận hoặc có đòn tấn công thật. Nhưng kênh dầu cũng làm lạm phát nóng → củng cố kỳ vọng Fed tăng lãi, nên vàng hưởng lợi rõ nhất khi tin chiến sự đến bất ngờ. Dài hạn: chiến tranh kéo dài (IMF giả định Hormuz chỉ mở lại vào tháng 3/2027) giữ nền cầu trú ẩn và mua vàng của NHTW.",
+      "source": {
+        "name": "CNBC – CNBC Daily Open: A Singapore ship goes down as Hormuz risks rise",
+        "url": "https://www.cnbc.com/2026/10/15/cnbc-daily-open-a-singapore-ship-goes-down-as-hormuz-risks-rise.html"
+      },
+      "source2": {
+        "name": "investingLive – Iran's IRGC orders evacuation of military bases as US strike fears grow: reports",
+        "url": "https://investinglive.com/commodities/iran-s-irgc-orders-evacuation-of-military-bases-as-us-strike-fears-grow-reports/"
+      },
+      "time_vn": "07:40 VN (tin sơ tán, chưa xác nhận) · 08:35 VN (CNBC Daily Open) 15/10/2026",
+      "title_en": "Hormuz heats up: Singapore-flagged boxship sunk, IRGC 'counting the moments' to hit U.S. warships – reports Iran is evacuating bases",
+      "summary_en": "CNBC Daily Open (9:35 PM ET Oct 14): the Singapore-registered container ship GFS Pride was hit by an unidentified projectile, caught fire and sank in the Strait of Hormuz; all 21 crew were evacuated safely. A second vessel, GFS Giselle, took hull damage but reached safe anchorage. Singapore's maritime authority called the attacks a breach of international law. Tehran said it is 'counting the moments' until it can strike U.S. warships, while CENTCOM said U.S. and partner forces clearly control the strait. investingLive (8:40 PM ET Oct 14): unconfirmed reports say the IRGC ordered several military bases evacuated, and Iranian officials reportedly told regional diplomats they are '100% certain' a U.S. strike is coming.",
+      "reason_en": "Near term: rising U.S.–Iran escalation risk supports haven demand, especially if the evacuation reports are confirmed or a strike actually lands. The oil channel cuts the other way by feeding inflation and Fed hike bets, so gold benefits most when war headlines hit as a surprise. Longer term: a drawn-out conflict (the IMF now assumes Hormuz reopens only in March 2027) keeps a floor under haven and central bank demand.",
+      "time_en": "Oct 14, 8:40 PM ET (evacuation reports, unconfirmed) · 9:35 PM ET (CNBC Daily Open)"
+    },
+    {
+      "date": "2026-10-15",
+      "category": "Dầu mỏ",
+      "priority": 2,
+      "impact": "trung lập",
+      "title": "Dầu giảm trong phiên Á: Brent ~104,3 USD (−1,7%) · WTI ~94,1 USD – Mỹ cân nhắc nới trừng phạt 'đội tàu bóng tối'",
+      "summary": "CNBC (11:09 VN): Brent giao tháng 12 giảm 1,66% xuống 104,31 USD/thùng; WTI tháng 11 giảm 1,09% còn 94,05 USD. Nhà đầu tư cân nhắc rủi ro gián đoạn sau các vụ tấn công tàu ở Hormuz và báo cáo tháng 10 của IEA (thị trường diesel thắt chặt có thể kéo dài sang 2027). Theo Reuters, chính quyền Trump đang cân nhắc nới trừng phạt các tàu 'đội tàu bóng tối' chở dầu và sản phẩm dầu từ các nước như Nga để hạ giá. Firas Bechwaty (ICM): đàm phán Mỹ – Iran không tiến triển nên khó mở lại hoàn toàn eo biển sớm, nhưng dầu Ả Rập Xê Út vẫn đi tuyến thay thế và các nước IEA xả kho khẩn cấp giúp hạn chế giá tăng vọt. Yahoo Finance: Brent (BZ=F) ~104,4 lúc 13:00 VN.",
+      "reason": "Ngắn hạn: dầu hạ bớt giảm lo ngại lạm phát năng lượng → bớt áp lực Fed tăng lãi → hỗ trợ nhẹ cho vàng; nhưng giá vẫn trên 100 USD nên tác động chỉ ở mức trung lập. Dài hạn: nếu Mỹ thực sự nới trừng phạt để tăng nguồn cung, giá xăng – CPI có thể dịu dần trước bầu cử giữa kỳ 3/11, có lợi cho vàng qua kênh lãi suất; ngược lại, một đòn tấn công mới ở Vùng Vịnh sẽ đẩy dầu và lạm phát lên lại.",
+      "source": {
+        "name": "CNBC – Oil falls as investors assess Mideast tensions, International Energy Agency's report",
+        "url": "https://www.cnbc.com/2026/10/15/oil-prices-today-brent-wti.html"
+      },
+      "source2": {
+        "name": "investingLive – US weighs easing shadow fleet sanctions to cut record tanker freight rates",
+        "url": "https://investinglive.com/commodities/us-weighs-easing-shadow-fleet-sanctions-to-cut-record-tanker-freight-rates/"
+      },
+      "time_vn": "11:09 VN (CNBC) · 13:00 VN (Yahoo BZ=F) 15/10/2026",
+      "title_en": "Crude slips in Asia: Brent near $104.30 (−1.7%), WTI near $94.10 – Washington weighs easing shadow-fleet sanctions",
+      "summary_en": "CNBC (12:09 AM ET): December Brent fell 1.66% to $104.31 a barrel and November WTI lost 1.09% to $94.05 as traders weighed Hormuz shipping attacks and the IEA's October report warning that diesel tightness could last into 2027. Reuters reported the Trump administration is considering easing sanctions on shadow-fleet tankers carrying oil and products from countries such as Russia to bring prices down. ICM's Firas Bechwaty said stalled U.S.–Iran talks leave little near-term prospect of a full reopening, but Saudi crude rerouting and IEA emergency stock releases are capping spikes. Yahoo Finance had Brent (BZ=F) near $104.40 at 2:00 AM ET.",
+      "reason_en": "Near term: softer crude trims energy-inflation fears and some Fed hike pressure, a mild plus for gold, but with Brent still above $100 the net effect is neutral. Longer term: if Washington actually loosens sanctions to boost supply, gasoline and CPI could cool into the Nov 3 midterms, which helps gold through the rates channel; a fresh Gulf attack would flip that quickly.",
+      "time_en": "Oct 15, 12:09 AM ET (CNBC) · 2:00 AM ET (Yahoo BZ=F)"
+    },
+    {
+      "date": "2026-10-15",
+      "category": "Fed",
+      "priority": 2,
+      "impact": "giảm",
+      "title": "Fed Daly: nhiều khả năng cần tăng lãi thêm, nhưng không vội ở cuộc họp 27–28/10 – Chủ tịch Warsh phát biểu tại IMF Bangkok cuối ngày 15/10 giờ New York",
+      "summary": "investingLive (theo phỏng vấn độc quyền Reuters, 04:44 VN): Chủ tịch Fed San Francisco Mary Daly nói Fed nhiều khả năng sẽ phải tăng lãi thêm để kéo lạm phát xuống, nhưng bà vẫn đang cân nhắc thời điểm và không thấy cần hành động ở cuộc họp 27–28/10. Bà nhận định xăng đẩy lạm phát tổng, lạm phát lõi vẫn dai dẳng; rủi ro lạm phát ở trên mục tiêu còn cao; thị trường lao động ổn định cho phép Fed tập trung vào giá cả. Cùng ngày, Chủ tịch Fed Chicago Austan Goolsbee gọi số CPI là 'đáng thất vọng', còn báo cáo Beige Book của Fed cho thấy áp lực giá tăng, chủ yếu do diesel. Investing.com: Chủ tịch Fed Kevin Warsh phát biểu cuối ngày thứ Năm giờ New York tại hội nghị IMF ở Bangkok, trước khi Fed vào thời gian im lặng từ thứ Bảy.",
+      "reason": "Ngắn hạn: Daly hạ bớt khả năng tăng ngay tháng 10 (hỗ trợ nhẹ vàng), nhưng xác nhận hướng thắt chặt thêm – củng cố kịch bản tăng tháng 12, bất lợi cho vàng. Phát biểu của Warsh là rủi ro sự kiện lớn tiếp theo sau PPI/bán lẻ. Dài hạn: Fed 'cao lâu hơn' giữ lãi suất thực dương, là lực cản chính của vàng.",
+      "source": {
+        "name": "investingLive – Fed's Daly: more rate hikes likely needed, but no urgency to move in October",
+        "url": "https://investinglive.com/central-banks/fed-s-daly-more-rate-hikes-likely-needed-but-no-urgency-to-move-in-october/"
+      },
+      "source2": {
+        "name": "CNBC (Reuters) – Gold rebounds from one-week low as dollar slips",
+        "url": "https://www.cnbc.com/2026/10/15/gold-rebounds-from-one-week-low-as-dollar-slips.html"
+      },
+      "time_vn": "04:44 VN 15/10/2026 (bài Daly); Warsh phát biểu cuối ngày 15/10 giờ New York (sáng 16/10 giờ VN)",
+      "title_en": "Fed's Daly: more hikes likely needed, but no rush at the Oct 27–28 meeting – Chair Warsh speaks at the IMF in Bangkok late Thursday New York time",
+      "summary_en": "investingLive (citing an exclusive Reuters interview, 5:44 PM ET Oct 14): San Francisco Fed President Mary Daly said further rate increases are more likely than not, but she is still weighing timing and sees no need to act at the Oct 27–28 meeting. She said gasoline is driving headline inflation while core remains sticky, upside inflation risks stay elevated, and a stable labor market lets the Fed focus on prices. Chicago Fed President Austan Goolsbee called the CPI data discouraging, and the Beige Book flagged intensifying, diesel-driven price pressure. Investing.com notes Chair Kevin Warsh speaks late Thursday New York time at the IMF meetings in Bangkok, before the Fed's blackout begins Saturday.",
+      "reason_en": "Near term: Daly takes some air out of an October hike (a small plus for gold) but confirms the tightening bias, firming up a December move – a net negative. Warsh is the next big event risk after PPI and retail sales. Longer term: 'higher for longer' keeps real yields positive, the main headwind for bullion.",
+      "time_en": "Oct 14, 5:44 PM ET (Daly); Warsh speaks late Thursday, Oct 15, New York time"
+    },
+    {
+      "date": "2026-10-15",
+      "category": "Tương quan",
+      "priority": 2,
+      "impact": "trung lập",
+      "title": "Dữ liệu Á – Âu: GDP Anh tháng 8 +0,1% (dự báo −0,1%) · Úc mất 39.300 việc làm – chứng khoán công nghệ châu Á bán tháo, Kospi giảm gần 8%",
+      "summary": "CNBC (13:37 VN): GDP Anh tháng 8 tăng 0,1% so với tháng trước (Reuters dự báo −0,1%), tăng 2,1% so với cùng kỳ (dự báo 1,7%) – cao nhất kể từ 8/2022; bảng Anh tăng 0,4% so với USD, lợi suất gilt 10 năm giảm 9 điểm cơ bản về ~5,336%. investingLive: Úc mất 39.300 việc làm trong tháng 9, thất nghiệp 4,7% (dự báo 4,6%) – AUD giảm ngược chiều các đồng tiền khác; thành viên BOJ Junko Koeda nói không nên quá thận trọng trong việc tăng lãi; kinh tế trưởng RBNZ Paul Conway nói quyết định cuối tháng 10 còn hoàn toàn bỏ ngỏ, nghiêng về tăng. CNBC: chứng khoán công nghệ châu Á bán tháo vì lo Fed tăng lãi và chi phí vốn cho AI – SK Hynix −10%, Samsung −8,73%, SoftBank −7,9%, Advantest gần −14%; investingLive ghi Nikkei giảm khoảng 5%, Kospi gần 8%.",
+      "reason": "Ngắn hạn: GDP Anh tốt và gilt giảm lợi suất góp phần làm USD yếu đi → hỗ trợ nhẹ vàng vào phiên Âu; chứng khoán châu Á lao dốc tạo tâm lý né rủi ro, nhưng cú bán tháo có thể khiến một số quỹ phải bán vàng lấy tiền mặt nếu lan sang Âu – Mỹ. Dài hạn: nhiều NHTW (BOJ, RBNZ) nghiêng về thắt chặt cùng Fed → mặt bằng lãi suất toàn cầu cao, là lực cản với vàng; ngược lại rủi ro bong bóng nợ AI là lý do giữ vàng phòng thủ.",
+      "source": {
+        "name": "CNBC – UK economy grew 0.1% in August, beating expectations",
+        "url": "https://www.cnbc.com/2026/10/15/uk-gdp-august-2026-economy.html"
+      },
+      "source2": {
+        "name": "CNBC – SK Hynix shares plunge 10% amid Asia tech rout as Fed rate hike fears, AI funding worries mount",
+        "url": "https://www.cnbc.com/2026/10/15/sk-hynix-samsung-softbank-stocks-asia-tech-rout-ai-funding-worries.html"
+      },
+      "time_vn": "Sáng 15/10 (Úc, BOJ, RBNZ) · 13:00–13:42 VN 15/10/2026 (GDP Anh, chứng khoán châu Á)",
+      "title_en": "Asia/Europe data: UK August GDP +0.1% (est. −0.1%), Australia sheds 39,300 jobs – Asian tech rout drags the Kospi down nearly 8%",
+      "summary_en": "CNBC (2:37 AM ET): UK GDP rose 0.1% m/m in August versus a Reuters poll for −0.1%, and 2.1% y/y versus 1.7% expected – the strongest annual reading since August 2022; sterling gained 0.4% on the dollar and the 10-year gilt yield fell 9 bp to about 5.336%. investingLive: Australia lost 39,300 jobs in September with unemployment at 4.7% (est. 4.6%), sinking the Aussie; BOJ board member Junko Koeda said the bank shouldn't be overly cautious on hikes; RBNZ chief economist Paul Conway called the late-October decision completely open, with a hike more likely. CNBC: Asian tech hardware sold off on Fed hike and AI-funding fears – SK Hynix −10%, Samsung −8.73%, SoftBank −7.9%, Advantest nearly −14%; investingLive had the Nikkei down about 5% and the Kospi nearly 8%.",
+      "reason_en": "Near term: the UK beat and lower gilt yields add to dollar softness, a mild plus for gold into London; the Asian equity rout is risk-off, but if it spreads to Europe and the U.S., some funds may sell gold to raise cash. Longer term: more central banks (BOJ, RBNZ) leaning hawkish alongside the Fed keeps global rates high, a headwind for bullion, while AI-debt bubble risk argues for holding gold as a hedge.",
+      "time_en": "Overnight Oct 14–15 (Australia, BOJ, RBNZ) · Oct 15, 2:00–2:42 AM ET (UK GDP, Asian stocks)"
+    },
+    {
+      "date": "2026-10-15",
       "category": "Tương quan",
       "priority": 1,
       "impact": "giảm",
