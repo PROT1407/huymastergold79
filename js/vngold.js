@@ -26,9 +26,31 @@ document.addEventListener('DOMContentLoaded', function () {
     const brandCard = ([co, title]) => {
       const rs = d.rows.filter(r => coOf(r) === co); if (!rs.length) return '';
       const sk = rs[0].src || 'vt', so = RS[sk] || RS.vt;
-      return `<div class="card vg-b"><h3>${e(title)}</h3><table class="tbl vg-tbl"><thead><tr><th>Loại</th><th>Mua</th><th>Bán</th><th>± hôm qua</th><th>Chênh M–B</th></tr></thead><tbody>${rs.map(r => `<tr><td>${e(r.type)}${r.brand !== co && r.brand !== title.slice(3) ? `<br><small class="muted">${e(r.brand)}</small>` : ''}</td><td>${tr(r.buy)}</td><td><b>${tr(r.sell)}</b></td><td>${chg2(r.chg_sell)}</td><td>${tr(r.sell - r.buy)}</td></tr>`).join('')}</tbody></table>
+      return `<div class="card vg-b"><h3>${e(title)}</h3><table class="tbl vg-tbl"><thead><tr><th>Loại</th><th>Mua</th><th>Bán</th><th>± hôm qua</th><th>Chênh M–B</th><th>Cao hơn TG</th></tr></thead><tbody>${rs.map(r => `<tr><td>${e(r.type)}${r.brand !== co && r.brand !== title.slice(3) ? `<br><small class="muted">${e(r.brand)}</small>` : ''}</td><td>${tr(r.buy)}</td><td><b>${tr(r.sell)}</b></td><td>${chg2(r.chg_sell)}</td><td>${tr(r.sell - r.buy)}</td><td>${r.sell && w.vnd_per_luong ? `<span class="vg-ch down">+${tr(r.sell - w.vnd_per_luong)}</span>` : '–'}</td></tr>`).join('')}</tbody></table>
         <p class="small muted">Nguồn: ${a(so)}${rs[0].src_time ? ` · ${e(rs[0].src_time)}` : ''}</p></div>`;
     };
+
+    const tipGrp = (g, title) => {
+      const rs = d.rows.filter(r => r.group === g && r.buy > 0 && r.sell > 0); if (!rs.length) return '';
+      const nm = r => e(r.brand) + (/^Vàng miếng SJC$/.test(r.type) || g === 'mieng' ? '' : ` <small>(${e(r.type)})</small>`);
+      const pick = (f, best) => { const v = best(...rs.map(f)); return [v, rs.filter(r => f(r) === v)]; };
+      const [ms, lo] = pick(r => r.sell, Math.min), [mb, hi] = pick(r => r.buy, Math.max);
+      const sp = rs.map(r => r.sell - r.buy), spMin = Math.min(...sp), spMax = Math.max(...sp);
+      const col = v => spMax === spMin ? 120 : Math.round(120 - (v - spMin) / (spMax - spMin) * 120);
+      const bars = [...rs].sort((x, y) => (x.sell - x.buy) - (y.sell - y.buy)).map(r => { const v = r.sell - r.buy;
+        return `<div class="bt-bar"><span>${e(r.brand)}</span><i style="width:${Math.max(8, v / spMax * 100).toFixed(0)}%;background:hsl(${col(v)},70%,45%)"></i><b style="color:hsl(${col(v)},75%,35%)">${tr(v)}</b></div>`; }).join('');
+      const W = w.vnd_per_luong, gm = W ? Math.min(...rs.map(r => r.sell - W)) : null;
+      const wg = W ? [...rs].sort((x, y) => x.sell - y.sell).map(r => { const v = r.sell - W, best = v === gm;
+        return `<span class="bt-chip${best ? ' best' : ''}">${e(r.brand)}: <b>+${tr(v)} tr</b> (${(v / W * 100).toLocaleString('vi-VN', { maximumFractionDigits: 1 })}%)${best ? ' ✅ ít bị hớ nhất' : ''}</span>`; }).join('') : '';
+      return `<div class="bt-g"><h4>${title}</h4>
+        <div class="bt-two"><div class="bt-k ok"><small>🛒 Mua rẻ nhất</small><b>${tr(ms)} tr</b><span>${lo.map(nm).join(', ')}</span></div>
+        <div class="bt-k ok2"><small>💰 Bán lại được giá nhất</small><b>${tr(mb)} tr</b><span>${hi.map(nm).join(', ')}</span></div></div>
+        <div class="bt-s"><small>📉 Mua xong lỗ ngay (chênh mua–bán, triệu/lượng)</small>${bars}</div>
+        ${wg ? `<div class="bt-s"><small>🌍 Cao hơn thế giới (TG ≈ ${tr(W)} tr/lượng)</small><div class="bt-chips">${wg}</div></div>` : ''}</div>`;
+    };
+    const tipsBox = `<div class="card bt-box"><h3>💡 Mẹo cho người mua</h3><p class="small muted">Tự tính từ bảng giá lúc ${e(d.updated_vn || '')}, đơn vị triệu đồng/lượng.</p>
+      <div class="bt-grid">${tipGrp('mieng', '🧱 Vàng miếng')}${tipGrp('nhan', '💍 Vàng nhẫn')}</div>
+      <p class="bt-note">🏪 Tiệm nhỏ không niêm yết: so với giá các hãng lớn trên đây. Nếu bán cao hơn SJC hoặc chênh mua–bán trên 5 triệu là dễ bị hớ. Luôn hỏi cả giá mua vào và bán ra trước khi xuống tiền.</p></div>`;
     const dl = sjc.chg_sell || 0, hl = dl === 0 ? `Hôm nay vàng miếng SJC <b>đứng giá</b> ở ${tr(sjc.sell)} triệu/lượng (bán ra)` : `Hôm nay vàng miếng SJC <b>${dl > 0 ? 'tăng' : 'giảm'} ${tr(Math.abs(dl))} triệu/lượng</b>, bán ra ${tr(sjc.sell)} triệu`;
     const C = d.sjc_compare || {}, cmpBox = (k, lb) => { const x = C[k]; if (!x) return `<div class="vg-q"><small>${lb}</small><b class="muted">chưa đủ dữ liệu</b></div>`; const v = sjc.sell - x.sell;
       return `<div class="vg-q ${v > 0 ? 'up' : v < 0 ? 'down' : ''}"><small>${lb} (${H.dateVN(x.date).slice(0, 5)}: ${tr(x.sell)})</small><b>${v > 0 ? '▲ +' : v < 0 ? '▼ −' : '= '}${tr(Math.abs(v))} tr</b></div>`; };
@@ -50,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="vg-qs">${cmpBox('d1', 'So hôm qua')}${cmpBox('w1', 'So 1 tuần trước')}${cmpBox('m1', 'So 1 tháng trước')}</div>
       <div class="vg-gapc ${verdict[0] === 'hợp lý' ? 'ok' : ''}"><div><small>SJC bán ra</small><b>${tr(sjc.sell)}</b></div><i>vs</i><div><small>Thế giới quy đổi</small><b>${tr(w.vnd_per_luong)}</b></div><i>=</i><div><small>Chênh</small><b>+${tr(w.gap_sjc_sell)} tr</b></div>
         <p>⚖ ${verdict[1]} <b>${tr(w.gap_sjc_sell)} triệu/lượng (≈${gp.toLocaleString('vi-VN', { maximumFractionDigits: 1 })}%)</b>. <small class="muted">TG ${w.xau_usd.toLocaleString('vi-VN', { maximumFractionDigits: 1 })} USD/oz × ${Math.round(w.usdvnd).toLocaleString('vi-VN')} VND/USD × 1,20565, chưa thuế phí.</small></p></div>
+      ${tipsBox}
       <div class="vg-brands">${BR.map(brandCard).join('')}</div>
       <div class="vg-grid">
         <div class="card vg-c"><h3>📈 Giá bán SJC ${hs.length} ngày</h3>${chart || '<p class="muted small">Chưa đủ dữ liệu.</p>'}</div>
