@@ -243,10 +243,12 @@ details.h79more>summary::before{content:"▸ "}details.h79more[open]>summary::be
 
 .h79img{margin:12px 0}.h79img img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--line,#333)}
 .h79mp{border:2px solid #f5b041;border-radius:14px;padding:14px 16px;margin:12px 0;background:linear-gradient(135deg,rgba(245,176,65,.10),rgba(245,176,65,.02))}
-.h79mp h3{margin:0 0 8px;font-size:1.2rem;color:#f5b041}.h79mp p{margin:6px 0;line-height:1.55;font-size:1.02rem}
-.h79mp .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}.h79mp .chip{border:1px solid var(--line,#444);border-radius:999px;padding:3px 10px;font-size:.88rem;white-space:nowrap}
+.h79mp h3{margin:0 0 6px;font-size:1.2rem;color:#f5b041}.h79mp p{margin:6px 0;line-height:1.55;font-size:1.02rem}
+.h79mp .mp-asof{margin:0 0 8px;font-size:.8rem;line-height:1.35;color:var(--muted,#8d97a7)}
+.h79mp .mp-cap{margin:0 0 8px;font-size:.78rem;line-height:1.35;color:var(--muted,#8d97a7)}
+.h79mp .chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 4px}.h79mp .chip{border:1px solid var(--line,#444);border-radius:999px;padding:3px 10px;font-size:.88rem;white-space:nowrap}
 .h79mp .chip.up{color:#2ecc71;border-color:#2ecc71}.h79mp .chip.down{color:#ff5b5b;border-color:#ff5b5b}.h79mp .src{font-size:.85rem;opacity:.85;overflow-wrap:anywhere}.h79mp .src a{color:var(--gold,#f5b041)}
-@media(max-width:600px){.h79mp{padding:12px}.h79mp p{font-size:.98rem}}
+@media(max-width:600px){.h79mp{padding:12px}.h79mp p{font-size:.98rem}.h79mp .mp-asof,.h79mp .mp-cap{font-size:.75rem}.h79mp .chip{font-size:.82rem;padding:3px 8px}}
 
 .bt-box{padding:16px;margin:14px 0;background:linear-gradient(135deg,#fffbea,#fff);color:#1f2328;border:2px solid #f0b90b;border-radius:16px}.bt-box h3{margin:0 0 2px;color:#b07800}.bt-box .muted{color:#6b6f76}
 .bt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:8px}.bt-g{min-width:0;background:#fff;border:1px solid #f3e2a6;border-radius:14px;padding:12px}.bt-g h4{margin:0 0 8px;font-size:1rem}

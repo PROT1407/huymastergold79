@@ -116,9 +116,13 @@
   const TI = { up: ['🔺', 'Tăng'], down: ['🔻', 'Giảm'], side: ['↔️', 'Đi ngang'] };
   function mpHTML(s) {
     const m = s.market_picture, X = H.esc; if (!m || !m.text) return '';
+    // dir from JSON = vs prior close; do not invent directions
     const chips = (m.chips || []).map(c => `<span class="chip ${X(c.dir || '')}"><b>${X(c.k)}</b> ${X(c.v)}</span>`).join('');
     const src = (m.sources || []).map(x => `<a href="${X(x.url)}" target="_blank" rel="noopener nofollow">${X(x.name)}</a>`).join(' · ');
-    return `<section class="h79mp"><h3>🌍 Bức tranh chung</h3>${chips ? `<div class="chips">${chips}</div>` : ''}<p>${X(m.text)}</p>${src ? `<p class="src">Nguồn: ${src}</p>` : ''}</section>`;
+    let asof = '';
+    if (s.date && s.time) { const [, mm, dd] = s.date.split('-'); asof = `<p class="mp-asof">Cập nhật ${X(s.time)} ${X(dd)}/${X(mm)} (giờ VN)</p>`; }
+    const cap = chips ? '<p class="mp-cap">Mũi tên: so với phiên trước</p>' : '';
+    return `<section class="h79mp"><h3>🌍 Bức tranh chung</h3>${asof}${chips ? `<div class="chips">${chips}</div>` : ''}${cap}<p>${X(m.text)}</p>${src ? `<p class="src">Nguồn: ${src}</p>` : ''}</section>`;
   }
   function sumHTML(s) {
     const m = s.summary; if (!m) return '';

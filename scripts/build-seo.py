@@ -34,7 +34,7 @@ LANG_PAIRS = {"index.html": "en/index.html", "chien-luoc.html": "en/h79-analysis
 # Bài tiếng Anh tĩnh: en/posts/ (giữ đồng bộ với POST_SES trong js/common.js)
 OUT_EN = ROOT / "en" / "posts"
 POST_SES = {"phien-au-my": "london-ny-overlap", "phien-au": "london-session", "phien-my": "new-york-session", "phien-a": "asian-session", "phien-dem": "night-session"}
-ASSET_V = "20261015q"  # cache-busting cho css/js trong trang sinh tự động
+ASSET_V = "20261015r"  # cache-busting cho css/js trong trang sinh tự động
 OLD_BASES = ["https://huymastergold79.com.vn/", "https://prot1407.github.io/huymastergold79/"]
 VN = dt.timezone(dt.timedelta(hours=7))
 TODAY = dt.datetime.now(VN).date().isoformat()
@@ -165,12 +165,28 @@ def img_html(s, en=False):
     alt = (s.get("image_alt_en") if en else s.get("image_alt")) or ("Gold chart" if en else "Biểu đồ vàng")
     return f'<figure class="h79img"><a href="{e(src)}" target="_blank" rel="noopener"><img src="{e(src)}" alt="{e(alt)}" loading="lazy" width="1600" height="900"></a></figure>'
 
+def mp_asof(s, en=False):
+    """Small update-time line from post date+time only (no invented clocks)."""
+    if not s.get("date") or not s.get("time"): return ""
+    if en:
+        x = vn_dt(s["date"], s["time"]).astimezone(NY)
+        label = f"As of {x.hour % 12 or 12}:{x:%M} {'AM' if x.hour < 12 else 'PM'} ET, {x:%b} {x.day}"
+    else:
+        dd, mm = s["date"][8:10], s["date"][5:7]
+        label = f"Cập nhật {s['time']} {dd}/{mm} (giờ VN)"
+    return f'<p class="mp-asof">{e(label)}</p>'
+
 def mp_html(s, en=False):
     m = s.get("market_picture_en" if en else "market_picture")
     if not m or not m.get("text"): return ""
+    # dir comes from JSON (vs prior close); do not invent directions here
     chips = "".join(f'<span class="chip {e(c.get("dir", ""))}"><b>{e(c["k"])}</b> {e(c["v"])}</span>' for c in m.get("chips", []))
     src = " · ".join(f'<a href="{e(x["url"])}" target="_blank" rel="noopener nofollow">{e(x["name"])}</a>' for x in m.get("sources", []))
-    return (f'<section class="h79mp"><h3>{"🌍 Market Picture" if en else "🌍 Bức tranh chung"}</h3>' + (f'<div class="chips">{chips}</div>' if chips else "")
+    cap = ('Arrows: vs. prior close' if en else 'Mũi tên: so với phiên trước') if chips else ""
+    return (f'<section class="h79mp"><h3>{"🌍 Market Picture" if en else "🌍 Bức tranh chung"}</h3>'
+            + mp_asof(s, en)
+            + (f'<div class="chips">{chips}</div>' if chips else "")
+            + (f'<p class="mp-cap">{cap}</p>' if cap else "")
             + f'<p>{e(m["text"])}</p>' + (f'<p class="src">{"Sources" if en else "Nguồn"}: {src}</p>' if src else "") + "</section>")
 
 def summary_html(s):
