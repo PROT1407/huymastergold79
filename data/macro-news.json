@@ -56,6 +56,50 @@
   "items": [
     {
       "date": "2026-10-15",
+      "category": "Lạm phát",
+      "priority": 1,
+      "impact": "trung lập",
+      "title": "PPI tháng 9 nóng gấp đôi dự báo (+1,3% m/m, 6,3% y/y), bán lẻ +0,8% – vàng rơi 5 phút rồi bật lên 4.167",
+      "summary": "BLS (19:30 VN): PPI tháng 9 +1,3% m/m (dự báo 0,6%; kỳ trước điều chỉnh 0,5%) và +6,3% y/y – mức tăng tháng và năm mạnh nhất từ 2022. Năng lượng +10,8%, xăng +20,3%; PPI trừ thực phẩm và năng lượng +0,7% (dự báo 0,3%), trừ cả thương mại chỉ +0,5%. Census: bán lẻ +0,8% (dự báo 0,3%), trừ ô tô +0,9% (dự báo 0,6%), nhưng trừ ô tô và trạm xăng chỉ +0,25% (tháng trước ~1,1%). CME FedWatch (qua CNBC): xác suất Fed tăng lãi tháng 10 ~34% (tuần trước dưới 18%). Giá giao ngay CNBC XAU=: 4.149,8 lúc ra tin → đáy 4.138,1 trong 5 phút → đỉnh 4.167,1 lúc 20:15 → 4.156,2 lúc 20:30 (1h sau).",
+      "reason": "Ngắn hạn: theo lý thuyết số nóng phải làm vàng giảm, nhưng PPI tăng chủ yếu do năng lượng và chi tiêu ngoài xăng chậm lại, nên trái phiếu được mua và lợi suất giảm → vàng hồi. Nếu lợi suất quay đầu tăng, vàng dễ mất nhịp hồi. Dài hạn: lạm phát sản xuất 6,3% sẽ dần lan sang giá tiêu dùng → Fed có lý do tăng lãi thêm (cuộc họp 27–28/10), giữ áp lực lên vàng; chiến tranh Iran vừa đẩy lạm phát vừa giữ cầu trú ẩn.",
+      "source": {
+        "name": "CNBC – Wholesale prices jumped 6.3% annually in September, biggest gain since 2022",
+        "url": "https://www.cnbc.com/2026/10/15/september-producer-price-index-retail-sales-data.html"
+      },
+      "source2": {
+        "name": "Kitco – Gold price hits $4,154/oz after retail sales rise 0.8% in September",
+        "url": "https://www.kitco.com/news/article/2026-10-15/gold-price-hits-4154oz-after-retail-sales-rise-08-september"
+      },
+      "time_vn": "19:30 15/10/2026 (BLS, Census); giá vàng đo đến 20:34 VN",
+      "title_en": "September PPI runs double the forecast (+1.3% m/m, 6.3% y/y), retail sales +0.8% – gold dips for five minutes, then pops to 4,167",
+      "summary_en": "BLS (8:30 AM ET): September PPI rose 1.3% m/m (est. 0.6%; prior revised to 0.5%) and 6.3% y/y, the biggest monthly and annual gains since 2022. Energy +10.8%, gasoline +20.3%; PPI ex food and energy +0.7% (est. 0.3%), ex food, energy and trade just +0.5%. Census: retail sales +0.8% (est. 0.3%), ex-autos +0.9% (est. 0.6%), but ex autos and gas only +0.25% after about 1.1% in August. CME FedWatch (via CNBC): October hike odds near 34%, up from under 18% a week ago. Spot gold (CNBC XAU=): 4,149.80 at the print, a 4,138.10 low within five minutes, a 4,167.10 high at 9:15 AM ET, and 4,156.20 at 9:30 AM ET.",
+      "reason_en": "Near term: hot data 'should' hit gold, but with energy doing most of the PPI damage and non-gas spending slowing, bonds caught a bid and yields fell, so gold bounced. If yields turn back up, that bounce is at risk. Longer term: 6.3% producer inflation tends to filter into consumer prices, which gives the Fed cover to hike again at the Oct. 27–28 meeting and keeps pressure on gold; the Iran war both feeds inflation and keeps haven demand alive.",
+      "time_en": "Oct 15, 8:30 AM ET (BLS, Census); gold marks through 9:34 AM ET"
+    },
+    {
+      "date": "2026-10-15",
+      "category": "Lợi suất",
+      "priority": 1,
+      "impact": "tăng",
+      "title": "Sau PPI nóng, lợi suất 10 năm Mỹ vẫn rơi 14 điểm còn 5,05% – Nasdaq tương lai −1,3%, DXY −0,5%: vàng được đỡ",
+      "summary": "CNBC: lợi suất 10 năm giảm hơn 13 điểm cơ bản xuống 5,056%, 30 năm 5,385%, 2 năm 4,745% khi nhà đầu tư bán cổ phiếu công nghệ và chạy vào trái phiếu sau dữ liệu lạm phát. Investing.com (8:34 AM ET): Nasdaq 100 tương lai −1,1%, S&P 500 tương lai −0,3%, Dow tương lai +0,3%. Báo giá CNBC lúc 20:34 VN: US10Y 5,052% (−13,8 điểm), US2Y 4,707%, DXY 102,07 (−0,47%), Brent 105,13 USD (−0,9%), Nasdaq tương lai 29.781 (−1,33%).",
+      "reason": "Ngắn hạn: lợi suất và USD giảm làm chi phí giữ vàng giảm → giải thích vì sao vàng tăng dù PPI nóng. Đây là dòng tiền trú ẩn do cổ phiếu công nghệ bị bán, chưa chắc là xu hướng mới: nếu chứng khoán ổn định, lợi suất dễ bật lại. Dài hạn: lợi suất 10 năm vẫn trên 5% – mức cao bất lợi cho vàng chừng nào Fed còn nghiêng về tăng lãi.",
+      "source": {
+        "name": "CNBC – Treasury yields slide as investors flee to safety of bonds amid tech rout",
+        "url": "https://www.cnbc.com/2026/10/15/us-treasury-yields-investors-economic-data-.html"
+      },
+      "source2": {
+        "name": "Investing.com – Nasdaq 100 futures hold onto losses after hot U.S. producer inflation report",
+        "url": "https://au.investing.com/news/stock-market-news/us-stock-futures-fall-as-hot-inflation-revives-fed-hike-concerns-4691233"
+      },
+      "time_vn": "19:30–20:34 VN 15/10/2026",
+      "title_en": "Hot PPI, yet the 10-year yield drops 14 bps to 5.05% – Nasdaq futures −1.3%, DXY −0.5%: tailwind for gold",
+      "summary_en": "CNBC: the 10-year Treasury yield fell more than 13 bps to 5.056%, the 30-year to 5.385% and the 2-year to 4.745% as investors cashed out of tech and moved into bonds after the inflation data. Investing.com (8:34 AM ET): Nasdaq 100 futures −1.1%, S&P 500 futures −0.3%, Dow futures +0.3%. CNBC quotes at 9:34 AM ET: US10Y 5.052% (−13.8 bps), US2Y 4.707%, DXY 102.07 (−0.47%), Brent $105.13 (−0.9%), Nasdaq futures 29,781 (−1.33%).",
+      "reason_en": "Near term: lower yields and a softer dollar cut the cost of carrying gold, which is why bullion rallied through a hot PPI. It's a flight-to-quality move driven by the tech selloff, not yet a trend; if equities steady, yields can snap back. Longer term: a 10-year above 5% is still a headwind for gold as long as the Fed leans toward hiking.",
+      "time_en": "Oct 15, 8:30–9:34 AM ET"
+    },
+    {
+      "date": "2026-10-15",
       "category": "Vàng",
       "priority": 1,
       "impact": "tăng",
