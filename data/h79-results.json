@@ -1,112 +1,154 @@
 {
-  "_note": "Nhật ký kết quả kế hoạch H79. Win = TP1 trước SL; loss = SL trước; hết phiên = P/L tại lúc đánh giá. MFE tính bằng giá ($1/oz).",
-  "plans": [
-    {
-      "id": "2026-10-15-phien-au-1547",
-      "date": "2026-10-15",
-      "session": "Phiên Âu",
-      "evaluated_at_vn": "17:47 15/10/2026",
-      "price_ref": "spot",
-      "sell": {
-        "zone": "4.155 – 4.168",
-        "zone_filled": true,
-        "result": "đang mở",
-        "mfe": 5.6,
-        "note": "Khớp mép dưới 4.155 (15:15); thấp nhất sau khớp 4.149,4 (15:45). Sau 15:47 giá lên tối đa 4.160,2 (16:35) rồi về ~4.154 lúc 17:50; chưa tới TP1 4.140, SL 4.178 chưa chạm"
-      },
-      "buy": {
-        "zone": "4.097 – 4.110",
-        "zone_filled": false,
-        "result": "chưa khớp",
-        "mfe": null,
-        "note": "Thấp nhất sau 15:47 ~4.151 – xa vùng mua"
-      }
-    },
-    {
-      "id": "2026-10-15-phien-au-1345",
-      "date": "2026-10-15",
-      "session": "Phiên Âu",
-      "evaluated_at_vn": "15:47 15/10/2026",
-      "price_ref": "spot",
-      "sell": {
-        "zone": "4.155 – 4.168",
-        "zone_filled": true,
-        "result": "đang mở",
-        "mfe": 5,
-        "note": "Hồi chạm ~4.160 lúc 15:25 (mép dưới vùng) rồi về ~4.151; chưa tới TP1 4.140, SL 4.178 chưa chạm"
-      },
-      "buy": {
-        "zone": "4.097 – 4.110",
-        "zone_filled": false,
-        "result": "chưa khớp",
-        "mfe": null,
-        "note": "Thấp nhất sau kế hoạch ~4.135 – chưa chạm vùng mua"
-      }
-    },
-    {
-      "id": "2026-10-15-phien-a-0645",
-      "date": "2026-10-15",
-      "session": "Phiên Á",
-      "evaluated_at_vn": "13:45 15/10/2026",
-      "price_ref": "spot",
-      "sell": {
-        "zone": "4.113 – 4.123",
-        "zone_filled": true,
-        "result": "loss",
-        "mfe": 8.7,
-        "shortfall_to_tp1": 0.3,
-        "note": "Khớp bán khi hồi; MFE ~9 giá (gần TP1 thiếu ~0–1 giá) rồi breakout ngược chạm SL 4.133"
-      },
-      "buy": {
-        "zone": "4.099 – 4.109",
-        "zone_filled": true,
-        "result": "win",
-        "mfe": 48.6,
-        "note": "Khớp mua; TP1 4.119 chạm trước SL – thắng"
-      }
-    },
-    {
-      "id": "2026-10-15-phien-a-0800",
-      "date": "2026-10-15",
-      "session": "Phiên Á",
-      "evaluated_at_vn": "13:45 15/10/2026",
-      "price_ref": "spot",
-      "sell": {
-        "zone": "4.165 – 4.175",
-        "zone_filled": false,
-        "result": "chưa khớp",
-        "mfe": null,
-        "note": "Cao sau kế hoạch ~4.153 – chưa chạm"
-      },
-      "buy": {
-        "zone": "4.115 – 4.123",
-        "zone_filled": false,
-        "result": "chưa khớp",
-        "mfe": null,
-        "note": "Thấp sau kế hoạch ~4.133 – chưa chạm vùng mua"
-      }
-    },
-    {
-      "id": "2026-10-15-phien-a-1005",
-      "date": "2026-10-15",
-      "session": "Phiên Á (trưa)",
-      "evaluated_at_vn": "13:45 15/10/2026",
-      "price_ref": "spot",
-      "sell": {
-        "zone": "4.165 – 4.175",
-        "zone_filled": false,
-        "result": "chưa khớp",
-        "mfe": null,
-        "note": "Sau công bố cao nhất ~4.149 – chưa chạm vùng bán"
-      },
-      "buy": {
-        "zone": "4.135 – 4.143",
-        "zone_filled": true,
-        "result": "hết phiên",
-        "mfe": 9.7,
-        "shortfall_to_tp1": 8.3,
-        "note": "Khớp vùng mua; đạt ~10/18 tới TP1 4.157 (thiếu ~8 giá); đang quanh 4.135"
-      }
-    }
-  ]
+ "_note": "Nhật ký kết quả kế hoạch H79. Win = TP1 trước SL; loss = SL trước; hết phiên = P/L tại lúc đánh giá. MFE tính bằng giá ($1/oz).",
+ "plans": [
+  {
+   "id": "2026-10-15-phien-my-1915",
+   "date": "2026-10-15",
+   "session": "Phiên Mỹ",
+   "evaluated_at_vn": "06:50 16/10/2026",
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.160 – 4.170",
+    "zone_filled": true,
+    "result": "đang mở",
+    "mfe": 21.0,
+    "note": "Khớp đỉnh sau PPI ~20:15 (High 4.167,1 trong vùng). Sau khớp thấp nhất ~4.144–4.145 (21:15–23:15) → MFE ~21 từ giữa vùng; TP1 4.139 chưa chạm. SL 4.180 chưa chạm (đỉnh Á 4.176,9). Giá ~4.157 lúc 06:50."
+   },
+   "buy": {
+    "zone": "4.092 – 4.102",
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "note": "Đáy sau tin 4.138 trước giờ kế hoạch US; sau 19:15 chưa về vùng mua"
+   }
+  },
+  {
+   "id": "2026-10-15-phien-dem-2107",
+   "date": "2026-10-15",
+   "session": "Phiên đêm",
+   "evaluated_at_vn": "06:50 16/10/2026",
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.150 – 4.160",
+    "zone_filled": true,
+    "result": "loss",
+    "mfe": 10.9,
+    "note": "Khớp khi hồi qua vùng ~21:25 (High 4.160,7). Thấp nhất sau khớp 4.144,1 (23:15) → MFE ~10,9 từ giữa vùng. SL 4.171 chạm ~02:50 16/10 (đỉnh Á tiến tới 4.176,9). TP1 4.138 chưa tới trước SL."
+   },
+   "buy": {
+    "zone": "4.092 – 4.102",
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "note": "Thấp nhất sau 21:20 là 4.144,1 – xa vùng mua"
+   }
+  },
+  {
+   "id": "2026-10-15-phien-au-1547",
+   "date": "2026-10-15",
+   "session": "Phiên Âu",
+   "evaluated_at_vn": "17:47 15/10/2026",
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.155 – 4.168",
+    "zone_filled": true,
+    "result": "đang mở",
+    "mfe": 5.6,
+    "note": "Khớp mép dưới 4.155 (15:15); thấp nhất sau khớp 4.149,4 (15:45). Sau 15:47 giá lên tối đa 4.160,2 (16:35) rồi về ~4.154 lúc 17:50; chưa tới TP1 4.140, SL 4.178 chưa chạm"
+   },
+   "buy": {
+    "zone": "4.097 – 4.110",
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "note": "Thấp nhất sau 15:47 ~4.151 – xa vùng mua"
+   }
+  },
+  {
+   "id": "2026-10-15-phien-au-1345",
+   "date": "2026-10-15",
+   "session": "Phiên Âu",
+   "evaluated_at_vn": "15:47 15/10/2026",
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.155 – 4.168",
+    "zone_filled": true,
+    "result": "đang mở",
+    "mfe": 5,
+    "note": "Hồi chạm ~4.160 lúc 15:25 (mép dưới vùng) rồi về ~4.151; chưa tới TP1 4.140, SL 4.178 chưa chạm"
+   },
+   "buy": {
+    "zone": "4.097 – 4.110",
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "note": "Thấp nhất sau kế hoạch ~4.135 – chưa chạm vùng mua"
+   }
+  },
+  {
+   "id": "2026-10-15-phien-a-0645",
+   "date": "2026-10-15",
+   "session": "Phiên Á",
+   "evaluated_at_vn": "13:45 15/10/2026",
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.113 – 4.123",
+    "zone_filled": true,
+    "result": "loss",
+    "mfe": 8.7,
+    "shortfall_to_tp1": 0.3,
+    "note": "Khớp bán khi hồi; MFE ~9 giá (gần TP1 thiếu ~0–1 giá) rồi breakout ngược chạm SL 4.133"
+   },
+   "buy": {
+    "zone": "4.099 – 4.109",
+    "zone_filled": true,
+    "result": "win",
+    "mfe": 48.6,
+    "note": "Khớp mua; TP1 4.119 chạm trước SL – thắng"
+   }
+  },
+  {
+   "id": "2026-10-15-phien-a-0800",
+   "date": "2026-10-15",
+   "session": "Phiên Á",
+   "evaluated_at_vn": "13:45 15/10/2026",
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.165 – 4.175",
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "note": "Cao sau kế hoạch ~4.153 – chưa chạm"
+   },
+   "buy": {
+    "zone": "4.115 – 4.123",
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "note": "Thấp sau kế hoạch ~4.133 – chưa chạm vùng mua"
+   }
+  },
+  {
+   "id": "2026-10-15-phien-a-1005",
+   "date": "2026-10-15",
+   "session": "Phiên Á (trưa)",
+   "evaluated_at_vn": "13:45 15/10/2026",
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.165 – 4.175",
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "note": "Sau công bố cao nhất ~4.149 – chưa chạm vùng bán"
+   },
+   "buy": {
+    "zone": "4.135 – 4.143",
+    "zone_filled": true,
+    "result": "hết phiên",
+    "mfe": 9.7,
+    "shortfall_to_tp1": 8.3,
+    "note": "Khớp vùng mua; đạt ~10/18 tới TP1 4.157 (thiếu ~8 giá); đang quanh 4.135"
+   }
+  }
+ ]
 }
