@@ -1,6 +1,516 @@
 {
  "strategies": [
   {
+   "id": "2026-10-16-phien-a-1040",
+   "date": "2026-10-16",
+   "time": "10:40",
+   "session": "Phiên Á",
+   "session_en": "Asian session",
+   "url": "bai/2026-10-16-nhan-dinh-vang-phien-a-1040.html",
+   "url_en": "en/posts/2026-10-16-gold-plan-asian-session-1040.html",
+   "headline": "Vàng 16/10: vượt trendline giảm từ 4.197 – nến 1H/4H đóng trên 4.186 mới MUA, thất bại thì BÁN 4.177–4.186",
+   "headline_en": "Gold Breaks Above the 4,197 Down-Trendline – Buy Only on a 1H/4H Close Over 4,186, Sell a Failure at 4,177–4,186",
+   "title": "Vàng 16/10: vượt trendline giảm từ 4.197 – nến 1H/4H đóng trên 4.186 mới MUA, thất bại thì BÁN 4.177–4.186",
+   "title_en": "Gold Breaks Above the 4,197 Down-Trendline – Buy Only on a 1H/4H Close Over 4,186, Sell a Failure at 4,177–4,186",
+   "image": "img/charts/gold-2026-10-16-asia-1045-plan.png",
+   "image_alt": "Biểu đồ vàng 1H 16/10: giá vượt trendline giảm từ 4.197; MUA retest 4.186–4.191 nếu phá vỡ, BÁN 4.177–4.186 nếu thất bại",
+   "image_en": "img/charts/gold-2026-10-16-asia-1045-plan-en.png",
+   "image_alt_en": "Gold 1-hour chart Oct 16: price above the down-trendline from 4,197; buy a 4,186–4,191 retest on a breakout, sell 4,177–4,186 on a failure",
+   "trend": "Nến ngày 15/10 đóng xanh 4.170,2 (+~1,6% từ 4.104,8). Giá đã vượt trendline giảm nối đỉnh 4.197,3 (13/10) và 4.167,1 (15/10) – đường này giờ ~4.160; 45m/1H/2H/3H/4H đều trên BB90 giữa. Nhưng cụm 4.177–4.186 (đỉnh kép phiên Á, R1 4.184) chưa phá – breakout chưa xác nhận.",
+   "trend_en": "Thursday's daily candle closed green at 4,170.25 (+~1.6% from 4,104.84). Price is above the down-trendline from the 4,197.3 Oct 13 high through 4,167.1 (Oct 15), which now runs near 4,160, and the 45m–4H are all above their BB90 mids. But 4,177–4,186 (Asian double top, R1 4,184) hasn't broken – the breakout is unconfirmed.",
+   "trendType": "side",
+   "support": [
+    4160,
+    4154,
+    4149,
+    4136
+   ],
+   "resistance": [
+    4177,
+    4178,
+    4184,
+    4186,
+    4197,
+    4220
+   ],
+   "sellZones": [
+    "Bán 4.177 – 4.186 nếu thất bại (đỉnh kép 4.176,9/4.178,3 · R1 4.184). Chỉ vào khi nến 45m hoặc 1H đóng đỏ trong vùng; hoặc nến 1H xuyên lên trên BB90 giữa rồi đóng lại dưới. Không dùng nến 15m/30m. SL 4.196 (dưới đỉnh 13/10 4.197). TP1 4.160 (trendline cũ/BB giữa 5m), TP2 4.149 (BB giữa/MA89 45m)."
+   ],
+   "sellZones_en": [
+    "Short 4,177–4,186 on a failure (Asian double top 4,176.9/4,178.3 · R1 4,184). Only on a red 45m or 1H close in the zone, or a 1H candle that pierces above its BB90 mid and closes back below – never on 15m/30m. SL 4,196 (just under the Oct 13 high of 4,197). TP1 4,160 (old trendline/5m mid), TP2 4,149 (45m BB90 mid/MA89)."
+   ],
+   "entryZones": [
+    "Mua retest 4.186 – 4.191 chỉ sau khi nến 1H hoặc 4H đóng trên 4.186 (xác nhận phá đỉnh kép và R1). SL 4.176 (dưới đỉnh kép). TP1 4.197 (đỉnh 13/10) – dời SL về điểm vào; TP2 4.220 (R2)."
+   ],
+   "entryZones_en": [
+    "Buy a 4,186–4,191 retest only after a 1H or 4H close above 4,186 (double top and R1 cleared). SL 4,176 (under the double top). TP1 4,197 (Oct 13 high) – then stop to breakeven; TP2 4,220 (R2)."
+   ],
+   "scenarios": [
+    "Kết quả tin: lợi suất 10 năm ~5,08%, DXY ~101,99 (dưới 102) – lực đỡ; Warsh trò chuyện tại IMF 10:30–11:00, chưa có nội dung lúc đăng.",
+    "Diễn biến: đóng ngày 15/10 4.170,2 (cao 4.176,9 · thấp 4.099,9) → 08:37 đáy 4.147,8 → 09:57 4.178,3 → 10:27 ~4.170.",
+    "Vì sao: nến 1H 09:00 đóng 4.175,8 vượt trendline giảm (~4.160); 1H trên BB90 giữa 4.154 và MA89 4.154; 4H trên BB giữa 4.165.",
+    "Mốc giá: phá vỡ khi 1H/4H đóng >4.186 → MUA 4.186–4.191, SL 4.176, TP 4.197 → 4.220. Thất bại → BÁN 4.177–4.186, SL 4.196, TP 4.160 → 4.149.",
+    "Rủi ro: giọng diều hâu của Warsh có thể đảo chiều nhanh; nến 1H đóng lại dưới 4.154 (BB giữa) là phá vỡ hỏng."
+   ],
+   "scenarios_en": [
+    "Data/news: 10-year ~5.08%, DXY ~101.99 (under 102) – supportive; Warsh's IMF fireside chat runs 11:30 PM–midnight ET, no remarks yet at publish.",
+    "Price path: Oct 15 settle 4,170.25 (high 4,176.9 · low 4,099.9) → 9:37 PM ET low 4,147.8 → 10:57 PM ET 4,178.3 → 11:27 PM ET ~4,170.",
+    "Why: the 10 PM ET 1H bar closed at 4,175.8, above the down-trendline (~4,160); the 1H holds above its BB90 mid 4,154 and MA89 4,154; the 4H is above its 4,165 mid.",
+    "Levels: breakout = 1H/4H close >4,186 → buy 4,186–4,191, SL 4,176, TP1 4,197 · TP2 4,220. Failure → sell 4,177–4,186, SL 4,196, TP1 4,160 · TP2 4,149.",
+    "Risk: a hawkish Warsh can flip this fast; a 1H close back under 4,154 (BB mid) kills the breakout."
+   ],
+   "macro": [],
+   "macro_en": [],
+   "market_picture": {
+    "text": "Lợi suất 10 năm Mỹ lùi về ~5,08% sau PPI và DXY xuống ~101,99, thấp hơn mốc 102 – rời đỉnh 18 tháng – là lực đỡ chính cho vàng (CNBC). Đợt bán tháo cổ phiếu AI giữ dòng tiền trú ẩn, trong khi căng thẳng Mỹ–Iran quanh Hormuz giữ Brent ~105,4 USD. Trọng tâm lúc này là Chủ tịch Fed Warsh trò chuyện tại IMF 10:30–11:00 – giọng diều hâu có thể kéo vàng hạ nhanh.",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "101,99 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "5,083% ↓",
+      "dir": "down"
+     },
+     {
+      "k": "Brent",
+      "v": "105,4 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "S&P fut",
+      "v": "+0,03%",
+      "dir": "flat"
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Lợi suất Mỹ giảm sau PPI",
+      "url": "https://www.cnbc.com/2026/10/15/us-treasury-yields-investors-economic-data-.html"
+     },
+     {
+      "name": "CNBC – USD lùi khỏi đỉnh 18 tháng",
+      "url": "https://www.cnbc.com/2026/10/15/dollar-pulls-back-from-18-month-high-as-treasury-yields-fall-fed-hike-bets-ease.html"
+     },
+     {
+      "name": "CNBC – Vàng hồi",
+      "url": "https://www.cnbc.com/2026/10/15/gold-rebounds-from-one-week-low-as-dollar-slips.html"
+     },
+     {
+      "name": "CNBC – Bán tháo AI",
+      "url": "https://www.cnbc.com/2026/10/15/sk-hynix-samsung-softbank-stocks-asia-tech-rout-ai-funding-worries.html"
+     },
+     {
+      "name": "IMF – Warsh 10:30",
+      "url": "https://www.imf.org/en/meetings/2026/annual/schedule/2026/10/16/managing-director-fireside-chat-with-federal-reserve-chairman-kevin-warsh"
+     }
+    ]
+   },
+   "market_picture_en": {
+    "text": "The 10-year yield has slipped to about 5.08% after PPI and the DXY is down near 101.99, back under 102 and off its 18-month high – the main tailwind for gold (CNBC). The AI-stock selloff keeps a haven bid in play, while U.S.–Iran tension around Hormuz holds Brent near $105.40. The swing factor now is Fed Chair Warsh's IMF fireside chat at 11:30 PM ET – a hawkish tone could knock gold back fast.",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "101.99 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "5.083% ↓",
+      "dir": "down"
+     },
+     {
+      "k": "Brent",
+      "v": "105.4 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "S&P fut",
+      "v": "+0.03%",
+      "dir": "flat"
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Yields fall after PPI",
+      "url": "https://www.cnbc.com/2026/10/15/us-treasury-yields-investors-economic-data-.html"
+     },
+     {
+      "name": "CNBC – Dollar off 18-month high",
+      "url": "https://www.cnbc.com/2026/10/15/dollar-pulls-back-from-18-month-high-as-treasury-yields-fall-fed-hike-bets-ease.html"
+     },
+     {
+      "name": "CNBC – Gold rebounds",
+      "url": "https://www.cnbc.com/2026/10/15/gold-rebounds-from-one-week-low-as-dollar-slips.html"
+     },
+     {
+      "name": "CNBC – AI tech rout",
+      "url": "https://www.cnbc.com/2026/10/15/sk-hynix-samsung-softbank-stocks-asia-tech-rout-ai-funding-worries.html"
+     },
+     {
+      "name": "IMF – Warsh fireside chat",
+      "url": "https://www.imf.org/en/meetings/2026/annual/schedule/2026/10/16/managing-director-fireside-chat-with-federal-reserve-chairman-kevin-warsh"
+     }
+    ]
+   },
+   "physicalAdvice": "Làm theo kế hoạch, đừng chạy theo nến tin.",
+   "physicalAdvice_en": "Trade the plan, not the noise.",
+   "notes": "Giá giao ngay XAU/USD (CNBC XAU=: hiện 4.169,8–4.170,1 lúc 10:22–10:27; đóng cửa ngày 15/10 4.170,2; gold-api.com 4.170,9). 2H/3H/4H từ GC=F trừ 21,6 USD (chênh GC=F – giao ngay 6 giờ gần nhất). MA là SMA; lệch 1–2 giá tùy sàn.",
+   "notes_en": "Spot XAU/USD (CNBC XAU= 4,169.80–4,170.10 at 11:22–11:27 PM ET; Oct 15 settle 4,170.25; gold-api.com 4,170.90). 2H/3H/4H from GC=F minus $21.60 (six-hour futures-spot gap). Simple MAs; levels may differ by a point or two between brokers.",
+   "dataTime": "Cập nhật 10:22–10:29 ngày 16/10/2026 giờ VN (Phiên Á). Nến 5m CNBC XAU=; GC=F (Yahoo); DXY, US10Y, Brent, S&P fut từ CNBC.",
+   "dataTime_en": "Updated 11:22–11:29 PM ET, Oct 15, 2026 (Asian session / overnight). Spot 5-minute bars from CNBC XAU=; GC=F (Yahoo); DXY, US10Y, Brent and S&P futures from CNBC.",
+   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+   "brief": true,
+   "summary": {
+    "trend": "side",
+    "trendText": "Vượt trendline giảm – chờ xác nhận trên 4.186",
+    "trendText_en": "Above the down-trendline – needs confirmation over 4,186",
+    "buy": {
+     "zone": "4.186 – 4.191 (sau khi 1H/4H đóng >4.186)",
+     "sl": "4.176",
+     "tp": "4.197 → 4.220",
+     "zone_en": "4,186–4,191 (after a 1H/4H close >4,186)",
+     "sl_en": "4,176",
+     "tp_en": "TP1 4,197 → TP2 4,220"
+    },
+    "sell": {
+     "zone": "4.177 – 4.186 (thất bại, nến đỏ 45m/1H)",
+     "sl": "4.196",
+     "tp": "4.160 → 4.149",
+     "zone_en": "4,177–4,186 (failure, red 45m/1H close)",
+     "sl_en": "4,196",
+     "tp_en": "TP1 4,160 → TP2 4,149"
+    },
+    "note": "Warsh phát biểu 10:30–11:00 – chờ nến 1H đóng sau tin rồi mới vào. Nến 1H đóng lại dưới 4.154 = phá vỡ thất bại.",
+    "note_en": "Warsh speaks 11:30 PM–midnight ET – wait for the post-speech 1H close. A 1H close back under 4,154 = failed breakout.",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD",
+    "priceNote_en": "Spot XAU/USD prices"
+   },
+   "article": {
+    "sections": [
+     {
+      "h": "Nến ngày thứ Năm 15/10 đóng xanh",
+      "p": "Vàng giao ngay đóng ngày 15/10 ở 4.170,2 (CNBC XAU=), tăng ~1,6% từ 4.104,8 – cao 4.176,9, thấp 4.099,9. Lợi suất 10 năm Mỹ lùi về ~5,08% sau PPI, DXY xuống ~101,99, còn đợt bán tháo cổ phiếu AI giữ lực mua trú ẩn."
+     },
+     {
+      "h": "Tín hiệu phá trendline",
+      "p": "Trendline giảm nối đỉnh 4.197,3 (13/10) và 4.167,1 (15/10) giờ ở ~4.160. Nến 1H 09:00 đóng 4.175,8 – trên trendline, trên BB90 giữa 1H 4.154 và MA89 4.154; 45m (BB giữa 4.149) và 4H (4.165) cũng ở nửa trên. Nhưng đỉnh kép 4.176,9/4.178,3 và R1 4.184 chưa phá – **chưa xác nhận đảo cấu trúc**."
+     },
+     {
+      "h": "Hai kịch bản",
+      "p": "**Phá vỡ:** nến 1H hoặc 4H đóng trên 4.186 → MUA khi retest 4.186–4.191, SL 4.176, TP1 4.197 (đỉnh 13/10), TP2 4.220. **Thất bại:** BÁN 4.177–4.186 khi nến 45m hoặc 1H đóng đỏ, hoặc nến 1H xuyên lên BB90 giữa rồi đóng lại dưới; SL 4.196, TP1 4.160, TP2 4.149. Không dùng nến 15m/30m."
+     },
+     {
+      "h": "Warsh 10:30",
+      "p": "**Chủ tịch Fed Warsh trò chuyện với IMF lúc 10:30–11:00 – chưa có nội dung lúc đăng bài. Chờ nến 1H đóng sau tin rồi mới vào lệnh.**"
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     },
+     {
+      "name": "CNBC – Lợi suất Mỹ giảm sau PPI",
+      "url": "https://www.cnbc.com/2026/10/15/us-treasury-yields-investors-economic-data-.html"
+     },
+     {
+      "name": "CNBC – USD lùi khỏi đỉnh 18 tháng",
+      "url": "https://www.cnbc.com/2026/10/15/dollar-pulls-back-from-18-month-high-as-treasury-yields-fall-fed-hike-bets-ease.html"
+     },
+     {
+      "name": "IMF – Warsh 10:30 16/10",
+      "url": "https://www.imf.org/en/meetings/2026/annual/schedule/2026/10/16/managing-director-fireside-chat-with-federal-reserve-chairman-kevin-warsh"
+     }
+    ]
+   },
+   "article_en": {
+    "sections": [
+     {
+      "h": "Thursday closed green",
+      "p": "Spot gold settled Oct 15 at 4,170.25 (CNBC XAU=), up ~1.6% from 4,104.84, with a 4,176.9 high and 4,099.9 low. The 10-year yield has slipped to about 5.08% after PPI, the DXY is near 101.99 and the AI-stock rout is keeping a haven bid alive."
+     },
+     {
+      "h": "The trendline break",
+      "p": "The down-trendline from the 4,197.3 Oct 13 high through 4,167.1 (Oct 15) now runs near 4,160. The 10 PM ET 1H bar closed at 4,175.8 – above the line, the 1H BB90 mid (4,154) and MA89 (4,154); the 45m (mid 4,149) and 4H (4,165) are in their upper halves too. But the 4,176.9/4,178.3 double top and R1 at 4,184 are intact – **the structure change isn't confirmed yet**."
+     },
+     {
+      "h": "Two scenarios",
+      "p": "**Breakout:** a 1H or 4H close above 4,186 → buy the 4,186–4,191 retest, stop 4,176, TP1 4,197 (Oct 13 high), TP2 4,220. **Failure:** sell 4,177–4,186 on a red 45m or 1H close, or a 1H candle that pierces its BB90 mid and closes back below; stop 4,196, TP1 4,160, TP2 4,149. No 15m/30m triggers."
+     },
+     {
+      "h": "Warsh at 11:30 PM ET",
+      "p": "**Fed Chair Warsh's IMF fireside chat runs 11:30 PM–midnight ET – no remarks were out at publish. Wait for the post-speech 1H close before acting.**"
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     },
+     {
+      "name": "CNBC – Treasury yields fall after September PPI",
+      "url": "https://www.cnbc.com/2026/10/15/us-treasury-yields-investors-economic-data-.html"
+     },
+     {
+      "name": "CNBC – Dollar retreats from 18-month high",
+      "url": "https://www.cnbc.com/2026/10/15/dollar-pulls-back-from-18-month-high-as-treasury-yields-fall-fed-hike-bets-ease.html"
+     },
+     {
+      "name": "IMF – Warsh fireside chat, 11:30 PM ET",
+      "url": "https://www.imf.org/en/meetings/2026/annual/schedule/2026/10/16/managing-director-fireside-chat-with-federal-reserve-chairman-kevin-warsh"
+     }
+    ]
+   }
+  },
+  {
+   "id": "2026-10-16-phien-a-1030",
+   "date": "2026-10-16",
+   "time": "10:30",
+   "session": "Phiên Á",
+   "session_en": "Asian session",
+   "url": "bai/2026-10-16-nhan-dinh-vang-phien-a-1030.html",
+   "url_en": "en/posts/2026-10-16-gold-plan-asian-session-1030.html",
+   "headline": "Cập nhật 16/10: lệnh BÁN phiên Á chạm TP1 4.149, lãi ~22 giá – TP2 4.136 chưa tới",
+   "headline_en": "Asian Sell Plan Update: TP1 4,149 Hit for ~22 Points, TP2 4,136 Missed",
+   "title": "Cập nhật 16/10: lệnh BÁN phiên Á chạm TP1 4.149, lãi ~22 giá – TP2 4.136 chưa tới",
+   "title_en": "Asian Sell Plan Update: TP1 4,149 Hit for ~22 Points, TP2 4,136 Missed",
+   "image": "img/charts/gold-2026-10-16-asia-1030-result.png",
+   "image_alt": "Biểu đồ vàng 45m 16/10: lệnh bán 4.165–4.175 chạm TP1 4.149, đáy 4.147,8, bật lại 4.178",
+   "image_en": "img/charts/gold-2026-10-16-asia-1030-result-en.png",
+   "image_alt_en": "Gold 45-minute chart Oct 16: sell 4,165–4,175 hit TP1 4,149, low 4,147.8, rebound to 4,178",
+   "trend": "Lệnh BÁN 4.165–4.175 (06:45) chạm TP1 4.149 lúc 08:32–08:37 (đáy 4.147,8) – lãi tối đa ~22 giá từ 4.170. TP2 4.136 chưa tới; giá bật lại 4.178,3 (09:57), SL 4.186 chưa chạm.",
+   "trend_en": "The 4,165–4,175 short hit TP1 4,149 at 9:32–9:37 PM ET (low 4,147.8) – max gain ~22 points from 4,170. TP2 4,136 was missed; price bounced to 4,178.3 (10:57 PM ET), SL 4,186 untouched.",
+   "trendType": "side",
+   "support": [
+    4160,
+    4154,
+    4149,
+    4136
+   ],
+   "resistance": [
+    4177,
+    4178,
+    4184,
+    4186,
+    4197,
+    4220
+   ],
+   "sellZones": [],
+   "sellZones_en": [],
+   "entryZones": [],
+   "entryZones_en": [],
+   "scenarios": [
+    "Kết quả tin: lợi suất 10 năm ~5,08% và DXY ~101,99 (dưới 102) đỡ vàng; Warsh phát biểu 10:30 – chưa có nội dung lúc cập nhật.",
+    "Diễn biến: 06:45 ~4.157 → 08:37 đáy 4.147,8 (chạm TP1 4.149) → 09:57 bật 4.178,3 → 10:27 ~4.170.",
+    "Vì sao: chốt TP1 đúng BB giữa/MA89 45m (~4.149) – lực mua trú ẩn quay lại khi USD xuống dưới 102.",
+    "Mốc giá: TP1 4.149 ✔ · TP2 4.136 ✖ · SL 4.186 chưa chạm · lãi tối đa ~22 giá.",
+    "Rủi ro: ai còn giữ phần lệnh sau TP1 nên dời SL về điểm vào; nến 1H đóng trên 4.186 thì thoát hết."
+   ],
+   "scenarios_en": [
+    "Data/news: the 10-year near 5.08% and DXY near 101.99 (under 102) support gold; Warsh speaks at 11:30 PM ET – no remarks yet at publish.",
+    "Price path: 7:45 PM ET ~4,157 → 9:37 PM ET low 4,147.8 (TP1 4,149 hit) → 10:57 PM ET 4,178.3 → 11:27 PM ET ~4,170.",
+    "Why: TP1 sat on the 45m BB90 mid/MA89 (~4,149) – the haven bid returned as the dollar slipped under 102.",
+    "Levels: TP1 4,149 ✔ · TP2 4,136 ✖ · SL 4,186 untouched · max gain ~22 points.",
+    "Risk: any runner after TP1 should have its stop at breakeven; a 1H close above 4,186 means exit."
+   ],
+   "macro": [],
+   "macro_en": [],
+   "market_picture": {
+    "text": "Lợi suất 10 năm Mỹ lùi về ~5,08% sau PPI và DXY xuống ~101,99, thấp hơn mốc 102 – rời đỉnh 18 tháng – là lực đỡ chính cho vàng (CNBC). Đợt bán tháo cổ phiếu AI giữ dòng tiền trú ẩn, trong khi căng thẳng Mỹ–Iran quanh Hormuz giữ Brent ~105,4 USD. Trọng tâm lúc này là Chủ tịch Fed Warsh trò chuyện tại IMF 10:30–11:00 – giọng diều hâu có thể kéo vàng hạ nhanh.",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "101,99 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "5,083% ↓",
+      "dir": "down"
+     },
+     {
+      "k": "Brent",
+      "v": "105,4 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "S&P fut",
+      "v": "+0,03%",
+      "dir": "flat"
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Lợi suất Mỹ giảm sau PPI",
+      "url": "https://www.cnbc.com/2026/10/15/us-treasury-yields-investors-economic-data-.html"
+     },
+     {
+      "name": "CNBC – USD lùi khỏi đỉnh 18 tháng",
+      "url": "https://www.cnbc.com/2026/10/15/dollar-pulls-back-from-18-month-high-as-treasury-yields-fall-fed-hike-bets-ease.html"
+     },
+     {
+      "name": "CNBC – Vàng hồi",
+      "url": "https://www.cnbc.com/2026/10/15/gold-rebounds-from-one-week-low-as-dollar-slips.html"
+     },
+     {
+      "name": "CNBC – Bán tháo AI",
+      "url": "https://www.cnbc.com/2026/10/15/sk-hynix-samsung-softbank-stocks-asia-tech-rout-ai-funding-worries.html"
+     },
+     {
+      "name": "IMF – Warsh 10:30",
+      "url": "https://www.imf.org/en/meetings/2026/annual/schedule/2026/10/16/managing-director-fireside-chat-with-federal-reserve-chairman-kevin-warsh"
+     }
+    ]
+   },
+   "market_picture_en": {
+    "text": "The 10-year yield has slipped to about 5.08% after PPI and the DXY is down near 101.99, back under 102 and off its 18-month high – the main tailwind for gold (CNBC). The AI-stock selloff keeps a haven bid in play, while U.S.–Iran tension around Hormuz holds Brent near $105.40. The swing factor now is Fed Chair Warsh's IMF fireside chat at 11:30 PM ET – a hawkish tone could knock gold back fast.",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "101.99 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "5.083% ↓",
+      "dir": "down"
+     },
+     {
+      "k": "Brent",
+      "v": "105.4 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "S&P fut",
+      "v": "+0.03%",
+      "dir": "flat"
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Yields fall after PPI",
+      "url": "https://www.cnbc.com/2026/10/15/us-treasury-yields-investors-economic-data-.html"
+     },
+     {
+      "name": "CNBC – Dollar off 18-month high",
+      "url": "https://www.cnbc.com/2026/10/15/dollar-pulls-back-from-18-month-high-as-treasury-yields-fall-fed-hike-bets-ease.html"
+     },
+     {
+      "name": "CNBC – Gold rebounds",
+      "url": "https://www.cnbc.com/2026/10/15/gold-rebounds-from-one-week-low-as-dollar-slips.html"
+     },
+     {
+      "name": "CNBC – AI tech rout",
+      "url": "https://www.cnbc.com/2026/10/15/sk-hynix-samsung-softbank-stocks-asia-tech-rout-ai-funding-worries.html"
+     },
+     {
+      "name": "IMF – Warsh fireside chat",
+      "url": "https://www.imf.org/en/meetings/2026/annual/schedule/2026/10/16/managing-director-fireside-chat-with-federal-reserve-chairman-kevin-warsh"
+     }
+    ]
+   },
+   "physicalAdvice": "Làm theo kế hoạch, đừng chạy theo nến tin.",
+   "physicalAdvice_en": "Trade the plan, not the noise.",
+   "notes": "Giá giao ngay XAU/USD (CNBC XAU=: hiện 4.169,8–4.170,1 lúc 10:22–10:27; đóng cửa ngày 15/10 4.170,2; gold-api.com 4.170,9). 2H/3H/4H từ GC=F trừ 21,6 USD (chênh GC=F – giao ngay 6 giờ gần nhất). MA là SMA; lệch 1–2 giá tùy sàn.",
+   "notes_en": "Spot XAU/USD (CNBC XAU= 4,169.80–4,170.10 at 11:22–11:27 PM ET; Oct 15 settle 4,170.25; gold-api.com 4,170.90). 2H/3H/4H from GC=F minus $21.60 (six-hour futures-spot gap). Simple MAs; levels may differ by a point or two between brokers.",
+   "dataTime": "Cập nhật 10:22–10:29 ngày 16/10/2026 giờ VN (Phiên Á). Nến 5m CNBC XAU=; GC=F (Yahoo); DXY, US10Y, Brent, S&P fut từ CNBC.",
+   "dataTime_en": "Updated 11:22–11:29 PM ET, Oct 15, 2026 (Asian session / overnight). Spot 5-minute bars from CNBC XAU=; GC=F (Yahoo); DXY, US10Y, Brent and S&P futures from CNBC.",
+   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+   "brief": true,
+   "summary": {
+    "trend": "side",
+    "trendText": "BÁN phiên Á chạm TP1 4.149 – lãi ~22 giá",
+    "trendText_en": "Asian short hit TP1 4,149 – ~22 points",
+    "sell": {
+     "zone": "4.165 – 4.175",
+     "sl": "4.186",
+     "tp": "4.149 ✔ → 4.136 ✖",
+     "zone_en": "4,165–4,175",
+     "sl_en": "4,186 (not hit)",
+     "tp_en": "TP1 4,149 ✔ → TP2 4,136 ✖"
+    },
+    "note": "✅ Kết quả: TP1 4.149 chạm 08:32–08:37 (đáy 4.147,8), lãi tối đa ~22 giá. TP2 4.136 chưa tới. Dời SL phần còn lại về điểm vào.",
+    "note_en": "Result: TP1 4,149 hit at 9:32–9:37 PM ET (low 4,147.8), max gain ~22 points. TP2 4,136 missed. Move the runner's stop to breakeven.",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD",
+    "priceNote_en": "Spot XAU/USD prices"
+   },
+   "article": {
+    "sections": [
+     {
+      "h": "Kết quả lệnh BÁN phiên Á",
+      "p": "Kế hoạch 06:45: BÁN 4.165–4.175, SL 4.186, TP1 4.149, TP2 4.136. Giá trượt từ ~4.157 xuống đáy 4.147,8 lúc 08:37 – **TP1 4.149 chạm (08:32–08:37)**, lãi tối đa ~22 giá tính từ 4.170 (giữa vùng)."
+     },
+     {
+      "h": "TP2 chưa tới, giá bật lại",
+      "p": "TP2 4.136 không chạm. Sau 09:00 lực mua trở lại, giá lên 4.178,3 lúc 09:57 – vượt mép trên vùng bán nhưng SL 4.186 chưa chạm. Lúc 10:27 giá ~4.170."
+     },
+     {
+      "h": "Ghi chú cho lệnh còn lại",
+      "p": "Phần lệnh để chạy sau TP1 nên dời SL về điểm vào. Nến 1H đóng trên 4.186 là tín hiệu thoát hết và chuyển sang kế hoạch phá vỡ (bài kế tiếp)."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     },
+     {
+      "name": "CNBC – Lợi suất Mỹ giảm sau PPI",
+      "url": "https://www.cnbc.com/2026/10/15/us-treasury-yields-investors-economic-data-.html"
+     },
+     {
+      "name": "CNBC – USD lùi khỏi đỉnh 18 tháng",
+      "url": "https://www.cnbc.com/2026/10/15/dollar-pulls-back-from-18-month-high-as-treasury-yields-fall-fed-hike-bets-ease.html"
+     },
+     {
+      "name": "IMF – Warsh 10:30 16/10",
+      "url": "https://www.imf.org/en/meetings/2026/annual/schedule/2026/10/16/managing-director-fireside-chat-with-federal-reserve-chairman-kevin-warsh"
+     }
+    ]
+   },
+   "article_en": {
+    "sections": [
+     {
+      "h": "Asian short – result",
+      "p": "The 7:45 PM ET plan: sell 4,165–4,175, stop 4,186, TP1 4,149, TP2 4,136. Gold slid from ~4,157 to a 4,147.8 low at 9:37 PM ET – **TP1 4,149 hit (9:32–9:37 PM ET)**, a max gain of ~22 points from the 4,170 mid-zone."
+     },
+     {
+      "h": "TP2 missed, bounce followed",
+      "p": "TP2 4,136 never printed. Buyers came back after 10 PM ET and lifted gold to 4,178.3 at 10:57 PM ET – above the top of the sell zone but short of the 4,186 stop. Spot was ~4,170 at 11:27 PM ET."
+     },
+     {
+      "h": "Managing what's left",
+      "p": "Any runner after TP1 should have its stop at breakeven. A 1H close above 4,186 means exit and switch to the breakout plan (next post)."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     },
+     {
+      "name": "CNBC – Treasury yields fall after September PPI",
+      "url": "https://www.cnbc.com/2026/10/15/us-treasury-yields-investors-economic-data-.html"
+     },
+     {
+      "name": "CNBC – Dollar retreats from 18-month high",
+      "url": "https://www.cnbc.com/2026/10/15/dollar-pulls-back-from-18-month-high-as-treasury-yields-fall-fed-hike-bets-ease.html"
+     },
+     {
+      "name": "IMF – Warsh fireside chat, 11:30 PM ET",
+      "url": "https://www.imf.org/en/meetings/2026/annual/schedule/2026/10/16/managing-director-fireside-chat-with-federal-reserve-chairman-kevin-warsh"
+     }
+    ]
+   }
+  },
+  {
    "id": "2026-10-16-phien-a-0645",
    "date": "2026-10-16",
    "time": "06:45",
@@ -193,10 +703,10 @@
     "sell": {
      "zone": "4.165 – 4.175",
      "sl": "4.186",
-     "tp": "4.149 → 4.136",
+     "tp": "4.149 ✔ → 4.136",
      "zone_en": "4,165–4,175",
      "sl_en": "4,186",
-     "tp_en": "TP1 4,149 → TP2 4,136"
+     "tp_en": "TP1 4,149 ✔ → TP2 4,136"
     },
     "buy": {
      "zone": "4.090 – 4.105",
@@ -206,8 +716,8 @@
      "sl_en": "4,078",
      "tp_en": "TP1 4,131 → TP2 4,149"
     },
-    "note": "45m & 1H đã đóng đỏ từ đỉnh Á – tín hiệu BÁN H79; canh hồi 4.165–4.175 + nến đỏ 45m/1H. 10:30 sáng 16/10 Chủ tịch Fed Warsh phát biểu – giảm vị thế trước giờ này.",
-    "note_en": "45m & 1H closed red off the Asian high – the H79 sell signal; sell a retrace into 4,165–4,175 on a red 45m/1H close. Fed Chair Warsh speaks at 11:30 PM ET – trim exposure ahead of it.",
+    "note": "✅ Kết quả (10:30): TP1 4.149 chạm 08:32–08:37, đáy 4.147,8 – lãi tối đa ~22 giá; TP2 4.136 chưa tới; SL 4.186 chưa chạm. 45m & 1H đã đóng đỏ từ đỉnh Á – tín hiệu BÁN H79; canh hồi 4.165–4.175 + nến đỏ 45m/1H. 10:30 sáng 16/10 Chủ tịch Fed Warsh phát biểu – giảm vị thế trước giờ này.",
+    "note_en": "Result (11:30 PM ET): TP1 4,149 hit at 9:32–9:37 PM ET, low 4,147.8 – max gain ~22 points; TP2 4,136 missed; SL 4,186 untouched. 45m & 1H closed red off the Asian high – the H79 sell signal; sell a retrace into 4,165–4,175 on a red 45m/1H close. Fed Chair Warsh speaks at 11:30 PM ET – trim exposure ahead of it.",
     "price": "spot",
     "priceNote": "Giá giao ngay XAU/USD",
     "priceNote_en": "Spot XAU/USD prices"

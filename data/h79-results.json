@@ -1,6 +1,34 @@
 {
- "_note": "Nhật ký kết quả kế hoạch H79. Win = TP1 trước SL; loss = SL trước; hết phiên = P/L tại lúc đánh giá. MFE tính bằng giá ($1/oz).",
+ "_note": "Nhật ký kết quả kế hoạch H79. Win = TP1 trước SL; loss = SL trước; hết phiên = P/L tại lúc đánh giá. MFE tính bằng giá ($1/oz). tp1_hit/tp2_hit ghi lại mỗi khi giá chạm TP (kể cả sau đó giá quay lại).",
  "plans": [
+  {
+   "id": "2026-10-16-phien-a-0645",
+   "date": "2026-10-16",
+   "session": "Phiên Á",
+   "evaluated_at_vn": "10:27 16/10/2026",
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.165 – 4.175",
+    "sl": "4.186",
+    "tp1": "4.149",
+    "tp2": "4.136",
+    "zone_filled": true,
+    "result": "win",
+    "tp1_hit": true,
+    "tp1_hit_at_vn": "08:32–08:37 16/10",
+    "tp2_hit": false,
+    "sl_hit": false,
+    "mfe": 22.2,
+    "note": "Khớp theo tín hiệu nến 45m/1H đỏ từ đỉnh Á (04:45–06:15). Đáy sau đó 4.147,77 (08:37) → TP1 4.149 chạm, MFE ~22,2 từ giữa vùng 4.170. TP2 4.136 chưa tới. Giá bật lại 4.178,3 (09:57) – SL 4.186 chưa chạm. Giá ~4.170 lúc 10:27. Nguồn CNBC XAU= 5m."
+   },
+   "buy": {
+    "zone": "4.090 – 4.105",
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "note": "Thấp nhất sau 06:45 là 4.147,8 – xa vùng mua"
+   }
+  },
   {
    "id": "2026-10-15-phien-my-1915",
    "date": "2026-10-15",
