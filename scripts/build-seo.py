@@ -149,6 +149,7 @@ def page(a, body):
 </article></main>
 <div id="site-footer"></div>
 <script src="js/common.js?v={ASSET_V}"></script>
+<script src="js/analytics.js?v={ASSET_V}" defer></script>
 </body>
 </html>
 """
@@ -492,6 +493,7 @@ def en_page(a, body):
 </article></main>
 <div id="site-footer"></div>
 <script src="js/common.js?v={ASSET_V}"></script>
+<script src="js/analytics.js?v={ASSET_V}" defer></script>
 </body>
 </html>
 """
