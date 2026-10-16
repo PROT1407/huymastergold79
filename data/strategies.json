@@ -1,6 +1,238 @@
 {
  "strategies": [
   {
+   "id": "2026-10-16-phien-a-1100",
+   "date": "2026-10-16",
+   "time": "11:00",
+   "session": "Phiên Á",
+   "session_en": "Asian session",
+   "url": "bai/2026-10-16-nhan-dinh-vang-phien-a-1100.html",
+   "url_en": "en/posts/2026-10-16-gold-plan-asian-session-1100.html",
+   "headline": "Warsh không hé lộ lãi suất, USD yếu đi – vàng 4.183: hồi phục dài hạn chỉ xác nhận khi đóng ngày trên ~4.265",
+   "headline_en": "Warsh Gives No Rate Signal, Dollar Slips – Gold at 4,183: A Lasting Turn Needs a Daily Close Above ~4,265",
+   "image": "img/charts/gold-2026-10-16-outlook-1100.png",
+   "image_alt": "Biểu đồ vàng giao ngay nến ngày với MA89 và BB90, 16/10/2026",
+   "image_en": "img/charts/gold-2026-10-16-outlook-1100-en.png",
+   "image_alt_en": "Spot gold daily chart with MA89 and BB90, Oct 16, 2026",
+   "trend": "Bài NHẬN ĐỊNH – không có kế hoạch mua/bán. Tuần trước (kết thúc 9/10) nến tuần XANH: mở 4.142,3 → đóng 4.193,8 (+51,5, +1,2%). Tuần này mở 4.193,8, đáy 4.074,1, hiện ~4.183 (−0,3%). Giá vẫn dưới MA89 ngày ~4.264 và giữa BB90 ngày ~4.261, nhưng trên MA89 tuần ~3.987.",
+   "trend_en": "OUTLOOK ONLY – no trade plan. Last week's candle (ended Oct 9) closed GREEN: open 4,142.34 → close 4,193.83 (+51.49, +1.2%). This week opened 4,193.83, low 4,074.12, now ~4,183 (−0.3%). Price is still under the daily MA89 (~4,264) and daily BB90 mid (~4,261), but well above the weekly MA89 (~3,987).",
+   "trendType": "side",
+   "support": [
+    4160,
+    4149,
+    4074
+   ],
+   "resistance": [
+    4186,
+    4197,
+    4261,
+    4265
+   ],
+   "sellZones": [],
+   "sellZones_en": [],
+   "entryZones": [],
+   "entryZones_en": [],
+   "scenarios": [
+    "Kết quả tin: Warsh nói Fed 'sẽ đảm bảo ổn định giá', 'không đoán trước các cuộc họp', quyết định ở họp tháng 10 và 12 (FXStreet). DXY 101,85 (−0,2%), US10Y 5,069%, vàng 4.183 (+0,3%).",
+    "Diễn biến: 10:27 ~4.170 → 11:00 ~4.183; USD giảm sau phát biểu, không có cú sốc diều hâu.",
+    "Vì sao: không có tín hiệu tăng lãi suất mới, lợi suất thấp nhất 3 tuần, USD rời đỉnh 18 tháng, bán tháo cổ phiếu AI – đều đỡ vàng.",
+    "Mốc giá: trần 4.177–4.186 / 4.197; xác nhận đảo chiều: đóng ngày trên ~4.265 (MA89/BB90 ngày); phủ định: đóng tuần dưới 4.074.",
+    "Rủi ro: PMI sơ bộ 23/10 (20:45) và họp Fed 27–28/10 (FedWatch tăng 25bps ~29%) – Fed im lặng từ 17/10."
+   ],
+   "scenarios_en": [
+    "Data/news: Warsh said the Fed would 'deliver price stability' and he doesn't 'believe in pre-judging meetings,' with judgments at the October and December meetings (FXStreet). DXY 101.85 (−0.2%), 10-year 5.069%, gold 4,183 (+0.3%).",
+    "Price path: 11:27 PM ET ~4,170 → 12:00 AM ET ~4,183; the dollar eased after the remarks – no hawkish shock.",
+    "Why: no fresh hike signal, yields at a 3-week low, the dollar off its 18-month high and the AI-stock selloff all lean gold-positive.",
+    "Levels: ceiling 4,177–4,186 / 4,197; a lasting turn needs a daily close above ~4,265 (daily MA89/BB90); a weekly close under 4,074 denies it.",
+    "Risk: flash PMIs Fri Oct 23 (9:45 AM ET) and the Oct 27–28 FOMC (FedWatch ~29% hike odds) – Fed blackout starts Oct 17."
+   ],
+   "macro": [],
+   "macro_en": [],
+   "market_picture": {
+    "text": "Warsh không cam kết lộ trình lãi suất – chỉ nói Fed sẽ đảm bảo ổn định giá và quyết định ở họp tháng 10, 12 – nên USD giảm về 101,85 (FXStreet). Tuần qua PPI tháng 9 nóng (1,3% m/m) nhưng lợi suất 10 năm vẫn lùi về ~5,07%, thấp nhất 3 tuần, và DXY rời đỉnh 18 tháng (CNBC). Bán tháo cổ phiếu AI giữ dòng tiền trú ẩn; xác suất Fed tăng 25bps tháng 10 ~29%. Vàng hồi tốt nhưng xu hướng ngày vẫn dưới MA89 – mới là tín hiệu tích cực, chưa phải đảo chiều dài hạn.",
+    "chips": [
+     {
+      "k": "XAU",
+      "v": "4.183 ↑",
+      "dir": "up"
+     },
+     {
+      "k": "DXY",
+      "v": "101,85 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "5,069% ↓",
+      "dir": "down"
+     },
+     {
+      "k": "FedWatch T10",
+      "v": "tăng ~29%",
+      "dir": "flat"
+     }
+    ],
+    "sources": [
+     {
+      "name": "FXStreet – Warsh tại IMF",
+      "url": "https://www.fxstreet.com/news/breaking-feds-warsh-says-he-would-deliver-price-stability-but-wont-pre-judge-meetings-202610160346"
+     },
+     {
+      "name": "CNBC – Lợi suất giảm sau PPI",
+      "url": "https://www.cnbc.com/2026/10/15/us-treasury-yields-investors-economic-data-.html"
+     },
+     {
+      "name": "CNBC – USD rời đỉnh 18 tháng",
+      "url": "https://www.cnbc.com/2026/10/15/dollar-pulls-back-from-18-month-high-as-treasury-yields-fall-fed-hike-bets-ease.html"
+     },
+     {
+      "name": "CNBC – Bán tháo AI",
+      "url": "https://www.cnbc.com/2026/10/15/sk-hynix-samsung-softbank-stocks-asia-tech-rout-ai-funding-worries.html"
+     }
+    ]
+   },
+   "market_picture_en": {
+    "text": "Warsh offered no rate roadmap – only that the Fed will deliver price stability and decide at the October and December meetings – and the dollar slipped to 101.85 (FXStreet). Hot September PPI (1.3% m/m) didn't stop the 10-year from easing to about 5.07%, a 3-week low, with the DXY off its 18-month high (CNBC). The AI-stock selloff keeps a haven bid alive, and October hike odds sit near 29%. Gold's bounce is constructive, but the daily trend is still below its MA89 – a positive signal, not yet a long-term reversal.",
+    "chips": [
+     {
+      "k": "XAU",
+      "v": "4,183 ↑",
+      "dir": "up"
+     },
+     {
+      "k": "DXY",
+      "v": "101.85 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "5.069% ↓",
+      "dir": "down"
+     },
+     {
+      "k": "Oct hike odds",
+      "v": "~29%",
+      "dir": "flat"
+     }
+    ],
+    "sources": [
+     {
+      "name": "FXStreet – Warsh at the IMF",
+      "url": "https://www.fxstreet.com/news/breaking-feds-warsh-says-he-would-deliver-price-stability-but-wont-pre-judge-meetings-202610160346"
+     },
+     {
+      "name": "CNBC – Yields fall after PPI",
+      "url": "https://www.cnbc.com/2026/10/15/us-treasury-yields-investors-economic-data-.html"
+     },
+     {
+      "name": "CNBC – Dollar off 18-month high",
+      "url": "https://www.cnbc.com/2026/10/15/dollar-pulls-back-from-18-month-high-as-treasury-yields-fall-fed-hike-bets-ease.html"
+     },
+     {
+      "name": "CNBC – AI tech rout",
+      "url": "https://www.cnbc.com/2026/10/15/sk-hynix-samsung-softbank-stocks-asia-tech-rout-ai-funding-worries.html"
+     }
+    ]
+   },
+   "physicalAdvice": "Làm theo kế hoạch, đừng chạy theo nến tin.",
+   "physicalAdvice_en": "Trade the plan, not the noise.",
+   "notes": "Giá giao ngay XAU/USD (CNBC XAU= 4.183,3 lúc 11:00). Nến tuần/ngày CNBC XAU=; MA89, BB90 (SMA, 2 độ lệch chuẩn) tính trên giá đóng cửa. CNBC chưa đăng bài riêng về nội dung Warsh lúc cập nhật; chưa thấy bài Reuters/Bloomberg/Kitco – trích dẫn lấy từ FXStreet.",
+   "notes_en": "Spot XAU/USD (CNBC XAU= 4,183.29 at 12:00 AM ET). Weekly/daily bars from CNBC XAU=; MA89 and BB90 (SMA, 2 std dev) on closes. CNBC had not yet published a story on Warsh's remarks at publish time and no Reuters/Bloomberg/Kitco write-up was found – quotes via FXStreet.",
+   "dataTime": "Cập nhật 10:55–11:05 ngày 16/10/2026 giờ VN (Phiên Á).",
+   "dataTime_en": "Updated 11:55 PM–12:05 AM ET, Oct 15–16, 2026 (Asian session / overnight).",
+   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+   "brief": true,
+   "summary": {
+    "trend": "side",
+    "trendText": "Chỉ nhận định – chờ đóng ngày trên ~4.265",
+    "trendText_en": "Outlook only – watch for a daily close above ~4,265",
+    "note": "Bài nhận định, không có vùng mua/bán. Nến tuần trước XANH (+51,5); tuần này −0,3% so với giá mở.",
+    "note_en": "Outlook only – no entry zones. Last week's candle green (+51.49); this week −0.3% vs. its open.",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD",
+    "priceNote_en": "Spot XAU/USD prices"
+   },
+   "article": {
+    "sections": [
+     {
+      "h": "Warsh nói gì",
+      "p": "Tại IMF ở Bangkok, Warsh nói 'thế giới về cơ bản diễn biến đúng kỳ vọng' kể từ họp tháng 9, Fed 'sẽ đảm bảo ổn định giá' và ông 'không tin vào việc đoán trước các cuộc họp'; quyết định sẽ đưa ra ở họp tháng 10 và 12. Ông nhấn mạnh làn sóng đầu tư và AI tác động tới cầu trước cung (FXStreet). **Không có tín hiệu tăng lãi suất mới.**"
+     },
+     {
+      "h": "Bức tranh tuần",
+      "p": "Nến tuần trước (kết thúc 9/10) XANH: 4.142,3 → 4.193,8. Tuần này: mở 4.193,8, đáy 4.074,1 sau CPI/PPI nóng, nến ngày 15/10 đóng 4.170,2 (+1,6%), hiện ~4.183 – nến tuần đang có râu dưới dài, gần hòa giá mở."
+     },
+     {
+      "h": "Đảo chiều dài hạn? Xác nhận hay phủ định",
+      "p": "Tích cực: giữ trên MA89 tuần (~3.987), bật mạnh từ 4.074, đã vượt trendline giảm từ 4.197. Chưa đủ: giá vẫn dưới MA89 ngày ~4.264 và giữa BB90 ngày ~4.261; trần 4.177–4.186 chưa phá. **Xác nhận:** đóng ngày trên 4.197 rồi trên ~4.265. **Phủ định:** đóng tuần dưới 4.074."
+     },
+     {
+      "h": "Tin đỏ tuần tới",
+      "p": "Lịch nhẹ: đơn trợ cấp thất nghiệp (19:30 22/10), PMI S&P Global sơ bộ (20:45 23/10), Michigan cuối (21:00 23/10). Fed im lặng từ 17/10 trước họp 27–28/10. Lịch ForexFactory tuần tới chưa phát hành – sẽ cập nhật."
+     }
+    ],
+    "sources": [
+     {
+      "name": "FXStreet – Warsh tại IMF",
+      "url": "https://www.fxstreet.com/news/breaking-feds-warsh-says-he-would-deliver-price-stability-but-wont-pre-judge-meetings-202610160346"
+     },
+     {
+      "name": "CNBC – Warsh, họp Fed 27–28/10",
+      "url": "https://www.cnbc.com/2026/10/16/cnbc-daily-open-ai-inflation-coreweave-.html"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     },
+     {
+      "name": "Lịch kinh tế Mỹ tuần 43",
+      "url": "https://helious.io/calendar/2026-w43"
+     }
+    ]
+   },
+   "article_en": {
+    "sections": [
+     {
+      "h": "What Warsh said",
+      "p": "At the IMF in Bangkok, Warsh said that since the September FOMC 'the world has broadly conformed to our expectations,' that the Fed 'would deliver price stability,' and that he doesn't 'believe in pre-judging meetings,' with judgments at the October and December meetings. He stressed the investment surge and said AI will hit demand before supply (FXStreet). **No fresh hike signal.**"
+     },
+     {
+      "h": "The week in one candle",
+      "p": "Last week's candle (ended Oct 9) closed GREEN: 4,142.34 → 4,193.83. This week opened 4,193.83, hit 4,074.12 after hot CPI/PPI, closed Thursday at 4,170.25 (+1.6%) and trades near 4,183 – a long lower wick, roughly flat on the week."
+     },
+     {
+      "h": "Long-term reversal? What confirms, what denies",
+      "p": "Positive: holding above the weekly MA89 (~3,987), a sharp bounce off 4,074 and a break of the down-trendline from 4,197. Not enough yet: price is below the daily MA89 (~4,264) and daily BB90 mid (~4,261), and 4,177–4,186 is unbroken. **Confirms:** a daily close above 4,197, then above ~4,265. **Denies:** a weekly close under 4,074."
+     },
+     {
+      "h": "Next week's key US data",
+      "p": "Light slate: jobless claims (Thu 8:30 AM ET), S&P Global flash PMIs (Fri 9:45 AM ET), final UMich sentiment (Fri 10:00 AM ET). Fed blackout starts Oct 17 ahead of the Oct 27–28 FOMC. ForexFactory's next-week calendar isn't out yet."
+     }
+    ],
+    "sources": [
+     {
+      "name": "FXStreet – Warsh at the IMF",
+      "url": "https://www.fxstreet.com/news/breaking-feds-warsh-says-he-would-deliver-price-stability-but-wont-pre-judge-meetings-202610160346"
+     },
+     {
+      "name": "CNBC – Warsh, Oct 27–28 FOMC",
+      "url": "https://www.cnbc.com/2026/10/16/cnbc-daily-open-ai-inflation-coreweave-.html"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     },
+     {
+      "name": "US economic calendar, week 43",
+      "url": "https://helious.io/calendar/2026-w43"
+     }
+    ]
+   },
+   "title": "Warsh không hé lộ lãi suất, USD yếu đi – vàng 4.183: hồi phục dài hạn chỉ xác nhận khi đóng ngày trên ~4.265",
+   "title_en": "Warsh Gives No Rate Signal, Dollar Slips – Gold at 4,183: A Lasting Turn Needs a Daily Close Above ~4,265"
+  },
+  {
    "id": "2026-10-16-phien-a-1040",
    "date": "2026-10-16",
    "time": "10:40",
