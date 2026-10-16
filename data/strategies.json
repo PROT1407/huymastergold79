@@ -1,6 +1,319 @@
 {
  "strategies": [
   {
+   "id": "2026-10-16-phien-my-1915",
+   "date": "2026-10-16",
+   "time": "19:15",
+   "session": "Phiên Mỹ",
+   "session_en": "New York pre-market",
+   "url": "bai/2026-10-16-nhan-dinh-vang-phien-my-1915.html",
+   "url_en": "en/posts/2026-10-16-gold-plan-new-york-session-1915.html",
+   "headline": "Vàng 16/10 phiên Mỹ: chỉnh về 4.171 trong xu hướng tăng – MUA 4.162–4.169, BÁN 4.200–4.210",
+   "headline_en": "H79 Gold Plan – New York Pre-Market, Oct 16: Dip to 4,171 Inside an Uptrend – Buy 4,162–4,169, Sell 4,200–4,210",
+   "title": "Vàng 16/10 phiên Mỹ: chỉnh về 4.171 trong xu hướng tăng – MUA 4.162–4.169, BÁN 4.200–4.210",
+   "title_en": "H79 Gold Plan – New York Pre-Market, Oct 16: Dip to 4,171 Inside an Uptrend – Buy 4,162–4,169, Sell 4,200–4,210",
+   "image": "img/charts/gold-2026-10-16-ny-1915.png",
+   "image_alt": "Biểu đồ vàng 45m 16/10 phiên Mỹ: chỉnh từ đỉnh 4.191 về 4.171; vùng MUA 4.162–4.169, vùng BÁN 4.200–4.210",
+   "image_en": "img/charts/gold-2026-10-16-ny-1915-en.png",
+   "image_alt_en": "Gold 45-minute chart Oct 16, New York pre-market: pullback from 4,191 to 4,171; buy zone 4,162–4,169, sell zone 4,200–4,210",
+   "trend": "Xu hướng chính tăng: 45m/1H/2H/3H/4H đều ở nửa trên BB90 (giữa 4.147 / 4.154 / 4.153 / 4.154 / 4.156), MACD 2H–4H dương. 5m/15m đang chỉnh từ đỉnh ngày 4.191,3 (16:15) về 4.171,4 (19:00) – nhịp hồi giá, chưa gãy xu hướng. Giá 4.176,2 lúc 19:25, không có tin đỏ Mỹ tối nay.",
+   "trend_en": "Primary trend up: the 45m/1H/2H/3H/4H all trade in the upper half of BB90 (mids 4,147 / 4,154 / 4,153 / 4,154 / 4,156) with positive 2H–4H MACD. The 5m/15m are pulling back from the 4,191.30 day high (5:15 AM ET) to 4,171.40 (8:00 AM ET) – a dip, not a break. Spot 4,176.20 at 8:25 AM ET; no high-impact U.S. data today.",
+   "trendType": "up",
+   "support": [
+    4171,
+    4169,
+    4165,
+    4162,
+    4153,
+    4147,
+    4121
+   ],
+   "resistance": [
+    4182,
+    4191,
+    4198,
+    4202,
+    4209,
+    4215,
+    4226
+   ],
+   "entryZones": [
+    "Mua 4.162 – 4.169 (MA34 45m 4.165,6 · MA34 4H 4.165,1 · BB giữa/MA89 15m 4.167 · Fib 50–61,8% sóng 4.147,8→4.191,3 = 4.169,5/4.164,4). Vào khi giá chỉnh về vùng và nến 45m hoặc 1H đóng xanh xác nhận (MACD 45m cắt lên, RSI14 giữ trên 45). Không dùng nến 15m/30m. Dừng lỗ 4.146 (dưới đáy Á 4.147,8 và BB giữa/MA89 45m 4.147). TP1 4.185 – chốt 50–70%, dời SL về điểm vào; TP2 4.198 (R1, đỉnh 13/10). Nến 1H đóng dưới 4.153 (BB giữa 1H) thì bỏ lệnh mua."
+   ],
+   "entryZones_en": [
+    "Buy 4,162–4,169 (45m MA34 4,165.60 · 4H MA34 4,165.10 · 15m mid/MA89 4,167 · 50–61.8% Fib of the 4,147.80→4,191.30 leg = 4,169.50/4,164.40). Enter on a dip into the zone with a green 45m or 1H close (bullish 45m MACD cross, RSI(14) holding above 45). Never on a 15m/30m close. Stop 4,146 (under the 4,147.80 Asian low and the 45m mid/MA89 at 4,147). TP1 4,185 – take 50–70% and move the stop to breakeven; TP2 4,198 (R1, Oct 13 high). A 1H close under 4,153 (1H mid) cancels the long."
+   ],
+   "sellZones": [
+    "Bán 4.200 – 4.210 (BB90 trên 45m 4.202 · 3H 4.208,5 · 1H 4.209 · 4H 4.209 · R1 4.198 · đỉnh 13/10 4.197). Vào khi giá vào vùng bán và có nến 45m hoặc 1H đóng đỏ xác nhận, hoặc nến 1H đâm xuyên lên BB giữa rồi đóng lại dưới band; thêm MACD 45m cắt xuống, RSI14 gần 70. Không dùng nến 15m/30m. Lệnh ngược xu hướng – khối lượng nhỏ. Dừng lỗ 4.220 (trên BB90 trên 2H 4.215, dưới R2 4.226). TP1 4.185 – chốt 50–70%, dời SL hòa vốn; TP2 4.170. Nến 1H đóng trên 4.210 thì bỏ lệnh bán."
+   ],
+   "sellZones_en": [
+    "Sell 4,200–4,210 (upper BB90: 45m 4,202 · 3H 4,208.50 · 1H 4,209 · 4H 4,209 · R1 4,198 · Oct 13 high 4,197). Enter once price is in the zone and a 45m or 1H candle closes red, or a 1H candle pierces above the BB90 mid and closes back below it; look for a bearish 45m MACD cross with RSI(14) near 70. Never on a 15m/30m close. Counter-trend – small size. Stop 4,220 (above the 2H upper band at 4,215, under R2 4,226). TP1 4,185 – take 50–70%, stop to breakeven; TP2 4,170. A 1H close above 4,210 cancels the short."
+   ],
+   "scenarios": [
+    "Lịch tin tối nay (ForexFactory): không có tin đỏ Mỹ – 19:30 giá nhập khẩu (dự báo +0,9%), 20:15 sản xuất công nghiệp (+0,4%) và công suất (76,5%), 01:00 ngân sách liên bang; 04:00 đóng nến tuần.",
+    "Diễn biến: đáy Á 4.147,8 (08:35) → đỉnh ngày 4.191,3 (16:15) → chỉnh 4.171,4 (19:00, sát Fib 50%) → 4.176,2 lúc 19:25.",
+    "Kịch bản chính (~60%): chỉnh về 4.162–4.169, quét stop phe mua đuổi rồi bật – MUA khi nến 45m/1H đóng xanh, TP 4.185 → 4.198.",
+    "Kịch bản phụ (~25%): vượt 4.191 sau 20:30 – không đuổi; nến đỏ ở 4.200–4.210 thì BÁN lướt nhỏ; nến 1H đóng trên 4.210 thì chờ kiểm tra lại 4.198–4.203 để MUA hướng 4.226.",
+    "Kịch bản xấu (~15%): nến 1H đóng dưới 4.153 – đứng ngoài, mốc 4.147 → 4.121. Rủi ro: lợi suất 10 năm vượt 5,12% hoặc tin Iran/Hormuz có thể làm giá giật mạnh."
+   ],
+   "scenarios_en": [
+    "Today's calendar (ForexFactory): no high-impact U.S. data – 8:30 AM ET import prices (est. +0.9%), 9:15 AM ET industrial production (+0.4%) and capacity utilization (76.5%), 2:00 PM ET federal budget; 5:00 PM ET weekly close.",
+    "The tape: 4,147.80 Asian low (9:35 PM ET) → 4,191.30 day high (5:15 AM ET) → 4,171.40 dip (8:00 AM ET, near the 50% Fib) → 4,176.20 at 8:25 AM ET.",
+    "Base case (~60%): a dip into 4,162–4,169 runs the chasers' stops and turns up – buy on a green 45m/1H close, TP 4,185 → 4,198.",
+    "Alternative (~25%): gold clears 4,191 after the 9:30 AM ET open – don't chase; a red close at 4,200–4,210 is a small short; a 1H close above 4,210 flips me to buying a 4,198–4,203 retest toward 4,226.",
+    "Bear case (~15%): a 1H close under 4,153 – step aside; 4,147 → 4,121 next. Risk: a 10-year push above 5.12% or Iran/Hormuz headlines can whip price."
+   ],
+   "macro": [],
+   "macro_en": [],
+   "market_picture": {
+    "text": "Câu chuyện tối nay là cuộc kéo co giữa USD và lợi suất. USD yếu (DXY 101,72, hướng tới tuần giảm đầu tiên sau 3 tuần tăng – Reuters) đẩy vàng lên 4.191, nhưng lợi suất 10 năm bật lại 5,10% khiến giá hụt hơi và chỉnh về 4.171. Tối nay không có tin đỏ Mỹ, FedWatch 87% giữ lãi tháng 10 (CNBC), dầu Brent ~106 USD khi Iran tăng tấn công quanh Hormuz – nên đây là nhịp chỉnh kỹ thuật chứ không phải đảo chiều. Quan điểm của tôi: xu hướng chính vẫn tăng; mốc quyết định là 4.153 (thủng là tôi sai) và 4.210 (vượt là mở 4.226); việc cần làm là chờ giá về 4.162–4.169 để MUA, không đuổi.",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "101,72 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "5,102% ↑",
+      "dir": "up"
+     },
+     {
+      "k": "Brent",
+      "v": "105,9 ↑",
+      "dir": "up"
+     },
+     {
+      "k": "S&P fut",
+      "v": "7.802 +0,2%",
+      "dir": "up"
+     },
+     {
+      "k": "VIX",
+      "v": "16,0 ↓",
+      "dir": "down"
+     }
+    ],
+    "sources": [
+     {
+      "name": "Reuters – USD tuần",
+      "url": "https://www.devdiscourse.com/article/international/3993628-global-markets-european-stocks-rise-dollar-set-for-weekly-loss-after-yields-drop"
+     },
+     {
+      "name": "CNBC – Lợi suất & FedWatch",
+      "url": "https://www.cnbc.com/2026/10/16/us-treasury-yields-investors-hot-inflation-data-.html"
+     },
+     {
+      "name": "CNBC – Dầu & Hormuz",
+      "url": "https://www.cnbc.com/2026/10/16/oil-eases-small-weekly-gain-middle-east-supply.html"
+     },
+     {
+      "name": "Bloomberg – Thị trường",
+      "url": "https://www.swissinfo.ch/eng/us-stock-futures-rise-as-turbulent-week-nears-end%3a-markets-wrap/92225060"
+     },
+     {
+      "name": "CNBC – Vàng",
+      "url": "https://www.cnbc.com/2026/10/16/gold-gains-on-softer-dollar-but-heads-for-weekly-fall.html"
+     }
+    ]
+   },
+   "market_picture_en": {
+    "text": "Tonight is a tug-of-war between the dollar and yields. A soft dollar (DXY 101.72, on track for its first weekly loss after three weekly gains – Reuters) lifted gold to 4,191, but the 10-year bouncing back to 5.10% took the air out and gold has pulled back to 4,171. There's no high-impact U.S. data today, FedWatch shows an 87% chance of an October hold (CNBC), and Brent sits near $106 with Iran stepping up strikes around Hormuz – this is a technical pullback, not a reversal. My view: the primary trend is still up; the levels that matter are 4,153 (lose it and I'm wrong) and 4,210 (clear it and 4,226 opens); the job is to wait for 4,162–4,169 and buy, not chase.",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "101.72 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "5.102% ↑",
+      "dir": "up"
+     },
+     {
+      "k": "Brent",
+      "v": "105.9 ↑",
+      "dir": "up"
+     },
+     {
+      "k": "S&P fut",
+      "v": "7,802 +0.2%",
+      "dir": "up"
+     },
+     {
+      "k": "VIX",
+      "v": "16.0 ↓",
+      "dir": "down"
+     }
+    ],
+    "sources": [
+     {
+      "name": "Reuters – Dollar week",
+      "url": "https://www.devdiscourse.com/article/international/3993628-global-markets-european-stocks-rise-dollar-set-for-weekly-loss-after-yields-drop"
+     },
+     {
+      "name": "CNBC – Yields & FedWatch",
+      "url": "https://www.cnbc.com/2026/10/16/us-treasury-yields-investors-hot-inflation-data-.html"
+     },
+     {
+      "name": "CNBC – Oil & Hormuz",
+      "url": "https://www.cnbc.com/2026/10/16/oil-eases-small-weekly-gain-middle-east-supply.html"
+     },
+     {
+      "name": "Bloomberg – Markets wrap",
+      "url": "https://www.swissinfo.ch/eng/us-stock-futures-rise-as-turbulent-week-nears-end%3a-markets-wrap/92225060"
+     },
+     {
+      "name": "CNBC – Gold",
+      "url": "https://www.cnbc.com/2026/10/16/gold-gains-on-softer-dollar-but-heads-for-weekly-fall.html"
+     }
+    ]
+   },
+   "physicalAdvice": "Làm theo kế hoạch, đừng chạy theo nến tin.",
+   "physicalAdvice_en": "Trade the plan, not the noise.",
+   "notes": "Các mốc là giá giao ngay XAU/USD (nến 5m CNBC XAU=: 4.176,2 nến 19:25; gold-api.com 4.177,6 lúc 19:26). Khung 1H–4H dựng từ nến 1H giao ngay CNBC XAU=. MA là SMA; lệch 1–2 giá tùy sàn. Pivot cổ điển theo phiên 15/10 (cao 4.176,9 · thấp 4.099,9 · đóng 4.170,2): P 4.149 · R1 4.198 · R2 4.226 · S1 4.121.",
+   "notes_en": "Levels are spot XAU/USD (CNBC XAU= 5-minute bars: 4,176.20 on the 8:25 AM ET bar; gold-api.com 4,177.60 at 8:26 AM ET). 1H–4H frames are built from CNBC XAU= spot hourly bars. Simple MAs; levels may differ by a point or two between brokers. Classic pivots from the Oct 15 session (high 4,176.90 · low 4,099.90 · close 4,170.20): P 4,149 · R1 4,198 · R2 4,226 · S1 4,121.",
+   "dataTime": "Cập nhật 19:25–19:27 ngày 16/10/2026 giờ VN (Phiên Mỹ). Nến 5m giao ngay CNBC XAU= (ghép 15m/30m/45m/1H), 1H giao ngay CNBC (ghép 2H/3H/4H); DXY, US10Y, US2Y, Brent, S&P fut, VIX từ CNBC; lịch tin ForexFactory.",
+   "dataTime_en": "Updated 8:25–8:27 AM ET, Oct 16, 2026 (New York pre-market). Spot 5-minute bars from CNBC XAU= (resampled to 15m/30m/45m/1H) and spot hourly bars (2H/3H/4H); DXY, US10Y, US2Y, Brent, S&P futures and VIX from CNBC; calendar from ForexFactory.",
+   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+   "brief": true,
+   "summary": {
+    "trend": "up",
+    "trendText": "Xu hướng chính tăng (45m–4H trên BB90 giữa), 5m/15m chỉnh từ 4.191 – chờ chỉnh để MUA, BÁN chỉ lướt nhỏ",
+    "trendText_en": "Bullish – 45m–4H above the BB90 mid, 5m/15m pulling back from 4,191; buy the dip, shorts only small",
+    "buy": {
+     "zone": "4.162 – 4.169",
+     "sl": "4.146",
+     "tp": "4.185 → 4.198",
+     "zone_en": "4,162–4,169",
+     "sl_en": "4,146",
+     "tp_en": "TP1 4,185 → TP2 4,198"
+    },
+    "sell": {
+     "zone": "4.200 – 4.210",
+     "sl": "4.220",
+     "tp": "4.185 → 4.170",
+     "zone_en": "4,200–4,210",
+     "sl_en": "4,220",
+     "tp_en": "TP1 4,185 → TP2 4,170"
+    },
+    "note": "Tối nay không có tin đỏ Mỹ – giá chạy theo lợi suất 10 năm (5,10%), USD và tin Iran/Hormuz. MUA chỉ khi nến 45m/1H đóng xanh trong vùng; nến 1H đóng dưới 4.153 thì bỏ mua, đóng trên 4.210 thì bỏ bán. Các kế hoạch trong ngày chưa khớp (đáy chỉnh 4.171,4, đỉnh 4.191,3) – không lời, không lỗ.",
+    "note_en": "No high-impact U.S. data today – gold trades off the 10-year (5.10%), the dollar and Iran/Hormuz headlines. Buy only on a green 45m/1H close in the zone; a 1H close under 4,153 cancels the long, above 4,210 cancels the short. Today's earlier setups didn't fill (dip low 4,171.40, high 4,191.30) – no win, no loss.",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD",
+    "priceNote_en": "Spot XAU/USD prices"
+   },
+   "article": {
+    "sections": [
+     {
+      "h": "Kết quả các kế hoạch hôm nay",
+      "p": "Cả bốn kế hoạch trong ngày đều chưa khớp: MUA 4.158–4.165 (13:45), MUA 4.150–4.160 (15:45), MUA 4.160–4.167 (15:47), MUA 4.155–4.165 (17:47) – đáy chỉnh sâu nhất chỉ 4.171,4 lúc 19:00; các vùng BÁN 4.198–4.212 cũng chưa tới vì đỉnh ngày dừng ở 4.191,3 (16:15). Không lời, không lỗ. Hướng đọc đúng – giá đi lên – nhưng tôi đặt vùng mua quá sâu. Bài học tôi rút ra: khi 45m đến 4H cùng nằm nửa trên BB90, nhịp chỉnh hay dừng ở Fib 38,2–50% chứ ít khi về 78,6%. Vì vậy tối nay tôi kéo vùng MUA lên cụm Fib 50–61,8%."
+     },
+     {
+      "h": "Từ 17:47 đến trước giờ Mỹ",
+      "p": "Lúc 17:47 giá quanh 4.178. Giá hồi lên 4.181,3 lúc 18:15 rồi bị bán đều. Nến 45m 18:15–19:00 đóng đỏ 4.171,6 – thấp nhất từ trưa. Đáy 4.171,4 lúc 19:00 nằm ngay trên Fib 50% (4.169,5) của sóng 4.147,8 → 4.191,3, rồi giá bật nhẹ lên 4.176–4.177 lúc 19:25 (CNBC 4.176,2; gold-api.com 4.177,6). Ai mua đuổi ở 4.185–4.191 phiên Âu đang lỗ, và stop của họ nằm quanh 4.170 – đó là chỗ thị trường hay quét trước khi đi tiếp."
+     },
+     {
+      "h": "Vì sao giá đứng ở đây",
+      "p": "Đây là cuộc kéo co giữa USD và lợi suất. USD yếu: DXY 101,72 (−0,28% so với đóng phiên Mỹ), đáy ngày 101,58, hướng tới tuần giảm đầu tiên sau 3 tuần tăng (Reuters) – lực đẩy vàng lên 4.191. Nhưng lợi suất 10 năm Mỹ bật lại 5,102% (cao nhất ngày 5,123%), 2 năm 4,746% – cái phanh khiến vàng không giữ được đỉnh. Fed: Warsh không hé bài, FedWatch 87% giữ lãi tháng 10 (CNBC); Fed vào giai đoạn im lặng từ 17/10 trước cuộc họp 27–28/10. Dầu Brent ~105,9 USD, Iran nói đang tăng tấn công quanh Hormuz (CNBC) – rủi ro địa chính trị vẫn đỡ vàng. Chứng khoán Mỹ tương lai +0,2%, VIX 16,0 – không hoảng loạn, nên không có dòng tiền trú ẩn ồ ạt. Kết luận của tôi: nhịp giảm từ 4.191 là chỉnh kỹ thuật trong xu hướng tăng, không phải đảo chiều."
+     },
+     {
+      "h": "Kế hoạch phiên Mỹ tối nay",
+      "p": "Lịch tin (ForexFactory, giờ VN): tối nay không có tin đỏ Mỹ. 19:30 giá nhập khẩu (dự báo +0,9%, kỳ trước 0,7%); 20:15 sản xuất công nghiệp (+0,4%, trước 0,0%) và công suất sử dụng (76,5%, trước 76,3%); 20:30 Phố Wall mở cửa; 01:00 cán cân ngân sách liên bang (−34,7 tỷ USD, trước −166,8 tỷ); 03:00 dòng vốn TIC; 04:00 đóng nến tuần. Kịch bản chính (~60%): giá chỉnh về 4.162–4.169, quét stop phe mua đuổi rồi bật lên – MUA khi nến 45m/1H đóng xanh trong vùng, mục tiêu 4.185 rồi 4.198 (R1, đỉnh 13/10). Kịch bản phụ (~25%): giá không chỉnh mà vượt 4.191 khi Phố Wall mở – không đuổi; chờ 4.200–4.210 phản ứng: nến 45m/1H đóng đỏ thì BÁN lướt nhỏ; nến 1H đóng trên 4.210 thì bỏ lệnh bán, chờ giá kiểm tra lại 4.198–4.203 để MUA hướng 4.226 (R2). Kịch bản xấu (~15%): nến 1H đóng dưới 4.153 (BB90 giữa 1H) – đứng ngoài, mốc tiếp theo 4.147 rồi 4.121 (S1). Mốc tuần: giá đóng tuần trước ~4.193,8 – đóng tuần trên mức này thì tuần này tăng."
+     },
+     {
+      "h": "Kỹ thuật",
+      "p": "Khung lớn (xu hướng chính tăng): 45m, 1H, 2H, 3H, 4H đều có giá nằm nửa trên BB90 (giữa 4.147 / 4.154 / 4.153 / 4.154 / 4.156); MACD 2H/3H/4H dương, histogram +2,9 / +5,0 / +5,1. Khung nhỏ (nhịp chỉnh): 5m dưới BB giữa 4.179, MA34 (4.177,9) dưới MA89 (4.179,5), RSI 47; 15m giá dưới MA34 4.179 nhưng trên MA89/BB giữa 4.167, MACD 15m âm; 30m giá trên MA34 4.172 và MA89 4.148,5. MACD 45m/1H vừa cắt xuống nhẹ (histogram −1,0 / −0,8), RSI 54 / 57 – đà tăng nghỉ, chưa gãy. Theo quy tắc H79 (bản ngược cho xu hướng tăng): kênh giảm 5m/15m chỉ là nhịp hồi giá, thường dừng ở cụm MA34 45m 4.165,6 · MA34 4H 4.165,1 · BB giữa/MA89 15m 4.167 · Fib 50–61,8% 4.169,5/4.164,4 → vùng MUA 4.162–4.169. Vùng BÁN 4.200–4.210 trùng BB90 trên 45m 4.202 · 3H 4.208,5 · 1H 4.209 · 4H 4.209, R1 4.198 và đỉnh 13/10 4.197. Pivot ngày 15/10 (cao 4.176,9 · thấp 4.099,9 · đóng 4.170,2): P 4.149 · R1 4.198 · R2 4.226 · S1 4.121. Quan điểm của tôi: phe mua vẫn cầm trịch; tôi chờ giá về vùng chứ không đuổi, và chấp nhận lỡ lệnh nếu giá không về."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC (Reuters) – Vàng tăng nhờ USD yếu, Fed vẫn là tâm điểm",
+      "url": "https://www.cnbc.com/2026/10/16/gold-gains-on-softer-dollar-but-heads-for-weekly-fall.html"
+     },
+     {
+      "name": "CNBC – Lợi suất Mỹ sau tuần lạm phát nóng; FedWatch 87% giữ lãi tháng 10",
+      "url": "https://www.cnbc.com/2026/10/16/us-treasury-yields-investors-hot-inflation-data-.html"
+     },
+     {
+      "name": "CNBC (Reuters) – Dầu hạ nhẹ nhưng hướng tới tuần tăng; Iran tăng tấn công quanh Hormuz",
+      "url": "https://www.cnbc.com/2026/10/16/oil-eases-small-weekly-gain-middle-east-supply.html"
+     },
+     {
+      "name": "Bloomberg (swissinfo) – Chứng khoán Mỹ tương lai nhích lên; lợi suất 10 năm 5,10%",
+      "url": "https://www.swissinfo.ch/eng/us-stock-futures-rise-as-turbulent-week-nears-end%3a-markets-wrap/92225060"
+     },
+     {
+      "name": "Reuters (Devdiscourse) – USD hướng tới tuần giảm đầu tiên sau 3 tuần tăng",
+      "url": "https://www.devdiscourse.com/article/international/3993628-global-markets-european-stocks-rise-dollar-set-for-weekly-loss-after-yields-drop"
+     },
+     {
+      "name": "ForexFactory – Lịch kinh tế Mỹ",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "article_en": {
+    "sections": [
+     {
+      "h": "How today's plans played out",
+      "p": "None of today's four setups filled: the 4,158–4,165 buy (2:45 AM ET), 4,150–4,160 (4:45 AM ET), 4,160–4,167 (4:47 AM ET) and 4,155–4,165 (6:47 AM ET) – the deepest dip was 4,171.40 at 8:00 AM ET. The 4,198–4,212 sell zones never traded either; the day high stopped at 4,191.30 (5:15 AM ET). No win, no loss. I had the direction right – gold went up – but I set the buy zones too deep. The lesson: when the 45m through 4H all sit in the upper half of BB90, pullbacks tend to stop at the 38.2–50% retracement, rarely at 78.6%. So tonight's buy zone moves up to the 50–61.8% cluster."
+     },
+     {
+      "h": "From the 6:47 AM ET note into the New York open",
+      "p": "Gold was near 4,178 at 6:47 AM ET. It bounced to 4,181.30 at 7:15 AM ET and then got sold steadily. The 7:15–8:00 AM ET 45-minute candle closed red at 4,171.60, the lowest since late Asia. The 4,171.40 low at 8:00 AM ET sits right above the 50% retracement (4,169.50) of the 4,147.80 → 4,191.30 leg, and gold has bounced to 4,176–4,177 at 8:25 AM ET (CNBC 4,176.20; gold-api.com 4,177.60). Anyone who chased 4,185–4,191 in London is underwater, and their stops sit around 4,170 – exactly the kind of pocket this market likes to sweep before the next leg."
+     },
+     {
+      "h": "Why gold is where it is",
+      "p": "It's a tug-of-war between the dollar and yields. The dollar is soft: DXY 101.72 (−0.28% from the New York close), a day low of 101.58, and on track for its first weekly loss after three weekly gains (Reuters) – that's what lifted gold to 4,191. But the 10-year Treasury yield has bounced back to 5.102% (day high 5.123%) with the 2-year at 4.746%, and that's the brake that stopped gold from holding the high. On the Fed, Warsh gave nothing away and CME FedWatch shows an 87% chance of a hold in October (CNBC); the blackout starts Saturday ahead of the Oct 27–28 FOMC. Brent sits near $105.90 with Iran saying it's stepping up strikes around Hormuz (CNBC), which keeps a geopolitical bid under gold. S&P futures are up 0.2% and the VIX is 16.0 – no panic, so no rush into havens. My read: the drop from 4,191 is a technical pullback inside an uptrend, not a reversal."
+     },
+     {
+      "h": "The New York game plan",
+      "p": "Calendar (ForexFactory, ET): no high-impact U.S. data today. 8:30 AM import prices (est. +0.9%, prior 0.7%); 9:15 AM industrial production (est. +0.4%, prior 0.0%) and capacity utilization (est. 76.5%, prior 76.3%); 9:30 AM cash open; 2:00 PM federal budget balance (est. −$34.7B, prior −$166.8B); 4:00 PM TIC flows; 5:00 PM weekly close. Base case (~60%): gold dips into 4,162–4,169, runs the stops of the London chasers and turns higher – buy on a green 45m/1H close in the zone, targeting 4,185 and then 4,198 (R1, Oct 13 high). Alternative (~25%): no dip, and gold takes out 4,191 after the cash open – don't chase it; watch 4,200–4,210: a red 45m/1H close there is a small-size short, but a 1H close above 4,210 kills the short and I'll look to buy a retest of 4,198–4,203 toward 4,226 (R2). Bear case (~15%): a 1H close under 4,153 (1H BB90 mid) – step aside; next stops 4,147 and 4,121 (S1). Weekly marker: last Friday's close was about 4,193.80 – a weekly close above it turns the week green."
+     },
+     {
+      "h": "Technicals",
+      "p": "Big picture (primary trend up): the 45m, 1H, 2H, 3H and 4H all trade in the upper half of BB90 (mids 4,147 / 4,154 / 4,153 / 4,154 / 4,156); MACD is positive on the 2H/3H/4H with histograms at +2.9 / +5.0 / +5.1. Short term (the pullback): the 5m is below its mid at 4,179 with MA34 (4,177.90) under MA89 (4,179.50) and RSI 47; the 15m is below MA34 at 4,179 but above its MA89/mid at 4,167 with a negative MACD; the 30m holds above MA34 at 4,172 and MA89 at 4,148.50. The 45m/1H MACD just crossed down slightly (histograms −1.0 / −0.8) with RSI 54 / 57 – momentum is resting, not broken. Under the H79 rule (mirrored for an uptrend), a 5m/15m down-channel is just a pullback that tends to stall at the cluster of the 45m MA34 4,165.60 · 4H MA34 4,165.10 · 15m mid/MA89 4,167 · 50–61.8% Fib 4,169.50/4,164.40 – hence the 4,162–4,169 buy zone. The 4,200–4,210 sell zone lines up with the upper BB90 on the 45m (4,202), 3H (4,208.50), 1H (4,209) and 4H (4,209), plus R1 4,198 and the Oct 13 high of 4,197. Daily pivots from the Oct 15 session (high 4,176.90 · low 4,099.90 · close 4,170.20): P 4,149 · R1 4,198 · R2 4,226 · S1 4,121. My stance: buyers are still in control; I wait for price to come to my level, and I'm fine missing the trade if it doesn't."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC (Reuters) – Gold edges up as dollar slips, Fed outlook in focus",
+      "url": "https://www.cnbc.com/2026/10/16/gold-gains-on-softer-dollar-but-heads-for-weekly-fall.html"
+     },
+     {
+      "name": "CNBC – Treasury yields after a week of hot inflation; FedWatch 87% hold in October",
+      "url": "https://www.cnbc.com/2026/10/16/us-treasury-yields-investors-hot-inflation-data-.html"
+     },
+     {
+      "name": "CNBC (Reuters) – Oil eases but heads for weekly gain; Iran steps up Hormuz strikes",
+      "url": "https://www.cnbc.com/2026/10/16/oil-eases-small-weekly-gain-middle-east-supply.html"
+     },
+     {
+      "name": "Bloomberg (swissinfo) – U.S. stock futures rise; 10-year at 5.10%",
+      "url": "https://www.swissinfo.ch/eng/us-stock-futures-rise-as-turbulent-week-nears-end%3a-markets-wrap/92225060"
+     },
+     {
+      "name": "Reuters (Devdiscourse) – Dollar set for first weekly loss after yields drop",
+      "url": "https://www.devdiscourse.com/article/international/3993628-global-markets-european-stocks-rise-dollar-set-for-weekly-loss-after-yields-drop"
+     },
+     {
+      "name": "ForexFactory – U.S. economic calendar",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   }
+  },
+  {
    "id": "2026-10-16-phien-au-1747",
    "date": "2026-10-16",
    "time": "17:47",
