@@ -15,8 +15,8 @@ JSON sẽ bị xoá khỏi bai/ để tránh trang mồ côi).
 import html, json, os, re, unicodedata, datetime as dt
 from pathlib import Path
 
-# Đổi sang "https://huymastergold79.com.vn/" khi tên miền riêng hoạt động
-BASE_URL = "https://prot1407.github.io/huymastergold79/"
+# Tên miền riêng h79gold.com (GitHub Pages custom domain)
+BASE_URL = "https://h79gold.com/"
 SITE = "HuymasterGold79"
 AUTHOR = "Ngọc Huy"
 ROOT = Path(__file__).resolve().parent.parent
@@ -35,7 +35,7 @@ LANG_PAIRS = {"index.html": "en/index.html", "chien-luoc.html": "en/h79-analysis
 OUT_EN = ROOT / "en" / "posts"
 POST_SES = {"phien-au-my": "london-ny-overlap", "phien-au": "london-session", "phien-my": "new-york-session", "phien-a": "asian-session", "phien-dem": "night-session"}
 ASSET_V = "20261015s"  # cache-busting cho css/js trong trang sinh tự động
-OLD_BASES = ["https://huymastergold79.com.vn/", "https://prot1407.github.io/huymastergold79/"]
+OLD_BASES = ["https://prot1407.github.io/huymastergold79/", "https://huymastergold79.com.vn/", "https://h79gold.com/"]
 VN = dt.timezone(dt.timedelta(hours=7))
 TODAY = dt.datetime.now(VN).date().isoformat()
 
