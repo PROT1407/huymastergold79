@@ -36,7 +36,13 @@ LANG_PAIRS = {"index.html": "en/index.html", "chien-luoc.html": "en/h79-analysis
               "tai-khoan-follow.html": "en/copy-trading.html", "lien-he.html": "en/contact.html"}
 # Bài tiếng Anh tĩnh: en/posts/ (giữ đồng bộ với POST_SES trong js/common.js)
 OUT_EN = ROOT / "en" / "posts"
-POST_SES = {"phien-au-my": "london-ny-overlap", "phien-au": "london-session", "phien-my": "new-york-session", "phien-a": "asian-session", "phien-dem": "night-session"}
+POST_SES = {"phien-au-my": "london-ny-overlap", "phien-au": "london-session", "phien-my": "new-york-session", "phien-a": "asian-session", "phien-dem": "new-york-session"}  # 21:00–23:00 VN = NY morning/midday ET; never "night-session" on EN
+# Old EN URLs kept alive as redirect stubs (meta refresh + canonical) after slug fixes.
+EN_REDIRECTS = {
+    "en/posts/2026-10-16-gold-plan-night-session-2107.html": "en/posts/2026-10-16-gold-plan-ny-morning-update.html",
+    "en/posts/2026-10-15-gold-plan-night-session-2120.html": "en/posts/2026-10-15-gold-plan-new-york-session-2120.html",
+    "en/posts/2026-10-14-gold-plan-night-session-2237.html": "en/posts/2026-10-14-gold-plan-new-york-session-2237.html",
+}
 ASSET_V = "20261016b"  # cache-busting cho css/js trong trang sinh tự động
 OLD_BASES = ["https://prot1407.github.io/huymastergold79/", "https://huymastergold79.com.vn/", "https://h79gold.com/"]
 VN = dt.timezone(dt.timedelta(hours=7))
@@ -260,7 +266,7 @@ def build_strategies():
                         when=f"{s.get('session','')} · {t + ' ' if t else ''}{dvn(s['date'])[:5]}", body=body))
         if s.get("image"): out[-1]["img"] = s["image"]
         # Bài chỉ VN (không có trường *_en, vd bản tin vàng trong nước) thì không tạo bản EN
-        out[-1]["en"] = en_post_file(f) if any(s.get(k) for k in ("url_en", "headline_en", "title_en")) else None
+        out[-1]["en"] = (s["url_en"] if str(s.get("url_en", "")).startswith("en/posts/") else en_post_file(f)) if any(s.get(k) for k in ("url_en", "headline_en", "title_en")) else None
     return out
 
 def en_post_file(vi_file):
@@ -572,7 +578,15 @@ def build_en(arts):
         else:
             continue
         made.append(x)
-    keep = {"index.html"} | {Path(x["path"]).name for x in made}
+    keep = {"index.html"} | {Path(x["path"]).name for x in made} | {Path(o).name for o in EN_REDIRECTS}
+    for old, new in EN_REDIRECTS.items():
+        u = BASE_URL + new
+        h = (f'<!doctype html>\n<html lang="en"><head><meta charset="utf-8"><title>Moved – HuymasterGold79</title>'
+             f'<link rel="canonical" href="{u}"><meta name="robots" content="noindex,follow">'
+             f'<meta http-equiv="refresh" content="0; url={u}"><script>location.replace("{u}")</script></head>'
+             f'<body><p>This page has moved: <a href="{u}">{u}</a></p></body></html>\n')
+        fp = ROOT / old
+        if not fp.exists() or fp.read_text(encoding="utf-8") != h: fp.write_text(h, encoding="utf-8")
     for fp in OUT_EN.glob("*.html"):
         if fp.name not in keep: fp.unlink()
     for x in made:
