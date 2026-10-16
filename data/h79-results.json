@@ -2,10 +2,94 @@
  "_note": "Nhật ký kết quả kế hoạch H79. Win = TP1 trước SL; loss = SL trước; hết phiên = P/L tại lúc đánh giá. MFE tính bằng giá ($1/oz). tp1_hit/tp2_hit ghi lại mỗi khi giá chạm TP (kể cả sau đó giá quay lại).",
  "plans": [
   {
+   "id": "2026-10-16-phien-au-1345",
+   "date": "2026-10-16",
+   "session": "Phiên Âu",
+   "evaluated_at_vn": null,
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.198 – 4.208",
+    "sl": "4.218",
+    "tp1": "4.184",
+    "tp2": "4.164",
+    "zone_filled": null,
+    "result": "mở",
+    "mfe": null
+   },
+   "buy": {
+    "zone": "4.158 – 4.165",
+    "sl": "4.147",
+    "tp1": "4.180",
+    "tp2": "4.197",
+    "zone_filled": null,
+    "result": "mở",
+    "mfe": null
+   }
+  },
+  {
+   "id": "2026-10-16-phien-a-1040",
+   "date": "2026-10-16",
+   "session": "Phiên Á",
+   "evaluated_at_vn": "13:45 16/10/2026",
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.177 – 4.186",
+    "sl": "4.196",
+    "tp1": "4.160",
+    "tp2": "4.149",
+    "zone_filled": true,
+    "result": "hết phiên",
+    "tp1_hit": false,
+    "sl_hit": false,
+    "mfe": 12.2,
+    "shortfall_to_tp1": 9.3,
+    "pnl": 3.8,
+    "note": "Vào vùng 10:55–11:05 (đỉnh 4.184,1); nến 1H 11:00 mở 4.183,3 đóng đỏ 4.172,6. Thấp nhất sau đó 4.169,3 (13:15) → đạt ~12/21,5 giá tới TP1 4.160, thiếu ~9 giá. SL 4.196 không chạm. Hết phiên Á: 4.177,7 lúc 13:45, +3,8 giá từ giữa vùng 4.181,5. Thay bằng kế hoạch phiên Âu 13:45."
+   },
+   "buy": {
+    "zone": "4.186 – 4.191 (sau 1H/4H đóng >4.186)",
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "note": "Chưa có nến 1H/4H đóng trên 4.186 (cao nhất đóng 4.183,3) – không kích hoạt."
+   }
+  },
+  {
+   "id": "2026-10-15-phien-au-1747",
+   "date": "2026-10-15",
+   "session": "Phiên Âu",
+   "evaluated_at_vn": "13:45 16/10/2026",
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.160 – 4.170",
+    "sl": "4.180",
+    "tp1": "4.153",
+    "tp2": "4.141",
+    "zone_filled": true,
+    "result": "win",
+    "tp1_hit": true,
+    "tp1_hit_at_vn": "20:30 15/10",
+    "tp2_hit": false,
+    "sl_hit": false,
+    "mfe": 20.9,
+    "profit_tp1": 12,
+    "shortfall_to_tp2": 3.1,
+    "be_exit_at_vn": "02:40 16/10",
+    "note": "Khớp 20:15 sau PPI (cao 4.167,1); TP1 4.153 chạm 20:30 → lãi ~12 giá từ giữa vùng 4.165. Thấp nhất 4.144,1 (23:15), MFE 20,9 – TP2 4.141 thiếu ~3 giá (suýt chạm). Phần còn lại thoát hòa vốn 02:40 16/10."
+   },
+   "buy": {
+    "zone": "4.091 – 4.101",
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "note": "Thấp nhất sau 17:47 là 4.138,1 – không về vùng mua."
+   }
+  },
+  {
    "id": "2026-10-16-phien-a-0645",
    "date": "2026-10-16",
    "session": "Phiên Á",
-   "evaluated_at_vn": "10:27 16/10/2026",
+   "evaluated_at_vn": "13:45 16/10/2026",
    "price_ref": "spot",
    "sell": {
     "zone": "4.165 – 4.175",
@@ -19,35 +103,47 @@
     "tp2_hit": false,
     "sl_hit": false,
     "mfe": 22.2,
-    "note": "Khớp theo tín hiệu nến 45m/1H đỏ từ đỉnh Á (04:45–06:15). Đáy sau đó 4.147,77 (08:37) → TP1 4.149 chạm, MFE ~22,2 từ giữa vùng 4.170. TP2 4.136 chưa tới. Giá bật lại 4.178,3 (09:57) – SL 4.186 chưa chạm. Giá ~4.170 lúc 10:27. Nguồn CNBC XAU= 5m."
+    "note": "Khớp theo tín hiệu nến 45m/1H đỏ từ đỉnh Á (04:45–06:15). TP1 4.149 chạm 08:32–08:37 (đáy 4.147,8) → lãi ~21 giá từ giữa vùng 4.170, MFE 22,2. TP2 4.136 không tới. Phần còn lại thoát hòa vốn 4.170 lúc 09:55 khi giá bật lên; SL 4.186 không chạm (đỉnh 4.184,1 lúc 11:05). Nguồn CNBC XAU= 5m.",
+    "profit_tp1": 21,
+    "be_exit_at_vn": "09:55 16/10"
    },
    "buy": {
     "zone": "4.090 – 4.105",
     "zone_filled": false,
     "result": "chưa khớp",
     "mfe": null,
-    "note": "Thấp nhất sau 06:45 là 4.147,8 – xa vùng mua"
+    "note": "Thấp nhất sau 06:45 là 4.147,8 – không về vùng mua. Hết hiệu lực."
    }
   },
   {
    "id": "2026-10-15-phien-my-1915",
    "date": "2026-10-15",
    "session": "Phiên Mỹ",
-   "evaluated_at_vn": "06:50 16/10/2026",
+   "evaluated_at_vn": "13:45 16/10/2026",
    "price_ref": "spot",
    "sell": {
     "zone": "4.160 – 4.170",
     "zone_filled": true,
-    "result": "đang mở",
-    "mfe": 21.0,
-    "note": "Khớp đỉnh sau PPI ~20:15 (High 4.167,1 trong vùng). Sau khớp thấp nhất ~4.144–4.145 (21:15–23:15) → MFE ~21 từ giữa vùng; TP1 4.139 chưa chạm. SL 4.180 chưa chạm (đỉnh Á 4.176,9). Giá ~4.157 lúc 06:50."
+    "result": "loss",
+    "mfe": 20.9,
+    "note": "Khớp 20:15 (cao 4.167,1). Thấp nhất 4.144,1 (23:15) → đạt 21/26 giá tới TP1 4.139, thiếu ~5 giá. Nến 1H 02:00 đóng 4.173,2 trên mốc hủy 4.171 → thoát lúc 03:00, −8 giá từ giữa vùng 4.165; nếu giữ thì SL 4.180 chạm 10:50 (−15). Dương tối đa ~21 giá rồi breakout ngược.",
+    "sl": "4.180",
+    "tp1": "4.139",
+    "tp2": "4.114",
+    "tp1_hit": false,
+    "sl_hit": true,
+    "sl_hit_at_vn": "10:50 16/10",
+    "exit_rule": "1H đóng >4.171 (hủy lệnh)",
+    "exit_at_vn": "03:00 16/10",
+    "pnl": -8.2,
+    "shortfall_to_tp1": 5.1
    },
    "buy": {
     "zone": "4.092 – 4.102",
     "zone_filled": false,
     "result": "chưa khớp",
     "mfe": null,
-    "note": "Đáy sau tin 4.138 trước giờ kế hoạch US; sau 19:15 chưa về vùng mua"
+    "note": "Sau 19:15 thấp nhất 4.144,1 – không về vùng mua. Hết hiệu lực."
    }
   },
   {
@@ -75,42 +171,60 @@
    "id": "2026-10-15-phien-au-1547",
    "date": "2026-10-15",
    "session": "Phiên Âu",
-   "evaluated_at_vn": "17:47 15/10/2026",
+   "evaluated_at_vn": "13:45 16/10/2026",
    "price_ref": "spot",
    "sell": {
     "zone": "4.155 – 4.168",
     "zone_filled": true,
-    "result": "đang mở",
-    "mfe": 5.6,
-    "note": "Khớp mép dưới 4.155 (15:15); thấp nhất sau khớp 4.149,4 (15:45). Sau 15:47 giá lên tối đa 4.160,2 (16:35) rồi về ~4.154 lúc 17:50; chưa tới TP1 4.140, SL 4.178 chưa chạm"
+    "result": "win",
+    "mfe": 23.4,
+    "note": "Khớp 16:10 15/10. PPI 19:30 kéo giá xuống đáy 4.138,1 (19:35) → TP1 4.140 chạm, lãi ~21,5 giá từ giữa vùng 4.161,5, MFE 23,4. TP2 4.125 không tới. Phần còn lại thoát hòa vốn khi giá bật 4.167 lúc 20:15. (Kế hoạch có khuyên đóng/dời hòa vốn trước tin – ai đóng lúc 19:00 ~4.149 lãi ~13 giá.)",
+    "sl": "4.178",
+    "tp1": "4.140",
+    "tp2": "4.125",
+    "tp1_hit": true,
+    "tp1_hit_at_vn": "19:30–19:35 15/10",
+    "tp2_hit": false,
+    "sl_hit": false,
+    "profit_tp1": 21.5,
+    "be_exit_at_vn": "20:15 15/10"
    },
    "buy": {
     "zone": "4.097 – 4.110",
     "zone_filled": false,
     "result": "chưa khớp",
     "mfe": null,
-    "note": "Thấp nhất sau 15:47 ~4.151 – xa vùng mua"
+    "note": "Thấp nhất sau kế hoạch 4.133,6 (13:50) / 4.138,1 (19:35) – không về vùng mua 4.097–4.110. Hết hiệu lực."
    }
   },
   {
    "id": "2026-10-15-phien-au-1345",
    "date": "2026-10-15",
    "session": "Phiên Âu",
-   "evaluated_at_vn": "15:47 15/10/2026",
+   "evaluated_at_vn": "13:45 16/10/2026",
    "price_ref": "spot",
    "sell": {
     "zone": "4.155 – 4.168",
     "zone_filled": true,
-    "result": "đang mở",
-    "mfe": 5,
-    "note": "Hồi chạm ~4.160 lúc 15:25 (mép dưới vùng) rồi về ~4.151; chưa tới TP1 4.140, SL 4.178 chưa chạm"
+    "result": "win",
+    "mfe": 23.4,
+    "note": "Khớp 15:25 15/10. PPI 19:30 kéo giá xuống đáy 4.138,1 (19:35) → TP1 4.140 chạm, lãi ~21,5 giá từ giữa vùng 4.161,5, MFE 23,4. TP2 4.125 không tới. Phần còn lại thoát hòa vốn khi giá bật 4.167 lúc 20:15. (Kế hoạch có khuyên đóng/dời hòa vốn trước tin – ai đóng lúc 19:00 ~4.149 lãi ~13 giá.)",
+    "sl": "4.178",
+    "tp1": "4.140",
+    "tp2": "4.125",
+    "tp1_hit": true,
+    "tp1_hit_at_vn": "19:30–19:35 15/10",
+    "tp2_hit": false,
+    "sl_hit": false,
+    "profit_tp1": 21.5,
+    "be_exit_at_vn": "20:15 15/10"
    },
    "buy": {
     "zone": "4.097 – 4.110",
     "zone_filled": false,
     "result": "chưa khớp",
     "mfe": null,
-    "note": "Thấp nhất sau kế hoạch ~4.135 – chưa chạm vùng mua"
+    "note": "Thấp nhất sau kế hoạch 4.133,6 (13:50) / 4.138,1 (19:35) – không về vùng mua 4.097–4.110. Hết hiệu lực."
    }
   },
   {

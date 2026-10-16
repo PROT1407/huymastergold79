@@ -1,6 +1,303 @@
 {
  "strategies": [
   {
+   "id": "2026-10-16-phien-au-1345",
+   "date": "2026-10-16",
+   "time": "13:45",
+   "session": "Phiên Âu",
+   "session_en": "London session",
+   "url": "bai/2026-10-16-nhan-dinh-vang-phien-au-1345.html",
+   "url_en": "en/posts/2026-10-16-gold-plan-london-session-1345.html",
+   "headline": "Vàng 16/10 phiên Âu: kênh tăng giữ trên 4.170 – MUA chỉnh 4.158–4.165, BÁN 4.198–4.208",
+   "headline_en": "H79 Gold Plan – London session, Oct 16: Up-Channel Holds 4,170 – Buy Dips at 4,158–4,165, Sell 4,198–4,208",
+   "title": "Vàng 16/10 phiên Âu: kênh tăng giữ trên 4.170 – MUA chỉnh 4.158–4.165, BÁN 4.198–4.208",
+   "title_en": "H79 Gold Plan – London session, Oct 16: Up-Channel Holds 4,170 – Buy Dips at 4,158–4,165, Sell 4,198–4,208",
+   "image": "img/charts/gold-2026-10-16-london-1345.png",
+   "image_alt": "Biểu đồ vàng 45m 16/10 phiên Âu: kênh tăng trên 4.170; vùng MUA 4.158–4.165, vùng BÁN 4.198–4.208",
+   "image_en": "img/charts/gold-2026-10-16-london-1345-en.png",
+   "image_alt_en": "Gold 45-minute chart Oct 16 London session: up-channel above 4,170; buy zone 4,158–4,165, sell zone 4,198–4,208",
+   "trend": "Kênh tăng ngắn hạn: 5m/15m/30m giá trên MA34, MA34 trên MA89 (30m 4.163 / 4.140). 45m/1H/2H/3H/4H đều ở nửa trên BB90 (giữa 4.148 / 4.154 / 4.155 / 4.159 / 4.164). Đỉnh sau Warsh 4.184,1 (11:05) chạm R1 4.184; giá 4.177,7 lúc 13:45.",
+   "trend_en": "Short-term up-channel: on the 5m/15m/30m price is above MA34 and MA34 is above MA89 (30m 4,163 / 4,140). The 45m, 1H, 2H, 3H and 4H all trade in the upper half of BB90 (mids 4,148 / 4,154 / 4,155 / 4,159 / 4,164). The post-Warsh high of 4,184.10 (12:05 AM ET) tagged R1 at 4,184; spot 4,177.70 at 2:45 AM ET.",
+   "trendType": "up",
+   "support": [
+    4170,
+    4165,
+    4162,
+    4158,
+    4154,
+    4148,
+    4131
+   ],
+   "resistance": [
+    4180,
+    4184,
+    4197,
+    4204,
+    4208,
+    4213,
+    4220
+   ],
+   "entryZones": [
+    "Mua 4.158 – 4.165 (BB90 giữa 4H 4.164 · 3H 4.159 · BB giữa/MA89 15m 4.160 · MA34 30m 4.163 · Fib 50–61,8% sóng 4.147,8→4.184,1 = 4.166/4.162). Vào khi giá chỉnh về vùng và nến 45m hoặc 1H đóng xanh xác nhận (MACD 45m cắt lên, RSI14 không thủng 45). Dừng lỗ 4.147 (dưới đáy 08:37 4.147,8 và BB giữa 45m 4.148). TP1 4.180 – chốt 50–70%, dời SL về điểm vào; TP2 4.197 (đỉnh 13/10). Nến 1H đóng dưới 4.153 (BB giữa 1H) thì bỏ lệnh mua."
+   ],
+   "entryZones_en": [
+    "Buy 4,158–4,165 (4H BB90 mid 4,164 · 3H 4,159 · 15m mid/MA89 4,160 · 30m MA34 4,163 · 50–61.8% Fib of the 4,147.80→4,184.10 leg = 4,166/4,162). Enter on a dip into the zone with a green 45m or 1H close (bullish 45m MACD cross, RSI(14) holding 45). Stop 4,147 (under the 9:37 PM ET low of 4,147.80 and the 45m mid at 4,148). TP1 4,180 – take 50–70% and move the stop to breakeven; TP2 4,197 (Oct 13 high). A 1H close under 4,153 (1H mid) cancels the long."
+   ],
+   "sellZones": [
+    "Bán 4.198 – 4.208 (BB90 trên 45m 4.204 · 1H 4.208 · sát đỉnh 13/10 4.197). Vào khi giá vào vùng bán và có nến 45m hoặc 1H đóng đỏ xác nhận, hoặc nến 1H đâm xuyên lên BB giữa rồi đóng lại dưới band; thêm MACD cắt xuống, RSI14 gần 70. Không dùng nến 15m/30m. Dừng lỗ 4.218 (trên BB90 trên 2H/3H 4.213–4.216, dưới R2 4.220). TP1 4.184 (R1) – chốt 50–70%, dời SL hòa vốn; TP2 4.164 (BB giữa 4H, ~80% đường về BB giữa 1H)."
+   ],
+   "sellZones_en": [
+    "Sell 4,198–4,208 (45m upper BB90 4,204 · 1H 4,208 · just over the Oct 13 high of 4,197). Enter once price is in the zone and a 45m or 1H candle closes red, or a 1H candle pierces above the BB90 mid and closes back below it; look for a bearish MACD cross with RSI(14) near 70. Never on a 15m/30m close. Stop 4,218 (above the 2H/3H upper bands at 4,213–4,216, under R2 4,220). TP1 4,184 (R1) – take 50–70%, stop to breakeven; TP2 4,164 (4H mid, ~80% of the way to the 1H mid)."
+   ],
+   "scenarios": [
+    "Kết quả tin: Warsh tại IMF 10:30 không phát tín hiệu tăng lãi tháng 10 – DXY 101,83 (−0,23%), US10Y 5,077%, vàng giao ngay +0,19%.",
+    "Diễn biến: đáy 4.147,8 (08:37) → 09:55 4.178 → đỉnh 4.184,1 (11:05) → đi ngang 4.169–4.180 → 13:45 ~4.178.",
+    "Vì sao: USD yếu sau Warsh và lợi suất lùi giữ vàng trên BB90 giữa mọi khung từ 45m đến 4H – nhịp chỉnh là cơ hội mua theo kênh.",
+    "Mốc giá: kháng cự 4.184 (R1) → 4.197 → 4.204–4.208 (vùng BÁN); hỗ trợ 4.165–4.158 (vùng MUA) → 4.148 → 4.131 (pivot).",
+    "Rủi ro: tối nay không còn tin đỏ Mỹ; Fed im lặng từ 17/10 – dòng tiền chốt lời cuối tuần và tin Hormuz/dầu có thể gây giật mạnh."
+   ],
+   "scenarios_en": [
+    "The data: Warsh at the IMF (11:30 PM ET) gave no October hike signal – DXY 101.83 (−0.23%), 10-year 5.077%, spot gold +0.19%.",
+    "The tape: 4,147.80 low (9:37 PM ET) → 4,178 at 10:55 PM ET → 4,184.10 high (12:05 AM ET) → 4,169–4,180 range → ~4,178 at 2:45 AM ET.",
+    "Why: a softer dollar after Warsh and easing yields keep gold above the BB90 mid on every frame from 45m to 4H – dips are buys inside the channel.",
+    "Levels: resistance 4,184 (R1) → 4,197 → 4,204–4,208 (sell zone); support 4,165–4,158 (buy zone) → 4,148 → 4,131 (daily pivot).",
+    "Risk: no high-impact U.S. data left today; the Fed blackout starts Saturday – Friday profit-taking and Hormuz/oil headlines can whip price."
+   ],
+   "macro": [],
+   "macro_en": [],
+   "market_picture": {
+    "text": "Sau buổi trò chuyện tại IMF, Chủ tịch Fed Warsh không hé lộ có tăng lãi tháng 10 hay không – USD bị bán, DXY về ~101,83, hướng tới tuần giảm đầu tiên sau 5 tuần, lợi suất 10 năm lùi ~5,077% (CNBC). Chứng khoán châu Á hồi, S&P futures đi ngang; Brent ~105,3 USD vẫn cao vì Hormuz chỉ thông ~68% và UKMTO cảnh báo đe dọa 'nghiêm trọng'. Tính cả tuần vàng vẫn giảm ~0,5%, nên chốt lời cuối tuần là rủi ro cần canh.",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "101,83 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "5,077% ↓",
+      "dir": "down"
+     },
+     {
+      "k": "Brent",
+      "v": "105,3 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "S&P fut",
+      "v": "7.795 +0,05%",
+      "dir": ""
+     },
+     {
+      "k": "VIX",
+      "v": "16,46",
+      "dir": ""
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Vàng & USD",
+      "url": "https://www.cnbc.com/2026/10/16/gold-gains-on-softer-dollar-but-heads-for-weekly-fall.html"
+     },
+     {
+      "name": "CNBC – Warsh tại IMF",
+      "url": "https://www.cnbc.com/2026/10/16/feds-warsh-says-ai-development-path-will-be-very-bumpy-.html"
+     },
+     {
+      "name": "CNBC – USD tuần",
+      "url": "https://www.cnbc.com/2026/10/16/euro-gets-much-needed-reprieve-as-ai-wobbles-rock-the-dollar.html"
+     },
+     {
+      "name": "CNBC – Dầu",
+      "url": "https://www.cnbc.com/2026/10/16/oil-edges-down-as-investors-weigh-possible-us-sanctions-on-shadow-fleet.html"
+     },
+     {
+      "name": "Middle East Eye – Hormuz",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/ukmto-says-threat-hormuz-shipping-severe-further-attacks-highly-likely"
+     }
+    ]
+   },
+   "market_picture_en": {
+    "text": "Fed Chair Warsh gave nothing away on an October hike at his IMF fireside chat, and the dollar got sold – the DXY is near 101.83 and on track for its first weekly loss in five, with the 10-year back to about 5.077% (CNBC). Asian stocks bounced and S&P futures are flat; Brent holds near $105.30 with Hormuz flows at roughly 68% of normal and UKMTO calling the threat 'severe'. Gold is still down about 0.5% on the week, so Friday profit-taking is the risk to watch.",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "101.83 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "5.077% ↓",
+      "dir": "down"
+     },
+     {
+      "k": "Brent",
+      "v": "105.3 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "S&P fut",
+      "v": "7,795 +0.05%",
+      "dir": ""
+     },
+     {
+      "k": "VIX",
+      "v": "16.46",
+      "dir": ""
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Gold & dollar",
+      "url": "https://www.cnbc.com/2026/10/16/gold-gains-on-softer-dollar-but-heads-for-weekly-fall.html"
+     },
+     {
+      "name": "CNBC – Warsh at the IMF",
+      "url": "https://www.cnbc.com/2026/10/16/feds-warsh-says-ai-development-path-will-be-very-bumpy-.html"
+     },
+     {
+      "name": "CNBC – Dollar week",
+      "url": "https://www.cnbc.com/2026/10/16/euro-gets-much-needed-reprieve-as-ai-wobbles-rock-the-dollar.html"
+     },
+     {
+      "name": "CNBC – Oil",
+      "url": "https://www.cnbc.com/2026/10/16/oil-edges-down-as-investors-weigh-possible-us-sanctions-on-shadow-fleet.html"
+     },
+     {
+      "name": "Middle East Eye – Hormuz",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/ukmto-says-threat-hormuz-shipping-severe-further-attacks-highly-likely"
+     }
+    ]
+   },
+   "physicalAdvice": "Làm theo kế hoạch, đừng chạy theo nến tin.",
+   "physicalAdvice_en": "Trade the plan, not the noise.",
+   "notes": "Các mốc là giá giao ngay XAU/USD (CNBC XAU= 4.177,7 nến 13:45; 4.178,13 lúc 13:48; gold-api.com 4.179,5). Khung 2H/3H/4H tính từ COMEX GC=F (4.198,1) trừ 21,5 USD – chênh trung bình GC=F so với giao ngay trong 6 giờ gần nhất. MA là SMA; lệch 1–2 giá tùy sàn. Pivot cổ điển theo phiên 15/10 (cao 4.167,1 · thấp 4.078,6 · đóng 4.147,6): P 4.131 · R1 4.184 · R2 4.220.",
+   "notes_en": "Levels are spot XAU/USD (CNBC XAU= 4,177.70 on the 2:45 AM ET bar; 4,178.13 at 2:48 AM ET; gold-api.com 4,179.50). The 2H/3H/4H frames use COMEX GC=F (4,198.10) minus $21.50, the average futures-spot gap over the last six hours. Simple MAs; levels may differ by a point or two between brokers. Classic pivots from the Oct 15 session (high 4,167.10 · low 4,078.60 · close 4,147.60): P 4,131 · R1 4,184 · R2 4,220.",
+   "dataTime": "Cập nhật 13:45–13:50 ngày 16/10/2026 giờ VN (Phiên Âu). Nến 5m giao ngay CNBC XAU= (ghép 15m/30m/45m/1H); 2H/3H/4H từ GC=F (Yahoo); DXY, US10Y, Brent, S&P fut, VIX từ CNBC; lịch tin ForexFactory.",
+   "dataTime_en": "Updated 2:45–2:50 AM ET, Oct 16, 2026 (London session). Spot 5-minute bars from CNBC XAU= (resampled to 15m/30m/45m/1H); 2H/3H/4H from GC=F (Yahoo); DXY, US10Y, Brent, S&P futures and VIX from CNBC; calendar from ForexFactory.",
+   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+   "brief": true,
+   "summary": {
+    "trend": "up",
+    "trendText": "Kênh tăng 5m–30m, 45m–4H trên BB90 giữa – ưu tiên MUA khi chỉnh",
+    "trendText_en": "Bullish – 5m–30m up-channel, 45m–4H above the BB90 mid; buy dips",
+    "buy": {
+     "zone": "4.158 – 4.165",
+     "sl": "4.147",
+     "tp": "4.180 → 4.197",
+     "zone_en": "4,158–4,165",
+     "sl_en": "4,147",
+     "tp_en": "TP1 4,180 → TP2 4,197"
+    },
+    "sell": {
+     "zone": "4.198 – 4.208",
+     "sl": "4.218",
+     "tp": "4.184 → 4.164",
+     "zone_en": "4,198–4,208",
+     "sl_en": "4,218",
+     "tp_en": "TP1 4,184 → TP2 4,164"
+    },
+    "note": "✅ Kết quả: BÁN phiên Âu 15/10 chạm TP1 4.140 (+21 giá), BÁN 17:47 chạm TP1 4.153 (+12 giá), BÁN phiên Á 16/10 chạm TP1 4.149 (+21 giá); BÁN phiên Mỹ 15/10 thua −8 giá. Tối nay không còn tin đỏ Mỹ – MUA chỉ khi nến 45m/1H đóng xanh trong vùng, nến 1H đóng dưới 4.153 thì bỏ lệnh mua.",
+    "note_en": "Friday profit-taking and Hormuz headlines – no high-impact U.S. data left today. Buy only on a green 45m/1H close in the zone; a 1H close under 4,153 cancels the long. Recent calls: London short TP1 4,140 (+21 points), 6:47 AM ET short TP1 4,153 (+12), Asian short TP1 4,149 (+21); New York short −8.",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD",
+    "priceNote_en": "Spot XAU/USD prices"
+   },
+   "article": {
+    "sections": [
+     {
+      "h": "Kết quả lệnh đã ra",
+      "p": "Lệnh BÁN phiên Âu 15/10 (4.155–4.168) chạm TP1 4.140 lúc 19:30 khi PPI ra – lãi ~21 giá, phần còn lại dời hòa vốn. Lệnh BÁN 17:47 (4.160–4.170) chạm TP1 4.153 lúc 20:30 – lãi ~12 giá, TP2 4.141 thiếu 3 giá. Lệnh BÁN phiên Á 16/10 (4.165–4.175) chạm TP1 4.149 – lãi ~21 giá, phần còn lại thoát hòa vốn 09:55. Lệnh BÁN phiên Mỹ 15/10 thua: nến 1H đóng 4.173 trên mốc hủy 4.171 lúc 03:00, thoát −8 giá."
+     },
+     {
+      "h": "Bức tranh phiên Âu",
+      "p": "Warsh không hé lộ hướng lãi suất, USD về đáy gần 2 tuần (DXY 101,83) và lợi suất 10 năm lùi 5,077% – vàng giữ trên 4.170 suốt trưa. 5m/15m/30m đã thành kênh tăng (giá trên MA34, MA34 trên MA89), 45m đến 4H đều ở nửa trên BB90. Nên phiên Âu ưu tiên MUA khi giá chỉnh về cụm BB giữa, chỉ BÁN ở dải BB90 trên 45m/1H."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC (Reuters) – Vàng tăng nhờ USD yếu nhưng hướng tới tuần giảm",
+      "url": "https://www.cnbc.com/2026/10/16/gold-gains-on-softer-dollar-but-heads-for-weekly-fall.html"
+     },
+     {
+      "name": "CNBC – Warsh: 'không đoán trước các cuộc họp'",
+      "url": "https://www.cnbc.com/2026/10/16/feds-warsh-says-ai-development-path-will-be-very-bumpy-.html"
+     },
+     {
+      "name": "FXStreet – 4.200 trở lại tầm ngắm sau khi Warsh im lặng về lãi suất",
+      "url": "https://www.fxstreet.com/analysis/4-200-back-in-sight-for-gold-after-warshs-silence-on-interest-rate-outlook-202610160535"
+     },
+     {
+      "name": "CNBC (Reuters) – USD hướng tới tuần giảm đầu tiên sau 5 tuần",
+      "url": "https://www.cnbc.com/2026/10/16/euro-gets-much-needed-reprieve-as-ai-wobbles-rock-the-dollar.html"
+     },
+     {
+      "name": "CNBC (Reuters) – Dầu hạ nhẹ, Brent ~105 USD",
+      "url": "https://www.cnbc.com/2026/10/16/oil-edges-down-as-investors-weigh-possible-us-sanctions-on-shadow-fleet.html"
+     },
+     {
+      "name": "Middle East Eye – UKMTO: đe dọa tàu qua Hormuz 'nghiêm trọng'",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/ukmto-says-threat-hormuz-shipping-severe-further-attacks-highly-likely"
+     },
+     {
+      "name": "ForexFactory – Lịch kinh tế Mỹ",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "article_en": {
+    "sections": [
+     {
+      "h": "How the last calls played out",
+      "p": "Thursday's London short (4,155–4,168) hit TP1 4,140 on the 8:30 AM ET PPI print – about +21 points, runner to breakeven. The 6:47 AM ET short (4,160–4,170) tagged TP1 4,153 at 9:30 AM ET – about +12 points, TP2 4,141 missed by 3. The Asian-session short (4,165–4,175) hit TP1 4,149 – about +21 points, runner out at breakeven. The New York short lost: a 1H close at 4,173 over the 4,171 cancel level (4:00 PM ET) – out for −8."
+     },
+     {
+      "h": "The London setup",
+      "p": "Warsh gave nothing away on rates, the dollar slid to a near two-week low (DXY 101.83) and the 10-year eased to 5.077% – gold has held above 4,170 since. The 5m/15m/30m have flipped to an up-channel (price over MA34, MA34 over MA89) and the 45m through 4H all sit in the upper half of their BB90. Bias is to buy dips into the mid-band cluster; shorts only at the 45m/1H upper band."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC (Reuters) – Gold gains on softer dollar, but heads for weekly fall",
+      "url": "https://www.cnbc.com/2026/10/16/gold-gains-on-softer-dollar-but-heads-for-weekly-fall.html"
+     },
+     {
+      "name": "CNBC – Warsh: 'I don't prejudge meetings'",
+      "url": "https://www.cnbc.com/2026/10/16/feds-warsh-says-ai-development-path-will-be-very-bumpy-.html"
+     },
+     {
+      "name": "FXStreet – $4,200 back in sight after Warsh's silence on rates",
+      "url": "https://www.fxstreet.com/analysis/4-200-back-in-sight-for-gold-after-warshs-silence-on-interest-rate-outlook-202610160535"
+     },
+     {
+      "name": "CNBC (Reuters) – Dollar heads for first weekly loss in five",
+      "url": "https://www.cnbc.com/2026/10/16/euro-gets-much-needed-reprieve-as-ai-wobbles-rock-the-dollar.html"
+     },
+     {
+      "name": "CNBC (Reuters) – Oil edges down, Brent near $105",
+      "url": "https://www.cnbc.com/2026/10/16/oil-edges-down-as-investors-weigh-possible-us-sanctions-on-shadow-fleet.html"
+     },
+     {
+      "name": "Middle East Eye – UKMTO: Hormuz shipping threat 'severe'",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/ukmto-says-threat-hormuz-shipping-severe-further-attacks-highly-likely"
+     },
+     {
+      "name": "ForexFactory – U.S. economic calendar",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   }
+  },
+  {
    "id": "2026-10-16-phien-a-1100",
    "date": "2026-10-16",
    "time": "11:00",
@@ -1969,10 +2266,10 @@
     "sell": {
      "zone": "4.160 – 4.170",
      "sl": "4.180",
-     "tp": "4.153 → 4.141",
+     "tp": "4.153 ✔ → 4.141",
      "zone_en": "4,160–4,170",
      "sl_en": "4,180",
-     "tp_en": "TP1 4,153 → TP2 4,141"
+     "tp_en": "TP1 4,153 ✔ → TP2 4,141"
     },
     "buy": {
      "zone": "4.091 – 4.101",
@@ -2498,10 +2795,10 @@
     "sell": {
      "zone": "4.155 – 4.168",
      "sl": "4.178",
-     "tp": "4.140 → 4.125",
+     "tp": "4.140 ✔ → 4.125",
      "zone_en": "4,155–4,168",
      "sl_en": "4,178",
-     "tp_en": "TP1 4,140 → TP2 4,125"
+     "tp_en": "TP1 4,140 ✔ → TP2 4,125"
     },
     "buy": {
      "zone": "4.097 – 4.110",
@@ -2680,10 +2977,10 @@
     "sell": {
      "zone": "4.155 – 4.168",
      "sl": "4.178",
-     "tp": "4.140 → 4.125",
+     "tp": "4.140 ✔ → 4.125",
      "zone_en": "4,155–4,168",
      "sl_en": "4,178",
-     "tp_en": "TP1 4,140 → TP2 4,125"
+     "tp_en": "TP1 4,140 ✔ → TP2 4,125"
     },
     "buy": {
      "zone": "4.097 – 4.110",
