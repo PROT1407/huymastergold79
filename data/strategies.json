@@ -1,6 +1,333 @@
 {
  "strategies": [
   {
+   "id": "2026-10-16-phien-au-1547",
+   "date": "2026-10-16",
+   "time": "15:47",
+   "session": "Phiên Âu",
+   "session_en": "London session (ET early morning)",
+   "url": "bai/2026-10-16-nhan-dinh-vang-phien-au-1547.html",
+   "url_en": "en/posts/2026-10-16-gold-plan-london-session-1547.html",
+   "headline": "Vàng chiều 16/10: lên đỉnh ngày 4.188, giữ trên 4.178 – chờ chỉnh 4.160–4.167 canh MUA",
+   "headline_en": "Gold, Oct 16 London: new day high at 4,188, dips hold 4,178 – buy pullbacks at 4,160–4,167",
+   "title": "Vàng chiều 16/10: lên đỉnh ngày 4.188, giữ trên 4.178 – chờ chỉnh 4.160–4.167 canh MUA",
+   "title_en": "Gold, Oct 16 London: new day high at 4,188, dips hold 4,178 – buy pullbacks at 4,160–4,167",
+   "image": "img/charts/gold-2026-10-16-london-1547.png",
+   "image_alt": "Biểu đồ vàng 45m chiều 16/10: đỉnh ngày 4.188,8, giữ trên 4.178; vùng MUA 4.160–4.167, vùng BÁN 4.203–4.212",
+   "image_en": "img/charts/gold-2026-10-16-london-1547-en.png",
+   "image_alt_en": "Gold 45-minute chart Oct 16 London: day high 4,188.80, dips hold 4,178; buy zone 4,160–4,167, sell zone 4,203–4,212",
+   "article": {
+    "sections": [
+     {
+      "h": "Giá chạy thế nào",
+      "p": "13:45 vàng giao ngay ~4.178, chỉ chững nhẹ về 4.176,5 (13:55) rồi bật lên đỉnh ngày mới 4.188,8 lúc 14:30 khi châu Âu mở cửa. Lợi suất Mỹ bật lại kéo giá chỉnh về 4.178,1 (15:15), rồi giữ quanh 4.183–4.185 lúc 15:47. Hai giờ chỉ dao động ~12 giá."
+     },
+     {
+      "h": "Vì sao",
+      "p": "USD trượt về 101,73 (14:35) khi chứng khoán châu Âu mở cửa tăng – vàng lên đỉnh ngày. Sau đó lợi suất 10 năm Mỹ đi từ 5,073% lên 5,102% (15:15) nên giá bị hãm dưới 4.190. Không có tin đỏ nào trong 2 giờ qua."
+     },
+     {
+      "h": "So với nhận định 13:45",
+      "p": "Đúng hướng: kênh tăng giữ trên 4.170 và giá vượt R1 4.184 như dự kiến. Nhưng giá không chỉnh về vùng MUA 4.158–4.165 (thấp nhất 4.176,5) và cũng chưa lên vùng BÁN 4.198–4.208 (cao nhất 4.188,8) – chưa lệnh nào khớp, chưa có TP/SL mới. Các lệnh đã chốt trước đó giữ nguyên trong nhật ký: BÁN phiên Âu 15/10 +21 giá, BÁN 17:47 +12 giá, BÁN phiên Á 16/10 +21 giá, BÁN phiên Mỹ 15/10 −8 giá."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Lợi suất Mỹ nhích giảm sau tuần lạm phát nóng; FedWatch ~87% giữ lãi",
+      "url": "https://www.cnbc.com/2026/10/16/us-treasury-yields-investors-hot-inflation-data-.html"
+     },
+     {
+      "name": "CNBC Daily Open – Warsh giữ kín bài; PPI +6,3%; cổ phiếu AI mất hơn 1.000 tỷ USD",
+      "url": "https://www.cnbc.com/2026/10/16/cnbc-daily-open-warsh-holds-cards-close-on-fed-policy-but-inflation-numbers-may-tip-his-hand.html"
+     },
+     {
+      "name": "CNBC (Reuters) – Vàng tăng nhờ USD yếu nhưng hướng tới tuần giảm",
+      "url": "https://www.cnbc.com/2026/10/16/gold-gains-on-softer-dollar-but-heads-for-weekly-fall.html"
+     },
+     {
+      "name": "CNBC (Reuters) – USD hướng tới tuần giảm đầu tiên sau 5 tuần",
+      "url": "https://www.cnbc.com/2026/10/16/euro-gets-much-needed-reprieve-as-ai-wobbles-rock-the-dollar.html"
+     },
+     {
+      "name": "Reuters (Investing.com) – Chứng khoán châu Âu tăng, hướng tới tuần tốt nhất từ tháng 8",
+      "url": "https://www.investing.com/news/stock-market-news/european-stocks-gain-as-schneider-lifts-sentiment-inflation-data-awaited-4953276"
+     },
+     {
+      "name": "Reuters (Yahoo Finance) – Dầu hạ nhưng hướng tới tuần tăng; Hormuz ~68%",
+      "url": "https://finance.yahoo.com/energy/articles/oil-edges-down-investors-weigh-010642305.html"
+     },
+     {
+      "name": "Middle East Eye – Trump: Iran xin dừng tấn công, vẫn cân nhắc đánh thêm",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/trump-weighs-new-iran-strikes-while-insisting-talks-continue"
+     },
+     {
+      "name": "ForexFactory – Lịch kinh tế Mỹ",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "article_en": {
+    "sections": [
+     {
+      "h": "Price action",
+      "p": "Spot gold was ~4,178 at 2:45 AM ET, dipped only to 4,176.50 (2:55 AM ET) and then ran to a fresh day high of 4,188.80 at 3:30 AM ET as Europe opened. A bounce in Treasury yields pulled it back to 4,178.10 (4:15 AM ET), and it was holding 4,183–4,185 at 4:47 AM ET. A tight ~12-point range over two hours."
+     },
+     {
+      "h": "Why it moved",
+      "p": "The dollar slid to 101.73 on the DXY (3:35 AM ET) as European stocks opened higher, lifting gold to the day high. The 10-year then climbed from 5.073% to 5.102% (4:15 AM ET), capping bullion under 4,190. No high-impact data in the window."
+     },
+     {
+      "h": "Versus the 2:45 AM ET plan",
+      "p": "Right on direction: the up-channel held above 4,170 and price cleared R1 at 4,184 as expected. But there was no dip into the 4,158–4,165 buy zone (low 4,176.50) and no rally into the 4,198–4,208 sell zone (high 4,188.80) – nothing filled, no new TP or stop hits. Earlier closed calls stand in the log: Thursday's London short +21 points, the 6:47 AM ET short +12, the Asian short +21, the New York short −8."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Treasury yields inch lower as investors digest hot inflation data",
+      "url": "https://www.cnbc.com/2026/10/16/us-treasury-yields-investors-hot-inflation-data-.html"
+     },
+     {
+      "name": "CNBC Daily Open – Warsh holds his cards close; PPI +6.3%; AI stocks shed $1 trillion",
+      "url": "https://www.cnbc.com/2026/10/16/cnbc-daily-open-warsh-holds-cards-close-on-fed-policy-but-inflation-numbers-may-tip-his-hand.html"
+     },
+     {
+      "name": "CNBC (Reuters) – Gold gains on softer dollar, but heads for weekly fall",
+      "url": "https://www.cnbc.com/2026/10/16/gold-gains-on-softer-dollar-but-heads-for-weekly-fall.html"
+     },
+     {
+      "name": "CNBC (Reuters) – Dollar heads for first weekly loss in five",
+      "url": "https://www.cnbc.com/2026/10/16/euro-gets-much-needed-reprieve-as-ai-wobbles-rock-the-dollar.html"
+     },
+     {
+      "name": "Reuters (Investing.com) – European stocks gain, on track for best week since August",
+      "url": "https://www.investing.com/news/stock-market-news/european-stocks-gain-as-schneider-lifts-sentiment-inflation-data-awaited-4953276"
+     },
+     {
+      "name": "Reuters (Yahoo Finance) – Oil eases but heads for weekly gain; Hormuz flows ~68%",
+      "url": "https://finance.yahoo.com/energy/articles/oil-edges-down-investors-weigh-010642305.html"
+     },
+     {
+      "name": "Middle East Eye – Trump weighs new Iran strikes while insisting talks continue",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/trump-weighs-new-iran-strikes-while-insisting-talks-continue"
+     },
+     {
+      "name": "ForexFactory – U.S. economic calendar",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "trend": "Bộ lọc H79 (giao ngay 4.183,4 lúc 15:45): 45m/1H/2H/3H/4H đều ở nửa trên BB90 (giữa 4.147,5 / 4.154 / 4.153 / 4.154,5 / 4.156) → xu hướng chính tăng. 5m/15m/30m/45m giá trên MA34, MA34 trên MA89 (15m 4.171,8 / 4.162,8; 45m 4.162 / 4.147). MACD 3H/4H đã cắt lên, RSI 1H 62. BB90 trên: 45m 4.203,5 · 1H 4.208 · 3H/4H 4.209 · 2H 4.214,6.",
+   "trend_en": "H79 filter (spot 4,183.40 at 3:45 AM ET bar): 45m/1H/2H/3H/4H all trade in the upper half of BB90 (mids 4,147.50 / 4,154 / 4,153 / 4,154.50 / 4,156) → primary uptrend. On the 5m/15m/30m/45m price is above MA34 and MA34 above MA89 (15m 4,171.80 / 4,162.80; 45m 4,162 / 4,147). 3H/4H MACD has crossed up; 1H RSI 62. Upper bands: 45m 4,203.50 · 1H 4,208 · 3H/4H 4,209 · 2H 4,214.60.",
+   "trendType": "up",
+   "support": [
+    4178,
+    4167,
+    4163,
+    4160,
+    4153,
+    4147
+   ],
+   "resistance": [
+    4188,
+    4197,
+    4200,
+    4203,
+    4212,
+    4217
+   ],
+   "entryZones": [
+    "Mua 4.160 – 4.167 (BB giữa/MA89 15m 4.163 · MA34 45m 4.162 · MA34 30m 4.167 · Fib 61,8% sóng 4.147,8→4.188,8 = 4.163,5). Vào khi giá chỉnh về vùng và có nến 45m hoặc 1H đóng xanh xác nhận; không dùng nến 15m/30m. Dừng lỗ 4.147 (dưới đáy 4.147,8 sáng nay và BB giữa 45m 4.147,5). TP1 4.188 (đỉnh ngày) – chốt 50–70%, dời SL về điểm vào; TP2 4.200, phần còn lại để 4.217. Nến 1H đóng dưới 4.153 (BB giữa 1H) thì bỏ lệnh mua."
+   ],
+   "entryZones_en": [
+    "Buy 4,160–4,167 (15m mid/MA89 4,163 · 45m MA34 4,162 · 30m MA34 4,167 · 61.8% Fib of the 4,147.80→4,188.80 leg = 4,163.50). Enter on a dip into the zone with a green 45m or 1H close; never on a 15m/30m close. Stop 4,147 (under this morning's 4,147.80 low and the 45m mid at 4,147.50). TP1 4,188 (day high) – take 50–70% and move the stop to breakeven; TP2 4,200, runner toward 4,217. A 1H close under 4,153 (1H mid) cancels the long."
+   ],
+   "sellZones": [
+    "Bán 4.203 – 4.212 (BB90 trên 45m 4.203,5 · 1H 4.208 · 3H/4H 4.209 · ngay trên mốc 4.200 và đỉnh 13/10 4.197). Ngược xu hướng chính – chỉ lướt, khối lượng nhỏ, hết sức thận trọng. Vào khi giá vào vùng bán và có nến 45m hoặc 1H đóng đỏ xác nhận, hoặc nến 1H đâm xuyên lên BB giữa rồi đóng lại dưới band; không dùng nến 15m/30m. Dừng lỗ 4.222 (trên BB90 trên 2H 4.214,6 và đỉnh tuần 4.217). TP1 4.185 – chốt 50–70%, dời SL hòa vốn; TP2 4.170. Nến 4H đóng trên 4.217 thì bỏ hẳn kế hoạch bán."
+   ],
+   "sellZones_en": [
+    "Sell 4,203–4,212 (upper BB90: 45m 4,203.50 · 1H 4,208 · 3H/4H 4,209 · just above 4,200 and the Oct 13 high of 4,197). Counter-trend – scalp only, small size, extra caution. Enter once price is in the zone and a 45m or 1H candle closes red, or a 1H candle pierces above the BB90 mid and closes back below it; never on a 15m/30m close. Stop 4,222 (above the 2H upper band at 4,214.60 and the 4,217 weekly high). TP1 4,185 – take 50–70%, stop to breakeven; TP2 4,170. A 4H close above 4,217 kills the short idea."
+   ],
+   "scenarios": [
+    "Kết quả tin: 2 giờ qua không có tin đỏ; DXY trượt 101,73 rồi hồi 101,80, US10Y 5,073% → 5,102%; FedWatch ~87% Fed giữ lãi tháng 10 (CNBC).",
+    "Diễn biến: 13:45 ~4.178 → 4.176,5 (13:55) → đỉnh ngày 4.188,8 (14:30) → 4.178,1 (15:15) → ~4.183 (15:47).",
+    "Vì sao: USD yếu đẩy giá lên, lợi suất bật lại hãm đà; 45m–4H đều ở nửa trên BB90 nên nhịp chỉnh là cơ hội MUA.",
+    "Mốc giá: kháng cự 4.188 → 4.197–4.200 → 4.203–4.212 (vùng BÁN) → 4.217; hỗ trợ 4.178 → 4.167–4.160 (vùng MUA) → 4.153–4.147 → nền 4.037–4.149.",
+    "Rủi ro: tối nay (thứ Sáu) không có tin đỏ Mỹ, Fed im lặng từ 17/10; chốt lời cuối tuần, tin Iran/Hormuz và cổ phiếu AI có thể làm giá giật mạnh – nến 4H/ngày đóng trên 4.200–4.217 mới mở đường 4.300."
+   ],
+   "scenarios_en": [
+    "The data: no high-impact releases in the window; DXY slid to 101.73 then firmed to 101.80, the 10-year went 5.073% → 5.102%; FedWatch ~87% odds of an October hold (CNBC).",
+    "The tape: ~4,178 at 2:45 AM ET → 4,176.50 (2:55 AM) → 4,188.80 day high (3:30 AM) → 4,178.10 (4:15 AM) → ~4,183 at 4:47 AM ET.",
+    "Why: a softer dollar lifted gold, a yield bounce capped it; with 45m–4H all in the upper half of BB90, dips are buys.",
+    "Levels: resistance 4,188 → 4,197–4,200 → 4,203–4,212 (sell zone) → 4,217; support 4,178 → 4,167–4,160 (buy zone) → 4,153–4,147 → the 4,037–4,149 base.",
+    "Risk: no high-impact U.S. data today and the Fed blackout starts Saturday; Friday profit-taking, Iran/Hormuz headlines and AI-stock jitters can whip price – only a 4H/daily close above 4,200–4,217 opens 4,300."
+   ],
+   "macro": [],
+   "macro_en": [],
+   "market_picture": {
+    "text": "Tâm lý ưa rủi ro trở lại: STOXX 600 tăng ~0,5% lên 643,6, hướng tới tuần tăng mạnh nhất từ tháng 8 (Reuters), S&P futures +0,2%, VIX 16,0. USD yếu, DXY ~101,78 (−0,27%) giúp vàng lên đỉnh ngày, nhưng lợi suất 10 năm Mỹ bật lại 5,098% – FedWatch ~87% Fed giữ lãi tháng 10 sau tuần lạm phát nóng (CNBC). Brent ~105,1 USD (−0,8%) dù Hormuz chỉ thông ~68% (Reuters); Trump nói Iran xin dừng tấn công và hai bên đang đàm phán, nhưng vẫn để ngỏ khả năng đánh thêm (Middle East Eye).",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "101,78 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "5,098% ↑",
+      "dir": "up"
+     },
+     {
+      "k": "Brent",
+      "v": "105,1 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "S&P fut",
+      "v": "7.806 +0,2%",
+      "dir": "up"
+     },
+     {
+      "k": "VIX",
+      "v": "16,02 ↓",
+      "dir": "down"
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Lợi suất",
+      "url": "https://www.cnbc.com/2026/10/16/us-treasury-yields-investors-hot-inflation-data-.html"
+     },
+     {
+      "name": "CNBC – USD",
+      "url": "https://www.cnbc.com/2026/10/16/euro-gets-much-needed-reprieve-as-ai-wobbles-rock-the-dollar.html"
+     },
+     {
+      "name": "Reuters – Chứng khoán châu Âu",
+      "url": "https://www.investing.com/news/stock-market-news/european-stocks-gain-as-schneider-lifts-sentiment-inflation-data-awaited-4953276"
+     },
+     {
+      "name": "Reuters – Dầu",
+      "url": "https://finance.yahoo.com/energy/articles/oil-edges-down-investors-weigh-010642305.html"
+     },
+     {
+      "name": "Middle East Eye – Iran",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/trump-weighs-new-iran-strikes-while-insisting-talks-continue"
+     }
+    ]
+   },
+   "market_picture_en": {
+    "text": "Risk appetite is back: the STOXX 600 is up ~0.5% at 643.6 and on track for its best week since August (Reuters), S&P futures +0.2%, VIX 16.0. A softer dollar – DXY ~101.78 (−0.27%) – lifted gold to a day high, but the 10-year bounced back to 5.098%, with FedWatch at ~87% odds of an October hold after a week of hot inflation data (CNBC). Brent is near $105.10 (−0.8%) even with Hormuz flows at ~68% of normal (Reuters); Trump says Iran asked the U.S. to stop strikes and talks are under way, but left more strikes on the table (Middle East Eye).",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "101.78 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "5.098% ↑",
+      "dir": "up"
+     },
+     {
+      "k": "Brent",
+      "v": "105.1 ↓",
+      "dir": "down"
+     },
+     {
+      "k": "S&P fut",
+      "v": "7,806 +0.2%",
+      "dir": "up"
+     },
+     {
+      "k": "VIX",
+      "v": "16.02 ↓",
+      "dir": "down"
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Yields",
+      "url": "https://www.cnbc.com/2026/10/16/us-treasury-yields-investors-hot-inflation-data-.html"
+     },
+     {
+      "name": "CNBC – Dollar",
+      "url": "https://www.cnbc.com/2026/10/16/euro-gets-much-needed-reprieve-as-ai-wobbles-rock-the-dollar.html"
+     },
+     {
+      "name": "Reuters – European stocks",
+      "url": "https://www.investing.com/news/stock-market-news/european-stocks-gain-as-schneider-lifts-sentiment-inflation-data-awaited-4953276"
+     },
+     {
+      "name": "Reuters – Oil",
+      "url": "https://finance.yahoo.com/energy/articles/oil-edges-down-investors-weigh-010642305.html"
+     },
+     {
+      "name": "Middle East Eye – Iran",
+      "url": "https://www.middleeasteye.net/live-blog/live-blog-update/trump-weighs-new-iran-strikes-while-insisting-talks-continue"
+     }
+    ]
+   },
+   "vn_gold_box": {
+    "title": "💰 Vàng trong nước (vàng miếng SJC)",
+    "items": [
+     "Giá vàng miếng SJC tại PNJ (cập nhật 14:48, kiểm tra lúc 15:48): mua 140,9 – bán 143,9 triệu đồng/lượng.",
+     "So với sáng nay (08:46: 140,3 – 143,3 triệu): +600.000 / +600.000 đồng/lượng. So với chốt 15/10 (140,3 – 143,3 triệu): +600.000 / +600.000 đồng/lượng.",
+     "Biên độ trong ngày (các lần H79 ghi nhận): mua 140,3 – 140,9 triệu, bán 143,3 – 143,9 triệu. Chênh mua – bán 3,0 triệu đồng/lượng.",
+     "So với thế giới: 4.185,3 USD/oz (gold-api.com, 15:50) × 25.856 đồng/USD (tỷ giá thị trường open.er-api) × 1,20565 oz/lượng ≈ 130,5 triệu đồng/lượng → SJC bán ra cao hơn ≈ 13,4 triệu/lượng (sáng nay ≈ 13,9 triệu), chưa gồm thuế, phí.",
+     "Tin nước ngoài đang kéo vàng thế giới: (1) USD yếu, hướng tới tuần giảm đầu tiên sau 5 tuần (CNBC); (2) lợi suất 10 năm Mỹ quanh 5,1% sau PPI tháng 9 +6,3% so với cùng kỳ (CNBC); (3) Iran – Hormuz: Trump nói đang đàm phán nhưng vẫn dọa đánh thêm (Middle East Eye).",
+     "Lời khuyên vàng vật chất: vàng thế giới đang xác nhận nền 4.037–4.149, người cần mua vàng vật chất có thể mua lúc này, nên chia nhiều đợt vì chênh SJC – thế giới còn ~13,4 triệu và giá sắp tới sẽ biến động mạnh."
+    ],
+    "source": {
+     "name": "PNJ – bảng giá vàng chính thức (giavang.pnj.com.vn)",
+     "url": "https://giavang.pnj.com.vn/"
+    },
+    "note": "Trang sjc.com.vn chặn truy cập tự động lúc 15:48 nên dùng giá vàng miếng SJC do PNJ niêm yết."
+   },
+   "physicalAdvice": "Làm theo kế hoạch, đừng chạy theo nến tin.",
+   "physicalAdvice_en": "Trade the plan, not the noise.",
+   "notes": "Các mốc là giá giao ngay XAU/USD (nến 5m CNBC XAU=: 4.178,2 nến 13:45; 4.183,4 nến 15:45; CNBC 4.184,28 lúc 15:50; gold-api.com 4.185,3 lúc 15:50). Khung 1H–4H dựng từ nến 1H giao ngay CNBC XAU=. MA là SMA; lệch 1–2 giá tùy sàn.",
+   "notes_en": "Levels are spot XAU/USD (CNBC XAU= 5-minute bars: 4,178.20 on the 2:45 AM ET bar, 4,183.40 on the 4:45 AM ET bar; CNBC 4,184.28 at 4:50 AM ET; gold-api.com 4,185.30 at 4:50 AM ET). 1H–4H frames are built from CNBC XAU= spot hourly bars. Simple MAs; levels may differ by a point or two between brokers.",
+   "dataTime": "Cập nhật 15:47–15:55 ngày 16/10/2026 giờ VN (Phiên Âu, ~2 giờ sau nhận định 13:45). Nến giao ngay CNBC XAU=; DXY, US10Y, Brent, WTI, S&P fut, VIX, STOXX 600 từ CNBC; lịch tin ForexFactory.",
+   "dataTime_en": "Updated 4:47–4:55 AM ET, Oct 16, 2026 (London session, ~2 hours after the 2:45 AM ET plan). Spot bars from CNBC XAU=; DXY, US10Y, Brent, WTI, S&P futures, VIX and STOXX 600 from CNBC; calendar from ForexFactory.",
+   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+   "brief": true,
+   "summary": {
+    "trend": "up",
+    "trendText": "Đỉnh ngày 4.188, 45m–4H trên BB90 giữa – ưu tiên MUA khi chỉnh, BÁN chỉ lướt nhỏ",
+    "trendText_en": "Bullish – new day high at 4,188, 45m–4H above the BB90 mid; buy dips, shorts only small",
+    "buy": {
+     "zone": "4.160 – 4.167",
+     "sl": "4.147",
+     "tp": "4.188 → 4.200",
+     "zone_en": "4,160–4,167",
+     "sl_en": "4,147",
+     "tp_en": "TP1 4,188 → TP2 4,200"
+    },
+    "sell": {
+     "zone": "4.203 – 4.212",
+     "sl": "4.222",
+     "tp": "4.185 → 4.170",
+     "zone_en": "4,203–4,212",
+     "sl_en": "4,222",
+     "tp_en": "TP1 4,185 → TP2 4,170"
+    },
+    "note": "Kế hoạch 13:45 chưa khớp lệnh nào (thấp nhất 4.176,5, cao nhất 4.188,8). Tối nay không có tin đỏ Mỹ – MUA chỉ khi nến 45m/1H đóng xanh trong vùng, nến 1H đóng dưới 4.153 thì bỏ lệnh mua; BÁN ngược xu hướng, khối lượng nhỏ.",
+    "note_en": "The 2:45 AM ET plan did not fill (low 4,176.50, high 4,188.80). No high-impact U.S. data today – buy only on a green 45m/1H close in the zone, a 1H close under 4,153 cancels the long; shorts are counter-trend, keep size small.",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD",
+    "priceNote_en": "Spot XAU/USD prices"
+   }
+  },
+  {
    "id": "2026-10-16-phien-au-1545",
    "date": "2026-10-16",
    "time": "15:45",

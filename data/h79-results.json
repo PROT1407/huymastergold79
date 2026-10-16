@@ -2,28 +2,79 @@
  "_note": "Nhật ký kết quả kế hoạch H79. Win = TP1 trước SL; loss = SL trước; hết phiên = P/L tại lúc đánh giá. MFE tính bằng giá ($1/oz). tp1_hit/tp2_hit ghi lại mỗi khi giá chạm TP (kể cả sau đó giá quay lại).",
  "plans": [
   {
-   "id": "2026-10-16-phien-au-1345",
+   "id": "2026-10-16-phien-au-1547",
    "date": "2026-10-16",
    "session": "Phiên Âu",
    "evaluated_at_vn": null,
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.203 – 4.212",
+    "sl": "4.222",
+    "tp1": "4.185",
+    "tp2": "4.170",
+    "zone_filled": null,
+    "result": "mở",
+    "mfe": null
+   },
+   "buy": {
+    "zone": "4.160 – 4.167",
+    "sl": "4.147",
+    "tp1": "4.188",
+    "tp2": "4.200",
+    "zone_filled": null,
+    "result": "mở",
+    "mfe": null
+   }
+  },
+  {
+   "id": "2026-10-16-phien-au-1545",
+   "date": "2026-10-16",
+   "session": "Phiên Âu (xã luận)",
+   "evaluated_at_vn": "15:47 16/10/2026",
+   "price_ref": "spot",
+   "sell": {
+    "zone": null,
+    "zone_filled": null,
+    "result": "không có lệnh bán",
+    "mfe": null
+   },
+   "buy": {
+    "zone": "4.150 – 4.160",
+    "sl": "4.137",
+    "tp1": "4.200",
+    "tp2": "4.217",
+    "tp3": "4.300",
+    "zone_filled": false,
+    "result": "mở",
+    "mfe": null,
+    "note": "Đến 15:47 thấp nhất 4.178,1 – chưa về vùng mua."
+   }
+  },
+  {
+   "id": "2026-10-16-phien-au-1345",
+   "date": "2026-10-16",
+   "session": "Phiên Âu",
+   "evaluated_at_vn": "15:47 16/10/2026",
    "price_ref": "spot",
    "sell": {
     "zone": "4.198 – 4.208",
     "sl": "4.218",
     "tp1": "4.184",
     "tp2": "4.164",
-    "zone_filled": null,
-    "result": "mở",
-    "mfe": null
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "note": "Cao nhất sau 13:45 là 4.188,8 (14:30) – chưa lên vùng bán 4.198–4.208. Thay bằng kế hoạch 15:47 (bán 4.203–4.212)."
    },
    "buy": {
     "zone": "4.158 – 4.165",
     "sl": "4.147",
     "tp1": "4.180",
     "tp2": "4.197",
-    "zone_filled": null,
-    "result": "mở",
-    "mfe": null
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "note": "Thấp nhất sau 13:45 là 4.176,5 (13:55) – chưa chỉnh về vùng mua 4.158–4.165. Thay bằng kế hoạch 15:47 (mua 4.160–4.167)."
    }
   },
   {

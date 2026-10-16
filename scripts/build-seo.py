@@ -194,6 +194,15 @@ def mp_html(s, en=False):
             + (f'<p class="mp-cap">{cap}</p>' if cap else "")
             + f'<p>{e(m["text"])}</p>' + (f'<p class="src">{"Sources" if en else "Nguồn"}: {src}</p>' if src else "") + "</section>")
 
+def vg_html(s):
+    """Hộp 'Vàng trong nước' chỉ cho bài VN (trường vn_gold_box). Bản EN không bao giờ render hộp này."""
+    m = s.get("vn_gold_box")
+    if not m or not m.get("items"): return ""
+    src = m.get("source") or {}
+    return (f'<section class="h79mp h79vg"><h3>{e(m.get("title") or "💰 Vàng trong nước")}</h3>' + ul(m["items"])
+            + (f'<p class="src">Nguồn: <a href="{e(src["url"])}" target="_blank" rel="noopener nofollow">{e(src.get("name") or src["url"])}</a></p>' if src.get("url") else "")
+            + (f'<p class="mp-cap">{e(m["note"])}</p>' if m.get("note") else "") + "</section>")
+
 def summary_html(s):
     m = s.get("summary")
     if not m: return ""
@@ -206,7 +215,7 @@ def summary_html(s):
             + z(m.get("sell"), "sell", "🔴", "BÁN") + z(m.get("buy"), "buy", "🟢", "MUA")
             + (f'<div class="n">⚠️ {e(m["note"])}</div>' if m.get("note") else "")
             + (f'<div class="p">💲 {"✅" if m.get("price") == "spot" else "⚠️"} {e(m["priceNote"])}</div>' if m.get("priceNote") else "")
-            + "</section>") + mp_html(s)
+            + "</section>") + mp_html(s) + vg_html(s)
 
 def article_html(a, en=False):
     if not a or not a.get("sections"): return ""
