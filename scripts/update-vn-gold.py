@@ -98,6 +98,17 @@ def phuquy():
             for c, n in (('PQ_SJC', 'Vàng miếng SJC'), ('PQ_NHAN', 'Nhẫn tròn Phú Quý 999.9')) if n in got}
 OFFICIAL = [('PNJ', pnj), ('Mi Hồng', mihong), ('Phú Quý', phuquy)]
 OK, FAIL = [], []
+_gvc = {}
+def gv_pick(pg, path, col=0):  # giavang.org/trong-nuoc/<trang>/: bảng nghìn đồng/lượng -> (mua, bán, giờ) đồng/lượng
+    try:
+        if pg not in _gvc: t = fetch(GV + 'trong-nuoc/' + pg + '/'); _gvc[pg] = (cells(t), stamp(t))
+        cs, tm = _gvc[pg]; i = -1
+        for lab in path: i = cs.index(lab, i + 1)
+        v = cs[i + 1 + 2 * col: i + 3 + 2 * col]; b, s = (num(x) for x in v)
+        b, s = (b * 1000 if b else None), (s * 1000 if s else None)
+        ok = lambda x: x is not None and 5e7 < x < 5e8
+        return (b, s, tm) if ok(b) and ok(s) and b <= s else (None, None, '')
+    except Exception as ex: print('giavang.org lỗi', pg, ex); return None, None, ''
 def main():
     old = json.load(open(OUT)) if os.path.exists(OUT) else {}
     off = {}  # PNJ/Mi Hồng/Phú Quý: web chính thức (ưu tiên); thiếu -> webgia.com
@@ -114,6 +125,12 @@ def main():
         if c in off and pg not in WG_ONLY: rows.append({'code': c, 'brand': b, 'type': t, 'group': g, 'co': co, **off[c]}); continue
         bu, se = pick(pages[pg][0], path, col) if pg in pages else (None, None)
         if bu is None or se is None or bu > se: bu = se = None  # không đọc được -> hiển thị '–'
+        if bu is None:  # webgia ẩn số -> dự phòng giavang.org (đơn vị nghìn đồng/lượng), ghi rõ nguồn
+            gb, gs, gt = gv_pick(pg, path, col)
+            if gb is not None:
+                name, host, url = OFF[pg]
+                rows.append({'code': c, 'brand': b, 'type': t, 'group': g, 'co': co, 'buy': gb, 'sell': gs, 'src_name': f'{name} ({host}) · dự phòng giavang.org', 'src_url': url, 'src_mode': 'chain',
+                             'src_brand': name, 'src_host': host, 'src_via': [{'name': 'giavang.org', 'url': GV + 'trong-nuoc/' + pg + '/'}], 'src_time': gt}); continue
         rows.append({'code': c, 'brand': b, 'type': t, 'group': g, 'co': co, 'buy': bu, 'sell': se, **wsrc(pg), 'src_time': pages.get(pg, ('', ''))[1]})
     today = dt.datetime.now(VN).date().isoformat()
     H = json.load(open(HIST)) if os.path.exists(HIST) else {}
