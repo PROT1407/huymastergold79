@@ -2,28 +2,55 @@
  "_note": "Nhật ký kết quả kế hoạch H79. Win = TP1 trước SL; loss = SL trước; hết phiên = P/L tại lúc đánh giá. MFE tính bằng giá ($1/oz). tp1_hit/tp2_hit ghi lại mỗi khi giá chạm TP (kể cả sau đó giá quay lại).",
  "plans": [
   {
-   "id": "2026-10-16-phien-my-1915",
+   "id": "2026-10-16-phien-dem-2107",
    "date": "2026-10-16",
-   "session": "Phiên Mỹ",
+   "session": "Phiên đêm",
    "evaluated_at_vn": null,
    "price_ref": "spot",
    "sell": {
     "zone": "4.200 – 4.210",
     "sl": "4.220",
     "tp1": "4.185",
-    "tp2": "4.170",
+    "tp2": "4.172",
     "zone_filled": null,
     "result": "mở",
     "mfe": null
+   },
+   "buy": {
+    "zone": "4.168 – 4.176",
+    "sl": "4.152",
+    "tp1": "4.198",
+    "tp2": "4.226",
+    "zone_filled": null,
+    "result": "mở",
+    "mfe": null
+   }
+  },
+  {
+   "id": "2026-10-16-phien-my-1915",
+   "date": "2026-10-16",
+   "session": "Phiên Mỹ",
+   "evaluated_at_vn": "21:07 16/10/2026",
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.200 – 4.210",
+    "sl": "4.220",
+    "tp1": "4.185",
+    "tp2": "4.170",
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "note": "Cao nhất sau 19:15 là 4.190,2 (21:10) – chưa lên vùng bán 4.200–4.210. Thay bằng kế hoạch phiên đêm 21:07."
    },
    "buy": {
     "zone": "4.162 – 4.169",
     "sl": "4.146",
     "tp1": "4.185",
     "tp2": "4.198",
-    "zone_filled": null,
-    "result": "mở",
-    "mfe": null
+    "zone_filled": true,
+    "result": "TP1 – lời một phần",
+    "mfe": 24.5,
+    "note": "Khớp 19:55 (chạm 4.163,8). Đáy 4.154,7 (20:20) trên SL 4.146. TP1 4.185 khớp 20:50; TP2 4.198 chưa tới (cao nhất 4.190,2 lúc 21:10). Lời một phần, runner còn mở."
    }
   },
   {
