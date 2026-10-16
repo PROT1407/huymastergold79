@@ -1,5 +1,5 @@
 name: red-news-alert
-# Cảnh báo tin đỏ Mỹ trước giờ ra tin (Telegram @HTFXGROUP + OneSignal nếu có). Xem scripts/red-news-alert.py
+# Cảnh báo tin đỏ Mỹ trước giờ ra tin + KẾT QUẢ sau giờ ra tin (actual vs forecast) (Telegram @HTFXGROUP + OneSignal nếu có). Xem scripts/red-news-alert.py
 on:
   schedule:
     - cron: '*/5 * * * *'
@@ -12,14 +12,15 @@ on:
         description: 'Giả lập thời điểm (ISO UTC, để test), vd 2026-10-14T12:15:00Z'
         default: ''
 permissions:
-  contents: read
+  contents: write
+  pages: write
 concurrency:
   group: red-news-alert
   cancel-in-progress: false
 jobs:
   alert:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 50   # job tự lặp mỗi 60s từ T-12 tới khi có actual (tối đa T+30)
     steps:
       - uses: actions/checkout@v4
         with: { sparse-checkout: "data/calendar-us.json\nscripts/red-news-alert.py", sparse-checkout-cone-mode: false }
@@ -39,6 +40,16 @@ jobs:
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || '0' }}
           NOW_UTC: ${{ inputs.now_utc }}
         run: python3 scripts/red-news-alert.py
+      - name: Ghi actual lên lịch website
+        if: always()
+        env: { GH_TOKEN: '${{ github.token }}' }
+        run: |
+          git diff --quiet -- data/calendar-us.json && { echo "Lịch không đổi"; exit 0; }
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/calendar-us.json && git commit -m "Lịch tin Mỹ: cập nhật số thực tế (red-news-alert, tự động)"
+          for i in 1 2 3; do git pull --rebase -X theirs origin main && git push origin HEAD:main && { gh api -X POST "repos/${{ github.repository }}/pages/builds" || true; exit 0; }; sleep 5; done
+          echo "push lịch thất bại (tin Telegram vẫn đã gửi)"
       - name: Lưu trạng thái
         if: always() && hashFiles('.alert-state.json') != ''
         uses: actions/cache/save@v4
