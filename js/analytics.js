@@ -1,6 +1,6 @@
 /* Web analytics hook — inactive until an ID is set below. Empty = do nothing. */
 (function () {
-  var GA4_ID = '';            // e.g. 'G-XXXXXXXXXX'
+  var GA4_ID = 'G-YQKNGG2HTV';            // e.g. 'G-XXXXXXXXXX'
   var GOATCOUNTER_CODE = '';  // e.g. 'h79gold' -> https://h79gold.goatcounter.com/count
 
   function load(src, attrs) {
