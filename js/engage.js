@@ -37,7 +37,7 @@
     scan();
     if (!document.body.hasAttribute('data-engage')) return;
     const u = encodeURIComponent(location.href), t = encodeURIComponent(document.title);
-    const SN = 'huymastergold79', PG = (location.pathname.split('/').pop() || 'index.html'), PID = 'hmg79-' + PG.replace('.html', ''), PURL = 'https://h79gold.com/' + PG;
+    const SN = 'huymastergold79', PG = (location.pathname.split('/').pop() || 'index.html'), PID = 'hmg79-' + PG.replace('.html', ''), PURL = 'https://prot1407.github.io/huymastergold79/' + PG;
     const bar = document.createElement('nav'); bar.className = 'sbar'; bar.setAttribute('aria-label', 'Chia sẻ');
     bar.innerHTML = `<a class="sb fb" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=${u}" title="Chia sẻ Facebook">f</a>
       <a class="sb za" target="_blank" rel="noopener" href="https://zalo.me/share?u=${u}" title="Chia sẻ Zalo">Zalo</a>

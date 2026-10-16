@@ -16,7 +16,10 @@ import html, json, os, re, unicodedata, datetime as dt
 from pathlib import Path
 
 # Tên miền riêng h79gold.com (GitHub Pages custom domain)
-BASE_URL = "https://h79gold.com/"
+# Single switch: when h79gold.com DNS is live, set BASE_URL = CUSTOM_DOMAIN_URL and restore CNAME.
+GITHUB_PAGES_URL = "https://prot1407.github.io/huymastergold79/"
+CUSTOM_DOMAIN_URL = "https://h79gold.com/"
+BASE_URL = GITHUB_PAGES_URL
 SITE = "HuymasterGold79"
 AUTHOR = "Ngọc Huy"
 ROOT = Path(__file__).resolve().parent.parent
@@ -358,7 +361,18 @@ def index_page(arts):
     h = re.sub(r'<nav class="seo-bc">.*?</nav>\n<div class="seo-meta".*?</div>\n', '<nav class="seo-bc"><a href="index.html">Trang chủ</a> › Kho bài viết</nav>\n', h, flags=re.S)
     return h
 
+def rebase_static_pages():
+    """Thay mọi base cũ (OLD_BASES) bằng BASE_URL trong trang tĩnh VI/EN — đổi domain chỉ cần sửa BASE_URL."""
+    for p in sorted(set(list(MAIN_PAGES) + list(EN_PAGES) + [str(x.relative_to(ROOT)) for x in ROOT.glob("en/*.html")])):
+        fp = ROOT / p
+        if not fp.exists(): continue
+        s = o = fp.read_text(encoding="utf-8")
+        for ob in OLD_BASES:
+            if ob != BASE_URL: s = s.replace(ob, BASE_URL)
+        if s != o: fp.write_text(s, encoding="utf-8")
+
 def fix_main_pages(arts):
+    rebase_static_pages()
     for p in MAIN_PAGES:
         fp = ROOT / p
         if not fp.exists(): continue
