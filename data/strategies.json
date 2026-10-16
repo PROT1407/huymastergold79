@@ -1,6 +1,321 @@
 {
  "strategies": [
   {
+   "id": "2026-10-16-phien-au-1545",
+   "date": "2026-10-16",
+   "time": "15:45",
+   "session": "Phiên Âu",
+   "session_en": "London session",
+   "headline": "Xã luận 16/10: vàng xác nhận nền 4.037–4.149 – ưu tiên MUA khi chỉnh, hướng 4.200 → 4.300 → 4.400",
+   "title": "Xã luận 16/10: vàng xác nhận nền 4.037–4.149 – ưu tiên MUA khi chỉnh, hướng 4.200 → 4.300 → 4.400",
+   "headline_en": "Gold Editorial – London morning, Oct 16: The 4,037–4,149 Base Is Holding – Buy Pullbacks, Eyes on 4,200 → 4,300 → 4,400",
+   "title_en": "Gold Editorial – London morning, Oct 16: The 4,037–4,149 Base Is Holding – Buy Pullbacks, Eyes on 4,200 → 4,300 → 4,400",
+   "image": "img/charts/gold-2026-10-16-editorial-1545.png",
+   "image_alt": "Biểu đồ vàng 4H 16/10: nền chính 4.037–4.149, vùng MUA 4.150–4.160, SL 4.137, TP 4.200 → 4.217 → 4.300",
+   "image_en": "img/charts/gold-2026-10-16-editorial-1545-en.png",
+   "image_alt_en": "Gold 4-hour chart Oct 16: main base 4,037–4,149, buy zone 4,150–4,160, stop 4,137, targets 4,200 → 4,217 → 4,300",
+   "trend": "Tuần: giá giữ trên nền dài hạn, trên MA89 tuần 3.988 và BB90 giữa 3.975; MACD hội tụ gần 0, RSI 44 – còn dư địa hồi. 3H/2H/45m: giá trên BB90 giữa và MA89 (~4.147–4.157), MACD cắt lên, histogram dương, RSI 58–61 đi lên. 4H: ~4.183 đã thoát kênh giảm dài, trên BB90 giữa 4.160, tích lũy dưới 4.190–4.200. Giao ngay ~4.185 lúc 15:45.",
+   "trend_en": "Weekly: price is holding its long-term base above the weekly MA89 at 3,988 and the BB90 mid at 3,975; MACD is converging near zero and RSI sits at 44 – room to rebound. 3H/2H/45m: price is above the BB90 mid and MA89 (~4,147–4,157), MACD has crossed up with a positive histogram, RSI 58–61 and rising. 4H: ~4,183 has broken out of the long down-channel, sits above the BB90 mid at 4,160 and is coiling under 4,190–4,200. Spot ~4,185 at 4:45 AM ET.",
+   "trendType": "up",
+   "support": [
+    4160,
+    4157,
+    4150,
+    4147,
+    4137,
+    4074,
+    4037
+   ],
+   "resistance": [
+    4190,
+    4200,
+    4217,
+    4300,
+    4400
+   ],
+   "entryZones": [
+    "MUA 4.150 – 4.160 (BB90 giữa 4H 4.160 · MA89/BB giữa 3H/2H/45m 4.147–4.157). Vào khi giá chỉnh về vùng và có nến 45m/1H đóng xanh. SL 4.137. TP1 4.200 – chốt một phần, dời SL về điểm vào; TP2 4.217 (đỉnh tuần 4.217,4); TP3 4.300 khi nến 4H/ngày đóng trên 4.200–4.217. Nền chính 4.037–4.149 là vùng mua tiếp nếu giá chỉnh sâu."
+   ],
+   "entryZones_en": [
+    "BUY 4,150–4,160 (4H BB90 mid 4,160 · 3H/2H/45m MA89 and mid-band 4,147–4,157). Enter on a pullback into the zone with a green 45m/1H close. Stop 4,137. TP1 4,200 – bank part, stop to entry; TP2 4,217 (week high 4,217.4); TP3 4,300 on a 4H/daily close above 4,200–4,217. The 4,037–4,149 main base is the next buy area on a deeper dip."
+   ],
+   "sellZones": [
+    "Chỉ BÁN lướt ngắn, rất thận trọng: nếu nến 1H đóng đỏ dưới 4.190–4.200, mục tiêu ngắn về 4.160; xu hướng chính vẫn là tăng."
+   ],
+   "sellZones_en": [
+    "Shorts only as quick scalps, with great caution: a red 1H close under 4,190–4,200 targets 4,160 at most; the main trend is up."
+   ],
+   "scenarios": [
+    "Kết quả tin: lợi suất 10 năm thấp nhất 3 tuần (5,038%), USD hướng tới tuần giảm đầu tiên sau 5 tuần, Warsh không tín hiệu mới.",
+    "Diễn biến: đáy tuần 4.074 → đỉnh tuần 4.217,4 → tích lũy ~4.185 dưới 4.190–4.200.",
+    "Vì sao: lợi suất và USD giảm, dòng trú ẩn (cổ phiếu AI, Trung Đông), ETF và ngân hàng trung ương vẫn mua; UBS, Goldman giữ mục tiêu trên 4.600.",
+    "Mốc giá: nền 4.037–4.149, nền ngắn 4.147–4.160; nến 4H/ngày đóng trên 4.200–4.217 mở đường 4.300–4.400.",
+    "Rủi ro: FedWatch ~89% tăng lãi tháng 12, lợi suất bật lại; thủng 4.147 thì thận trọng, mất 4.037 thì nhận định sai."
+   ],
+   "scenarios_en": [
+    "The data: 10-year yield at a three-week low (5.038%), dollar headed for its first weekly loss in five, no new signal from Warsh.",
+    "The tape: week low 4,074 → week high 4,217.4 → coiling near 4,185 under 4,190–4,200.",
+    "Why: softer yields and dollar, haven flows (AI stocks, Middle East), ETFs and central banks still buying; UBS and Goldman both target above $4,600.",
+    "Levels: base 4,037–4,149, near-term floor 4,147–4,160; a 4H/daily close above 4,200–4,217 opens 4,300–4,400.",
+    "Risk: FedWatch ~89% odds of a December hike, a yield rebound; below 4,147 means caution, below 4,037 invalidates the view."
+   ],
+   "macro": [],
+   "macro_en": [],
+   "market_picture": {
+    "text": "Lợi suất Mỹ 10 năm có lúc xuống 5,038%, thấp nhất 3 tuần (WSJ); USD hướng tới tuần giảm đầu tiên sau 5 tuần, DXY ~102,07 khi cổ phiếu AI lung lay (CNBC). Chủ tịch Fed Warsh không đưa tín hiệu mới, nói không 'đoán trước cuộc họp'; căng thẳng Trung Đông giữ nhu cầu trú ẩn (FXStreet). Định chế vẫn lạc quan: UBS dự báo 4.600 USD vào tháng 12 và coi nhịp về 4.000 là cơ hội mua thêm; Goldman giữ 4.650 USD cuối 2026, 5.400 USD cuối 2027; ETF vàng toàn cầu hút 10 tỷ USD tháng 9, nắm giữ kỷ lục 4.256 tấn, PBoC mua 23 tấn (WGC). Ngược chiều: FedWatch ~89% khả năng tăng lãi tháng 12, một số quỹ Ấn Độ ngừng nhận mua lớn ETF vàng (CNBC).",
+    "chips": [
+     {
+      "k": "US10Y",
+      "v": "5,038% (đáy 3 tuần) ↓",
+      "dir": "down"
+     },
+     {
+      "k": "DXY",
+      "v": "~102,07 ↓ tuần",
+      "dir": "down"
+     },
+     {
+      "k": "FedWatch T12",
+      "v": "~89% tăng",
+      "dir": ""
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC (Reuters) – Vàng hướng tới tuần giảm nhẹ, FedWatch, Ấn Độ ngừng nhận tiền ETF",
+      "url": "https://www.cnbc.com/2026/10/16/gold-gains-on-softer-dollar-but-heads-for-weekly-fall.html"
+     },
+     {
+      "name": "CNBC (Reuters) – USD hướng tới tuần giảm đầu tiên sau 5 tuần",
+      "url": "https://www.cnbc.com/2026/10/16/euro-gets-much-needed-reprieve-as-ai-wobbles-rock-the-dollar.html"
+     },
+     {
+      "name": "WSJ – Lợi suất 10 năm thấp nhất 3 tuần",
+      "url": "https://www.wsj.com/finance/investing/treasury-eurozone-bond-yields-fall-to-multiweek-lows-as-u-s-inflation-shock-fades-29c7b1c1"
+     },
+     {
+      "name": "FXStreet – Warsh trung tính, Trung Đông căng thẳng",
+      "url": "https://www.fxstreet.com/news/gold-bulls-stay-cautious-as-us-bond-yields-and-usd-hold-steady-ahead-of-warshs-speech-202610160324"
+     },
+     {
+      "name": "Investing.com – UBS: mục tiêu 4.600 USD tháng 12, chỉnh về 4.000 là cơ hội",
+      "url": "https://www.investing.com/news/commodities-news/ubs-flags-level-in-gold-prices-where-dip-buyers-will-likely-emerge-4940414"
+     },
+     {
+      "name": "investingLive – Goldman: 4.650 USD cuối 2026, 5.400 USD cuối 2027",
+      "url": "https://investinglive.com/commodities/icymi-goldman-trims-end-2026-gold-forecast-to-4-650-but-holds-5-400-target-for-2027/"
+     },
+     {
+      "name": "WGC – ETF vàng tháng 9 hút 10 tỷ USD, nắm giữ kỷ lục",
+      "url": "https://www.gold.org/goldhub/research/gold-etfs-holdings-and-flows/2026/10"
+     },
+     {
+      "name": "WGC – PBoC mua 23 tấn tháng 9",
+      "url": "https://www.gold.org/goldhub/gold-focus/2026/10/china-gold-market-update-q3-ends-strong-official-gold-buying"
+     }
+    ]
+   },
+   "market_picture_en": {
+    "text": "The 10-year Treasury yield dipped as low as 5.038%, a three-week low (WSJ), and the dollar is headed for its first weekly loss in five, with the DXY near 102.07 as AI stocks wobble (CNBC). Fed Chair Warsh offered no new signal, saying he doesn't prejudge meetings, while Middle East tensions keep a haven bid alive (FXStreet). The Street is still constructive: UBS sees $4,600 by December and calls dips toward $4,000 a chance to add; Goldman holds $4,650 for end-2026 and $5,400 for end-2027; global gold ETFs took in $10 billion in September to a record 4,256 metric tons, and China's central bank added 23 tons (World Gold Council). Counterpoints: FedWatch prices about 89% odds of a December hike, and several Indian funds halted bulk gold-ETF subscriptions (CNBC).",
+    "chips": [
+     {
+      "k": "US10Y",
+      "v": "5.038% (3-wk low) ↓",
+      "dir": "down"
+     },
+     {
+      "k": "DXY",
+      "v": "~102.07 ↓ wk",
+      "dir": "down"
+     },
+     {
+      "k": "FedWatch Dec",
+      "v": "~89% hike",
+      "dir": ""
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC (Reuters) – Gold heads for small weekly loss; FedWatch; India ETF curbs",
+      "url": "https://www.cnbc.com/2026/10/16/gold-gains-on-softer-dollar-but-heads-for-weekly-fall.html"
+     },
+     {
+      "name": "CNBC (Reuters) – Dollar heads for first weekly loss in five",
+      "url": "https://www.cnbc.com/2026/10/16/euro-gets-much-needed-reprieve-as-ai-wobbles-rock-the-dollar.html"
+     },
+     {
+      "name": "WSJ – 10-year yield at three-week low",
+      "url": "https://www.wsj.com/finance/investing/treasury-eurozone-bond-yields-fall-to-multiweek-lows-as-u-s-inflation-shock-fades-29c7b1c1"
+     },
+     {
+      "name": "FXStreet – Warsh neutral, Middle East tensions",
+      "url": "https://www.fxstreet.com/news/gold-bulls-stay-cautious-as-us-bond-yields-and-usd-hold-steady-ahead-of-warshs-speech-202610160324"
+     },
+     {
+      "name": "Investing.com – UBS: $4,600 by December, dips to $4,000 are buys",
+      "url": "https://www.investing.com/news/commodities-news/ubs-flags-level-in-gold-prices-where-dip-buyers-will-likely-emerge-4940414"
+     },
+     {
+      "name": "investingLive – Goldman: $4,650 end-2026, $5,400 end-2027",
+      "url": "https://investinglive.com/commodities/icymi-goldman-trims-end-2026-gold-forecast-to-4-650-but-holds-5-400-target-for-2027/"
+     },
+     {
+      "name": "World Gold Council – September ETF inflows $10B, record holdings",
+      "url": "https://www.gold.org/goldhub/research/gold-etfs-holdings-and-flows/2026/10"
+     },
+     {
+      "name": "World Gold Council – PBoC added 23t in September",
+      "url": "https://www.gold.org/goldhub/gold-focus/2026/10/china-gold-market-update-q3-ends-strong-official-gold-buying"
+     }
+    ]
+   },
+   "physicalAdvice": "Người mua vàng vật chất: mua lúc này là hợp lý; nên chia nhiều đợt, không dồn hết một lần. Bán vàng lúc này phải hết sức thận trọng. 💡 Làm theo kế hoạch, đừng chạy theo nến tin.",
+   "physicalAdvice_en": "Our take: Trade the plan, not the noise.",
+   "notes": "Giá giao ngay XAU/USD (gold-api.com 4.185,2 lúc 15:42 VN). Biểu đồ 4H dựng từ GC=F (Yahoo, 4.204,9) trừ 19,7 USD. Phân tích tuần/3H/2H/45m/4H theo biểu đồ OANDA của Ngọc Huy lúc ~15:31.",
+   "notes_en": "Spot XAU/USD (gold-api.com 4,185.20 at 4:42 AM ET). The 4H chart is built from GC=F (Yahoo, 4,204.90) minus $19.70. Weekly/3H/2H/45m/4H readings from OANDA charts around 4:31 AM ET.",
+   "dataTime": "Cập nhật 15:45 ngày 16/10/2026 giờ VN (phiên Âu).",
+   "dataTime_en": "Updated 4:45 AM ET, Oct 16, 2026 (London morning).",
+   "disclaimer": "Quan điểm tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Commentary only, not investment advice.",
+   "brief": true,
+   "summary": {
+    "trend": "up",
+    "trendText": "Nền 4.037–4.149 dần được xác nhận – ưu tiên MUA khi chỉnh, bán chỉ lướt ngắn",
+    "trendText_en": "Bullish – 4,037–4,149 base firming; buy pullbacks, shorts only as scalps",
+    "buy": {
+     "zone": "4.150 – 4.160",
+     "sl": "4.137",
+     "tp": "4.200 → 4.217 → 4.300",
+     "zone_en": "4,150–4,160",
+     "sl_en": "4,137",
+     "tp_en": "TP1 4,200 → TP2 4,217 → TP3 4,300"
+    },
+    "note": "Nến 4H/ngày đóng trên 4.200–4.217 mở đường 4.300–4.400; thủng 4.147 thì thận trọng. Giá sắp tới sẽ biến động mạnh.",
+    "note_en": "A 4H/daily close above 4,200–4,217 opens 4,300–4,400; a break of 4,147 calls for caution. Expect sharp swings.",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD",
+    "priceNote_en": "Spot XAU/USD prices"
+   },
+   "article": {
+    "sections": [
+     {
+      "h": "Quan điểm",
+      "p": "Vàng đang dần xác nhận vùng nền vững 4.037–4.149 – đáy tuần 4.074 đã giữ, giá hồi về ~4.185. Đây là tiền đề cho nhịp đảo chiều lên 4.200, 4.300, 4.400. Vì vậy **bán vàng lúc này phải hết sức thận trọng**."
+     },
+     {
+      "h": "Biểu đồ",
+      "p": "Khung tuần giữ trên MA89 3.988 và BB90 giữa 3.975, RSI 44 còn dư địa hồi. 3H/2H/45m: MACD cắt lên, RSI 58–61. 4H đã thoát kênh giảm dài, đang tích lũy dưới 4.190–4.200 – nến 4H/ngày đóng trên 4.200–4.217 (đỉnh tuần 4.217,4) mở đường 4.300–4.400; thủng 4.147 thì thận trọng."
+     },
+     {
+      "h": "Định chế",
+      "p": "UBS (9/10) dự báo 4.600 USD vào tháng 12 và coi nhịp về 4.000 là cơ hội mua thêm; Goldman (18/9) giữ 4.650 USD cuối 2026, 5.400 USD cuối 2027; WGC: ETF vàng hút 10 tỷ USD tháng 9, PBoC mua 23 tấn."
+     },
+     {
+      "h": "Lời khuyên",
+      "p": "Ưu tiên MUA khi giá chỉnh về các vùng nền (4.147–4.160, sâu hơn 4.037–4.149), giao dịch theo hướng tăng; bán chỉ lướt ngắn. Người mua vàng vật chất: mua lúc này là hợp lý, nên chia nhiều đợt. Giá sắp tới sẽ biến động mạnh."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC (Reuters) – Vàng hướng tới tuần giảm nhẹ, FedWatch, Ấn Độ ngừng nhận tiền ETF",
+      "url": "https://www.cnbc.com/2026/10/16/gold-gains-on-softer-dollar-but-heads-for-weekly-fall.html"
+     },
+     {
+      "name": "CNBC (Reuters) – USD hướng tới tuần giảm đầu tiên sau 5 tuần",
+      "url": "https://www.cnbc.com/2026/10/16/euro-gets-much-needed-reprieve-as-ai-wobbles-rock-the-dollar.html"
+     },
+     {
+      "name": "WSJ – Lợi suất 10 năm thấp nhất 3 tuần",
+      "url": "https://www.wsj.com/finance/investing/treasury-eurozone-bond-yields-fall-to-multiweek-lows-as-u-s-inflation-shock-fades-29c7b1c1"
+     },
+     {
+      "name": "FXStreet – Warsh trung tính, Trung Đông căng thẳng",
+      "url": "https://www.fxstreet.com/news/gold-bulls-stay-cautious-as-us-bond-yields-and-usd-hold-steady-ahead-of-warshs-speech-202610160324"
+     },
+     {
+      "name": "Investing.com – UBS: mục tiêu 4.600 USD tháng 12, chỉnh về 4.000 là cơ hội",
+      "url": "https://www.investing.com/news/commodities-news/ubs-flags-level-in-gold-prices-where-dip-buyers-will-likely-emerge-4940414"
+     },
+     {
+      "name": "investingLive – Goldman: 4.650 USD cuối 2026, 5.400 USD cuối 2027",
+      "url": "https://investinglive.com/commodities/icymi-goldman-trims-end-2026-gold-forecast-to-4-650-but-holds-5-400-target-for-2027/"
+     },
+     {
+      "name": "WGC – ETF vàng tháng 9 hút 10 tỷ USD, nắm giữ kỷ lục",
+      "url": "https://www.gold.org/goldhub/research/gold-etfs-holdings-and-flows/2026/10"
+     },
+     {
+      "name": "WGC – PBoC mua 23 tấn tháng 9",
+      "url": "https://www.gold.org/goldhub/gold-focus/2026/10/china-gold-market-update-q3-ends-strong-official-gold-buying"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "article_en": {
+    "sections": [
+     {
+      "h": "The view",
+      "p": "Gold is gradually confirming a solid base at 4,037–4,149 – this week's 4,074 low held and spot is back near 4,185. That sets up a reversal toward 4,200, 4,300 and 4,400, so **selling here calls for real caution**."
+     },
+     {
+      "h": "The charts",
+      "p": "The weekly holds above the MA89 at 3,988 and the BB90 mid at 3,975 with RSI at 44 – room to run. On the 3H/2H/45m, MACD has crossed up and RSI is 58–61. The 4H has broken its long down-channel and is coiling under 4,190–4,200; a 4H/daily close above 4,200–4,217 (week high 4,217.4) opens 4,300–4,400, while a break of 4,147 calls for caution."
+     },
+     {
+      "h": "The Street",
+      "p": "UBS (Oct 9) sees $4,600 by December and calls dips toward $4,000 a chance to add; Goldman (Sep 18) holds $4,650 for end-2026 and $5,400 for end-2027; the World Gold Council reports $10 billion of September ETF inflows and 23 tons of PBoC buying."
+     },
+     {
+      "h": "The trade",
+      "p": "Buy pullbacks into the bases (4,147–4,160, deeper 4,037–4,149) and trade with the uptrend; shorts only as quick scalps. Expect sharp swings."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC (Reuters) – Gold heads for small weekly loss; FedWatch; India ETF curbs",
+      "url": "https://www.cnbc.com/2026/10/16/gold-gains-on-softer-dollar-but-heads-for-weekly-fall.html"
+     },
+     {
+      "name": "CNBC (Reuters) – Dollar heads for first weekly loss in five",
+      "url": "https://www.cnbc.com/2026/10/16/euro-gets-much-needed-reprieve-as-ai-wobbles-rock-the-dollar.html"
+     },
+     {
+      "name": "WSJ – 10-year yield at three-week low",
+      "url": "https://www.wsj.com/finance/investing/treasury-eurozone-bond-yields-fall-to-multiweek-lows-as-u-s-inflation-shock-fades-29c7b1c1"
+     },
+     {
+      "name": "FXStreet – Warsh neutral, Middle East tensions",
+      "url": "https://www.fxstreet.com/news/gold-bulls-stay-cautious-as-us-bond-yields-and-usd-hold-steady-ahead-of-warshs-speech-202610160324"
+     },
+     {
+      "name": "Investing.com – UBS: $4,600 by December, dips to $4,000 are buys",
+      "url": "https://www.investing.com/news/commodities-news/ubs-flags-level-in-gold-prices-where-dip-buyers-will-likely-emerge-4940414"
+     },
+     {
+      "name": "investingLive – Goldman: $4,650 end-2026, $5,400 end-2027",
+      "url": "https://investinglive.com/commodities/icymi-goldman-trims-end-2026-gold-forecast-to-4-650-but-holds-5-400-target-for-2027/"
+     },
+     {
+      "name": "World Gold Council – September ETF inflows $10B, record holdings",
+      "url": "https://www.gold.org/goldhub/research/gold-etfs-holdings-and-flows/2026/10"
+     },
+     {
+      "name": "World Gold Council – PBoC added 23t in September",
+      "url": "https://www.gold.org/goldhub/gold-focus/2026/10/china-gold-market-update-q3-ends-strong-official-gold-buying"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "url": "bai/2026-10-16-nhan-dinh-vang-phien-au-1545.html",
+   "url_en": "en/posts/2026-10-16-gold-plan-london-session-1545.html"
+  },
+  {
    "id": "2026-10-16-phien-au-1345",
    "date": "2026-10-16",
    "time": "13:45",
