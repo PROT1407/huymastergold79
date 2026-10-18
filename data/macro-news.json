@@ -1,6 +1,6 @@
 {
   "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC | Chiến tranh | Ngân hàng TW. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
-  "updated": "2026-10-16",
+  "updated": "2026-10-19",
   "fomc": {
     "source": {
       "name": "Federal Reserve – FOMC calendars",
@@ -54,6 +54,162 @@
     "note_en": "Decision at 2:00 PM ET on day two of the meeting, press conference at 2:30 PM ET. * = with economic projections (dot plot)."
   },
   "items": [
+    {
+      "date": "2026-10-19",
+      "category": "Vàng",
+      "priority": 1,
+      "impact": "trung lập",
+      "title": "Mở cửa tuần: vàng tương lai nhích lên ~4.201 đầu phiên Á, sau tuần thứ 6/8 giảm – trần 4.200 vẫn là bài kiểm tra",
+      "summary": "Chốt thứ Sáu 16/10 (Investing.com): vàng giao ngay −0,1% về 4.165,40 USD/oz, futures +0,4% lên 4.186,70; cả hai −0,7% trong tuần. Dow Jones Market Data: hợp đồng Comex tháng gần giảm 6 trong 8 tuần qua, vẫn thấp hơn 21,8% so với đỉnh 5.318,40 (29/1). Kitco: tuần qua vàng đi từ đỉnh 4.216,91 (thứ Hai) xuống đáy 4.073,35 (trưa thứ Tư, sau CPI) rồi hồi về sát 4.200 nhưng không vượt được. Khảo sát Kitco tuần mới: Phố Wall 33% tăng · 17% giảm · 50% đi ngang (12 chuyên gia); nhà đầu tư cá nhân 43% tăng · 45% giảm. Yahoo Finance lúc 06:24 VN thứ Hai: futures GC=F 4.201,3.",
+      "reason": "Ngắn hạn: vàng vẫn kẹt trong biên ~4.075–4.220; đầu tuần chạm lại vùng 4.200 – nếu không đóng cửa vững trên đó thì đây vẫn là vùng bán, còn vượt được thì mở đường lên 4.220+. Mốc dưới cần giữ: 4.150–4.155 rồi 4.100. Dài hạn: James Stanley (Forex.com) coi 4.000 là mốc sống còn của xu hướng; Adrian Day cho rằng chất xúc tác bứt phá là khi chiến tranh kết thúc (USD, dầu và kỳ vọng tăng lãi cùng hạ).",
+      "source": {
+        "name": "Investing.com – Gold prices slip for the week as oil gains offset weaker dollar, U.S. bond rally",
+        "url": "https://www.investing.com/news/commodities-news/gold-steadies-near-4160-as-stock-selloff-drives-bond-rally-treasury-yields-fall-4952940"
+      },
+      "source2": {
+        "name": "Kitco News – Wall Street undecided on gold's near-term trajectory, Main Street flirts with bearish bias",
+        "url": "https://www.kitco.com/news/article/2026-10-16/wall-street-undecided-golds-near-term-trajectory-main-street-flirts-bearish"
+      },
+      "time_vn": "Chốt phiên 04:15 VN 17/10 (Investing) → khảo sát Kitco 08:17 VN 17/10 → 06:24 VN 19/10 (Yahoo GC=F)",
+      "title_en": "Gold futures open the week near $4,201 in Asia after a sixth down week in eight – the $4,200 ceiling is the test again",
+      "summary_en": "Friday's close (Investing.com): spot gold slipped 0.1% to $4,165.40/oz while futures added 0.4% to $4,186.70; both fell 0.7% on the week. Dow Jones Market Data shows front-month Comex gold down in six of the past eight weeks and still 21.8% below its Jan. 29 record of $5,318.40. Per Kitco, gold ran from a $4,216.91 high on Monday to a $4,073.35 low at midday Wednesday after CPI, then rallied back to just under $4,200 and stalled. Kitco's weekly survey: Wall Street 33% bullish, 17% bearish, 50% neutral (12 analysts); Main Street 43% bullish, 45% bearish. Yahoo Finance at 7:24 PM ET Sunday: GC=F at $4,201.30.",
+      "reason_en": "Near term: gold is still boxed in roughly $4,075–$4,220, and the Sunday open puts it right back at $4,200. Without a solid close above that area it stays a level to sell rallies into; a clean break opens $4,220 and up. Support to hold is $4,150–$4,155, then $4,100. Bigger picture: Forex.com's James Stanley calls $4,000 the line that matters for the trend, and Adrian Day sees the end of the war, with a weaker dollar, cheaper oil and fading hike bets, as the catalyst for a real breakout.",
+      "time_en": "Oct 16, 5:15 PM ET close (Investing.com) · Kitco survey Oct 16, 9:17 PM ET · Oct 18, 7:24 PM ET (Yahoo GC=F)"
+    },
+    {
+      "date": "2026-10-19",
+      "category": "Dầu mỏ",
+      "priority": 1,
+      "impact": "giảm",
+      "title": "Cuối tuần nóng: 2 siêu tàu dầu trúng thủy lôi ở Hormuz, Ukraine tập kích kho dầu St. Petersburg – Brent mở tuần ~108,8 USD",
+      "summary": "CNBC (06:15 PM giờ New York Chủ nhật = 05:15 VN thứ Hai): Brent giảm 1,04 USD về 108,82 USD/thùng, WTI −0,26 về 101,15, nhưng vẫn quanh vùng đỉnh gần đây. Hôm thứ Bảy, IRGC nói hai tàu chở dầu, mỗi tàu khoảng 2 triệu thùng, trúng thủy lôi và bốc cháy ở eo Hormuz vì đi tuyến không được Iran cho phép (Al Jazeera/AFP). UKMTO ghi nhận thêm 2 tàu bị tấn công ngoài khơi Ả Rập Xê Út hôm thứ Sáu. Chủ nhật, Ukraine tập kích bằng drone khiến kho và cảng dầu ở St. Petersburg cháy (cảng xuất ~120.000 thùng/ngày sản phẩm lọc dầu, theo Kpler). Tuần trước Brent +4,8%, WTI +10,9% (Investing.com).",
+      "reason": "Ngắn hạn: tuần qua cho thấy dầu tăng không giúp vàng – dầu đắt đẩy lạm phát, làm sống lại kỳ vọng Fed tăng lãi và đè vàng (Investing.com: dầu tăng lấn át USD yếu). Nếu Brent vượt lại 110 USD, cẩn trọng với nhịp bán vàng quanh 4.200. Dài hạn: chừng nào Hormuz còn bị phong tỏa, lạm phát năng lượng còn giữ lợi suất cao; chỉ khi dòng dầu thông trở lại thì áp lực này mới giảm và vàng có cửa bứt phá.",
+      "source": {
+        "name": "CNBC – Brent crude hovers near $109 a barrel as Ukraine resumes energy strikes, tankers attacked in Middle East",
+        "url": "https://www.cnbc.com/2026/10/18/oil-price-today-ukraine-russia-iran-strait-hormuz.html"
+      },
+      "source2": {
+        "name": "Al Jazeera (AFP) – Iran says two tankers catch fire after hitting mines in Strait of Hormuz",
+        "url": "https://www.aljazeera.com/news/2026/10/18/iran-says-two-tankers-catch-fire-after-hitting-mines-in-strait-of-hormuz"
+      },
+      "time_vn": "Thứ Sáu 16/10 (UKMTO) → thứ Bảy 17/10 (IRGC) → Chủ nhật 18/10 (St. Petersburg) → 05:15 VN 19/10 (CNBC)",
+      "title_en": "Weekend flare-up: two supertankers hit mines in Hormuz, Ukraine strikes St. Petersburg oil terminal – Brent opens near $108.80",
+      "summary_en": "CNBC (6:15 PM ET Sunday): Brent shed $1.04 to $108.82 a barrel and WTI slipped 26 cents to $101.15, still hovering near recent highs. On Saturday the IRGC said two tankers, each carrying about 2 million barrels, hit mines and caught fire in the Strait of Hormuz after using a route Iran had not authorized (Al Jazeera/AFP). UKMTO reported two more tankers attacked off Saudi Arabia on Friday. On Sunday a wave of Ukrainian drones set an oil terminal and depot in St. Petersburg on fire; the terminal exports about 120,000 b/d of refined products, per Kpler. Last week Brent gained 4.8% and WTI 10.9% (Investing.com).",
+      "reason_en": "Near term: last week proved that higher oil isn't helping gold. Pricier crude feeds inflation, revives Fed hike bets and caps bullion; Investing.com noted oil's gains outweighed the softer dollar. If Brent reclaims $110, watch for selling into $4,200. Longer term: as long as Hormuz stays choked, energy inflation keeps yields elevated, and only a reopening of oil flows takes that pressure off and gives gold room to break out.",
+      "time_en": "Fri Oct 16 (UKMTO) · Sat Oct 17 (IRGC) · Sun Oct 18 (St. Petersburg) · Oct 18, 6:15 PM ET (CNBC)"
+    },
+    {
+      "date": "2026-10-19",
+      "category": "Fed",
+      "priority": 1,
+      "impact": "tăng",
+      "title": "FedWatch sau Warsh: giữ lãi tháng 10 lên 83,9%, nhưng tháng 12 vẫn ~88% tăng – Fed bước vào giai đoạn im lặng tới 29/10",
+      "summary": "Investing.com Fed Rate Monitor (dựa trên CME Fed Funds futures, cập nhật 11:35 VN 17/10): họp 28/10 – giữ 3,75–4,00% 83,9%, tăng 25bps 16,1% (tuần trước 81,6% / 18,4%); họp 09/12 – lên 4,00–4,25% 74,1%, lên 4,25–4,50% 13,7%, giữ nguyên 12,2%. Warsh ở Bangkok hôm thứ Sáu: «Tôi không đoán trước các cuộc họp», chỉ nhắc Fed đã «rút bớt một liều nới lỏng» hồi tháng 9. John Velis (BNY): không đủ ủng hộ trong ủy ban, nhất là các thống đốc, cho một lần tăng tháng 10, nhưng tháng 12 vẫn bỏ ngỏ. Giai đoạn im lặng trước FOMC 27–28/10 bắt đầu từ 17/10 nên tuần này không có quan chức Fed phát biểu về chính sách.",
+      "reason": "Ngắn hạn: rủi ro tăng lãi ngay tháng 10 gần như được loại bỏ, đỡ cho vàng và kéo USD xuống; không có Fed nói, giá sẽ chạy theo dầu, lợi suất và cổ phiếu AI. Dài hạn: thị trường vẫn đặt cược Fed tăng tiếp tháng 12 (UBS dự báo thêm một lần nữa tháng 3/2027) – lãi suất cao kéo dài vẫn là lực cản lớn nhất của vàng.",
+      "source": {
+        "name": "Investing.com Fed Rate Monitor (CME Fed Funds futures), 17/10/2026 00:35 ET",
+        "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+      },
+      "source2": {
+        "name": "CNBC (Reuters) – Dollar heads for weekly loss as Fed hike bets fade, AI jitters linger",
+        "url": "https://www.cnbc.com/2026/10/16/euro-gets-much-needed-reprieve-as-ai-wobbles-rock-the-dollar.html"
+      },
+      "time_vn": "Warsh 10:30 VN 16/10 → FedWatch cập nhật 11:35 VN 17/10 → im lặng từ 17/10 đến hết 29/10",
+      "title_en": "FedWatch after Warsh: October hold odds climb to 83.9%, December hike still ~88% – Fed enters its blackout through Oct 29",
+      "summary_en": "Investing.com's Fed Rate Monitor (CME fed funds futures, updated Oct 17, 12:35 AM ET): Oct 28 meeting – hold at 3.75%–4.00% 83.9%, 25 bp hike 16.1% (81.6%/18.4% a week earlier); Dec 9 meeting – 4.00%–4.25% 74.1%, 4.25%–4.50% 13.7%, no change 12.2%. In Bangkok on Friday, Chair Warsh said \"I don't prejudge meetings,\" noting only that the Fed \"removed a dose of accommodation\" in September. BNY's John Velis sees too little support on the committee, especially among governors, for an October hike, but calls December an open question. The pre-FOMC blackout started Oct 17, so no Fed officials will talk policy this week.",
+      "reason_en": "Near term: an October hike is essentially off the table, which helps gold and weighs on the dollar. With the Fed silent, price action will key off oil, yields and AI stocks. Longer term: the market still has December penciled in (UBS also sees another hike in March 2027), and higher-for-longer remains gold's biggest headwind.",
+      "time_en": "Warsh Oct 15, 11:30 PM ET · FedWatch update Oct 17, 12:35 AM ET · blackout Oct 17–29"
+    },
+    {
+      "date": "2026-10-19",
+      "category": "Lợi suất",
+      "priority": 1,
+      "impact": "tăng",
+      "title": "Lợi suất thực 10 năm Mỹ lùi về 2,74% – USD có tuần giảm đầu tiên sau 5 tuần, DXY 101,87",
+      "summary": "Bộ Tài chính Mỹ (chốt 16/10): lợi suất 10 năm 5,09% (hôm trước 5,10%), 2 năm 4,74% (từ 4,77%), 30 năm 5,43%; lợi suất thực 10 năm (TIPS) 2,74%, giảm từ 2,78% hôm trước và 2,91% ngày 9/10. CNBC (Reuters): DXY −0,17% về 101,87, cả tuần −0,35% – tuần giảm đầu tiên sau hơn một tháng; Matt Weller (StoneX) lưu ý USD đang đi cùng giao dịch AI: cổ phiếu công nghệ bị bán thì tiền chạy vào trái phiếu chứ không vào USD. Yahoo Finance lúc 06:24 VN thứ Hai: DXY 101,89.",
+      "reason": "Ngắn hạn: lợi suất thực giảm 17 điểm trong một tuần là lý do chính giúp vàng đứng vững dù dầu tăng – đây là yếu tố cần theo dõi nhất. Daniel Pavilonis (StoneX): vàng đang là «nghịch đảo của lợi suất 10 năm»; nếu 10 năm thủng 5% sẽ rất tích cực cho vàng. Dài hạn: lợi suất danh nghĩa vẫn quanh 5% – mức rất cao; nếu lạm phát buộc Fed tăng thêm, lợi suất bật lại sẽ kéo vàng xuống.",
+      "source": {
+        "name": "Bộ Tài chính Mỹ – Daily Treasury Par Yield Curve & Real Yield Curve Rates",
+        "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202610",
+        "name_en": "U.S. Treasury – Daily Treasury Par Yield Curve & Real Yield Curve Rates"
+      },
+      "source2": {
+        "name": "Kitco News – Wall Street undecided on gold's near-term trajectory (Pavilonis, StoneX)",
+        "url": "https://www.kitco.com/news/article/2026-10-16/wall-street-undecided-golds-near-term-trajectory-main-street-flirts-bearish"
+      },
+      "time_vn": "Chốt 16/10 (giờ New York) → CNBC 04:20 VN 17/10 → Yahoo 06:24 VN 19/10",
+      "title_en": "10-year real yield slips to 2.74%, dollar posts its first weekly loss in five weeks with DXY at 101.87",
+      "summary_en": "U.S. Treasury (Oct 16 close): the 10-year yield ended at 5.09% (5.10% prior), the 2-year at 4.74% (from 4.77%) and the 30-year at 5.43%; the 10-year TIPS real yield fell to 2.74%, from 2.78% the day before and 2.91% on Oct 9. CNBC (Reuters): the dollar index lost 0.17% to 101.87 for a 0.35% weekly drop, its first weekly decline in more than a month. StoneX's Matt Weller notes the dollar is trading with the AI theme: tech selling is sending money into bonds, not the greenback. Yahoo Finance at 7:24 PM ET Sunday: DXY at 101.89.",
+      "reason_en": "Near term: a 17 bp drop in real yields in one week is the main reason gold held up despite higher oil, and it's the number to watch. StoneX's Daniel Pavilonis calls gold an inverse 10-year yield trade and says a break below 5% on the 10-year would be a clear positive. Longer term: nominal yields near 5% are still restrictive, and if inflation forces more Fed hikes, a rebound in yields would drag gold lower.",
+      "time_en": "Oct 16 close · CNBC Oct 16, 5:20 PM ET · Yahoo Oct 18, 7:24 PM ET"
+    },
+    {
+      "date": "2026-10-19",
+      "category": "Tương quan",
+      "priority": 2,
+      "impact": "trung lập",
+      "title": "Cổ phiếu AI tiếp tục bị bán: Nasdaq −2,14%, S&P 500 −1,09%, VIX vọt 21% lên ~20 – lo ngại lan sang thị trường tín dụng",
+      "summary": "AP: phiên thứ Sáu 16/10, S&P 500 −1,09% về 7.659,44, Nasdaq −2,14% về 26.140,03, Dow −0,34% về 52.002,41. Investing.com: VIX +21,45% lên 19,99. CNBC (Reuters): áp lực từ cổ phiếu AI đã lan sang một phần thị trường tín dụng vì lo các nhà vận hành trung tâm dữ liệu không kịp có lãi để trả nợ; Investing.com cho biết chính nỗi lo nợ AI khiến trái phiếu chính phủ Mỹ lấy lại vai trò tài sản trú ẩn. Yahoo Finance lúc 06:24 VN thứ Hai: S&P 500 tương lai (ES=F) 7.733.",
+      "reason": "Ngắn hạn: tâm lý né rủi ro hiện đang đẩy tiền vào trái phiếu, kéo lợi suất xuống – gián tiếp có lợi cho vàng; nhưng nếu bán tháo lan rộng thành thiếu thanh khoản, vàng cũng có thể bị bán để bù ký quỹ như các đợt hoảng loạn trước. Dài hạn: rủi ro nợ AI là lý do mới để quỹ lớn đa dạng hóa sang vàng.",
+      "source": {
+        "name": "AP – How major US stock indexes fared Friday 10/16/2026",
+        "url": "https://apnews.com/article/wall-street-stocks-dow-nasdaq-c27809783ae3230b44c26e5ee4bea056"
+      },
+      "source2": {
+        "name": "CNBC (Reuters) – Dollar heads for weekly loss as Fed hike bets fade, AI jitters linger",
+        "url": "https://www.cnbc.com/2026/10/16/euro-gets-much-needed-reprieve-as-ai-wobbles-rock-the-dollar.html"
+      },
+      "time_vn": "Đóng cửa 03:00 VN 17/10 → ES=F 06:24 VN 19/10 (Yahoo)",
+      "title_en": "AI selloff deepens: Nasdaq −2.14%, S&P 500 −1.09%, VIX jumps 21% to about 20 as stress spreads to credit",
+      "summary_en": "AP: on Friday the S&P 500 fell 1.09% to 7,659.44, the Nasdaq dropped 2.14% to 26,140.03 and the Dow lost 0.34% to 52,002.41. Investing.com: the VIX jumped 21.45% to 19.99. CNBC (Reuters) says the AI-stock pain spread to parts of the credit market on worries data center operators won't turn a profit in time to service their debt; Investing.com notes those AI-debt fears are what restored Treasuries' safe-haven role. Yahoo Finance at 7:24 PM ET Sunday: S&P 500 futures (ES=F) at 7,733.",
+      "reason_en": "Near term: risk-off is flowing into bonds and pulling yields down, which indirectly supports gold. If the selling turns into a liquidity squeeze, though, gold can get sold to cover margin, as in past panics. Longer term: AI-debt risk is a fresh reason for big money to diversify into gold.",
+      "time_en": "Oct 16, 4:00 PM ET close · ES=F Oct 18, 7:24 PM ET (Yahoo)"
+    },
+    {
+      "date": "2026-10-19",
+      "category": "Chiến tranh",
+      "priority": 2,
+      "impact": "trung lập",
+      "title": "Iran: Hormuz mở lại «vào ngày thứ 6» nếu Mỹ đáp ứng điều kiện; UKMTO: ít nhất 10 tàu bị tấn công trong tuần – Trump nói thỏa thuận sẽ đến sau bầu cử 3/11",
+      "summary": "CBS News (Chủ nhật 18/10): Ngoại trưởng Iran Araghchi nói Tehran vẫn đang xem «góp ý» của Mỹ về đề xuất ngừng bắn 7 ngày từ tháng 9 (Mỹ dỡ phong tỏa cảng Iran, gỡ trừng phạt dầu, ngừng bắn trên mọi mặt trận); nếu Mỹ đáp ứng, Hormuz mở lại vào ngày thứ 6 và đàm phán bắt đầu ngày thứ 7. UKMTO: ít nhất 10 tàu bị tấn công trong hoặc gần Hormuz kể từ Chủ nhật tuần trước – cao nhất một tuần kể từ khi chiến tranh nổ ra tháng 2 – và 23 vụ từ đầu tháng. Al Jazeera: Trump nói không dùng vũ khí hạt nhân, không đưa quân bộ vào Iran và tin thỏa thuận chấm dứt chiến tranh sẽ đạt được sau bầu cử giữa kỳ 3/11.",
+      "reason": "Ngắn hạn: tín hiệu ngoại giao có nhưng chưa có gì ràng buộc, trong khi số vụ tấn công tàu lại tăng – rủi ro tin bất ngờ hai chiều, vàng dễ giật mạnh theo tiêu đề. Dài hạn: kịch bản hòa bình (dầu rẻ, lạm phát hạ, Fed bớt tăng lãi) là kịch bản tích cực nhất cho vàng theo nhiều chuyên gia; mốc thời gian sau 3/11 cần theo dõi.",
+      "source": {
+        "name": "CBS News – Live Updates: Iran says Strait of Hormuz reopening, seven-day ceasefire conditions still on the table",
+        "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-strait-of-hormuz-yemen-houthis-saudi-arabia/"
+      },
+      "source2": {
+        "name": "Al Jazeera (AFP) – Iran says two tankers catch fire after hitting mines in Strait of Hormuz",
+        "url": "https://www.aljazeera.com/news/2026/10/18/iran-says-two-tankers-catch-fire-after-hitting-mines-in-strait-of-hormuz"
+      },
+      "time_vn": "Araghchi ~18:06 VN 18/10 → CBS cập nhật 02:02 VN 19/10",
+      "title_en": "Iran says Hormuz could reopen 'on the sixth day' if the US meets its terms; UKMTO counts at least 10 ships attacked in a week – Trump eyes a deal after Nov. 3",
+      "summary_en": "CBS News (Sunday): Iranian Foreign Minister Abbas Araghchi said Tehran is still reviewing US \"comments\" on its seven-day ceasefire proposal from September, which calls for lifting the US blockade of Iranian ports, removing oil sanctions and a ceasefire on all fronts; if Washington complies, Hormuz reopens on day six and talks begin on day seven. UKMTO says at least 10 vessels have been attacked in or near the strait since last Sunday, a weekly high since the war began in February, with 23 attacks so far this month. Per Al Jazeera, President Trump ruled out nuclear weapons and ground troops and said he expects a deal to end the war after the Nov. 3 midterms.",
+      "reason_en": "Near term: there's a diplomatic opening, but nothing binding, while ship attacks are rising, so headline risk cuts both ways and gold can whip around on the news. Longer term: a peace deal, meaning cheaper oil, cooler inflation and fewer Fed hikes, is the most bullish setup for gold, and the post-Nov. 3 window is worth watching.",
+      "time_en": "Araghchi Oct 18, ~7:06 AM ET · CBS update Oct 18, 3:02 PM ET"
+    },
+    {
+      "date": "2026-10-19",
+      "category": "Tương quan",
+      "priority": 2,
+      "impact": "trung lập",
+      "title": "Tuần này: GDP quý 3 Trung Quốc lúc 09:00 VN thứ Hai (dự báo 4,4%); Mỹ không có tin đỏ, chỉ có trợ cấp thất nghiệp và PMI",
+      "summary": "Thăm dò Reuters (50 chuyên gia): GDP quý 3 Trung Quốc dự báo +4,4% so với cùng kỳ (quý 2: 4,3%), +1,1% so với quý trước; công bố 10:00 giờ Bắc Kinh (09:00 VN) thứ Hai 19/10 cùng sản xuất công nghiệp, bán lẻ, đầu tư tháng 9. Lịch Mỹ theo ForexFactory: không có tin tác động cao; đáng chú ý là đơn trợ cấp thất nghiệp 19:30 VN thứ Năm 22/10 (dự báo 200K), PMI sản xuất/dịch vụ sơ bộ 20:45 VN thứ Sáu 23/10 (dự báo 55,5 / 58,0) và tâm lý tiêu dùng UoM chốt 21:00 VN. Kitco: tuần này dữ liệu ít, trọng tâm chuyển sang báo cáo lợi nhuận doanh nghiệp.",
+      "reason": "Ngắn hạn: không có tin đỏ Mỹ và Fed im lặng nên biên độ có thể hẹp hơn tuần trước; GDP Trung Quốc tốt hơn dự báo sẽ hỗ trợ nhu cầu kim loại đầu phiên Á. Dài hạn: kinh tế Trung Quốc dưới mục tiêu 4,5–5% giữ kỳ vọng Bắc Kinh tiếp tục kích thích kinh tế.",
+      "source": {
+        "name": "Yahoo Finance (Reuters) – China Q3 growth set to pick up on stimulus, keeping 2026 goal within reach: Reuters poll",
+        "url": "https://finance.yahoo.com/economy/articles/china-q3-growth-set-pick-092516257.html"
+      },
+      "source2": {
+        "name": "ForexFactory – Lịch kinh tế tuần này",
+        "url": "https://www.forexfactory.com/calendar",
+        "name_en": "ForexFactory – Economic calendar this week"
+      },
+      "time_vn": "09:00 VN 19/10 (GDP Trung Quốc) · 19:30 VN 22/10 · 20:45–21:00 VN 23/10",
+      "title_en": "Week ahead: China Q3 GDP Sunday night (est. 4.4%); no high-impact US data, just jobless claims and flash PMIs",
+      "summary_en": "Reuters poll (50 economists): China's Q3 GDP is seen up 4.4% y/y (Q2: 4.3%) and 1.1% q/q, due at 10:00 PM ET Sunday along with September industrial output, retail sales and investment. US calendar per ForexFactory: no high-impact releases. The spots to watch are weekly jobless claims Thursday at 8:30 AM ET (est. 200K), flash S&P Global manufacturing and services PMIs Friday at 9:45 AM ET (est. 55.5 / 58.0) and the final UMich sentiment read at 10:00 AM ET. Kitco notes a light data week with focus shifting to corporate earnings.",
+      "reason_en": "Near term: with no tier-one US data and the Fed in blackout, ranges could tighten versus last week; a China GDP beat would support metals demand in Asian trade. Longer term: growth below Beijing's 4.5%–5% target keeps stimulus hopes alive.",
+      "time_en": "China GDP Oct 18, 10:00 PM ET · claims Oct 22, 8:30 AM ET · flash PMIs Oct 23, 9:45 AM ET · UMich 10:00 AM ET"
+    },
     {
       "date": "2026-10-16",
       "category": "Vàng",
@@ -276,28 +432,6 @@
     },
     {
       "date": "2026-10-16",
-      "category": "Fed",
-      "priority": 1,
-      "impact": "trung lập",
-      "title": "FedWatch cuối phiên 15/10: giữ lãi tháng 10 71,3% · tăng 25bps 28,7% – tháng 12: +25bps 64,4% · +50bps 24,1%",
-      "summary": "Investing.com Fed Rate Monitor (dựa trên hợp đồng tương lai Fed Funds 30 ngày của CME), cập nhật 06:25 VN 16/10: cuộc họp 27–28/10 giữ 3,75–4,00% 71,3% (hôm trước 70,1%, tuần trước 81,6%), tăng lên 4,00–4,25% 28,7%. Cuộc họp 08–09/12: giữ 11,5% · 4,00–4,25% 64,4% · 4,25–4,50% 24,1%. CNBC: thị trường thấy 29% khả năng tăng tháng 10 nhưng 91% khả năng có ít nhất một lần tăng trước cuối năm; ước tính PCE lõi tháng 9 tăng 0,32% (tháng 8: 0,25%).",
-      "reason": "Ngắn hạn: xác suất tăng lãi tháng 10 hạ dần sau phát biểu thận trọng của Daly và Bowman → bớt áp lực lên vàng; Warsh (10:30 VN) có thể làm con số này thay đổi mạnh. Dài hạn: gần như chắc chắn có thêm một lần tăng trước cuối năm → giới hạn đà tăng của vàng.",
-      "source": {
-        "name": "Investing.com – Fed Rate Monitor (CME 30-Day Fed Funds futures)",
-        "url": "https://www.investing.com/central-banks/fed-rate-monitor"
-      },
-      "source2": {
-        "name": "CNBC – Hot PPI shows Fed's work is not done, economists say",
-        "url": "https://www.cnbc.com/2026/10/15/pce-ppi-september-fed-reserve-rate-hike.html"
-      },
-      "time_vn": "06:25 VN 16/10/2026 (Investing.com cập nhật)",
-      "title_en": "FedWatch at Thursday's close: 71.3% hold, 28.7% for a 25 bp hike in October – December: 64.4% for +25 bps, 24.1% for +50 bps",
-      "summary_en": "Investing.com Fed Rate Monitor (based on CME 30-day fed funds futures), updated 7:25 PM ET: for Oct. 27–28, a hold at 3.75%–4.00% is 71.3% (70.1% a day earlier, 81.6% a week ago) versus 28.7% for a move to 4.00%–4.25%. For Dec. 8–9: hold 11.5%, 4.00%–4.25% 64.4%, 4.25%–4.50% 24.1%. CNBC put October hike odds at 29% but at least one hike by December at 91%, and Street estimates now see September core PCE at +0.32% (August: 0.25%).",
-      "reason_en": "Near term: October hike odds have drifted lower after cautious remarks from Daly and Bowman, easing pressure on gold; Warsh at 11:30 PM ET can move them sharply. Longer term: one more hike by year-end is close to fully priced, which caps gold's upside.",
-      "time_en": "Oct 15, 7:25 PM ET (Investing.com update)"
-    },
-    {
-      "date": "2026-10-16",
       "category": "Chiến tranh",
       "priority": 1,
       "impact": "tăng",
@@ -318,28 +452,6 @@
       "summary_en": "Gulf News (live, through 7:31 PM ET): Iran's army chief Maj. Gen. Amir Hatami said the Strait of Hormuz 'remains closed' until Iran's rights are respected; CENTCOM pushed back, saying U.S. and partner forces control the strait, more than 40 commercial vessels transited in the prior 24 hours and over 19 million barrels of crude moved through in a single day. Euronews (12:00 PM ET): an unnamed tanker caught fire in the Gulf of Oman after entering an Iranian-declared prohibited zone, the second such incident in 24 hours, following the sinking of GFS Pride and Cape Dao. CNN (via Gulf News) reported the U.S. is planning for possible use of the GBU-43/B MOAB against Iranian energy and nuclear sites if President Trump renews combat. Treasury Secretary Bessent announced new sanctions on Iran-linked financial networks, saying 'the noose is tightening.' Houthi missiles also targeted the presidential palace in Aden, Yemen.",
       "reason_en": "Near term: the risk of renewed U.S. strikes on Iran and nonstop shipping attacks keep haven demand alive, which helps gold most when headlines hit by surprise; the same shocks lift crude and inflation expectations, which works against gold through rates. Longer term: a drawn-out, widening conflict (Saudi Arabia vs. the Houthis) keeps a floor under haven and central bank demand.",
       "time_en": "Oct 15, 3:38 AM ET (CNN MOAB report) · 12:00 PM ET (Euronews) · through 7:31 PM ET (Gulf News live)"
-    },
-    {
-      "date": "2026-10-16",
-      "category": "Fed",
-      "priority": 1,
-      "impact": "trung lập",
-      "title": "Hôm nay 10:30 VN: Chủ tịch Fed Warsh trò chuyện cùng IMF ở Bangkok – phát biểu cuối trước giai đoạn im lặng, thị trường dò tín hiệu tăng lãi tháng 10",
-      "summary": "IMF: Chủ tịch Fed Kevin Warsh và Tổng giám đốc IMF Kristalina Georgieva có buổi trò chuyện 10:30–11:00 thứ Sáu 16/10 (giờ Bangkok, trùng giờ VN) về các lực định hình kinh tế toàn cầu. NBC News: đây là phát biểu cuối của quan chức Fed trước giai đoạn im lặng bắt đầu từ thứ Bảy, kéo dài tới cuộc họp 27–28/10; Bank of America cho rằng lạm phát lan rộng 'củng cố khả năng tăng lãi tháng 10'. Krishna Guha (Evercore, theo Bloomberg qua The Edge Malaysia): nhiều khả năng Warsh sẽ không gợi ý tăng lãi tháng 10 vì để ý tới đợt chao đảo cổ phiếu công nghệ và lợi suất dài hạn đã tăng trước đó.",
-      "reason": "Ngắn hạn: nếu Warsh mở cửa cho tăng lãi tháng 10 → USD và lợi suất bật lên, vàng dễ mất nhịp hồi; nếu ông nhấn mạnh 'không vội' → vàng có thêm lực. Đây là tin đỏ duy nhất trong lịch hôm nay, biến động có thể mạnh quanh 10:30. Dài hạn: giọng Warsh định hình kỳ vọng lãi suất đến cuối năm và đường đi của lợi suất thực – yếu tố chính của xu hướng vàng.",
-      "source": {
-        "name": "IMF – Managing Director's Fireside Chat with Federal Reserve Chairman Kevin Warsh",
-        "url": "https://www.imf.org/en/meetings/2026/annual/schedule/2026/10/16/managing-director-fireside-chat-with-federal-reserve-chairman-kevin-warsh"
-      },
-      "source2": {
-        "name": "NBC News – Will the Fed raise interest rates this month? A Kevin Warsh speech could offer clues",
-        "url": "https://www.nbcnews.com/business/economy/will-fed-raise-interest-rates-kevin-warsh-offer-clues-rcna603661"
-      },
-      "time_vn": "10:30–11:00 VN 16/10/2026 (sắp diễn ra)",
-      "title_en": "Tonight at 11:30 PM ET: Fed Chair Warsh's IMF fireside chat in Bangkok – the last Fedspeak before the blackout, with October hike odds on the line",
-      "summary_en": "IMF: Fed Chair Kevin Warsh joins IMF Managing Director Kristalina Georgieva for a fireside chat on the forces reshaping the global economy, 11:30 PM ET to midnight. NBC News: it is the last scheduled Fedspeak before the blackout starts Saturday and runs through the Oct. 27–28 meeting; Bank of America says broad-based inflation 'strengthens the case for an October hike.' Evercore's Krishna Guha (per Bloomberg via The Edge Malaysia) expects Warsh not to signal an October move, given the global tech wobble and the prior run-up in long-term yields.",
-      "reason_en": "Near term: if Warsh opens the door to an October hike, the dollar and yields pop and gold's bounce is at risk; a 'no rush' message gives bulls more room. It is the only high-impact event on the calendar, so expect a volatile tape around the headline. Longer term: his tone sets rate expectations into year-end and the path of real yields, the main driver of gold's trend.",
-      "time_en": "Oct 15, 11:30 PM ET to midnight (upcoming)"
     },
     {
       "date": "2026-10-16",
@@ -381,28 +493,6 @@
       "summary_en": "CNBC: the Dow added 556.21 points (+1.08%) to 52,177.69, the S&P 500 gained 0.33% to 7,744.06 and the Nasdaq rose 0.08% to 26,713.03 after being down as much as 1.4% intraday, as worries about AI overspending and debt pushed investors from tech into value. Investing.com: VIX 16.46 (−2.43%). Bloomberg (via The Edge Malaysia): Japan, South Korea and Australia equity futures point to gains after a four-day slide, and the equal-weight S&P 500 rose 1.4%.",
       "reason_en": "Near term: steadier risk appetite can drain haven flows from bonds and let yields bounce, a slight negative for gold; a renewed AI rout would push yields lower and support bullion. Longer term: the debt load behind the AI buildout is a new systemic risk that can support gold as a defensive asset.",
       "time_en": "Oct 15, 4:00 PM ET (NYSE close)"
-    },
-    {
-      "date": "2026-10-15",
-      "category": "Vàng",
-      "priority": 1,
-      "impact": "trung lập",
-      "title": "3h sau tin Mỹ: vàng ~4.154 (+0,11%), H79 vẫn BÁN 4.150–4.160",
-      "summary": "Diễn biến: ra tin 4.149,8 → đỉnh 4.167 → 3h sau ~4.154 (+0,11% vs tin). Vì sao: PPI/bán lẻ nóng nhưng lợi suất 10Y và DXY giảm khi tiền thoát cổ phiếu AI; sau đó lợi suất nhích lại nên vàng hạ từ đỉnh. Kế hoạch: H79 vẫn BÁN 4.150–4.160, SL 4.171.",
-      "reason": "PPI nóng lẽ ra đè vàng, nhưng trú ẩn khỏi AI kéo lợi suất/DXY xuống nên giá vẫn xanh sau 3h; lợi suất hồi nhẹ làm mất đỉnh 4.167. Theo dõi Warsh 10:30 sáng 16/10.",
-      "source": {
-        "name": "CNBC – Gold rebounds from one-week low as dollar slips",
-        "url": "https://www.cnbc.com/2026/10/15/gold-rebounds-from-one-week-low-as-dollar-slips.html"
-      },
-      "source2": {
-        "name": "CNBC – September PPI and retail sales",
-        "url": "https://www.cnbc.com/2026/10/15/september-producer-price-index-retail-sales-data.html"
-      },
-      "time_vn": "22:30–22:37 VN 15/10/2026 (mốc 3h sau tin 19:30)",
-      "title_en": "3h after U.S. data: gold ~4,154 (+0.11%), H79 still selling 4,150–4,160",
-      "summary_en": "Move: release 4,149.8 → peak 4,167 → ~4,154 at 3h (+0.11% vs the print). Why: hot PPI/retail, but the 10Y yield and DXY fell as money fled AI stocks; yields later ticked back, so gold eased from the peak. Plan: H79 still SELL 4,150–4,160, stop 4,171.",
-      "reason_en": "Hot PPI should have crushed gold, but the AI flight-to-quality pulled yields and the DXY lower — bullion was still green three hours later; the yield bounce then capped the 4,167 spike. Next: Fed Chair Warsh at 11:30 PM ET.",
-      "time_en": "Oct 15, 11:30–11:37 AM ET (3h after the 8:30 AM ET prints)"
     },
     {
       "date": "2026-10-15",
