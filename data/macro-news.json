@@ -56,6 +56,50 @@
   "items": [
     {
       "date": "2026-10-19",
+      "category": "Chiến tranh",
+      "priority": 2,
+      "impact": "tăng",
+      "title": "Iran dọa «kế hoạch tác chiến mới» nếu Mỹ tấn công lại; UKMTO: thêm tàu kéo trúng đạn gần UAE, tàu LNG bị xuồng lạ nổ súng ngoài khơi Yemen",
+      "summary": "CNBC (20:52 VN Chủ nhật 18/10): Mohsen Rezaei, thư ký Hội đồng An ninh Quốc gia Tối cao Iran, viết trên X rằng quân đội Iran đã chuẩn bị đòn đáp trả «tàn khốc hơn nhiều so với cuộc chiến 12 ngày và 40 ngày» và «không theo luật mà họ quen». UKMTO: Chủ nhật một tàu kéo phía đông bắc UAE trúng hai vật thể không rõ; thứ Bảy một tàu chở LNG phía tây nam Yemen bị xuồng 7 người tiếp cận và bắn hai phát. Ngoại trưởng Araghchi (IRNA): Iran không nhượng bộ dưới áp lực nhưng vẫn sẵn sàng đối thoại. Thứ Sáu Brent lần đầu chạm 110 USD kể từ tháng 5, chốt 109,86 (+3,7%).",
+      "reason": "Ngắn hạn: rủi ro leo thang giữ phần bù địa chính trị dưới giá vàng – đỡ các nhịp chỉnh về 4.150–4.170, và một vụ tấn công mới có thể đẩy vàng thử nhanh vùng 4.200. Dài hạn: chiến tranh kéo dài giữ dầu cao → lạm phát dai dẳng → Fed khó nới lỏng – con dao hai lưỡi với vàng.",
+      "source": {
+        "name": "CNBC – Iran says it has a 'new operational plan' if the U.S. resumes attacks",
+        "url": "https://www.cnbc.com/2026/10/18/iran-us-war-rezaei-operational-plan-shipping-attacks.html"
+      },
+      "source2": {
+        "name": "CBS News – Iran war live updates",
+        "url": "https://www.cbsnews.com/live-updates/iran-war-us-trump-strait-of-hormuz-yemen-houthis-saudi-arabia/"
+      },
+      "time_vn": "20:52 VN 18/10 (CNBC) · các vụ UKMTO thứ Bảy–Chủ nhật 17–18/10",
+      "title_en": "Iran warns of a 'new operational plan' if the U.S. strikes again; UKMTO reports a tug hit near the UAE and an LNG tanker fired on off Yemen",
+      "summary_en": "CNBC (Sunday, 9:52 AM ET): Mohsen Rezaei, secretary of Iran's Supreme National Security Council, posted on X that Iran's military has prepared a response 'far more devastating than the 12-day and 40-day wars' that 'will not follow the rules with which they are familiar.' UKMTO says a tug northeast of the UAE was hit by two unknown projectiles on Sunday, and on Saturday an LNG tanker southwest of Yemen was approached by a skiff carrying seven people that fired twice. Foreign Minister Araghchi (IRNA) said Iran won't give up its rights under pressure but remains open to dialogue. Brent touched $110 on Friday for the first time since May before settling at $109.86 (+3.7%).",
+      "reason_en": "Near term: escalation risk keeps a geopolitical bid under gold, cushioning dips toward $4,150–$4,170, and a fresh attack could send it straight back to test $4,200. Longer term: a drawn-out war keeps oil high, inflation sticky and the Fed boxed in – a double-edged sword for gold.",
+      "time_en": "Oct 18, 9:52 AM ET (CNBC) · UKMTO incidents Oct 17–18"
+    },
+    {
+      "date": "2026-10-19",
+      "category": "Tương quan",
+      "priority": 2,
+      "impact": "trung lập",
+      "title": "Chứng khoán Mỹ tương lai bật lại tối Chủ nhật: Nasdaq-100 +0,8%, S&P 500 +0,4% khi nhà đầu tư bắt đáy nhóm AI – Goldman: chênh lệch tín dụng AI rộng nhất năm",
+      "summary": "CNBC (05:15 VN thứ Hai 19/10): hợp đồng tương lai bật lại sau tuần bán tháo cổ phiếu AI – lúc mở cửa Nasdaq-100 +0,4%, Dow +0,2% (+110 điểm), S&P 500 +0,2%; giá CNBC lúc 06:46 VN: Nasdaq-100 tương lai 29.628 (+0,80%), S&P 500 tương lai 7.737 (+0,43%). Tuần trước S&P 500 mất gần 2% (tuần giảm mạnh nhất từ cuối tháng 6), Nasdaq −4,5%, CoreWeave −25%. Goldman Sachs (thứ Sáu): chênh lệch tín dụng nhóm AI/hyperscaler rộng nhất năm, lượng quyền chọn bán cao thứ hai (sau tháng 6). Tuần này Meta và Tesla công bố lợi nhuận.",
+      "reason": "Ngắn hạn: khẩu vị rủi ro hồi lại làm nhu cầu trú ẩn nguội đi – có thể hãm vàng ở vùng 4.200; nhưng nếu lợi nhuận Meta/Tesla gây thất vọng và tín dụng AI tiếp tục căng, tiền sẽ quay về trái phiếu, kéo lợi suất xuống – có lợi cho vàng. Dài hạn: rủi ro nợ AI là lý do để quỹ lớn đa dạng hóa sang vàng.",
+      "source": {
+        "name": "CNBC – Nasdaq futures gain as investors buy the dip in the AI trade: Live updates",
+        "url": "https://www.cnbc.com/2026/10/18/stock-market-today-live-updates.html"
+      },
+      "source2": {
+        "name": "CNBC – Nasdaq 100 futures quote (@ND.1)",
+        "url": "https://www.cnbc.com/quotes/@ND.1"
+      },
+      "time_vn": "05:15 VN 19/10 (CNBC) → giá CNBC 06:46 VN",
+      "title_en": "U.S. stock futures bounce Sunday night – Nasdaq-100 +0.8%, S&P 500 +0.4% as dip buyers return to AI; Goldman flags AI credit spreads at the year's widest",
+      "summary_en": "CNBC (Sunday, 6:15 PM ET): futures rebounded after last week's AI rout – at the open Nasdaq-100 futures were +0.4%, Dow futures +0.2% (+110 points) and S&P 500 futures +0.2%; by 7:46 PM ET CNBC quoted Nasdaq-100 futures at 29,628 (+0.80%) and S&P 500 futures at 7,737 (+0.43%). Last week the S&P 500 lost nearly 2% (its worst week since late June), the Nasdaq fell 4.5% and CoreWeave dropped 25%. Goldman Sachs noted Friday that AI and hyperscaler credit spreads are at the widest of the year, with the second-heaviest put volume on record after June. Meta and Tesla report this week.",
+      "reason_en": "Near term: a calmer risk mood cools the haven bid and can cap gold near $4,200. If Meta/Tesla disappoint and AI credit keeps widening, money rotates back into Treasuries, pulling yields lower – a tailwind for gold. Longer term: AI-debt risk is another reason for big money to diversify into gold.",
+      "time_en": "Oct 18, 6:15 PM ET (CNBC) · quotes 7:46 PM ET"
+    },
+    {
+      "date": "2026-10-19",
       "category": "Vàng",
       "priority": 1,
       "impact": "trung lập",
