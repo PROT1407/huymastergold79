@@ -2,16 +2,16 @@
  "_note": "Nhật ký kết quả kế hoạch H79. Win = TP1 trước SL; loss = SL trước; hết phiên = P/L tại lúc đánh giá. MFE tính bằng giá ($1/oz). tp1_hit/tp2_hit ghi lại mỗi khi giá chạm TP (kể cả sau đó giá quay lại).",
  "plans": [
   {
-   "id": "2026-10-19-phien-au-1747",
+   "id": "2026-10-19-phien-my-1915",
    "date": "2026-10-19",
-   "session": "Phiên Âu (xã luận 17:47)",
+   "session": "Phiên Mỹ",
    "evaluated_at_vn": null,
    "price_ref": "spot",
    "sell": {
-    "zone": "4.176 – 4.183",
-    "sl": "4.194",
-    "tp1": "4.158",
-    "tp2": "4.148",
+    "zone": "4.175 – 4.182",
+    "sl": "4.192",
+    "tp1": "4.160",
+    "tp2": "4.154",
     "zone_filled": null,
     "result": "mở",
     "mfe": null
@@ -19,11 +19,46 @@
    "buy": {
     "zone": "4.150 – 4.156",
     "sl": "4.140",
-    "tp1": "4.167",
-    "tp2": "4.184",
+    "tp1": "4.168",
+    "tp2": "4.177",
     "zone_filled": null,
     "result": "mở",
     "mfe": null
+   }
+  },
+  {
+   "id": "2026-10-19-phien-au-1747",
+   "date": "2026-10-19",
+   "session": "Phiên Âu (xã luận 17:47)",
+   "evaluated_at_vn": "19:30 19/10/2026",
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.176 – 4.183",
+    "sl": "4.194",
+    "tp1": "4.158",
+    "tp2": "4.148",
+    "zone_filled": true,
+    "result": "không vào lệnh",
+    "mfe": null,
+    "entry": null,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "note": "Giá hồi lên 4.176,5 (18:15) – chạm mép vùng bán 0,5 giá – rồi quay đầu. Nến 45m/1H xác nhận đóng đỏ lúc 19:00 ở 4.162,9: thấp hơn vùng 13 giá, chỉ cách TP1 4.158 4,9 giá với SL 4.194 cách 31 giá → không đuổi. Giá xuống 4.159,0 (19:00), thiếu 1,0 giá tới TP1. Thay bằng kế hoạch Phiên Mỹ 19:15 (bán 4.175–4.182). Nguồn CNBC XAU= 5m."
+   },
+   "buy": {
+    "zone": "4.150 – 4.156",
+    "sl": "4.140",
+    "tp1": "4.167",
+    "tp2": "4.184",
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "shortfall_to_zone": 3.0,
+    "note": "Thấp nhất sau 17:47 là 4.159,0 (19:00) – thiếu 3,0 giá tới vùng mua 4.150–4.156. Thay bằng kế hoạch Phiên Mỹ 19:15 (mua 4.150–4.156). Nguồn CNBC XAU= 5m."
    }
   },
   {
