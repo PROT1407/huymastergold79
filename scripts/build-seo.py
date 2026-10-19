@@ -19,7 +19,7 @@ from pathlib import Path
 # Single switch: when h79gold.com DNS is live, set BASE_URL = CUSTOM_DOMAIN_URL and restore CNAME.
 GITHUB_PAGES_URL = "https://prot1407.github.io/huymastergold79/"
 CUSTOM_DOMAIN_URL = "https://h79gold.com/"
-BASE_URL = GITHUB_PAGES_URL
+BASE_URL = CUSTOM_DOMAIN_URL
 SITE = "HuymasterGold79"
 AUTHOR = "Ngọc Huy"
 ROOT = Path(__file__).resolve().parent.parent

@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /scripts/
 
-Sitemap: https://prot1407.github.io/huymastergold79/sitemap.xml
+Sitemap: https://h79gold.com/sitemap.xml
