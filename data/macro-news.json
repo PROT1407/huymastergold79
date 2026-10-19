@@ -56,6 +56,98 @@
   "items": [
     {
       "date": "2026-10-19",
+      "category": "Vàng",
+      "priority": 1,
+      "impact": "tăng",
+      "title": "Vàng nhích lên gần 4.190 phiên Á khi thị trường giảm cược Fed tăng lãi tháng 10 xuống dưới 20% – nhưng tháng 12 vẫn ~92%; quỹ ETF vàng mua ròng 13 tuần liền",
+      "summary": "Reuters (07:31 VN): vàng giao ngay +0,2% lên 4.174,54 USD/oz, vàng tương lai tháng 12 +0,4% lên 4.195,70. Theo CME FedWatch, khả năng Fed tăng lãi trong tháng 10 còn 16%, nhưng khả năng tăng vào tháng 12 lên 92%. Giá nhập khẩu tháng 9 của Mỹ tăng mạnh hơn dự báo vì năng lượng đắt – thêm bằng chứng lạm phát đang nóng lên. IMF dự báo ECB còn tăng lãi 25 điểm cơ bản ít nhất một lần nữa trong năm nay. Bloomberg (cập nhật 11:21 VN): vàng có lúc +0,5% lên gần 4.190, xóa phần lớn mức giảm tuần trước, sau khi phát biểu của Chủ tịch Warsh được hiểu là ủng hộ giữ lãi tuần sau; quỹ ETF vàng đã mua ròng 13 tuần liên tiếp, nhưng vàng vẫn thấp hơn khoảng 1/5 so với lúc chiến tranh Mỹ–Iran nổ ra cuối tháng 2. Giá CNBC XAU= lúc 13:50 VN: 4.178,3.",
+      "reason": "Ngắn hạn: cược tăng lãi tháng 10 hạ là lý do vàng giữ được trên 4.160 – nhưng khi tháng 12 vẫn ~92% tăng lãi, vàng khó phá trần 4.198–4.208 nếu không có cú hích mới. Dài hạn: dòng tiền ETF mua ròng 13 tuần liền cho thấy quỹ lớn vẫn gom vàng khi giá chỉnh, tạo sàn quanh 4.000–4.100.",
+      "source": {
+        "name": "Reuters (qua ET BFSI) – Gold edges higher as investors assess Fed rate-hike odds",
+        "name_en": "Reuters (via ET BFSI) – Gold edges higher as investors assess Fed rate-hike odds",
+        "url": "https://bfsi.economictimes.indiatimes.com/articles/gold-edges-higher-as-investors-assess-fed-rate-hike-odds/135038148"
+      },
+      "source2": {
+        "name": "Bloomberg (qua The Business Times) – Gold edges higher as traders ease rate hike bets on Warsh speech",
+        "name_en": "Bloomberg (via The Business Times) – Gold edges higher as traders ease rate hike bets on Warsh speech",
+        "url": "https://www.businesstimes.com.sg/companies-markets/energy-commodities/gold-edges-higher-traders-ease-rate-hike-bets-warsh-speech"
+      },
+      "time_vn": "07:31 VN 19/10 (Reuters) → 11:21 VN (Bloomberg) → giá CNBC 13:50 VN",
+      "title_en": "Gold edges toward $4,190 in Asia as October hike odds fall below 20% – December still ~92%; gold ETFs log a 13th straight week of inflows",
+      "summary_en": "Reuters (Sunday, 8:31 PM ET): spot gold was up 0.2% at $4,174.54/oz and December futures up 0.4% at $4,195.70. CME FedWatch puts the odds of an October hike at 16%, but a December hike at 92%. U.S. import prices rose more than expected in September on energy – more evidence inflation pressure is building. The IMF expects the ECB to hike by 25 bps at least once more this year. Bloomberg (updated 12:21 AM ET Monday): gold rose as much as 0.5% to near $4,190, erasing most of last week's loss, after traders read Chair Warsh's remarks as backing a hold next week; gold ETFs have added holdings for 13 straight weeks, though bullion is still down about a fifth since the U.S.-Iran war broke out in late February. CNBC spot (XAU=) at 2:50 AM ET: 4,178.30.",
+      "reason_en": "Near term: fading October hike bets are why gold is holding above $4,160 – but with December still ~92% priced, it's hard to crack the $4,198–$4,208 lid without a fresh catalyst. Longer term: 13 straight weeks of ETF inflows say big money is still buying the dips, building a floor around $4,000–$4,100.",
+      "time_en": "Oct 18, 8:31 PM ET (Reuters) → Oct 19, 12:21 AM ET (Bloomberg) → CNBC quote 2:50 AM ET"
+    },
+    {
+      "date": "2026-10-19",
+      "category": "Dầu mỏ",
+      "priority": 1,
+      "impact": "trung lập",
+      "title": "Dầu giảm hơn 2% về ~107 USD: ông Trump miễn trừng phạt, thuế với năng lượng Nga và nói đàm phán Nga–Ukraine «tiến triển đáng kể» – dù Ukraine vừa tung hơn 1.000 drone vào Nga",
+      "summary": "CNBC: giá dầu giảm thứ Hai vì kỳ vọng nguồn cung Nga tăng sau khi Mỹ nới trừng phạt hôm thứ Sáu – ông Trump dùng quyền «lợi ích quốc gia» để hoãn thuế mới với các nước mua năng lượng Nga và gỡ trừng phạt xuất khẩu dầu diesel của Nga; Brent −1,8% về 107,88 USD, WTI −1,14% về 100,25. Giá CNBC lúc 13:43 VN: Brent 107,28 (−2,35%). CNBC Daily Open (08:16 VN): cuối tuần Ukraine phóng hơn 1.000 drone khắp nước Nga, kho và cảng dầu St. Petersburg bốc cháy; ông Zelensky gọi quyết định của Mỹ là «sai», Bộ trưởng Tài chính Bessent cảnh báo ông «cẩn trọng». Theo Newsquawk, ông Trump viết trên Truth Social rằng đàm phán hòa bình Nga–Ukraine đang «tiến triển đáng kể». Vùng Vịnh vẫn nóng: thứ Sáu thêm hai tàu chở dầu bị tấn công ngoài khơi Ả Rập Xê Út (UKMTO).",
+      "reason": "Ngắn hạn: dầu hạ làm nỗi lo lạm phát và lợi suất dịu đi – đỡ vàng ở vùng 4.160–4.170; nhưng tin hòa bình làm giảm nhu cầu trú ẩn nên vàng khó bật mạnh. Dài hạn: nếu nguồn cung Nga quay lại thật sự, dầu và kỳ vọng tăng lãi cùng hạ – có lợi cho vàng; ngược lại tấn công ở Hormuz vẫn có thể đẩy Brent lên 110–120 bất cứ lúc nào.",
+      "source": {
+        "name": "CNBC – Oil prices slide as sanctions relief on Russian crude raises hopes of increased supply",
+        "url": "https://www.cnbc.com/2026/10/18/oil-price-today-ukraine-russia-iran-strait-hormuz.html"
+      },
+      "source2": {
+        "name": "CNBC Daily Open – A thousand drones and a strained US-Ukraine alliance",
+        "url": "https://www.cnbc.com/2026/10/19/cnbc-daily-open-ukraine-drones-trump-russia-war.html"
+      },
+      "time_vn": "08:16 VN 19/10 (CNBC Daily Open) → CNBC cập nhật trưa 19/10 → giá CNBC 13:43 VN",
+      "title_en": "Oil drops more than 2% to about $107 as Trump waives sanctions and tariffs on Russian energy and touts 'significant progress' on Ukraine – even after Kyiv's 1,000-drone weekend strike",
+      "summary_en": "CNBC: crude fell Monday on expectations of more Russian supply after Friday's U.S. sanctions relief – President Trump invoked national interest to suspend new duties on buyers of Russian energy and lifted sanctions on Russian diesel exports. Brent fell 1.8% to $107.88 and WTI 1.14% to $100.25; CNBC quoted Brent at $107.28 (−2.35%) at 2:43 AM ET. CNBC Daily Open (Sunday, 9:16 PM ET): Ukraine launched more than 1,000 drones across Russia over the weekend, setting a St. Petersburg oil terminal and depot ablaze; Zelenskyy called the U.S. decision 'wrong,' and Treasury Secretary Bessent told him to 'be careful.' Per Newsquawk, Trump posted on Truth Social that Russia–Ukraine peace talks are making 'significant progress.' The Gulf is still hot: two more tankers were attacked off Saudi Arabia on Friday (UKMTO).",
+      "reason_en": "Near term: cheaper oil cools inflation fears and yields, cushioning gold around $4,160–$4,170, but peace headlines drain the haven bid, so don't expect a big pop. Longer term: if Russian barrels really come back, oil and rate-hike expectations fall together – good for gold. A Hormuz attack can still send Brent back to $110–$120 at any moment.",
+      "time_en": "Oct 18, 9:16 PM ET (CNBC Daily Open) → CNBC update overnight → quote 2:43 AM ET"
+    },
+    {
+      "date": "2026-10-19",
+      "category": "Tương quan",
+      "priority": 2,
+      "impact": "trung lập",
+      "title": "USD nhích lên từ đáy tháng khi bạo loạn ở Pháp kéo euro xuống 1,1225 – FedWatch: 84% giữ lãi 28/10; chứng khoán châu Âu mở cửa đi xuống",
+      "summary": "CNBC (11:14 VN): USD nhích lên từ gần mức thấp nhất tháng đầu phiên Á vì bạo loạn trong các cuộc biểu tình về chi phí sinh hoạt ở Pháp gây áp lực lên euro – euro −0,1% về 1,1225, DXY đi ngang 101,83. Kieran Williams (InTouch Capital Markets): bất ổn ở Pháp tác động lên euro chủ yếu qua trái phiếu Pháp; đây là tuần trước họp Fed (28/10) và ECB (29/10) nên vị thế sẽ nhẹ. USD/JPY 158,00 sau khi Thống đốc BOJ Ueda nói lạm phát nền «khá gần» mục tiêu 2%. CME FedWatch: 84% khả năng Fed giữ lãi ở cuộc họp 28/10. CNBC (cập nhật 12:57 VN): hợp đồng tương lai Stoxx 50 −0,31%, CAC 40 −0,46% dẫn đầu mức giảm trước giờ mở cửa. Giá CNBC lúc 13:52 VN: DXY 101,83.",
+      "reason": "Ngắn hạn: euro yếu giữ USD đứng vững nên vàng chưa tận dụng được việc lợi suất Mỹ hạ – thêm một lý do vàng đi ngang. Nếu khủng hoảng trái phiếu Pháp lan rộng, nhu cầu trú ẩn có thể quay lại vàng. Dài hạn: Fed và ECB đều đang nghiêng về thắt chặt – lãi suất thực cao vẫn là lực cản chính của vàng.",
+      "source": {
+        "name": "CNBC – Dollar firmer, euro weakens as French protests turn violent",
+        "url": "https://www.cnbc.com/2026/10/19/dollar-firmer-euro-weakens-as-french-protests-turn-violent.html"
+      },
+      "source2": {
+        "name": "CNBC – Stock market today: Live updates (châu Âu mở cửa)",
+        "name_en": "CNBC – Stock market today: Live updates (Europe open)",
+        "url": "https://www.cnbc.com/2026/10/18/stock-market-today-live-updates.html"
+      },
+      "time_vn": "11:14 VN 19/10 (CNBC) → 12:57 VN (CNBC live) → giá CNBC 13:52 VN",
+      "title_en": "Dollar firms off monthly lows as French riots knock the euro to $1.1225 – FedWatch: 84% odds of an Oct. 28 hold; Europe set to open lower",
+      "summary_en": "CNBC (12:14 AM ET): the dollar edged up from near its lowest levels of the month in early Asia as violent cost-of-living protests in France pressured the euro – EUR/USD −0.1% at $1.1225, with the DXY flat at 101.83. Kieran Williams of InTouch Capital Markets said the unrest matters for the euro mainly through French bonds, and with the Fed (Oct. 28) and ECB (Oct. 29) next week, positioning should stay light. USD/JPY sat at 158.00 after BOJ Governor Ueda said underlying inflation is 'quite close' to 2%. CME FedWatch: 84% odds the Fed holds on Oct. 28. CNBC live blog (1:57 AM ET): Stoxx 50 futures −0.31%, with France's CAC 40 −0.46% leading pre-open losses. CNBC DXY at 2:52 AM ET: 101.83.",
+      "reason_en": "Near term: a soft euro keeps the dollar firm, so gold can't fully cash in on lower U.S. yields – one more reason it's stuck in a range. If French bond stress spreads, the haven bid could rotate back into gold. Longer term: both the Fed and ECB lean hawkish, and high real rates remain gold's main headwind.",
+      "time_en": "Oct 19, 12:14 AM ET (CNBC) → 1:57 AM ET (CNBC live) → quote 2:52 AM ET"
+    },
+    {
+      "date": "2026-10-19",
+      "category": "Tương quan",
+      "priority": 2,
+      "impact": "trung lập",
+      "title": "GDP quý 3 Trung Quốc tăng 4,5%, vượt dự báo 4,4% nhờ xuất khẩu – bán lẻ tháng 9 +1,1%, sản xuất +5,5%, giá sản xuất +5% – vàng gần như không phản ứng",
+      "summary": "CNBC (09:05 VN): GDP quý 3 Trung Quốc tăng 4,5% so với cùng kỳ (quý 2: 4,3% – thấp nhất 3 năm; Reuters dự báo 4,4%), 9 tháng đầu năm +4,6% – trong mục tiêu 4,5–5%. Tháng 9: bán lẻ +1,1% (dự báo 0,6%), sản xuất công nghiệp +5,5% (đúng dự báo), thất nghiệp thành thị 5,2%; đầu tư tài sản cố định 9 tháng −7,2%, đầu tư bất động sản −20,6%. Thặng dư thương mại tháng kỷ lục 133,5 tỷ USD; giá sản xuất tăng 5% – nhanh nhất hơn 4 năm – trong khi lạm phát tiêu dùng dưới 1%. Cục Thống kê Trung Quốc (NBS): GDP quý 3 +1,2% so với quý trước. Vàng giao ngay quanh 4.170–4.183 trong giờ tin ra (CNBC XAU=).",
+      "reason": "Ngắn hạn: số liệu tốt hỗ trợ nhẹ nhu cầu kim loại nhưng không đủ tạo xu hướng – vàng vẫn đi theo lợi suất và USD. Dài hạn: kinh tế Trung Quốc tốt hơn giảm áp lực kích thích; giá sản xuất tăng 5% góp thêm vào lạm phát hàng hóa toàn cầu – củng cố lý do các NHTW giữ lãi cao.",
+      "source": {
+        "name": "CNBC – China's third-quarter economic growth quickens to 4.5%, beating estimates",
+        "url": "https://www.cnbc.com/2026/10/19/chinas-economic-growth-quickens-to-4point6percent-as-exports-surge-stimulus-rolls-out.html"
+      },
+      "source2": {
+        "name": "Cục Thống kê Trung Quốc (NBS) – Kinh tế 9 tháng đầu năm 2026",
+        "name_en": "National Bureau of Statistics of China – Economy in the first three quarters of 2026",
+        "url": "https://www.stats.gov.cn/english/PressRelease/202610/t20261019_1965619.html"
+      },
+      "time_vn": "09:00 VN 19/10 (NBS) → 09:05 VN (CNBC)",
+      "title_en": "China's Q3 GDP grows 4.5%, beating the 4.4% forecast on exports – September retail sales +1.1%, industrial output +5.5%, factory prices +5% – gold barely reacts",
+      "summary_en": "CNBC (Sunday, 10:05 PM ET): China's Q3 GDP grew 4.5% y/y (Q2: 4.3%, a three-year low; Reuters poll: 4.4%), putting nine-month growth at 4.6% – inside Beijing's 4.5%–5% target. September retail sales rose 1.1% (est. 0.6%), industrial output 5.5% (in line), urban unemployment 5.2%; fixed-asset investment fell 7.2% year-to-date and property investment 20.6%. The monthly trade surplus hit a record $133.5 billion; producer prices rose 5%, the fastest in over four years, while consumer inflation stays below 1%. NBS: Q3 GDP +1.2% q/q. Spot gold traded around 4,170–4,183 through the release (CNBC XAU=).",
+      "reason_en": "Near term: a modest positive for metals demand, but not enough to set a trend – gold is still trading yields and the dollar. Longer term: a firmer China means less stimulus pressure, and 5% factory-gate inflation adds to global goods inflation – another reason central banks keep rates high.",
+      "time_en": "Oct 18, 10:00 PM ET (NBS) → 10:05 PM ET (CNBC)"
+    },
+    {
+      "date": "2026-10-19",
       "category": "Chiến tranh",
       "priority": 2,
       "impact": "tăng",

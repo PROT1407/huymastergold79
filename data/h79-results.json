@@ -2,35 +2,73 @@
  "_note": "Nhật ký kết quả kế hoạch H79. Win = TP1 trước SL; loss = SL trước; hết phiên = P/L tại lúc đánh giá. MFE tính bằng giá ($1/oz). tp1_hit/tp2_hit ghi lại mỗi khi giá chạm TP (kể cả sau đó giá quay lại).",
  "plans": [
   {
-   "id": "2026-10-19-phien-a-0645",
+   "id": "2026-10-19-phien-au-1345",
    "date": "2026-10-19",
-   "session": "Phiên Á",
+   "session": "Phiên Âu",
    "evaluated_at_vn": null,
    "price_ref": "spot",
    "sell": {
-    "zone": "4.196 – 4.206",
+    "zone": "4.198 – 4.208",
     "sl": "4.218",
-    "tp1": "4.186",
-    "tp2": "4.174",
+    "tp1": "4.185",
+    "tp2": "4.172",
     "zone_filled": null,
     "result": "mở",
     "mfe": null
    },
    "buy": {
-    "zone": "4.168 – 4.175",
+    "zone": "4.166 – 4.172",
     "sl": "4.153",
-    "tp1": "4.195",
-    "tp2": "4.205",
+    "tp1": "4.186",
+    "tp2": "4.194",
     "zone_filled": null,
     "result": "mở",
     "mfe": null
    }
   },
   {
+   "id": "2026-10-19-phien-a-0645",
+   "date": "2026-10-19",
+   "session": "Phiên Á",
+   "evaluated_at_vn": "13:50 19/10/2026",
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.196 – 4.206",
+    "sl": "4.218",
+    "tp1": "4.186",
+    "tp2": "4.174",
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "shortfall_to_zone": 8.9,
+    "note": "Cao nhất sau 06:45 là 4.187,1 (07:00) – thiếu 8,9 giá tới vùng bán 4.196–4.206. Hết phiên Á chưa khớp – thay bằng kế hoạch Phiên Âu 13:45 (bán 4.198–4.208). Nguồn CNBC XAU= 5m."
+   },
+   "buy": {
+    "zone": "4.168 – 4.175",
+    "sl": "4.153",
+    "tp1": "4.195",
+    "tp2": "4.205",
+    "zone_filled": true,
+    "result": "hết phiên",
+    "mfe": 9.5,
+    "entry": 4175.8,
+    "entry_at_vn": "10:00 19/10",
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "pnl": -0.4,
+    "shortfall_to_tp1": 9.7,
+    "note": "Giá vào vùng lúc 07:30 (4.174,5) và chỉnh xuống 4.166,0 (08:25). Nến 45m 08:30–09:15 đóng xanh 4.181,2 nhưng chứa tin GDP Trung Quốc và đóng cao hơn vùng ~6 giá → không đuổi. Vào theo nến 1H 09:00–10:00 đóng xanh 4.175,8 (đáy nến 4.169,2 trong vùng). Cao nhất 4.185,3 (12:45) → MFE 9,5; đạt 9,5/19,2 giá tới TP1 4.195, thiếu 9,7. Thấp nhất sau khi vào 4.172,2 (13:30), SL 4.153 không chạm. Hết phiên Á 13:45: 4.175,4, −0,4 giá (dương tối đa 9,5 giá rồi về lại điểm vào, chưa phá ngược). Lệnh chuyển sang kế hoạch Phiên Âu 19/10 (SL 4.153, TP1 4.186)."
+   }
+  },
+  {
    "id": "2026-10-16-phien-dem-2107",
    "date": "2026-10-16",
    "session": "Phiên đêm",
-   "evaluated_at_vn": "06:55 19/10/2026",
+   "evaluated_at_vn": "13:50 19/10/2026",
    "price_ref": "spot",
    "sell": {
     "zone": "4.200 – 4.210",
@@ -53,15 +91,15 @@
     "tp2": "4.226",
     "zone_filled": true,
     "result": "hết phiên",
-    "mfe": 11.1,
+    "mfe": 13.6,
     "entry": 4173.5,
     "entry_at_vn": "06:00 19/10",
     "tp1_hit": false,
     "tp2_hit": false,
     "sl_hit": false,
-    "pnl": 9.2,
-    "shortfall_to_tp1": 13.4,
-    "note": "Giá xuyên vùng mua lúc 22:25 16/10 (4.174,8) nhưng không có nến 45m/1H đóng xanh trong vùng (nến xanh duy nhất đóng 4.167,0/4.167,9 – dưới vùng) → không vào, tránh nhịp xuống 4.155,8 (01:50 17/10, SL 4.152 không chạm). Mở cửa tuần: nến 1H 05:00–06:00 19/10 đóng xanh 4.173,5 trong vùng → vào lệnh. Cao nhất 4.184,7 (06:45–06:55) → MFE 11,1; đạt 11/24,5 giá tới TP1 4.198, thiếu 13,4 giá. Lúc 06:55: 4.182,7, +9,2 giá. Lệnh chuyển sang kế hoạch Phiên Á 19/10 (SL 4.153, TP1 4.195)."
+    "pnl": 1.9,
+    "shortfall_to_tp1": 10.9,
+    "note": "Giá xuyên vùng mua lúc 22:25 16/10 (4.174,8) nhưng không có nến 45m/1H đóng xanh trong vùng → không vào, tránh nhịp xuống 4.155,8 (01:50 17/10, SL 4.152 không chạm). Mở cửa tuần: nến 1H 05:00–06:00 19/10 đóng xanh 4.173,5 trong vùng → vào lệnh. Cao nhất 4.187,1 (07:00 19/10) → MFE 13,6; đạt 13,6/24,5 giá tới TP1 gốc 4.198 (thiếu 10,9) và 13,6/21,5 tới TP1 đã hạ 4.195 (thiếu 7,9). Thấp nhất 4.166,0 (08:25), SL không chạm. Hết phiên Á 13:45: 4.175,4, +1,9 giá. Lệnh chuyển sang kế hoạch Phiên Âu 19/10 (SL 4.153, TP1 4.186)."
    }
   },
   {
@@ -154,7 +192,7 @@
    "id": "2026-10-16-phien-au-1545",
    "date": "2026-10-16",
    "session": "Phiên Âu (xã luận)",
-   "evaluated_at_vn": "06:55 19/10/2026",
+   "evaluated_at_vn": "13:50 19/10/2026",
    "price_ref": "spot",
    "sell": {
     "zone": null,
@@ -171,11 +209,11 @@
     "zone_filled": true,
     "result": "mở – đã khớp",
     "mfe": 43.2,
-    "note": "Khớp 20:15–20:20 16/10 (đáy 4.154,7). Cao nhất 4.198,2 (21:25 16/10) → MFE 43,2 từ giữa vùng 4.155; đạt 43/45 giá tới TP1 4.200, thiếu 1,8 giá. Thấp nhất sau đó 4.155,8 (01:50 17/10), SL 4.137 không chạm. Lúc 06:55 19/10: 4.182,7, +27,7 giá. Kế hoạch trung hạn còn mở.",
+    "note": "Khớp 20:15–20:20 16/10 (đáy 4.154,7). Cao nhất 4.198,2 (21:25 16/10) → MFE 43,2 từ giữa vùng 4.155; đạt 43/45 giá tới TP1 4.200, thiếu 1,8 giá. Thấp nhất sau đó 4.155,8 (01:50 17/10), SL 4.137 không chạm. Phiên Á 19/10 cao nhất 4.187,1 (07:00), thấp nhất 4.162,9 (05:00). Lúc 13:45 19/10: 4.175,4, +20,4 giá. Kế hoạch trung hạn còn mở.",
     "tp1_hit": false,
     "sl_hit": false,
     "shortfall_to_tp1": 1.8,
-    "pnl": 27.7
+    "pnl": 20.4
    }
   },
   {
