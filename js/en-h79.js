@@ -19,6 +19,7 @@
     if (m >= 11 * 60 + 30 && m < 14 * 60) return 'New York midday session';
     if (m >= 14 * 60 && m < 17 * 60) return 'New York afternoon / late session';
     if (m >= 8 * 60 && m < 9 * 60 + 30) return 'New York pre-market';
+    if (m >= 6 * 60 && m < 8 * 60) return 'Late London / pre-New York open';
     if (m >= 2 * 60 && m < 8 * 60) return 'London session (ET early morning)';
     return 'Asian session (ET evening)';
   };

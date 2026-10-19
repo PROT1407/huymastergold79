@@ -43,7 +43,7 @@ EN_REDIRECTS = {
     "en/posts/2026-10-15-gold-plan-night-session-2120.html": "en/posts/2026-10-15-gold-plan-new-york-session-2120.html",
     "en/posts/2026-10-14-gold-plan-night-session-2237.html": "en/posts/2026-10-14-gold-plan-new-york-session-2237.html",
 }
-ASSET_V = "20261016b"  # cache-busting cho css/js trong trang sinh tự động
+ASSET_V = "20261019x"  # cache-busting cho css/js trong trang sinh tự động
 OLD_BASES = ["https://prot1407.github.io/huymastergold79/", "https://huymastergold79.com.vn/", "https://h79gold.com/"]
 VN = dt.timezone(dt.timedelta(hours=7))
 TODAY = dt.datetime.now(VN).date().isoformat()
@@ -422,7 +422,7 @@ SES_EN = {"Phiên Á": "Asian session (ET evening)", "Phiên Âu": "London sessi
 def et_session_label(t):
     """EN session label from US Eastern clock (DST via America/New_York). Never use VN-centric names like Night session.
     before 9:30 ET = New York pre-market (from 8:00); 9:30–11:30 = NY morning (US open); 11:30–14:00 = midday;
-    14:00–17:00 = afternoon/late; else Asian (ET evening) or London (ET early morning)."""
+    14:00–17:00 = afternoon/late; 6:00–8:00 = late London / pre-NY open; else Asian (ET evening) or London (ET early morning)."""
     x = t.astimezone(NY)
     mins = x.hour * 60 + x.minute
     if 9 * 60 + 30 <= mins < 11 * 60 + 30:
@@ -433,6 +433,8 @@ def et_session_label(t):
         return "New York afternoon / late session"
     if 8 * 60 <= mins < 9 * 60 + 30:
         return "New York pre-market"
+    if 6 * 60 <= mins < 8 * 60:
+        return "Late London / pre-New York open"
     if 2 * 60 <= mins < 8 * 60:
         return "London session (ET early morning)"
     return "Asian session (ET evening)"
