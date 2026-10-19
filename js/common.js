@@ -8,16 +8,6 @@
   H.YT_LIVE = 'https://www.youtube.com/@tradinglivexauusd4647';
   H.YT_LIVE_ID = 'UC3wvszVefYJJ5S5V9t1kUtA';
   H.EMAIL = 'Huydaigia1407@gmail.com';
-  /* Phòng Live YouTube: đặt true để mở lại (anh Huy yêu cầu tạm ẩn 19/10/2026) */
-  H.LIVE_ON = false;
-  if (!H.LIVE_ON) {
-    try {
-      const st = document.createElement('style');
-      st.textContent = 'a[href$="live.html"],#live-badge,.live-banner{display:none!important}';
-      (document.head || document.documentElement).appendChild(st);
-      if (/(^|\/)live\.html$/.test(location.pathname)) location.replace(/\/en\/live\.html$/.test(location.pathname) ? location.pathname.replace(/live\.html$/, '') : location.pathname.replace(/live\.html$/, ''));
-    } catch (e) { }
-  }
   H.LUONG = 37.5 / 31.1035; // 1,20565
   H.fmt = (n, d = 0) => (n == null || isNaN(n)) ? '—' : Number(n).toLocaleString(/^en/i.test(document.documentElement.lang) ? 'en-US' : 'vi-VN', { maximumFractionDigits: d, minimumFractionDigits: d });
   H.esc = t => String(t == null ? '' : t).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
