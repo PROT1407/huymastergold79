@@ -2,28 +2,65 @@
  "_note": "Nhật ký kết quả kế hoạch H79. Win = TP1 trước SL; loss = SL trước; hết phiên = P/L tại lúc đánh giá. MFE tính bằng giá ($1/oz). tp1_hit/tp2_hit ghi lại mỗi khi giá chạm TP (kể cả sau đó giá quay lại).",
  "plans": [
   {
+   "id": "2026-10-20-phien-au-1747",
+   "date": "2026-10-20",
+   "session": "Phiên Âu (xã luận 17:47)",
+   "evaluated_at_vn": null,
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.135 – 4.141",
+    "sl": "4.149",
+    "tp1": "4.121",
+    "tp2": "4.106",
+    "zone_filled": null,
+    "result": "mở",
+    "mfe": null
+   },
+   "buy": {
+    "zone": "4.100 – 4.106",
+    "sl": "4.091",
+    "tp1": "4.142",
+    "tp2": "4.150",
+    "zone_filled": null,
+    "result": "mở",
+    "mfe": null
+   }
+  },
+  {
    "id": "2026-10-20-phien-au-1345",
    "date": "2026-10-20",
    "session": "Phiên Âu",
-   "evaluated_at_vn": null,
+   "evaluated_at_vn": "18:05 20/10/2026",
    "price_ref": "spot",
    "sell": {
     "zone": "4.140 – 4.146",
     "sl": "4.153",
     "tp1": "4.132",
     "tp2": "4.121",
-    "zone_filled": null,
-    "result": "mở",
-    "mfe": null
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "entry": null,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "shortfall_to_zone": 4.5,
+    "note": "Cao nhất sau 13:45 là 4.135,5 (14:00) – thiếu 4,5 giá tới vùng bán 4.140–4.146. Đúng hướng: giá rơi qua TP1 4.132 và TP2 4.121 về 4.111,2 (17:10) nhưng không có vị thế; không bán đuổi dưới 4.135 theo luật. Thay bằng kế hoạch xã luận 17:47 (bán 4.135–4.141). Nguồn CNBC XAU= 5m."
    },
    "buy": {
     "zone": "4.116 – 4.122",
     "sl": "4.107",
     "tp1": "4.135",
     "tp2": "4.143",
-    "zone_filled": null,
-    "result": "mở",
-    "mfe": null
+    "zone_filled": true,
+    "result": "mở – đã khớp",
+    "mfe": null,
+    "entry": 4119.9,
+    "entry_at_vn": "18:00 20/10",
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "note": "Giá vào vùng mua 4.116–4.122 từ 14:40 (4.121,6), xuyên xuống 4.111,2 (17:10) – thủng mép dưới 4,8 giá, SL 4.107 không chạm. Đến 17:47 không có nến 1H xanh (14:00, 15:00, 16:00 đều đỏ) và không có mẫu BB90 45m (bốn nến 45m 14:30–16:45 đóng đỏ ngoài BB90 dưới) → chưa vào lệnh. Nến 1H 17:00 đóng xanh 4.119,9 trong vùng lúc 18:00 → MUA 4.119,9 theo luật, SL 4.107, TP1 4.135, TP2 4.143. Lệnh đang mở; theo dõi tiếp trong kế hoạch 17:47 (chốt TP1 ở chân vùng bán 4.135). Nguồn CNBC XAU= 5m."
    }
   },
   {

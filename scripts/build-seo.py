@@ -43,7 +43,7 @@ EN_REDIRECTS = {
     "en/posts/2026-10-15-gold-plan-night-session-2120.html": "en/posts/2026-10-15-gold-plan-new-york-session-2120.html",
     "en/posts/2026-10-14-gold-plan-night-session-2237.html": "en/posts/2026-10-14-gold-plan-new-york-session-2237.html",
 }
-ASSET_V = "20261020z"  # cache-busting cho css/js trong trang sinh tự động
+ASSET_V = "20261020x"  # cache-busting cho css/js trong trang sinh tự động
 OLD_BASES = ["https://prot1407.github.io/huymastergold79/", "https://huymastergold79.com.vn/", "https://h79gold.com/"]
 VN = dt.timezone(dt.timedelta(hours=7))
 TODAY = dt.datetime.now(VN).date().isoformat()
