@@ -1,6 +1,6 @@
 {
  "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC | Chiến tranh | Ngân hàng TW. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
- "updated": "2026-10-19",
+ "updated": "2026-10-20",
  "fomc": {
   "source": {
    "name": "Federal Reserve – FOMC calendars",
@@ -54,6 +54,78 @@
   "note_en": "Decision at 2:00 PM ET on day two of the meeting, press conference at 2:30 PM ET. * = with economic projections (dot plot)."
  },
  "items": [
+  {
+   "date": "2026-10-20",
+   "category": "Lợi suất",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "Lợi suất 10 năm Mỹ đóng cửa 5,135%, sáng nay 5,14% – vàng giao ngay đóng ngày 4.140,5 (−0,6%) rồi thủng 4.135 đầu phiên Á",
+   "summary": "CNBC: lợi suất 10 năm tăng hơn 4 điểm cơ bản lên ~5,14%, 30 năm 5,478%, 2 năm 4,772% khi nhà đầu tư cân nhắc lạm phát (PPI tháng 9 +6,3%, CPI +3,7% so với cùng kỳ); WSJ: 10 năm chốt ngày 5,135%. Trái phiếu Pháp bị bán tháo sau cuối tuần bạo loạn vì chi phí sinh hoạt. Investing.com: vàng giao ngay chốt 4.140,52 USD (−0,6%), vàng tương lai 4.160,30 (−0,5%). Bloomberg: MKS PAMP (Nicky Shiels) – thanh khoản mỏng, vàng «được mua giờ châu Á, bị bán giờ New York»; TD Securities: quỹ đầu cơ cắt mạnh vị thế mua vàng Comex tuần đến 13/10. Phố Wall: Nasdaq +1,1%, S&P 500 +0,4%, Dow −0,1% (WSJ). Giá CNBC: vàng giao ngay 4.132,3 (nến 5m 06:50 VN), US10Y 5,142%, DXY 101,97.",
+   "reason": "Ngắn hạn: lợi suất danh nghĩa và lợi suất thực cùng tăng làm chi phí cơ hội giữ vàng cao lên – các nhịp hồi về 4.140–4.155 dễ bị bán. Dài hạn: lợi suất 5%+ kéo dài là lực cản lớn nhất của vàng; chỉ khi lạm phát hạ nhiệt hoặc rủi ro tài chính (nợ AI, trái phiếu châu Âu) buộc Fed đổi giọng thì xu hướng mới đảo.",
+   "source": {
+    "name": "CNBC – Treasury yields move higher as investors assess U.S. inflation backdrop",
+    "name_en": "CNBC – Treasury yields move higher as investors assess U.S. inflation backdrop",
+    "url": "https://www.cnbc.com/2026/10/19/bonds-treasurys-us-yields.html"
+   },
+   "source2": {
+    "name": "Investing.com – Vàng giảm vì USD mạnh lên và trái phiếu bị bán tháo",
+    "name_en": "Investing.com – Gold slips amid stronger dollar, bond sell-off",
+    "url": "https://www.investing.com/news/commodities-news/gold-rises-as-warsh-remarks-curb-fed-hike-bets-4956185"
+   },
+   "time_vn": "04:00 VN 20/10 (đóng cửa trái phiếu) → 04:17 VN (Investing) → giá CNBC 06:50 VN",
+   "title_en": "The 10-year closes at 5.135% and sits at 5.14% tonight – spot gold settles at $4,140.52 (−0.6%), then slips under $4,135 at the Asia open",
+   "summary_en": "CNBC: the 10-year yield rose more than 4 basis points to about 5.14%, the 30-year to 5.478% and the 2-year to 4.772% as investors weighed inflation (September PPI +6.3% y/y, CPI +3.7%); per WSJ, the 10-year ended the day at 5.135%. French government bonds sold off after a weekend of cost-of-living riots. Investing.com: spot gold settled at $4,140.52 (−0.6%) and futures at $4,160.30 (−0.5%). Bloomberg: MKS PAMP's Nicky Shiels says thin liquidity has gold 'bid during Asian hours and well-offered during New York hours'; TD Securities notes funds slashed Comex gold longs in the week to Oct. 13. Stocks: Nasdaq +1.1%, S&P 500 +0.4%, Dow −0.1% (WSJ). CNBC quotes: spot gold 4,132.30 (7:50 PM ET bar), 10-year 5.142%, DXY 101.97.",
+   "reason_en": "Near term: nominal and real yields rising together lift the cost of holding gold – bounces into $4,140–$4,155 are likely to get sold. Longer term: 5%-plus yields are gold's biggest headwind; the trend only turns if inflation cools or financial stress (AI debt, European bonds) forces the Fed to change its tone.",
+   "time_en": "Oct 19, 5:00 PM ET (bond close) → 5:17 PM ET (Investing.com) → CNBC quote 7:50 PM ET"
+  },
+  {
+   "date": "2026-10-20",
+   "category": "Dầu mỏ",
+   "priority": 2,
+   "impact": "tăng",
+   "title": "Dầu trái chiều: WTI tháng 11 sắp đáo hạn +2,2% lên 103,66 USD vì Hormuz nghẽn, Brent −0,3% về 109,55 USD sau miễn trừ trừng phạt Nga 60 ngày",
+   "summary": "Reuters (qua CNA): một tàu dầu nổ sau khi trúng thủy lôi ở phía nam eo Hormuz hôm Chủ nhật (theo IRGC); Kpler: dòng dầu thô vùng Vịnh tuần trước còn ~8,5 triệu thùng/ngày, từ hơn 20 triệu tuần trước đó, ít nhất 10 vụ tấn công tàu thương mại. SEB: Iran có thể leo thang trước bầu cử giữa kỳ Mỹ 3/11. Ả Rập Xê Út phát cảnh báo nguy hiểm ở Riyadh rồi gỡ bỏ; Houthi tấn công trại huấn luyện ở Shabwa (Yemen) làm 53 người chết. Ông Trump ký lệnh miễn trừ một số trừng phạt, thuế với hàng xuất khẩu Nga (thỏa thuận diesel với ông Putin). DTN: WTI tháng 11 chốt 103,66 (+2,22%), Brent tháng 12 chốt 109,55 (−0,3%, cao nhất phiên 110,70).",
+   "reason": "Ngắn hạn: dầu cao giữ kỳ vọng lạm phát và lợi suất cao – bất lợi cho vàng qua kênh Fed, dù tin chiến sự nóng đôi lúc tạo nhịp mua trú ẩn 10–15 giá. Dài hạn: nếu Hormuz nghẽn kéo dài, lạm phát năng lượng buộc Fed giữ lập trường diều hâu – vàng khó bứt phá cho tới khi rủi ro chiến tranh chuyển thành rủi ro tăng trưởng.",
+   "source": {
+    "name": "Reuters (qua CNA) – Dầu lùi khỏi đỉnh 5 tháng: Hormuz và miễn trừ trừng phạt Nga",
+    "name_en": "Reuters (via CNA) – Oil slips from five-month highs with Hormuz crossings, Russian sanctions waiver in focus",
+    "url": "https://www.channelnewsasia.com/business/oil-slips-five-month-highs-hormuz-crossings-russian-sanctions-waiver-in-focus-6470481"
+   },
+   "source2": {
+    "name": "DTN – Dầu trái chiều do miễn trừ trừng phạt Mỹ và đe dọa ở Hormuz",
+    "name_en": "DTN – Oil prices mixed on U.S. sanctions waivers, Hormuz threats",
+    "url": "https://www.dtnpf.com/agriculture/web/AG/news/world-policy/article/2026/10/19/oil-prices-mixed-u-s-sanctions"
+   },
+   "time_vn": "22:08 VN 19/10 (Reuters) → 01:30 VN 20/10 (chốt giá dầu)",
+   "title_en": "Oil splits: expiring November WTI jumps 2.2% to $103.66 on Hormuz disruption, while Brent slips 0.3% to $109.55 on a 60-day Russia sanctions waiver",
+   "summary_en": "Reuters (via CNA): an oil tanker exploded after hitting a naval mine in the southern Strait of Hormuz on Sunday, according to the IRGC; Kpler says Gulf crude flows fell to about 8.5 million barrels per day last week from more than 20 million the week before, with at least 10 confirmed incidents involving commercial vessels. SEB expects Iran to escalate further ahead of the Nov. 3 U.S. midterms. Saudi Arabia issued danger alerts for Riyadh before lifting them, and a Houthi attack on a training camp in Yemen's Shabwa province killed 53. President Trump signed an order waiving some sanctions and tariffs on Russian exports after a diesel deal with Putin. DTN: November WTI settled at $103.66 (+2.22%), December Brent at $109.55 (−0.3%, session high $110.70).",
+   "reason_en": "Near term: high oil keeps inflation expectations and yields elevated – a headwind for gold through the Fed channel, even if war headlines spark $10–$15 haven pops. Longer term: a prolonged Hormuz squeeze forces the Fed to stay hawkish, and gold struggles to break out until war risk turns into growth risk.",
+   "time_en": "Oct 19, 11:08 AM ET (Reuters) → 2:30 PM ET (oil settlement)"
+  },
+  {
+   "date": "2026-10-20",
+   "category": "Fed",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "Cược Fed tăng lãi 28/10 nhích lên 19,5% (hôm trước 16,1%); tháng 12 hơn 90% khả năng tăng ít nhất 25 điểm cơ bản",
+   "summary": "Investing.com Fed Rate Monitor (CME Fed Funds futures, cập nhật 19:25 ET 19/10 = 06:25 VN 20/10): họp 27–28/10 – giữ 3,75–4,00% 80,5%, tăng lên 4,00–4,25% 19,5% (hôm trước 83,9%/16,1%; tuần trước 78,2%/21,8%). Họp 8–9/12: giữ 9,4% · lên 4,00–4,25% 73,4% · lên 4,25–4,50% 17,2%. FXStreet (trích CME FedWatch): 82,8% giữ lãi tháng 10. Deutsche Bank: hợp đồng hoán đổi lạm phát 1 năm của Mỹ tăng 17 điểm cơ bản tuần trước lên 2,74%. Fed đang trong giai đoạn im lặng trước cuộc họp.",
+   "reason": "Ngắn hạn: mỗi điểm % cược tăng lãi thêm là thêm lực đỡ cho lợi suất 2 năm và USD – vàng khó giữ các nhịp hồi. Dài hạn: chu kỳ tăng lãi kéo dài tới tháng 12 giữ vàng trong biên 4.075–4.210; tín hiệu Fed dừng tăng sẽ là chất xúc tác lớn nhất cho phe mua.",
+   "source": {
+    "name": "Investing.com – Fed Rate Monitor (CME Fed Funds futures)",
+    "name_en": "Investing.com – Fed Rate Monitor (CME fed funds futures)",
+    "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+   },
+   "source2": {
+    "name": "FXStreet – Vàng thủng 4.150 khi lợi suất trái phiếu Mỹ neo cao",
+    "name_en": "FXStreet – Gold tumbles below $4,150 amid elevated US Treasury yields",
+    "url": "https://www.fxstreet.com/news/gold-tumbles-below-4-150-amid-elevated-us-treasury-yields-202610192323"
+   },
+   "time_vn": "06:25 VN 20/10 (Investing.com) · 06:23 VN (FXStreet)",
+   "title_en": "October hike odds tick up to 19.5% (from 16.1%); December now prices better than 90% odds of at least a quarter-point hike",
+   "summary_en": "Investing.com Fed Rate Monitor (CME fed funds futures, updated Oct 19, 7:25 PM ET): Oct. 27-28 meeting – hold at 3.75%–4.00% 80.5%, hike to 4.00%–4.25% 19.5% (prior day 83.9%/16.1%; a week ago 78.2%/21.8%). Dec. 8-9: hold 9.4% · 4.00%–4.25% 73.4% · 4.25%–4.50% 17.2%. FXStreet, citing CME FedWatch: 82.8% odds of an October hold. Deutsche Bank: the U.S. 1-year inflation swap rose 17 basis points last week to 2.74%. The Fed is in its pre-meeting blackout.",
+   "reason_en": "Near term: every extra point of hike odds props up the 2-year and the dollar – gold struggles to hold rallies. Longer term: a hiking cycle that runs into December keeps gold boxed in the $4,075–$4,210 range; a signal that the Fed is done would be the biggest catalyst for bulls.",
+   "time_en": "Oct 19, 7:25 PM ET (Investing.com) · 7:23 PM ET (FXStreet)"
+  },
   {
    "date": "2026-10-19",
    "category": "Vàng",

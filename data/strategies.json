@@ -1,6 +1,351 @@
 {
  "strategies": [
   {
+   "id": "2026-10-20-phien-a-0645",
+   "date": "2026-10-20",
+   "time": "06:45",
+   "session": "Phiên Á",
+   "session_en": "Asia Session (Monday evening ET)",
+   "url": "bai/2026-10-20-nhan-dinh-vang-phien-a-0645.html",
+   "url_en": "en/posts/2026-10-19-gold-plan-asia-session-monday-evening.html",
+   "headline": "Vàng 20/10 phiên Á: lợi suất 10 năm 5,14% đè vàng về 4.132 – BÁN hồi 4.140–4.146, MUA 4.118–4.124",
+   "headline_en": "H79 Gold Plan – Asia Session (Monday Evening ET), Oct 19: 5.14% Yields Push Gold to 4,132 – Sell 4,140–4,146, Buy 4,118–4,124",
+   "title": "Vàng 20/10 phiên Á: lợi suất 10 năm 5,14% đè vàng về 4.132 – BÁN hồi 4.140–4.146, MUA 4.118–4.124",
+   "title_en": "H79 Gold Plan – Asia Session (Monday Evening ET), Oct 19: 5.14% Yields Push Gold to 4,132 – Sell 4,140–4,146, Buy 4,118–4,124",
+   "image": "img/charts/gold-2026-10-20-asia-0645.png",
+   "image_alt": "Biểu đồ vàng 45m 20/10 phiên Á: từ đỉnh phiên Âu 4.188,9 giảm về 4.132,2, nhịp hồi đêm chỉ tới 4.149,6; vùng BÁN 4.140–4.146, vùng MUA 4.118–4.124",
+   "image_en": "img/charts/gold-2026-10-19-asia-monday-evening-et-en.png",
+   "image_alt_en": "Gold 45-minute chart, Asia session Monday evening ET: down from the 4,188.90 London high to 4,132.16, the New York bounce capped at 4,149.60; sell zone 4,140–4,146, buy zone 4,118–4,124",
+   "trend": "Ngắn hạn giảm: mọi khung từ 5m đến 4H nằm nửa dưới BB90; 5m/15m/30m/45m dưới MA34 và MA89 (15m 4.141/4.160); MACD 45m đến 4H dưới signal và histogram 2H–4H âm sâu dần. Nhưng đã quá bán ngắn hạn: RSI14 1H 30, 30m 30, 15m 31; giá dưới BB90 dưới 30m (4.135). Bán hồi 4.140–4.146, không bán đuổi; chỉ mua ở 4.118–4.124 khi nến 1H đóng xanh.",
+   "trend_en": "Short-term bearish: every frame from 5m to 4H sits in the lower half of BB90; the 5m/15m/30m/45m trade below MA34 and MA89 (15m 4,141/4,160); MACD is below signal on the 45m through 4H, with the 2H–4H histograms getting more negative. But it's stretched near term: RSI(14) is 30 on the 1H and 30m, 31 on the 15m, and price is under the 30m lower BB90 (4,135). Sell a bounce into 4,140–4,146, don't chase; buy 4,118–4,124 only on a green 1H close.",
+   "trendType": "down",
+   "support": [
+    4132,
+    4125,
+    4122,
+    4118,
+    4107,
+    4103,
+    4100
+   ],
+   "resistance": [
+    4137,
+    4141,
+    4146,
+    4150,
+    4153,
+    4155,
+    4162
+   ],
+   "entryZones": [
+    "Mua 4.118 – 4.124 (S1 4.121,7 · Fib 78,6% nhịp 4.099,9→4.198,2 = 4.120,9 · BB90 dưới 15m 4.126 đang đi xuống). Vào khi giá về vùng và nến 1H đóng xanh xác nhận (RSI14 bật lên từ dưới 30 hoặc MACD 45m cắt lên) – lợi suất 10 năm 5,14% nên không dùng nến 45m/15m/30m cho lệnh mua. Dừng lỗ 4.105 (dưới BB90 dưới 4H 4.106,7 và 2H 4.107,2). TP1 4.136 (trước đáy gãy 4.136,8) – chốt 50–70%, dời SL về điểm vào; TP2 4.146 (trước cụm 4.148–4.150, ngay đỉnh vùng bán). Nến 1H đóng dưới 4.110 thì bỏ lệnh mua."
+   ],
+   "entryZones_en": [
+    "Buy 4,118–4,124 (4,121.70 S1 · 78.6% retrace of 4,099.90→4,198.20 = 4,120.90 · falling 15m lower BB90 at 4,126). Enter on a dip into the zone with a green 1H close (RSI(14) turning up from below 30 or the 45m MACD crossing up) – with the 10-year at 5.14%, no 45m/15m/30m triggers on longs. Stop 4,105 (under the 4H lower BB90 at 4,106.70 and the 2H at 4,107.20). TP1 4,136 (in front of the broken 4,136.80 low) – take 50–70% and move the stop to breakeven; TP2 4,146 (in front of the 4,148–4,150 cluster, top of the sell zone). A 1H close under 4,110 cancels the long."
+   ],
+   "sellZones": [
+    "Bán 4.140 – 4.146 (MA89 5m 4.140,6 · MA34 15m 4.141,0 · đáy biên đêm 19/10 4.137,5 · Fib 23,6% nhịp 4.188,9→4.132,2 = 4.145,6 · đỉnh hồi 4.148–4.149,6 ngay trên). Vào khi giá hồi lên vùng và nến 45m hoặc 1H đóng đỏ xác nhận (MACD 45m dưới signal, RSI14 không vượt 50). Không dùng nến 15m/30m; không bán đuổi dưới 4.135. Dừng lỗ 4.153 (trên đỉnh hồi 4.149,6 và mốc tròn 4.150, dưới Fib 38,2% 4.153,9). TP1 4.134 (trước đáy phiên Á 4.132,2) – chốt 50–70%, dời SL hòa vốn; TP2 4.125 (ngay trên vùng mua). Nến 1H đóng trên 4.153 thì bỏ lệnh bán."
+   ],
+   "sellZones_en": [
+    "Sell 4,140–4,146 (5m MA89 4,140.60 · 15m MA34 4,141.00 · Monday-night range floor 4,137.50 · 23.6% retrace of 4,188.90→4,132.16 = 4,145.60 · bounce highs 4,148–4,149.60 just above). Enter on a bounce into the zone with a red 45m or 1H close (45m MACD below signal, RSI(14) capped under 50). Never on a 15m/30m close, and don't chase under 4,135. Stop 4,153 (above the 4,149.60 bounce high and the 4,150 handle, under the 38.2% retrace at 4,153.90). TP1 4,134 (in front of the 4,132.16 Asia low) – take 50–70%, stop to breakeven; TP2 4,125 (just above the buy zone). A 1H close above 4,153 cancels the short."
+   ],
+   "scenarios": [
+    "Kế hoạch: BÁN 4.140–4.146 (SL 4.153 · TP 4.134 → 4.125) · MUA 4.118–4.124 (SL 4.105 · TP 4.136 → 4.146). Bán cần nến 45m/1H đỏ; mua cần nến 1H xanh.",
+    "Kịch bản chính (~50%): phiên Á hồi kỹ thuật về 4.140–4.146 rồi thất bại – BÁN khi nến 45m/1H đóng đỏ, TP 4.134 → 4.125.",
+    "Kịch bản phụ (~30%): không hồi, trượt tiếp về 4.118–4.124 – không bán đuổi; nến 1H xanh thì MUA, TP 4.136 → 4.146.",
+    "Kịch bản xấu (~20%): nến 1H đóng trên 4.153 – phe bán sai, đứng ngoài, giá về pivot 4.155–4.162. Hoặc nến 1H đóng dưới 4.110 – bỏ mua, mốc tiếp theo 4.100 (đáy 15/10).",
+    "Rủi ro: hôm nay không có tin đỏ USD. 19:30 nhà khởi công và giấy phép xây dựng tháng 9, 21:00 doanh số nhà chờ bán (tin nhẹ); GM báo lợi nhuận trước giờ mở cửa. Tin Hormuz, Houthi – Ả Rập Xê Út có thể làm giá giật 10–15 giá. Thước đo chính là lợi suất 10 năm: còn trên 5,15% thì các nhịp hồi dễ bị bán.",
+    "Xem thêm kỹ thuật: MA34/MA89 5m 4.137/4.141 · 15m 4.141/4.160 · 30m 4.153/4.167 · 45m 4.160/4.162 · 1H 4.163/4.151. BB90 dưới 5m 4.133 · 30m 4.135 · 45m 4.132 · 1H 4.098 · 2H/4H 4.107 · 3H 4.101; BB90 giữa 1H 4.151 · 4H 4.158. Pivot 19/10 (cao 4.188,9 · thấp 4.136,8 · đóng 4.140,3): P 4.155 · R1 4.174 · S1 4.122 · S2 4.103. Fib nhịp 4.188,9→4.132,2: 23,6% 4.146 · 38,2% 4.154 · 50% 4.161. Fib nhịp 4.099,9→4.198,2: 78,6% 4.121. RSI14: 5m 34 · 15m 31 · 30m 30 · 1H 30. MACD 30m vừa nhích lên trên signal (histogram +0,05) – dấu hiệu hồi sớm; 45m–4H vẫn dưới signal."
+   ],
+   "scenarios_en": [
+    "The plan: sell 4,140–4,146 (stop 4,153 · TP1 4,134 → TP2 4,125) · buy 4,118–4,124 (stop 4,105 · TP1 4,136 → TP2 4,146). Shorts need a red 45m/1H close; longs need a green 1H close.",
+    "Base case (~50%): the Asia bid lifts gold into 4,140–4,146 and fails – sell a red 45m/1H close, targets 4,134 → 4,125.",
+    "Alternative (~30%): no bounce, gold keeps sliding into 4,118–4,124 – don't chase it; buy a green 1H close, targets 4,136 → 4,146.",
+    "Bear case for the plan (~20%): a 1H close above 4,153 – the short is wrong, step aside, gold heads back to the 4,155–4,162 pivot area. Or a 1H close under 4,110 – no longs, next stop 4,100 (Oct 15 low).",
+    "Risk: no high-impact U.S. data Tuesday. Housing starts and building permits at 8:30 AM ET, pending home sales at 10:00 AM ET (minor); GM reports before the bell. Hormuz and Houthi–Saudi headlines can whip gold $10–$15. The 10-year is the gauge: as long as it holds above 5.15%, rallies are for selling.",
+    "More detail: MA34/MA89 – 5m 4,137/4,141 · 15m 4,141/4,160 · 30m 4,153/4,167 · 45m 4,160/4,162 · 1H 4,163/4,151. Lower BB90: 5m 4,133 · 30m 4,135 · 45m 4,132 · 1H 4,098 · 2H/4H 4,107 · 3H 4,101; BB90 mid 1H 4,151 · 4H 4,158. Oct 19 pivots (high 4,188.90 · low 4,136.80 · close 4,140.25): P 4,155 · R1 4,174 · S1 4,122 · S2 4,103. Retrace of 4,188.90→4,132.16: 23.6% 4,146 · 38.2% 4,154 · 50% 4,161. Retrace of 4,099.90→4,198.20: 78.6% 4,121. RSI(14): 34 on the 5m · 31 on the 15m · 30 on the 30m · 30 on the 1H. The 30m MACD just ticked above signal (histogram +0.05) – an early bounce hint; 45m–4H still below signal."
+   ],
+   "macro": [],
+   "macro_en": [],
+   "market_picture": {
+    "text": "Hôm qua vàng mất 56 giá từ đỉnh phiên Âu 4.188,9 và đóng ngày quanh 4.140 – không vì một tin xấu nào, mà vì trái phiếu. Lợi suất 10 năm Mỹ đóng cửa 5,135%, sáng nay 5,14%, quanh vùng cao nhất 24 năm. Ba lực cùng đẩy lợi suất: lạm phát tuần trước vẫn chưa «tiêu» hết (PPI +6,3%, CPI +3,7%), trái phiếu Pháp bị bán tháo sau bạo loạn, và dầu WTI kỳ hạn gần +2,2% lên 103,66 USD khi Hormuz vẫn nghẽn. Thị trường đáp lại bằng cách nâng cửa Fed tăng lãi 28/10 lên 19,5% (từ 16,1%), tháng 12 trên 90%; USD đứng 102. Khi giữ vàng tốn 5,14% chi phí cơ hội và Phố Wall lại mua cổ phiếu AI, phe mua vàng không có lý do ôm hàng. Quan điểm của tôi: xu hướng ngắn hạn là giảm; phiên Á có thể hồi kỹ thuật vì giá đã quá bán, nhưng tôi coi nhịp hồi đó là cơ hội bán, không phải đáy. Hai mốc quyết định: 4.153 – nến 1H đóng trên đó là phe bán sai; 4.118–4.124 – nơi duy nhất tôi muốn mua, và chỉ khi nến 1H đóng xanh. Việc cần làm: bán hồi 4.140–4.146, không bán đuổi ở 4.132, ở giữa thì ngồi yên.",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "102,0 ↑",
+      "dir": "up"
+     },
+     {
+      "k": "US10Y",
+      "v": "5,142% ↑",
+      "dir": "up"
+     },
+     {
+      "k": "US2Y",
+      "v": "4,774% ↑",
+      "dir": "up"
+     },
+     {
+      "k": "Brent",
+      "v": "109,2",
+      "dir": ""
+     },
+     {
+      "k": "WTI T11",
+      "v": "103,66 +2,2%",
+      "dir": "up"
+     },
+     {
+      "k": "Nasdaq",
+      "v": "+1,1%",
+      "dir": "up"
+     },
+     {
+      "k": "VIX",
+      "v": "18,44",
+      "dir": "down"
+     },
+     {
+      "k": "Fed 28/10",
+      "v": "tăng 19,5%",
+      "dir": "up"
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Lợi suất",
+      "url": "https://www.cnbc.com/2026/10/19/bonds-treasurys-us-yields.html"
+     },
+     {
+      "name": "Investing.com – Vàng",
+      "url": "https://www.investing.com/news/commodities-news/gold-rises-as-warsh-remarks-curb-fed-hike-bets-4956185"
+     },
+     {
+      "name": "Reuters/CNA – Dầu",
+      "url": "https://www.channelnewsasia.com/business/oil-slips-five-month-highs-hormuz-crossings-russian-sanctions-waiver-in-focus-6470481"
+     },
+     {
+      "name": "Investing.com – Fed Rate Monitor",
+      "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+     },
+     {
+      "name": "CNBC – XAU=",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "market_picture_en": {
+    "text": "Gold gave up $56 from Monday's 4,188.90 London high and finished the day near 4,140 – not on any bad headline, but on bonds. The 10-year closed at 5.135% and is 5.14% tonight, right around 24-year highs. Three forces are pushing yields at once: the market is still digesting last week's hot inflation (PPI +6.3%, CPI +3.7%), French bonds sold off after a weekend of riots, and expiring November WTI jumped 2.2% to $103.66 with Hormuz still choked. Fed funds futures answered by lifting October hike odds to 19.5% from 16.1%, with December above 90%, and the dollar is holding 102. With a 5.14% opportunity cost and Wall Street buying AI names again, gold bulls have no reason to hold inventory. My view: the short-term trend is down; the Asia session may bounce because gold is oversold, but I treat that bounce as a selling opportunity, not a bottom. The two levels that matter: 4,153 – a 1H close above it and the short is wrong; 4,118–4,124 – the only place I want to buy, and only on a green 1H close. The job: sell a bounce into 4,140–4,146, don't chase 4,132, and sit on my hands in between.",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "102.0 ↑",
+      "dir": "up"
+     },
+     {
+      "k": "US10Y",
+      "v": "5.142% ↑",
+      "dir": "up"
+     },
+     {
+      "k": "US2Y",
+      "v": "4.774% ↑",
+      "dir": "up"
+     },
+     {
+      "k": "Brent",
+      "v": "109.2",
+      "dir": ""
+     },
+     {
+      "k": "WTI Nov",
+      "v": "103.66 +2.2%",
+      "dir": "up"
+     },
+     {
+      "k": "Nasdaq",
+      "v": "+1.1%",
+      "dir": "up"
+     },
+     {
+      "k": "VIX",
+      "v": "18.44",
+      "dir": "down"
+     },
+     {
+      "k": "Oct 28 hike",
+      "v": "19.5%",
+      "dir": "up"
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Treasury yields",
+      "url": "https://www.cnbc.com/2026/10/19/bonds-treasurys-us-yields.html"
+     },
+     {
+      "name": "Investing.com – Gold",
+      "url": "https://www.investing.com/news/commodities-news/gold-rises-as-warsh-remarks-curb-fed-hike-bets-4956185"
+     },
+     {
+      "name": "Reuters/CNA – Oil",
+      "url": "https://www.channelnewsasia.com/business/oil-slips-five-month-highs-hormuz-crossings-russian-sanctions-waiver-in-focus-6470481"
+     },
+     {
+      "name": "Investing.com – Fed Rate Monitor",
+      "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+     },
+     {
+      "name": "CNBC – XAU=",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "physicalAdvice": "Làm theo kế hoạch, đừng chạy theo nến tin.",
+   "physicalAdvice_en": "Trade the plan, not the noise.",
+   "notes": "Các mốc là giá giao ngay XAU/USD (CNBC XAU= 4.132,3 nến 5m 06:50; gold-api.com 4.133,3 lúc 06:53). Khung 15m/30m/45m/1H dựng từ nến 5m giao ngay CNBC; 2H/3H/4H từ nến 1H giao ngay CNBC, bỏ nến phẳng cuối tuần. MA là SMA; lệch 1–2 giá tùy sàn. Pivot cổ điển theo phiên 19/10 (cao 4.188,9 · thấp 4.136,8 · đóng 4.140,3): P 4.155 · R1 4.174 · S1 4.122 · S2 4.103. Phiên 20/10 từ 05:00: mở 4.141,4 · cao 4.142,0 · thấp 4.132,2 (06:50). Vàng tương lai tháng 12 GC=F (Yahoo) 4.153,9 lúc 06:43 – cao hơn giao ngay ~20,6 giá; hợp đồng Comex tháng 10 chốt 4.139,0 (−0,49%).",
+   "notes_en": "Levels are spot XAU/USD (CNBC XAU= 4,132.30 on the 7:50 PM ET 5-minute bar; gold-api.com 4,133.30 at 7:53 PM ET). 15m/30m/45m/1H frames are built from CNBC XAU= spot 5-minute bars; 2H/3H/4H from spot hourly bars, with flat weekend bars removed. Simple MAs; levels may differ by a point or two between brokers. Classic pivots from the Oct 19 session (high 4,188.90 · low 4,136.80 · close 4,140.25): P 4,155 · R1 4,174 · S1 4,122 · S2 4,103. Tuesday's session so far (from the 6:00 PM ET open): open 4,141.40 · high 4,142.00 · low 4,132.16 (7:50 PM ET). December Comex futures (GC=F, Yahoo) 4,153.90 at 7:43 PM ET – about $20.60 over spot; front-month October Comex settled at 4,139.00 (−0.49%).",
+   "dataTime": "Cập nhật 06:45–06:55 ngày 20/10/2026 giờ VN (Phiên Á). Nến 5m và 1H giao ngay CNBC XAU=; gold-api.com XAU; DXY, US10Y, US2Y, Brent, S&P fut, Nasdaq fut, VIX từ CNBC; GC=F từ Yahoo; xác suất Fed từ Investing.com Fed Rate Monitor; lịch tin ForexFactory.",
+   "dataTime_en": "Updated 7:45–7:55 PM ET, Monday Oct 19, 2026 (Asia session). Spot 5-minute and hourly bars from CNBC XAU=; gold-api.com XAU; DXY, US10Y, US2Y, Brent, S&P and Nasdaq futures and VIX from CNBC; GC=F from Yahoo; Fed odds from the Investing.com Fed Rate Monitor; calendar from ForexFactory.",
+   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+   "brief": true,
+   "summary": {
+    "trend": "down",
+    "trendText": "Ngắn hạn giảm – lợi suất 10 năm 5,14% đè vàng; bán hồi 4.140–4.146, chỉ mua 4.118–4.124 khi nến 1H xanh",
+    "trendText_en": "Short-term bearish – a 5.14% 10-year caps gold; sell a bounce into 4,140–4,146, buy 4,118–4,124 only on a green 1H close",
+    "buy": {
+     "zone": "4.118 – 4.124",
+     "sl": "4.105",
+     "tp": "4.136 → 4.146",
+     "zone_en": "4,118–4,124",
+     "sl_en": "4,105",
+     "tp_en": "TP1 4,136 → TP2 4,146"
+    },
+    "sell": {
+     "zone": "4.140 – 4.146",
+     "sl": "4.153",
+     "tp": "4.134 → 4.125",
+     "zone_en": "4,140–4,146",
+     "sl_en": "4,153",
+     "tp_en": "TP1 4,134 → TP2 4,125"
+    },
+    "note": "Hôm nay không có tin đỏ USD. Không bán đuổi ở 4.132 (RSI 1H 30). Bài học 19/10: vùng bán đặt sát MA gần nhất vì ngày có xu hướng giá hồi nông. Lợi suất 5,14% – lệnh mua chỉ vào khi nến 1H đóng xanh. Nến 1H đóng trên 4.153 bỏ bán; dưới 4.110 bỏ mua.",
+    "note_en": "No high-impact U.S. data Tuesday. Don't sell the hole at 4,132 (1H RSI 30). Monday's lesson: on a trend day bounces are shallow, so the sell zone sits at the nearest MA. With the 10-year at 5.14%, longs need a green 1H close. A 1H close above 4,153 cancels the short; below 4,110 cancels the long.",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD",
+    "priceNote_en": "Spot XAU/USD prices"
+   },
+   "article": {
+    "sections": [
+     {
+      "h": "Nhìn lại ngày 19/10: đúng hướng, ít tiền",
+      "p": "Năm kế hoạch, không lệnh nào chạm SL. Lệnh MUA phiên Á vào 4.175,8 và chốt 60% ở TP1 4.186 (+10,2 giá), phần còn lại ra hòa vốn; lệnh MUA giữ từ thứ Sáu cũng chốt ở đó (+12,5). Từ 14:30 vàng quay đầu giảm 56 giá – và tôi gần như không ăn được gì. Bốn vùng BÁN đều đúng hướng nhưng giá không hồi tới: thiếu 8,9 · 9,1 · 8,3 · 3,4 giá; vùng 17:47 chạm mép 0,5 giá nhưng nến xác nhận đóng quá xa. Hai vùng MUA (13:45, 19:15) bị xuyên mà không có nến xanh – tôi đứng ngoài và tránh được 6–9 giá lỗ. Lỗi là của tôi: tôi đặt vùng bán ở mốc gãy cũ, trong khi ngày có xu hướng thì giá chỉ hồi tới MA gần nhất. Kế hoạch 21:07 cũng vậy: đỉnh hồi chỉ 4.149,6 rồi giá trượt về 4.132,2 – qua cả TP1 4.141 mà tôi không có vị thế."
+     },
+     {
+      "h": "Vì sao vàng giảm: trái phiếu, không phải tin tức",
+      "p": "Không có tin xấu nào dành riêng cho vàng hôm qua. Thứ đè vàng là lợi suất: 10 năm Mỹ đóng cửa 5,135%, sáng nay 5,14%; 2 năm 4,77%. Ba lực cùng đẩy: thị trường vẫn đang «tiêu hóa» lạm phát tuần trước (PPI +6,3%, CPI +3,7% so với cùng kỳ), trái phiếu Pháp bị bán tháo sau bạo loạn cuối tuần, và dầu WTI kỳ hạn gần +2,2% lên 103,66 USD vì Hormuz vẫn nghẽn. Cửa Fed tăng lãi ngày 28/10 nhích lên 19,5% (hôm trước 16,1%), tháng 12 trên 90%. Phố Wall mua lại cổ phiếu AI (Nasdaq +1,1%) – không ai cần trú ẩn. MKS PAMP mô tả đúng điều tôi thấy trên biểu đồ: vàng được mua giờ châu Á, bị bán giờ New York."
+     },
+     {
+      "h": "Tôi giao dịch phiên Á thế nào",
+      "p": "Tôi nghiêng bán, nhưng không bán ở 4.132: RSI14 1H đúng 30, giá nằm dưới BB90 dưới của 30m – chỗ người bán muộn hay bị bắt. Rút kinh nghiệm hôm qua, vùng bán lần này đặt gần: 4.140–4.146, nơi MA89 5m (4.141), MA34 15m (4.141), đáy biên đêm qua 4.137,5 và Fib 23,6% (4.146) chồng lên nhau. Nhịp hồi giờ châu Á vào đó mà nến 45m/1H đóng đỏ thì tôi bán, SL 4.153, chốt một phần ở 4.134 rồi 4.125. Phía dưới, 4.118–4.124 (S1 4.122 + Fib 78,6% 4.121) là chỗ duy nhất tôi muốn mua – và với lợi suất 5,14%, tôi chỉ mua khi nến 1H đóng xanh, không dùng nến 45m. Nến 1H đóng trên 4.153 là tôi sai về phe bán; tôi đứng ngoài chứ không cãi."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Lợi suất trái phiếu Mỹ tăng khi nhà đầu tư cân nhắc lạm phát",
+      "url": "https://www.cnbc.com/2026/10/19/bonds-treasurys-us-yields.html"
+     },
+     {
+      "name": "Investing.com – Vàng giảm vì USD mạnh lên và trái phiếu bị bán tháo",
+      "url": "https://www.investing.com/news/commodities-news/gold-rises-as-warsh-remarks-curb-fed-hike-bets-4956185"
+     },
+     {
+      "name": "Bloomberg (qua Advisor Perspectives) – Vàng giảm khi lợi suất neo cao dù dầu hạ",
+      "url": "https://www.advisorperspectives.com/articles/2026/10/19/gold-declines-bond-yields-stay-elevated-oil-drop?topic=energy"
+     },
+     {
+      "name": "Reuters (qua CNA) – Dầu lùi khỏi đỉnh 5 tháng: Hormuz và miễn trừ trừng phạt Nga",
+      "url": "https://www.channelnewsasia.com/business/oil-slips-five-month-highs-hormuz-crossings-russian-sanctions-waiver-in-focus-6470481"
+     },
+     {
+      "name": "DTN – Dầu trái chiều: WTI +2,2%, Brent −0,3%",
+      "url": "https://www.dtnpf.com/agriculture/web/AG/news/world-policy/article/2026/10/19/oil-prices-mixed-u-s-sanctions"
+     },
+     {
+      "name": "Investing.com – Fed Rate Monitor (CME Fed Funds futures), 19/10 19:25 ET",
+      "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+     },
+     {
+      "name": "WSJ – Chứng khoán 19/10: nhóm công nghệ hồi phục, trái phiếu Pháp lao dốc",
+      "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-10-19-2026"
+     },
+     {
+      "name": "ForexFactory – Lịch kinh tế (20/10 không có tin đỏ USD)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "article_en": {
+    "sections": [
+     {
+      "h": "Monday's scorecard: right direction, thin profits",
+      "p": "Five plans, zero stops. The Sunday-evening long filled at 4,175.80 and banked 60% at the 4,186 TP1 (+$10.20), runner out at breakeven; Friday's carried long took profit there too (+$12.50). Then gold turned at 3:30 AM ET and fell $56 – and I caught almost none of it. All four short zones were right on direction, but gold never bounced far enough: $8.90, $9.10, $8.30 and $3.40 short. The 6:47 AM ET zone was tagged by 50 cents, but the confirming close came too far below it. Two buy zones (2:45 AM and 8:15 AM ET) got pierced without a green close, so I stayed out and dodged $6–$9 of losses. That one's on me: I parked the shorts at old breakdown levels, and on a trend day the bounce only reaches the nearest moving average. The 10:07 AM ET plan was the same story – the bounce topped at 4,149.60 and gold slid to 4,132.16, straight through my 4,141 TP1 without me."
+     },
+     {
+      "h": "Why gold fell: bonds, not headlines",
+      "p": "Nothing gold-specific hit the tape. Yields did the damage: the 10-year closed at 5.135% and is 5.14% tonight; the 2-year is 4.77%. Three things pushed at once – the market is still digesting last week's hot inflation (PPI +6.3% y/y, CPI +3.7%), French bonds sold off after a weekend of riots, and expiring November WTI jumped 2.2% to $103.66 with Hormuz still choked. October hike odds ticked up to 19.5% from 16.1%, and December is above 90%. Wall Street bought AI again (Nasdaq +1.1%), so nobody needed a haven. MKS PAMP's Nicky Shiels nailed what the chart shows: gold gets bid in Asian hours and offered in New York."
+     },
+     {
+      "h": "How I'm trading the Asia session",
+      "p": "I lean short, but I'm not selling 4,132: the 1H RSI(14) is sitting at 30 and price is under the 30m lower BB90 – that's where late shorts get trapped. Lesson learned from Monday, the sell zone is tighter this time: 4,140–4,146, where the 5m MA89 (4,141), the 15m MA34 (4,141), last night's 4,137.50 range floor and the 23.6% retrace (4,146) stack up. If the Asia bid pushes gold into that zone and a 45m or 1H bar closes red, I'm short with a 4,153 stop, scaling out at 4,134, then 4,125. Below, 4,118–4,124 (4,122 S1 plus the 78.6% retrace at 4,121) is the only place I want to buy – and with the 10-year at 5.14%, I need a green 1H close, not a 45m. A 1H close above 4,153 means I'm wrong on the short, and I'll step aside rather than argue."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Treasury yields move higher as investors assess U.S. inflation backdrop",
+      "url": "https://www.cnbc.com/2026/10/19/bonds-treasurys-us-yields.html"
+     },
+     {
+      "name": "Investing.com – Gold slips amid stronger dollar, bond sell-off",
+      "url": "https://www.investing.com/news/commodities-news/gold-rises-as-warsh-remarks-curb-fed-hike-bets-4956185"
+     },
+     {
+      "name": "Bloomberg (via Advisor Perspectives) – Gold declines as bond yields stay elevated despite oil drop",
+      "url": "https://www.advisorperspectives.com/articles/2026/10/19/gold-declines-bond-yields-stay-elevated-oil-drop?topic=energy"
+     },
+     {
+      "name": "Reuters (via CNA) – Oil slips from five-month highs; Hormuz crossings, Russian sanctions waiver in focus",
+      "url": "https://www.channelnewsasia.com/business/oil-slips-five-month-highs-hormuz-crossings-russian-sanctions-waiver-in-focus-6470481"
+     },
+     {
+      "name": "DTN – Oil prices mixed on U.S. sanctions waivers, Hormuz threats",
+      "url": "https://www.dtnpf.com/agriculture/web/AG/news/world-policy/article/2026/10/19/oil-prices-mixed-u-s-sanctions"
+     },
+     {
+      "name": "Investing.com – Fed Rate Monitor (CME fed funds futures), Oct 19, 7:25 PM ET",
+      "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+     },
+     {
+      "name": "WSJ – Stock market news, Oct 19: tech rebounds, French bonds slump",
+      "url": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-10-19-2026"
+     },
+     {
+      "name": "ForexFactory – Economic calendar (no high-impact U.S. data Tuesday)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   }
+  },
+  {
    "id": "2026-10-19-phien-my-2107",
    "date": "2026-10-19",
    "time": "21:07",

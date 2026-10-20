@@ -2,15 +2,15 @@
  "_note": "Nhật ký kết quả kế hoạch H79. Win = TP1 trước SL; loss = SL trước; hết phiên = P/L tại lúc đánh giá. MFE tính bằng giá ($1/oz). tp1_hit/tp2_hit ghi lại mỗi khi giá chạm TP (kể cả sau đó giá quay lại).",
  "plans": [
   {
-   "id": "2026-10-19-phien-my-2107",
-   "date": "2026-10-19",
-   "session": "Phiên Mỹ",
+   "id": "2026-10-20-phien-a-0645",
+   "date": "2026-10-20",
+   "session": "Phiên Á",
    "evaluated_at_vn": null,
    "price_ref": "spot",
    "sell": {
-    "zone": "4.153 – 4.159",
-    "sl": "4.168",
-    "tp1": "4.141",
+    "zone": "4.140 – 4.146",
+    "sl": "4.153",
+    "tp1": "4.134",
     "tp2": "4.125",
     "zone_filled": null,
     "result": "mở",
@@ -18,12 +18,49 @@
    },
    "buy": {
     "zone": "4.118 – 4.124",
-    "sl": "4.106",
-    "tp1": "4.137",
-    "tp2": "4.152",
+    "sl": "4.105",
+    "tp1": "4.136",
+    "tp2": "4.146",
     "zone_filled": null,
     "result": "mở",
     "mfe": null
+   }
+  },
+  {
+   "id": "2026-10-19-phien-my-2107",
+   "date": "2026-10-19",
+   "session": "Phiên Mỹ",
+   "evaluated_at_vn": "06:55 20/10/2026",
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.153 – 4.159",
+    "sl": "4.168",
+    "tp1": "4.141",
+    "tp2": "4.125",
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "entry": null,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "shortfall_to_zone": 3.4,
+    "note": "Cao nhất sau 21:07 là 4.149,6 (21:20 19/10) – thiếu 3,4 giá tới vùng bán 4.153–4.159; nhịp hồi sau đó chỉ tới 4.149,1 (22:30) và 4.148,7 (01:45). Đúng hướng: giá trượt về 4.132,2 (06:50 20/10), qua TP1 4.141 (chạm từ 22:45) nhưng không có vị thế. Vùng bán đặt ở mốc gãy cũ quá xa trong ngày có xu hướng. Thay bằng kế hoạch Phiên Á 20/10 (bán 4.140–4.146). Nguồn CNBC XAU= 5m."
+   },
+   "buy": {
+    "zone": "4.118 – 4.124",
+    "sl": "4.106",
+    "tp1": "4.137",
+    "tp2": "4.152",
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "entry": null,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "shortfall_to_zone": 8.2,
+    "note": "Thấp nhất sau 21:07 là 4.132,2 (06:50 20/10) – thiếu 8,2 giá tới vùng mua 4.118–4.124. Không vào lệnh. Thay bằng kế hoạch Phiên Á 20/10 (mua 4.118–4.124, chỉ khi nến 1H đóng xanh). Nguồn CNBC XAU= 5m."
    }
   },
   {
