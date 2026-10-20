@@ -2,28 +2,64 @@
  "_note": "Nhật ký kết quả kế hoạch H79. Win = TP1 trước SL; loss = SL trước; hết phiên = P/L tại lúc đánh giá. MFE tính bằng giá ($1/oz). tp1_hit/tp2_hit ghi lại mỗi khi giá chạm TP (kể cả sau đó giá quay lại).",
  "plans": [
   {
-   "id": "2026-10-20-phien-my-1915",
+   "id": "2026-10-20-phien-my-2107",
    "date": "2026-10-20",
    "session": "Phiên Mỹ",
    "evaluated_at_vn": null,
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.153 – 4.159",
+    "sl": "4.167",
+    "tp1": "4.144",
+    "tp2": "4.137",
+    "zone_filled": null,
+    "result": "mở",
+    "mfe": null
+   },
+   "buy": {
+    "zone": "4.130 – 4.136",
+    "sl": "4.119",
+    "tp1": "4.146",
+    "tp2": "4.153",
+    "zone_filled": null,
+    "result": "mở",
+    "mfe": null
+   }
+  },
+  {
+   "id": "2026-10-20-phien-my-1915",
+   "date": "2026-10-20",
+   "session": "Phiên Mỹ",
+   "evaluated_at_vn": "21:30 20/10/2026",
    "price_ref": "spot",
    "sell": {
     "zone": "4.133 – 4.140",
     "sl": "4.148",
     "tp1": "4.120",
     "tp2": "4.108",
-    "zone_filled": null,
-    "result": "mở",
-    "mfe": null
+    "zone_filled": true,
+    "result": "không vào lệnh",
+    "mfe": null,
+    "entry": null,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "note": "Giờ mở cửa Phố Wall giá lên 4.132,9 (20:45, thiếu 0,1 giá tới vùng) rồi bị bán. Sau tin nhà chờ bán 21:00 (−7,3%, dự báo −0,7%) giá xuyên thẳng qua vùng 4.133–4.140 từ 21:15 lên 4.150,5 (CNBC 21:29; gold-api.com 4.153,1 lúc 21:29) – vượt SL 4.148. Không có nến 45m/1H đóng đỏ trong vùng → không bán, không mất. Thay bằng kế hoạch Phiên Mỹ 21:07 (bán 4.153–4.159). Nguồn CNBC XAU= 5m, gold-api.com."
    },
    "buy": {
     "zone": "4.100 – 4.106",
     "sl": "4.091",
     "tp1": "4.120",
     "tp2": "4.133",
-    "zone_filled": null,
-    "result": "mở",
-    "mfe": null
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "entry": null,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "shortfall_to_zone": 6.6,
+    "note": "Thấp nhất sau 19:15 là 4.112,6 (19:35) – cách mép trên vùng mua 4.106 còn 6,6 giá. Thay bằng kế hoạch Phiên Mỹ 21:07 (mua hồi 4.130–4.136). Nguồn CNBC XAU= 5m."
    }
   },
   {
@@ -90,14 +126,17 @@
     "tp1": "4.135",
     "tp2": "4.143",
     "zone_filled": true,
-    "result": "mở – đã khớp",
-    "mfe": null,
+    "result": "win",
+    "mfe": 30.6,
     "entry": 4119.9,
     "entry_at_vn": "18:00 20/10",
-    "tp1_hit": false,
+    "tp1_hit": true,
     "tp2_hit": false,
     "sl_hit": false,
-    "note": "Giá vào vùng mua 4.116–4.122 từ 14:40 (4.121,6), xuyên xuống 4.111,2 (17:10) – thủng mép dưới 4,8 giá, SL 4.107 không chạm. Đến 17:47 không có nến 1H xanh (14:00, 15:00, 16:00 đều đỏ) và không có mẫu BB90 45m (bốn nến 45m 14:30–16:45 đóng đỏ ngoài BB90 dưới) → chưa vào lệnh. Nến 1H 17:00 đóng xanh 4.119,9 trong vùng lúc 18:00 → MUA 4.119,9 theo luật, SL 4.107, TP1 4.135, TP2 4.143. Lệnh đang mở; theo dõi tiếp trong kế hoạch 17:47 (chốt TP1 ở chân vùng bán 4.135). Nguồn CNBC XAU= 5m. Cập nhật 19:30: từ lúc vào cao nhất 4.125,4 (18:55), thấp nhất 4.112,5 (19:10) – SL 4.107 chưa chạm; kế hoạch 19:15 chốt ở 4.133 (chân vùng bán mới)."
+    "note": "Giá vào vùng mua 4.116–4.122 từ 14:40 (4.121,6), xuyên xuống 4.111,2 (17:10) – thủng mép dưới 4,8 giá, SL 4.107 không chạm. Đến 17:47 không có nến 1H xanh (14:00, 15:00, 16:00 đều đỏ) và không có mẫu BB90 45m (bốn nến 45m 14:30–16:45 đóng đỏ ngoài BB90 dưới) → chưa vào lệnh. Nến 1H 17:00 đóng xanh 4.119,9 trong vùng lúc 18:00 → MUA 4.119,9 theo luật, SL 4.107, TP1 4.135, TP2 4.143. Lệnh đang mở; theo dõi tiếp trong kế hoạch 17:47 (chốt TP1 ở chân vùng bán 4.135). Nguồn CNBC XAU= 5m. Cập nhật 19:30: từ lúc vào cao nhất 4.125,4 (18:55), thấp nhất 4.112,5 (19:10) – SL 4.107 chưa chạm; kế hoạch 19:15 chốt ở 4.133 (chân vùng bán mới). Cập nhật 21:30: chốt 4.133 theo kế hoạch 19:15 (chân vùng bán) khi tin nhà chờ bán đẩy giá lên – nến 5m 21:15 cao 4.134,4 → +13,1 giá. Giá đi tiếp lên 4.150,5 (CNBC 21:29; gold-api.com 4.153,1), qua cả TP1 gốc 4.135. Trước đó đỉnh 4.132,9 lúc 20:45 hụt điểm chốt 0,1 giá; SL 4.107 không bao giờ bị đe dọa (thấp nhất sau khi vào 4.112,5).",
+    "exit": 4133.0,
+    "exit_at_vn": "21:15 20/10",
+    "pnl": 13.1
    }
   },
   {

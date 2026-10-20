@@ -1,6 +1,323 @@
 {
  "strategies": [
   {
+   "id": "2026-10-20-phien-my-2107",
+   "date": "2026-10-20",
+   "time": "21:07",
+   "session": "Phiên Mỹ",
+   "session_en": "New York Session (NY morning)",
+   "url": "bai/2026-10-20-nhan-dinh-vang-phien-my-2107.html",
+   "url_en": "en/posts/2026-10-20-gold-plan-ny-morning-update.html",
+   "headline": "Vàng 20/10 phiên Mỹ 21:07: tin nhà ở kéo lợi suất xuống, vàng vượt 4.140 – BÁN 4.153–4.159, MUA hồi 4.130–4.136",
+   "headline_en": "H79 Gold Plan – New York Session, Oct 20 (NY Morning Update): Housing Miss Pulls Yields Lower, Gold Clears 4,140 – Sell 4,153–4,159, Buy 4,130–4,136",
+   "title": "Vàng 20/10 phiên Mỹ 21:07: tin nhà ở kéo lợi suất xuống, vàng vượt 4.140 – BÁN 4.153–4.159, MUA hồi 4.130–4.136",
+   "title_en": "H79 Gold Plan – New York Session, Oct 20 (NY Morning Update): Housing Miss Pulls Yields Lower, Gold Clears 4,140 – Sell 4,153–4,159, Buy 4,130–4,136",
+   "image": "img/charts/gold-2026-10-20-ny-2107.png",
+   "image_alt": "Biểu đồ vàng 45 phút 20/10 phiên Mỹ: nhà chờ bán −7,3% kéo lợi suất xuống, vàng lấp khoảng trống 4.133–4.142 và vượt 4.140; vùng BÁN 4.153–4.159 (khoảng trống 4.149,6–4.159,1), vùng MUA hồi 4.130–4.136",
+   "image_en": "img/charts/gold-2026-10-20-ny-2107-en.png",
+   "image_alt_en": "Gold 45-minute chart, New York session Oct 20 (ET): a −7.3% pending home sales print pulls yields lower, gold fills the 4,133–4,142 gap and clears 4,140; sell zone 4,153–4,159 (4,149.60–4,159.10 gap), buy-the-pullback zone 4,130–4,136",
+   "trend": "Ngắn hạn hồi mạnh nhờ tin nhà ở xấu (lợi suất, USD giảm) – nhưng xu hướng lớn vẫn giảm: giá còn dưới cụm cản 4.153–4.159 và chuỗi đỉnh thấp dần từ 4.198. Ngắn hạn đã căng sau cú chạy gần 30 giá. Bán ở 4.153–4.159, mua hồi 4.130–4.136, ở giữa đứng ngoài.",
+   "trend_en": "Sharp short-term bounce on the housing miss (yields and the dollar lower) – but the bigger trend is still down: gold sits under the 4,153–4,159 resistance cluster and the run of lower highs from 4,198. Near term it's stretched after a $30 run. Sell 4,153–4,159, buy a pullback into 4,130–4,136, flat in between.",
+   "trendType": "side",
+   "support": [
+    4141,
+    4136,
+    4133,
+    4130,
+    4121,
+    4119,
+    4111
+   ],
+   "resistance": [
+    4146,
+    4150,
+    4153,
+    4157,
+    4159,
+    4167,
+    4169
+   ],
+   "entryZones": [
+    "Mua hồi 4.130 – 4.136 (khoảng trống 4.133–4.142 vừa lấp nay thành hỗ trợ, đáy 19/10 4.136,8, chân nhịp bứt lên từ 4.121). Vào khi giá hồi về vùng và có nến 45m hoặc 1H đóng xanh, hoặc mẫu BB90 45m (nến đỏ đóng ngoài dải dưới, nến xanh kế tiếp đóng lại trong dải). Không dùng nến 15m/30m; không mua đuổi trên 4.140. Dừng lỗ 4.119 (dưới chân nhịp tin 4.121). TP1 4.146 (đỉnh phiên Á) – chốt 50–70%, dời SL về điểm vào; TP2 4.153 (chân vùng bán). Nến 1H đóng dưới 4.119 thì bỏ lệnh mua."
+   ],
+   "entryZones_en": [
+    "Buy the pullback 4,130–4,136 (the just-filled 4,133–4,142 gap turned support, Monday's 4,136.80 low, the base of the breakout from 4,121). Enter on a dip into the zone with a green 45m or 1H close, or the 45m BB90 setup (a red close outside the lower band, then a green close back inside). No 15m/30m triggers; don't chase above 4,140. Stop 4,119 (under the 4,121 pre-data base). TP1 4,146 (the Asia high) – take 50–70% and move the stop to breakeven; TP2 4,153 (bottom of the sell zone). A 1H close under 4,119 cancels the long."
+   ],
+   "sellZones": [
+    "Bán 4.153 – 4.159 (mép dưới khoảng trống giá 4.149,6–4.159,1 còn bỏ ngỏ từ phiên Mỹ hôm qua, cụm cản trung bình của khung 1H–4H). Vào khi giá lên vùng và có nến 45m hoặc 1H đóng đỏ xác nhận. Không dùng nến 15m/30m; không bán đuổi dưới 4.150. Dừng lỗ 4.167 (trên khoảng trống, dưới đỉnh phiên Mỹ 19/10 4.168,8). TP1 4.144 (đỉnh phiên Á 4.146,5 vừa bị vượt) – chốt 50–70%, dời SL hòa vốn; TP2 4.137 (đáy 19/10 4.136,8, ngay trên vùng mua). Nến 1H đóng trên 4.167 thì bỏ lệnh bán."
+   ],
+   "sellZones_en": [
+    "Sell 4,153–4,159 (bottom of the open 4,149.60–4,159.10 gap from Monday's New York session, where the 1H–4H moving-average cluster sits). Enter once price trades into the zone and a 45m or 1H candle closes red. Never on a 15m/30m close; don't chase under 4,150. Stop 4,167 (above the gap, under Monday's New York high of 4,168.80). TP1 4,144 (the 4,146.50 Asia high just cleared) – take 50–70%, stop to breakeven; TP2 4,137 (Monday's 4,136.80 low, just above the buy zone). A 1H close above 4,167 cancels the short."
+   ],
+   "scenarios": [
+    "Kế hoạch: BÁN 4.153–4.159 (SL 4.167 · TP 4.144 → 4.137) · MUA hồi 4.130–4.136 (SL 4.119 · TP 4.146 → 4.153). Chỉ vào khi có nến 45m/1H xác nhận.",
+    "Kịch bản chính (~45%): đà tin còn đẩy giá lên 4.153–4.159 rồi hụt hơi trước giờ đóng cửa London – BÁN khi nến 45m/1H đóng đỏ.",
+    "Kịch bản phụ (~35%): giá nguội lại, hồi về 4.130–4.136 rồi giữ được – MUA khi nến 45m/1H đóng xanh.",
+    "Kịch bản xấu (~20%): nến 1H đóng trên 4.167 – phe bán sai, đứng ngoài, mốc kế 4.176–4.185. Hoặc nến 1H đóng dưới 4.119 – nhịp tin thất bại, bỏ mua, giá về đáy 4.111.",
+    "Rủi ro: tối nay hết tin Mỹ; 22:30 đóng cửa London và 00:30 Comex chốt giá hay đảo chiều nhịp buổi sáng; 03:30 API tồn kho dầu. Tin Houthi – Ả Rập Xê Út, Hormuz có thể làm giá giật 10–15 giá."
+   ],
+   "scenarios_en": [
+    "The plan: sell 4,153–4,159 (stop 4,167 · TP1 4,144 → TP2 4,137) · buy the pullback 4,130–4,136 (stop 4,119 · TP1 4,146 → TP2 4,153). Only on a confirming 45m/1H close.",
+    "Base case (~45%): the data momentum carries gold into 4,153–4,159 and it stalls into the London close – sell a red 45m/1H close.",
+    "Alternative (~35%): the pop cools off, gold dips back to 4,130–4,136 and holds – buy a green 45m/1H close.",
+    "Bear case for the plan (~20%): a 1H close above 4,167 – the short is wrong, step aside, next up 4,176–4,185. Or a 1H close under 4,119 – the data pop failed, no longs, back to the 4,111 low.",
+    "Risk: no more U.S. data today; the 11:30 AM ET London close and the 1:30 PM ET Comex settle often reverse the morning move; API crude stocks at 4:30 PM ET. Houthi–Saudi and Hormuz headlines can whip gold $10–$15."
+   ],
+   "macro": [],
+   "macro_en": [],
+   "market_picture": {
+    "text": "Sáng nay tôi viết rằng dầu đang đè vàng qua kênh lãi suất. Đến giờ Mỹ, dữ liệu đã cho phe mua một lý do: nhà khởi công 1,22 triệu (dự báo 1,30), rồi doanh số nhà chờ bán −7,3% (dự báo −0,7%), thấp nhất ít nhất từ 2001. Lãi vay mua nhà 7,5% đang bóp nghẹt mảng nhạy lãi suất nhất của kinh tế Mỹ – và thị trường trái phiếu nghe thấy: lợi suất 10 năm rơi về 5,08%, USD giảm 0,4% về 101,5, Brent lùi về 108. Vàng phản ứng đúng sách: bật từ 4.121 lên 4.150, lấp trọn khoảng trống 4.133–4.142. Nhưng một dữ liệu không đổi được cả câu chuyện: Fed đang trong giai đoạn im lặng trước họp 27–28/10, khả năng tăng lãi trước tháng 12 vẫn khoảng 93%, và dầu vẫn trên 100. Quan điểm của tôi: phần còn lại phiên Mỹ là nhịp hồi đi vào cản, không phải đảo chiều. Hai mốc quyết định: 4.167 – nến 1H đóng trên đó là phe bán sai; 4.119 – nến 1H đóng dưới đó là nhịp tin thất bại. Việc cần làm: bán ở 4.153–4.159 khi có nến đỏ, mua hồi 4.130–4.136 khi có nến xanh, ở giữa thì ngồi yên.",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "101,53 −0,44%",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "5,077% −5,9 đcb",
+      "dir": "down"
+     },
+     {
+      "k": "Nhà chờ bán",
+      "v": "−7,3% (dự báo −0,7%)",
+      "dir": "down"
+     },
+     {
+      "k": "Nhà khởi công",
+      "v": "1,22 tr (dự báo 1,30)",
+      "dir": "down"
+     },
+     {
+      "k": "Brent",
+      "v": "108,3 −1,2%",
+      "dir": "down"
+     },
+     {
+      "k": "Nasdaq",
+      "v": "−0,9%",
+      "dir": "down"
+     },
+     {
+      "k": "FedWatch T12",
+      "v": "~93% tăng",
+      "dir": ""
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Nhà ở Mỹ tháng 9",
+      "url": "https://www.cnbc.com/2026/10/20/september-data-shows-housing-market-in-a-deep-freeze.html"
+     },
+     {
+      "name": "CNBC – Chứng khoán live",
+      "url": "https://www.cnbc.com/2026/10/19/stock-market-today-live-updates.html"
+     },
+     {
+      "name": "Kitco – Fed odds",
+      "url": "https://www.kitco.com/news/article/2026-10-20/gold-weaker-silver-mixed-weak-housing-data-offsets-rising-oil-prices-kitco"
+     },
+     {
+      "name": "CNBC – XAU=",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     },
+     {
+      "name": "CNBC – US10Y",
+      "url": "https://www.cnbc.com/quotes/US10Y"
+     }
+    ]
+   },
+   "market_picture_en": {
+    "text": "Earlier today I said oil was hurting gold through the rates channel. Then the U.S. data gave the bulls a reason: housing starts at 1.22 million (1.30 million expected), then pending home sales down 7.3% against a 0.7% forecast, the weakest since at least 2001. A 7.5% mortgage rate is choking the most rate-sensitive corner of the economy – and the bond market heard it: the 10-year fell to 5.08%, the dollar dropped 0.4% to 101.5 and Brent slipped to $108. Gold did what the textbook says: it ran from 4,121 to 4,150 and filled the whole 4,133–4,142 gap. But one data point doesn't rewrite the story. The Fed is in its blackout ahead of the Oct. 27-28 meeting, the market still prices roughly 93% odds of a hike by December, and crude is still north of $100. My view: the rest of the New York session is a bounce running into resistance, not a reversal. The two levels that matter: 4,167 – a 1H close above it and the short is wrong; 4,119 – a 1H close below it and the data pop has failed. The job: sell 4,153–4,159 on a red close, buy a pullback into 4,130–4,136 on a green close, and sit on my hands in between.",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "101.53 −0.44%",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "5.077% −5.9 bp",
+      "dir": "down"
+     },
+     {
+      "k": "Pending home sales",
+      "v": "−7.3% (est. −0.7%)",
+      "dir": "down"
+     },
+     {
+      "k": "Housing starts",
+      "v": "1.22M (est. 1.30M)",
+      "dir": "down"
+     },
+     {
+      "k": "Brent",
+      "v": "108.3 −1.2%",
+      "dir": "down"
+     },
+     {
+      "k": "Nasdaq",
+      "v": "−0.9%",
+      "dir": "down"
+     },
+     {
+      "k": "Dec hike odds",
+      "v": "~93%",
+      "dir": ""
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – September housing data",
+      "url": "https://www.cnbc.com/2026/10/20/september-data-shows-housing-market-in-a-deep-freeze.html"
+     },
+     {
+      "name": "CNBC – Stock market live",
+      "url": "https://www.cnbc.com/2026/10/19/stock-market-today-live-updates.html"
+     },
+     {
+      "name": "Kitco – Fed odds",
+      "url": "https://www.kitco.com/news/article/2026-10-20/gold-weaker-silver-mixed-weak-housing-data-offsets-rising-oil-prices-kitco"
+     },
+     {
+      "name": "CNBC – XAU=",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     },
+     {
+      "name": "CNBC – US10Y",
+      "url": "https://www.cnbc.com/quotes/US10Y"
+     }
+    ]
+   },
+   "physicalAdvice": "Làm theo kế hoạch, đừng chạy theo nến tin.",
+   "physicalAdvice_en": "Trade the plan, not the noise.",
+   "notes": "Các mốc là giá giao ngay XAU/USD (CNBC XAU= 4.150,5 lúc 21:29; gold-api.com 4.153,1 lúc 21:29). Khung 15m/30m/45m/1H dựng từ nến 5m giao ngay CNBC; 2H/3H/4H từ nến 1H giao ngay, bỏ nến phẳng cuối tuần. MA là SMA; lệch 1–2 giá tùy sàn. Phiên 20/10 từ 05:00: mở 4.141,4 · cao 4.146,5 (10:40) · thấp 4.111,2 (17:10). Quanh tin nhà chờ bán 21:00: 4.128,5 → đáy 4.121,0 (nến 21:05) → 4.150,5 (21:29). Lợi suất 10 năm 5,115% (21:05) → 5,077% (21:29); DXY 101,53 lúc 21:30; Brent 108,25 (−1,2%).",
+   "notes_en": "Levels are spot XAU/USD (CNBC XAU= 4,150.48 at 10:29 AM ET; gold-api.com 4,153.10 at 10:29 AM ET). 15m/30m/45m/1H frames are built from CNBC XAU= spot 5-minute bars; 2H/3H/4H from spot hourly bars, with flat weekend bars removed. Simple MAs; levels may differ by a point or two between brokers. Tuesday so far (from the 6:00 PM ET open): open 4,141.40 · high 4,146.50 (11:40 PM ET) · low 4,111.20 (6:10 AM ET). Around the 10:00 AM ET pending home sales print: 4,128.50 → 4,121.00 low (10:05 AM ET bar) → 4,150.48 (10:29 AM ET). 10-year yield 5.115% (10:05 AM ET) → 5.077% (10:29 AM ET); DXY 101.53 at 10:30 AM ET; Brent $108.25 (−1.2%).",
+   "dataTime": "Cập nhật 21:07–21:30 ngày 20/10/2026 giờ VN (Phiên Mỹ). Nến 5m và 1H giao ngay CNBC XAU=; gold-api.com XAU; DXY, US10Y, Brent, Nasdaq, VIX từ CNBC; nhà khởi công từ CNBC; nhà chờ bán từ NAR qua CNBC/Investing.com; xác suất Fed theo CME FedWatch (Kitco); lịch tin ForexFactory.",
+   "dataTime_en": "Updated 10:07–10:30 AM ET, Tuesday Oct 20, 2026 (New York morning). Spot 5-minute and hourly bars from CNBC XAU=; gold-api.com XAU; DXY, US10Y, Brent, Nasdaq and VIX from CNBC; housing starts from CNBC; pending home sales from NAR via CNBC/Investing.com; Fed odds from CME FedWatch via Kitco; calendar from ForexFactory.",
+   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+   "brief": true,
+   "summary": {
+    "trend": "side",
+    "trendText": "Hồi mạnh nhờ tin nhà ở xấu kéo lợi suất xuống – xu hướng lớn vẫn giảm: bán ở cản 4.153–4.159, mua hồi 4.130–4.136",
+    "trendText_en": "Sharp bounce as the housing miss pulls yields lower – the bigger trend is still down: sell resistance at 4,153–4,159, buy a pullback into 4,130–4,136",
+    "buy": {
+     "zone": "4.130 – 4.136",
+     "sl": "4.119",
+     "tp": "4.146 → 4.153",
+     "zone_en": "4,130–4,136",
+     "sl_en": "4,119",
+     "tp_en": "TP1 4,146 → TP2 4,153"
+    },
+    "sell": {
+     "zone": "4.153 – 4.159",
+     "sl": "4.167",
+     "tp": "4.144 → 4.137",
+     "zone_en": "4,153–4,159",
+     "sl_en": "4,167",
+     "tp_en": "TP1 4,144 → TP2 4,137"
+    },
+    "note": "Không mua đuổi trên 4.140, không bán đuổi dưới 4.150 – chỉ vào khi nến 45m/1H đóng. 22:30 đóng cửa London, 00:30 Comex chốt giá hay đảo chiều. Nến 1H đóng trên 4.167 bỏ bán; dưới 4.119 bỏ mua.",
+    "note_en": "Don't chase above 4,140 or sell under 4,150 – enter only on a 45m/1H close. The 11:30 AM ET London close and 1:30 PM ET Comex settle often reverse the morning. A 1H close above 4,167 cancels the short; below 4,119 cancels the long.",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD",
+    "priceNote_en": "Spot XAU/USD prices"
+   },
+   "article": {
+    "sections": [
+     {
+      "h": "Kế hoạch vàng 19:15 – Hướng giá chạy",
+      "p": "Lệnh mua 4.120 (kế hoạch 13:45) chốt ở 4.133 đúng như đã hẹn, +13 giá, khi số liệu nhà ở Mỹ ra quá xấu kéo vàng bật lên. Vùng mua 4.100–4.106 không tới. Vùng bán 4.133–4.140 bị xuyên qua bằng một mạch nến xanh, không có nến 45m/1H đỏ nào nên không bán – và cũng không phải ôm lỗ. Giá chạy tiếp lên 4.150 sau khi chốt. Nhưng nếu vào lệnh đuổi giá thì sai nguyên tắc nên… thôi."
+     },
+     {
+      "h": "Vì sao vàng vượt 4.140",
+      "p": "Cả buổi sáng thị trường chỉ nghe dầu và Fed. Đến khi doanh số nhà chờ bán tháng 9 ra −7,3% (dự báo −0,7%), cộng với nhà khởi công 1,22 triệu (dự báo 1,30 triệu), câu chuyện mới đổi: kinh tế Mỹ đang gãy ở mảng nhạy lãi suất nhất. Lợi suất 10 năm rơi về 5,08%, USD giảm 0,4% về 101,5, Brent lùi về 108 – vàng lấp trọn khoảng trống 4.133–4.142 trong chưa đầy nửa giờ. Đây là nhịp hồi có lý do thật, nên tôi không đứng chắn trước nó. Nhưng xu hướng lớn chưa đổi: thị trường vẫn đặt khoảng 93% khả năng Fed tăng lãi trước tháng 12, và phía trên còn một bức tường ở 4.153–4.159."
+     },
+     {
+      "h": "Kế hoạch phần còn lại phiên Mỹ",
+      "p": "🔴 BÁN 4.153–4.159 | SL 4.167 | TP 4.144 → 4.137\n🟢 MUA hồi 4.130–4.136 | SL 4.119 | TP 4.146 → 4.153\nXác nhận: chỉ vào khi nến 45m/1H đóng – đỏ ở vùng bán, xanh ở vùng mua; không đặt lệnh chờ.\nVô hiệu: nến 1H đóng trên 4.167 bỏ bán; dưới 4.119 bỏ mua.\nỞ giữa 4.137–4.153 thì đứng ngoài.\nLưu ý: 22:00 đóng nến 1H, 22:30 đóng cửa London, 00:30 Comex chốt giá; tối nay hết tin Mỹ."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Thị trường nhà ở Mỹ tháng 9 «đóng băng»: nhà chờ bán −7,3%, nhà khởi công giảm mạnh",
+      "url": "https://www.cnbc.com/2026/10/20/september-data-shows-housing-market-in-a-deep-freeze.html"
+     },
+     {
+      "name": "CNBC – Chứng khoán Mỹ (live 20/10): Nasdaq giảm khi cổ phiếu AI bị bán lại; nhà khởi công 1,22 triệu",
+      "url": "https://www.cnbc.com/2026/10/19/stock-market-today-live-updates.html"
+     },
+     {
+      "name": "Kitco – Vàng giảm đầu phiên Mỹ: nhà ở yếu đối trọng với dầu tăng; ~93,6% khả năng Fed tăng lãi trước tháng 12",
+      "url": "https://www.kitco.com/news/article/2026-10-20/gold-weaker-silver-mixed-weak-housing-data-offsets-rising-oil-prices-kitco"
+     },
+     {
+      "name": "Investing.com – Doanh số nhà chờ bán tháng 9: −7,3% (dự báo −0,7%)",
+      "url": "https://www.investing.com/economic-calendar/pending-home-sales-232"
+     },
+     {
+      "name": "Yahoo Finance – Hợp đồng mua nhà tháng 9 lao dốc, thấp nhất ít nhất từ 2001",
+      "url": "https://finance.yahoo.com/real-estate/article/home-contract-signings-plunged-in-september-amid-higher-mortgage-rates-140201783.html"
+     },
+     {
+      "name": "ForexFactory – Lịch kinh tế (20/10 không có tin đỏ USD)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "article_en": {
+    "sections": [
+     {
+      "h": "The 8:15 AM ET gold plan – where price went",
+      "p": "The 4,120 long from the 2:45 AM ET plan came off at 4,133 as planned, +$13, when the housing data hit and gold popped. The 4,100–4,106 buy zone never came into play. The 4,133–4,140 sell zone got run over by a string of green bars, with no red 45m or 1H close – so no short, and no stop to eat. Gold kept going to 4,150 after the exit. Chasing it would have broken the rules, so I let it go."
+     },
+     {
+      "h": "Why gold cleared 4,140",
+      "p": "All morning this market only cared about oil and the Fed. Then September pending home sales came in at −7.3% against a −0.7% forecast, on top of housing starts at 1.22 million versus 1.30 million expected, and the story changed: the most rate-sensitive corner of the U.S. economy is cracking. The 10-year dropped to 5.08%, the dollar fell 0.4% to 101.5, Brent slipped to $108 – and gold filled the whole 4,133–4,142 gap in under half an hour. That's a bounce with a real reason behind it, so I'm not going to stand in front of it. But the bigger trend hasn't flipped: the market still prices roughly 93% odds of a hike by December, and there's a wall overhead at 4,153–4,159."
+     },
+     {
+      "h": "Plan for the rest of the New York session",
+      "p": "🔴 SELL 4,153–4,159 | Stop 4,167 | Targets 4,144 → 4,137\n🟢 BUY the pullback 4,130–4,136 | Stop 4,119 | Targets 4,146 → 4,153\nConfirm: enter only on a 45m/1H close – red in the sell zone, green in the buy zone; no resting orders.\nInvalidation: a 1H close above 4,167 cancels the short; below 4,119 cancels the long.\nIn between, 4,137–4,153, I'm flat.\nNote: the 11:00 AM ET hourly close, the 11:30 AM ET London close and the 1:30 PM ET Comex settle; no more U.S. data today."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – September data shows housing market in a deep freeze",
+      "url": "https://www.cnbc.com/2026/10/20/september-data-shows-housing-market-in-a-deep-freeze.html"
+     },
+     {
+      "name": "CNBC – Nasdaq falls as AI trade resumes sell-off: Live updates (Oct 20)",
+      "url": "https://www.cnbc.com/2026/10/19/stock-market-today-live-updates.html"
+     },
+     {
+      "name": "Kitco – Gold weaker as weak housing data offsets rising oil prices; ~93.6% odds of a hike by December",
+      "url": "https://www.kitco.com/news/article/2026-10-20/gold-weaker-silver-mixed-weak-housing-data-offsets-rising-oil-prices-kitco"
+     },
+     {
+      "name": "Investing.com – U.S. pending home sales, September: −7.3% (est. −0.7%)",
+      "url": "https://www.investing.com/economic-calendar/pending-home-sales-232"
+     },
+     {
+      "name": "Yahoo Finance – Home contract signings plunged in September amid higher mortgage rates",
+      "url": "https://finance.yahoo.com/real-estate/article/home-contract-signings-plunged-in-september-amid-higher-mortgage-rates-140201783.html"
+     },
+     {
+      "name": "ForexFactory – Economic calendar (no high-impact U.S. data today)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   }
+  },
+  {
    "id": "2026-10-20-phien-my-1915",
    "date": "2026-10-20",
    "time": "19:15",
