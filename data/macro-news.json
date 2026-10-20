@@ -1,6 +1,6 @@
 {
  "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC | Chiến tranh | Ngân hàng TW. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
- "updated": "2026-10-20",
+ "updated": "2026-10-21",
  "fomc": {
   "source": {
    "name": "Federal Reserve – FOMC calendars",
@@ -54,6 +54,102 @@
   "note_en": "Decision at 2:00 PM ET on day two of the meeting, press conference at 2:30 PM ET. * = with economic projections (dot plot)."
  },
  "items": [
+  {
+   "date": "2026-10-21",
+   "category": "Chiến tranh",
+   "priority": 1,
+   "impact": "trung lập",
+   "title": "Tin Qatar – Pakistan gửi đề xuất hòa bình Mỹ – Iran đẩy vàng vọt 22 giá lên 4.153,5, rồi xả hết khi một nhà ngoại giao phủ nhận thỏa thuận đã gần",
+   "summary": "The New Arab (Al-Araby Al-Jadeed): Qatar và Pakistan gửi đề xuất «trung gian» cho Iran và Mỹ – Iran cho IAEA thăm bí mật các cơ sở hạt nhân, đổi lại Mỹ cho Tehran nhận tiền lãi trên 6 tỷ USD bị phong tỏa ở Qatar; tư lệnh quân đội Pakistan Asim Munir chuyển đề xuất tới Tehran. Bloomberg: một nhà ngoại giao tham gia đàm phán nói tin thỏa thuận sắp đạt là không chính xác; vàng dao động từ +0,4% đến −0,7%. Trên CNBC XAU=, vàng giao ngay từ 4.130 vọt lên 4.153,5 trong 15 phút (21:15–21:30 VN) rồi về 4.120–4.126. Cùng lúc IRGC nói hai tàu dầu bốc cháy ở Hormuz do trúng thủy lôi; Houthi tiếp tục tấn công Ả Rập Xê Út.",
+   "reason": "Ngắn hạn: tin hòa đàm làm dầu, lợi suất giảm nên vàng bật – nhưng khi chưa có xác nhận, nhịp tăng xả nhanh; đứng ngoài trong 15–30 phút đầu sau tin. Dài hạn: hòa bình thật sự sẽ hạ dầu và kỳ vọng lạm phát, giảm áp lực tăng lãi của Fed – đó mới là chất xúc tác lớn cho vàng; còn chiến sự kéo dài giữ dầu trên 100 và lợi suất cao.",
+   "source": {
+    "name": "The New Arab – Qatar và Pakistan gửi đề xuất hòa bình mới cho Iran và Mỹ",
+    "name_en": "The New Arab – Exclusive: Mediators submit new peace proposal to Iran, US",
+    "url": "https://www.newarab.com/news/exclusive-mediators-submit-new-peace-proposal-iran-us"
+   },
+   "source2": {
+    "name": "Bloomberg (qua NDTV Profit) – Vàng chao đảo giữa tin hòa đàm Mỹ – Iran và lộ trình lãi suất Fed",
+    "name_en": "Bloomberg (via NDTV Profit) – Gold wavers as traders weigh US-Iran talks, Fed rate path",
+    "url": "https://www.ndtvprofit.com/markets/gold-wavers-as-traders-weigh-us-iran-talks-fed-rate-path-12212083"
+   },
+   "time_vn": "21:15 VN 20/10 (tin ra) → 21:30 VN (đỉnh 4.153,5) → 23:15 VN (vàng về 4.124)",
+   "title_en": "A Qatar–Pakistan U.S.–Iran peace proposal sends gold up $22 to 4,153.50 – and the move fully unwinds after a diplomat says a deal isn't close",
+   "summary_en": "The New Arab (Al-Araby Al-Jadeed): Qatar and Pakistan put a 'middle-ground' proposal to Iran and the U.S. – Iran would allow a confidential IAEA visit to its nuclear sites, and Washington would let Tehran collect interest on $6 billion in frozen funds held in Qatar; Pakistan's army chief Asim Munir delivered it in Tehran. Bloomberg: a diplomat involved in the talks said reports that a deal is close are inaccurate; gold swung between a 0.4% gain and a 0.7% loss. On CNBC's XAU= feed, spot ran from 4,130 to 4,153.50 in 15 minutes (10:15–10:30 AM ET), then settled back into 4,120–4,126. Meanwhile the IRGC said two tankers caught fire after hitting mines in the Strait of Hormuz, and Houthi strikes on Saudi Arabia continued.",
+   "reason_en": "Near term: peace headlines pull oil and yields lower and gold pops – but without confirmation the move fades fast, so stay flat for the first 15–30 minutes after a headline. Longer term: a real peace deal would cut crude and inflation expectations and take hike pressure off the Fed – that's the big bullish catalyst for gold; a drawn-out war keeps oil above $100 and yields high.",
+   "time_en": "Oct 20, 10:15 AM ET (report) → 10:30 AM ET (4,153.50 high) → 12:15 PM ET (gold back near 4,124)"
+  },
+  {
+   "date": "2026-10-21",
+   "category": "Dầu mỏ",
+   "priority": 2,
+   "impact": "giảm",
+   "title": "Brent chạm đỉnh 5 tháng 111,99 rồi đóng cửa 108,79 USD (−0,7%); API báo tồn kho dầu thô Mỹ giảm 4,93 triệu thùng",
+   "summary": "CNBC: WTI tháng 11 (đáo hạn 20/10) giảm 1,8% về 101,79 USD sau khi lên 110,48; WTI tháng 12 quanh 97,8–98,3 USD; Brent tháng 12 chốt 108,79 USD (−0,7%), cao nhất phiên 111,99. Kpler: ít nhất 18 tàu bị tấn công trong hai tuần; ING: thị trường vẫn giữ «phần bù rủi ro đáng kể». Reuters: Tổng thống Iran Pezeshkian gặp tư lệnh quân đội Pakistan về trung gian hòa bình. OilPrice.com: API ước tính tồn kho dầu thô Mỹ tuần đến 16/10 giảm 4,93 triệu thùng (tuần trước −11,12 triệu), xăng −2 triệu, dầu chưng cất −2,6 triệu. EIA công bố 21:30 VN hôm nay.",
+   "reason": "Ngắn hạn: dầu giữ trên 100 USD giữ kỳ vọng lạm phát và lợi suất cao – bất lợi cho vàng qua kênh Fed; tồn kho giảm thêm là lực đỡ cho giá dầu. Dài hạn: chừng nào Hormuz còn nghẽn, lạm phát năng lượng buộc Fed giữ lập trường diều hâu – vàng khó bứt phá.",
+   "source": {
+    "name": "CNBC – Giá dầu giảm khi giới giao dịch kỳ vọng tiến triển ngoại giao ở Trung Đông",
+    "name_en": "CNBC – Oil prices fall as traders hope for diplomatic progress in Middle East",
+    "url": "https://www.cnbc.com/2026/10/20/oil-price-wti-brent-crude.html"
+   },
+   "source2": {
+    "name": "OilPrice.com – API: tồn kho dầu thô và sản phẩm tiếp tục giảm",
+    "name_en": "OilPrice.com – API: Crude, product inventories continue to draw",
+    "url": "https://oilprice.com/Latest-Energy-News/World-News/API-Crude-Products-Continu-eto-Draw.html"
+   },
+   "time_vn": "01:30 VN 21/10 (chốt giá dầu) · 03:30 VN (API)",
+   "title_en": "Brent tags a five-month high at $111.99, then settles at $108.79 (−0.7%); API shows a 4.93 million-barrel U.S. crude draw",
+   "summary_en": "CNBC: expiring November WTI fell 1.8% to $101.79 after trading as high as $110.48; December WTI is around $97.80–$98.30; December Brent settled at $108.79 (−0.7%) after a $111.99 session high. Kpler counts at least 18 vessels attacked over two weeks, and ING says the market is still pricing a 'significant risk premium'. Reuters: Iran's President Pezeshkian met Pakistan's army chief on mediation. OilPrice.com: API estimates U.S. crude stocks fell 4.93 million barrels in the week to Oct. 16 (prior week −11.12 million), gasoline −2 million, distillates −2.6 million. EIA data is due at 10:30 AM ET today.",
+   "reason_en": "Near term: crude above $100 keeps inflation expectations and yields elevated – a headwind for gold through the Fed channel; another inventory draw supports oil. Longer term: as long as Hormuz stays choked, energy inflation keeps the Fed hawkish and gold struggles to break out.",
+   "time_en": "Oct 20, 2:30 PM ET (oil settlement) · 4:30 PM ET (API)"
+  },
+  {
+   "date": "2026-10-21",
+   "category": "Fed",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "Lợi suất 10 năm đóng cửa 5,116% (−1,9 đcb) nhưng 2 năm lên 4,785%; cửa Fed tăng lãi 28/10 còn 16,1%, tháng 12 vẫn ~87%",
+   "summary": "Dow Jones (Morningstar): lợi suất 10 năm giảm 0,019 điểm % về 5,116%, cách đỉnh 52 tuần 5,310% (05/10) 0,194 điểm %. CNBC: 30 năm 5,426%, 2 năm tăng hơn 2 điểm cơ bản lên 4,785%; nhà khởi công tháng 9 1,22 triệu (dự báo 1,30). Investing.com Fed Rate Monitor (CME Fed Funds futures, 19:25 ET 20/10 = 06:25 VN 21/10): họp 27–28/10 giữ 83,9% / tăng 25 điểm cơ bản 16,1% (hôm trước 81,6% / 18,4%); họp 08–09/12: giữ 13,5% · lên 4,00–4,25% 73,0% · lên 4,25–4,50% 13,5%. Reuters (CME FedWatch): 92% khả năng tăng trong tháng 12. StoneX (Bob Haberkorn): «4.000 USD là mốc lớn cần giữ». Hợp đồng vàng tháng 12 chốt 4.142,6 USD (−0,4%). Fed trong giai đoạn im lặng; thứ Tư không có dữ liệu lớn.",
+   "reason": "Ngắn hạn: lợi suất 2 năm còn tăng nghĩa là thị trường chưa bỏ kịch bản Fed tăng lãi tháng 12 – các nhịp hồi của vàng bị giới hạn. Dài hạn: lợi suất 10 năm quanh 5,1% vẫn là lực cản lớn nhất; vàng chỉ đảo chiều khi lạm phát hạ hoặc Fed báo hiệu dừng tăng.",
+   "source": {
+    "name": "CNBC – Lợi suất 10 năm giảm sau dữ liệu nhà ở yếu",
+    "name_en": "CNBC – 10-year Treasury yield moves lower after weak housing data",
+    "url": "https://www.cnbc.com/2026/10/20/us-treasury-yields-investors-economy.html"
+   },
+   "source2": {
+    "name": "Investing.com – Fed Rate Monitor (CME Fed Funds futures)",
+    "name_en": "Investing.com – Fed Rate Monitor (CME fed funds futures)",
+    "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+   },
+   "time_vn": "02:43 VN 21/10 (Dow Jones) · 06:25 VN (Investing.com)",
+   "title_en": "The 10-year closes at 5.116% (−1.9 bp) but the 2-year climbs to 4.785%; October hike odds slip to 16.1%, December still ~87%",
+   "summary_en": "Dow Jones (via Morningstar): the 10-year fell 0.019 percentage point to 5.116%, 0.194 point below its 52-week high of 5.310% on Oct. 5. CNBC: the 30-year is 5.426% and the 2-year rose more than 2 basis points to 4.785%; September housing starts came in at 1.22 million (1.30 million expected). Investing.com Fed Rate Monitor (CME fed funds futures, Oct 20, 7:25 PM ET): Oct. 27-28 – hold 83.9% / quarter-point hike 16.1% (prior day 81.6%/18.4%); Dec. 8-9 – hold 13.5% · 4.00%–4.25% 73.0% · 4.25%–4.50% 13.5%. Reuters, citing CME FedWatch: 92% odds of a December hike. StoneX's Bob Haberkorn: '$4,000 is a big level' to watch. December gold futures settled at $4,142.60 (−0.4%). The Fed is in its blackout, and Wednesday has no major data.",
+   "reason_en": "Near term: a rising 2-year says the market hasn't let go of a December hike – gold rallies stay capped. Longer term: a 10-year around 5.1% is still gold's biggest headwind; the trend only turns when inflation cools or the Fed signals it's done.",
+   "time_en": "Oct 20, 3:43 PM ET (Dow Jones) · 7:25 PM ET (Investing.com)"
+  },
+  {
+   "date": "2026-10-21",
+   "category": "Tương quan",
+   "priority": 2,
+   "impact": "giảm",
+   "title": "Phố Wall: Dow +1,0% lên 52.495,88, S&P 500 +0,3%, Nasdaq đi ngang – dòng tiền chọn cổ phiếu, không cần trú ẩn",
+   "summary": "AP: Dow tăng 529,85 điểm (+1,02%) lên 52.495,88; S&P 500 +21,84 điểm (+0,28%) lên 7.712,57; Nasdaq −6,07 điểm (−0,02%) về 26.424,82 nhờ báo cáo lợi nhuận tốt của Equifax, Hasbro. Sáng nay CNBC: hợp đồng Nasdaq +0,7%, S&P +0,24%; DXY 101,80 (+0,09%), cao hơn mức thấp nhất từ 01/10 (~101,5) hôm qua.",
+   "reason": "Ngắn hạn: chứng khoán tăng, USD đứng vững – nhu cầu trú ẩn vào vàng yếu. Dài hạn: chỉ khi rủi ro tài chính (định giá AI, nợ) bùng lên thì vàng mới lấy lại vai trò trú ẩn trong môi trường lãi suất cao.",
+   "source": {
+    "name": "AP – Các chỉ số chứng khoán Mỹ phiên 20/10/2026",
+    "name_en": "AP – How major US stock indexes fared Tuesday 10/20/2026",
+    "url": "https://apnews.com/article/wall-street-stocks-dow-nasdaq-0a5ea168499c6ae617c49e10bf48f9c6"
+   },
+   "source2": {
+    "name": "CNBC – Vàng giao ngay (XAU=)",
+    "name_en": "CNBC – Spot gold (XAU=)",
+    "url": "https://www.cnbc.com/quotes/XAU="
+   },
+   "time_vn": "03:00 VN 21/10 (đóng cửa Phố Wall) · 06:50 VN (giá CNBC)",
+   "title_en": "Wall Street: the Dow jumps 1% to 52,495.88, the S&P 500 adds 0.3%, the Nasdaq is flat – money is chasing earnings, not havens",
+   "summary_en": "AP: the Dow rose 529.85 points (+1.02%) to 52,495.88; the S&P 500 gained 21.84 points (+0.28%) to 7,712.57; the Nasdaq slipped 6.07 points (−0.02%) to 26,424.82 on strong reports from Equifax and Hasbro. Tonight on CNBC: Nasdaq futures +0.7%, S&P futures +0.24%; DXY 101.80 (+0.09%), up from Tuesday's lowest level since Oct. 1 near 101.5.",
+   "reason_en": "Near term: stocks up and a steady dollar mean little haven demand for gold. Longer term: only a real financial-stress event (AI valuations, debt) gives gold back its haven bid in a high-rate world.",
+   "time_en": "Oct 20, 4:00 PM ET (stock close) · 7:50 PM ET (CNBC quotes)"
+  },
   {
    "date": "2026-10-20",
    "category": "Tương quan",

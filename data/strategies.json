@@ -1,6 +1,335 @@
 {
  "strategies": [
   {
+   "id": "2026-10-21-phien-a-0645",
+   "date": "2026-10-21",
+   "time": "06:45",
+   "session": "Phiên Á",
+   "session_en": "Asia Session (Tuesday evening ET)",
+   "url": "bai/2026-10-21-nhan-dinh-vang-phien-a-0645.html",
+   "url_en": "en/posts/2026-10-20-gold-plan-asia-session-tuesday-evening.html",
+   "headline": "Vàng 21/10 phiên Á: tin hòa đàm Iran xả hết, vàng về 4.114 – BÁN hồi 4.124–4.130, MUA 4.100–4.106",
+   "headline_en": "H79 Gold Plan – Asia Session (Tuesday Evening ET), Oct 20: Iran Peace Pop Fades, Gold Back at 4,114 – Sell 4,124–4,130, Buy 4,100–4,106",
+   "title": "Vàng 21/10 phiên Á: tin hòa đàm Iran xả hết, vàng về 4.114 – BÁN hồi 4.124–4.130, MUA 4.100–4.106",
+   "title_en": "H79 Gold Plan – Asia Session (Tuesday Evening ET), Oct 20: Iran Peace Pop Fades, Gold Back at 4,114 – Sell 4,124–4,130, Buy 4,100–4,106",
+   "image": "img/charts/gold-2026-10-21-asia-0645.png",
+   "image_alt": "Biểu đồ vàng 45 phút 21/10 phiên Á: tin hòa đàm Iran đẩy vàng lên 4.153,5 rồi xả về 4.113,6; vùng BÁN 4.124–4.130 (khoảng trống giá 4.126,9–4.130,8), vùng MUA 4.100–4.106, cấu trúc đỉnh thấp dần từ 4.198",
+   "image_en": "img/charts/gold-2026-10-20-asia-tuesday-evening-et-en.png",
+   "image_alt_en": "Gold 45-minute chart, Asia session Tuesday evening ET: an unconfirmed Iran peace report spikes gold to 4,153.50 before it fades to 4,113.60; sell zone 4,124–4,130 (4,126.90–4,130.80 gap), buy zone 4,100–4,106, lower highs from 4,198",
+   "trend": "Ngắn hạn giảm: chuỗi đỉnh thấp dần từ 4.198, giá dưới MA89 ở mọi khung và nằm nửa dưới BB90; dầu vẫn trên 100 USD, lợi suất 10 năm 5,13%. Ngắn hạn đã sát đáy 20/10 (4.111,2) nên không bán đuổi. Bán hồi 4.124–4.130, chỉ mua 4.100–4.106 khi có nến xác nhận, ở giữa đứng ngoài.",
+   "trend_en": "Short-term bearish: lower highs from 4,198, price under the MA89 on every frame and in the lower half of BB90; crude is still above $100 and the 10-year sits at 5.13%. Gold is already sitting on Tuesday's 4,111.20 low, so no chasing. Sell a bounce into 4,124–4,130, buy 4,100–4,106 only on a confirming close, flat in between.",
+   "trendType": "down",
+   "support": [
+    4113,
+    4111,
+    4106,
+    4103,
+    4100,
+    4091,
+    4087
+   ],
+   "resistance": [
+    4118,
+    4124,
+    4127,
+    4130,
+    4137,
+    4138,
+    4150
+   ],
+   "entryZones": [
+    "Mua 4.100 – 4.106 (S1 4.105,9 · BB90 dưới 45m/2H/4H 4.102–4.105 · mốc tròn 4.100 · đáy 15/10 4.099,9). Vào khi giá về vùng và nến 1H đóng xanh, hoặc mẫu BB90 45m (nến đỏ đóng ngoài dải dưới, nến xanh kế tiếp đóng lại trong dải – vào ngay khi nến xanh đóng). Không dùng nến 15m/30m; không mua đuổi trên 4.110. Dừng lỗ 4.091 (dưới BB90 dưới 3H 4.097, trên S2 4.087). TP1 4.118 – chốt 50–70%, dời SL về điểm vào; TP2 4.127 (giữa vùng bán). Nến 1H đóng dưới 4.091 thì bỏ lệnh mua."
+   ],
+   "entryZones_en": [
+    "Buy 4,100–4,106 (4,105.90 S1 · the 45m/2H/4H lower BB90 at 4,102–4,105 · the 4,100 handle · the Oct. 15 low at 4,099.90). Enter on a green 1H close in the zone, or the 45m BB90 setup (a red close outside the lower band, then the next green bar closes back inside – enter on that close). No 15m/30m triggers; don't chase above 4,110. Stop 4,091 (under the 3H lower BB90 at 4,097, above the 4,087 S2). TP1 4,118 – take 50–70% and move the stop to breakeven; TP2 4,127 (middle of the sell zone). A 1H close under 4,091 cancels the long."
+   ],
+   "sellZones": [
+    "Bán 4.124 – 4.130 (khoảng trống giá 45m 4.126,9–4.130,8 từ đêm qua, đỉnh mở phiên Á 4.130,8, cụm MA34 15m/30m/45m 4.124–4.127, pivot ngày 4.129,7). Vào khi giá hồi lên vùng và có nến 45m hoặc 1H đóng đỏ xác nhận. Không dùng nến 15m/30m; không bán đuổi dưới 4.118. Dừng lỗ 4.138 (trên đỉnh 4.130,8 và dưới đáy 19/10 4.136,8 cộng đệm). TP1 4.115 (đáy phiên Á 4.113,6) – chốt 50–70%, dời SL hòa vốn; TP2 4.106 (S1 4.105,9, BB90 dưới 45m, ngay trên vùng mua). Nến 1H đóng trên 4.138 thì bỏ lệnh bán."
+   ],
+   "sellZones_en": [
+    "Sell 4,124–4,130 (the open 4,126.90–4,130.80 45m gap from overnight, the 4,130.80 Asia-open high, the 15m/30m/45m MA34 cluster at 4,124–4,127, the 4,129.70 daily pivot). Enter on a bounce into the zone with a red 45m or 1H close. Never on a 15m/30m close; don't chase under 4,118. Stop 4,138 (above the 4,130.80 high, just past Monday's 4,136.80 low). TP1 4,115 (the 4,113.60 Asia low) – take 50–70%, stop to breakeven; TP2 4,106 (4,105.90 S1, the 45m lower BB90, right above the buy zone). A 1H close above 4,138 cancels the short."
+   ],
+   "scenarios": [
+    "Kế hoạch: BÁN 4.124–4.130 (SL 4.138 · TP 4.115 → 4.106) · MUA 4.100–4.106 (SL 4.091 · TP 4.118 → 4.127). Chỉ vào khi có nến xác nhận.",
+    "Kịch bản chính (~50%): phiên Á hồi về 4.124–4.130 rồi thất bại – BÁN khi nến 45m/1H đóng đỏ.",
+    "Kịch bản phụ (~30%): không hồi, trượt thẳng về 4.100–4.106 – không bán đuổi; MUA khi nến 1H xanh hoặc mẫu BB90 45m.",
+    "Kịch bản xấu (~20%): nến 1H đóng trên 4.138 – phe bán sai, đứng ngoài, mốc kế 4.150–4.159. Hoặc nến 1H đóng dưới 4.091 – bỏ mua, mốc kế 4.074 (đáy 14/10).",
+    "Rủi ro: hôm nay không có tin đỏ USD; 21:30 tồn kho dầu EIA (API báo giảm 4,93 triệu thùng). Tin Iran – Qatar – Pakistan, Houthi – Ả Rập Xê Út, Hormuz có thể làm giá giật 15–20 giá như hôm qua.",
+    "Xem thêm kỹ thuật: MA34/MA89 5m 4.121/4.123 · 15m 4.124/4.127 · 30m 4.124/4.141 · 45m 4.127/4.152 · 1H 4.131/4.153. BB90 dưới 5m 4.115 · 15m 4.109 · 45m 4.105 · 1H 4.110 · 2H 4.103 · 3H 4.097 · 4H 4.102. Pivot 20/10 (cao 4.153,5 · thấp 4.111,2 · đóng 4.124,4): P 4.129,7 · R1 4.148 · S1 4.105,9 · S2 4.087. RSI14: 5m 30 · 15m 36 · 1H 40. MACD 45m/1H vừa nhích trên signal (histogram ~0) – lực bán chậm lại nhưng chưa đảo; 2H–4H vẫn dưới signal."
+   ],
+   "scenarios_en": [
+    "The plan: sell 4,124–4,130 (stop 4,138 · TP1 4,115 → TP2 4,106) · buy 4,100–4,106 (stop 4,091 · TP1 4,118 → TP2 4,127). Only on a confirming close.",
+    "Base case (~50%): the Asia session bounces into 4,124–4,130 and fails – sell a red 45m/1H close.",
+    "Alternative (~30%): no bounce, gold slides straight into 4,100–4,106 – don't chase it; buy a green 1H close or the 45m BB90 setup.",
+    "Bear case for the plan (~20%): a 1H close above 4,138 – the short is wrong, step aside, next up 4,150–4,159. Or a 1H close under 4,091 – no longs, next stop 4,074 (Oct. 14 low).",
+    "Risk: no high-impact U.S. data Wednesday; EIA crude stocks at 10:30 AM ET (API showed a 4.93 million-barrel draw). Iran–Qatar–Pakistan, Houthi–Saudi and Hormuz headlines can whip gold $15–$20, just like Tuesday.",
+    "More detail: MA34/MA89 – 5m 4,121/4,123 · 15m 4,124/4,127 · 30m 4,124/4,141 · 45m 4,127/4,152 · 1H 4,131/4,153. Lower BB90: 5m 4,115 · 15m 4,109 · 45m 4,105 · 1H 4,110 · 2H 4,103 · 3H 4,097 · 4H 4,102. Oct. 20 pivots (high 4,153.50 · low 4,111.20 · close 4,124.40): P 4,129.70 · R1 4,148 · S1 4,105.90 · S2 4,087. RSI(14): 30 on the 5m · 36 on the 15m · 40 on the 1H. The 45m and 1H MACD just ticked above signal (histogram near zero) – selling is slowing, not reversing; 2H–4H still below signal."
+   ],
+   "macro": [],
+   "macro_en": [],
+   "market_picture": {
+    "text": "Hôm qua cho thấy rõ vàng đang bị neo vào dầu và lãi suất: một tin hòa đàm Iran chưa xác nhận kéo dầu, USD và lợi suất xuống, vàng vọt 22 giá lên 4.153,5 – rồi khi một nhà ngoại giao nói thỏa thuận chưa gần, mọi thứ quay lại chỗ cũ. Brent vẫn đóng cửa 108,8 USD, lợi suất 10 năm 5,12% và 2 năm còn nhích lên 4,79%; thị trường vẫn đặt khoảng 87% khả năng Fed tăng lãi trước tháng 12. Chừng nào dầu còn trên 100 và Fed còn im lặng trước họp 27–28/10, mỗi nhịp hồi của vàng là chỗ bán chứ không phải đáy. Quan điểm của tôi: ngắn hạn giảm, 4.138 là ranh giới phe bán sai; 4.100–4.106 là nơi duy nhất đáng mua, và chỉ khi có nến xác nhận.",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "101,80 +0,09%",
+      "dir": "up"
+     },
+     {
+      "k": "US10Y",
+      "v": "5,132%",
+      "dir": "up"
+     },
+     {
+      "k": "US2Y",
+      "v": "4,795%",
+      "dir": "up"
+     },
+     {
+      "k": "Brent",
+      "v": "108,79 −0,7%",
+      "dir": "down"
+     },
+     {
+      "k": "WTI T12",
+      "v": "97,82 −0,7%",
+      "dir": "down"
+     },
+     {
+      "k": "API dầu thô",
+      "v": "−4,93 tr thùng",
+      "dir": "down"
+     },
+     {
+      "k": "Dow",
+      "v": "+1,0%",
+      "dir": "up"
+     },
+     {
+      "k": "Fed T12",
+      "v": "~87% tăng",
+      "dir": "up"
+     }
+    ],
+    "sources": [
+     {
+      "name": "Bloomberg – Vàng và hòa đàm Iran",
+      "url": "https://www.ndtvprofit.com/markets/gold-wavers-as-traders-weigh-us-iran-talks-fed-rate-path-12212083"
+     },
+     {
+      "name": "CNBC – Dầu",
+      "url": "https://www.cnbc.com/2026/10/20/oil-price-wti-brent-crude.html"
+     },
+     {
+      "name": "CNBC – Lợi suất",
+      "url": "https://www.cnbc.com/2026/10/20/us-treasury-yields-investors-economy.html"
+     },
+     {
+      "name": "Investing.com – Fed Rate Monitor",
+      "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+     },
+     {
+      "name": "CNBC – XAU=",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "market_picture_en": {
+    "text": "Tuesday showed exactly what gold is chained to right now – oil and rates. An unconfirmed Iran peace report knocked crude, the dollar and yields lower and gold jumped $22 to 4,153.50; then a diplomat said a deal wasn't close and the whole move unwound. Brent still settled at $108.79, the 10-year at 5.12%, the 2-year actually rose to 4.79%, and the market still prices roughly 87% odds of a hike by December. As long as crude holds above $100 and the Fed stays in its blackout ahead of the Oct. 27-28 meeting, gold rallies are for selling, not for bottom-picking. My view: short-term bearish, 4,138 is where the short is wrong, and 4,100–4,106 is the only place worth buying – on a confirming close.",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "101.80 +0.09%",
+      "dir": "up"
+     },
+     {
+      "k": "US10Y",
+      "v": "5.132%",
+      "dir": "up"
+     },
+     {
+      "k": "US2Y",
+      "v": "4.795%",
+      "dir": "up"
+     },
+     {
+      "k": "Brent",
+      "v": "108.79 −0.7%",
+      "dir": "down"
+     },
+     {
+      "k": "WTI Dec",
+      "v": "97.82 −0.7%",
+      "dir": "down"
+     },
+     {
+      "k": "API crude",
+      "v": "−4.93M bbl",
+      "dir": "down"
+     },
+     {
+      "k": "Dow",
+      "v": "+1.0%",
+      "dir": "up"
+     },
+     {
+      "k": "Dec hike odds",
+      "v": "~87%",
+      "dir": "up"
+     }
+    ],
+    "sources": [
+     {
+      "name": "Bloomberg – Gold and Iran talks",
+      "url": "https://www.ndtvprofit.com/markets/gold-wavers-as-traders-weigh-us-iran-talks-fed-rate-path-12212083"
+     },
+     {
+      "name": "CNBC – Oil",
+      "url": "https://www.cnbc.com/2026/10/20/oil-price-wti-brent-crude.html"
+     },
+     {
+      "name": "CNBC – Treasury yields",
+      "url": "https://www.cnbc.com/2026/10/20/us-treasury-yields-investors-economy.html"
+     },
+     {
+      "name": "Investing.com – Fed Rate Monitor",
+      "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+     },
+     {
+      "name": "CNBC – XAU=",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "physicalAdvice": "Làm theo kế hoạch, đừng chạy theo nến tin.",
+   "physicalAdvice_en": "Trade the plan, not the noise.",
+   "notes": "Các mốc là giá giao ngay XAU/USD (CNBC XAU= 4.113,7 nến 5m 06:50; gold-api.com 4.116,1 lúc 06:51). Khung 15m/30m/45m/1H dựng từ nến 5m giao ngay CNBC; 2H/3H/4H từ nến 1H giao ngay, bỏ nến phẳng cuối tuần. MA là SMA; lệch 1–2 giá tùy sàn. Pivot cổ điển theo phiên 20/10 (cao 4.153,5 · thấp 4.111,2 · đóng 4.124,4): P 4.129,7 · R1 4.148,2 · S1 4.105,9 · S2 4.087,5. Phiên 21/10 từ 05:00: mở 4.124,8 · cao 4.130,8 (05:25) · thấp 4.113,6 (06:15). Vàng tương lai GC=F (Yahoo) 4.134,2 lúc 06:42 – cao hơn giao ngay ~19 giá.",
+   "notes_en": "Levels are spot XAU/USD (CNBC XAU= 4,113.70 on the 7:50 PM ET 5-minute bar; gold-api.com 4,116.10 at 7:51 PM ET). 15m/30m/45m/1H frames are built from CNBC XAU= spot 5-minute bars; 2H/3H/4H from spot hourly bars, with flat weekend bars removed. Simple MAs; levels may differ by a point or two between brokers. Classic pivots from the Oct. 20 session (high 4,153.50 · low 4,111.20 · close 4,124.40): P 4,129.70 · R1 4,148.20 · S1 4,105.90 · S2 4,087.50. Wednesday's session so far (from the 6:00 PM ET open): open 4,124.80 · high 4,130.80 (6:25 PM ET) · low 4,113.60 (7:15 PM ET). December Comex futures (GC=F, Yahoo) 4,134.20 at 7:42 PM ET – about $19 over spot.",
+   "dataTime": "Cập nhật 06:45–06:55 ngày 21/10/2026 giờ VN (Phiên Á). Nến 5m và 1H giao ngay CNBC XAU=; gold-api.com XAU; DXY, US10Y, US2Y, Brent, WTI, S&P fut, Nasdaq fut từ CNBC; GC=F từ Yahoo; xác suất Fed từ Investing.com Fed Rate Monitor; lịch tin ForexFactory.",
+   "dataTime_en": "Updated 7:45–7:55 PM ET, Tuesday Oct 20, 2026 (Asia session). Spot 5-minute and hourly bars from CNBC XAU=; gold-api.com XAU; DXY, US10Y, US2Y, Brent, WTI, S&P and Nasdaq futures from CNBC; GC=F from Yahoo; Fed odds from the Investing.com Fed Rate Monitor; calendar from ForexFactory.",
+   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+   "brief": true,
+   "summary": {
+    "trend": "down",
+    "trendText": "Ngắn hạn giảm – tin hòa đàm Iran xả hết, dầu trên 100 USD giữ lợi suất cao; bán hồi 4.124–4.130, chỉ mua 4.100–4.106 khi có nến xác nhận",
+    "trendText_en": "Short-term bearish – the Iran peace pop faded and $100-plus crude keeps yields high; sell a bounce into 4,124–4,130, buy 4,100–4,106 only on a confirming close",
+    "buy": {
+     "zone": "4.100 – 4.106",
+     "sl": "4.091",
+     "tp": "4.118 → 4.127",
+     "zone_en": "4,100–4,106",
+     "sl_en": "4,091",
+     "tp_en": "TP1 4,118 → TP2 4,127"
+    },
+    "sell": {
+     "zone": "4.124 – 4.130",
+     "sl": "4.138",
+     "tp": "4.115 → 4.106",
+     "zone_en": "4,124–4,130",
+     "sl_en": "4,138",
+     "tp_en": "TP1 4,115 → TP2 4,106"
+    },
+    "note": "Hôm nay không có tin đỏ USD; 21:30 tồn kho dầu EIA. Không bán đuổi ở 4.114. Bài học 20/10: ngày giảm, vùng bán đặt sát cản gần nhất; nhịp tin chưa xác nhận xả rất nhanh. Nến 1H đóng trên 4.138 bỏ bán; dưới 4.091 bỏ mua.",
+    "note_en": "No high-impact U.S. data Wednesday; EIA crude stocks at 10:30 AM ET. Don't sell the hole at 4,114. Tuesday's lesson: on a down day the sell zone sits at the nearest resistance, and unconfirmed headline spikes fade fast. A 1H close above 4,138 cancels the short; below 4,091 cancels the long.",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD",
+    "priceNote_en": "Spot XAU/USD prices"
+   },
+   "article": {
+    "sections": [
+     {
+      "h": "Nhìn lại ngày 20/10: lãi ở phiên Á và phiên Âu, phiên Mỹ đứng ngoài",
+      "p": "Lệnh BÁN phiên Á 4.143 chốt đủ TP1 và TP2 (+9 và +18 giá); lệnh MUA 4.120 chốt 4.133 (+13 giá). Kế hoạch 21:07: giá chỉ chạm 4.153,5 ở mép vùng BÁN rồi quay đầu, không có nến 45m/1H đỏ trong vùng – giá rơi qua cả hai TP, tiếc là không có vị thế vào lệnh. Vùng MUA 4.130–4.136 bị chạm nhưng nến đóng đỏ nên không vào, và giá sau đó thủng 4.117,6 – luật chờ nến đã giữ tiền. Bài học: cú vọt lên 4.153 là tin hòa đàm Iran chưa xác nhận, không phải số liệu nhà ở; nhịp tin kiểu đó xả rất nhanh."
+     },
+     {
+      "h": "Kế hoạch phiên Á",
+      "p": "🔴 BÁN 4.124–4.130 | SL 4.138 | TP 4.115 → 4.106\n🟢 MUA 4.100–4.106 | SL 4.091 | TP 4.118 → 4.127\nXác nhận: bán khi nến 45m/1H đóng đỏ trong vùng; mua khi nến 1H đóng xanh, hoặc mẫu BB90 45m (nến đỏ đóng ngoài dải dưới, nến xanh kế tiếp đóng lại trong dải). Không đặt lệnh chờ.\nVô hiệu: nến 1H đóng trên 4.138 bỏ bán; dưới 4.091 bỏ mua.\nỞ giữa 4.106–4.124 thì đứng ngoài – không bán đuổi ở 4.114.\nLưu ý: 08:00–10:00 Tokyo, Thượng Hải mở cửa; 14:00 London mở cửa; 21:30 tồn kho dầu EIA; hôm nay không có tin đỏ USD."
+     }
+    ],
+    "sources": [
+     {
+      "name": "The New Arab – Qatar và Pakistan gửi đề xuất hòa bình mới cho Iran và Mỹ",
+      "url": "https://www.newarab.com/news/exclusive-mediators-submit-new-peace-proposal-iran-us"
+     },
+     {
+      "name": "Bloomberg (qua NDTV Profit) – Vàng chao đảo giữa tin hòa đàm Mỹ – Iran và lộ trình lãi suất Fed",
+      "url": "https://www.ndtvprofit.com/markets/gold-wavers-as-traders-weigh-us-iran-talks-fed-rate-path-12212083"
+     },
+     {
+      "name": "Reuters (qua CNBC) – Vàng giảm khi nhà đầu tư cân nhắc tín hiệu lãi suất của Fed",
+      "url": "https://www.cnbc.com/2026/10/20/gold-inches-up-on-softer-dollar-as-investors-assess-fed-rate-outlook.html"
+     },
+     {
+      "name": "CNBC – Giá dầu giảm khi giới giao dịch kỳ vọng tiến triển ngoại giao ở Trung Đông",
+      "url": "https://www.cnbc.com/2026/10/20/oil-price-wti-brent-crude.html"
+     },
+     {
+      "name": "CNBC – Lợi suất 10 năm giảm sau dữ liệu nhà ở yếu",
+      "url": "https://www.cnbc.com/2026/10/20/us-treasury-yields-investors-economy.html"
+     },
+     {
+      "name": "Investing.com – Fed Rate Monitor (CME Fed Funds futures), 20/10 19:25 ET",
+      "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+     },
+     {
+      "name": "ForexFactory – Lịch kinh tế (21/10 không có tin đỏ USD)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "article_en": {
+    "sections": [
+     {
+      "h": "Tuesday's scorecard: paid in Asia and London, flat in New York",
+      "p": "The Asia short at 4,143 hit both targets (+$9 and +$18), and the 4,120 long came off at 4,133 (+$13). The 10:07 AM ET plan: gold tagged 4,153.50 at the very edge of the sell zone and reversed, but never printed a red 45m or 1H close in the zone – it ran through both targets with no position on. The 4,130–4,136 buy zone traded, the bars closed red, so no long, and gold then broke to 4,117.60 – waiting for the close kept money in the account. The lesson: the pop to 4,153 was an unconfirmed Iran peace report, not the housing data, and headline spikes like that fade fast."
+     },
+     {
+      "h": "Asia Session Plan",
+      "p": "🔴 SELL 4,124–4,130 | Stop 4,138 | Targets 4,115 → 4,106\n🟢 BUY 4,100–4,106 | Stop 4,091 | Targets 4,118 → 4,127\nConfirm: short on a red 45m/1H close in the zone; long on a green 1H close, or the 45m BB90 setup (a red close outside the lower band, then a green close back inside). No resting orders.\nInvalidation: a 1H close above 4,138 cancels the short; below 4,091 cancels the long.\nIn between, 4,106–4,124, I'm flat – no selling the hole at 4,114.\nNote: 9:00–11:00 PM ET Tokyo and Shanghai open; 3:00 AM ET London open; 10:30 AM ET EIA crude stocks; no high-impact U.S. data Wednesday."
+     }
+    ],
+    "sources": [
+     {
+      "name": "The New Arab – Mediators submit new peace proposal to Iran, US",
+      "url": "https://www.newarab.com/news/exclusive-mediators-submit-new-peace-proposal-iran-us"
+     },
+     {
+      "name": "Bloomberg (via NDTV Profit) – Gold wavers as traders weigh US-Iran talks, Fed rate path",
+      "url": "https://www.ndtvprofit.com/markets/gold-wavers-as-traders-weigh-us-iran-talks-fed-rate-path-12212083"
+     },
+     {
+      "name": "Reuters (via CNBC) – Gold edges lower as investors weigh Fed rate signals",
+      "url": "https://www.cnbc.com/2026/10/20/gold-inches-up-on-softer-dollar-as-investors-assess-fed-rate-outlook.html"
+     },
+     {
+      "name": "CNBC – Oil prices fall as traders hope for diplomatic progress in Middle East",
+      "url": "https://www.cnbc.com/2026/10/20/oil-price-wti-brent-crude.html"
+     },
+     {
+      "name": "CNBC – 10-year Treasury yield moves lower after weak housing data",
+      "url": "https://www.cnbc.com/2026/10/20/us-treasury-yields-investors-economy.html"
+     },
+     {
+      "name": "Investing.com – Fed Rate Monitor (CME fed funds futures), Oct 20, 7:25 PM ET",
+      "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+     },
+     {
+      "name": "ForexFactory – Economic calendar (no high-impact U.S. data Wednesday)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   }
+  },
+  {
    "id": "2026-10-20-phien-my-2107",
    "date": "2026-10-20",
    "time": "21:07",

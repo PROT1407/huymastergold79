@@ -2,28 +2,64 @@
  "_note": "Nhật ký kết quả kế hoạch H79. Win = TP1 trước SL; loss = SL trước; hết phiên = P/L tại lúc đánh giá. MFE tính bằng giá ($1/oz). tp1_hit/tp2_hit ghi lại mỗi khi giá chạm TP (kể cả sau đó giá quay lại).",
  "plans": [
   {
+   "id": "2026-10-21-phien-a-0645",
+   "date": "2026-10-21",
+   "session": "Phiên Á",
+   "evaluated_at_vn": null,
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.124 – 4.130",
+    "sl": "4.138",
+    "tp1": "4.115",
+    "tp2": "4.106",
+    "zone_filled": null,
+    "result": "mở",
+    "mfe": null
+   },
+   "buy": {
+    "zone": "4.100 – 4.106",
+    "sl": "4.091",
+    "tp1": "4.118",
+    "tp2": "4.127",
+    "zone_filled": null,
+    "result": "mở",
+    "mfe": null
+   }
+  },
+  {
    "id": "2026-10-20-phien-my-2107",
    "date": "2026-10-20",
    "session": "Phiên Mỹ",
-   "evaluated_at_vn": null,
+   "evaluated_at_vn": "06:55 21/10/2026",
    "price_ref": "spot",
    "sell": {
     "zone": "4.153 – 4.159",
     "sl": "4.167",
     "tp1": "4.144",
     "tp2": "4.137",
-    "zone_filled": null,
-    "result": "mở",
-    "mfe": null
+    "zone_filled": true,
+    "result": "không vào lệnh",
+    "mfe": null,
+    "entry": null,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "zone_overlap": 0.5,
+    "note": "Đỉnh sau 21:07 là 4.153,5 (nến 5m 21:30) – chỉ chạm mép dưới vùng 0,5 giá rồi quay đầu. Nến 45m 21:15–22:00 đóng xanh 4.141,8 (râu trên dài), nến 1H 21:00 đóng xanh 4.141,8 → không có nến đỏ trong vùng, không bán. Nến 45m đỏ đầu tiên đóng 4.134,3 (22:45) – dưới mốc không bán đuổi 4.150. Giá rơi qua TP1 4.144 và TP2 4.137 về 4.113,6 (06:15 21/10) nhưng không có vị thế. Cú vọt 21:15–21:30 do tin hòa đàm Iran (Qatar–Pakistan) chưa xác nhận, xả khi bị phủ nhận. Thay bằng kế hoạch Phiên Á 21/10 (bán 4.124–4.130). Nguồn CNBC XAU= 5m."
    },
    "buy": {
     "zone": "4.130 – 4.136",
     "sl": "4.119",
     "tp1": "4.146",
     "tp2": "4.153",
-    "zone_filled": null,
-    "result": "mở",
-    "mfe": null
+    "zone_filled": true,
+    "result": "không vào lệnh",
+    "mfe": null,
+    "entry": null,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "note": "Giá vào vùng mua 4.130–4.136 từ 22:10 (4.133,3), xuyên xuống 4.130,3 (22:45) rồi 4.127,7 (23:00). Nến 45m 22:00–22:45 đóng đỏ 4.134,3, nến 1H 22:00 đóng đỏ 4.130,4 → không có nến xanh, không vào. Không có mẫu BB90 45m (đóng thấp nhất 4.113,7 vẫn trên dải dưới 4.105). Sau đó giá thủng 4.117,6 (00:05 21/10) – nếu vào không chờ nến thì SL 4.119 đã bị quét. Đến 06:55 21/10 chưa có nến 1H đóng dưới 4.119 (nến 05:00 đóng 4.119,0; nến 06:00 đang chạy ở 4.113,7). Thay bằng kế hoạch Phiên Á 21/10 (mua 4.100–4.106). Nguồn CNBC XAU= 5m."
    }
   },
   {
@@ -59,7 +95,7 @@
     "tp2_hit": false,
     "sl_hit": false,
     "shortfall_to_zone": 6.6,
-    "note": "Thấp nhất sau 19:15 là 4.112,6 (19:35) – cách mép trên vùng mua 4.106 còn 6,6 giá. Thay bằng kế hoạch Phiên Mỹ 21:07 (mua hồi 4.130–4.136). Nguồn CNBC XAU= 5m."
+    "note": "Thấp nhất sau 19:15 là 4.112,6 (19:35) – cách mép trên vùng mua 4.106 còn 6,6 giá. Thay bằng kế hoạch Phiên Mỹ 21:07 (mua hồi 4.130–4.136). Nguồn CNBC XAU= 5m. Cập nhật 06:55 21/10: thấp nhất tới lúc này 4.111,2–4.112,6, vùng 4.100–4.106 vẫn chưa chạm. Nguồn CNBC XAU= 5m."
    }
   },
   {
@@ -96,7 +132,7 @@
     "tp2_hit": false,
     "sl_hit": false,
     "shortfall_to_zone": 6.5,
-    "note": "Thấp nhất từ 17:47 là 4.112,5 (19:10) – cách mép trên vùng mua 4.106 còn 6,5 giá. Thay bằng kế hoạch phiên Mỹ 19:15 (mua 4.100–4.106). Nguồn CNBC XAU= 5m."
+    "note": "Thấp nhất từ 17:47 là 4.112,5 (19:10) – cách mép trên vùng mua 4.106 còn 6,5 giá. Thay bằng kế hoạch phiên Mỹ 19:15 (mua 4.100–4.106). Nguồn CNBC XAU= 5m. Cập nhật 06:55 21/10: thấp nhất tới lúc này 4.111,2–4.112,6, vùng 4.100–4.106 vẫn chưa chạm. Nguồn CNBC XAU= 5m."
    }
   },
   {
