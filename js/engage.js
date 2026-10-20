@@ -69,7 +69,7 @@
       const c = document.createElement('section'); c.id = 'nhan-tin'; c.className = 'nt-card sec';
       c.innerHTML = `<div class="nt-l"><span class="nt-bell">🔔</span><div><h2>Nhận tin vàng mỗi ngày</h2><p>Nhận định H79, tin vĩ mô và cảnh báo biến động – gửi thẳng tới điện thoại. Trao đổi, góp ý trực tiếp trong nhóm.</p>
         <div class="nt-btns"><a class="btn tg" href="${H.TG}" target="_blank" rel="noopener">✈ Vào nhóm Telegram</a><a class="btn zalo" href="#" data-zalo>💬 Kết bạn Zalo</a></div></div></div>
-        <a class="nt-qr" href="#" data-zalo title="Mã QR Zalo"><img src="assets/zalo-qr.jpg" alt="Mã QR Zalo Ngọc Huy" loading="lazy"><small>Quét QR Zalo</small></a>`;
+        <a class="nt-qr" href="#" data-zalo title="Mã QR Zalo"><img src="assets/zalo-qr.jpg?v=2" alt="Mã QR Zalo Ngọc Huy" loading="lazy"><small>Quét QR Zalo</small></a>`;
       main.appendChild(c);
     }
   });

@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   const H = window.HMG = {};
-  H.ZALO = 'https://zaloapp.com/qr/p/1px7atusm4iwa?src=qr';
+  H.ZALO = 'https://zalo.me/0919997283';
   H.YT = 'https://www.youtube.com/@HuyNguyen-zv3zk';
   H.TG = 'https://t.me/HTFXGROUP';
   H.YT_LIVE = 'https://www.youtube.com/@tradinglivexauusd4647';
@@ -133,10 +133,10 @@
   </div></footer>
   <button class="zfloat" data-zalo aria-label="Kết bạn Zalo">Zalo</button>
   <div id="zalo-modal" class="modal" hidden><div class="modal-box"><button class="x" aria-label="Đóng">×</button>
-    <h3 style="color:var(--gold)">Kết bạn Zalo – Ngọc Huy</h3><img src="assets/zalo-qr.jpg" alt="Mã QR Zalo Ngọc Huy">
-    <p class="muted small">Quét mã bằng Zalo để nhận chiến lược mỗi sáng</p><a class="btn zalo" href="${H.ZALO}" target="_blank" rel="noopener">Mở Zalo</a></div></div>`;
+    <h3 style="color:var(--gold)">Kết bạn Zalo – Ngọc Huy</h3><img src="assets/zalo-qr.jpg?v=2" alt="Mã QR Zalo Ngọc Huy">
+    <p class="muted small">Quét mã bằng Zalo để nhận chiến lược mỗi sáng<br>Zalo: <b>0919 997 283</b></p><a class="btn zalo" href="${H.ZALO}" target="_blank" rel="noopener">Mở Zalo</a></div></div>`;
   document.getElementById('site-header').outerHTML = hdr;
-  document.getElementById('site-footer').outerHTML = ftr + (EN ? `<div id="zalo-modal" class="modal" hidden><div class="modal-box"><button class="x" aria-label="Close">×</button><h3 style="color:var(--gold)">Zalo – Ngọc Huy</h3><img src="assets/zalo-qr.jpg" alt="Zalo QR code"><a class="btn zalo" href="${H.ZALO}" target="_blank" rel="noopener">Open Zalo</a></div></div>` : '');
+  document.getElementById('site-footer').outerHTML = ftr + (EN ? `<div id="zalo-modal" class="modal" hidden><div class="modal-box"><button class="x" aria-label="Close">×</button><h3 style="color:var(--gold)">Zalo – Ngọc Huy</h3><img src="assets/zalo-qr.jpg?v=2" alt="Zalo QR code"><a class="btn zalo" href="${H.ZALO}" target="_blank" rel="noopener">Open Zalo</a></div></div>` : '');
 
   document.getElementById('burger').onclick = () => document.body.classList.toggle('nav-open');
   document.getElementById('theme-btn').onclick = () => {
