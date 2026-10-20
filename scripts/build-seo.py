@@ -229,7 +229,7 @@ def summary_html(s):
 
 def article_html(a, en=False):
     if not a or not a.get("sections"): return ""
-    h = '<article class="h79art">' + (f'<h2>{e(a["title"])}</h2>' if a.get("title") else "") + "".join(f'<p><b>{e(x.get("h",""))}:</b> {re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", e(x.get("p","")))}</p>' for x in a["sections"])
+    h = '<article class="h79art">' + (f'<h2>{e(a["title"])}</h2>' if a.get("title") else "") + "".join(f'<p><b>{e(x.get("h",""))}:</b>{"<br>" if chr(10) in x.get("p","") else " "}{re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", e(x.get("p",""))).replace(chr(10), "<br>")}</p>' for x in a["sections"])
     return h + "</article>"
 
 def article_src(a, en=False):
