@@ -59,6 +59,30 @@
    "category": "Tương quan",
    "priority": 1,
    "impact": "giảm",
+   "title": "Trước giờ Mỹ: USD yếu, lợi suất 10 năm về 5,09% nhưng dầu WTI trên 100 USD – vàng giảm ngày thứ ba, kẹt quanh 4.120",
+   "summary": "FXStreet (18:30 VN): vàng giảm ngày thứ ba liên tiếp quanh 4.123 USD (−0,42%) khi WTI vượt 100 USD, cao nhất hơn một tháng, do Houthi tấn công hạ tầng năng lượng Ả Rập Xê Út và tàu ở eo Hormuz bị tấn công nhiều hơn. CME FedWatch: 17% khả năng Fed tăng lãi tháng này, 92% khả năng tăng trước tháng 12. Giá CNBC lúc 19:26 VN: DXY 101,74 (−0,23%), US10Y 5,088% (−4,8 điểm cơ bản), Brent 111,25 (+1,55%), Nasdaq tương lai −0,69%; vàng giao ngay 4.123,9.",
+   "reason": "Ngắn hạn: USD và lợi suất hạ mà vàng không hồi nổi – dầu đang là lực đè chính, nhịp hồi lên 4.133–4.140 dễ bị bán. Dài hạn: dầu cao giữ kỳ vọng Fed tăng lãi tháng 12 và lãi suất thực quanh 2,7%, là lực cản của vàng tới khi giá năng lượng hạ nhiệt.",
+   "source": {
+    "name": "FXStreet – Vàng giảm tiếp khi dầu tăng củng cố kỳ vọng Fed tăng lãi",
+    "name_en": "FXStreet – Gold extends losses as rising oil prices reinforce Fed rate hike bets",
+    "url": "https://www.fxstreet.com/news/gold-extends-losses-as-rising-oil-prices-reinforce-fed-rate-hike-bets-202610201130"
+   },
+   "source2": {
+    "name": "CNBC – Vàng giao ngay (XAU=)",
+    "name_en": "CNBC – Spot gold (XAU=)",
+    "url": "https://www.cnbc.com/quotes/XAU="
+   },
+   "time_vn": "18:30 VN 20/10 (FXStreet) → giá CNBC 19:26 VN",
+   "title_en": "Into New York: a softer dollar and a 5.09% 10-year can't offset $100 WTI – gold slides for a third day, stuck near $4,120",
+   "summary_en": "FXStreet (7:30 AM ET): gold fell for a third straight day to around $4,123 (−0.42%) as WTI topped $100, a more-than-one-month high, on Houthi strikes against Saudi energy infrastructure and more attacks on ships in the Strait of Hormuz. CME FedWatch: 17% odds of a hike this month, 92% by December. CNBC quotes at 8:26 AM ET: DXY 101.74 (−0.23%), 10-year 5.088% (−4.8 bp), Brent $111.25 (+1.55%), Nasdaq futures −0.69%; spot gold $4,123.90.",
+   "reason_en": "Near term: when a weaker dollar and lower yields can't lift gold, oil is the main weight – bounces into $4,133–$4,140 are likely to be sold. Longer term: high oil keeps December hike pricing and real yields near 2.7%, gold's headwind until energy prices cool.",
+   "time_en": "Oct 20, 7:30 AM ET (FXStreet) → CNBC quote 8:26 AM ET"
+  },
+  {
+   "date": "2026-10-20",
+   "category": "Tương quan",
+   "priority": 1,
+   "impact": "giảm",
    "title": "USD yếu, lợi suất 10 năm lùi về 5,12% – vàng chỉ nhích tới 4.145 rồi bị bán về 4.118 trước giờ mở cửa châu Âu",
    "summary": "CNBC (Reuters): vàng giao ngay +0,1% lên 4.145,22 USD lúc 10:47 VN nhờ USD yếu; CME FedWatch: 82% Fed giữ lãi ngày 28/10 nhưng 89% tăng lãi tháng 12. Kyle Rodda (Capital.com): sẽ có biến động lớn dù Fed làm gì, phản ứng ban đầu có thể hỗ trợ vàng nếu Fed giữ lãi. Thống đốc BoJ Ueda: lạm phát nền «khá gần» mục tiêu 2%, nhu cầu AI toàn cầu thêm áp lực giá – để ngỏ khả năng tăng lãi tiếp. Đến 12:30 VN vàng về 4.132,15 (Economy Middle East); theo CNBC XAU=, đáy 4.118,4 lúc 13:15, 13:50 ở 4.134,4. CNBC: DXY 101,77 (−0,20%), US10Y 5,119% (−1,7 điểm cơ bản).",
    "reason": "Ngắn hạn: khi USD yếu và lợi suất hạ mà vàng vẫn không giữ được nhịp tăng, phe bán đang nắm thế – các nhịp hồi về 4.140–4.150 dễ bị bán. Dài hạn: kỳ vọng Fed tăng lãi tháng 12 và BoJ thắt chặt giữ lợi suất toàn cầu cao, là lực cản chính của vàng tới khi lạm phát hạ nhiệt.",
