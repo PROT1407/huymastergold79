@@ -50,7 +50,7 @@
   "Người mua ở đỉnh bán ra 191,3 triệu (29/01/2026) nếu bán lại hôm nay với giá mua vào 139 triệu sẽ lỗ khoảng 52,3 triệu đồng/lượng (≈ 27,3%); so với một tuần trước (13/10: 141,3 – 144,3 triệu), SJC đã thấp hơn 2,3 triệu mỗi chiều.",
   "Lực ép đến từ Mỹ: theo Kitco, USD mạnh lên và lợi suất trái phiếu 10 năm lên khoảng 5,135% kéo vàng giao ngay về quanh 4.138 USD, trong khi khả năng Fed thắt chặt thêm vào tháng 12 vẫn gần 90%. Chừng nào lợi suất chưa hạ, vùng 4.100 USD là mốc cần giữ; thủng mốc này thì giá SJC còn dư địa lùi tiếp."
  ],
- "advice": "Vàng thế giới đang dần xác nhận vùng nền vững 4.037–4.149 USD/oz, tạo tiền đề đảo chiều lên 4.200 – 4.300 – 4.400. Người mua vàng vật chất: mua lúc này là hợp lý, nên chia nhiều đợt vì giá sắp tới sẽ biến động mạnh.",
+ "advice": "Ngắn hạn vàng vẫn bị lợi suất Mỹ đè, chưa có tín hiệu đảo chiều – nhưng giá đã về vùng nền 4.100–4.150 USD/oz.\nKhông cần chờ dưới 100 triệu, cũng đừng dồn hết tiền một lần.\nCần mua thì chia 3 phần. Phần 1 mua quanh giá hiện tại.\nPhần 2 để dành, mua khi thế giới lùi về 4.040–4.100.\nPhần 3 chỉ mua khi giá đóng cửa ngày trên vùng 4.200–4.235 – lúc đó xu hướng mới thật sự quay lên.\nĐóng cửa ngày dưới 4.037 thì dừng mua, chờ nền mới.\nSJC đang đắt hơn thế giới khoảng 13 triệu/lượng, mua – bán chênh 3 triệu: tiền cần dùng trong vài tháng thì đừng mua vàng miếng lúc này.\nMua để giữ dài hạn thì được, nhưng đừng đuổi theo nhịp tăng trong ngày.",
  "_ghi_chu": "Phần giá/lịch sử/world/sjc_compare do scripts/update-vn-gold.py tự sinh. peak/refs/analysis/advice/world_news/quick_advice: sửa tay (chỉ số liệu có nguồn). world_news: mỗi mục {text (1 dòng tiếng Việt), source:{name,url}, intl}; luôn giữ ≥1 nguồn quốc tế (ưu tiên CNBC, rồi Reuters/Kitco/Bloomberg), bài trong ngày, link đã kiểm tra.",
  "updated_vn": "08:54 20/10/2026",
  "rows": [
@@ -629,7 +629,7 @@
   "A buyer at the 191.3 million VND peak ask (Jan 29, 2026) selling back today at the 139 million bid would be down about 52.3 million VND per tael (≈ 27.3%); versus a week ago (Oct 13: 141.3–144.3 million), SJC is 2.3 million lower on both sides.",
   "The pressure is coming from the US: per Kitco, a firmer dollar and a 10-year Treasury yield near 5.135% pushed spot gold to about $4,138, with odds of further Fed tightening in December still near 90%. While yields stay high, $4,100 is the level to hold; a break would leave room for SJC to slide further."
  ],
- "advice_en": "Gold is in a long, deep downtrend and could go meaningfully lower over the medium to long term. Physical buyers may want to be patient and wait for a better entry.",
+ "advice_en": "Near term, gold is still pinned down by a 5.1% 10-year yield, and there's no reversal signal yet – but price is sitting on the $4,100–$4,150 base.\nThis isn't the place to dump metal, and it isn't the place to go all in either.\nIf you need to buy, split it into three pieces. Buy the first piece around here.\nHold the second for a dip to $4,040–$4,100.\nBuy the third only on a daily close above $4,200–$4,235 – that's when the trend actually turns.\nA daily close below $4,037 means stop adding and wait for a new base.\nMind the dealer premium and the bid/ask spread on bars and coins: money you'll need within a few months doesn't belong in physical gold.\nBuying to hold for years is fine – just don't chase the intraday pops.",
  "sjc_compare": {
   "d1": {
    "date": "2026-10-19",
@@ -673,7 +673,7 @@
    "intl": false
   }
  ],
- "quick_advice": "Giá SJC đang cao hơn thế giới quy đổi khoảng 13,3 triệu/lượng; người cần mua vàng vật chất có thể mua lúc này nhưng nên chia nhiều đợt, không dồn hết một lần.",
+ "quick_advice": "Ngắn hạn còn yếu nhưng giá đang ở vùng nền: cần mua vàng vật chất thì chia 3 phần, mua 1 phần trước, giữ tiền chờ 4.040–4.100 USD/oz; SJC vẫn đắt hơn thế giới khoảng 13 triệu/lượng nên không đuổi giá.",
  "official_ok": [
   "PNJ",
   "Mi Hồng",

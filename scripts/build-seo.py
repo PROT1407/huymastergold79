@@ -43,7 +43,7 @@ EN_REDIRECTS = {
     "en/posts/2026-10-15-gold-plan-night-session-2120.html": "en/posts/2026-10-15-gold-plan-new-york-session-2120.html",
     "en/posts/2026-10-14-gold-plan-night-session-2237.html": "en/posts/2026-10-14-gold-plan-new-york-session-2237.html",
 }
-ASSET_V = "20261019x"  # cache-busting cho css/js trong trang sinh tự động
+ASSET_V = "20261020z"  # cache-busting cho css/js trong trang sinh tự động
 OLD_BASES = ["https://prot1407.github.io/huymastergold79/", "https://huymastergold79.com.vn/", "https://h79gold.com/"]
 VN = dt.timezone(dt.timedelta(hours=7))
 TODAY = dt.datetime.now(VN).date().isoformat()
@@ -333,7 +333,7 @@ def build_vngold():
                 body += card("🌍 Quy đổi giá thế giới", f'<p>Vàng thế giới <b>{w["xau_usd"]:,.1f} USD/oz</b>'.replace(",", "X").replace(".", ",").replace("X", ".")
                              + f', quy đổi ≈ <b>{money(w.get("vnd_per_luong"))}</b> đồng/lượng; chênh SJC (bán) – thế giới ≈ <b>{money(w.get("gap_sjc_sell"))}</b>.</p><p class="small muted">{e(w.get("note"))}</p>')
             body += card("🧠 Phân tích", ul(g.get("analysis")))
-            body += card("🥇 Lời khuyên vàng vật chất", f'<p>{e(g["advice"])}</p>' if g.get("advice") else "")
+            body += card("🥇 Lời khuyên vàng vật chất", f'<p>{e(g["advice"]).replace(chr(10), "<br>")}</p>' if g.get("advice") else "")
             pk = g.get("peak")
             if pk: body += card("🏔 " + e(pk.get("label", "Đỉnh")), f'<p>{e(pk.get("note"))}</p><p class="small">🔗 {src_link(pk.get("source"))}</p>')
             refs = "".join(f'<div style="margin:8px 0"><p>🔗 {src_link(r)}</p>{ul(r.get("facts"))}</div>' for r in g.get("refs", []))

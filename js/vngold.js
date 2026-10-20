@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="vg-big gap"><span>⚖ Chênh SJC bán ra – thế giới</span><b>+${tr(w.gap_sjc_sell)} tr</b><small>TG ${w.xau_usd.toLocaleString('vi-VN', { maximumFractionDigits: 1 })} USD/oz ≈ ${tr(w.vnd_per_luong)} tr/lượng</small></div></div>`;
     if ($('vn-home')) {
       $('vn-home').innerHTML = `<div class="vg-head ${sjc.chg_sell > 0 ? 'up' : sjc.chg_sell < 0 ? 'down' : 'side'}">Hôm nay vàng miếng SJC ${sjc.chg_sell ? `<b>${sjc.chg_sell > 0 ? 'tăng' : 'giảm'} ${tr(Math.abs(sjc.chg_sell))} triệu/lượng</b>` : '<b>đứng giá</b>'}</div>` + head + `<div class="vg-row2">${pk ? `<div class="vg-peak mini"><b>📉 Người mua đỉnh ${H.dateVN(pk.date)} (${tr(pk.sell)} tr) đang lỗ ≈ ${tr(loss)} triệu/lượng</b></div>` : ''}
-        <div class="vg-adv mini"><b>💡 Lời khuyên:</b> ${e(d.advice)}</div></div>
+        <div class="vg-adv mini"><b>💡 Lời khuyên:</b> ${e(d.advice).replace(/\n/g, '<br>')}</div></div>
         <p class="small muted">Nguồn: ${vt}${d.price_time ? ` lúc ${e(d.price_time)}` : ''} · <a href="gia-vang.html#vn-daily">Xem phân tích đầy đủ →</a></p>`;
     }
     if (!$('vn-daily')) return;
@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <p class="small muted">${e(pk.note)} – ${a(pk.source)}</p></div>` : ''}
       </div>
       <div class="card vg-an"><h3>📝 Nhận định H79</h3><ul>${(d.analysis || []).map(x => `<li>${e(x)}</li>`).join('')}</ul></div>
-      <div class="vg-adv"><b>💡 Lời khuyên:</b> ${e(d.advice)}</div><div class="rx" data-rx="vn|${e((d.updated_vn || '').slice(-10))}"></div>
+      <div class="vg-adv"><b>💡 Lời khuyên:</b> ${e(d.advice).replace(/\n/g, '<br>')}</div><div class="rx" data-rx="vn|${e((d.updated_vn || '').slice(-10))}"></div>
       <div class="small muted vg-src"><b>Nguồn & ghi chú:</b> SJC, DOJI, Bảo Tín Minh Châu: web chính thức (sjc.com.vn / doji.vn / btmc.vn) · qua ${a('https://giavang.org/', 'giavang.org')} / ${a('https://webgia.com/gia-vang/', 'webgia.com')}; PNJ, Phú Quý, Mi Hồng: website chính thức – trực tiếp (dự phòng cùng chuỗi qua giavang.org / webgia.com) – nguồn ghi ở từng dòng. Ô không đọc được hiển thị "–". Đơn vị: triệu đồng/lượng; Phú Quý/Mi Hồng niêm yết theo chỉ, đã nhân 10. "± hôm qua" so với giá chốt ngày giao dịch trước đã lưu (Phú Quý, Mi Hồng: bắt đầu lưu từ 15/10). Biểu đồ: dữ liệu lưu hằng ngày của H79. Giá thế giới: ${a(d.sources.gold_api, 'gold-api.com')} lúc ${new Date(w.xau_time_utc).toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' })}; tỷ giá ${a(d.sources.fx, 'open.er-api.com')}.
       ${(d.refs || []).map(r => `<div style="margin-top:6px">📰 ${a(r, r.name)}<ul>${(r.facts || []).map(f => `<li>${e(f)}</li>`).join('')}</ul></div>`).join('')}<p><i>Nội dung tham khảo, không phải lời khuyên đầu tư.</i></p></div>`;
   }).catch(err => { console.warn(err); ['vn-daily', 'vn-home'].forEach(i => { if ($(i)) $(i).innerHTML = '<p class="muted">Chưa tải được dữ liệu vàng trong nước.</p>'; }); });
