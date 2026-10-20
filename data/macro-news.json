@@ -56,6 +56,54 @@
  "items": [
   {
    "date": "2026-10-20",
+   "category": "Tương quan",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "USD yếu, lợi suất 10 năm lùi về 5,12% – vàng chỉ nhích tới 4.145 rồi bị bán về 4.118 trước giờ mở cửa châu Âu",
+   "summary": "CNBC (Reuters): vàng giao ngay +0,1% lên 4.145,22 USD lúc 10:47 VN nhờ USD yếu; CME FedWatch: 82% Fed giữ lãi ngày 28/10 nhưng 89% tăng lãi tháng 12. Kyle Rodda (Capital.com): sẽ có biến động lớn dù Fed làm gì, phản ứng ban đầu có thể hỗ trợ vàng nếu Fed giữ lãi. Thống đốc BoJ Ueda: lạm phát nền «khá gần» mục tiêu 2%, nhu cầu AI toàn cầu thêm áp lực giá – để ngỏ khả năng tăng lãi tiếp. Đến 12:30 VN vàng về 4.132,15 (Economy Middle East); theo CNBC XAU=, đáy 4.118,4 lúc 13:15, 13:50 ở 4.134,4. CNBC: DXY 101,77 (−0,20%), US10Y 5,119% (−1,7 điểm cơ bản).",
+   "reason": "Ngắn hạn: khi USD yếu và lợi suất hạ mà vàng vẫn không giữ được nhịp tăng, phe bán đang nắm thế – các nhịp hồi về 4.140–4.150 dễ bị bán. Dài hạn: kỳ vọng Fed tăng lãi tháng 12 và BoJ thắt chặt giữ lợi suất toàn cầu cao, là lực cản chính của vàng tới khi lạm phát hạ nhiệt.",
+   "source": {
+    "name": "CNBC (Reuters) – Vàng nhích lên nhờ USD yếu, nhà đầu tư cân nhắc triển vọng lãi suất Fed",
+    "name_en": "CNBC (Reuters) – Gold inches up on softer dollar as investors assess Fed rate outlook",
+    "url": "https://www.cnbc.com/2026/10/20/gold-inches-up-on-softer-dollar-as-investors-assess-fed-rate-outlook.html"
+   },
+   "source2": {
+    "name": "Economy Middle East – Vàng 4.132,15 lúc 05:30 GMT dù USD yếu",
+    "name_en": "Economy Middle East – Gold eases to $4,132.15 despite weaker dollar",
+    "url": "https://economymiddleeast.com/news/gold-prices-ease-to-4132-15-despite-weaker-dollar-as-investors-assess-fed-rate-outlook/"
+   },
+   "time_vn": "10:47 VN 20/10 (Reuters) → 12:30 VN (Economy Middle East) → giá CNBC 13:50 VN",
+   "title_en": "Dollar softens and the 10-year eases to 5.12% – gold only reaches $4,145, then gets sold back to $4,118 before the European open",
+   "summary_en": "CNBC (Reuters): spot gold rose 0.1% to $4,145.22 at 11:47 PM ET on a softer dollar; CME FedWatch shows 82% odds of a hold on Oct. 28 but 89% for a December hike. Capital.com's Kyle Rodda expects a big move whatever the Fed does, with the initial reaction possibly supportive for gold on a hold. BOJ Governor Kazuo Ueda said underlying inflation is 'quite close' to the 2% target, with global AI demand adding price pressure – leaving room for more hikes. By 1:30 AM ET gold was back at $4,132.15 (Economy Middle East); CNBC XAU= shows a $4,118.40 low at 2:15 AM ET and $4,134.40 at 2:50 AM ET. CNBC: DXY 101.77 (−0.20%), 10-year 5.119% (−1.7 bp).",
+   "reason_en": "Near term: when a weaker dollar and lower yields can't hold a gold rally, sellers are in control – bounces into $4,140–$4,150 are likely to get sold. Longer term: December Fed hike pricing and a hawkish-leaning BOJ keep global yields elevated, gold's main headwind until inflation cools.",
+   "time_en": "Oct 19, 11:47 PM ET (Reuters) → Oct 20, 1:30 AM ET (Economy Middle East) → CNBC quote 2:50 AM ET"
+  },
+  {
+   "date": "2026-10-20",
+   "category": "Chiến tranh",
+   "priority": 2,
+   "impact": "trung lập",
+   "title": "Houthi tấn công mục tiêu năng lượng, sân bay, quân sự Ả Rập Xê Út; dầu Brent giữ quanh 109–110 USD, chứng khoán châu Á giảm (Kospi −2,8%)",
+   "summary": "CNBC (Reuters): Brent giảm 0,45% về 109,06 USD đầu phiên Á khi thị trường cân nhắc lệnh của ông Trump miễn một số trừng phạt, thuế với năng lượng Nga (Ngoại trưởng Rubio nói cần thêm thời gian đánh giá); WTI tháng 11 đáo hạn hôm nay 103,32, hợp đồng tháng 12 98,08. Reuters: Houthi tuyên bố đã tấn công nhiều mục tiêu năng lượng, sân bay, quân sự của Ả Rập Xê Út. Bloomberg: Iran nói «không còn lựa chọn» ngoài khẳng định quyền kiểm soát eo Hormuz; hợp đồng Euro Stoxx 50 −1%. AP: Kospi −2,8%, Nikkei −0,6%, Hang Seng −1%. Giá CNBC lúc 13:50 VN: Brent 109,60 (+0,05%).",
+   "reason": "Ngắn hạn: tin chiến sự tạo nhịp mua trú ẩn 10–15 giá nhưng hôm nay vàng không giữ được – thị trường coi dầu cao là rủi ro lạm phát, tức lợi suất cao hơn. Dài hạn: nếu Hormuz nghẽn kéo dài, lạm phát năng lượng giữ Fed diều hâu; chỉ khi xung đột chuyển thành rủi ro tăng trưởng, vàng mới được hưởng lợi rõ.",
+   "source": {
+    "name": "CNBC (Reuters) – Dầu giảm nhẹ khi thị trường cân nhắc miễn trừ năng lượng Nga và rủi ro Trung Đông",
+    "name_en": "CNBC (Reuters) – Oil eases as markets assess potential waiver on Russian energy, Middle East supply risks",
+    "url": "https://www.cnbc.com/2026/10/20/oil-eases-as-markets-assess-potential-waiver-on-russian-energy-middle-east-supply-risks.html"
+   },
+   "source2": {
+    "name": "Bloomberg (qua swissinfo) – Chứng khoán châu Á bỏ qua đà tăng chip Mỹ, dầu đứng giá",
+    "name_en": "Bloomberg (via swissinfo) – Asian stocks shrug off US chip rally, oil steadies",
+    "url": "https://www.swissinfo.ch/eng/asian-stocks-shrug-off-us-chip-rally,-oil-steadies:-markets-wrap/92241741"
+   },
+   "time_vn": "07:10 VN 20/10 (Reuters) → 09:04 VN (Bloomberg) → giá CNBC 13:50 VN",
+   "title_en": "Houthis claim strikes on Saudi energy, airport and military targets; Brent holds near $109–$110 as Asian stocks slide (Kospi −2.8%)",
+   "summary_en": "CNBC (Reuters): Brent slipped 0.45% to $109.06 early in Asia as traders weighed President Trump's order waiving some sanctions and tariffs on Russian energy (Secretary of State Rubio says officials want more time); expiring November WTI was $103.32 and December $98.08. Reuters: the Houthis said they carried out several attacks on Saudi energy, airport and military targets. Bloomberg: Iran said it had 'no choice' but to assert control over the Strait of Hormuz; Euro Stoxx 50 futures −1%. AP: Kospi −2.8%, Nikkei −0.6%, Hang Seng −1%. CNBC quote at 2:50 AM ET: Brent $109.60 (+0.05%).",
+   "reason_en": "Near term: war headlines can spark $10–$15 haven pops, but gold couldn't hold one today – the market reads high oil as inflation risk, meaning higher yields. Longer term: a prolonged Hormuz squeeze keeps the Fed hawkish; gold only benefits clearly once the conflict turns into growth risk.",
+   "time_en": "Oct 19, 8:10 PM ET (Reuters) → 10:04 PM ET (Bloomberg) → CNBC quote 2:50 AM ET"
+  },
+  {
+   "date": "2026-10-20",
    "category": "Lợi suất",
    "priority": 1,
    "impact": "giảm",

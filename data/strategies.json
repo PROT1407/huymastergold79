@@ -1,6 +1,335 @@
 {
  "strategies": [
   {
+   "id": "2026-10-20-phien-au-1345",
+   "date": "2026-10-20",
+   "time": "13:45",
+   "session": "Phiên Âu",
+   "session_en": "London Session (early morning ET)",
+   "url": "bai/2026-10-20-nhan-dinh-vang-phien-au-1345.html",
+   "url_en": "en/posts/2026-10-20-gold-plan-london-session-1345.html",
+   "headline": "Vàng 20/10 phiên Âu: USD yếu mà vàng không qua nổi 4.146 – BÁN hồi 4.140–4.146, MUA 4.116–4.122",
+   "headline_en": "H79 Gold Plan – London Session, Oct 20: A Softer Dollar Can't Lift Gold Past 4,146 – Sell 4,140–4,146, Buy 4,116–4,122",
+   "title": "Vàng 20/10 phiên Âu: USD yếu mà vàng không qua nổi 4.146 – BÁN hồi 4.140–4.146, MUA 4.116–4.122",
+   "title_en": "H79 Gold Plan – London Session, Oct 20: A Softer Dollar Can't Lift Gold Past 4,146 – Sell 4,140–4,146, Buy 4,116–4,122",
+   "image": "img/charts/gold-2026-10-20-phien-au-1345.png",
+   "image_alt": "Biểu đồ vàng 45m 20/10 phiên Âu: phiên Á tạo đáy đôi 4.115,9/4.118,4 và đỉnh 4.146,5, khoảng trống 4.137,5–4.142,5; vùng BÁN 4.140–4.146, vùng MUA 4.116–4.122",
+   "image_en": "img/charts/gold-2026-10-20-london-1345-en.png",
+   "image_alt_en": "Gold 45-minute chart, London session Oct 20: Asia double bottom at 4,115.90/4,118.40 and a 4,146.50 high, fair value gap 4,137.50–4,142.50; sell zone 4,140–4,146, buy zone 4,116–4,122",
+   "trend": "Ngắn hạn giảm: 15m và 30m dưới MA89 với MA34 nằm dưới MA89 (15m 4.134,5/4.145,9; 30m 4.138,5/4.159,5) – kênh giảm; 5m đi ngang quanh MA34/MA89 (4.135/4.134). Từ 45m đến 4H giá ở nửa dưới BB90, 45m dưới MA34 4.148 và MA89 4.161. MACD 2H–4H dưới signal, histogram âm (2H −3,7; 4H −4,0); 45m/1H vừa nhích lên trên signal – nhịp hồi ngắn. Bán hồi 4.140–4.146; mua 4.116–4.122 chỉ khi có nến xác nhận.",
+   "trend_en": "Short-term bearish: the 15m and 30m sit below MA89 with MA34 under MA89 (15m 4,134.50/4,145.90; 30m 4,138.50/4,159.50) – a down-channel; the 5m is flat around its MA34/MA89 (4,135/4,134). From the 45m through the 4H, price is in the lower half of BB90, and the 45m is under its MA34 (4,148) and MA89 (4,161). MACD is below signal on the 2H–4H with negative histograms (2H −3.7, 4H −4.0); the 45m and 1H just ticked above signal – a short-lived bounce. Sell a bounce into 4,140–4,146; buy 4,116–4,122 only with a confirming close.",
+   "trendType": "down",
+   "support": [
+    4131,
+    4122,
+    4118,
+    4116,
+    4109,
+    4107,
+    4100
+   ],
+   "resistance": [
+    4138,
+    4143,
+    4146,
+    4151,
+    4153,
+    4155,
+    4161
+   ],
+   "entryZones": [
+    "Mua 4.116 – 4.122 (đáy đôi phiên Á 4.115,9 / 4.118,4 · S1 4.121,7 · BB90 dưới 5m 4.119). Vào khi giá về vùng và có nến 1H đóng xanh, hoặc mẫu BB90 45m (nến đỏ đóng ngoài BB90 dưới, nến xanh kế tiếp đóng lại trong band) với điểm vào không cao hơn 4.126. Không dùng nến 15m/30m. Dừng lỗ 4.107 (dưới BB90 dưới 2H 4.108,8). TP1 4.135 (≈1,3× SL, trước khoảng trống 4.137,5) – chốt 50–70%, dời SL về điểm vào; TP2 4.143 (giữa khoảng trống, chân vùng bán). Nến 1H đóng dưới 4.107 thì bỏ lệnh mua."
+   ],
+   "entryZones_en": [
+    "Buy 4,116–4,122 (Asia double bottom 4,115.90 / 4,118.40 · 4,121.70 S1 · 5m lower BB90 4,119). Enter on a dip into the zone with a green 1H close, or the 45m BB90 setup (a red close outside the lower BB90, then a green close back inside) with a fill no higher than 4,126. No 15m/30m triggers. Stop 4,107 (under the 2H lower BB90 at 4,108.80). TP1 4,135 (about 1.3x the stop, in front of the 4,137.50 gap) – take 50–70% and move the stop to breakeven; TP2 4,143 (mid-gap, bottom of the sell zone). A 1H close under 4,107 cancels the long."
+   ],
+   "sellZones": [
+    "Bán 4.140 – 4.146 (khoảng trống giá 4.137,5–4.142,5 để lại lúc 12:15 · Fib 38,2% nhịp 4.188,9→4.115,9 = 4.143,8 · MA89 15m 4.145,9 · BB90 giữa 15m 4.146,2 · đỉnh phiên Á 4.146,5). Vào khi giá vào vùng bán và có nến 45m hoặc 1H đóng đỏ xác nhận, hoặc nến 1H đâm xuyên lên BB giữa rồi đóng lại dưới band. Không dùng nến 15m/30m; không bán đuổi dưới 4.135. Dừng lỗ 4.153 (trên đỉnh Á 4.146,5, MA89 1H 4.151 và BB90 giữa 1H 4.150,4). TP1 4.132 (≈1,1× SL, trước mốc 4.131) – chốt 50–70%, dời SL hòa vốn; TP2 4.121 (S1 4.121,7, ngay trên đáy đôi Á). Nến 1H đóng trên 4.153 thì bỏ lệnh bán."
+   ],
+   "sellZones_en": [
+    "Sell 4,140–4,146 (gap 4,137.50–4,142.50 left at 1:15 AM ET · 38.2% retrace of 4,188.90→4,115.90 = 4,143.80 · 15m MA89 4,145.90 · 15m BB90 mid 4,146.20 · Asia high 4,146.50). Enter once price is in the zone and a 45m or 1H candle closes red, or a 1H candle pierces above the BB90 mid and closes back below it. Never on a 15m/30m close; don't chase under 4,135. Stop 4,153 (above the 4,146.50 Asia high, the 1H MA89 at 4,151 and the 1H BB90 mid at 4,150.40). TP1 4,132 (about 1.1x the stop, in front of 4,131) – take 50–70%, stop to breakeven; TP2 4,121 (4,121.70 S1, just above the Asia double bottom). A 1H close above 4,153 cancels the short."
+   ],
+   "scenarios": [
+    "Kế hoạch: BÁN 4.140–4.146 (SL 4.153 · TP 4.132 → 4.121) · MUA 4.116–4.122 (SL 4.107 · TP 4.135 → 4.143).",
+    "Kịch bản chính (~50%): mở cửa London 14:00 kéo lên lấp khoảng trống 4.137,5–4.142,5 hoặc quét đỉnh Á 4.146,5 rồi thất bại – BÁN khi nến 45m/1H đóng đỏ.",
+    "Kịch bản phụ (~30%): châu Âu quét đáy đôi 4.116–4.118 trước – không bán đuổi; nến 1H xanh hoặc mẫu BB90 45m thì MUA.",
+    "Kịch bản xấu (~20%): nến 1H đóng trên 4.153 – phe bán sai, đứng ngoài, giá về 4.160 (BB90 giữa 45m/2H). Nến 1H đóng dưới 4.107 – bỏ mua, mốc tiếp theo 4.100 (đáy 15/10) và 4.097 (BB90 dưới 1H).",
+    "Rủi ro: hôm nay không có tin đỏ USD. 16:00 ZEW Đức/khu vực euro, 19:30 nhà khởi công và giấy phép xây dựng Mỹ, 21:00 doanh số nhà chờ bán (tin nhẹ). Tin Houthi – Ả Rập Xê Út, Hormuz có thể làm giá giật 10–15 giá. Ngày mai 13:00 CPI Anh (tin đỏ GBP).",
+    "Xem thêm kỹ thuật: MA34/MA89 5m 4.135/4.134 · 15m 4.135/4.146 · 30m 4.139/4.160 · 45m 4.148/4.161 · 1H 4.155/4.151 · 2H 4.161/4.161. BB90 dưới 5m 4.119 · 15m 4.117 · 30m 4.123 · 45m 4.126 · 1H 4.097 · 2H 4.109 · 3H 4.100 · 4H 4.106; BB90 giữa 15m 4.146 · 1H 4.150 · 45m/2H 4.161. Pivot 19/10 (cao 4.188,9 · thấp 4.136,8 · đóng 4.140,3): P 4.155 · R1 4.174 · S1 4.122 · S2 4.103. Fib nhịp 4.188,9→4.115,9: 23,6% 4.133 · 38,2% 4.144 · 50% 4.152. RSI14: 5m 54 · 15m 49 · 30m 47 · 45m 45 · 1H 42. TP1 lệnh mua theo luật 80–85% tới BB giữa 1H (4.150) sẽ là ~4.145, gấp đôi SL – giữ 4.135 (≈1,3× SL)."
+   ],
+   "scenarios_en": [
+    "The plan: sell 4,140–4,146 (stop 4,153 · TP1 4,132 → TP2 4,121) · buy 4,116–4,122 (stop 4,107 · TP1 4,135 → TP2 4,143).",
+    "Base case (~50%): the 3:00 AM ET London open squeezes up to fill the 4,137.50–4,142.50 gap or runs the 4,146.50 Asia high, then fails – sell a red 45m/1H close.",
+    "Alternative (~30%): Europe runs the 4,116–4,118 double bottom first – don't chase it; buy a green 1H close or the 45m BB90 setup.",
+    "Bear case for the plan (~20%): a 1H close above 4,153 – the short is wrong, step aside, gold heads to 4,160 (45m/2H BB90 mid). A 1H close under 4,107 – no longs, next stops 4,100 (Oct 15 low) and 4,097 (1H lower BB90).",
+    "Risk: no high-impact U.S. data Tuesday. German/euro-zone ZEW at 5:00 AM ET, housing starts and building permits at 8:30 AM ET, pending home sales at 10:00 AM ET (all minor). Houthi–Saudi and Hormuz headlines can whip gold $10–$15. UK CPI hits at 2:00 AM ET Wednesday.",
+    "More detail: MA34/MA89 – 5m 4,135/4,134 · 15m 4,135/4,146 · 30m 4,139/4,160 · 45m 4,148/4,161 · 1H 4,155/4,151 · 2H 4,161/4,161. Lower BB90: 5m 4,119 · 15m 4,117 · 30m 4,123 · 45m 4,126 · 1H 4,097 · 2H 4,109 · 3H 4,100 · 4H 4,106; BB90 mid 15m 4,146 · 1H 4,150 · 45m/2H 4,161. Oct 19 pivots (high 4,188.90 · low 4,136.80 · close 4,140.25): P 4,155 · R1 4,174 · S1 4,122 · S2 4,103. Retrace of 4,188.90→4,115.90: 23.6% 4,133 · 38.2% 4,144 · 50% 4,152. RSI(14): 54 on the 5m · 49 on the 15m · 47 on the 30m · 45 on the 45m · 42 on the 1H. The 80–85%-to-the-1H-mid rule would put the long's TP1 near 4,145, twice the stop – I'm keeping 4,135 (about 1.3x the stop)."
+   ],
+   "macro": [],
+   "macro_en": [],
+   "market_picture": {
+    "text": "Sáng nay USD yếu đi 0,2%, lợi suất 10 năm Mỹ lùi từ 5,14% về 5,12%, chứng khoán châu Á đỏ và Houthi lại tấn công Ả Rập Xê Út – bốn thứ thường đẩy vàng lên. Vàng chỉ nhích tới 4.146,5 rồi bị bán về 4.118 trước giờ mở cửa châu Âu. Điều đó nói với tôi rằng thứ đang điều khiển vàng không phải USD hay tin chiến sự, mà là kỳ vọng lãi suất: Fed được định giá 89% tăng lãi tháng 12, BoJ cũng để ngỏ khả năng tăng tiếp – lợi suất toàn cầu không có chỗ để hạ sâu, nên mỗi nhịp hồi của vàng đều gặp người bán. Quan điểm của tôi: phiên Âu vẫn nghiêng giảm. Hai mốc quyết định: 4.153 – nến 1H đóng trên đó là phe bán sai; 4.116–4.118 – đáy đôi phiên Á, mất nó thì đường về 4.100 mở ra. Việc cần làm: chờ nhịp hồi vào 4.140–4.146 để bán, chỉ mua ở đáy đôi khi có nến xác nhận, ở giữa thì ngồi yên.",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "101,77 −0,20%",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "5,119% ↓",
+      "dir": "down"
+     },
+     {
+      "k": "US2Y",
+      "v": "4,761%",
+      "dir": ""
+     },
+     {
+      "k": "Brent",
+      "v": "109,60 +0,05%",
+      "dir": "up"
+     },
+     {
+      "k": "S&P 500 fut.",
+      "v": "7.747,5 +0,17%",
+      "dir": "up"
+     },
+     {
+      "k": "Nasdaq fut.",
+      "v": "29.711 −0,04%",
+      "dir": "down"
+     },
+     {
+      "k": "VIX",
+      "v": "18,44",
+      "dir": ""
+     },
+     {
+      "k": "Fed 28/10",
+      "v": "giữ 82%",
+      "dir": ""
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Vàng (Reuters)",
+      "url": "https://www.cnbc.com/2026/10/20/gold-inches-up-on-softer-dollar-as-investors-assess-fed-rate-outlook.html"
+     },
+     {
+      "name": "CNBC – Dầu (Reuters)",
+      "url": "https://www.cnbc.com/2026/10/20/oil-eases-as-markets-assess-potential-waiver-on-russian-energy-middle-east-supply-risks.html"
+     },
+     {
+      "name": "Bloomberg – Thị trường châu Á",
+      "url": "https://www.swissinfo.ch/eng/asian-stocks-shrug-off-us-chip-rally,-oil-steadies:-markets-wrap/92241741"
+     },
+     {
+      "name": "CNBC – XAU=",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "market_picture_en": {
+    "text": "This morning the dollar is off 0.2%, the 10-year has backed off to 5.12% from 5.14%, Asian stocks are red and the Houthis hit Saudi targets again – four things that usually lift gold. Gold managed 4,146.50 and then got sold back to 4,118 ahead of the European open. That tells me the driver isn't the dollar or war headlines, it's rate expectations: the market prices an 89% chance of a December Fed hike, and the BOJ is leaving the door open to more tightening, so global yields have no room to fall far and every gold bounce runs into sellers. My view: London still leans lower. The two levels that matter: 4,153 – a 1H close above it and the short is wrong; 4,116–4,118 – the Asia double bottom, and losing it opens the path to 4,100. The job: wait for a bounce into 4,140–4,146 to sell, buy the double bottom only on a confirming close, and sit on my hands in between.",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "101.77 −0.20%",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "5.119% ↓",
+      "dir": "down"
+     },
+     {
+      "k": "US2Y",
+      "v": "4.761%",
+      "dir": ""
+     },
+     {
+      "k": "Brent",
+      "v": "109.60 +0.05%",
+      "dir": "up"
+     },
+     {
+      "k": "S&P 500 fut.",
+      "v": "7,747.5 +0.17%",
+      "dir": "up"
+     },
+     {
+      "k": "Nasdaq fut.",
+      "v": "29,711 −0.04%",
+      "dir": "down"
+     },
+     {
+      "k": "VIX",
+      "v": "18.44",
+      "dir": ""
+     },
+     {
+      "k": "Oct 28 hold",
+      "v": "82%",
+      "dir": ""
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Gold (Reuters)",
+      "url": "https://www.cnbc.com/2026/10/20/gold-inches-up-on-softer-dollar-as-investors-assess-fed-rate-outlook.html"
+     },
+     {
+      "name": "CNBC – Oil (Reuters)",
+      "url": "https://www.cnbc.com/2026/10/20/oil-eases-as-markets-assess-potential-waiver-on-russian-energy-middle-east-supply-risks.html"
+     },
+     {
+      "name": "Bloomberg – Asia markets",
+      "url": "https://www.swissinfo.ch/eng/asian-stocks-shrug-off-us-chip-rally,-oil-steadies:-markets-wrap/92241741"
+     },
+     {
+      "name": "CNBC – XAU=",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "physicalAdvice": "Làm theo kế hoạch, đừng chạy theo nến tin.",
+   "physicalAdvice_en": "Trade the plan, not the noise.",
+   "notes": "Các mốc là giá giao ngay XAU/USD (CNBC XAU= 4.134,4 nến 5m 13:50; gold-api.com 4.134,8 lúc 13:53). Khung 15m/30m/45m/1H dựng từ nến 5m giao ngay CNBC; 2H/3H/4H từ nến 1H giao ngay CNBC, bỏ nến phẳng cuối tuần. MA là SMA; lệch 1–2 giá tùy sàn. Pivot cổ điển theo phiên 19/10 (cao 4.188,9 · thấp 4.136,8 · đóng 4.140,3): P 4.155 · R1 4.174 · S1 4.122 · S2 4.103. Phiên 20/10 từ 05:00: mở 4.141,4 · cao 4.146,5 (10:40) · thấp 4.115,9 (08:25). Vàng tương lai tháng 12 GC=F (Yahoo) 4.151,4 – cao hơn giao ngay ~17 giá.",
+   "notes_en": "Levels are spot XAU/USD (CNBC XAU= 4,134.40 on the 2:50 AM ET 5-minute bar; gold-api.com 4,134.80 at 2:53 AM ET). 15m/30m/45m/1H frames are built from CNBC XAU= spot 5-minute bars; 2H/3H/4H from spot hourly bars, with flat weekend bars removed. Simple MAs; levels may differ by a point or two between brokers. Classic pivots from the Oct 19 session (high 4,188.90 · low 4,136.80 · close 4,140.25): P 4,155 · R1 4,174 · S1 4,122 · S2 4,103. Tuesday's session so far (from the 6:00 PM ET open): open 4,141.40 · high 4,146.50 (11:40 PM ET) · low 4,115.90 (9:25 PM ET). December Comex futures (GC=F, Yahoo) 4,151.40 – about $17 over spot.",
+   "dataTime": "Cập nhật 13:45–14:05 ngày 20/10/2026 giờ VN (Phiên Âu). Nến 5m và 1H giao ngay CNBC XAU=; gold-api.com XAU; DXY, US10Y, US2Y, Brent, S&P fut, Nasdaq fut, VIX từ CNBC; GC=F từ Yahoo; xác suất Fed theo CME FedWatch (Reuters); lịch tin ForexFactory.",
+   "dataTime_en": "Updated 2:45–3:05 AM ET, Tuesday Oct 20, 2026 (London session). Spot 5-minute and hourly bars from CNBC XAU=; gold-api.com XAU; DXY, US10Y, US2Y, Brent, S&P and Nasdaq futures and VIX from CNBC; GC=F from Yahoo; Fed odds from CME FedWatch via Reuters; calendar from ForexFactory.",
+   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+   "brief": true,
+   "summary": {
+    "trend": "down",
+    "trendText": "Ngắn hạn giảm – USD yếu mà vàng vẫn bị bán từ 4.146; bán hồi 4.140–4.146, mua đáy đôi 4.116–4.122 chỉ khi có nến xác nhận",
+    "trendText_en": "Short-term bearish – a softer dollar couldn't hold gold above 4,146; sell a bounce into 4,140–4,146, buy the 4,116–4,122 double bottom only on a confirming close",
+    "buy": {
+     "zone": "4.116 – 4.122",
+     "sl": "4.107",
+     "tp": "4.135 → 4.143",
+     "zone_en": "4,116–4,122",
+     "sl_en": "4,107",
+     "tp_en": "TP1 4,135 → TP2 4,143"
+    },
+    "sell": {
+     "zone": "4.140 – 4.146",
+     "sl": "4.153",
+     "tp": "4.132 → 4.121",
+     "zone_en": "4,140–4,146",
+     "sl_en": "4,153",
+     "tp_en": "TP1 4,132 → TP2 4,121"
+    },
+    "note": "Không có tin đỏ USD hôm nay. Giờ mở cửa London 14:00 hay quét đỉnh/đáy phiên Á – chờ nến 45m/1H đóng rồi mới vào. Nến 1H đóng trên 4.153 bỏ bán; dưới 4.107 bỏ mua.",
+    "note_en": "No high-impact U.S. data Tuesday. The 3:00 AM ET London open likes to run the Asia high or low – wait for the 45m/1H close. A 1H close above 4,153 cancels the short; below 4,107 cancels the long.",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD",
+    "priceNote_en": "Spot XAU/USD prices"
+   },
+   "article": {
+    "sections": [
+     {
+      "h": "Nhìn lại phiên Á: lệnh bán ăn trọn, lệnh mua tôi đứng ngoài",
+      "p": "Lệnh BÁN 4.140–4.146 chạy đúng bài. Giá hồi lên 4.146,5 lúc 10:40, nến 45m đóng đỏ 4.143,0 lúc 11:30 – tôi vào ở đó. 12:25 chạm TP1 4.134 (+9 giá, chốt 60%, dời SL về điểm vào), 12:50 chạm TP2 4.125 (+18 giá). Đáy sau đó 4.118,4 – lệnh từng có lời tối đa 24,6 giá, không lúc nào giá quay lại quá 4.144,9. Phía MUA thì tôi phải nói thẳng: giá vào vùng 4.118–4.124 hai lần (08:10 và 12:50), nhưng cả hai nến 1H đều đóng đỏ nên tôi không vào, và nhìn nhịp hồi 30 giá từ 4.115,9 lên 4.146,5 trôi qua. Điều đáng nhớ: mẫu BB90 của bộ lọc 79 – nến 45m đỏ đóng ngoài BB90 dưới (07:45, đóng 4.116,4), nến xanh kế tiếp đóng lại trong band (08:30, đóng 4.133,2) – đã bắt đúng nhịp đó. Luật nến 1H xanh của tôi an toàn hơn nhưng chậm một nhịp."
+     },
+     {
+      "h": "Vì sao USD yếu mà vàng vẫn không lên",
+      "p": "Sáng nay mọi thứ lẽ ra nghiêng về vàng: USD giảm 0,2% về 101,77, lợi suất 10 năm Mỹ hạ từ 5,14% về 5,12%, chứng khoán châu Á đỏ (Kospi −2,8%, hợp đồng Euro Stoxx 50 −1%) và Houthi tuyên bố tấn công cơ sở năng lượng, sân bay của Ả Rập Xê Út. Vàng có nhích lên 4.145 lúc 10:47 – Reuters gọi là «nhích lên nhờ USD yếu» – rồi bị bán ngược về 4.118 trong hai tiếng. Lý do theo tôi: thị trường vẫn tin Fed tăng lãi tháng 12 (CME FedWatch 89%) dù 82% cho rằng Fed giữ lãi ngày 28/10; Thống đốc BoJ Ueda nói lạm phát nền «khá gần» 2% – mở cửa cho Nhật tăng lãi tiếp, lợi suất toàn cầu khó hạ. Khi tin tốt mà giá không lên, tôi tin giá hơn tin tức."
+     },
+     {
+      "h": "Tôi giao dịch phiên Âu thế nào",
+      "p": "Tôi vẫn ưu tiên bán. Lúc 12:15 giá để lại khoảng trống 4.137,5–4.142,5 – ngay dưới đỉnh Á 4.146,5, MA89 15m (4.146) và Fib 38,2% nhịp 4.188,9→4.115,9 (4.144). Giờ mở cửa London 14:00 hay quét đỉnh hoặc đáy phiên Á; nếu nó kéo lên lấp khoảng trống đó mà nến 45m/1H đóng đỏ, tôi bán, SL 4.153, chốt 4.132 rồi 4.121. Mẫu BB90 vừa báo mua lần hai lúc 13:45 (nến 12:15 đóng 4.122,1 ngoài band, nến 13:00 đóng xanh 4.131,4) – tôi không vào: SL hợp lý phải dưới đáy 4.118, tức rủi ro 14 giá để ăn 6–9 giá tới khoảng trống. Tôi để nhịp hồi đó tự đưa giá lên vùng bán của mình. Nếu châu Âu quét đáy đôi thì 4.116–4.122 là chỗ mua, SL 4.107 dưới BB90 dưới 2H. Nến 1H đóng trên 4.153 là tôi sai về phe bán – đứng ngoài, không cãi."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC (Reuters) – Vàng nhích lên nhờ USD yếu, nhà đầu tư cân nhắc triển vọng lãi suất Fed",
+      "url": "https://www.cnbc.com/2026/10/20/gold-inches-up-on-softer-dollar-as-investors-assess-fed-rate-outlook.html"
+     },
+     {
+      "name": "CNBC (Reuters) – Dầu giảm nhẹ khi thị trường cân nhắc miễn trừ năng lượng Nga và rủi ro Trung Đông",
+      "url": "https://www.cnbc.com/2026/10/20/oil-eases-as-markets-assess-potential-waiver-on-russian-energy-middle-east-supply-risks.html"
+     },
+     {
+      "name": "Bloomberg (qua swissinfo) – Chứng khoán châu Á bỏ qua đà tăng chip Mỹ, dầu đứng giá",
+      "url": "https://www.swissinfo.ch/eng/asian-stocks-shrug-off-us-chip-rally,-oil-steadies:-markets-wrap/92241741"
+     },
+     {
+      "name": "AP – Chứng khoán châu Á phần lớn giảm",
+      "url": "https://apnews.com/article/stock-markets-oil-ai-rates-inflation-b972b64127db5412a2b02c35ecf95c88"
+     },
+     {
+      "name": "Economy Middle East – Vàng 4.132,15 lúc 05:30 GMT dù USD yếu",
+      "url": "https://economymiddleeast.com/news/gold-prices-ease-to-4132-15-despite-weaker-dollar-as-investors-assess-fed-rate-outlook/"
+     },
+     {
+      "name": "ForexFactory – Lịch kinh tế (20/10 không có tin đỏ USD)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     },
+     {
+      "name": "CNBC – Lợi suất 10 năm (US10Y)",
+      "url": "https://www.cnbc.com/quotes/US10Y"
+     }
+    ]
+   },
+   "article_en": {
+    "sections": [
+     {
+      "h": "Asia recap: the short paid in full, the long never triggered",
+      "p": "The 4,140–4,146 short worked exactly as drawn. Gold bounced to 4,146.50 at 11:40 PM ET, the 45m closed red at 4,143.00 at 12:30 AM ET, and that was my fill. TP1 at 4,134 hit at 1:25 AM ET (+$9, took 60%, stop to breakeven), TP2 at 4,125 at 1:50 AM ET (+$18). The low came in at 4,118.40 – $24.60 of max favorable excursion, and price never got back above 4,144.90. On the long side I'll own it: gold traded into 4,118–4,124 twice (9:10 PM and 1:50 AM ET), both 1H bars closed red, so I stayed flat and watched a $30 bounce from 4,115.90 to 4,146.50 go without me. Worth noting: our BB90 setup – a red 45m close outside the lower BB90 (8:45 PM ET, 4,116.40) followed by a green close back inside the band (9:30 PM ET, 4,133.20) – caught that bounce. My green-1H rule is safer, but it's a beat slow."
+     },
+     {
+      "h": "Why a softer dollar didn't help",
+      "p": "On paper, this morning favored gold: the dollar index is down 0.2% at 101.77, the 10-year eased to 5.12% from 5.14%, Asian equities are red (Kospi −2.8%, Euro Stoxx 50 futures −1%), and the Houthis claimed strikes on Saudi energy, airport and military targets. Gold did pop to 4,145 around 11:47 PM ET – Reuters called it 'inching up on a softer dollar' – then got sold back to 4,118 inside two hours. My read: the market still expects a December hike (89% on CME FedWatch) even with 82% betting on a hold Oct. 28, and BOJ Governor Ueda said underlying inflation is 'quite close' to 2%, leaving the door open to more Japanese hikes – global yields don't have room to fall. When good news can't lift the price, I trust the price."
+     },
+     {
+      "h": "How I'm trading the London session",
+      "p": "Shorts are still my priority. At 1:15 AM ET gold left a gap at 4,137.50–4,142.50, right under the 4,146.50 Asia high, the 15m MA89 (4,146) and the 38.2% retrace of 4,188.90→4,115.90 (4,144). The 3:00 AM ET London open loves to run the Asia high or low; if it squeezes up to fill that gap and a 45m or 1H bar closes red, I'm short with a 4,153 stop, scaling out at 4,132, then 4,121. The BB90 setup flashed a second long at 2:45 AM ET (the 1:15 AM bar closed 4,122.10 outside the band, the 2:00 AM bar closed green at 4,131.40). I'm passing: a sensible stop sits under the 4,118 low, so that's $14 of risk for $6–$9 to the gap. I'd rather let that bounce carry price into my sell zone. If Europe runs the double bottom instead, 4,116–4,122 is the buy, stop 4,107 under the 2H lower BB90. A 1H close above 4,153 means I'm wrong on the short – I step aside, I don't argue."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC (Reuters) – Gold inches up on softer dollar as investors assess Fed rate outlook",
+      "url": "https://www.cnbc.com/2026/10/20/gold-inches-up-on-softer-dollar-as-investors-assess-fed-rate-outlook.html"
+     },
+     {
+      "name": "CNBC (Reuters) – Oil eases as markets assess potential waiver on Russian energy, Middle East supply risks",
+      "url": "https://www.cnbc.com/2026/10/20/oil-eases-as-markets-assess-potential-waiver-on-russian-energy-middle-east-supply-risks.html"
+     },
+     {
+      "name": "Bloomberg (via swissinfo) – Asian stocks shrug off US chip rally, oil steadies",
+      "url": "https://www.swissinfo.ch/eng/asian-stocks-shrug-off-us-chip-rally,-oil-steadies:-markets-wrap/92241741"
+     },
+     {
+      "name": "AP – Asian shares mostly decline after AI stocks lead a rebound on Wall Street",
+      "url": "https://apnews.com/article/stock-markets-oil-ai-rates-inflation-b972b64127db5412a2b02c35ecf95c88"
+     },
+     {
+      "name": "Economy Middle East – Gold eases to $4,132.15 despite weaker dollar",
+      "url": "https://economymiddleeast.com/news/gold-prices-ease-to-4132-15-despite-weaker-dollar-as-investors-assess-fed-rate-outlook/"
+     },
+     {
+      "name": "ForexFactory – Economic calendar (no high-impact U.S. data Tuesday)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     },
+     {
+      "name": "CNBC – U.S. 10-year yield (US10Y)",
+      "url": "https://www.cnbc.com/quotes/US10Y"
+     }
+    ]
+   }
+  },
+  {
    "id": "2026-10-20-phien-a-0645",
    "date": "2026-10-20",
    "time": "06:45",

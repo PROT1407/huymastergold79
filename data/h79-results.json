@@ -2,28 +2,70 @@
  "_note": "Nhật ký kết quả kế hoạch H79. Win = TP1 trước SL; loss = SL trước; hết phiên = P/L tại lúc đánh giá. MFE tính bằng giá ($1/oz). tp1_hit/tp2_hit ghi lại mỗi khi giá chạm TP (kể cả sau đó giá quay lại).",
  "plans": [
   {
+   "id": "2026-10-20-phien-au-1345",
+   "date": "2026-10-20",
+   "session": "Phiên Âu",
+   "evaluated_at_vn": null,
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.140 – 4.146",
+    "sl": "4.153",
+    "tp1": "4.132",
+    "tp2": "4.121",
+    "zone_filled": null,
+    "result": "mở",
+    "mfe": null
+   },
+   "buy": {
+    "zone": "4.116 – 4.122",
+    "sl": "4.107",
+    "tp1": "4.135",
+    "tp2": "4.143",
+    "zone_filled": null,
+    "result": "mở",
+    "mfe": null
+   }
+  },
+  {
    "id": "2026-10-20-phien-a-0645",
    "date": "2026-10-20",
    "session": "Phiên Á",
-   "evaluated_at_vn": null,
+   "evaluated_at_vn": "13:55 20/10/2026",
    "price_ref": "spot",
    "sell": {
     "zone": "4.140 – 4.146",
     "sl": "4.153",
     "tp1": "4.134",
     "tp2": "4.125",
-    "zone_filled": null,
-    "result": "mở",
-    "mfe": null
+    "zone_filled": true,
+    "result": "win",
+    "mfe": 24.6,
+    "entry": 4143.0,
+    "entry_at_vn": "11:30 20/10",
+    "tp1_hit": true,
+    "tp2_hit": true,
+    "sl_hit": false,
+    "pnl": null,
+    "tp1_at_vn": "12:25 20/10",
+    "tp2_at_vn": "12:50 20/10",
+    "pnl_tp1": 9.0,
+    "pnl_tp2": 18.0,
+    "max_adverse": 1.9,
+    "note": "Giá vào vùng bán từ 10:00 (4.140,3), đỉnh 4.146,5 (10:40). Vào 4.143,0 khi nến 45m 10:45–11:30 đóng đỏ. TP1 4.134 chạm 12:25 (+9,0 giá, chốt 60%, dời SL hòa vốn), TP2 4.125 chạm 12:50 (+18,0 giá). Sau khi vào, cao nhất 4.144,9 (11:45) – không đe dọa SL 4.153. Đáy 4.118,4 (13:15) → lời tối đa 24,6 giá. Nguồn CNBC XAU= 5m."
    },
    "buy": {
     "zone": "4.118 – 4.124",
     "sl": "4.105",
     "tp1": "4.136",
     "tp2": "4.146",
-    "zone_filled": null,
-    "result": "mở",
-    "mfe": null
+    "zone_filled": true,
+    "result": "không vào lệnh",
+    "mfe": null,
+    "entry": null,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "note": "Giá vào vùng mua 4.118–4.124 hai lần: 08:10–08:30 (đáy 4.115,9 lúc 08:25, thủng mép dưới 2,1 giá) và 12:50–13:15 (đáy 4.118,4). Cả hai nến 1H (08:00–09:00 đóng 4.128,2; 12:00–13:00 đóng 4.122,1) đều đỏ → không vào theo luật nến 1H xanh. Nến 1H 09:00 đóng xanh 4.139,3 nhưng đã trên TP1 4.136. Bỏ lỡ nhịp hồi 4.115,9 → 4.146,5 (+30,6 giá). Mẫu BB90 45m (nến 07:45 đóng 4.116,4 ngoài BB90 dưới 4.129,7, nến 08:30 đóng xanh 4.133,2 trong band) sẽ cho mua 4.133,2 lúc 09:15, đỉnh sau đó 4.146,5 (+13,3). SL 4.105 không bị chạm. Thay bằng kế hoạch Phiên Âu 13:45. Nguồn CNBC XAU= 5m."
    }
   },
   {
