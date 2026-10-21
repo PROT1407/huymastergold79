@@ -213,18 +213,18 @@
     "trendText": "Ngắn hạn giảm – tin hòa đàm Iran xả hết, dầu trên 100 USD giữ lợi suất cao; bán hồi 4.124–4.130, chỉ mua 4.100–4.106 khi có nến xác nhận",
     "trendText_en": "Short-term bearish – the Iran peace pop faded and $100-plus crude keeps yields high; sell a bounce into 4,124–4,130, buy 4,100–4,106 only on a confirming close",
     "buy": {
-     "zone": "4.100 – 4.106",
-     "sl": "4.091",
-     "tp": "4.118 → 4.127",
-     "zone_en": "4,100–4,106",
-     "sl_en": "4,091",
-     "tp_en": "TP1 4,118 → TP2 4,127"
+     "zone": "4.091 – 4097",
+     "sl": "4.086",
+     "tp": "4.102 → 4.112",
+     "zone_en": "4,091 – 4097",
+     "sl_en": "4,086",
+     "tp_en": "4,102 → 4,112"
     },
     "sell": {
-     "zone": "4.124 – 4.130",
+     "zone": "4.135 – 4.130",
      "sl": "4.138",
      "tp": "4.115 → 4.106",
-     "zone_en": "4,124–4,130",
+     "zone_en": "4,135 – 4,130",
      "sl_en": "4,138",
      "tp_en": "TP1 4,115 → TP2 4,106"
     },
@@ -242,7 +242,7 @@
      },
      {
       "h": "Kế hoạch phiên Á",
-      "p": "🔴 BÁN 4.124–4.130 | SL 4.138 | TP 4.115 → 4.106\n🟢 MUA 4.100–4.094 | SL 4.091 | TP 4.109-4115\n\nLưu ý: 08:00–10:00 Tokyo, Thượng Hải mở cửa; 14:00 London mở cửa; 21:30 tồn kho dầu EIA; hôm nay không có tin đỏ USD."
+      "p": "🔴 BÁN 4.135 – 4.130 | SL 4.138 | TP 4.115 → 4.106\n🟢 MUA 4.091 – 4097 | SL 4.086 | TP 4.102 → 4.112\n\nLưu ý: 08:00–10:00 Tokyo, Thượng Hải mở cửa; 14:00 London mở cửa; 21:30 tồn kho dầu EIA; hôm nay không có tin đỏ USD."
      }
     ],
     "sources": [
