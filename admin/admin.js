@@ -158,6 +158,7 @@
       const pe = sectionsEn.concat(hasPlan ? [{ h: S.en === 'Editorial' || S.en === 'Gold Outlook' ? 'Trading Plan' : S.en + ' Plan', p: planEn.join('\n') }] : []);
       if (pe.length) e.article_en = { sections: pe };
     } else e.vi_only = true;
+    if (f.telegram) e.telegram_send = true; // GitHub Action build-seo → job telegram gửi rồi ghi telegram_sent
     return e;
   }
   function insertSorted(list, e) {
@@ -334,7 +335,7 @@
     EDIT = null; IMG = null; $('p-img').value = ''; $('img-pv').classList.add('hidden'); $('img-cur').innerHTML = ''; $('preview').innerHTML = '';
     $('post-form-title').textContent = '✍️ Viết bài mới'; $('edit-note').classList.add('hidden'); $('btn-cancel-edit').classList.add('hidden');
     $('type-wrap').classList.remove('hidden'); $('inval-wrap').classList.remove('hidden'); $('e-inval').parentElement && ($('e-inval').style.display = '', $('e-inval').previousElementSibling.style.display = '');
-    $('btn-publish').textContent = '🚀 Đăng bài';
+    $('btn-publish').textContent = '🚀 Đăng bài'; $('p-tg').checked = false; $('tg-sent').innerHTML = '';
     let f = null; if (keepDraft) try { f = JSON.parse(ls.get(DRAFT) || 'null'); } catch (e) { }
     const n = nowVN(); f = f || {}; f.date = n.date; f.time = n.time; // ngày giờ luôn lấy lúc mở trang
     fillForm(f);
@@ -412,6 +413,7 @@
     if (ch(f.en.trendText, init.en.trendText)) C['summary.trendText_en'] = clean(f.en.trendText) || undefined;
     if (ch(f.en.note, init.en.note)) C['summary.note_en'] = clean(f.en.note) || undefined;
     if (!same(secs(f.en.sections), secs(init.en.sections))) { const x = secs(f.en.sections); C['article_en.sections'] = x.length ? x : undefined; }
+    if (f.telegram) { C.telegram_send = true; ['telegram_sent', 'telegram_skipped'].forEach(k => { if (s[k] != null) C[k] = undefined; }); }
     return C;
   }
   function startEdit(s) {
@@ -422,6 +424,7 @@
     $('edit-note').innerHTML = `Đang sửa: <b>${esc(s.session)} · ${esc(s.time || '')} ${esc(s.date.split('-').reverse().join('/'))}</b>. Ngày giờ giữ nguyên (đường link bài không đổi). Nếu đổi số BÁN/MUA ở trên, nhớ sửa cả mục “Kế hoạch” trong nội dung.`;
     $('edit-note').classList.remove('hidden'); $('btn-cancel-edit').classList.remove('hidden');
     $('img-cur').innerHTML = s.image ? `Ảnh hiện tại: <a href="../${esc(s.image)}" target="_blank">${esc(s.image.split('/').pop())}</a> <label style="margin-left:8px"><input type="checkbox" id="img-del"> xoá ảnh</label> · chọn ảnh mới để thay` : 'Bài chưa có ảnh.';
+    $('tg-sent').innerHTML = s.telegram_sent ? `✅ Bài này đã gửi Telegram lúc ${esc(String(s.telegram_sent.at || '').replace('T', ' ').slice(0, 16))}. Tick lại thì sẽ gửi thêm lần nữa.` : s.telegram_send ? '⏳ Bài này đang chờ gửi Telegram.' : '';
     openTab('new'); scrollTo({ top: 0 });
   }
 
@@ -444,11 +447,11 @@
     }, 15000);
   }
   $('btn-publish').onclick = async () => {
-    const f = readForm();
+    const f = readForm(); f.telegram = $('p-tg').checked;
     try {
       if (!EDIT) {
         buildEntry(Object.assign({}, f, { image: IMG ? 'x' : '' }), []); // kiểm tra form trước khi tải ảnh
-        if (!confirm('Đăng bài “' + clean(f.title) + '” lên h79gold.com?')) return;
+        if (!confirm('Đăng bài “' + clean(f.title) + '” lên h79gold.com?' + (f.telegram ? '\n\n📲 Bài sẽ tự gửi lên Telegram @HTFXGROUP sau khi lên web.' : ''))) return;
         busy('Đang đăng bài…');
         let img = ''; if (IMG) img = await uploadImage(f.date, f.type, f.time);
         busy('Đang lưu bài…');
@@ -459,13 +462,14 @@
         }, e => `Admin: đăng bài ${e.id} – ${e.title.slice(0, 80)}`);
         ls.del(DRAFT); resetNew(false);
         const link = SITE + entry.url;
-        flash(`🎉 <b>Đã đăng, khoảng 1–3 phút sau bài lên web.</b><br>Link bài: <a href="${esc(link)}" target="_blank">${esc(link)}</a><br><span class="small">Trang <a href="${SITE}chien-luoc.html" target="_blank">Chiến lược</a> cũng tự cập nhật.</span><br><span id="live-ok" class="small muted">⏳ Đang chờ web cập nhật…</span>${r.commit ? `<br><span class="small muted">Mã lưu: ${esc(r.commit.slice(0, 7))}</span>` : ''}`, 'ok');
+        flash(`🎉 <b>Đã đăng, khoảng 1–3 phút sau bài lên web.</b><br>Link bài: <a href="${esc(link)}" target="_blank">${esc(link)}</a><br><span class="small">Trang <a href="${SITE}chien-luoc.html" target="_blank">Chiến lược</a> cũng tự cập nhật.</span><br><span id="live-ok" class="small muted">⏳ Đang chờ web cập nhật…</span>${f.telegram ? '<br>📲 Telegram: máy sẽ tự gửi bài lên @HTFXGROUP sau khi bài lên web (khoảng 2–6 phút).' : ''}${r.commit ? `<br><span class="small muted">Mã lưu: ${esc(r.commit.slice(0, 7))}</span>` : ''}`, 'ok');
         pollLive(entry.url, 'Bài');
         loaded.posts = 0;
       } else {
         const del = $('img-del') && $('img-del').checked;
         const preview = editChanges(EDIT.before, EDIT.init, f, IMG ? 'x' : del ? null : undefined);
         if (!Object.keys(preview).length) { flash('Chưa có gì thay đổi.', 'info'); return; }
+        if (f.telegram && !confirm('Lưu và gửi bài này lên Telegram @HTFXGROUP?')) return;
         busy('Đang lưu…');
         let img; if (IMG) img = await uploadImage(EDIT.before.date, EDIT.before.session, EDIT.before.time || '00:00');
         const id = EDIT.id, before = EDIT.before, init = EDIT.init;
@@ -474,7 +478,7 @@
           applyChanges(s, before, editChanges(before, init, f, IMG ? img : del ? null : undefined)); return s;
         }, `Admin: sửa bài ${id}`);
         const s = r.res; resetNew(true); loaded.posts = 0;
-        flash(r.unchanged ? 'Không có gì thay đổi.' : `✅ <b>Đã lưu. Khoảng 1–3 phút sau web cập nhật.</b><br><a href="${esc(SITE + (s.url || 'bai/' + postFile(s)))}" target="_blank">Mở bài ↗</a>`, 'ok');
+        flash(r.unchanged ? 'Không có gì thay đổi.' : `✅ <b>Đã lưu. Khoảng 1–3 phút sau web cập nhật.</b><br><a href="${esc(SITE + (s.url || 'bai/' + postFile(s)))}" target="_blank">Mở bài ↗</a>${f.telegram ? '<br>📲 Telegram: máy sẽ tự gửi bài lên @HTFXGROUP sau khi bài lên web (khoảng 2–6 phút).' : ''}`, 'ok');
         openTab('posts');
       }
     } catch (e) { flash('Chưa lưu được: ' + errMsg(e), 'err'); }
@@ -490,7 +494,7 @@
   function drawPosts() {
     const q = slug($('post-q').value);
     const L = POSTS.filter(s => !q || slug(`${s.title} ${s.session} ${s.date} ${(s.date || '').split('-').reverse().join('/')}`).includes(q));
-    $('post-list').innerHTML = L.map(s => `<li><div class="t">${esc(s.title)}</div><div class="m">${esc(s.session || '')} · ${esc(s.time || '')} ${esc((s.date || '').split('-').reverse().join('/'))}${s.title_en ? ' · 🇬🇧' : ''}${s.image ? ' · 🖼' : ''}</div><div class="btns"><button class="b gh sm" data-e="${esc(s.id)}">✏️ Sửa</button><a class="b gh sm" target="_blank" href="${esc(SITE + 'bai/' + postFile(s))}">👁 Xem</a><button class="b red sm" data-d="${esc(s.id)}">🗑 Xoá</button></div></li>`).join('') || '<li class="muted">Không có bài.</li>';
+    $('post-list').innerHTML = L.map(s => `<li><div class="t">${esc(s.title)}</div><div class="m">${esc(s.session || '')} · ${esc(s.time || '')} ${esc((s.date || '').split('-').reverse().join('/'))}${s.title_en ? ' · 🇬🇧' : ''}${s.image ? ' · 🖼' : ''}${s.telegram_sent ? ' · 📲' : s.telegram_send ? ' · ⏳📲' : ''}</div><div class="btns"><button class="b gh sm" data-e="${esc(s.id)}">✏️ Sửa</button><a class="b gh sm" target="_blank" href="${esc(SITE + 'bai/' + postFile(s))}">👁 Xem</a><button class="b red sm" data-d="${esc(s.id)}">🗑 Xoá</button></div></li>`).join('') || '<li class="muted">Không có bài.</li>';
   }
   $('post-q').oninput = drawPosts;
   $('post-list').onclick = async e => {

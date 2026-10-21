@@ -2,6 +2,8 @@ name: build-seo
 # Tự sinh bai/*.html, sitemap.xml, robots.txt từ data/*.json (scripts/build-seo.py).
 # Chống lặp: push bằng GITHUB_TOKEN không kích hoạt workflow khác + bỏ qua khi actor là bot.
 # Bài đăng từ /admin/ (GitHub API, token của chủ site) sửa data/*.json → workflow này sinh trang và commit.
+# Job telegram: bài được tick “📲 Gửi Telegram khi đăng” ở /admin/ (telegram_send: true) → scripts/send-telegram.py gửi EN rồi VN lên @HTFXGROUP
+#   sau khi trang đã lên web, ghi telegram_sent (commit [skip ci] bằng GITHUB_TOKEN → không lặp, không gửi lại).
 # Không dùng [skip ci] để GitHub Pages (pages-build-deployment) vẫn chạy; vẫn gọi API build Pages cho chắc.
 on:
   push:
@@ -39,3 +41,24 @@ jobs:
         if: steps.c.outputs.changed == '1'
         env: { GH_TOKEN: '${{ github.token }}' }
         run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Pages build request failed (Pages vẫn tự build khi có push)"
+  telegram:
+    needs: build
+    if: ${{ !cancelled() && needs.build.result == 'success' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - name: Có bài chờ gửi Telegram?
+        id: f
+        run: |
+          if grep -q '"telegram_send": true' data/strategies.json; then echo "go=1" >> "$GITHUB_OUTPUT"; else echo "Không có bài cần gửi Telegram"; fi
+      - uses: actions/setup-python@v5
+        if: steps.f.outputs.go == '1'
+        with: { python-version: '3.12' }
+      - name: Gửi Telegram (EN trước, VN sau)
+        if: steps.f.outputs.go == '1'
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: '-1001396622973'
+        run: python3 scripts/send-telegram.py
