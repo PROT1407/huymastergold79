@@ -46,7 +46,10 @@
   const postVI = f => { const al = Object.keys(EN_ALIAS).find(k => EN_ALIAS[k] === f); if (al) return al; let m = /^en\/posts\/(\d{4}-\d\d-\d\d)-gold-plan-([a-z-]+?)(-\d{4})?\.html$/.exec(f); if (m) { const s = POST_SES.find(x => x[1] === m[2]); return s ? `bai/${m[1]}-nhan-dinh-vang-${s[0]}${m[3] || ''}.html` : null; }
     m = /^en\/posts\/(\d{4}-\d\d-\d\d)-gold-macro-news\.html$/.exec(f); return m ? `bai/${m[1]}-tin-vi-mo-anh-huong-gia-vang.html` : null; };
   const curFile = (() => { const a = location.pathname.split('/').filter(Boolean); const f = /\.html$/.test(a[a.length - 1] || '') ? a.pop() : 'index.html'; const dir = a[a.length - 1]; return (EN ? (dir === 'posts' ? 'en/posts/' : 'en/') : (dir === 'bai' ? 'bai/' : '')) + f; })();
-  const langHref = EN ? (Object.keys(LANG_PAIRS).find(k => LANG_PAIRS[k] === curFile) || postVI(curFile) || (curFile.startsWith('en/posts/') ? 'bai/index.html' : 'index.html'))
+  /* bài tĩnh: ưu tiên thẻ hreflang do build-seo.py sinh (chỉ có khi bản dịch tồn tại) – bài chỉ VN không trỏ tới trang EN không có */
+  const altHref = l => { const x = document.querySelector(`link[rel="alternate"][hreflang="${l}"]`); if (!x) return null; try { const u = new URL(x.href, location.href); return u.pathname.replace(/^\//, '').replace(/^huymastergold79\//, '') || 'index.html'; } catch (_) { return null; } };
+  const isPost = /^(bai|en\/posts)\/(?!index\.html$)/.test(curFile);
+  const langHref = isPost ? (altHref(EN ? 'vi' : 'en') || (EN ? 'bai/index.html' : 'en/posts/index.html')) : EN ? (Object.keys(LANG_PAIRS).find(k => LANG_PAIRS[k] === curFile) || postVI(curFile) || (curFile.startsWith('en/posts/') ? 'bai/index.html' : 'index.html'))
     : (LANG_PAIRS[curFile] || postEN(curFile) || (curFile.startsWith('bai/') ? 'en/posts/index.html' : 'en/index.html'));
   const langBtn = `<a class="icon-btn lang-btn" href="${langHref}" hreflang="${EN ? 'vi' : 'en'}" lang="${EN ? 'vi' : 'en'}" title="${EN ? 'Tiếng Việt' : 'English version'}" aria-label="${EN ? 'Chuyển sang tiếng Việt' : 'Switch to English'}" style="display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-weight:800;font-size:.8rem;flex:0 0 auto">${EN ? 'VI' : 'EN'}</a>`;
   const M_EN = [

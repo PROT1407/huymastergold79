@@ -110,3 +110,9 @@ Cache-busting: đổi `?v=` trên mọi trang (kể cả `en/`, `en/posts/`, `ba
 - `.github/workflows/red-news-alert.yml` chạy mỗi 5 phút → `scripts/red-news-alert.py` đọc `data/calendar-us.json`, gửi 1 tin Telegram (chat -1001396622973) cho mỗi mốc giờ có tin High trong 0–20 phút tới. Chống trùng bằng `.alert-state.json` giữ qua `actions/cache`. Chạy tay: Actions → red-news-alert → Run workflow (mặc định dry_run=1, chỉ log; `now_utc` để giả lập).
 - Banner web: `js/news-alert.js` (tự tải từ `js/common.js`), hiện 15' trước → 5' sau tin.
 - OneSignal (đang TẮT): điền `ONESIGNAL_APP_ID` trong `js/push-config.js` để bật web push; thêm repo variable/secret `ONESIGNAL_APP_ID` + secret `ONESIGNAL_REST_KEY` để workflow gửi push. Worker: `/OneSignalSDKWorker.js`, scope `/` (custom domain https://h79gold.com phục vụ ở gốc; trong OneSignal Dashboard chọn "Custom Code", Site URL `https://h79gold.com`).
+
+## Trang quản trị /admin/ (chủ site tự đăng bài)
+- `admin/index.html` + `admin/admin.js`: viết/sửa/xoá bài nhận định (`data/strategies.json`), tin vĩ mô, lời khuyên giá vàng VN, giá dự phòng, lịch live, và sửa JSON thô (tab Nâng cao). noindex, `Disallow: /admin/`, không có trong sitemap.
+- Đăng nhập bằng GitHub fine-grained token do chủ site tự tạo (Contents: Read and write, chỉ repo này); token chỉ lưu trong localStorage của trình duyệt. Không commit token.
+- Lưu = commit `data/*.json` (ảnh vào `img/charts/`) qua Contents API → workflow `build-seo` sinh lại `bai/`, `en/posts/`, sitemap.
+- Bài chỉ tiếng Việt có `"vi_only": true` (không tạo trang EN, không hiện ở en/h79-analysis).

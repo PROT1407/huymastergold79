@@ -258,6 +258,8 @@ def build_strategies():
                     + (f'<p class="small muted">{e(s["disclaimer"])}</p>' if s.get("disclaimer") else ""))
         if s.get("summary"):
             body = article_html(s.get("article")) + summary_html(s) + article_src(s.get("article")) + '<details class="h79more"><summary>' + ("Xem thêm" if s.get("brief") else "Xem thêm: chỉ báo, kịch bản, vĩ mô") + '</summary>' + body + "</details>"
+        elif (s.get("article") or {}).get("sections"):  # bài chỉ có nội dung (không có hộp kế hoạch), vd viết từ /admin/
+            body = img_html(s) + article_html(s.get("article")) + article_src(s.get("article")) + body
         desc = f"Nhận định vàng {s.get('session','')} {dvn(s['date'])}{' lúc ' + t if t else ''}: " + (s.get("trend") or s["title"])
         out.append(dict(kind="nd", file=f, date=s["date"], sort=s["date"] + (t or "00:00"),
                         title=s.get("headline") or (s["title"] if re.search(r"\d{1,2}/\d{1,2}", s["title"]) else f"Nhận định vàng {dvn(s['date'])} – {s['title']}"),
@@ -538,7 +540,7 @@ def build_en(arts):
         if not a.get("en"): continue
         if a["kind"] == "nd":
             s = next((x for k, x in strat.items() if a["pub"].startswith(x["date"] + "T" + (x.get("time") or "00:00"))), None)
-            if not s or not (s.get("title_en") or s.get("summary")): continue
+            if not s or not (s.get("title_en") or s.get("headline_en")): continue  # chỉ sinh bản EN khi bài có tiêu đề EN (bài chỉ VN từ /admin/ thì bỏ qua)
             t = vn_dt(s["date"], s.get("time"))
             # Always derive EN session label from ET clock (fixes Phiên đêm → NY morning, etc.)
             ses = et_session_label(t) if s.get("time") else (SES_EN.get(s.get("session_en")) or SES_EN.get(s.get("session")) or s.get("session_en") or "")
@@ -548,11 +550,11 @@ def build_en(arts):
                     + card("📍 Support / resistance (USD/oz)", f'<div class="seo-lv">{lv}</div>' if lv else "")
                     + card("🟢 Long setups", ul(s.get("entryZones_en"))) + card("🔴 Short setups &amp; invalidation", ul(s.get("sellZones_en")))
                     + card("🧭 Levels, indicators &amp; scenarios", ul(s.get("scenarios_en"))) + card("🌐 Macro backdrop", ul(s.get("macro_en")))
-                    + card("💡 Our take", f'<p>{e(s["physicalAdvice_en"] or s.get("physicalAdvice", ""))}</p>' if (s.get("physicalAdvice_en") or s.get("physicalAdvice")) else "")
+                    + card("💡 Our take", f'<p>{e(s.get("physicalAdvice_en") or s.get("physicalAdvice", ""))}</p>' if (s.get("physicalAdvice_en") or s.get("physicalAdvice")) else "")
                     + card("ℹ Data notes", "".join(f'<p class="small muted">{e(s[k])}</p>' for k in ("dataTime_en", "notes_en", "disclaimer_en") if s.get(k))))
             if s.get("brief"):
                 body = (card("🧭 Plan &amp; scenarios", ul(s.get("scenarios_en")))
-                        + card("💡 Our take", f'<p>{e(s["physicalAdvice_en"] or s.get("physicalAdvice", ""))}</p>' if (s.get("physicalAdvice_en") or s.get("physicalAdvice")) else "")
+                        + card("💡 Our take", f'<p>{e(s.get("physicalAdvice_en") or s.get("physicalAdvice", ""))}</p>' if (s.get("physicalAdvice_en") or s.get("physicalAdvice")) else "")
                         + (f'<p class="small muted">{e(s["disclaimer_en"])}</p>' if s.get("disclaimer_en") else ""))
             if s.get("summary") and body: body = '<details class="h79more" open><summary>' + ("More details" if s.get("brief") else "Full breakdown: indicators, scenarios, macro") + '</summary>' + body + "</details>"
             wt = et_str(t, bool(s.get("time")))
@@ -560,7 +562,7 @@ def build_en(arts):
             x = dict(path=a["en"], vi="bai/" + a["file"], date=a["date"], sort=a["sort"], kind="H79 Gold Plan", title=title,
                      desc=desc[:157].rstrip() + ("…" if len(desc) > 157 else ""), pub=t.isoformat(), when=f"{ses} · {wt}")
             if s.get("image_en") or s.get("image"): x["img"] = s.get("image_en") or s["image"]
-            x["body"] = en_head(x, "🎯 H79 Gold Plan") + article_html(s.get("article_en"), True) + en_summary(s) + article_src(s.get("article_en"), True) + body
+            x["body"] = en_head(x, "🎯 H79 Gold Plan") + article_html(s.get("article_en"), True) + (en_summary(s) if s.get("summary") else img_html(s, True)) + article_src(s.get("article_en"), True) + body
         elif a["kind"] == "vm":
             its = sorted([i for i in macro if i.get("date") == a["date"] and i.get("title_en")], key=lambda i: i.get("priority", 9))
             if not its: continue
@@ -638,7 +640,7 @@ def main():
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(
         f"  <url><loc>{u}</loc><lastmod>{d}</lastmod><changefreq>{c}</changefreq><priority>{p}</priority></url>\n" for u, d, c, p in urls) + "</urlset>\n"
     (ROOT / "sitemap.xml").write_text(sm, encoding="utf-8")
-    (ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /scripts/\n\nSitemap: {BASE_URL}sitemap.xml\n", encoding="utf-8")
+    (ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /scripts/\nDisallow: /admin/\n\nSitemap: {BASE_URL}sitemap.xml\n", encoding="utf-8")
     print(f"build-seo EN: {len(en_arts)} bài en/posts/")
     print(f"build-seo: {len(arts)} bài + bai/index.html, sitemap {len(urls)} URL → {BASE_URL}sitemap.xml")
 

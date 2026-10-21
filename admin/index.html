@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quản trị H79 – Viết bài & sửa nội dung</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: blob:; connect-src 'self' https://api.github.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<meta name="theme-color" content="#0d1117">
+<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.dataset.theme=localStorage.getItem('hmg_theme')||'dark'</script>
+<link rel="stylesheet" href="../css/site.css?v=20261020x">
+<style>
+body{padding-bottom:60px}
+.ad-wrap{max-width:860px;margin:auto;padding:0 12px}
+.ad-top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:10px 0}
+.ad-top .row{display:flex;align-items:center;gap:8px;justify-content:space-between}
+.ad-top h1{font-size:1.05rem;margin:0}.ad-top h1 b{color:var(--gold)}
+.ad-tabs{display:flex;gap:6px;overflow-x:auto;padding:8px 0 2px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.ad-tabs button{flex:0 0 auto;border:1px solid var(--line);background:var(--card);color:var(--txt);border-radius:999px;padding:8px 13px;font:inherit;font-size:.88rem;font-weight:700;cursor:pointer}
+.ad-tabs button.on{background:var(--gold);color:#1a1405;border-color:var(--gold)}
+.ad-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin:12px 0}
+.ad-card h2{font-size:1.1rem;margin:0 0 8px}.ad-card h3{font-size:1rem;margin:12px 0 6px;color:var(--gold2)}
+label.f{display:block;margin:10px 0 4px;font-weight:700;font-size:.9rem}
+label.f small{font-weight:400;color:var(--muted)}
+.ad input[type=text],.ad input[type=date],.ad input[type=time],.ad input[type=number],.ad input[type=url],.ad input[type=password],.ad select,.ad textarea{width:100%;font:inherit;font-size:16px;color:var(--txt);background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:10px 11px}
+.ad textarea{min-height:110px;line-height:1.5;resize:vertical}
+.ad textarea.raw{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;min-height:60vh;white-space:pre;overflow:auto}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px}.g3{display:grid;grid-template-columns:1.4fr 1fr 1.4fr;gap:6px}
+@media(max-width:560px){.g2{grid-template-columns:1fr}.g3{grid-template-columns:1fr 1fr}.g3>:first-child{grid-column:1/-1}}
+.zone{border-radius:12px;padding:8px 10px;margin:8px 0}.zone.sell{background:rgba(234,57,67,.10);border:1px solid rgba(234,57,67,.35)}.zone.buy{background:rgba(22,199,132,.10);border:1px solid rgba(22,199,132,.35)}
+.zone b{display:block;margin-bottom:4px}
+.seg{display:flex;gap:6px;flex-wrap:wrap}.seg label{flex:1 1 auto;min-width:88px;text-align:center;border:1px solid var(--line);border-radius:10px;padding:9px 6px;cursor:pointer;font-weight:700;font-size:.9rem;background:var(--bg2)}
+.seg input{display:none}.seg input:checked+span{color:var(--gold)}.seg label:has(input:checked){border-color:var(--gold);background:rgba(240,185,11,.12)}
+.sec-item{border:1px dashed var(--line);border-radius:12px;padding:8px 10px;margin:8px 0;position:relative}
+.sec-item .tools{display:flex;gap:6px;justify-content:flex-end;margin-top:6px}
+.b{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:0;border-radius:12px;padding:12px 16px;font:inherit;font-weight:800;cursor:pointer;text-decoration:none}
+.b.gold{background:linear-gradient(90deg,#f0b90b,#ffd76a);color:#1a1405}.b.gh{background:var(--bg2);color:var(--txt);border:1px solid var(--line)}
+.b.red{background:rgba(234,57,67,.15);color:#ff6b74;border:1px solid rgba(234,57,67,.4)}.b.sm{padding:7px 11px;font-size:.85rem;border-radius:9px}
+.b[disabled]{opacity:.5;pointer-events:none}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.actions .b{flex:1 1 140px}
+.msg{border-radius:12px;padding:12px;margin:10px 0;font-weight:600;line-height:1.5}.msg.ok{background:rgba(22,199,132,.13);border:1px solid rgba(22,199,132,.4)}
+.msg.err{background:rgba(234,57,67,.13);border:1px solid rgba(234,57,67,.4)}.msg.info{background:rgba(240,185,11,.10);border:1px solid var(--line)}
+.list{list-style:none;padding:0;margin:0}.list li{padding:10px 0;border-bottom:1px solid var(--line)}
+.list .t{font-weight:700;line-height:1.35}.list .m{color:var(--muted);font-size:.8rem;margin:2px 0 6px}.list .btns{display:flex;gap:6px;flex-wrap:wrap}
+.muted{color:var(--muted)}.small{font-size:.85rem}
+details.en{border:1px solid var(--line);border-radius:12px;padding:8px 10px;margin:12px 0}details.en summary{font-weight:800;cursor:pointer}
+#preview .pv{border:2px solid var(--gold);border-radius:16px;padding:12px;margin:10px 0;background:var(--bg)}
+#preview .pv h1{font-size:1.25rem;line-height:1.3}
+.imgpv{max-width:100%;border-radius:10px;margin-top:6px}
+.hidden{display:none!important}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:50;display:flex;align-items:center;justify-content:center;padding:20px}
+.overlay .box{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:18px;max-width:420px;width:100%;text-align:center;font-weight:700}
+.spin{width:34px;height:34px;border:4px solid var(--line);border-top-color:var(--gold);border-radius:50%;animation:sp 1s linear infinite;margin:0 auto 10px}@keyframes sp{to{transform:rotate(360deg)}}
+code{background:var(--bg2);padding:1px 5px;border-radius:5px}
+</style>
+</head>
+<body class="ad">
+<div class="ad-top"><div class="ad-wrap">
+  <div class="row"><h1>⚙️ Quản trị <b>H79</b></h1><span><a class="b gh sm" href="../" target="_blank">🌐 Xem web</a> <button class="b gh sm hidden" id="logout" type="button">🚪 Đăng xuất</button></span></div>
+  <nav class="ad-tabs hidden" id="tabs">
+    <button type="button" data-tab="new" class="on">✍️ Viết bài mới</button>
+    <button type="button" data-tab="posts">📋 Sửa bài</button>
+    <button type="button" data-tab="macro">🌐 Tin vĩ mô</button>
+    <button type="button" data-tab="vngold">💰 Giá vàng VN</button>
+    <button type="button" data-tab="live">🔴 Live</button>
+    <button type="button" data-tab="raw">🛠 Nâng cao</button>
+  </nav>
+</div></div>
+<main class="ad-wrap">
+  <noscript><div class="msg err">Cần bật JavaScript.</div></noscript>
+  <div id="flash"></div>
+
+  <!-- ĐĂNG NHẬP -->
+  <section id="login" class="ad-card hidden">
+    <h2>🔑 Đăng nhập lần đầu</h2>
+    <p class="small">Dán <b>mã GitHub (token)</b> anh đã tạo theo hướng dẫn. Mã chỉ lưu trong trình duyệt của máy này, không gửi đi đâu ngoài GitHub.</p>
+    <p class="small">Chưa có mã? <a href="https://github.com/settings/personal-access-tokens/new?name=h79gold-admin&description=Dang%20bai%20h79gold.com%2Fadmin&target_name=PROT1407&expires_in=366&contents=write" target="_blank" rel="noopener">Bấm vào đây để tạo trên GitHub ↗</a> (nhớ chọn <i>Only select repositories → huymastergold79</i>).</p>
+    <label class="f" for="tok">Mã token (bắt đầu bằng <code>github_pat_</code>)</label>
+    <input type="password" id="tok" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="github_pat_...">
+    <div class="actions"><button class="b gold" id="login-btn" type="button">✅ Lưu và vào trang quản trị</button></div>
+  </section>
+
+  <!-- VIẾT BÀI MỚI / SỬA BÀI NHẬN ĐỊNH -->
+  <section id="tab-new" class="hidden">
+    <div class="ad-card">
+      <h2 id="post-form-title">✍️ Viết bài mới</h2>
+      <div id="edit-note" class="msg info hidden"></div>
+      <div id="type-wrap"><label class="f">Loại bài</label>
+      <div class="seg" id="ptype">
+        <label><input type="radio" name="ptype" value="Phiên Á"><span>🌏 Phiên Á</span></label>
+        <label><input type="radio" name="ptype" value="Phiên Âu"><span>🇪🇺 Phiên Âu</span></label>
+        <label><input type="radio" name="ptype" value="Phiên Mỹ"><span>🇺🇸 Phiên Mỹ</span></label>
+        <label><input type="radio" name="ptype" value="Xã luận"><span>📰 Xã luận</span></label>
+        <label><input type="radio" name="ptype" value="Tổng quan" checked><span>📝 Bài chung</span></label>
+      </div>
+      <div class="g2"><div><label class="f" for="p-date">Ngày (tự điền)</label><input type="date" id="p-date"></div><div><label class="f" for="p-time">Giờ VN (tự điền)</label><input type="time" id="p-time"></div></div>
+      </div>
+      <label class="f" for="p-title">Tiêu đề bài *</label>
+      <input type="text" id="p-title" placeholder="VD: Vàng 22/10 phiên Á: chờ hồi 4.130 để bán">
+      <label class="f">Xu hướng</label>
+      <div class="seg">
+        <label><input type="radio" name="ptrend" value="up"><span>🔺 Tăng</span></label>
+        <label><input type="radio" name="ptrend" value="side" checked><span>↔️ Đi ngang</span></label>
+        <label><input type="radio" name="ptrend" value="down"><span>🔻 Giảm</span></label>
+      </div>
+      <label class="f" for="p-trendtext">Nhận định 1 câu <small>(không bắt buộc – hiện ở hộp “Xu hướng”)</small></label>
+      <input type="text" id="p-trendtext" placeholder="VD: Ngắn hạn giảm, bán hồi, không mua đuổi">
+
+      <h3>🎯 Kế hoạch giao dịch <small class="muted">(bỏ trống nếu bài không có kế hoạch)</small></h3>
+      <div class="zone sell"><b>🔴 BÁN</b><div class="g3"><input type="text" id="s-zone" placeholder="Vùng: 4.124 – 4.130"><input type="text" id="s-sl" placeholder="SL: 4.138"><input type="text" id="s-tp" placeholder="TP: 4.115 → 4.106"></div></div>
+      <div class="zone buy"><b>🟢 MUA</b><div class="g3"><input type="text" id="b-zone" placeholder="Vùng: 4.100 – 4.106"><input type="text" id="b-sl" placeholder="SL: 4.091"><input type="text" id="b-tp" placeholder="TP: 4.118 → 4.127"></div></div>
+      <div id="inval-wrap"><label class="f" for="p-inval">Vô hiệu <small>(khi nào bỏ lệnh)</small></label>
+      <input type="text" id="p-inval" placeholder="VD: nến 1H đóng trên 4.138 bỏ bán; dưới 4.091 bỏ mua"></div>
+      <label class="f" for="p-note">⚠️ Lưu ý</label>
+      <input type="text" id="p-note" placeholder="VD: 19:30 có tin CPI Mỹ, đứng ngoài 15 phút đầu">
+
+      <h3>📝 Nội dung bài</h3>
+      <p class="small muted">Mỗi mục gồm tiêu đề nhỏ và nội dung. Xuống dòng bằng phím Enter. Viết <code>**chữ**</code> để in đậm.</p>
+      <div id="secs"></div>
+      <button class="b gh sm" type="button" id="add-sec">➕ Thêm mục</button>
+
+      <h3>🖼 Ảnh biểu đồ <small class="muted">(không bắt buộc)</small></h3>
+      <input type="file" id="p-img" accept="image/*">
+      <div id="img-cur" class="small muted"></div>
+      <img id="img-pv" class="imgpv hidden" alt="">
+      <label class="f" for="p-imgalt">Mô tả ảnh <small>(không bắt buộc)</small></label>
+      <input type="text" id="p-imgalt" placeholder="VD: Biểu đồ vàng 1H phiên Á 22/10">
+
+      <label class="f" for="p-advice">💡 Lời khuyên ngắn</label>
+      <input type="text" id="p-advice" value="Làm theo kế hoạch, đừng chạy theo nến tin.">
+
+      <details class="en" id="en-box"><summary>🇬🇧 Bản tiếng Anh (không bắt buộc – bỏ trống thì chỉ đăng tiếng Việt)</summary>
+        <label class="f" for="e-title">English title</label><input type="text" id="e-title" placeholder="H79 Gold Plan – Asia Session, Oct 22: ...">
+        <label class="f" for="e-trendtext">One-line bias</label><input type="text" id="e-trendtext">
+        <label class="f" for="e-inval">Invalidation</label><input type="text" id="e-inval">
+        <label class="f" for="e-note">Key risk / note</label><input type="text" id="e-note">
+        <p class="small muted">Số trong kế hoạch BÁN/MUA tự đổi sang kiểu Anh (4.124 → 4,124).</p>
+        <div id="secs-en"></div>
+        <button class="b gh sm" type="button" id="add-sec-en">➕ Add section</button>
+      </details>
+
+      <div class="actions">
+        <button class="b gh" type="button" id="btn-preview">👁 Xem trước</button>
+        <button class="b gold" type="button" id="btn-publish">🚀 Đăng bài</button>
+      </div>
+      <div class="actions"><button class="b gh sm" type="button" id="btn-clear">🧹 Xoá nháp, viết lại</button><button class="b gh sm hidden" type="button" id="btn-cancel-edit">↩️ Huỷ sửa</button></div>
+      <p class="small muted" style="margin-top:8px">Nháp tự lưu trên máy này mỗi khi anh gõ.</p>
+    </div>
+    <div id="preview"></div>
+  </section>
+
+  <section id="tab-posts" class="hidden"><div class="ad-card"><h2>📋 Tất cả bài nhận định</h2>
+    <input type="text" id="post-q" placeholder="🔎 Tìm theo tiêu đề / ngày (VD 21/10)">
+    <ul class="list" id="post-list"><li class="muted">Đang tải…</li></ul></div></section>
+
+  <section id="tab-macro" class="hidden"><div class="ad-card"><h2>🌐 Tin vĩ mô (trang Tin tức)</h2>
+    <div class="actions" style="margin-top:0"><button class="b gold sm" type="button" id="macro-add">➕ Thêm tin mới</button></div>
+    <div id="macro-form"></div>
+    <input type="text" id="macro-q" placeholder="🔎 Tìm tin" style="margin-top:10px">
+    <ul class="list" id="macro-list"><li class="muted">Đang tải…</li></ul></div></section>
+
+  <section id="tab-vngold" class="hidden">
+    <div class="ad-card"><h2>💰 Giá vàng trong nước – Lời khuyên & phân tích</h2><p class="small muted">Trang <a href="../gia-vang.html" target="_blank">Giá vàng</a>. Bảng giá do máy tự cập nhật – ở đây chỉ sửa phần chữ.</p><div id="vg-form">Đang tải…</div></div>
+    <div class="ad-card"><h2>🧱 Giá dự phòng (vn-prices.json)</h2><p class="small muted">Chỉ dùng khi nguồn giá trực tuyến lỗi. Đơn vị: đồng/lượng.</p><div id="vp-form">Đang tải…</div></div>
+  </section>
+
+  <section id="tab-live" class="hidden"><div class="ad-card"><h2>🔴 Lịch Live</h2><div id="live-form">Đang tải…</div></div></section>
+
+  <section id="tab-raw" class="hidden"><div class="ad-card"><h2>🛠 Sửa nâng cao (JSON)</h2>
+    <div class="msg info small">Dành cho phần chưa có form riêng (quỹ, tài khoản follow, FedWatch, mã giao dịch…). Sửa sai cú pháp sẽ bị chặn, không lưu. File có ghi “tự sinh” sẽ bị máy ghi đè ở lần cập nhật sau.</div>
+    <label class="f" for="raw-file">Chọn file</label><select id="raw-file"></select>
+    <div class="actions"><button class="b gh sm" type="button" id="raw-load">📂 Mở file</button></div>
+    <div id="raw-info" class="small muted"></div>
+    <textarea id="raw-text" class="raw hidden" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>
+    <div class="actions hidden" id="raw-actions"><button class="b gh" type="button" id="raw-check">🧪 Kiểm tra</button><button class="b gold" type="button" id="raw-save">💾 Lưu lên web</button></div>
+  </div></section>
+</main>
+<div class="overlay hidden" id="busy"><div class="box"><div class="spin"></div><div id="busy-t">Đang xử lý…</div></div></div>
+<script src="admin.js?v=1"></script>
+</body>
+</html>

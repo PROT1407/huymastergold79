@@ -1,6 +1,7 @@
 name: build-seo
 # Tự sinh bai/*.html, sitemap.xml, robots.txt từ data/*.json (scripts/build-seo.py).
 # Chống lặp: push bằng GITHUB_TOKEN không kích hoạt workflow khác + bỏ qua khi actor là bot.
+# Bài đăng từ /admin/ (GitHub API, token của chủ site) sửa data/*.json → workflow này sinh trang và commit.
 # Không dùng [skip ci] để GitHub Pages (pages-build-deployment) vẫn chạy; vẫn gọi API build Pages cho chắc.
 on:
   push:
@@ -27,7 +28,7 @@ jobs:
       - name: Commit nếu có thay đổi
         id: c
         run: |
-          git add -A bai sitemap.xml robots.txt index.html *.html
+          git add -A bai en/posts sitemap.xml robots.txt index.html *.html
           if git diff --cached --quiet; then echo "Không có thay đổi"; echo "changed=0" >> "$GITHUB_OUTPUT"; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

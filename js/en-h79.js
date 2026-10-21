@@ -73,7 +73,7 @@
   if (!$('strategy') && !$('quick')) return;
   H.getJSON('data/strategies.json').then(d => {
     const key = s => s.id || s.date;
-    const L = (d.strategies || []).filter(s => !s.example).sort((a, b) => vnDate(b) - vnDate(a));
+    const L = (d.strategies || []).filter(s => !s.example && !s.vi_only).sort((a, b) => vnDate(b) - vnDate(a));
     if (!L.length) { ($('strategy') || $('quick')).textContent = 'No analysis published yet.'; return; }
     if ($('quick')) $('quick').innerHTML = compact(L[0]);
     if (!$('strategy')) return;
