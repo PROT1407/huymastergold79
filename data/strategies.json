@@ -325,7 +325,8 @@
       "url": "https://www.cnbc.com/quotes/XAU="
      }
     ]
-   }
+   },
+   "telegram_send": true
   },
   {
    "id": "2026-10-20-phien-my-2107",
