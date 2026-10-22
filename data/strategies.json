@@ -315,6 +315,14 @@
       "url": "https://www.cnbc.com/quotes/XAU="
      }
     ]
+   },
+   "telegram_sent": {
+    "at": "2026-10-22T18:13:46+07:00",
+    "chat": "-1001396622973",
+    "msgs": {
+     "en": 1530,
+     "vi": 1531
+    }
    }
   },
   {
