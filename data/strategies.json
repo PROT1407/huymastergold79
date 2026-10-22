@@ -1,6 +1,323 @@
 {
  "strategies": [
   {
+   "id": "2026-10-22-phien-my-1915",
+   "date": "2026-10-22",
+   "time": "19:15",
+   "session": "Phiên Mỹ",
+   "session_en": "New York Session",
+   "url": "bai/2026-10-22-nhan-dinh-vang-phien-my-1915.html",
+   "url_en": "en/posts/2026-10-22-gold-plan-new-york-session-1915.html",
+   "headline": "Vàng 22/10 phiên Mỹ: dầu 112 USD đè vàng dưới 4.100 – BÁN hồi 4.093–4.098, MUA quét đáy 4.059–4.064",
+   "headline_en": "H79 Gold Plan – New York Session, Oct 22: $112 Oil Keeps Gold Under 4,100 – Sell 4,093–4,098, Buy the Sweep at 4,059–4,064",
+   "title": "Vàng 22/10 phiên Mỹ: dầu 112 USD đè vàng dưới 4.100 – BÁN hồi 4.093–4.098, MUA quét đáy 4.059–4.064",
+   "title_en": "H79 Gold Plan – New York Session, Oct 22: $112 Oil Keeps Gold Under 4,100 – Sell 4,093–4,098, Buy the Sweep at 4,059–4,064",
+   "image": "img/charts/gold-2026-10-22-phien-my-1915.png",
+   "image_alt": "Biểu đồ vàng 45 phút 22/10 phiên Mỹ: vàng giằng co 4.080–4.101 sau đáy 4.067,7 khi Brent lên 112 USD; BB90, MA34, MA89; vùng BÁN 4.093–4.098, vùng MUA quét đáy 4.059–4.064",
+   "image_en": "img/charts/gold-2026-10-22-ny-1915-en.png",
+   "image_alt_en": "Gold 45-minute chart, New York session Oct 22: gold chops between 4,080 and 4,101 after the 4,067.66 low as Brent climbs toward $112; BB90, MA34, MA89; sell zone 4,093–4,098, buy-the-sweep zone 4,059–4,064",
+   "trend": "Ngắn hạn giảm: giá dưới MA34 và MA89 từ 15m đến 4H, đã chạy ra dưới dải BB90 dưới từ 45m đến 4H – đuối nhưng chưa có dấu hiệu đảo chiều; phiên Âu tạo chuỗi đỉnh hồi thấp dần 4.100,9 → 4.093,9 → 4.091,6. Dầu 112 USD giữ cửa Fed tăng lãi tháng 12. Bán hồi 4.093–4.098, chỉ mua khi giá quét đáy 4.067,7 về 4.059–4.064 có nến xác nhận, ở giữa đứng ngoài.",
+   "trend_en": "Short-term bearish: price is under the MA34 and MA89 from the 15m through the 4H and already pushed outside the lower BB90 from the 45m to the 4H – stretched, but no reversal yet; London printed lower bounce highs at 4,100.90 → 4,093.91 → 4,091.60. $112 Brent keeps a December hike in play. Sell a bounce into 4,093–4,098, buy only a sweep of the 4,067.66 low into 4,059–4,064 on a confirming close, flat in between.",
+   "trendType": "down",
+   "support": [
+    4082,
+    4076,
+    4068,
+    4064,
+    4059,
+    4052
+   ],
+   "resistance": [
+    4091,
+    4094,
+    4098,
+    4103,
+    4112,
+    4117
+   ],
+   "entryZones": [
+    "Mua 4.059 – 4.064 (quét đáy hôm nay 4.067,7 và đáy 7/10 4.068,8 – chỗ dừng lỗ của phe mua sớm). Vào khi giá quét xuống vùng và có nến 45m hoặc 1H đóng xanh. Không dùng nến 15m/30m. Dừng lỗ 4.052. TP1 4.076 – chốt 50–70%, dời SL về điểm vào; TP2 4.088. Nến 1H đóng dưới 4.052 thì bỏ lệnh mua."
+   ],
+   "entryZones_en": [
+    "Buy 4,059–4,064 (a sweep of today's 4,067.66 low and the Oct. 7 low at 4,068.80, where early longs have their stops). Enter on a green 45m or 1H close in the zone. No 15m/30m triggers. Stop 4,052. TP1 4,076 – take 50–70%, stop to breakeven; TP2 4,088. A 1H close under 4,052 cancels the long."
+   ],
+   "sellZones": [
+    "Bán 4.093 – 4.098 (đỉnh hồi 4.093,9 lúc 14:30 và 4.093,2 lúc 15:40 · pivot S2 4.094,0 · dải BB90 dưới 45m 4.091). Vào khi giá vào vùng và có nến 45m hoặc 1H đóng đỏ. Không dùng nến 15m/30m; không bán đuổi quanh 4.080. Dừng lỗ 4.103 (trên đỉnh hồi 4.100,9, có đệm). TP1 4.082 (pivot S3 4.081,9) – chốt 50–70%, dời SL hòa vốn; TP2 4.068 (đáy ngày). Nến 1H đóng trên 4.103 thì bỏ lệnh bán."
+   ],
+   "sellZones_en": [
+    "Sell 4,093–4,098 (the bounce highs at 4,093.91, 3:30 AM ET, and 4,093.22, 4:40 AM ET · the 4,094.00 S2 pivot · the 45m lower BB90 at 4,091). Enter on a red 45m or 1H close in the zone. Never on a 15m/30m close; don't short the hole around 4,080. Stop 4,103 (over the 4,100.90 bounce high with a buffer). TP1 4,082 (the 4,081.90 S3 pivot) – take 50–70%, stop to breakeven; TP2 4,068 (the day's low). A 1H close above 4,103 cancels the short."
+   ],
+   "scenarios": [
+    "Kế hoạch: BÁN 4.093–4.098 (SL 4.103 · TP1 4.082 → TP2 4.068) · MUA 4.059–4.064 (SL 4.052 · TP1 4.076 → TP2 4.088). Chỉ vào khi có nến 45m/1H đóng xác nhận trong vùng.",
+    "Kịch bản chính (~50%): tin 19:30 hoặc giờ mở cửa kéo giá hồi lên 4.093–4.098 rồi gãy – BÁN khi nến 45m/1H đóng đỏ.",
+    "Kịch bản phụ (~30%): trượt tiếp, quét đáy 4.067,7 xuống 4.059–4.064 – không bán đuổi; MUA khi nến 45m/1H đóng xanh.",
+    "Kịch bản xấu (~20%): nến 1H đóng trên 4.103 – phe bán sai, đứng ngoài, mốc kế 4.112–4.117. Nến 1H đóng dưới 4.052 – bỏ mua.",
+    "Rủi ro: 19:30 đơn trợ cấp thất nghiệp Mỹ (dự báo 200K); tin Iran – Houthi – Hormuz có thể làm dầu và vàng giật 15–20 giá."
+   ],
+   "scenarios_en": [
+    "The plan: sell 4,093–4,098 (stop 4,103 · TP1 4,082 → TP2 4,068) · buy 4,059–4,064 (stop 4,052 · TP1 4,076 → TP2 4,088). Only on a confirming 45m/1H close in the zone.",
+    "Base case (~50%): claims or the opening bell lifts gold into 4,093–4,098 and it fails – sell a red 45m/1H close.",
+    "Alternative (~30%): gold keeps leaking and sweeps the 4,067.66 low into 4,059–4,064 – don't chase it lower; buy a green 45m/1H close.",
+    "Plan-breaker (~20%): a 1H close above 4,103 – shorts are wrong, step aside, next up 4,112–4,117. A 1H close under 4,052 cancels the long.",
+    "Risk: U.S. jobless claims at 8:30 AM ET (est. 200K); Iran, Houthi and Hormuz headlines can whip crude and gold $15–$20."
+   ],
+   "macro": [],
+   "macro_en": [],
+   "market_picture": {
+    "text": "Lợi suất 10 năm lùi về 5,07%, USD cũng hạ nhẹ, vậy mà vàng vẫn mất gần 60 giá trong ngày – thủ phạm vẫn là dầu. Houthi tiếp tục đánh vào Ả Rập Xê Út, Vệ binh Cách mạng Iran nói đã đánh cháy 4 tàu dầu ở vịnh Ba Tư và thêm 3 tàu trúng thủy lôi gần Hormuz; Brent lên quanh 112 USD, cao nhất từ tháng 5. Dầu đắt giữ lạm phát dai, thị trường đặt khoảng 91% Fed tăng lãi tháng 12 – vàng đang bị bán như tài sản sợ lãi suất, còn bạc rơi hơn 3,5%. Phiên Âu chỉ dập dềnh 4.080–4.094, nhịp hồi sau thấp hơn nhịp trước. Quan điểm: phe bán vẫn cầm trịch, nhưng giá đã căng dưới dải BB90 dưới nên không bán đuổi ở 4.082 – chờ hồi để bán, hoặc chờ quét đáy 4.067 để bắt nhịp bật.",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "101,68 −0,10%",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "5,067%",
+      "dir": "down"
+     },
+     {
+      "k": "US2Y",
+      "v": "4,761%",
+      "dir": "down"
+     },
+     {
+      "k": "Brent",
+      "v": "111,84 +2,8%",
+      "dir": "up"
+     },
+     {
+      "k": "WTI T12",
+      "v": "99,24 +2,2%",
+      "dir": "up"
+     },
+     {
+      "k": "S&P 500 fut.",
+      "v": "7.726 −0,95%",
+      "dir": "down"
+     },
+     {
+      "k": "Nasdaq fut.",
+      "v": "29.525 −1,61%",
+      "dir": "down"
+     },
+     {
+      "k": "VIX",
+      "v": "18,20 +9,1%",
+      "dir": "up"
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC (Reuters) – Vàng xuống thấp nhất hơn hai tuần khi dầu tăng làm nóng lo ngại lạm phát",
+      "url": "https://www.cnbc.com/2026/10/22/gold-hits-over-two-week-low-as-oil-rally-fuels-inflation-worries.html"
+     },
+     {
+      "name": "Reuters (Yahoo Finance) – Dầu tăng khi xung đột Trung Đông leo thang, Brent cao nhất từ tháng 5",
+      "url": "https://finance.yahoo.com/energy/articles/oil-climbs-over-1-more-052014906.html"
+     },
+     {
+      "name": "Reuters (Euronext) – Dầu tăng 2 USD; IRGC nói tàu bốc cháy, trúng thủy lôi gần Hormuz",
+      "url": "https://live.euronext.com/en/financial-news/oil-jumps-2-escalating-middle-east-tension"
+     },
+     {
+      "name": "AP – Chứng khoán thế giới giảm khi Brent tăng 3%",
+      "url": "https://apnews.com/article/stocks-markets-rates-earnings-oil-33767691a4a0730b96d6f0c5100ea9b2"
+     },
+     {
+      "name": "ForexFactory – Lịch kinh tế (19:30 đơn trợ cấp thất nghiệp Mỹ, dự báo 200K; không có tin đỏ USD)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "market_picture_en": {
+    "text": "The 10-year is back to 5.07% and the dollar is a touch softer, yet gold is still down almost $60 on the day – this is an oil story. The Houthis keep hitting Saudi Arabia, Iran's Revolutionary Guard says it set four tankers on fire in the Gulf and three more hit mines near Hormuz, and Brent is near $112, the highest since May. Expensive crude keeps inflation sticky, futures price about a 91% chance of a December hike, and gold is trading as a rate-sensitive asset – silver is down more than 3.5%. London chopped between 4,080 and 4,094 with every bounce lower than the last. My take: sellers still own this tape, but gold is already stretched below the lower BB90, so I'm not shorting 4,082 – sell a bounce, or wait for a sweep of 4,067 to buy.",
+    "chips": [
+     {
+      "k": "DXY",
+      "v": "101.68 −0.10%",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "5.067%",
+      "dir": "down"
+     },
+     {
+      "k": "US2Y",
+      "v": "4.761%",
+      "dir": "down"
+     },
+     {
+      "k": "Brent",
+      "v": "111.84 +2.8%",
+      "dir": "up"
+     },
+     {
+      "k": "WTI Dec",
+      "v": "99.24 +2.2%",
+      "dir": "up"
+     },
+     {
+      "k": "S&P 500 fut.",
+      "v": "7,726 −0.95%",
+      "dir": "down"
+     },
+     {
+      "k": "Nasdaq fut.",
+      "v": "29,525 −1.61%",
+      "dir": "down"
+     },
+     {
+      "k": "VIX",
+      "v": "18.20 +9.1%",
+      "dir": "up"
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC (Reuters) – Gold hits over two-week low as oil rally fuels inflation worries",
+      "url": "https://www.cnbc.com/2026/10/22/gold-hits-over-two-week-low-as-oil-rally-fuels-inflation-worries.html"
+     },
+     {
+      "name": "Reuters (Yahoo Finance) – Oil jumps on escalating Middle East conflict",
+      "url": "https://finance.yahoo.com/energy/articles/oil-climbs-over-1-more-052014906.html"
+     },
+     {
+      "name": "Reuters (Euronext) – Oil jumps $2 on escalating Middle East tension",
+      "url": "https://live.euronext.com/en/financial-news/oil-jumps-2-escalating-middle-east-tension"
+     },
+     {
+      "name": "AP – World shares retreat as Brent crude price jumps 3%",
+      "url": "https://apnews.com/article/stocks-markets-rates-earnings-oil-33767691a4a0730b96d6f0c5100ea9b2"
+     },
+     {
+      "name": "ForexFactory – Economic calendar (U.S. jobless claims 8:30 AM ET, est. 200K; no high-impact U.S. data)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "physicalAdvice": "Làm theo kế hoạch, đừng chạy theo nến tin.",
+   "physicalAdvice_en": "Trade the plan, not the noise.",
+   "notes": "Các mốc là giá giao ngay XAU/USD (CNBC XAU= 4.081,6 lúc 17:54; gold-api.com 4.082,9 lúc 17:54). Khung 45m/1H dựng từ nến 5m giao ngay CNBC (45m gộp theo mốc epoch, 1H tròn giờ). Dữ liệu 5m CNBC thiếu đoạn 12:05–12:40; nến 45m 12:15 lấy giá đóng nến trước làm giá mở. Pivot cổ điển phiên 21/10 (cao 4.141,4 · thấp 4.106,1 · đóng 4.140,5): P 4.129,3 · S1 4.117,3 · S2 4.094,0 · S3 4.081,9. Đáy cũ: 7/10 4.068,8 · 14/10 4.074,1.",
+   "notes_en": "Levels are spot XAU/USD (CNBC XAU= 4,081.63 at 6:54 AM ET; gold-api.com 4,082.90 at 6:54 AM ET). 45m and 1H frames are built from CNBC XAU= spot 5-minute bars (45m anchored to the epoch, 1H on the hour). CNBC's 5-minute feed has a hole from 1:05 to 1:40 AM ET; the 1:15 AM ET 45m bar opens at the prior close. Classic pivots from the Oct. 21 session (high 4,141.40 · low 4,106.06 · close 4,140.52): P 4,129.30 · S1 4,117.30 · S2 4,094.00 · S3 4,081.90. Prior lows: Oct. 7 4,068.80 · Oct. 14 4,074.12.",
+   "dataTime": "Cập nhật 17:50–18:15 ngày 22/10/2026 giờ VN (trước giờ Mỹ). Nến 5m và 1H giao ngay CNBC XAU=; gold-api.com XAU; DXY, US10Y, US2Y, Brent, WTI, S&P fut, Nasdaq fut, VIX, bạc từ CNBC; xác suất Fed theo CME FedWatch (Reuters/CNBC); lịch tin ForexFactory.",
+   "dataTime_en": "Updated 6:50–7:15 AM ET, Thursday Oct 22, 2026 (New York pre-market). Spot 5-minute and hourly bars from CNBC XAU=; gold-api.com XAU; DXY, US10Y, US2Y, Brent, WTI, S&P and Nasdaq futures, VIX and silver from CNBC; Fed odds from CME FedWatch via Reuters/CNBC; calendar from ForexFactory.",
+   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+   "brief": true,
+   "summary": {
+    "trend": "down",
+    "trendText": "Ngắn hạn giảm – dầu 112 USD giữ cửa Fed tăng lãi tháng 12, đỉnh hồi thấp dần dưới 4.101; bán hồi 4.093–4.098, chỉ mua khi quét đáy về 4.059–4.064 có nến xác nhận",
+    "trendText_en": "Short-term bearish – $112 Brent keeps a December hike in play and the bounces keep getting lower under 4,101; sell 4,093–4,098, buy only a sweep of the low into 4,059–4,064 on a confirming close",
+    "sell": {
+     "zone": "4.093 – 4.098",
+     "sl": "4.103",
+     "tp": "4.082 → 4.068",
+     "zone_en": "4,093–4,098",
+     "sl_en": "4,103",
+     "tp_en": "TP1 4,082 → TP2 4,068"
+    },
+    "buy": {
+     "zone": "4.059 – 4.064",
+     "sl": "4.052",
+     "tp": "4.076 → 4.088",
+     "zone_en": "4,059–4,064",
+     "sl_en": "4,052",
+     "tp_en": "TP1 4,076 → TP2 4,088"
+    },
+    "note": "19:30 đơn trợ cấp thất nghiệp Mỹ (dự báo 200K) – chốt bớt, dời SL hòa vốn trước tin. Không bán đuổi quanh 4.080. Nến 1H đóng trên 4.103 bỏ bán; dưới 4.052 bỏ mua.",
+    "note_en": "U.S. jobless claims at 8:30 AM ET (est. 200K) – take some off and move stops to breakeven before the print. Don't short the hole around 4,080. A 1H close above 4,103 cancels the short; below 4,052 cancels the long.",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD",
+    "priceNote_en": "Spot XAU/USD prices"
+   },
+   "article": {
+    "sections": [
+     {
+      "h": "Nhìn lại phiên Âu",
+      "p": "Vùng BÁN 4.097–4.102 không được chạm – nhịp hồi cao nhất sau bài chỉ 4.093,9 rồi giá trượt về 4.080,3, đúng hướng nhưng tiếc là không có vị thế vào lệnh. Vùng MUA 4.058–4.063 cũng chưa tới. Thông thường, sau cú xả mạnh, nhịp hồi ngắn dần – vùng bán phải bám đỉnh hồi gần nhất, không chờ đỉnh cũ."
+     },
+     {
+      "h": "Kế hoạch phiên Mỹ",
+      "p": "🔴 BÁN 4.093 – 4.098 | SL 4.103 | TP1 4.082 → TP2 4.068\n🟢 MUA 4.059 – 4.064 | SL 4.052 | TP1 4.076 → TP2 4.088\nXác nhận: chỉ vào khi có nến 45m hoặc 1H đóng đỏ (bán) / đóng xanh (mua) trong vùng.\nVô hiệu: nến 1H đóng trên 4.103 bỏ bán; dưới 4.052 bỏ mua. Ở giữa 4.064–4.093 đứng ngoài, không bán đuổi quanh 4.080.\nChính (~50%): tin 19:30 hoặc giờ mở cửa kéo giá hồi lên 4.093–4.098 rồi gãy – bán theo nến đỏ.\nPhụ (~30%): trượt tiếp, quét đáy 4.067 xuống 4.059–4.064 – không bán đuổi, mua khi có nến xanh.\nXấu (~20%): nến 1H đóng trên 4.103 – phe bán sai, đứng ngoài, mốc kế 4.112–4.117.\nLưu ý: 19:30 đơn trợ cấp thất nghiệp Mỹ (dự báo 200K, kỳ trước 199K) – tối nay không có tin đỏ USD, đây là tin đáng chú ý nhất; chốt bớt, dời SL hòa vốn trước tin. 20:30 Phố Wall mở cửa; 21:00 chỉ số dẫn báo CB. Tin Iran – Houthi – Hormuz có thể làm dầu và vàng giật 15–20 giá."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC (Reuters) – Vàng xuống thấp nhất hơn hai tuần khi dầu tăng làm nóng lo ngại lạm phát",
+      "url": "https://www.cnbc.com/2026/10/22/gold-hits-over-two-week-low-as-oil-rally-fuels-inflation-worries.html"
+     },
+     {
+      "name": "Reuters (Yahoo Finance) – Dầu tăng khi xung đột Trung Đông leo thang, Brent cao nhất từ tháng 5",
+      "url": "https://finance.yahoo.com/energy/articles/oil-climbs-over-1-more-052014906.html"
+     },
+     {
+      "name": "Reuters (Euronext) – Dầu tăng 2 USD; IRGC nói tàu bốc cháy, trúng thủy lôi gần Hormuz",
+      "url": "https://live.euronext.com/en/financial-news/oil-jumps-2-escalating-middle-east-tension"
+     },
+     {
+      "name": "AP – Chứng khoán thế giới giảm khi Brent tăng 3%",
+      "url": "https://apnews.com/article/stocks-markets-rates-earnings-oil-33767691a4a0730b96d6f0c5100ea9b2"
+     },
+     {
+      "name": "ForexFactory – Lịch kinh tế (19:30 đơn trợ cấp thất nghiệp Mỹ, dự báo 200K; không có tin đỏ USD)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "article_en": {
+    "sections": [
+     {
+      "h": "Looking back at the London session",
+      "p": "The 4,097–4,102 sell zone never got tagged – the best bounce after the post was 4,093.91 before gold slid to 4,080.32, so the read was right but there was no short on. The 4,058–4,063 buy zone never came into play. Typically, after a flush the bounces get shorter – the sell zone belongs at the latest lower high, not the old one."
+     },
+     {
+      "h": "New York Session Plan",
+      "p": "🔴 SELL 4,093–4,098 | Stop 4,103 | Targets 4,082 → 4,068\n🟢 BUY 4,059–4,064 | Stop 4,052 | Targets 4,076 → 4,088\nConfirm: only on a red (short) or green (long) 45m or 1H close in the zone.\nInvalidation: a 1H close above 4,103 cancels the short; below 4,052 cancels the long. Flat between 4,064 and 4,093 – don't short the hole around 4,080.\nBase case (~50%): claims or the opening bell lifts gold into 4,093–4,098 and it fails – sell the red close.\nAlternative (~30%): gold keeps leaking and sweeps the 4,067 low into 4,059–4,064 – don't chase it lower, buy the green close.\nPlan-breaker (~20%): a 1H close above 4,103 – shorts are wrong, step aside; next up 4,112–4,117.\nNote: 8:30 AM ET jobless claims (est. 200K, prior 199K) – no high-impact U.S. data today, so this is the one to watch; take some off and move stops to breakeven before the print. 9:30 AM ET NYSE open; 10:00 AM ET Conference Board LEI. Iran, Houthi and Hormuz headlines can whip crude and gold $15–$20."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC (Reuters) – Gold hits over two-week low as oil rally fuels inflation worries",
+      "url": "https://www.cnbc.com/2026/10/22/gold-hits-over-two-week-low-as-oil-rally-fuels-inflation-worries.html"
+     },
+     {
+      "name": "Reuters (Yahoo Finance) – Oil jumps on escalating Middle East conflict",
+      "url": "https://finance.yahoo.com/energy/articles/oil-climbs-over-1-more-052014906.html"
+     },
+     {
+      "name": "Reuters (Euronext) – Oil jumps $2 on escalating Middle East tension",
+      "url": "https://live.euronext.com/en/financial-news/oil-jumps-2-escalating-middle-east-tension"
+     },
+     {
+      "name": "AP – World shares retreat as Brent crude price jumps 3%",
+      "url": "https://apnews.com/article/stocks-markets-rates-earnings-oil-33767691a4a0730b96d6f0c5100ea9b2"
+     },
+     {
+      "name": "ForexFactory – Economic calendar (U.S. jobless claims 8:30 AM ET, est. 200K; no high-impact U.S. data)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   }
+  },
+  {
    "id": "2026-10-22-phien-au-1430",
    "date": "2026-10-22",
    "time": "14:30",
