@@ -18,6 +18,14 @@
   };
   const TREND_VI = { up: 'Ngắn hạn tăng', down: 'Ngắn hạn giảm', side: 'Đi ngang' };
   const TREND_EN = { up: 'Bullish', down: 'Bearish', side: 'Sideways' };
+  /* Ảnh xem trước khi chia sẻ (og:image) – giữ đồng bộ với OG_STYLES trong scripts/build-seo.py; ảnh sinh bằng scripts/og/gen_og.py */
+  const OG_STYLES = [
+    { v: '', l: 'Mặc định', img: 'img/og-h79-v3.png', th: 'img/og/thumbs/default.jpg' },
+    { v: 'style-a', l: 'Sáng – trắng vàng', img: 'img/og/style-a.png', th: 'img/og/thumbs/style-a.jpg' },
+    { v: 'style-b', l: 'Đỏ đen – tín hiệu', img: 'img/og/style-b.png', th: 'img/og/thumbs/style-b.jpg' },
+    { v: 'style-c', l: 'Tối giản – đường vàng', img: 'img/og/style-c.png', th: 'img/og/thumbs/style-c.jpg' }
+  ];
+  const ogOk = v => !!v && OG_STYLES.some(x => x.v === v);
   const DISC = 'Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.';
   const DISC_EN = 'Technical analysis for educational purposes only – not investment advice.';
 
@@ -60,6 +68,7 @@
       if (!s || typeof s !== 'object') throw new Error('Bài #' + (i + 1) + ' không hợp lệ');
       if (!s.id || !/^\d{4}-\d\d-\d\d$/.test(s.date || '') || !s.title) throw new Error('Bài #' + (i + 1) + ' thiếu id/ngày/tiêu đề');
       if (s.time && !/^\d\d:\d\d$/.test(s.time)) throw new Error('Giờ không hợp lệ ở bài ' + s.id);
+      if (s.og_style != null && !ogOk(s.og_style)) throw new Error('Kiểu ảnh xem trước không hợp lệ ở bài ' + s.id);
       if (ids.has(s.id)) throw new Error('Trùng id bài: ' + s.id); ids.add(s.id);
       ['article', 'article_en'].forEach(k => { if (s[k] && s[k].sections) s[k].sections.forEach(x => { if (typeof x.h !== 'string' || typeof x.p !== 'string') throw new Error('Mục nội dung lỗi ở bài ' + s.id); }); });
     });
@@ -127,6 +136,7 @@
     e.headline = title; if (hasEn) e.headline_en = titleEn;
     e.title = title; if (hasEn) e.title_en = titleEn;
     if (f.image) { e.image = f.image; e.image_alt = clean(f.imageAlt) || `Biểu đồ vàng ${d}/${mo} – ${f.type.toLowerCase()}`; }
+    if (ogOk(f.ogStyle)) e.og_style = f.ogStyle; // build-seo.py: chỉ dùng khi bài không có ảnh biểu đồ
     e.trend = clean(f.trendText) || (firstP = firstP.replace(/\*\*/g, ''), firstP ? (firstP.length > 220 ? firstP.slice(0, 217).trim() + '…' : firstP) : title);
     if (hasEn && trendTextEn) e.trend_en = trendTextEn;
     e.trendType = trendType;
@@ -209,7 +219,7 @@
   const b64enc = text => b64encBytes(new TextEncoder().encode(text));
   const b64dec = b64 => { const bin = atob(String(b64).replace(/\s/g, '')); const u = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i); return new TextDecoder('utf-8').decode(u); };
 
-  const PURE = { SES, slug, enNum, pyCompact, dump, detectFmt, serialize, validateStrategies, VALIDATE, postFile, uniqueSlot, buildEntry, insertSorted, applyChanges, getPath, setPath, articleHTML, summaryHTML, previewHTML, b64enc, b64dec, esc };
+  const PURE = { SES, OG_STYLES, slug, enNum, pyCompact, dump, detectFmt, serialize, validateStrategies, VALIDATE, postFile, uniqueSlot, buildEntry, insertSorted, applyChanges, getPath, setPath, articleHTML, summaryHTML, previewHTML, b64enc, b64dec, esc };
   if (typeof module !== 'undefined' && module.exports) module.exports = PURE;
   if (typeof document === 'undefined') return;
 
@@ -315,7 +325,7 @@
   function readForm() {
     return { type: radio('ptype'), date: V('p-date'), time: V('p-time'), title: V('p-title'), trend: radio('ptrend'), trendText: V('p-trendtext'),
       sell: { zone: V('s-zone'), sl: V('s-sl'), tp: V('s-tp') }, buy: { zone: V('b-zone'), sl: V('b-sl'), tp: V('b-tp') },
-      inval: V('p-inval'), note: V('p-note'), sections: readSecs($('secs')), imageAlt: V('p-imgalt'), advice: V('p-advice'),
+      inval: V('p-inval'), note: V('p-note'), sections: readSecs($('secs')), imageAlt: V('p-imgalt'), advice: V('p-advice'), ogStyle: radio('pog') || '',
       en: { title: V('e-title'), trendText: V('e-trendtext'), inval: V('e-inval'), note: V('e-note'), sections: readSecs($('secs-en')) } };
   }
   function fillForm(f) {
@@ -324,11 +334,20 @@
     ['zone', 'sl', 'tp'].forEach(k => { $('s-' + k).value = (f.sell || {})[k] || ''; $('b-' + k).value = (f.buy || {})[k] || ''; });
     $('p-inval').value = f.inval || ''; $('p-note').value = f.note || ''; $('p-imgalt').value = f.imageAlt || '';
     $('p-advice').value = f.advice == null ? 'Làm theo kế hoạch, đừng chạy theo nến tin.' : f.advice;
+    setRadio('pog', ogOk(f.ogStyle) ? f.ogStyle : ''); ogNote();
     const en = f.en || {}; $('e-title').value = en.title || ''; $('e-trendtext').value = en.trendText || ''; $('e-inval').value = en.inval || ''; $('e-note').value = en.note || '';
     $('secs').innerHTML = ''; (f.sections && f.sections.length ? f.sections : [{}]).forEach(x => secRow($('secs'), x));
     $('secs-en').innerHTML = ''; (en.sections || []).forEach(x => secRow($('secs-en'), x, true));
     $('en-box').open = !!(en.title || (en.sections || []).length);
   }
+  /* chọn ảnh xem trước khi chia sẻ */
+  $('og-pick').innerHTML = OG_STYLES.map(x => `<label title="${esc(x.l)}"><input type="radio" name="pog" value="${esc(x.v)}"${x.v ? '' : ' checked'}><img src="../${esc(x.th)}" alt="${esc(x.l)}" width="360" height="189">${esc(x.l)}</label>`).join('');
+  function ogNote() {
+    const hasImg = !!IMG || !!(EDIT && EDIT.before.image && !($('img-del') && $('img-del').checked));
+    $('og-pick').classList.toggle('off', hasImg);
+    $('og-note').innerHTML = hasImg ? '⚠️ Bài này có ảnh biểu đồ → khi chia sẻ sẽ hiện ảnh biểu đồ, kiểu chọn ở đây chỉ dùng nếu sau này xoá ảnh.' : '';
+  }
+  $('tab-new').addEventListener('change', e => { if (e.target.id === 'p-img' || e.target.id === 'img-del') setTimeout(ogNote, 0); });
   function saveDraft() { if (!EDIT) ls.set(DRAFT, JSON.stringify(readForm())); }
   $('tab-new').addEventListener('input', saveDraft); $('tab-new').addEventListener('change', e => { if (e.target.id !== 'p-img') saveDraft(); });
   function resetNew(keepDraft) {
@@ -363,7 +382,7 @@
       IMG = { b64: b64encBytes(bytes), ext, dataUrl: 'data:image/' + (ext === 'jpg' ? 'jpeg' : ext) + ';base64,' + b64encBytes(bytes) };
       $('img-pv').src = IMG.dataUrl; $('img-pv').classList.remove('hidden');
     } catch (e) { flash('Lỗi ảnh: ' + errMsg(e), 'err'); $('p-img').value = ''; }
-    busy();
+    busy(); ogNote();
   };
   async function uploadImage(date, type, time) {
     const base = `img/charts/gold-${date}-${SES[type] ? SES[type].img : 'post'}-${time.replace(':', '')}`;
@@ -379,7 +398,7 @@
     const m = s.summary || {}, a = (s.article || {}).sections || [], ae = (s.article_en || {}).sections || [];
     return { type: s.session, date: s.date, time: s.time, title: s.title || '', trend: m.trend || s.trendType || 'side', trendText: m.trendText || '',
       sell: { zone: (m.sell || {}).zone || '', sl: (m.sell || {}).sl || '', tp: (m.sell || {}).tp || '' }, buy: { zone: (m.buy || {}).zone || '', sl: (m.buy || {}).sl || '', tp: (m.buy || {}).tp || '' },
-      inval: '', note: m.note || '', sections: a.map(x => ({ h: x.h, p: x.p })), imageAlt: s.image_alt || '', advice: s.physicalAdvice || '',
+      inval: '', note: m.note || '', sections: a.map(x => ({ h: x.h, p: x.p })), imageAlt: s.image_alt || '', advice: s.physicalAdvice || '', ogStyle: s.og_style || '',
       en: { title: s.title_en || '', trendText: m.trendText_en || '', inval: '', note: m.note_en || '', sections: ae.map(x => ({ h: x.h, p: x.p })) } };
   }
   function editChanges(s, init, f, newImg) {
@@ -397,6 +416,7 @@
     if (ch(f.note, init.note)) C['summary.note'] = clean(f.note) || undefined;
     if (!same(secs(f.sections), secs(init.sections))) { const x = secs(f.sections); if (!x.length && !getPath(s, 'summary.sell') && !getPath(s, 'summary.buy')) throw new Error('Bài phải còn ít nhất 1 mục nội dung'); C['article.sections'] = x; }
     if (ch(f.advice, init.advice)) C.physicalAdvice = clean(f.advice) || 'Làm theo kế hoạch, đừng chạy theo nến tin.';
+    if ((f.ogStyle || '') !== (init.ogStyle || '')) C.og_style = ogOk(f.ogStyle) ? f.ogStyle : undefined;
     if (ch(f.imageAlt, init.imageAlt) && (s.image || newImg)) C.image_alt = clean(f.imageAlt) || undefined;
     if (newImg === null) { ['image', 'image_alt', 'image_en', 'image_alt_en'].forEach(k => { if (s[k] != null) C[k] = undefined; }); }
     else if (newImg) { C.image = newImg; if (s.image_en != null) C.image_en = undefined; if (s.image_alt_en != null) C.image_alt_en = undefined; if (!s.image_alt && !C.image_alt) C.image_alt = clean(f.imageAlt) || 'Biểu đồ vàng'; }
@@ -424,6 +444,7 @@
     $('edit-note').innerHTML = `Đang sửa: <b>${esc(s.session)} · ${esc(s.time || '')} ${esc(s.date.split('-').reverse().join('/'))}</b>. Ngày giờ giữ nguyên (đường link bài không đổi). Nếu đổi số BÁN/MUA ở trên, nhớ sửa cả mục “Kế hoạch” trong nội dung.`;
     $('edit-note').classList.remove('hidden'); $('btn-cancel-edit').classList.remove('hidden');
     $('img-cur').innerHTML = s.image ? `Ảnh hiện tại: <a href="../${esc(s.image)}" target="_blank">${esc(s.image.split('/').pop())}</a> <label style="margin-left:8px"><input type="checkbox" id="img-del"> xoá ảnh</label> · chọn ảnh mới để thay` : 'Bài chưa có ảnh.';
+    ogNote();
     $('tg-sent').innerHTML = s.telegram_sent ? `✅ Bài này đã gửi Telegram lúc ${esc(String(s.telegram_sent.at || '').replace('T', ' ').slice(0, 16))}. Tick lại thì sẽ gửi thêm lần nữa.` : s.telegram_send ? '⏳ Bài này đang chờ gửi Telegram.' : '';
     openTab('new'); scrollTo({ top: 0 });
   }

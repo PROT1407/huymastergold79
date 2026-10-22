@@ -56,6 +56,12 @@ details.en{border:1px solid var(--line);border-radius:12px;padding:8px 10px;marg
 .overlay .box{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:18px;max-width:420px;width:100%;text-align:center;font-weight:700}
 .spin{width:34px;height:34px;border:4px solid var(--line);border-top-color:var(--gold);border-radius:50%;animation:sp 1s linear infinite;margin:0 auto 10px}@keyframes sp{to{transform:rotate(360deg)}}
 code{background:var(--bg2);padding:1px 5px;border-radius:5px}
+.ogpick{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:6px}
+@media(max-width:560px){.ogpick{grid-template-columns:1fr 1fr}}
+.ogpick label{display:block;border:2px solid var(--line);border-radius:12px;padding:5px;cursor:pointer;background:var(--bg2);text-align:center;font-size:.8rem;font-weight:700}
+.ogpick label img{display:block;width:100%;height:auto;aspect-ratio:1200/630;object-fit:cover;border-radius:8px;margin-bottom:4px}
+.ogpick input{display:none}.ogpick label:has(input:checked){border-color:var(--gold);background:rgba(240,185,11,.12);color:var(--gold)}
+.ogpick.off{opacity:.45}
 </style>
 </head>
 <body class="ad">
@@ -130,6 +136,11 @@ code{background:var(--bg2);padding:1px 5px;border-radius:5px}
       <label class="f" for="p-imgalt">Mô tả ảnh <small>(không bắt buộc)</small></label>
       <input type="text" id="p-imgalt" placeholder="VD: Biểu đồ vàng 1H phiên Á 22/10">
 
+      <h3>🖼 Ảnh xem trước khi chia sẻ</h3>
+      <p class="small muted" style="margin:0">Ảnh hiện ra khi dán link bài lên Facebook/Zalo/Telegram. Chỉ dùng cho bài <b>không có ảnh biểu đồ</b> (bài có ảnh biểu đồ thì luôn dùng ảnh biểu đồ).</p>
+      <div class="ogpick" id="og-pick"></div>
+      <p class="small" id="og-note" style="margin:4px 0 0"></p>
+
       <label class="f" for="p-advice">💡 Lời khuyên ngắn</label>
       <input type="text" id="p-advice" value="Làm theo kế hoạch, đừng chạy theo nến tin.">
 
@@ -185,6 +196,6 @@ code{background:var(--bg2);padding:1px 5px;border-radius:5px}
   </div></section>
 </main>
 <div class="overlay hidden" id="busy"><div class="box"><div class="spin"></div><div id="busy-t">Đang xử lý…</div></div></div>
-<script src="admin.js?v=1"></script>
+<script src="admin.js?v=2"></script>
 </body>
 </html>
