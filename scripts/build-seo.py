@@ -21,6 +21,9 @@ GITHUB_PAGES_URL = "https://prot1407.github.io/huymastergold79/"
 CUSTOM_DOMAIN_URL = "https://h79gold.com/"
 BASE_URL = CUSTOM_DOMAIN_URL
 SITE = "HuymasterGold79"
+# Ảnh xem trước mạng xã hội mặc định (1200x630 PNG). Đổi tên file khi thay ảnh để Facebook/Zalo bỏ cache.
+OG_IMG_VI = "img/og-h79-v2.png"
+OG_IMG_EN = "img/og-h79-en-v2.png"
 AUTHOR = "Ngọc Huy"
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "bai"
@@ -109,11 +112,16 @@ CSS = """<style>
 
 KIND = {"nd": ("🎯", "Nhận định H79"), "vm": ("🌐", "Tin vĩ mô"), "gv": ("💰", "Vàng trong nước")}
 
+def og_dim(a):  # kích thước chỉ khai báo cho ảnh mặc định (ảnh chart riêng của bài giữ nguyên)
+    if a.get("img"): return ""
+    return ('<meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200">'
+            '<meta property="og:image:height" content="630"><meta property="og:image:alt" content="H79GOLD – h79gold.com">')
+
 def page(a, body):
     url = BASE_URL + "bai/" + a["file"]
     ld = {"@context": "https://schema.org", "@type": "NewsArticle", "headline": a["title"][:110],
           "description": a["desc"], "datePublished": a["pub"], "dateModified": a["pub"], "inLanguage": "vi",
-          "mainEntityOfPage": url, "url": url, "image": [BASE_URL + a.get("img", "assets/og-image.svg")],
+          "mainEntityOfPage": url, "url": url, "image": [BASE_URL + a.get("img", OG_IMG_VI)],
           "author": {"@type": "Person", "name": AUTHOR, "url": BASE_URL + "lien-he.html"},
           "publisher": {"@type": "Organization", "name": SITE, "url": BASE_URL,
                         "logo": {"@type": "ImageObject", "url": BASE_URL + "assets/favicon.svg"}}}
@@ -132,9 +140,9 @@ def page(a, body):
 <link rel="canonical" href="{url}">{alt_links(url, a.get("en"))}
 <meta name="theme-color" content="#0d1117">
 <meta property="og:type" content="article"><meta property="og:locale" content="vi_VN"><meta property="og:site_name" content="{SITE}">
-<meta property="og:title" content="{e(a['title'])}"><meta property="og:description" content="{e(a['desc'])}"><meta property="og:url" content="{url}"><meta property="og:image" content="{BASE_URL}{a.get('img', 'assets/og-image.svg')}">
+<meta property="og:title" content="{e(a['title'])}"><meta property="og:description" content="{e(a['desc'])}"><meta property="og:url" content="{url}"><meta property="og:image" content="{BASE_URL}{a.get('img', OG_IMG_VI)}">{og_dim(a)}
 <meta property="article:published_time" content="{a['pub']}"><meta property="article:author" content="{AUTHOR}"><meta property="article:section" content="{kname}">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{BASE_URL}{a.get('img', OG_IMG_VI)}">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -467,7 +475,7 @@ def en_page(a, body):
     url = BASE_URL + a["path"]; vi = BASE_URL + a["vi"] if a.get("vi") else None
     ld = {"@context": "https://schema.org", "@type": a.get("type", "NewsArticle"), "headline": a["title"][:110], "description": a["desc"],
           "datePublished": a["pub"], "dateModified": a["pub"], "inLanguage": "en", "mainEntityOfPage": url, "url": url,
-          "image": [BASE_URL + a.get("img", "assets/og-image.svg")], "author": {"@type": "Person", "name": AUTHOR, "url": BASE_URL + "en/about.html"},
+          "image": [BASE_URL + a.get("img", OG_IMG_EN)], "author": {"@type": "Person", "name": AUTHOR, "url": BASE_URL + "en/about.html"},
           "publisher": {"@type": "Organization", "name": SITE, "url": BASE_URL + "en/", "logo": {"@type": "ImageObject", "url": BASE_URL + "assets/favicon.svg"}}}
     alt = (f'\n<link rel="alternate" hreflang="vi" href="{vi}">\n<link rel="alternate" hreflang="en" href="{url}">\n<link rel="alternate" hreflang="x-default" href="{vi}">' if vi else "")
     og = "website" if a.get("type") == "CollectionPage" else "article"
@@ -484,8 +492,8 @@ def en_page(a, body):
 <link rel="canonical" href="{url}">{alt}
 <meta name="theme-color" content="#0d1117">
 <meta property="og:type" content="{og}"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="{SITE}">
-<meta property="og:title" content="{e(a['title'])}"><meta property="og:description" content="{e(a['desc'])}"><meta property="og:url" content="{url}"><meta property="og:image" content="{BASE_URL}{a.get('img', 'assets/og-image.svg')}">
-<meta name="twitter:card" content="summary_large_image">
+<meta property="og:title" content="{e(a['title'])}"><meta property="og:description" content="{e(a['desc'])}"><meta property="og:url" content="{url}"><meta property="og:image" content="{BASE_URL}{a.get('img', OG_IMG_EN)}">{og_dim(a)}
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{BASE_URL}{a.get('img', OG_IMG_EN)}">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
