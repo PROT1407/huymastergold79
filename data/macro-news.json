@@ -1,6 +1,6 @@
 {
  "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC | Chiến tranh | Ngân hàng TW. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
- "updated": "2026-10-22",
+ "updated": "2026-10-23",
  "fomc": {
   "source": {
    "name": "Federal Reserve – FOMC calendars",
@@ -54,6 +54,102 @@
   "note_en": "Decision at 2:00 PM ET on day two of the meeting, press conference at 2:30 PM ET. * = with economic projections (dot plot)."
  },
  "items": [
+  {
+   "date": "2026-10-23",
+   "category": "Tương quan",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "Vàng giao ngay rơi 2,8% về 4.024,55 USD – thấp nhất từ 20/7: dầu vọt và cổ phiếu AI bị bán khiến tiền chạy vào trái phiếu, không vào vàng",
+   "summary": "Investing.com: vàng giao ngay chốt ngày 22/10 ở 4.024,55 USD/oz (−2,8%), thấp nhất từ 20/7; vàng tương lai chốt 4.039,90 (−0,5%). Đây là lần thứ ba trong tháng vàng thủng hỗ trợ 4.100. David Morrison (Trade Nation): đợt bán tuần này diễn ra dù USD giảm đáng kể; MACD ngày chưa về vùng quá bán đủ để tạo nhịp hồi bền. Peter Schiff: vàng mất 116 USD, đóng cửa ngay trên hỗ trợ 4.000. Giá CNBC XAU= lúc 06:35 VN: 4.023,61 (biên độ ngày 4.020,59–4.122,56).",
+   "reason": "Ngắn hạn: phe bán đã kiểm soát dưới 4.100; 4.000 là mốc tâm lý cần giữ – thủng là mở đường về vùng đáy tháng 7. Hồi lên 4.100 nhiều khả năng bị bán lại. Tối nay có PMI Mỹ 20:45 VN và tâm lý tiêu dùng Michigan 21:00 VN. Dài hạn: khi dầu trên 110 USD còn nuôi kỳ vọng Fed tăng lãi tháng 12, vàng khó lấy lại vai trò trú ẩn dù lợi suất đã giảm.",
+   "source": {
+    "name": "Investing.com – Vàng giao ngay xuống đáy 3 tháng khi thị trường né rủi ro, dầu tăng",
+    "name_en": "Investing.com – Spot gold hits three-month low amid risk-off moves, climb in oil prices",
+    "url": "https://www.investing.com/news/commodities-news/gold-falls-near-4115-as-saudi-attacks-fuel-inflation-fed-outlook-in-focus-4964496"
+   },
+   "source2": {
+    "name": "CNBC – Giá vàng/USD giao ngay (XAU=)",
+    "name_en": "CNBC – Gold/US dollar spot quote (XAU=)",
+    "url": "https://www.cnbc.com/quotes/XAU="
+   },
+   "time_vn": "04:00 VN 23/10 (chốt phiên) · 06:35 VN (giá CNBC)",
+   "title_en": "Spot gold drops 2.8% to $4,024.55, lowest since July 20, as an oil spike and an AI sell-off push money into Treasuries instead of bullion",
+   "summary_en": "Investing.com: spot gold settled Oct 22 at $4,024.55/oz (−2.8%), its lowest since July 20, while futures settled at $4,039.90 (−0.5%). It's the third break below $4,100 support this month. Trade Nation's David Morrison notes this week's selling came despite a sizable drop in the dollar, and daily MACDs haven't reached the oversold readings that usually fuel durable rallies. Peter Schiff: gold lost $116 and closed just above $4,000 support. CNBC's XAU= quote at 7:35 PM ET: $4,023.61 (day range 4,020.59–4,122.56).",
+   "reason_en": "Near term: sellers own the tape below 4,100, and 4,000 is the line in the sand – lose it and the July lows come into play. Rallies into 4,100 look like selling opportunities. Friday brings flash PMIs at 9:45 AM ET and UMich sentiment at 10 AM ET. Longer term: as long as $110-plus Brent keeps a December hike priced, gold struggles to trade as a haven even with yields falling.",
+   "time_en": "Oct 22, 5:00 PM ET (settlement) · 7:35 PM ET (CNBC quote)"
+  },
+  {
+   "date": "2026-10-23",
+   "category": "Chiến tranh",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "NYT: Mỹ – Israel lên kế hoạch tấn công Iran sau bầu cử giữa kỳ; Mỹ rút nhân viên khỏi Ả Rập Xê Út – Brent đóng cửa 113,17 USD, cao nhất từ 4/5",
+   "summary": "CNBC: Brent tăng 4% lên 113,17 USD/thùng, cao nhất từ 4/5; WTI +2,4% lên 99,47 USD (có lúc vượt 100). New York Times dẫn quan chức Mỹ: quân đội Mỹ và Israel đã soạn kế hoạch cụ thể cho đợt tấn công «ngắn nhưng dữ dội» vào Iran sau bầu cử giữa kỳ 3/11. Ông Trump nói Mỹ không đàm phán với Iran và «sẽ có chuyện xảy ra khá sớm». Mỹ lệnh nhân viên chính phủ không thiết yếu rời Ả Rập Xê Út do Houthi tấn công dồn dập; ít nhất 2 người chết ở sân bay King Fahd (Dammam); Saudi Aramco cho nhân viên rời trụ sở Dhahran.",
+   "reason": "Ngắn hạn: địa chính trị leo thang lần này lại làm vàng giảm – thị trường đọc nó qua kênh dầu → lạm phát → Fed tăng lãi, không phải kênh trú ẩn. Dài hạn: nguy cơ chiến sự trực tiếp với Iran sau 3/11 giữ dầu ở vùng cao; nếu xung đột lan sang tài chính toàn cầu, lực mua trú ẩn có thể quay lại vàng.",
+   "source": {
+    "name": "CNBC – Brent vượt 113 USD, cao nhất từ tháng 5, sau khi ông Trump ám chỉ hành động với Iran",
+    "name_en": "CNBC – Brent crude tops $113, highest level since May, after Trump hints at action on Iran",
+    "url": "https://www.cnbc.com/2026/10/22/oil-prices-today-wti-brent-saudi-arabia.html"
+   },
+   "source2": {
+    "name": "CNBC Daily Open 22/10 – Mỹ rút nhân viên khỏi Ả Rập Xê Út",
+    "name_en": "CNBC Daily Open, Oct 22 – US pulls non-emergency staff from Saudi Arabia",
+    "url": "https://www.cnbc.com/2026/10/22/trump-meta-tesla-earnings-iran-nvidia-gtc.html"
+   },
+   "time_vn": "01:30 VN 23/10 (chốt giá dầu)",
+   "title_en": "NYT: US and Israel draw up post-midterm strike plans on Iran; US orders staff out of Saudi Arabia – Brent settles at $113.17, highest since May 4",
+   "summary_en": "CNBC: Brent rallied 4% to settle at $113.17 a barrel, its highest since May 4, while WTI gained 2.4% to $99.47 after briefly topping $100. The New York Times, citing US officials, reported that the US and Israeli militaries have specific plans for a \"short but intensive\" round of strikes on Iran after the Nov. 3 midterms. President Trump said Washington isn't negotiating with Tehran and something will happen \"fairly soon.\" The State Department ordered non-emergency staff out of Saudi Arabia as Houthi attacks escalate; at least two people were killed at King Fahd International Airport in Dammam, and Saudi Aramco told staff to evacuate its Dhahran headquarters.",
+   "reason_en": "Near term: this escalation is hurting gold, not helping it – the market is trading it through the oil-to-inflation-to-Fed channel rather than as a haven trigger. Longer term: the risk of direct strikes on Iran after Nov. 3 keeps crude elevated; if the conflict spills into broader financial stress, haven flows could rotate back into gold.",
+   "time_en": "Oct 22, 2:30 PM ET (oil settlement)"
+  },
+  {
+   "date": "2026-10-23",
+   "category": "Lợi suất",
+   "priority": 1,
+   "impact": "trung lập",
+   "title": "Lợi suất 10 năm Mỹ lao 19 điểm cơ bản về 4,953% – mạnh nhất từ 3/2023; Nasdaq −2,6% vì Meta, đơn trợ cấp thất nghiệp chỉ 194 nghìn",
+   "summary": "Reuters (qua Mint): lợi suất 10 năm −19,3 điểm cơ bản còn 4,953%, giảm mạnh nhất trong một ngày từ 10/3/2023 (đỉnh 5,3645% ngày 7/10); 2 năm −18,5 còn 4,638%; 30 năm 5,287%. Đấu giá 26 tỷ USD TIPS 5 năm được đánh giá tốt. Đơn xin trợ cấp thất nghiệp lần đầu giảm 6.000 còn 194.000 (dự báo 200.000). CNBC: S&P 500 −1,2%, phiên tệ nhất từ tháng 7; Nasdaq −2,6%, tệ nhất từ tháng 6; Dow đi ngang; Meta −7% sau báo cáo và kế hoạch phát hành cổ phiếu không quyền biểu quyết, Nvidia −4,4%. Cboe: VIX có lúc vượt 20, đóng cửa 18,99.",
+   "reason": "Ngắn hạn: lợi suất giảm mạnh nhưng vàng vẫn rơi – dòng tiền trú ẩn đang chọn trái phiếu Mỹ; tâm lý né rủi ro vì cổ phiếu AI còn kéo theo bán tháo tài sản khác. Dài hạn: lợi suất 10 năm về dưới 5% là yếu tố hỗ trợ vàng khi cú sốc dầu hạ nhiệt; số thất nghiệp thấp cho thấy thị trường lao động vẫn chắc.",
+   "source": {
+    "name": "Reuters (qua Mint) – Lợi suất Mỹ lao dốc khi lo ngại về sự bền vững của làn sóng AI bùng lên",
+    "name_en": "Reuters (via Mint) – Yields plummet as fears about AI boom sustainability flare",
+    "url": "https://www.livemint.com/market/yields-plummet-as-fears-about-ai-boom-sustainability-flare-11792695822319.html"
+   },
+   "source2": {
+    "name": "CNBC – Thị trường chứng khoán 22/10/2026",
+    "name_en": "CNBC – Stock market today, Oct. 22, 2026",
+    "url": "https://www.cnbc.com/2026/10/22/stock-market-today-live-update.html"
+   },
+   "time_vn": "19:30 VN 22/10 (trợ cấp thất nghiệp) · 03:00 VN 23/10 (đóng cửa Phố Wall)",
+   "title_en": "10-year yield plunges 19 bps to 4.953%, biggest drop since March 2023; Nasdaq sinks 2.6% on Meta as jobless claims come in at 194,000",
+   "summary_en": "Reuters (via Mint): the 10-year yield fell 19.3 bps to 4.953%, its biggest one-day drop since March 10, 2023 (it peaked at 5.3645% on Oct. 7); the 2-year dropped 18.5 bps to 4.638% and the 30-year sat at 5.287%. The $26 billion 5-year TIPS sale was seen as solid. Initial jobless claims fell 6,000 to 194,000 vs. 200,000 expected. CNBC: the S&P 500 lost 1.2%, its worst day since July; the Nasdaq slid 2.6%, its worst since June; the Dow was flat. Meta fell about 7% after earnings and a new non-voting share class, and Nvidia dropped 4.4%. Cboe: the VIX briefly topped 20 before settling at 18.99.",
+   "reason_en": "Near term: a big rally in Treasuries and gold still fell – haven money is choosing bonds, and the AI-driven de-risking is dragging other assets with it. Longer term: a 10-year back under 5% is constructive for gold once the oil shock cools; low claims say the labor market is still holding up.",
+   "time_en": "Oct 22, 8:30 AM ET (jobless claims) · 4:00 PM ET (stock close)"
+  },
+  {
+   "date": "2026-10-23",
+   "category": "Fed",
+   "priority": 1,
+   "impact": "trung lập",
+   "title": "FedWatch: cửa Fed tăng lãi 28/10 chỉ còn 8%; tháng 12 cược tăng giảm về khoảng 75% (hôm trước ~87%)",
+   "summary": "Investing.com Fed Rate Monitor (dựa trên hợp đồng tương lai Fed Funds 30 ngày của CME, cập nhật 06:15 VN 23/10): họp 27–28/10 giữ 3,75–4,00% 92,0% / tăng 25 điểm cơ bản 8,0% (hôm trước 13,8%, tuần trước 28,7%). Họp 08–09/12: giữ 25,2% (hôm trước 13,2%), lên 4,00–4,25% 69,0%, lên 4,25–4,50% 5,8%. Reuters dẫn CME FedWatch: khả năng tăng lãi tháng 10 còn 7,2%, từ 27,7% một tuần trước. Fed trong giai đoạn im lặng đến hết 29/10; PCE tháng 9 công bố 29/10.",
+   "reason": "Ngắn hạn: cược tăng lãi hạ nhiệt nhờ lợi suất giảm, nhưng dầu 113 USD có thể đảo lại rất nhanh – vàng chưa được hưởng lợi. Dài hạn: vẫn khoảng 3/4 khả năng Fed tăng lãi tháng 12; cược này xuống dưới 50% mới là tín hiệu đổi xu hướng cho vàng.",
+   "source": {
+    "name": "Investing.com – Fed Rate Monitor (CME Fed Funds futures), 22/10/2026 19:15 ET",
+    "name_en": "Investing.com – Fed Rate Monitor (CME fed funds futures), Oct 22, 2026 7:15 PM ET",
+    "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+   },
+   "source2": {
+    "name": "Reuters (qua Mint) – CME FedWatch: cửa tăng lãi tháng 10 còn 7,2%",
+    "name_en": "Reuters (via Mint) – CME FedWatch puts October hike odds at 7.2%",
+    "url": "https://www.livemint.com/market/yields-plummet-as-fears-about-ai-boom-sustainability-flare-11792695822319.html"
+   },
+   "time_vn": "06:15 VN 23/10",
+   "title_en": "FedWatch: October hike odds down to 8%; December hike pricing eases to about 75% from roughly 87%",
+   "summary_en": "Investing.com's Fed Rate Monitor (CME 30-day fed funds futures, 7:15 PM ET Oct 22): Oct. 28 meeting – 92.0% hold at 3.75%–4.00%, 8.0% for a 25 bp hike (13.8% a day earlier, 28.7% a week ago). Dec. 9 meeting – 25.2% hold (13.2% a day earlier), 69.0% for 4.00%–4.25% and 5.8% for 4.25%–4.50%. Reuters, citing CME FedWatch, put October hike odds at 7.2%, down from 27.7% a week ago. The Fed is in its blackout through Oct. 29; September PCE is due Oct. 29.",
+   "reason_en": "Near term: hike bets are cooling with yields, but $113 Brent can flip that quickly – gold hasn't caught a bid from it yet. Longer term: roughly three-in-four odds of a December hike remain; pricing below 50% is what would signal a trend change for gold.",
+   "time_en": "Oct 22, 7:15 PM ET"
+  },
   {
    "date": "2026-10-22",
    "category": "Fed",
