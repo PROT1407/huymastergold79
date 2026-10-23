@@ -59,6 +59,49 @@
    "category": "Tương quan",
    "priority": 1,
    "impact": "giảm",
+   "title": "Vàng hướng tới tuần giảm mạnh nhất hơn 4 tháng (−3,5%): dầu cao giữ kỳ vọng Fed giữ lãi cao lâu hơn, phe mua cố giữ mốc 4.000",
+   "summary": "CNBC (Reuters): vàng giao ngay giảm 0,2% về 4.016,27 USD/oz lúc 10:51 VN, sau khi chạm mức thấp nhất từ 20/7 trong phiên Á (CNBC XAU= 3.987,85). Từ đầu tuần vàng mất 3,5%, tuần tệ nhất từ tháng 6; vàng tương lai tháng 12 −0,7% về 4.030,4. Capital.com: giới đầu cơ đang cố giữ mốc 4.000 – thủng gọn nghĩa là thị trường thôi kỳ vọng nới lãi và chuyển sang định giá lạm phát dai, lợi suất cao, USD mạnh. Nhà đầu tư chờ cuộc họp Fed tuần sau.",
+   "reason": "Ngắn hạn: 4.000 là mốc tâm lý – giữ được thì có nhịp hồi kỹ thuật, nhưng các nhịp hồi vẫn bị bán khi dầu còn cao. Dài hạn: chừng nào dầu còn trên 110 USD và Fed còn để ngỏ tăng lãi tháng 12, vàng khó lấy lại nền 4.100–4.150.",
+   "source": {
+    "name": "CNBC (Reuters) – Vàng hướng tới tuần giảm mạnh nhất hơn 4 tháng",
+    "name_en": "CNBC (Reuters) – Gold heads for steep weekly loss as oil prices fuel Fed rate concerns",
+    "url": "https://www.cnbc.com/2026/10/23/gold-heads-for-steep-weekly-loss-as-oil-prices-fuel-fed-rate-concerns.html"
+   },
+   "time_vn": "11:29 VN 23/10",
+   "title_en": "Gold heads for its worst week in more than four months (−3.5%) as oil keeps higher-for-longer in play; dip buyers defend 4,000",
+   "summary_en": "CNBC (Reuters): spot gold eased 0.2% to $4,016.27 an ounce by 11:51 PM ET after touching its lowest since July 20 overnight (CNBC XAU= low 3,987.85). Gold is down 3.5% this week, on pace for its worst week since June; December futures fell 0.7% to $4,030.40. Capital.com says speculators are defending $4,000 because a clean break would mean the market has stopped pricing rate relief and started pricing sticky inflation, higher yields and a stronger dollar. Traders are looking ahead to next week's Fed meeting.",
+   "reason_en": "Near term: 4,000 is the line – hold it and gold gets a technical bounce, but bounces keep getting sold while crude stays high. Longer term: as long as oil holds above $110 and a December hike stays on the table, reclaiming the 4,100–4,150 base is a tall order.",
+   "time_en": "Oct 23, 12:29 AM ET"
+  },
+  {
+   "date": "2026-10-23",
+   "category": "Dầu mỏ",
+   "priority": 2,
+   "impact": "giảm",
+   "title": "Brent lên 113,75–114,4 USD, hướng tới tuần tăng thứ ba khi Houthi tấn công Ả Rập Xê Út; Aramco sơ tán trụ sở Dhahran",
+   "summary": "Reuters: Brent tăng 0,5% lên 113,75 USD/thùng, WTI +0,7% lên 100,13 USD lúc 11:39 VN; giá CNBC lúc 13:45 VN là Brent 114,43 (+1,1%), WTI 100,85. Brent sắp tăng tuần thứ ba liên tiếp. Saudi Aramco đã lệnh sơ tán trụ sở Dhahran khi giao tranh với Houthi leo thang. ING: «tái leo thang là kịch bản khả dĩ nhất», phần bù rủi ro địa chính trị sẽ còn nằm trong giá dầu. Libya giảm sản lượng do đóng van đường ống tới cảng Zawiya.",
+   "reason": "Ngắn hạn: dầu tăng tiếp là lực đè vàng qua kênh lạm phát → Fed giữ lãi cao. Dài hạn: nếu xung đột vùng Vịnh lan rộng và gây căng thẳng tài chính, dòng tiền trú ẩn có thể quay lại vàng.",
+   "source": {
+    "name": "Reuters (Euronext) – Dầu tăng vì lo nguồn cung khi Houthi tấn công Ả Rập Xê Út",
+    "name_en": "Reuters (Euronext) – Oil prices rise as supply concerns linger amid Houthi attacks on Saudi Arabia",
+    "url": "https://live.euronext.com/en/financial-news/oil-prices-rise-supply-concerns-linger-amid-houthi-attacks-saudi-arabia"
+   },
+   "source2": {
+    "name": "CNBC – Dầu đi ngang đầu phiên Á khi lo ngại nguồn cung còn đó",
+    "name_en": "CNBC – Oil little changed as supply concern lingers amid Houthi attacks on Saudi Arabia",
+    "url": "https://www.cnbc.com/2026/10/23/oil-little-changed-as-supply-concern-lingers-amid-houthi-attacks-on-saudi-arabia.html"
+   },
+   "time_vn": "11:39 VN 23/10",
+   "title_en": "Brent climbs to $113.75–$114.40, on track for a third weekly gain as Houthi attacks on Saudi Arabia continue; Aramco evacuates Dhahran HQ",
+   "summary_en": "Reuters: Brent rose 0.5% to $113.75 a barrel and WTI 0.7% to $100.13 as of 12:39 AM ET; CNBC had Brent at $114.43 (+1.1%) and WTI at $100.85 by 2:45 AM ET. Brent is set for a third straight weekly gain. Saudi Aramco ordered the evacuation of its Dhahran headquarters as fighting with the Houthis intensified. ING says re-escalation looks like the most likely path, keeping a sizable geopolitical risk premium in crude. Libya cut output after a pipeline valve to Zawiya port was shut.",
+   "reason_en": "Near term: more upside in crude weighs on gold through the inflation-to-Fed channel. Longer term: if the Gulf conflict spills into broader financial stress, haven demand could come back to gold.",
+   "time_en": "Oct 23, 12:39 AM ET"
+  },
+  {
+   "date": "2026-10-23",
+   "category": "Tương quan",
+   "priority": 1,
+   "impact": "giảm",
    "title": "Vàng giao ngay rơi 2,8% về 4.024,55 USD – thấp nhất từ 20/7: dầu vọt và cổ phiếu AI bị bán khiến tiền chạy vào trái phiếu, không vào vàng",
    "summary": "Investing.com: vàng giao ngay chốt ngày 22/10 ở 4.024,55 USD/oz (−2,8%), thấp nhất từ 20/7; vàng tương lai chốt 4.039,90 (−0,5%). Đây là lần thứ ba trong tháng vàng thủng hỗ trợ 4.100. David Morrison (Trade Nation): đợt bán tuần này diễn ra dù USD giảm đáng kể; MACD ngày chưa về vùng quá bán đủ để tạo nhịp hồi bền. Peter Schiff: vàng mất 116 USD, đóng cửa ngay trên hỗ trợ 4.000. Giá CNBC XAU= lúc 06:35 VN: 4.023,61 (biên độ ngày 4.020,59–4.122,56).",
    "reason": "Ngắn hạn: phe bán đã kiểm soát dưới 4.100; 4.000 là mốc tâm lý cần giữ – thủng là mở đường về vùng đáy tháng 7. Hồi lên 4.100 nhiều khả năng bị bán lại. Tối nay có PMI Mỹ 20:45 VN và tâm lý tiêu dùng Michigan 21:00 VN. Dài hạn: khi dầu trên 110 USD còn nuôi kỳ vọng Fed tăng lãi tháng 12, vàng khó lấy lại vai trò trú ẩn dù lợi suất đã giảm.",
