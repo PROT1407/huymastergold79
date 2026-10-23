@@ -1,6 +1,387 @@
 {
  "strategies": [
   {
+   "id": "2026-10-23-nhan-dinh-chung",
+   "date": "2026-10-23",
+   "time": "11:30",
+   "session": "Nhận định chung",
+   "session_en": "Daily Outlook",
+   "url": "bai/2026-10-23-nhan-dinh-vang-nhan-dinh-chung-1130.html",
+   "url_en": "en/posts/2026-10-23-gold-plan-daily-outlook-1130.html",
+   "headline": "Vàng 23/10 nhận định chung: thủng 4.000, đáy Á 3.987,85 – BÁN hồi 4.046–4.054, MUA chỉ khi quét 3.945–3.960",
+   "headline_en": "H79 Gold Plan – Daily Outlook, Oct 23: Gold Cracks 4,000 – Sell the Bounce at 4,046–4,054, Buy Only a Flush Into 3,945–3,960",
+   "title": "Vàng 23/10 nhận định chung: thủng 4.000, đáy Á 3.987,85 – BÁN hồi 4.046–4.054, MUA chỉ khi quét 3.945–3.960",
+   "title_en": "H79 Gold Plan – Daily Outlook, Oct 23: Gold Cracks 4,000 – Sell the Bounce at 4,046–4,054, Buy Only a Flush Into 3,945–3,960",
+   "image": "img/charts/gold-2026-10-23-nhan-dinh-chung-1130.png",
+   "image_alt": "Biểu đồ vàng 45 phút 20–23/10: vàng gãy nền 4.100–4.150, rơi từ 4.141,4 xuống đáy phiên Á 3.987,85; Fibonacci hồi quy và các FVG chưa lấp 4.031–4.036, 4.050–4.054, 4.063–4.070, 4.101–4.109; vùng BÁN 4.046–4.054, vùng MUA 3.945–3.960",
+   "image_en": "img/charts/gold-2026-10-23-daily-outlook-1130-en.png",
+   "image_alt_en": "Gold 45-minute chart, Oct 20–23 (ET): gold breaks the 4,100–4,150 base and drops from 4,141.40 to the 3,987.85 Asia low; Fibonacci retracements and unfilled FVGs at 4,031–4,036, 4,050–4,054, 4,063–4,070 and 4,101–4,109; sell zone 4,046–4,054, buy zone 3,945–3,960",
+   "trend": "Ngắn hạn giảm: nền 4.100–4.150 đã gãy, cấu trúc đỉnh – đáy thấp dần, các nhịp hồi bị chặn ở FVG. Ưu tiên bán hồi 4.046–4.054 (Fib 38,2% + FVG), chỉ mua khi quét 3.945–3.960 có nến xác nhận; không bán đuổi 4.000–4.010.",
+   "trend_en": "Short-term bearish: the 4,100–4,150 base is broken, the tape is printing lower highs and lower lows, and every bounce is stalling in an unfilled FVG. Sell a bounce into 4,046–4,054 (38.2% retrace + FVG), buy only a flush into 3,945–3,960 on a confirming close; don't short the hole at 4,000–4,010.",
+   "trendType": "down",
+   "support": [
+    3988,
+    3970,
+    3960,
+    3945,
+    3930,
+    3900
+   ],
+   "resistance": [
+    4024,
+    4036,
+    4046,
+    4054,
+    4065,
+    4072
+   ],
+   "entryZones": [
+    "Mua 3.945 – 3.960 (đáy năm 3.943 ngày 30/6 và vùng đáy tháng 7). Chỉ vào khi giá chạm vùng và có nến 45m hoặc 1H đóng xanh. Dừng lỗ 3.930. TP1 3.988 (đáy phiên Á) → TP2 4.024 (Fib 23,6%). Nến 1H đóng dưới 3.930 thì bỏ lệnh mua."
+   ],
+   "entryZones_en": [
+    "Buy 3,945–3,960 (the 3,943 year-to-date low from June 30 and the July lows). Only when price tags the zone and a 45m or 1H bar closes green. Stop 3,930. TP1 3,988 (the Asia low) → TP2 4,024 (23.6% retrace). A 1H close under 3,930 cancels the long."
+   ],
+   "sellZones": [
+    "Bán 4.046 – 4.054 (Fib 38,2% 4.046,5 + FVG chưa lấp 4.049,7–4.053,8). Chỉ vào khi giá chạm vùng và có nến 45m hoặc 1H đóng đỏ; không bán đuổi quanh 4.000–4.010. Dừng lỗ 4.072 (trên FVG 4.063–4.070 và Fib 50%). TP1 4.024 → TP2 3.990. Nến 1H đóng trên 4.072 thì bỏ lệnh bán."
+   ],
+   "sellZones_en": [
+    "Sell 4,046–4,054 (38.2% retrace at 4,046.50 + the unfilled 4,049.70–4,053.80 FVG). Only when price tags the zone and a 45m or 1H bar closes red; don't short the hole around 4,000–4,010. Stop 4,072 (above the 4,063–4,070 FVG and the 50% retrace). TP1 4,024 → TP2 3,990. A 1H close above 4,072 cancels the short."
+   ],
+   "scenarios": [
+    "Kế hoạch: BÁN 4.046–4.054 (SL 4.072 · TP1 4.024 → TP2 3.990) · MUA 3.945–3.960 (SL 3.930 · TP1 3.988 → TP2 4.024). Chỉ vào khi chạm vùng và có nến 45m/1H đóng xác nhận.",
+    "Kịch bản chính (~55%): hồi kỹ thuật lên 4.031–4.054 rồi bị bán, quay về thử lại 3.988; thủng thì mở đường 3.965 → 3.945.",
+    "Kịch bản phụ (~30%): bên bán chốt lời cuối tuần, giá lấy lại 4.054 và hồi lên 4.064–4.072 (Fib 50% + FVG) – kháng cự mạnh, khó vượt trong ngày.",
+    "Kịch bản đuôi (~15%): thủng gọn 3.943 (đáy năm) – có thể rơi nhanh về 3.900.",
+    "Rủi ro: 20:45 PMI sơ bộ, 21:00 Michigan sửa đổi (tin cam, không có tin đỏ USD); tin Iran – Houthi – Hormuz cuối tuần có thể làm giá mở cửa nhảy."
+   ],
+   "scenarios_en": [
+    "The plan: sell 4,046–4,054 (stop 4,072 · TP1 4,024 → TP2 3,990) · buy 3,945–3,960 (stop 3,930 · TP1 3,988 → TP2 4,024). Only on a tag of the zone plus a confirming 45m/1H close.",
+    "Base case (~55%): a technical bounce into 4,031–4,054 gets sold and gold retests 3,988; a break opens 3,965 → 3,945.",
+    "Alternative (~30%): weekend short-covering lifts gold back over 4,054 into 4,064–4,072 (50% retrace + FVG) – heavy resistance, hard to clear today.",
+    "Tail (~15%): a clean break of 3,943 (the year-to-date low) – a fast drop toward 3,900 is on the table.",
+    "Risk: flash PMIs at 9:45 AM ET and revised UMich at 10:00 AM ET (medium impact, no high-impact U.S. data); Iran, Houthi and Hormuz headlines over the weekend can gap Monday's open."
+   ],
+   "macro": [],
+   "macro_en": [],
+   "market_picture": {
+    "text": "Hôm qua vàng gãy nền 4.100–4.150 đã giữ suốt quý. Sáng nay phiên Á quét xuống 3.987,85 rồi hồi, giờ dập dềnh quanh 4.006. Brent giữ ~113,6 USD, cao nhất từ tháng 5. Lý do là tin Mỹ–Israel có thể đánh lại Iran, Houthi tấn công Saudi, tàu bị đánh ở Hormuz. Lợi suất 10 năm Mỹ giảm hơn 17 điểm cơ bản, đóng cửa 4,972% (CNBC) – mạnh nhất từ 3/2023; sáng nay quanh 4,966%. DXY đi ngang ~101,67. Vàng không ăn theo lợi suất giảm: chứng khoán Mỹ bị bán vì lo AI chi tiêu quá đà, vàng bị bán theo để lấy tiền mặt. FedWatch: tăng lãi 28/10 chỉ ~7–10%, nhưng tháng 12 vẫn ~75–80%. Lực đè chính vẫn là kỳ vọng lãi suất cao lâu hơn – tin chiến sự chỉ làm giá giật, chưa thành lực đỡ.",
+    "chips": [
+     {
+      "k": "XAU",
+      "v": "4.006 −0,44%",
+      "dir": "down"
+     },
+     {
+      "k": "DXY",
+      "v": "101,67 +0,06%",
+      "dir": "up"
+     },
+     {
+      "k": "US10Y",
+      "v": "4,966%",
+      "dir": "up"
+     },
+     {
+      "k": "US2Y",
+      "v": "4,654%",
+      "dir": "up"
+     },
+     {
+      "k": "Brent",
+      "v": "113,65 +0,4%",
+      "dir": "up"
+     },
+     {
+      "k": "WTI T12",
+      "v": "100,00 +0,5%",
+      "dir": "up"
+     },
+     {
+      "k": "S&P 500 fut.",
+      "v": "7.696 −0,11%",
+      "dir": "down"
+     },
+     {
+      "k": "Bạc",
+      "v": "53,67 −1,6%",
+      "dir": "down"
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Brent vượt 113 USD, cao nhất từ tháng 5, sau khi Trump ám chỉ hành động với Iran (02:19 VN 23/10)",
+      "url": "https://www.cnbc.com/2026/10/22/oil-prices-today-wti-brent-saudi-arabia.html"
+     },
+     {
+      "name": "CNBC – Lợi suất 10 năm Mỹ rơi dưới 5%, thấp nhất gần một tháng (03:05 VN 23/10)",
+      "url": "https://www.cnbc.com/2026/10/22/treasurys-bonds-ai-yields.html"
+     },
+     {
+      "name": "CNBC Daily Open – Lo chi tiêu AI ám ảnh thị trường, Nasdaq ngày tệ nhất từ tháng 6 (08:42 VN 23/10)",
+      "url": "https://www.cnbc.com/2026/10/23/cnbc-daily-open-ai-spending-elon-musk-bill-ackman-jensen-huang.html"
+     },
+     {
+      "name": "Reuters (Business Times) – Vàng hướng tới tuần giảm mạnh nhất hơn 4 tháng vì triển vọng lãi suất Fed (~07:36 VN 23/10)",
+      "url": "https://www.businesstimes.com.sg/companies-markets/energy-commodities/gold-heads-sharpest-weekly-decline-four-months-fed-rate-outlook"
+     },
+     {
+      "name": "Bloomberg (Mint) – Vàng giữ quanh đáy hơn 3 tháng khi lo ngại AI làm thị trường biến động (~07:39 VN 23/10)",
+      "url": "https://www.livemint.com/market/gold-holds-near-three-month-low-as-ai-jitters-fuel-volatility-11792715984506.html"
+     },
+     {
+      "name": "Reuters (Arab News) – Dầu đi ngang, lo ngại nguồn cung còn đó sau các vụ Houthi tấn công Saudi (~07:30 VN 23/10)",
+      "url": "https://www.arabnews.com/business/oil-little-changed-as-supply-concern-lingers-amid-houthi-attacks-on-saudi-arabia-3007831"
+     },
+     {
+      "name": "ForexFactory – Lịch kinh tế (20:45 PMI sơ bộ, 21:00 Michigan sửa đổi; tin cam, không có tin đỏ USD)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "market_picture_en": {
+    "text": "Gold broke the 4,100–4,150 base it had held all quarter on Thursday, then flushed to 3,987.85 at 10:00 PM ET in Asia before bouncing; it's chopping around 4,006 now. Brent is holding near $113.60, the highest since May, on reports of renewed U.S.-Israeli strike plans on Iran, Houthi attacks on Saudi Arabia and tanker hits around Hormuz. The 10-year fell more than 17 basis points to close at 4.972% (CNBC) – the biggest one-day drop since March 2023 – and sits near 4.966% now. The dollar index is flat around 101.67. Gold didn't get the usual lift from lower yields: the AI-driven stock selloff turned it into a source of cash. FedWatch puts next week's hike odds at only ~7–10%, but December is still ~75–80%. Higher-for-longer is the weight on gold; the war headlines are whipping it around, not holding it up.",
+    "chips": [
+     {
+      "k": "XAU",
+      "v": "4,006 −0.44%",
+      "dir": "down"
+     },
+     {
+      "k": "DXY",
+      "v": "101.67 +0.06%",
+      "dir": "up"
+     },
+     {
+      "k": "US10Y",
+      "v": "4.966%",
+      "dir": "up"
+     },
+     {
+      "k": "US2Y",
+      "v": "4.654%",
+      "dir": "up"
+     },
+     {
+      "k": "Brent",
+      "v": "113.65 +0.4%",
+      "dir": "up"
+     },
+     {
+      "k": "WTI Dec",
+      "v": "100.00 +0.5%",
+      "dir": "up"
+     },
+     {
+      "k": "S&P 500 fut.",
+      "v": "7,696 −0.11%",
+      "dir": "down"
+     },
+     {
+      "k": "Silver",
+      "v": "53.67 −1.6%",
+      "dir": "down"
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Brent crude tops $113, highest since May, after Trump hints at action on Iran (3:19 PM ET Oct 22)",
+      "url": "https://www.cnbc.com/2026/10/22/oil-prices-today-wti-brent-saudi-arabia.html"
+     },
+     {
+      "name": "CNBC – 10-year Treasury yield tumbles below 5% to lowest level in nearly a month (4:05 PM ET Oct 22)",
+      "url": "https://www.cnbc.com/2026/10/22/treasurys-bonds-ai-yields.html"
+     },
+     {
+      "name": "CNBC Daily Open – AI spending fears haunt markets before Halloween (9:42 PM ET Oct 22)",
+      "url": "https://www.cnbc.com/2026/10/23/cnbc-daily-open-ai-spending-elon-musk-bill-ackman-jensen-huang.html"
+     },
+     {
+      "name": "Reuters (Business Times) – Gold heads for sharpest weekly decline in four months on Fed rate outlook (~8:36 PM ET Oct 22)",
+      "url": "https://www.businesstimes.com.sg/companies-markets/energy-commodities/gold-heads-sharpest-weekly-decline-four-months-fed-rate-outlook"
+     },
+     {
+      "name": "Bloomberg (Mint) – Gold holds near three-month low as AI jitters fuel volatility (~8:39 PM ET Oct 22)",
+      "url": "https://www.livemint.com/market/gold-holds-near-three-month-low-as-ai-jitters-fuel-volatility-11792715984506.html"
+     },
+     {
+      "name": "Reuters (Arab News) – Oil little changed as supply concern lingers amid Houthi attacks on Saudi Arabia (~8:30 PM ET Oct 22)",
+      "url": "https://www.arabnews.com/business/oil-little-changed-as-supply-concern-lingers-amid-houthi-attacks-on-saudi-arabia-3007831"
+     },
+     {
+      "name": "ForexFactory – Economic calendar (9:45 AM ET flash PMIs, 10:00 AM ET revised UMich; medium impact, no high-impact U.S. data)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "physicalAdvice": "Làm theo kế hoạch, đừng chạy theo nến tin.",
+   "physicalAdvice_en": "Trade the plan, not the noise.",
+   "notes": "Các mốc là giá giao ngay XAU/USD (CNBC XAU= 4.006,1 lúc 11:28 VN; đỉnh – đáy từ đầu phiên ~4.031,4 – 3.987,85). Khung 45m dựng từ nến 5m giao ngay CNBC. Fib hồi quy từ đỉnh 4.141,4 (03:45 VN 22/10) về đáy 3.987,85 (09:00 VN 23/10): 23,6% 4.024,1 · 38,2% 4.046,5 · 50% 4.064,6 · 61,8% 4.082,7 · 78,6% 4.108,5. FVG giảm chưa lấp (khung 45m/1H): 4.031,4–4.035,7 · 4.049,7–4.053,8 · 4.063,1–4.070,0 · 4.100,9–4.109,0. Đáy cũ: 30/6 3.943,3 (đáy năm) · tháng 7 3.960–3.988.",
+   "notes_en": "Levels are spot XAU/USD (CNBC XAU= 4,006.09 at 12:28 AM ET; session range so far ~4,031.40–3,987.85). The 45m frame is built from CNBC XAU= spot 5-minute bars. Fibonacci retracement from the 4,141.40 high (4:45 PM ET Oct 21) to the 3,987.85 low (10:00 PM ET Oct 22): 23.6% 4,024.10 · 38.2% 4,046.50 · 50% 4,064.60 · 61.8% 4,082.70 · 78.6% 4,108.50. Unfilled bearish FVGs (45m/1H): 4,031.40–4,035.70 · 4,049.70–4,053.80 · 4,063.10–4,070.00 · 4,100.90–4,109.00. Prior lows: June 30 3,943.30 (year-to-date low) · July 3,960–3,988.",
+   "dataTime": "Cập nhật 11:15–11:30 ngày 23/10/2026 giờ VN. Nến 5m giao ngay CNBC XAU=; DXY, US10Y, US2Y, Brent, WTI, S&P fut, bạc từ CNBC; xác suất Fed theo CME FedWatch (Reuters và các bảng tính lại theo phương pháp CME); lịch tin ForexFactory.",
+   "dataTime_en": "Updated 12:15–12:30 AM ET, Friday Oct 23, 2026. Spot 5-minute bars from CNBC XAU=; DXY, US10Y, US2Y, Brent, WTI, S&P futures and silver from CNBC; Fed odds from CME FedWatch via Reuters and FedWatch-method replications; calendar from ForexFactory.",
+   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+   "brief": true,
+   "summary": {
+    "trend": "down",
+    "trendText": "Ngắn hạn giảm – vàng gãy nền 4.100–4.150, thủng 4.000; dầu 113 USD giữ cửa Fed tăng lãi tháng 12. Bán hồi 4.046–4.054, chỉ mua khi quét 3.945–3.960 có nến xác nhận",
+    "trendText_en": "Short-term bearish – gold broke the 4,100–4,150 base and cracked 4,000; $113 Brent keeps a December hike in play. Sell a bounce into 4,046–4,054, buy only a flush into 3,945–3,960 on a confirming close",
+    "sell": {
+     "zone": "4.046 – 4.054",
+     "sl": "4.072",
+     "tp": "4.024 → 3.990",
+     "zone_en": "4,046–4,054",
+     "sl_en": "4,072",
+     "tp_en": "TP1 4,024 → TP2 3,990"
+    },
+    "buy": {
+     "zone": "3.945 – 3.960",
+     "sl": "3.930",
+     "tp": "3.988 → 4.024",
+     "zone_en": "3,945–3,960",
+     "sl_en": "3,930",
+     "tp_en": "TP1 3,988 → TP2 4,024"
+    },
+    "note": "Chỉ vào khi chạm vùng + nến 45m/1H đóng xác nhận. 20:45 PMI, 21:00 Michigan – chốt bớt, dời SL trước tin; cuối tuần nhẹ vị thế. Nến 1H đóng trên 4.072 bỏ bán; dưới 3.930 bỏ mua.",
+    "note_en": "Only on a tag of the zone plus a confirming 45m/1H close. Flash PMIs 9:45 AM ET, UMich 10:00 AM ET – trim and tighten stops before the prints; go light into the weekend. A 1H close above 4,072 cancels the short; below 3,930 cancels the long.",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD",
+    "priceNote_en": "Spot XAU/USD prices"
+   },
+   "article": {
+    "sections": [
+     {
+      "h": "Bức tranh hôm nay",
+      "p": "Hôm qua vàng gãy nền 4.100–4.150 đã giữ suốt quý. Sáng nay phiên Á quét xuống 3.987,85 rồi hồi, giờ dập dềnh quanh 4.006. Brent giữ ~113,6 USD, cao nhất từ tháng 5. Lý do là tin Mỹ–Israel có thể đánh lại Iran, Houthi tấn công Saudi, tàu bị đánh ở Hormuz. Lợi suất 10 năm Mỹ giảm hơn 17 điểm cơ bản, đóng cửa 4,972% (CNBC) – mạnh nhất từ 3/2023; sáng nay quanh 4,966%. DXY đi ngang ~101,67. Vàng không ăn theo lợi suất giảm: chứng khoán Mỹ bị bán vì lo AI chi tiêu quá đà, vàng bị bán theo để lấy tiền mặt. FedWatch: tăng lãi 28/10 chỉ ~7–10%, nhưng tháng 12 vẫn ~75–80%. Lực đè chính vẫn là kỳ vọng lãi suất cao lâu hơn – tin chiến sự chỉ làm giá giật, chưa thành lực đỡ."
+     },
+     {
+      "h": "Kịch bản",
+      "p": "🔻 Chính (~55%): hồi kỹ thuật lên 4.031–4.054 rồi bị bán, quay về thử lại 3.988. Thủng đáy đó thì mở đường 3.965 → 3.945.\n🔺 Phụ (~30%): bên bán chốt lời cuối tuần, giá lấy lại 4.054 và hồi lên 4.064–4.072 – kháng cự mạnh, hôm nay khó vượt.\n⚠️ Đuôi (~15%): thủng gọn 3.943 (đáy năm hồi cuối tháng 6) – có thể rơi nhanh về 3.900."
+     },
+     {
+      "h": "Mốc quyết định",
+      "p": "Kháng cự: 4.024 (Fib 23,6%) · 4.031–4.036 (FVG, đỉnh phiên Á) · 4.046–4.054 (Fib 38,2% + FVG) · 4.063–4.072 (Fib 50% + FVG – vùng quyết định) · 4.101–4.109 (nền cũ, giờ là trần).\nHỗ trợ: 3.983–3.988 (đáy phiên Á) · 3.960–3.970 · 3.943 (đáy năm) · 3.900."
+     },
+     {
+      "h": "Lịch tin USD tối nay",
+      "p": "20:45 PMI sản xuất và dịch vụ sơ bộ · 21:00 Michigan sửa đổi (niềm tin tiêu dùng, kỳ vọng lạm phát).\nCả hai là tin cam (trung bình), không có tin đỏ USD – thường chỉ làm giá giật 10–20 giá. Riêng kỳ vọng lạm phát Michigan cần để ý vì dầu đang cao: số nhảy lên thì phe bán có thêm cớ."
+     },
+     {
+      "h": "📋 Kế hoạch dự trù",
+      "p": "🔴 BÁN 4.046 – 4.054 | SL 4.072 | TP1 4.024 → TP2 3.990\n🟢 MUA 3.945 – 3.960 | SL 3.930 | TP1 3.988 → TP2 4.024\nVào lệnh: chỉ khi giá chạm vùng và có nến 45m/1H đóng xác nhận (đỏ để bán, xanh để mua). Không bán đuổi 4.000–4.010.\nVô hiệu: nến 1H đóng trên 4.072 bỏ bán (mốc kế 4.083 → 4.101–4.109); dưới 3.930 bỏ mua.\nLưu ý: 20:45 PMI, 21:00 Michigan – chốt bớt, dời SL trước tin. Cuối tuần, trước FOMC 28/10, nhẹ vị thế để tránh rủi ro giá mở cửa nhảy vì tin Iran/Israel."
+     },
+     {
+      "h": "Tin song song",
+      "p": "• 02:19 – CNBC: Brent vượt 113 USD, cao nhất từ tháng 5, sau khi Trump ám chỉ hành động với Iran → dầu cao khiến thị trường lo lạm phát và lãi suất cao lâu hơn, đè vàng.\nhttps://www.cnbc.com/2026/10/22/oil-prices-today-wti-brent-saudi-arabia.html\n• 03:05 – CNBC: lợi suất 10 năm Mỹ giảm hơn 17 điểm cơ bản, đóng cửa 4,972%, phiên giảm mạnh nhất từ 3/2023 → trung hạn có lợi cho vàng, hôm nay vàng chưa ăn theo.\nhttps://www.cnbc.com/2026/10/22/treasurys-bonds-ai-yields.html\n• 08:42 – CNBC: Nasdaq mất hơn 2%, ngày tệ nhất từ tháng 6, vì lo chi tiêu AI → cổ phiếu bị bán tháo thì vàng hay bị bán theo để bù ký quỹ.\nhttps://www.cnbc.com/2026/10/23/cnbc-daily-open-ai-spending-elon-musk-bill-ackman-jensen-huang.html\n• ~07:36 – Reuters: vàng hướng tới tuần giảm mạnh nhất hơn 4 tháng; ~7% khả năng tăng lãi tuần sau, ~81% cho tháng 12 → câu chuyện lãi suất vẫn đè giá.\nhttps://www.businesstimes.com.sg/companies-markets/energy-commodities/gold-heads-sharpest-weekly-decline-four-months-fed-rate-outlook\n• ~07:39 – Bloomberg: vàng giữ quanh đáy hơn 3 tháng; Global X gọi là đợt bán do thanh khoản, coi 3.900 là mốc then chốt, kỳ vọng hồi chữ V → áp lực ngắn hạn, phe mua dài hạn vẫn chờ ở dưới.\nhttps://www.livemint.com/market/gold-holds-near-three-month-low-as-ai-jitters-fuel-volatility-11792715984506.html\n• ~07:30 – Reuters: dầu đi ngang đầu phiên Á, lo ngại nguồn cung còn đó sau các vụ Houthi tấn công Saudi → địa chính trị vẫn nóng, vàng dễ giật hai chiều theo tin.\nhttps://www.arabnews.com/business/oil-little-changed-as-supply-concern-lingers-amid-houthi-attacks-on-saudi-arabia-3007831"
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Brent vượt 113 USD, cao nhất từ tháng 5, sau khi Trump ám chỉ hành động với Iran (02:19 VN 23/10)",
+      "url": "https://www.cnbc.com/2026/10/22/oil-prices-today-wti-brent-saudi-arabia.html"
+     },
+     {
+      "name": "CNBC – Lợi suất 10 năm Mỹ rơi dưới 5%, thấp nhất gần một tháng (03:05 VN 23/10)",
+      "url": "https://www.cnbc.com/2026/10/22/treasurys-bonds-ai-yields.html"
+     },
+     {
+      "name": "CNBC Daily Open – Lo chi tiêu AI ám ảnh thị trường, Nasdaq ngày tệ nhất từ tháng 6 (08:42 VN 23/10)",
+      "url": "https://www.cnbc.com/2026/10/23/cnbc-daily-open-ai-spending-elon-musk-bill-ackman-jensen-huang.html"
+     },
+     {
+      "name": "Reuters (Business Times) – Vàng hướng tới tuần giảm mạnh nhất hơn 4 tháng vì triển vọng lãi suất Fed (~07:36 VN 23/10)",
+      "url": "https://www.businesstimes.com.sg/companies-markets/energy-commodities/gold-heads-sharpest-weekly-decline-four-months-fed-rate-outlook"
+     },
+     {
+      "name": "Bloomberg (Mint) – Vàng giữ quanh đáy hơn 3 tháng khi lo ngại AI làm thị trường biến động (~07:39 VN 23/10)",
+      "url": "https://www.livemint.com/market/gold-holds-near-three-month-low-as-ai-jitters-fuel-volatility-11792715984506.html"
+     },
+     {
+      "name": "Reuters (Arab News) – Dầu đi ngang, lo ngại nguồn cung còn đó sau các vụ Houthi tấn công Saudi (~07:30 VN 23/10)",
+      "url": "https://www.arabnews.com/business/oil-little-changed-as-supply-concern-lingers-amid-houthi-attacks-on-saudi-arabia-3007831"
+     },
+     {
+      "name": "ForexFactory – Lịch kinh tế (20:45 PMI sơ bộ, 21:00 Michigan sửa đổi; tin cam, không có tin đỏ USD)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "article_en": {
+    "sections": [
+     {
+      "h": "The Big Picture",
+      "p": "Gold broke the 4,100–4,150 base it had held all quarter on Thursday, then flushed to 3,987.85 at 10:00 PM ET in Asia before bouncing; it's chopping around 4,006 now. Brent is holding near $113.60, the highest since May, on reports of renewed U.S.-Israeli strike plans on Iran, Houthi attacks on Saudi Arabia and tanker hits around Hormuz. The 10-year fell more than 17 basis points to close at 4.972% (CNBC) – the biggest one-day drop since March 2023 – and sits near 4.966% now. The dollar index is flat around 101.67. Gold didn't get the usual lift from lower yields: the AI-driven stock selloff turned it into a source of cash. FedWatch puts next week's hike odds at only ~7–10%, but December is still ~75–80%. Higher-for-longer is the weight on gold; the war headlines are whipping it around, not holding it up."
+     },
+     {
+      "h": "Scenarios",
+      "p": "🔻 Base case (~55%): a technical bounce into 4,031–4,054 gets sold and gold retests 3,988. A break there opens 3,965 → 3,945.\n🔺 Alternative (~30%): weekend short-covering takes back 4,054 and lifts gold into 4,064–4,072 – heavy resistance, tough to clear today.\n⚠️ Tail (~15%): a clean break of 3,943 (the late-June year-to-date low) – a fast drop toward 3,900 is on the table."
+     },
+     {
+      "h": "Key Levels",
+      "p": "Resistance: 4,024 (23.6% retrace) · 4,031–4,036 (FVG, Asia high) · 4,046–4,054 (38.2% + FVG) · 4,063–4,072 (50% + FVG – the line in the sand) · 4,101–4,109 (old base, now the ceiling).\nSupport: 3,983–3,988 (Asia low) · 3,960–3,970 · 3,943 (year-to-date low) · 3,900."
+     },
+     {
+      "h": "U.S. Calendar Today",
+      "p": "9:45 AM ET flash manufacturing and services PMIs · 10:00 AM ET revised University of Michigan sentiment and inflation expectations.\nBoth are medium impact – no high-impact U.S. data today – and usually good for a $10–$20 jolt. Watch the UMich inflation-expectations line with oil this high: a jump there hands sellers another reason."
+     },
+     {
+      "h": "📋 Trade Plan",
+      "p": "🔴 SELL 4,046–4,054 | Stop 4,072 | TP1 4,024 → TP2 3,990\n🟢 BUY 3,945–3,960 | Stop 3,930 | TP1 3,988 → TP2 4,024\nEntry: only when price tags the zone and a 45m/1H bar closes in your favor (red to sell, green to buy). Don't short the hole at 4,000–4,010.\nInvalidation: a 1H close above 4,072 cancels the short (next up 4,083 → 4,101–4,109); a 1H close under 3,930 cancels the long.\nNote: flash PMIs 9:45 AM ET, UMich 10:00 AM ET – trim and tighten stops before the prints. It's Friday and the Fed meets Oct 27–28: go light into the weekend in case Iran/Israel headlines gap the open."
+     },
+     {
+      "h": "Other Headlines",
+      "p": "• 3:19 PM ET Thu – CNBC: Brent tops $113, the highest since May, after Trump hints at action on Iran → expensive crude feeds the higher-for-longer story, a weight on gold.\nhttps://www.cnbc.com/2026/10/22/oil-prices-today-wti-brent-saudi-arabia.html\n• 4:05 PM ET Thu – CNBC: the 10-year fell more than 17 bp to 4.972%, its biggest one-day drop since March 2023 → supportive over time, but gold didn't follow today.\nhttps://www.cnbc.com/2026/10/22/treasurys-bonds-ai-yields.html\n• 9:42 PM ET Thu – CNBC: Nasdaq lost more than 2%, its worst day since June, on AI-spending fears → in a stock rout gold often gets sold to cover margin.\nhttps://www.cnbc.com/2026/10/23/cnbc-daily-open-ai-spending-elon-musk-bill-ackman-jensen-huang.html\n• ~8:36 PM ET Thu – Reuters: gold heads for its sharpest weekly drop in four months; ~7% odds of a hike next week, ~81% for December → rates are still the anchor.\nhttps://www.businesstimes.com.sg/companies-markets/energy-commodities/gold-heads-sharpest-weekly-decline-four-months-fed-rate-outlook\n• ~8:39 PM ET Thu – Bloomberg: gold holds near a three-month low; Global X calls it a liquidity-driven selloff, flags $3,900 as critical and still sees a V-shaped recovery → near-term pressure, long-term buyers waiting lower.\nhttps://www.livemint.com/market/gold-holds-near-three-month-low-as-ai-jitters-fuel-volatility-11792715984506.html\n• ~8:30 PM ET Thu – Reuters: oil little changed in early Asia as supply worries linger after Houthi attacks on Saudi Arabia → geopolitics still hot, expect two-way whipsaws.\nhttps://www.arabnews.com/business/oil-little-changed-as-supply-concern-lingers-amid-houthi-attacks-on-saudi-arabia-3007831"
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Brent crude tops $113, highest since May, after Trump hints at action on Iran (3:19 PM ET Oct 22)",
+      "url": "https://www.cnbc.com/2026/10/22/oil-prices-today-wti-brent-saudi-arabia.html"
+     },
+     {
+      "name": "CNBC – 10-year Treasury yield tumbles below 5% to lowest level in nearly a month (4:05 PM ET Oct 22)",
+      "url": "https://www.cnbc.com/2026/10/22/treasurys-bonds-ai-yields.html"
+     },
+     {
+      "name": "CNBC Daily Open – AI spending fears haunt markets before Halloween (9:42 PM ET Oct 22)",
+      "url": "https://www.cnbc.com/2026/10/23/cnbc-daily-open-ai-spending-elon-musk-bill-ackman-jensen-huang.html"
+     },
+     {
+      "name": "Reuters (Business Times) – Gold heads for sharpest weekly decline in four months on Fed rate outlook (~8:36 PM ET Oct 22)",
+      "url": "https://www.businesstimes.com.sg/companies-markets/energy-commodities/gold-heads-sharpest-weekly-decline-four-months-fed-rate-outlook"
+     },
+     {
+      "name": "Bloomberg (Mint) – Gold holds near three-month low as AI jitters fuel volatility (~8:39 PM ET Oct 22)",
+      "url": "https://www.livemint.com/market/gold-holds-near-three-month-low-as-ai-jitters-fuel-volatility-11792715984506.html"
+     },
+     {
+      "name": "Reuters (Arab News) – Oil little changed as supply concern lingers amid Houthi attacks on Saudi Arabia (~8:30 PM ET Oct 22)",
+      "url": "https://www.arabnews.com/business/oil-little-changed-as-supply-concern-lingers-amid-houthi-attacks-on-saudi-arabia-3007831"
+     },
+     {
+      "name": "ForexFactory – Economic calendar (9:45 AM ET flash PMIs, 10:00 AM ET revised UMich; medium impact, no high-impact U.S. data)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   }
+  },
+  {
    "id": "2026-10-22-phien-my-1915",
    "date": "2026-10-22",
    "time": "19:15",

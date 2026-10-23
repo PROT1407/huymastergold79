@@ -40,7 +40,7 @@
     'lien-he.html': 'en/contact.html', 'bai/index.html': 'en/posts/index.html' };
   /* bài tĩnh: bai/<date>-nhan-dinh-vang-<phiên>[-hhmm].html <-> en/posts/<date>-gold-plan-<session>[-hhmm].html; tin vĩ mô <-> gold-macro-news (khớp scripts/build-seo.py) */
   const POST_SES = [['phien-au-my', 'london-ny-overlap'], ['phien-au', 'london-session'], ['phien-my', 'new-york-session'], ['phien-a', 'asian-session'], ['phien-dem', 'new-york-session']];
-  const EN_ALIAS = { 'bai/2026-10-16-nhan-dinh-vang-phien-dem-2107.html': 'en/posts/2026-10-16-gold-plan-ny-morning-update.html' };
+  const EN_ALIAS = { 'bai/2026-10-16-nhan-dinh-vang-phien-dem-2107.html': 'en/posts/2026-10-16-gold-plan-ny-morning-update.html', 'bai/2026-10-23-nhan-dinh-vang-nhan-dinh-chung-1130.html': 'en/posts/2026-10-23-gold-plan-daily-outlook-1130.html' };
   const postEN = f => { if (EN_ALIAS[f]) return EN_ALIAS[f]; let m = /^bai\/(\d{4}-\d\d-\d\d)-nhan-dinh-vang-(phien-[a-z-]+?)(-\d{4})?\.html$/.exec(f); if (m) { const s = POST_SES.find(x => x[0] === m[2]); return s ? `en/posts/${m[1]}-gold-plan-${s[1]}${m[3] || ''}.html` : null; }
     m = /^bai\/(\d{4}-\d\d-\d\d)-tin-vi-mo-anh-huong-gia-vang\.html$/.exec(f); return m ? `en/posts/${m[1]}-gold-macro-news.html` : null; };
   const postVI = f => { const al = Object.keys(EN_ALIAS).find(k => EN_ALIAS[k] === f); if (al) return al; let m = /^en\/posts\/(\d{4}-\d\d-\d\d)-gold-plan-([a-z-]+?)(-\d{4})?\.html$/.exec(f); if (m) { const s = POST_SES.find(x => x[1] === m[2]); return s ? `bai/${m[1]}-nhan-dinh-vang-${s[0]}${m[3] || ''}.html` : null; }
