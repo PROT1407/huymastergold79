@@ -1,6 +1,301 @@
 {
  "strategies": [
   {
+   "id": "2026-10-23-phien-my-1915",
+   "date": "2026-10-23",
+   "time": "19:15",
+   "session": "Phiên Mỹ",
+   "session_en": "New York Session",
+   "url": "bai/2026-10-23-nhan-dinh-vang-phien-my-1915.html",
+   "url_en": "en/posts/2026-10-23-gold-plan-new-york-session-1915.html",
+   "headline": "Vàng 23/10 phiên Mỹ: kẹt biên 4.010–4.030 chờ tin PMI – BÁN FVG 4.036–4.044, MUA ngắn 4.008–4.013",
+   "headline_en": "H79 Gold Plan – New York Session, Oct 23: Boxed In at 4,010–4,030 Ahead of PMIs – Sell 4,036–4,044, Buy 4,008–4,013",
+   "title": "Vàng 23/10 phiên Mỹ: kẹt biên 4.010–4.030 chờ tin PMI – BÁN FVG 4.036–4.044, MUA ngắn 4.008–4.013",
+   "title_en": "H79 Gold Plan – New York Session, Oct 23: Boxed In at 4,010–4,030 Ahead of PMIs – Sell 4,036–4,044, Buy 4,008–4,013",
+   "image": "img/charts/gold-2026-10-23-phien-my-1915.png",
+   "image_alt": "Biểu đồ vàng 45 phút 23/10 phiên Mỹ: đáy phiên Á 3.987,9, phiên Âu đi ngang 4.010–4.030; các vùng FVG chưa lấp; vùng BÁN 4.036–4.044, vùng MUA 4.008–4.013",
+   "image_en": "img/charts/gold-2026-10-23-ny-1915-en.png",
+   "image_alt_en": "Gold 45-minute chart, New York session Oct 23: overnight low 3,987.85, London range 4,010–4,030; unfilled fair value gaps; sell zone 4,036–4,044, buy zone 4,008–4,013",
+   "trend": "Ngắn hạn giảm, trong ngày đi ngang: vàng gãy nền 4.100–4.150, đáy 3.987,9 rồi hồi và kẹt biên 4.010–4.030 suốt phiên Âu. Trên đầu còn FVG giảm chưa lấp 4.033–4.044 và 4.048–4.051. Bán hồi ở 4.036–4.044; chỉ mua nhịp ngắn ở FVG tăng 4.008–4.013 khi có nến xác nhận.",
+   "trend_en": "Short-term bearish, flat on the day: gold broke the 4,100–4,150 base, flushed to 3,987.85 and has been stuck in a 4,010–4,030 box all of London. Unfilled bearish gaps sit overhead at 4,033–4,044 and 4,048–4,051. Sell a pop into 4,036–4,044; buy only a quick dip into the 4,008–4,013 bullish gap on a confirming close.",
+   "trendType": "down",
+   "support": [
+    4022,
+    4013,
+    4010,
+    4008,
+    3998,
+    3988
+   ],
+   "resistance": [
+    4030,
+    4036,
+    4044,
+    4050,
+    4052,
+    4063
+   ],
+   "entryZones": [
+    "Mua 4.008 – 4.013 (FVG tăng 45m 4.007,6–4.012,3, trùng đáy phiên Âu 4.010,0). Vào khi giá chạm vùng và có nến 45m hoặc 1H đóng xanh. Dừng lỗ 3.998 (dưới 4.000 và đáy hồi 4.001,8). TP1 4.026 – chốt 50–70%, dời SL về điểm vào; TP2 4.036. Đây là lệnh ngược xu hướng, vào nhỏ. Nến 1H đóng dưới 3.998 thì bỏ mua."
+   ],
+   "entryZones_en": [
+    "Buy 4,008–4,013 (the 45m bullish gap at 4,007.6–4,012.3, right on the 4,010.04 London low). Enter on a green 45m or 1H close in the zone. Stop 3,998 (under 4,000 and the 4,001.84 higher low). TP1 4,026 – take 50–70%, stop to breakeven; TP2 4,036. This is against the trend – keep it small. A 1H close under 3,998 cancels the long."
+   ],
+   "sellZones": [
+    "Bán 4.036 – 4.044 (FVG giảm 45m 4.033,8–4.039,1 nối FVG 15m 4.039,5–4.044,2, trên đỉnh phiên Âu 4.030,0). Vào khi giá chạm vùng và có nến 45m hoặc 1H đóng đỏ. Không bán đuổi trong biên 4.015–4.025. Dừng lỗ 4.052 (trên FVG 1H 4.048,0–4.050,6). TP1 4.022 – chốt 50–70%, dời SL hòa vốn; TP2 4.010. Nến 1H đóng trên 4.052 thì bỏ bán."
+   ],
+   "sellZones_en": [
+    "Sell 4,036–4,044 (the 45m bearish gap at 4,033.8–4,039.1 running into the 15m gap at 4,039.5–4,044.2, above the 4,029.99 London high). Enter on a red 45m or 1H close in the zone. Don't short the middle of the 4,015–4,025 box. Stop 4,052 (over the 1H gap at 4,048.0–4,050.6). TP1 4,022 – take 50–70%, stop to breakeven; TP2 4,010. A 1H close above 4,052 cancels the short."
+   ],
+   "scenarios": [
+    "Kế hoạch: BÁN 4.036–4.044 (SL 4.052 · TP1 4.022 → TP2 4.010) · MUA 4.008–4.013 (SL 3.998 · TP1 4.026 → TP2 4.036). Chạm vùng FVG + nến 45m/1H đóng xác nhận.",
+    "Kịch bản chính (~50%): tin PMI đẩy giá lên lấp FVG 4.036–4.044 rồi bị bán, về 4.022–4.010.",
+    "Kịch bản phụ (~30%): rơi về FVG 4.008–4.013, có nến xanh – mua nhịp ngắn về 4.026.",
+    "Kịch bản xấu (~20%): nến 1H đóng dưới 3.998 – không mua, mốc kế 3.987,9 rồi 3.960; đóng trên 4.052 – bỏ bán, mốc kế 4.063–4.074.",
+    "Rủi ro: 20:45 PMI Mỹ, 21:00 Michigan (không có tin đỏ USD); Fed họp 27–28/10; tin Iran – Houthi cuối tuần."
+   ],
+   "scenarios_en": [
+    "The plan: sell 4,036–4,044 (stop 4,052 · TP1 4,022 → TP2 4,010) · buy 4,008–4,013 (stop 3,998 · TP1 4,026 → TP2 4,036). Gap tap plus a confirming 45m/1H close.",
+    "Base case (~50%): the PMI print pops gold into the 4,036–4,044 gap and it fails, back to 4,022–4,010.",
+    "Alternative (~30%): a dip into the 4,008–4,013 gap prints a green close – buy for a quick pop to 4,026.",
+    "Plan-breaker (~20%): a 1H close under 3,998 – no long, next 3,987.85 then 3,960; a close above 4,052 cancels the short, next up 4,063–4,074.",
+    "Risk: U.S. flash PMIs 9:45 AM ET, UMich 10:00 AM ET (no high-impact U.S. data); the Fed meets Oct. 27–28; weekend Iran/Houthi headlines."
+   ],
+   "macro": [],
+   "macro_en": [],
+   "market_picture": {
+    "text": "Vàng vẫn đang hướng tới tuần tệ nhất từ tháng 6, mất khoảng 3,5%. Câu chuyện chưa đổi: Brent lên gần 115 USD, cao nhất hơn 5 tháng, vì Houthi đánh vào Ả Rập Xê Út. Dầu đắt giữ lạm phát dai, CME FedWatch cho xác suất Fed tăng lãi tháng 12 khoảng 81% – vàng không có lãi nên khó ngóc đầu. Lợi suất 10 năm nhích lại 4,99%, USD lên 101,76, hợp đồng S&P giảm 0,35% trước giờ mở cửa. Phía đỡ giá là mốc 4.000: phe mua đã giữ được sau cú quét 3.987,9 và phiên Âu chỉ đi ngang 4.010–4.030. Quan điểm: xu hướng vẫn giảm, tin PMI tối nay nếu đẩy giá lên 4.036–4.044 là chỗ bán. Chỉ mua nhịp ngắn ở 4.008–4.013 khi có nến xác nhận, vì Fed họp tuần sau và cuối tuần tin chiến sự có thể làm giá nhảy.",
+    "chips": [
+     {
+      "k": "XAU",
+      "v": "4.027,5 +0,09%",
+      "dir": "up"
+     },
+     {
+      "k": "DXY",
+      "v": "101,76 +0,15%",
+      "dir": "up"
+     },
+     {
+      "k": "US10Y",
+      "v": "4,986%",
+      "dir": "up"
+     },
+     {
+      "k": "US2Y",
+      "v": "4,686%",
+      "dir": "up"
+     },
+     {
+      "k": "Brent",
+      "v": "114,98 +1,6%",
+      "dir": "up"
+     },
+     {
+      "k": "WTI",
+      "v": "101,47 +2,0%",
+      "dir": "up"
+     },
+     {
+      "k": "S&P 500 fut.",
+      "v": "7.678 −0,35%",
+      "dir": "down"
+     },
+     {
+      "k": "Nasdaq fut.",
+      "v": "29.087 −0,19%",
+      "dir": "down"
+     },
+     {
+      "k": "Bạc",
+      "v": "53,90 −1,1%",
+      "dir": "down"
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC (Reuters) – Vàng bật khỏi đáy 3 tháng khi dầu tăng làm nóng lo ngại lạm phát (cập nhật chiều 23/10)",
+      "url": "https://www.cnbc.com/2026/10/23/gold-heads-for-steep-weekly-loss-as-oil-prices-fuel-fed-rate-concerns.html"
+     },
+     {
+      "name": "TRT World – Vàng yếu khi lo ngại lạm phát tăng, dầu và khí đốt bật mạnh (23/10)",
+      "url": "https://www.trtworld.com/article/7181e8f61888"
+     },
+     {
+      "name": "ForexFactory – Lịch kinh tế (20:45 PMI sơ bộ Mỹ, 21:00 Michigan sửa đổi; không có tin đỏ USD)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "market_picture_en": {
+    "text": "Gold is still on track for its worst week since June, down about 3.5%, and it's the same story: Brent is near $115, a five-month high, after Houthi strikes on Saudi Arabia. Pricey crude keeps inflation sticky, and CME FedWatch has a December hike at roughly 81% – a tough backdrop for a metal that pays nothing. The 10-year is back up to 4.99%, the dollar is at 101.76 and S&P futures are off 0.35% ahead of the open. What's holding gold up is 4,000: buyers defended it after the 3,987.85 flush, and London just chopped 4,010–4,030. My take: the trend is still down, and if the PMIs pop gold into 4,036–4,044, I'm a seller. I'll only buy a quick dip into 4,008–4,013 on a confirming close – the Fed meets next week and weekend headlines can gap this market.",
+    "chips": [
+     {
+      "k": "XAU",
+      "v": "4,027.5 +0.09%",
+      "dir": "up"
+     },
+     {
+      "k": "DXY",
+      "v": "101.76 +0.15%",
+      "dir": "up"
+     },
+     {
+      "k": "US10Y",
+      "v": "4.986%",
+      "dir": "up"
+     },
+     {
+      "k": "US2Y",
+      "v": "4.686%",
+      "dir": "up"
+     },
+     {
+      "k": "Brent",
+      "v": "114.98 +1.6%",
+      "dir": "up"
+     },
+     {
+      "k": "WTI",
+      "v": "101.47 +2.0%",
+      "dir": "up"
+     },
+     {
+      "k": "S&P 500 fut.",
+      "v": "7,678 −0.35%",
+      "dir": "down"
+     },
+     {
+      "k": "Nasdaq fut.",
+      "v": "29,087 −0.19%",
+      "dir": "down"
+     },
+     {
+      "k": "Silver",
+      "v": "53.90 −1.1%",
+      "dir": "down"
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC (Reuters) – Gold off three-month lows as oil rally fans inflation worries",
+      "url": "https://www.cnbc.com/2026/10/23/gold-heads-for-steep-weekly-loss-as-oil-prices-fuel-fed-rate-concerns.html"
+     },
+     {
+      "name": "TRT World – Gold weakens as inflation fears mount, oil and gas prices jump",
+      "url": "https://www.trtworld.com/article/7181e8f61888"
+     },
+     {
+      "name": "ForexFactory – Economic calendar (U.S. flash PMIs 9:45 AM ET, revised UMich 10:00 AM ET; no high-impact U.S. data)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "physicalAdvice": "Làm theo kế hoạch, đừng chạy theo nến tin.",
+   "physicalAdvice_en": "Trade the plan, not the noise.",
+   "notes": "Các mốc là giá giao ngay XAU/USD (CNBC XAU= 4.027,5 lúc 19:25; gold-api.com 4.029,2 lúc 19:25). Khung 45m dựng từ nến 5m giao ngay CNBC (gộp theo mốc epoch). Phiên Âu: cao 4.030,0 (18:25) · thấp 4.010,0 (15:10). FVG chưa lấp – giảm: 45m 4.033,8–4.039,1 · 4.048,5–4.050,6; 15m 4.039,5–4.044,2 · 4.064,6–4.074,5; 1H 4.048,0–4.050,3; tăng: 45m 4.007,6–4.012,3 (đã lấp một phần) · 15m 4.017,2–4.021,1. Bộ lọc H79: giá dưới MA34 và MA89 từ 45m đến 4H, nửa dưới dải BB90 trên mọi khung; RSI 1H 46, 4H 28.",
+   "notes_en": "Levels are spot XAU/USD (CNBC XAU= 4,027.51 at 8:25 AM ET; gold-api.com 4,029.20 at 8:25 AM ET). The 45m frame is built from CNBC XAU= spot 5-minute bars (anchored to the epoch). London range: high 4,029.99 (7:25 AM ET) · low 4,010.04 (4:10 AM ET). Unfilled gaps – bearish: 45m 4,033.8–4,039.1 · 4,048.5–4,050.6; 15m 4,039.5–4,044.2 · 4,064.6–4,074.5; 1H 4,048.0–4,050.3; bullish: 45m 4,007.6–4,012.3 (partly filled) · 15m 4,017.2–4,021.1. H79 filter: price is under the MA34 and MA89 from the 45m through the 4H and in the lower half of the BB90 on every frame; RSI 46 on the 1H, 28 on the 4H.",
+   "dataTime": "Cập nhật 19:20–19:40 ngày 23/10/2026 giờ VN (trước tin Mỹ và giờ mở cửa Phố Wall). Nến 5m và 1H giao ngay CNBC XAU=; gold-api.com XAU; DXY, US10Y, US2Y, Brent, WTI, S&P fut, Nasdaq fut, bạc từ CNBC; lịch tin ForexFactory.",
+   "dataTime_en": "Updated 8:20–8:40 AM ET, Friday Oct 23, 2026 (before the U.S. data and the opening bell). Spot 5-minute and hourly bars from CNBC XAU=; gold-api.com XAU; DXY, US10Y, US2Y, Brent, WTI, S&P and Nasdaq futures and silver from CNBC; calendar from ForexFactory.",
+   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+   "brief": true,
+   "summary": {
+    "trend": "down",
+    "trendText": "Ngắn hạn giảm – dầu gần 115 USD giữ kỳ vọng Fed tăng lãi, vàng kẹt biên 4.010–4.030 chờ tin PMI; bán hồi ở FVG 4.036–4.044, chỉ mua nhịp ngắn ở 4.008–4.013 khi có nến xác nhận",
+    "trendText_en": "Short-term bearish – near-$115 Brent keeps a Fed hike priced in and gold is boxed at 4,010–4,030 into the PMIs; sell a pop into the 4,036–4,044 gap, buy only a quick dip into 4,008–4,013 on a confirming close",
+    "sell": {
+     "zone": "4.036 – 4.044",
+     "sl": "4.052",
+     "tp": "4.022 → 4.010",
+     "zone_en": "4,036–4,044",
+     "sl_en": "4,052",
+     "tp_en": "TP1 4,022 → TP2 4,010"
+    },
+    "buy": {
+     "zone": "4.008 – 4.013",
+     "sl": "3.998",
+     "tp": "4.026 → 4.036",
+     "zone_en": "4,008–4,013",
+     "sl_en": "3,998",
+     "tp_en": "TP1 4,026 → TP2 4,036"
+    },
+    "note": "Không có tin đỏ USD tối nay – 20:45 PMI Mỹ, 21:00 Michigan (tin cam). Chỉ vào khi chạm vùng FVG + nến 45m/1H đóng xác nhận; dời SL hòa vốn khi chạm TP1, cuối tuần nhẹ vị thế. Nến 1H đóng trên 4.052 bỏ bán; dưới 3.998 bỏ mua.",
+    "note_en": "No high-impact U.S. data today – flash PMIs 9:45 AM ET, UMich 10:00 AM ET (medium impact). Only on a gap tap plus a confirming 45m/1H close; stops to breakeven at TP1, stay light into the weekend. A 1H close above 4,052 cancels the short; below 3,998 cancels the long.",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD",
+    "priceNote_en": "Spot XAU/USD prices"
+   },
+   "article": {
+    "sections": [
+     {
+      "h": "Nhìn lại phiên Âu",
+      "p": "Phiên Âu đi ngang trong biên 4.010–4.030: đỉnh 4.030,0 còn thiếu 3 giá tới vùng BÁN 4.033–4.039, đáy 4.010,0 chỉ chạm sát mép vùng MUA 4.005–4.010. Cả hai lệnh chưa khớp, tiếc là không có vị thế vào lệnh. Thông thường, phiên Âu thứ Sáu đi ngang hẹp thì phiên Mỹ sẽ phá một đầu biên khi ra tin – nên vùng bán phiên này đặt cao hơn một nấc."
+     },
+     {
+      "h": "Kế hoạch phiên Mỹ",
+      "p": "🔴 BÁN 4.036 – 4.044 | SL 4.052 | TP1 4.022 → TP2 4.010\n🟢 MUA 4.008 – 4.013 (nhịp ngắn) | SL 3.998 | TP1 4.026 → TP2 4.036\nVào lệnh: giá chạm vùng FVG và có nến 45m hoặc 1H đóng xác nhận (đỏ để bán, xanh để mua). Không vào trong 15 phút quanh 20:45.\nVô hiệu: nến 1H đóng trên 4.052 bỏ bán – mốc kế 4.063–4.074; đóng dưới 3.998 bỏ mua – đáy 3.987,9 dễ bị quét lại.\nChính (~50%): tin PMI đẩy giá lên lấp FVG 4.036–4.044 rồi bị bán, về 4.022–4.010.\nPhụ (~30%): rơi về FVG 4.008–4.013, có nến xanh – mua nhịp ngắn về 4.026.\nXấu (~20%): đóng 1H dưới 3.998 – không mua, mốc kế 3.987,9 rồi 3.960.\nLưu ý: tối nay không có tin đỏ USD – 20:45 PMI sơ bộ Mỹ, 21:00 Michigan sửa đổi và kỳ vọng lạm phát (tin cam); 20:30 Phố Wall mở cửa. Cuối tuần, Fed họp 27–28/10 và tin Iran – Houthi có thể làm giá giật – nhẹ vị thế, dời SL hòa vốn khi chạm TP1."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC (Reuters) – Vàng bật khỏi đáy 3 tháng khi dầu tăng làm nóng lo ngại lạm phát (cập nhật chiều 23/10)",
+      "url": "https://www.cnbc.com/2026/10/23/gold-heads-for-steep-weekly-loss-as-oil-prices-fuel-fed-rate-concerns.html"
+     },
+     {
+      "name": "TRT World – Vàng yếu khi lo ngại lạm phát tăng, dầu và khí đốt bật mạnh (23/10)",
+      "url": "https://www.trtworld.com/article/7181e8f61888"
+     },
+     {
+      "name": "ForexFactory – Lịch kinh tế (20:45 PMI sơ bộ Mỹ, 21:00 Michigan sửa đổi; không có tin đỏ USD)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "article_en": {
+    "sections": [
+     {
+      "h": "Looking back at the London session",
+      "p": "London chopped inside a 4,010–4,030 box: the high at 4,029.99 stopped $3 short of the 4,033–4,039 sell zone and the 4,010.04 low barely kissed the top of the 4,005–4,010 buy zone. Neither order filled, so no position. A tight Friday London range usually breaks one way once New York gets its data, so the short moves up a notch."
+     },
+     {
+      "h": "New York Session Plan",
+      "p": "🔴 SELL 4,036–4,044 | Stop 4,052 | Targets 4,022 → 4,010\n🟢 BUY 4,008–4,013 (quick trade) | Stop 3,998 | Targets 4,026 → 4,036\nEntry: price taps the fair value gap and a 45m or 1H bar closes in our favor (red to sell, green to buy). Stand aside for 15 minutes around 9:45 AM ET.\nInvalidation: a 1H close above 4,052 cancels the short – next up 4,063–4,074; a close under 3,998 cancels the long – the 3,987.85 low is back in play.\nBase case (~50%): the PMI print pops gold into the 4,036–4,044 gap and it fails, back to 4,022–4,010.\nAlternative (~30%): gold dips into the 4,008–4,013 gap and prints a green close – buy for a quick pop to 4,026.\nPlan-breaker (~20%): a 1H close under 3,998 – no long; next stops 3,987.85, then 3,960.\nNote: no high-impact U.S. data today – flash PMIs 9:45 AM ET, revised UMich sentiment and inflation expectations 10:00 AM ET (medium impact); stocks open 9:30 AM ET. It's Friday, the Fed meets Oct. 27–28 and Iran/Houthi headlines can gap things – stay light and move stops to breakeven at TP1."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC (Reuters) – Gold off three-month lows as oil rally fans inflation worries",
+      "url": "https://www.cnbc.com/2026/10/23/gold-heads-for-steep-weekly-loss-as-oil-prices-fuel-fed-rate-concerns.html"
+     },
+     {
+      "name": "TRT World – Gold weakens as inflation fears mount, oil and gas prices jump",
+      "url": "https://www.trtworld.com/article/7181e8f61888"
+     },
+     {
+      "name": "ForexFactory – Economic calendar (U.S. flash PMIs 9:45 AM ET, revised UMich 10:00 AM ET; no high-impact U.S. data)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   }
+  },
+  {
    "id": "2026-10-23-phien-au-1345",
    "date": "2026-10-23",
    "time": "13:45",

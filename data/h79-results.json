@@ -2,28 +2,65 @@
  "_note": "Nhật ký kết quả kế hoạch H79. Win = TP1 trước SL; loss = SL trước; hết phiên = P/L tại lúc đánh giá. MFE tính bằng giá ($1/oz). tp1_hit/tp2_hit ghi lại mỗi khi giá chạm TP (kể cả sau đó giá quay lại).",
  "plans": [
   {
-   "id": "2026-10-23-phien-au-1345",
+   "id": "2026-10-23-phien-my-1915",
    "date": "2026-10-23",
-   "session": "Phiên Âu",
+   "session": "Phiên Mỹ",
    "evaluated_at_vn": null,
    "price_ref": "spot",
    "sell": {
-    "zone": "4.033 – 4.039",
-    "sl": "4.047",
-    "tp1": "4.021",
+    "zone": "4.036 – 4.044",
+    "sl": "4.052",
+    "tp1": "4.022",
     "tp2": "4.010",
     "zone_filled": null,
     "result": "mở",
     "mfe": null
    },
    "buy": {
+    "zone": "4.008 – 4.013",
+    "sl": "3.998",
+    "tp1": "4.026",
+    "tp2": "4.036",
+    "zone_filled": null,
+    "result": "mở",
+    "mfe": null
+   }
+  },
+  {
+   "id": "2026-10-23-phien-au-1345",
+   "date": "2026-10-23",
+   "session": "Phiên Âu",
+   "evaluated_at_vn": "19:30 23/10/2026",
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.033 – 4.039",
+    "sl": "4.047",
+    "tp1": "4.021",
+    "tp2": "4.010",
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "entry": null,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "shortfall_to_zone": 3.0,
+    "note": "Sau 13:45 cao nhất 4.030,0 (18:25) – thiếu 3,0 giá tới vùng bán. Phiên Âu đi ngang 4.010–4.030. Thay bằng kế hoạch Phiên Mỹ 19:15. Nguồn CNBC XAU= 5m."
+   },
+   "buy": {
     "zone": "4.005 – 4.010",
     "sl": "3.996",
     "tp1": "4.022",
     "tp2": "4.031",
-    "zone_filled": null,
-    "result": "mở",
-    "mfe": null
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "entry": null,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "shortfall_to_zone": 0.04,
+    "note": "Thấp nhất sau 13:45 là 4.010,04 (15:10) – chỉ cách mép trên vùng mua 0,04 giá, không vào vùng. Tiếc là không có vị thế vào lệnh. Thay bằng kế hoạch Phiên Mỹ 19:15. Nguồn CNBC XAU= 5m."
    }
   },
   {
