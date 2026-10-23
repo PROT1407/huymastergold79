@@ -35,7 +35,7 @@
     "Người mua ở đỉnh bán ra 191,3 triệu (29/01/2026) nếu bán lại hôm nay với giá mua vào 139,0 triệu sẽ lỗ khoảng 52,3 triệu đồng/lượng (≈ 27,3%); so với một tuần trước (16/10: 140,9 – 143,9 triệu), SJC thấp hơn 1,9 triệu mỗi chiều.",
     "Theo CNBC, giá dầu tăng vì căng thẳng ở Ả Rập Xê Út làm lo ngại lạm phát và khả năng Fed tăng lãi suất tháng 12 nóng lên, kéo vàng xuống mức thấp nhất hơn hai tuần. Khi thế giới rơi nhanh mà trong nước giảm nhỏ giọt, chênh lệch 17 triệu là rủi ro lớn nhất với người mua vàng miếng lúc này."
   ],
-  "advice": "Ngắn hạn vàng vẫn bị lợi suất Mỹ đè, chưa có tín hiệu đảo chiều – nhưng giá đã về vùng nền 4.100–4.150 USD/oz.\nKhông cần chờ dưới 100 triệu, cũng đừng dồn hết tiền một lần.\nCần mua thì chia 3 phần. Phần 1 mua quanh giá hiện tại.\nPhần 2 để dành, mua khi thế giới lùi về 4.040–4.100.\nPhần 3 chỉ mua khi giá đóng cửa ngày trên vùng 4.200–4.235 – lúc đó xu hướng mới thật sự quay lên.\nĐóng cửa ngày dưới 4.037 thì dừng mua, chờ nền mới.\nSJC đang đắt hơn thế giới khoảng 17 triệu/lượng, mua – bán chênh 3 triệu: tiền cần dùng trong vài tháng thì đừng mua vàng miếng lúc này.\nMua để giữ dài hạn thì được, nhưng đừng đuổi theo nhịp tăng trong ngày.",
+  "advice": "Sáng nay phiên Á, vàng thủng vùng 4.100–4.150 USD/oz – vùng nền của cả quý, cả tháng – rồi rơi về 3.988.\nNền đã gãy thì đừng vội nghĩ \"giá rẻ rồi\".\nNgắn hạn, mình thấy rủi ro về 3.700–3.600. Trung hạn có thể xuống 3.500.\nQuy ra tiền: 3.700–3.600 ≈ 115–112 triệu/lượng, 3.500 ≈ 109 triệu (giá thế giới, chưa thuế phí).\nNếu SJC vẫn đắt hơn thế giới khoảng 17 triệu như hôm nay, vàng miếng sẽ quanh 132–129 triệu, và quanh 126 triệu ở vùng 3.500.\nĐừng bắt dao rơi. Chưa cần thì cứ cầm tiền, chờ.\nMuốn mua thì chia phần: một phần khi thế giới về 3.700–3.600, phần lớn hơn để dành cho vùng 3.500.\nKhoản chênh 17 triệu là chi phí mình trả thêm. Giá rơi mạnh, khoản này có thể co lại – lúc đó SJC còn có thể thấp hơn các mức trên.\nAi lỡ mua ở đỉnh 191,3 triệu: đừng hoảng mà bán tháo, cũng đừng vội bình quân giá xuống. Chỉ mua thêm bằng tiền nhàn rỗi, đúng vùng giá đã tính.",
   "_ghi_chu": "Phần giá/lịch sử/world/sjc_compare do scripts/update-vn-gold.py tự sinh. peak/refs/analysis/advice/world_news/quick_advice: sửa tay (chỉ số liệu có nguồn). world_news: mỗi mục {text (1 dòng tiếng Việt), source:{name,url}, intl}; luôn giữ ≥1 nguồn quốc tế (ưu tiên CNBC, rồi Reuters/Kitco/Bloomberg), bài trong ngày, link đã kiểm tra.",
   "updated_vn": "08:51 23/10/2026",
   "rows": [
@@ -629,7 +629,7 @@
     "A buyer at the 191.3 million peak ask (Jan 29, 2026) selling back today at the 139.0 million bid would be down about 52.3 million VND per tael (≈ 27.3%); versus a week ago (Oct 16: 140.9–143.9 million), SJC is 1.9 million lower on both sides.",
     "Per CNBC, an oil rally on tensions in Saudi Arabia revived inflation worries and bets on a December Fed hike, pushing gold to a more-than-two-week low. With world prices falling fast and local prices only edging down, the 17 million premium is the biggest risk for bar buyers right now."
   ],
-  "advice_en": "Near term, gold is still pinned down by a 5.1% 10-year yield, and there's no reversal signal yet – but price is sitting on the $4,100–$4,150 base.\nThis isn't the place to dump metal, and it isn't the place to go all in either.\nIf you need to buy, split it into three pieces. Buy the first piece around here.\nHold the second for a dip to $4,040–$4,100.\nBuy the third only on a daily close above $4,200–$4,235 – that's when the trend actually turns.\nA daily close below $4,037 means stop adding and wait for a new base.\nMind the dealer premium and the bid/ask spread on bars and coins: money you'll need within a few months doesn't belong in physical gold.\nBuying to hold for years is fine – just don't chase the intraday pops.",
+  "advice_en": "Gold broke down through $4,100–$4,150 – the base that held all quarter and all month – and hit $3,988 in Asian trading this morning.\nOnce a base like that gives way, \"cheap\" isn't a reason to buy.\nShort term, the risk is a slide toward $3,700–$3,600. Medium term, $3,500 is in play.\nDon't try to catch a falling knife. If you don't need the metal now, sit on the cash.\nIf you do want to buy, scale in: a starter position around $3,700–$3,600, and save the bigger piece for the $3,500 area.\nMind the dealer premium and the bid/ask spread on bars and coins – that's a real cost, and money you'll need within a few months doesn't belong in physical gold.\nBought near the highs? Don't panic-sell, and don't average down blindly. Add only with spare cash, and only at the levels you planned.",
   "sjc_compare": {
     "d1": {
       "date": "2026-10-22",
@@ -665,7 +665,7 @@
       "intl": false
     }
   ],
-  "quick_advice": "Ngắn hạn còn yếu nhưng giá đang ở vùng nền: cần mua vàng vật chất thì chia 3 phần, mua 1 phần trước, giữ tiền chờ 4.040–4.100 USD/oz; SJC vẫn đắt hơn thế giới khoảng 17 triệu/lượng nên không đuổi giá.",
+  "quick_advice": "Vàng thủng nền 4.100–4.150 USD/oz, sáng nay rơi về 3.988: đừng bắt dao rơi; cần mua vàng vật chất thì chia phần, mua một phần khi thế giới về 3.700–3.600 (SJC ước 129–132 triệu nếu còn chênh 17 triệu), để phần lớn hơn cho vùng 3.500.",
   "official_ok": [
     "PNJ",
     "Mi Hồng",
