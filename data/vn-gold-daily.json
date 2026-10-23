@@ -35,7 +35,7 @@
     "Người mua ở đỉnh bán ra 191,3 triệu (29/01/2026) nếu bán lại hôm nay với giá mua vào 139,0 triệu sẽ lỗ khoảng 52,3 triệu đồng/lượng (≈ 27,3%); so với một tuần trước (16/10: 140,9 – 143,9 triệu), SJC thấp hơn 1,9 triệu mỗi chiều.",
     "Theo CNBC, giá dầu tăng vì căng thẳng ở Ả Rập Xê Út làm lo ngại lạm phát và khả năng Fed tăng lãi suất tháng 12 nóng lên, kéo vàng xuống mức thấp nhất hơn hai tuần. Khi thế giới rơi nhanh mà trong nước giảm nhỏ giọt, chênh lệch 17 triệu là rủi ro lớn nhất với người mua vàng miếng lúc này."
   ],
-  "advice": "Ngắn hạn vàng vẫn bị lợi suất Mỹ đè, chưa có tín hiệu đảo chiều – nhưng giá đã về vùng nền 4.100–4.150 USD/oz.\nKhông cần chờ dưới 100 triệu, cũng đừng dồn hết tiền một lần.\nCần mua thì chia 3 phần. Phần 1 mua quanh giá hiện tại.\nPhần 2 để dành, mua khi thế giới lùi về 4.040–4.100.\nPhần 3 chỉ mua khi giá đóng cửa ngày trên vùng 4.200–4.235 – lúc đó xu hướng mới thật sự quay lên.\nĐóng cửa ngày dưới 4.037 thì dừng mua, chờ nền mới.\nSJC đang đắt hơn thế giới khoảng 13 triệu/lượng, mua – bán chênh 3 triệu: tiền cần dùng trong vài tháng thì đừng mua vàng miếng lúc này.\nMua để giữ dài hạn thì được, nhưng đừng đuổi theo nhịp tăng trong ngày.",
+  "advice": "Ngắn hạn vàng vẫn bị lợi suất Mỹ đè, chưa có tín hiệu đảo chiều – nhưng giá đã về vùng nền 4.100–4.150 USD/oz.\nKhông cần chờ dưới 100 triệu, cũng đừng dồn hết tiền một lần.\nCần mua thì chia 3 phần. Phần 1 mua quanh giá hiện tại.\nPhần 2 để dành, mua khi thế giới lùi về 4.040–4.100.\nPhần 3 chỉ mua khi giá đóng cửa ngày trên vùng 4.200–4.235 – lúc đó xu hướng mới thật sự quay lên.\nĐóng cửa ngày dưới 4.037 thì dừng mua, chờ nền mới.\nSJC đang đắt hơn thế giới khoảng 17 triệu/lượng, mua – bán chênh 3 triệu: tiền cần dùng trong vài tháng thì đừng mua vàng miếng lúc này.\nMua để giữ dài hạn thì được, nhưng đừng đuổi theo nhịp tăng trong ngày.",
   "_ghi_chu": "Phần giá/lịch sử/world/sjc_compare do scripts/update-vn-gold.py tự sinh. peak/refs/analysis/advice/world_news/quick_advice: sửa tay (chỉ số liệu có nguồn). world_news: mỗi mục {text (1 dòng tiếng Việt), source:{name,url}, intl}; luôn giữ ≥1 nguồn quốc tế (ưu tiên CNBC, rồi Reuters/Kitco/Bloomberg), bài trong ngày, link đã kiểm tra.",
   "updated_vn": "08:51 23/10/2026",
   "rows": [
@@ -665,7 +665,7 @@
       "intl": false
     }
   ],
-  "quick_advice": "Ngắn hạn còn yếu nhưng giá đang ở vùng nền: cần mua vàng vật chất thì chia 3 phần, mua 1 phần trước, giữ tiền chờ 4.040–4.100 USD/oz; SJC vẫn đắt hơn thế giới khoảng 13 triệu/lượng nên không đuổi giá.",
+  "quick_advice": "Ngắn hạn còn yếu nhưng giá đang ở vùng nền: cần mua vàng vật chất thì chia 3 phần, mua 1 phần trước, giữ tiền chờ 4.040–4.100 USD/oz; SJC vẫn đắt hơn thế giới khoảng 17 triệu/lượng nên không đuổi giá.",
   "official_ok": [
     "PNJ",
     "Mi Hồng",
