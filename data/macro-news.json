@@ -1,6 +1,6 @@
 {
  "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC | Chiến tranh | Ngân hàng TW. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
- "updated": "2026-10-23",
+ "updated": "2026-10-24",
  "fomc": {
   "source": {
    "name": "Federal Reserve – FOMC calendars",
@@ -54,6 +54,163 @@
   "note_en": "Decision at 2:00 PM ET on day two of the meeting, press conference at 2:30 PM ET. * = with economic projections (dot plot)."
  },
  "items": [
+  {
+   "date": "2026-10-24",
+   "category": "Tương quan",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "Vàng đóng tuần dưới 4.000 USD lần đầu từ giữa tháng 7, mất khoảng 4% – tuần tệ nhất từ tháng 6; bán tháo cổ phiếu AI kéo theo lệnh gọi ký quỹ",
+   "summary": "CNBC (Reuters): vàng giao ngay giảm 0,6% về 3.998,49 USD/oz lúc 01:27 VN 24/10, lần đầu dưới 4.000 kể từ giữa tháng 7 và mất khoảng 4% trong tuần. Vàng tương lai tháng 12 chốt 4.007,90 USD (−1,3%). Dow Jones Market Data: hợp đồng Comex gần nhất chốt 3.991,10 USD, giảm 168,40 USD (−4,05%) cả tuần – mức chốt thấp nhất từ 16/7, thấp hơn 24,96% so với đỉnh 5.318,40 ngày 29/1/2026. Jim Wyckoff (American Gold Exchange) cho rằng lo ngại lạm phát khiến các ngân hàng trung ương khó nới lỏng, còn đợt bán tháo cổ phiếu công nghệ buộc nhà đầu tư bán vàng, bạc để đáp ứng ký quỹ. Bạc giao ngay −1% về 53,97 USD, thấp nhất từ 11/2025.",
+   "reason": "Ngắn hạn: đóng tuần dưới 4.000 là tín hiệu kỹ thuật xấu – đầu tuần sau 4.000 trở thành kháng cự, phe mua cần lấy lại nhanh nếu không áp lực bán còn tiếp diễn. Dài hạn: chừng nào dầu còn trên 110 USD và thị trường còn cược Fed tăng lãi tháng 12, vàng khó tìm lại nền 4.100–4.150; nhu cầu vật chất châu Á (Ấn Độ mua mạnh hơn dịp Dussehra) là lực đỡ chậm.",
+   "source": {
+    "name": "CNBC (Reuters) – Vàng hướng tới tuần giảm mạnh khi dầu tăng củng cố cược Fed tăng lãi",
+    "name_en": "CNBC (Reuters) – Gold set for steep weekly loss as rising oil prices bolster Fed rate hike bets",
+    "url": "https://www.cnbc.com/2026/10/23/gold-heads-for-steep-weekly-loss-as-oil-prices-fuel-fed-rate-concerns.html"
+   },
+   "source2": {
+    "name": "Dow Jones Market Data (qua Morningstar) – Vàng Comex giảm 4,05% trong tuần về 3.991,10 USD",
+    "name_en": "Dow Jones Market Data (via Morningstar) – Comex gold ends the week 4.05% lower at $3,991.10",
+    "url": "https://www.morningstar.com/news/dow-jones/202610237436/comex-gold-ends-the-week-405-lower-at-399110-data-talk"
+   },
+   "time_vn": "01:06 VN 24/10 (Dow Jones) · 01:27 VN 24/10 (giá CNBC)",
+   "title_en": "Gold closes the week below $4,000 for the first time since mid-July, down about 4% – worst week since June as the AI selloff triggers margin calls",
+   "summary_en": "CNBC (Reuters): spot gold fell 0.6% to $3,998.49/oz at 2:27 PM ET Friday, slipping below $4,000 for the first time since mid-July and losing about 4% on the week. December futures settled down 1.3% at $4,007.90. Dow Jones Market Data: front-month Comex gold settled at $3,991.10, down $168.40 (−4.05%) for the week – the lowest settle since July 16 and 24.96% below the Jan. 29, 2026 record of $5,318.40. Jim Wyckoff of American Gold Exchange said inflation worries mean central banks can't ease as fast as they'd like, and the tech selloff has forced margin-call selling in gold and silver. Spot silver slid 1% to $53.97, its lowest since November 2025.",
+   "reason_en": "Near term: a weekly close under $4,000 is a bad technical look – $4,000 flips to resistance for Monday, and bulls need it back fast or the selling keeps coming. Longer term: as long as crude holds above $110 and the market keeps pricing a December hike, the $4,100–$4,150 base is out of reach; Asian physical demand (India picked up around Dussehra) is a slow-moving floor, not a catalyst.",
+   "time_en": "Oct 23, 2:06 PM ET (Dow Jones) · 2:27 PM ET (CNBC quote)"
+  },
+  {
+   "date": "2026-10-24",
+   "category": "Dầu mỏ",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "Brent chốt 116,72 USD (+3,1%), cao nhất từ 29/4 và tăng 6,2% trong tuần: Houthi tiếp tục tấn công Ả Rập Xê Út, Mỹ rút nhân viên không thiết yếu",
+   "summary": "CNBC: Brent tăng 3,1% lên 116,72 USD/thùng, giá chốt cao nhất từ 29/4; WTI +3,8% lên 103,27 USD. Brent tăng 6,2% trong tuần, tuần tăng thứ ba liên tiếp. Giới giao dịch ngày càng kỳ vọng Mỹ nối lại không kích Iran trong vài tuần tới; Tư lệnh quân đội Iran nói Tehran sẵn sàng cho «chiến tranh phi đối xứng» (Tasnim). Bộ Ngoại giao Mỹ yêu cầu toàn bộ nhân viên không thiết yếu rời Ả Rập Xê Út; Aramco cho nhân viên sơ tán trụ sở Dhahran. Reuters: UAE phát hiện vết dầu loang từ một tàu chở dầu ngoài khơi Umm Al Quwain.",
+   "reason": "Ngắn hạn: dầu càng cao, kỳ vọng lạm phát và lợi suất càng bị đẩy lên – đây là kênh chính kéo vàng xuống tuần này, lấn át yếu tố trú ẩn. Dài hạn: nếu nguồn cung vùng Vịnh bị gián đoạn thật, lạm phát dai dẳng có thể quay lại hỗ trợ vàng như tài sản giữ giá, nhưng chỉ khi Fed thôi đe dọa tăng lãi.",
+   "source": {
+    "name": "CNBC – Dầu Brent vượt 116 USD, cao nhất 6 tháng",
+    "name_en": "CNBC – Brent crude oil tops $116, a six-month high",
+    "url": "https://www.cnbc.com/2026/10/23/oil-price-brent-wti-iran-war-saudi-arabia.html"
+   },
+   "source2": {
+    "name": "Reuters (qua Investing.com) – Giá dầu tăng hơn 3 USD vì Houthi tấn công, dầu loang",
+    "name_en": "Reuters (via Investing.com) – Oil prices jump $3 on Houthi attacks, oil spill, highest settlement since April",
+    "url": "https://www.investing.com/news/commodities-news/oil-little-changed-as-supply-concern-lingers-amid-houthi-attacks-on-saudi-arabia-4967907"
+   },
+   "time_vn": "01:30 VN 24/10 (chốt giá dầu)",
+   "title_en": "Brent settles at $116.72 (+3.1%), highest since April 29 and up 6.2% on the week as Houthi strikes on Saudi Arabia continue and the US pulls nonessential staff",
+   "summary_en": "CNBC: Brent rose 3.1% to $116.72 a barrel, its highest settle since April 29; WTI added 3.8% to $103.27. Brent gained 6.2% on the week, its third straight weekly gain. Traders increasingly expect the US to resume strikes on Iran in the coming weeks, and Iran's army chief said Tehran is ready for \"asymmetric warfare\" (Tasnim). The State Department ordered all nonessential personnel out of Saudi Arabia, and Aramco told staff to evacuate its Dhahran headquarters. Reuters: the UAE reported an oil spill from an unidentified tanker off Umm Al Quwain.",
+   "reason_en": "Near term: every leg higher in crude pushes inflation expectations and yields up – that, not the haven bid, is what sank gold this week. Longer term: a real Gulf supply disruption could eventually feed the inflation-hedge case for gold, but only once the Fed stops threatening hikes.",
+   "time_en": "Oct 23, 2:30 PM ET (oil settlement)"
+  },
+  {
+   "date": "2026-10-24",
+   "category": "Lạm phát",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "PMI Mỹ: giá bán tăng nhanh nhất từ 8/2022 (59,8); Michigan: kỳ vọng lạm phát 1 năm 4,7%, 5 năm 3,5% – cao nhất từ tháng 5",
+   "summary": "Reuters (qua Investing.com): PMI tổng hợp sơ bộ tháng 10 của S&P Global giảm nhẹ về 57,6 từ mức cao 5 năm 58,4 (khớp dự báo 57,6 theo Econoday); PMI sản xuất 56,0 (dự báo 55,5), dịch vụ 57,9 (dự báo 58,0). Chỉ số giá đầu ra lên 59,8 – cao nhất từ tháng 8/2022 – còn đơn hàng mới 58,2, cao nhất từ 3/2022. Đại học Michigan (chốt tháng 10): niềm tin tiêu dùng 48,0 (tháng 9: 48,1); kỳ vọng lạm phát 1 năm 4,7% (từ 4,6%), dài hạn 3,5% (từ 3,4%), đều cao nhất từ tháng 5; 69% người tiêu dùng cho rằng lãi suất sẽ tăng trong năm tới, cao nhất từ 4/2023.",
+   "reason": "Ngắn hạn: giá bán tăng mạnh cùng kỳ vọng lạm phát nhích lên củng cố lập luận Fed tăng lãi tháng 12 – bất lợi cho vàng. Dài hạn: kinh tế Mỹ vẫn nóng (S&P Global ước GDP quý 4 tăng ~5%/năm) nên Fed khó quay lại nới lỏng sớm; vàng chỉ hưởng lợi nếu lạm phát vượt tầm kiểm soát và lãi suất thực giảm.",
+   "source": {
+    "name": "Reuters (qua Investing.com) – Hoạt động kinh doanh Mỹ hạ nhiệt tháng 10, nhu cầu mạnh đẩy áp lực giá",
+    "name_en": "Reuters (via Investing.com) – US business activity cools in October; strong demand fueling price pressures",
+    "url": "https://www.investing.com/news/economy-news/us-business-activity-cools-in-october-strong-demand-fueling-price-pressures-4969791"
+   },
+   "source2": {
+    "name": "University of Michigan – Surveys of Consumers, kết quả chốt tháng 10/2026",
+    "name_en": "University of Michigan – Surveys of Consumers, final October 2026",
+    "url": "https://www.sca.isr.umich.edu/"
+   },
+   "time_vn": "20:45 VN 23/10 (PMI) · 21:00 VN 23/10 (Michigan)",
+   "title_en": "US flash PMI: selling prices rise fastest since Aug. 2022 (59.8); Michigan 1-year inflation expectations 4.7%, long-run 3.5% – both highest since May",
+   "summary_en": "Reuters (via Investing.com): S&P Global's flash October composite PMI eased to 57.6 from a five-year high of 58.4 (in line with the 57.6 Econoday consensus); manufacturing 56.0 vs. 55.5 expected, services 57.9 vs. 58.0. The output-prices gauge jumped to 59.8, the highest since August 2022, and new orders hit 58.2, the highest since March 2022. University of Michigan (final October): sentiment 48.0 vs. 48.1 in September; 1-year inflation expectations 4.7% (from 4.6%) and long-run 3.5% (from 3.4%), both the highest since May; 69% of consumers expect rates to rise over the next year, the most since April 2023.",
+   "reason_en": "Near term: hotter selling prices plus rising inflation expectations strengthen the case for a December hike – a headwind for gold. Longer term: with S&P Global's survey pointing to ~5% annualized Q4 growth, the Fed has no reason to pivot soon; gold only wins this one if inflation gets ahead of the Fed and real yields fall.",
+   "time_en": "Oct 23, 9:45 AM ET (PMI) · 10:00 AM ET (Michigan)"
+  },
+  {
+   "date": "2026-10-24",
+   "category": "Lợi suất",
+   "priority": 2,
+   "impact": "giảm",
+   "title": "Lợi suất 10 năm Mỹ hồi 5 điểm cơ bản lên 4,999% khi dầu vượt 100 USD, nhưng cả tuần vẫn giảm 11 điểm; S&P 500 chạm đáy 5 tuần",
+   "summary": "CNBC: lợi suất 10 năm tăng 5 điểm cơ bản lên 4,999%, 2 năm +5 lên 4,686%, 30 năm +4 lên 5,312%. Chris Rupkey (Fwdbonds): dầu WTI đóng cửa trên 100 USD nghĩa là «lạm phát còn đến», nên lợi suất điều chỉnh tăng. Dow Jones Market Data (giá Tradeweb 15:00 ET): 10 năm ở 4,987%, giảm 0,110 điểm % trong tuần – tuần giảm thứ ba liên tiếp. Bảng giá CNBC: S&P 500 −0,52% còn 7.623,68, Nasdaq −0,21% còn 25.955,34, VIX 19,45; DXY quanh 101,75.",
+   "reason": "Ngắn hạn: lợi suất bật lại cùng dầu là lực cản trực tiếp cho vàng trong phiên thứ Sáu. Dài hạn: lợi suất 10 năm đã rời đỉnh 5,31% (5/10) và giảm ba tuần liền – nếu cú sốc dầu hạ nhiệt, mặt bằng lợi suất thấp hơn là yếu tố hỗ trợ vàng quay lại.",
+   "source": {
+    "name": "CNBC – Lợi suất 10 năm Mỹ quay về 5% tuần này khi nhà đầu tư né lo ngại AI",
+    "name_en": "CNBC – 10-year Treasury yield drops back to 5% this week as investors seek cover from AI worries",
+    "url": "https://www.cnbc.com/2026/10/23/bonds-yields-us-treasurys.html"
+   },
+   "source2": {
+    "name": "Dow Jones Market Data (qua Morningstar) – Lợi suất 10 năm giảm về 4,987% trong tuần",
+    "name_en": "Dow Jones Market Data (via Morningstar) – 10-year Treasury yield falls to 4.987% this week",
+    "url": "https://www.morningstar.com/news/dow-jones/202610238213/10-year-treasury-yield-falls-to-4987-this-week-data-talk"
+   },
+   "time_vn": "02:00 VN 24/10 (giá Tradeweb 15:00 ET) · 03:00 VN 24/10 (đóng cửa Phố Wall)",
+   "title_en": "10-year yield bounces 5 bps to 4.999% as crude tops $100 but still falls 11 bps on the week; S&P 500 hits a five-week low",
+   "summary_en": "CNBC: the 10-year yield rose 5 bps to 4.999%, the 2-year gained 5 bps to 4.686% and the 30-year added 4 bps to 5.312%. Chris Rupkey of Fwdbonds said WTI closing above $100 means \"more inflation is on the way,\" so yields are adjusting higher. Dow Jones Market Data (Tradeweb 3 PM ET marks): the 10-year was at 4.987%, down 0.110 percentage point on the week – a third straight weekly decline. CNBC quotes: S&P 500 −0.52% to 7,623.68, Nasdaq −0.21% to 25,955.34, VIX 19.45; DXY around 101.75.",
+   "reason_en": "Near term: yields bouncing with crude was a direct headwind for gold on Friday. Longer term: the 10-year is well off its Oct. 5 high of 5.31% and down three weeks running – if the oil shock fades, a lower yield floor is what lets gold rebuild.",
+   "time_en": "Oct 23, 3:00 PM ET (Tradeweb marks) · 4:00 PM ET (stock close)"
+  },
+  {
+   "date": "2026-10-24",
+   "category": "Fed",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "Cược Fed tăng lãi 28/10 nhích lên 10,3%; tháng 12 vẫn ~75% – Fed đang im lặng trước họp, PCE 29/10 là phép thử kế tiếp",
+   "summary": "Investing.com Fed Rate Monitor (dựa trên hợp đồng tương lai Fed Funds 30 ngày của CME, cập nhật 07:25 VN 24/10): họp 27–28/10 – giữ 3,75–4,00% 89,7%, tăng 25 điểm cơ bản 10,3% (hôm trước 92,0% / 8,0%). Họp 08–09/12 – giữ 24,9%, +25 điểm cơ bản 67,6%, +50 điểm cơ bản 7,5% (tổng cược tăng ≈ 75%). CNBC trích CME FedWatch: 92% giữ lãi tuần tới và 78% khả năng tăng tháng 12. Fed trong giai đoạn im lặng nên không có phát biểu của quan chức; báo cáo PCE (thước đo lạm phát Fed ưa dùng) ra ngày 29/10.",
+   "reason": "Ngắn hạn: thị trường gần như chắc Fed giữ lãi tuần tới, nên rủi ro nằm ở giọng điệu họp báo – nghiêng diều hâu là thêm áp lực cho vàng. Dài hạn: chừng nào cược tăng lãi tháng 12 còn quanh 75%, vàng thiếu động lực tăng bền; chỉ khi PCE hạ nhiệt và cược này giảm thì vàng mới có cửa hồi.",
+   "source": {
+    "name": "Investing.com Fed Rate Monitor (CME Fed Funds futures), 23/10/2026 20:25 ET",
+    "name_en": "Investing.com Fed Rate Monitor (CME fed funds futures), Oct 23, 2026 8:25 PM ET",
+    "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+   },
+   "source2": {
+    "name": "CNBC (Reuters) – CME FedWatch: 92% giữ lãi, 78% tăng tháng 12",
+    "name_en": "CNBC (Reuters) – CME FedWatch: 92% hold, 78% odds of a December hike",
+    "url": "https://www.cnbc.com/2026/10/23/gold-heads-for-steep-weekly-loss-as-oil-prices-fuel-fed-rate-concerns.html"
+   },
+   "time_vn": "07:25 VN 24/10 (Fed Rate Monitor)",
+   "title_en": "Odds of an Oct. 28 hike tick up to 10.3%; December still ~75% – Fed in blackout, Oct. 29 PCE is the next test",
+   "summary_en": "Investing.com Fed Rate Monitor (based on CME 30-day fed funds futures, updated 8:25 PM ET Friday): Oct. 27–28 meeting – hold at 3.75%–4.00% 89.7%, 25 bp hike 10.3% (prior day 92.0% / 8.0%). Dec. 8–9 meeting – hold 24.9%, +25 bps 67.6%, +50 bps 7.5% (≈ 75% total odds of a hike). CNBC, citing CME FedWatch: 92% odds of no change next week and 78% odds of a December hike. The Fed is in its pre-meeting blackout, so no Fed speakers; the PCE report, the Fed's preferred inflation gauge, is due Oct. 29.",
+   "reason_en": "Near term: a hold next week is all but priced, so the risk is the press-conference tone – a hawkish lean adds pressure on gold. Longer term: as long as December hike odds sit near 75%, gold lacks a durable bid; it takes a softer PCE and a pullback in those odds to give bulls a real opening.",
+   "time_en": "Oct 23, 8:25 PM ET (Fed Rate Monitor)"
+  },
+  {
+   "date": "2026-10-24",
+   "category": "Chiến tranh",
+   "priority": 1,
+   "impact": "trung lập",
+   "title": "Đặc phái viên Mỹ Tom Barrack: «Có thể có cuộc tấn công Iran ngay cuối tuần này» – Trump nói «không biết gì về việc đó»; Israel bầu cử 27/10",
+   "summary": "AFP (qua The Hindu): Đại sứ Mỹ tại Thổ Nhĩ Kỳ Tom Barrack nói với podcast Mario Nawfal rằng Mỹ có thể tấn công Iran ngay cuối tuần này, dù ông không trực tiếp phụ trách hồ sơ Iran; ông cũng nói Mỹ không nhắm thay đổi chế độ. Khi được hỏi tại Florida, ông Trump đáp: nếu vậy thì «tôi không biết gì về việc đó». Trước đó ông Trump từng nói sẽ không tấn công trước bầu cử Quốc hội Mỹ 3/11. Thủ tướng Israel Netanyahu, đối mặt bầu cử thứ Ba 27/10, nhiều lần tuyên bố muốn lật đổ chính quyền Iran.",
+   "reason": "Ngắn hạn: thị trường đóng cửa cuối tuần nên mọi diễn biến quân sự sẽ phản ánh vào giá mở cửa sáng thứ Hai (giờ VN) – có thể gây nhảy giá (gap) hai chiều: vàng được mua trú ẩn ban đầu, nhưng nếu dầu vọt thì cược Fed tăng lãi lại kéo vàng xuống như tuần này. Dài hạn: xung đột kéo dài giữ phần bù rủi ro địa chính trị cho vàng, nhưng tác động qua kênh dầu – lạm phát – lãi suất đang mạnh hơn.",
+   "source": {
+    "name": "AFP (qua The Hindu) – Mỹ có thể tấn công Iran ngay cuối tuần này, đặc phái viên nói",
+    "name_en": "AFP (via The Hindu) – U.S. could strike Iran this weekend, envoy says",
+    "url": "https://www.thehindu.com/news/international/us-could-strike-iran-this-weekend-envoy-says/article71617954.ece"
+   },
+   "time_vn": "05:43 VN 24/10 (AFP đăng tin)",
+   "title_en": "US envoy Tom Barrack: an Iran strike \"absolutely\" could come this weekend – Trump says he \"doesn't know anything about it\"; Israel votes Oct. 27",
+   "summary_en": "AFP (via The Hindu): Tom Barrack, US ambassador to Turkey, told podcast host Mario Nawfal the US could strike Iran as soon as this weekend, though he has no direct role on Iran; he also said Washington isn't seeking regime change. Asked in Florida, President Trump said, \"If that's the case, I don't know anything about it.\" Trump had earlier said strikes would not come before the Nov. 3 midterms. Israeli Prime Minister Netanyahu, facing an election Tuesday, Oct. 27, has repeatedly vowed to topple Iran's government.",
+   "reason_en": "Near term: with markets shut, any weekend military action hits the Sunday-evening open (ET) – expect a gap either way: an initial haven bid, but if crude spikes, December hike bets can drag gold right back down like this week. Longer term: a drawn-out conflict keeps a geopolitical premium in gold, but the oil-inflation-rates channel is currently doing more of the work.",
+   "time_en": "Oct 23, 6:43 PM ET (AFP report)"
+  },
+  {
+   "date": "2026-10-24",
+   "category": "Vàng",
+   "priority": 2,
+   "impact": "giảm",
+   "title": "Sáng 24/10: SJC hạ vàng miếng về 138,7 – 141,7 triệu đồng/lượng, nhẫn SJC 135 – 139 triệu; vẫn đắt hơn thế giới ≈ 17,3 triệu",
+   "summary": "CafeF (07:01): đầu giờ sáng SJC, PNJ, DOJI và Bảo Tín Mạnh Hải niêm yết vàng miếng 139 – 142 triệu đồng/lượng, Bảo Tín Minh Châu 137,4 – 142 triệu; nhẫn SJC 135 – 139 triệu, DOJI 137,5 – 141,5 triệu. Đến 07:45 (giavang.org/webgia.com), SJC giảm thêm 0,3 triệu về 138,7 – 141,7 triệu. Giá thế giới cuối tuần quanh 3.993 – 3.997 USD/oz, quy đổi ≈ 124,4 triệu đồng/lượng (USD/oz × tỷ giá × 1,20565, chưa thuế phí), nên SJC bán ra cao hơn ≈ 17,3 triệu.",
+   "reason": "Ngắn hạn: trong nước giảm chậm hơn thế giới, chênh lệch ≈ 17 triệu là chi phí lớn cho người mua mới. Dài hạn: nếu thế giới tiếp tục yếu, SJC còn dư địa giảm; chênh lệch co lại sẽ làm giá trong nước giảm nhanh hơn.",
+   "source": {
+    "name": "CafeF – Giá vàng miếng, vàng nhẫn sáng 24/10 tại SJC, PNJ, DOJI, Bảo Tín Minh Châu và Bảo Tín Mạnh Hải",
+    "url": "https://cafef.vn/gia-vang-mieng-vang-nhan-sang-24-10-tai-sjc-pnj-doji-bao-tin-minh-chau-va-bao-tin-manh-hai-188261023214427223.chn"
+   },
+   "time_vn": "07:01 VN 24/10 (CafeF) · 07:45 VN (SJC điều chỉnh)",
+   "title_en": "",
+   "summary_en": "",
+   "reason_en": "",
+   "time_en": ""
+  },
   {
    "date": "2026-10-23",
    "category": "Tương quan",
