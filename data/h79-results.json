@@ -5,25 +5,36 @@
    "id": "2026-10-23-phien-my-1915",
    "date": "2026-10-23",
    "session": "Phiên Mỹ",
-   "evaluated_at_vn": null,
+   "evaluated_at_vn": "09:00 24/10/2026",
    "price_ref": "spot",
    "sell": {
     "zone": "4.036 – 4.044",
     "sl": "4.052",
     "tp1": "4.022",
     "tp2": "4.010",
-    "zone_filled": null,
-    "result": "mở",
-    "mfe": null
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "entry": null,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "shortfall_to_zone": 3.4,
+    "note": "Sau 19:15 cao nhất 4.032,6 (20:15) – thiếu 3,4 giá tới vùng bán; sau tin PMI giá rơi về 3.978,1 (21:30). Tiếc là không có vị thế vào lệnh. Hết tuần. Nguồn CNBC XAU= 5m."
    },
    "buy": {
     "zone": "4.008 – 4.013",
     "sl": "3.998",
     "tp1": "4.026",
     "tp2": "4.036",
-    "zone_filled": null,
-    "result": "mở",
-    "mfe": null
+    "zone_filled": true,
+    "result": "không vào lệnh",
+    "mfe": null,
+    "entry": null,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "note": "Giá vào vùng 4.008–4.013 lúc 21:00–21:15 nhưng nến 45m 20:30 đóng đỏ 4.008,5 và nến 1H 21:00 đóng đỏ 4.001,1 (đáy 3.978,1) → không có nến xanh, không vào – tránh được cú quét qua SL 3.998. Hết tuần. Nguồn CNBC XAU= 5m."
    }
   },
   {

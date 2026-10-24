@@ -1,6 +1,373 @@
 {
  "strategies": [
   {
+   "id": "2026-10-24-tong-ket-tuan",
+   "date": "2026-10-24",
+   "session": "Tổng kết tuần",
+   "session_en": "Weekly Recap",
+   "url": "bai/2026-10-24-nhan-dinh-vang-tong-ket-tuan.html",
+   "url_en": "en/posts/2026-10-24-gold-weekly-recap.html",
+   "headline": "Tổng kết tuần 19–23/10: vàng mất 4,1%, thủng 4.000 – tuần tới BÁN hồi 4.028–4.040, chờ FOMC 29/10",
+   "headline_en": "H79 Gold Weekly Recap, Oct. 19–23: Gold Sheds 4.1% and Closes Under $4,000 – Next Week Sell 4,028–4,040 Into the Fed",
+   "image": "img/charts/gold-2026-10-24-tong-ket-tuan.png",
+   "image_alt": "Biểu đồ vàng khung ngày tuần 19–23/10: đỉnh tuần 4.188,9, đáy 3.978,1, đóng 3.994,7; Fibonacci 4.188,9–3.978,1, các FVG ngày và 4H chưa lấp; vùng BÁN 4.028–4.040, vùng MUA 3.940–3.950",
+   "image_en": "img/charts/gold-2026-10-24-weekly-recap-en.png",
+   "image_alt_en": "Gold daily chart, week of Oct 19–23: week high 4,188.92, low 3,978.13, close 3,994.65; Fibonacci 4,188.92–3,978.13, unfilled daily and 4H fair value gaps; sell zone 4,028–4,040, buy zone 3,940–3,950",
+   "trend": "Trung hạn giảm: vàng gãy nền 4.100–4.150, mất 4,1% trong tuần và đóng dưới 4.000. Trên đầu là FVG ngày 4.033–4.106 chưa lấp. Tuần tới bán hồi ở 4.028–4.040; chỉ mua nhịp ngắn ở 3.940–3.950 khi có nến xác nhận.",
+   "trend_en": "Intermediate-term bearish: gold broke the 4,100–4,150 base, lost 4.1% on the week and closed under $4,000, with an unfilled daily gap overhead at 4,033–4,106. Next week, sell a bounce into 4,028–4,040; buy only a quick flush into 3,940–3,950 on a confirming close.",
+   "trendType": "down",
+   "support": [
+    3978,
+    3955,
+    3950,
+    3943,
+    3921,
+    3848
+   ],
+   "resistance": [
+    4005,
+    4017,
+    4028,
+    4040,
+    4058,
+    4083,
+    4106
+   ],
+   "entryZones": [
+    "Mua 3.940 – 3.950 (đáy 30/6 3.943,3, trên Fib mở rộng 127,2% 3.920,8). Vào khi có nến 1H hoặc 4H đóng xanh trong vùng. Dừng lỗ 3.918. TP1 3.978 – chốt 50–70%, dời SL hòa vốn; TP2 4.005. Lệnh ngược xu hướng, vào nhỏ. Nến ngày đóng dưới 3.918 thì bỏ mua."
+   ],
+   "entryZones_en": [
+    "Buy 3,940–3,950 (the 3,943.30 June 30 low, above the 127.2% extension at 3,920.8). Enter on a green 1H or 4H close in the zone. Stop 3,918. TP1 3,978 – take 50–70%, stop to breakeven; TP2 4,005. Counter-trend – keep it small. A daily close under 3,918 cancels the long."
+   ],
+   "sellZones": [
+    "Bán 4.028 – 4.040 (Fib 23,6% 4.027,9 + FVG 4H 4.031,2–4.045,9, mép dưới FVG ngày 4.032,6–4.106,1). Vào khi có nến 1H hoặc 4H đóng đỏ trong vùng. Không bán đuổi dưới 4.000. Dừng lỗ 4.060 (trên FVG 4H 4.052,5–4.057,4 và Fib 38,2% 4.058,6). TP1 4.000 – chốt 50–70%, dời SL hòa vốn; TP2 3.955. Nến 4H đóng trên 4.060 thì bỏ bán."
+   ],
+   "sellZones_en": [
+    "Sell 4,028–4,040 (23.6% Fib at 4,027.9 plus the 4H gap at 4,031.2–4,045.9, the bottom of the 4,032.6–4,106.1 daily gap). Enter on a red 1H or 4H close in the zone. No chasing under 4,000. Stop 4,060 (over the 4,052.5–4,057.4 4H gap and the 38.2% Fib at 4,058.6). TP1 4,000 – take 50–70%, stop to breakeven; TP2 3,955. A 4H close above 4,060 cancels the short."
+   ],
+   "scenarios": [
+    "Kế hoạch: BÁN 4.028–4.040 (SL 4.060 · TP1 4.000 → TP2 3.955) · MUA 3.940–3.950 (SL 3.918 · TP1 3.978 → TP2 4.005). Chạm vùng + nến 1H/4H đóng xác nhận.",
+    "Kịch bản chính (~50%): đầu tuần hồi lên 4.028–4.040, bị bán lại trước FOMC, về 4.000 rồi 3.955.",
+    "Kịch bản phụ (~30%): rơi thẳng qua 3.978 về 3.940–3.950, có nến xanh – mua nhịp ngắn về 3.978.",
+    "Kịch bản xấu (~20%): nến 4H đóng trên 4.060 – bỏ bán, mốc kế 4.083–4.106; nến ngày đóng dưới 3.918 – bỏ mua, mốc kế 3.848.",
+    "Rủi ro: 01:00 29/10 FOMC, 01:30 họp báo; 19:30 29/10 GDP quý 3 và PCE lõi; tin Iran cuối tuần, Israel bầu cử 27/10."
+   ],
+   "scenarios_en": [
+    "The plan: sell 4,028–4,040 (stop 4,060 · TP1 4,000 → TP2 3,955) · buy 3,940–3,950 (stop 3,918 · TP1 3,978 → TP2 4,005). Zone tap plus a confirming 1H/4H close.",
+    "Base case (~50%): an early-week bounce into 4,028–4,040 fails ahead of the Fed, back to 4,000, then 3,955.",
+    "Alternative (~30%): gold slices through 3,978 into 3,940–3,950 and prints a green close – buy for a quick pop to 3,978.",
+    "Plan-breaker (~20%): a 4H close above 4,060 cancels the short, next up 4,083–4,106; a daily close under 3,918 cancels the long, next down 3,848.",
+    "Risk: FOMC Wed 2:00 PM ET, presser 2:30 PM ET; Q3 GDP and core PCE Thu 8:30 AM ET; weekend Iran headlines, Israel votes Oct. 27."
+   ],
+   "macro": [],
+   "macro_en": [],
+   "market_picture": {
+    "text": "Vàng mất khoảng 4,1% trong tuần, từ 4.164,6 xuống đóng cửa 3.994,7 – lần đầu dưới 4.000 kể từ giữa tháng 7 và là tuần tệ nhất từ tháng 6. Gốc rễ nằm ở dầu: Houthi liên tục đánh vào Ả Rập Xê Út, Brent tăng 6,2% trong tuần lên 116,72 USD, cao nhất từ cuối tháng 4. Dầu đắt đã ngấm vào số liệu – giá bán trong PMI Mỹ tăng nhanh nhất từ 8/2022, kỳ vọng lạm phát 1 năm của Michigan lên 4,7% – nên thị trường vẫn cược khoảng 75% Fed tăng lãi tháng 12. Điều đáng chú ý là lợi suất 10 năm cả tuần giảm 11 điểm cơ bản mà vàng vẫn rơi: cổ phiếu AI bị bán tháo, tiền chạy vào trái phiếu, còn vàng bị bán để bù ký quỹ. Khi vàng không còn ăn theo lợi suất giảm, phe mua đang yếu thật. Quan điểm: nền 4.100–4.150 đã gãy, 4.000 giờ là kháng cự. Tuần tới ưu tiên bán hồi ở 4.028–4.040, không bắt đáy trước khi Fed công bố rạng sáng 29/10. Trong nước, SJC sáng 24/10 còn 138,7–141,7 triệu đồng/lượng, vẫn cao hơn thế giới khoảng 17,3 triệu.",
+    "chips": [
+     {
+      "k": "XAU",
+      "v": "3.994,7 −0,73%",
+      "dir": "down"
+     },
+     {
+      "k": "XAU tuần",
+      "v": "−169,9 (−4,08%)",
+      "dir": "down"
+     },
+     {
+      "k": "DXY",
+      "v": "101,75 +0,14%",
+      "dir": "up"
+     },
+     {
+      "k": "US10Y",
+      "v": "4,999%",
+      "dir": "up"
+     },
+     {
+      "k": "US2Y",
+      "v": "4,686%",
+      "dir": "up"
+     },
+     {
+      "k": "Brent",
+      "v": "116,72 +3,1%",
+      "dir": "up"
+     },
+     {
+      "k": "WTI",
+      "v": "103,44 +4,0%",
+      "dir": "up"
+     },
+     {
+      "k": "S&P 500",
+      "v": "7.623,7 −0,52%",
+      "dir": "down"
+     },
+     {
+      "k": "Bạc",
+      "v": "53,89 −1,17%",
+      "dir": "down"
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC (Reuters) – Vàng hướng tới tuần giảm mạnh khi dầu tăng củng cố cược Fed tăng lãi (23/10)",
+      "url": "https://www.cnbc.com/2026/10/23/gold-heads-for-steep-weekly-loss-as-oil-prices-fuel-fed-rate-concerns.html"
+     },
+     {
+      "name": "CNBC – Brent chốt 116,72 USD, tuần tăng thứ ba liên tiếp (23/10)",
+      "url": "https://www.cnbc.com/2026/10/23/oil-price-brent-wti-iran-war-saudi-arabia.html"
+     },
+     {
+      "name": "Investing.com – PMI Mỹ tháng 10: giá bán tăng nhanh nhất từ 8/2022",
+      "url": "https://www.investing.com/news/economy-news/us-business-activity-cools-in-october-strong-demand-fueling-price-pressures-4969791"
+     },
+     {
+      "name": "CNBC – Lợi suất trái phiếu Mỹ (23/10)",
+      "url": "https://www.cnbc.com/2026/10/23/bonds-yields-us-treasurys.html"
+     },
+     {
+      "name": "Investing.com – Fed Rate Monitor (xác suất Fed tăng lãi)",
+      "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+     },
+     {
+      "name": "Dow Jones Market Data (qua Morningstar) – Vàng Comex giảm 4,05% trong tuần",
+      "url": "https://www.morningstar.com/news/dow-jones/202610237436/comex-gold-ends-the-week-405-lower-at-399110-data-talk"
+     },
+     {
+      "name": "ForexFactory – Lịch kinh tế tuần 26–30/10 (FOMC, GDP, PCE)",
+      "url": "https://www.forexfactory.com/calendar?week=oct25.2026"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "market_picture_en": {
+    "text": "Gold lost about 4.1% this week, from 4,164.61 to a 3,994.65 close – its first trip under $4,000 since mid-July and its worst week since June. The root of it is crude: Houthi strikes on Saudi Arabia kept coming and Brent ran 6.2% on the week to $116.72, its highest settle since late April. That's showing up in the data – the PMI selling-price gauge rose at its fastest pace since August 2022 and UMich one-year inflation expectations hit 4.7% – so the market still has roughly 75% odds on a December hike. Here's the tell: the 10-year actually fell 11 bps on the week and gold still got hit. The AI selloff sent money into Treasuries, not bullion, and gold got sold to cover margin calls. When gold can't rally on lower yields, the bulls are in real trouble. My take: the 4,100–4,150 base is broken and $4,000 is now resistance. Next week I'm selling rallies into 4,028–4,040 and I'm not bottom-fishing before the Fed on Wednesday.",
+    "chips": [
+     {
+      "k": "XAU",
+      "v": "3,994.65 −0.73%",
+      "dir": "down"
+     },
+     {
+      "k": "XAU week",
+      "v": "−169.87 (−4.08%)",
+      "dir": "down"
+     },
+     {
+      "k": "DXY",
+      "v": "101.75 +0.14%",
+      "dir": "up"
+     },
+     {
+      "k": "US10Y",
+      "v": "4.999%",
+      "dir": "up"
+     },
+     {
+      "k": "US2Y",
+      "v": "4.686%",
+      "dir": "up"
+     },
+     {
+      "k": "Brent",
+      "v": "116.72 +3.1%",
+      "dir": "up"
+     },
+     {
+      "k": "WTI",
+      "v": "103.44 +4.0%",
+      "dir": "up"
+     },
+     {
+      "k": "S&P 500",
+      "v": "7,623.7 −0.52%",
+      "dir": "down"
+     },
+     {
+      "k": "Silver",
+      "v": "53.89 −1.17%",
+      "dir": "down"
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC (Reuters) – Gold set for steep weekly loss as rising oil prices bolster Fed rate hike bets",
+      "url": "https://www.cnbc.com/2026/10/23/gold-heads-for-steep-weekly-loss-as-oil-prices-fuel-fed-rate-concerns.html"
+     },
+     {
+      "name": "CNBC – Brent settles at $116.72, third straight weekly gain",
+      "url": "https://www.cnbc.com/2026/10/23/oil-price-brent-wti-iran-war-saudi-arabia.html"
+     },
+     {
+      "name": "Investing.com – U.S. business activity cools in October; selling prices rise at fastest pace since August 2022",
+      "url": "https://www.investing.com/news/economy-news/us-business-activity-cools-in-october-strong-demand-fueling-price-pressures-4969791"
+     },
+     {
+      "name": "CNBC – U.S. Treasury yields",
+      "url": "https://www.cnbc.com/2026/10/23/bonds-yields-us-treasurys.html"
+     },
+     {
+      "name": "Investing.com – Fed Rate Monitor",
+      "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+     },
+     {
+      "name": "Dow Jones Market Data (via Morningstar) – Comex gold ends the week 4.05% lower",
+      "url": "https://www.morningstar.com/news/dow-jones/202610237436/comex-gold-ends-the-week-405-lower-at-399110-data-talk"
+     },
+     {
+      "name": "ForexFactory – Economic calendar, week of Oct. 26 (FOMC, GDP, PCE)",
+      "url": "https://www.forexfactory.com/calendar?week=oct25.2026"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "physicalAdvice": "Làm theo kế hoạch, đừng chạy theo nến tin.",
+   "physicalAdvice_en": "Trade the plan, not the noise.",
+   "notes": "Các mốc là giá giao ngay XAU/USD (CNBC XAU=). Tuần 19–23/10: mở 4.164,6 · cao 4.188,9 (14:30 19/10) · thấp 3.978,1 (21:30 23/10) · đóng 3.994,7; tuần trước đóng 4.164,5. Fibonacci kéo từ đỉnh tuần 4.188,9 tới đáy 3.978,1. FVG chưa lấp – ngày: 4.032,6–4.106,1 · 4.224,0–4.256,1 (lấp một phần); 4H: 4.031,2–4.045,9 · 4.052,5–4.057,4; 1–2H: 4.004,7–4.017,4. Kết quả kế hoạch theo nhật ký H79 (nến 5m CNBC XAU=).",
+   "notes_en": "Levels are spot XAU/USD (CNBC XAU=). Week of Oct 19–23: open 4,164.61 · high 4,188.92 (Mon 3:30 AM ET) · low 3,978.13 (Fri 10:30 AM ET) · close 3,994.65; prior weekly close 4,164.52. Fibonacci drawn from the 4,188.92 weekly high to the 3,978.13 low. Unfilled gaps – daily: 4,032.6–4,106.1 · 4,224.0–4,256.1 (partly filled); 4H: 4,031.2–4,045.9 · 4,052.5–4,057.4; 1–2H: 4,004.7–4,017.4. Plan results from the H79 trade log (CNBC XAU= 5-minute bars).",
+   "dataTime": "Cập nhật 09:00 thứ Bảy 24/10/2026 giờ VN, sau khi thị trường đóng cửa tuần. Nến ngày, 1H và 5m giao ngay CNBC XAU=; DXY, US10Y, US2Y, Brent, WTI, S&P 500, bạc từ CNBC; lịch tin ForexFactory.",
+   "dataTime_en": "Updated Friday night, Oct 23, 2026 (10:00 PM ET), after the weekly close. Daily, hourly and 5-minute spot bars from CNBC XAU=; DXY, 10- and 2-year yields, Brent, WTI, S&P 500 and silver from CNBC; calendar from ForexFactory.",
+   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+   "brief": true,
+   "summary": {
+    "trend": "down",
+    "trendText": "Trung hạn giảm – dầu 116 USD giữ cược Fed tăng lãi, vàng gãy nền 4.100–4.150 và đóng tuần dưới 4.000; tuần tới bán hồi ở 4.028–4.040, chỉ mua nhịp ngắn ở 3.940–3.950 khi có nến xác nhận",
+    "trendText_en": "Intermediate-term bearish – $116 Brent keeps a Fed hike priced in and gold closed the week under $4,000; sell a bounce into 4,028–4,040, buy only a quick flush into 3,940–3,950 on a confirming close",
+    "sell": {
+     "zone": "4.028 – 4.040",
+     "sl": "4.060",
+     "tp": "4.000 → 3.955",
+     "zone_en": "4,028–4,040",
+     "sl_en": "4,060",
+     "tp_en": "TP1 4,000 → TP2 3,955"
+    },
+    "buy": {
+     "zone": "3.940 – 3.950",
+     "sl": "3.918",
+     "tp": "3.978 → 4.005",
+     "zone_en": "3,940–3,950",
+     "sl_en": "3,918",
+     "tp_en": "TP1 3,978 → TP2 4,005"
+    },
+    "note": "Tin đỏ Mỹ: 01:00 thứ Năm 29/10 FOMC, 01:30 họp báo; 19:30 29/10 GDP quý 3 và PCE lõi. Chỉ vào khi chạm vùng + nến 1H/4H đóng xác nhận; dời SL hòa vốn khi chạm TP1. Nến 4H đóng trên 4.060 bỏ bán; nến ngày đóng dưới 3.918 bỏ mua.",
+    "note_en": "High-impact U.S. events: FOMC Wed Oct. 28 2:00 PM ET, presser 2:30 PM ET; Q3 GDP and core PCE Thu Oct. 29 8:30 AM ET. Only on a zone tap plus a confirming 1H/4H close; stops to breakeven at TP1. A 4H close above 4,060 cancels the short; a daily close under 3,918 cancels the long.",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD",
+    "priceNote_en": "Spot XAU/USD prices"
+   },
+   "article": {
+    "sections": [
+     {
+      "h": "Nhìn lại kế hoạch tuần",
+      "p": "Tuần này kế hoạch H79 có 3 lệnh chốt lời – bán phiên Á 20/10 chạm cả hai TP, hai lệnh mua ngày 19–20/10 chạm TP1 – và 3 lệnh dính SL ngày 21–22/10 khi giá gãy nền 4.100. Nhiều vùng bán đúng hướng nhưng nhịp hồi thiếu 3–9 giá mới tới, tiếc là không có vị thế vào lệnh đúng lúc vàng rơi mạnh nhất; tối thứ Sáu giá chạm vùng mua 4.008–4.013 chỉ với nến đỏ nên không vào, tránh được cú quét xuống 3.978. Thông thường, khi xu hướng giảm đã mạnh, nhịp hồi ngắn hơn dự tính – nên tuần tới vùng bán đặt sát hơn, còn lệnh mua chỉ đánh nhỏ và phải có nến xác nhận."
+     },
+     {
+      "h": "Mốc giá và kịch bản tuần 26–30/10",
+      "p": "Kháng cự: 4.005–4.017 (FVG 1–2H) · 4.028–4.046 (Fib 23,6% + FVG 4H) · 4.052–4.058 (FVG 4H + Fib 38,2%) · 4.083 (Fib 50%) · 4.106 (mép trên FVG ngày)\nHỗ trợ: 3.978 (đáy tuần) · 3.943 (đáy 30/6) · 3.921 (Fib 127,2%) · 3.848 (Fib 161,8%)\nChính (~50%): đầu tuần hồi kỹ thuật lên 4.028–4.040, bị bán lại trước FOMC, về 4.000 rồi 3.955.\nPhụ (~30%): dầu leo tiếp, Fed giữ giọng cứng – giá rơi thẳng qua 3.978 về 3.940–3.950; có nến xanh mới mua nhịp ngắn.\nXấu cho phe bán (~20%): Fed bớt cứng rắn hoặc PCE mềm – nến 4H đóng trên 4.060, bỏ bán, giá có thể về 4.083–4.106."
+     },
+     {
+      "h": "Kế hoạch dự trù tuần 26–30/10",
+      "p": "🔴 BÁN 4.028 – 4.040 | SL 4.060 | TP1 4.000 → TP2 3.955\n🟢 MUA 3.940 – 3.950 (nhịp ngắn, vào nhỏ) | SL 3.918 | TP1 3.978 → TP2 4.005\nVào lệnh: giá chạm vùng và có nến 1H hoặc 4H đóng xác nhận (đỏ để bán, xanh để mua). Không bán đuổi dưới 4.000.\nVô hiệu: nến 4H đóng trên 4.060 bỏ bán – mốc kế 4.083 rồi 4.106; nến ngày đóng dưới 3.918 bỏ mua – mốc kế 3.848.\nTin đỏ Mỹ (giờ VN): 01:00 thứ Năm 29/10 Fed công bố lãi suất (dự báo giữ 3,75–4,00%), 01:30 họp báo; 19:30 thứ Năm 29/10 GDP quý 3 sơ bộ (dự báo 3,2%) và PCE lõi (dự báo +0,3%). Không mở lệnh mới 30 phút quanh các mốc này.\nLưu ý: chạm TP1 chốt 50–70%, dời SL hòa vốn. Cuối tuần có tin Mỹ có thể tấn công Iran, Israel bầu cử 27/10 – sáng thứ Hai giá có thể giật khi mở cửa, chờ nến xác nhận. Từ 1/11 Mỹ chuyển giờ mùa đông, tin Mỹ ra muộn hơn 1 tiếng."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC (Reuters) – Vàng hướng tới tuần giảm mạnh khi dầu tăng củng cố cược Fed tăng lãi (23/10)",
+      "url": "https://www.cnbc.com/2026/10/23/gold-heads-for-steep-weekly-loss-as-oil-prices-fuel-fed-rate-concerns.html"
+     },
+     {
+      "name": "CNBC – Brent chốt 116,72 USD, tuần tăng thứ ba liên tiếp (23/10)",
+      "url": "https://www.cnbc.com/2026/10/23/oil-price-brent-wti-iran-war-saudi-arabia.html"
+     },
+     {
+      "name": "Investing.com – PMI Mỹ tháng 10: giá bán tăng nhanh nhất từ 8/2022",
+      "url": "https://www.investing.com/news/economy-news/us-business-activity-cools-in-october-strong-demand-fueling-price-pressures-4969791"
+     },
+     {
+      "name": "CNBC – Lợi suất trái phiếu Mỹ (23/10)",
+      "url": "https://www.cnbc.com/2026/10/23/bonds-yields-us-treasurys.html"
+     },
+     {
+      "name": "Investing.com – Fed Rate Monitor (xác suất Fed tăng lãi)",
+      "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+     },
+     {
+      "name": "Dow Jones Market Data (qua Morningstar) – Vàng Comex giảm 4,05% trong tuần",
+      "url": "https://www.morningstar.com/news/dow-jones/202610237436/comex-gold-ends-the-week-405-lower-at-399110-data-talk"
+     },
+     {
+      "name": "ForexFactory – Lịch kinh tế tuần 26–30/10 (FOMC, GDP, PCE)",
+      "url": "https://www.forexfactory.com/calendar?week=oct25.2026"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "article_en": {
+    "sections": [
+     {
+      "h": "How this week's plans played out",
+      "p": "The H79 plans went 3 for 6 this week: the Oct. 20 Asian-session short hit both targets and two longs on Oct. 19–20 hit TP1, while three trades got stopped on Oct. 21–22 as gold broke the 4,100 base. Several short zones had the direction right but the bounces stopped $3–9 shy of the entry, so no position for the biggest leg down; on Friday the 4,008–4,013 long zone only printed red bars, so we stayed out and dodged the flush to 3,978. In a strong downtrend, bounces usually run shorter than you'd expect – so next week's short zone sits closer, and longs stay small and need a confirming close."
+     },
+     {
+      "h": "Key levels and scenarios for the week of Oct. 26",
+      "p": "Resistance: 4,005–4,017 (1–2H gap) · 4,028–4,046 (23.6% Fib + 4H gap) · 4,052–4,058 (4H gap + 38.2% Fib) · 4,083 (50% Fib) · 4,106 (top of the daily gap)\nSupport: 3,978 (weekly low) · 3,943 (June 30 low) · 3,921 (127.2% extension) · 3,848 (161.8% extension)\nBase case (~50%): an early-week bounce into 4,028–4,040 gets sold ahead of the Fed, back to 4,000, then 3,955.\nAlternative (~30%): crude keeps climbing and the Fed stays hawkish – gold slices through 3,978 into 3,940–3,950; buy a quick bounce only on a green close.\nPlan-breaker for shorts (~20%): a softer Fed or a cool PCE – a 4H close above 4,060 cancels the short and opens 4,083–4,106."
+     },
+     {
+      "h": "Contingency plan for the week of Oct. 26",
+      "p": "🔴 SELL 4,028–4,040 | Stop 4,060 | Targets 4,000 → 3,955\n🟢 BUY 3,940–3,950 (quick trade, small size) | Stop 3,918 | Targets 3,978 → 4,005\nEntry: price taps the zone and a 1H or 4H bar closes in our favor (red to sell, green to buy). No chasing shorts under 4,000.\nInvalidation: a 4H close above 4,060 cancels the short – next up 4,083, then 4,106; a daily close under 3,918 cancels the long – next down 3,848.\nHigh-impact U.S. events (ET): Wed Oct. 28 – FOMC decision 2:00 PM (expected hold at 3.75–4.00%), Powell presser 2:30 PM; Thu Oct. 29 – Q3 advance GDP (est. 3.2%) and core PCE (est. +0.3% m/m) at 8:30 AM. No new trades 30 minutes either side.\nNote: take 50–70% at TP1 and move the stop to breakeven. A U.S. envoy floated a possible strike on Iran this weekend and Israel votes Oct. 27 – the Sunday 6:00 PM ET open could gap, so wait for a confirming bar."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC (Reuters) – Gold set for steep weekly loss as rising oil prices bolster Fed rate hike bets",
+      "url": "https://www.cnbc.com/2026/10/23/gold-heads-for-steep-weekly-loss-as-oil-prices-fuel-fed-rate-concerns.html"
+     },
+     {
+      "name": "CNBC – Brent settles at $116.72, third straight weekly gain",
+      "url": "https://www.cnbc.com/2026/10/23/oil-price-brent-wti-iran-war-saudi-arabia.html"
+     },
+     {
+      "name": "Investing.com – U.S. business activity cools in October; selling prices rise at fastest pace since August 2022",
+      "url": "https://www.investing.com/news/economy-news/us-business-activity-cools-in-october-strong-demand-fueling-price-pressures-4969791"
+     },
+     {
+      "name": "CNBC – U.S. Treasury yields",
+      "url": "https://www.cnbc.com/2026/10/23/bonds-yields-us-treasurys.html"
+     },
+     {
+      "name": "Investing.com – Fed Rate Monitor",
+      "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+     },
+     {
+      "name": "Dow Jones Market Data (via Morningstar) – Comex gold ends the week 4.05% lower",
+      "url": "https://www.morningstar.com/news/dow-jones/202610237436/comex-gold-ends-the-week-405-lower-at-399110-data-talk"
+     },
+     {
+      "name": "ForexFactory – Economic calendar, week of Oct. 26 (FOMC, GDP, PCE)",
+      "url": "https://www.forexfactory.com/calendar?week=oct25.2026"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "title": "Tổng kết tuần 19–23/10: vàng mất 4,1%, thủng 4.000 – tuần tới BÁN hồi 4.028–4.040, chờ FOMC 29/10",
+   "title_en": "H79 Gold Weekly Recap, Oct. 19–23: Gold Sheds 4.1% and Closes Under $4,000 – Next Week Sell 4,028–4,040 Into the Fed"
+  },
+  {
    "id": "2026-10-23-phien-my-1915",
    "date": "2026-10-23",
    "time": "19:15",
