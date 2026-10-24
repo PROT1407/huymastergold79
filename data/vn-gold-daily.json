@@ -49,7 +49,7 @@
   "Người mua ở đỉnh bán ra 191,3 triệu (29/01/2026) nếu bán lại hôm nay với giá mua vào 138,7 triệu sẽ lỗ khoảng 52,6 triệu đồng/lượng (≈ 27,5%). Thị trường quốc tế nghỉ cuối tuần nên giá trong nước có thể đứng yên đến sáng thứ Hai, nhưng rủi ro Mỹ – Iran leo thang và cuộc họp Fed 27–28/10 có thể khiến phiên đầu tuần biến động mạnh."
  ],
  "advice": "Vàng đã thủng vùng 4.100–4.150 USD/oz – vùng nền của cả quý, cả tháng – và thứ Sáu 23/10 đóng tuần dưới mốc 4.000 (quanh 3.993–3.997), mất khoảng 4% trong tuần.\nNền đã gãy thì đừng vội nghĩ \"giá rẻ rồi\".\nNgắn hạn, mình thấy rủi ro về 3.700–3.600. Trung hạn có thể xuống 3.500.\nQuy ra tiền: 3.700–3.600 ≈ 115–112 triệu/lượng, 3.500 ≈ 109 triệu (giá thế giới, chưa thuế phí).\nNếu SJC vẫn đắt hơn thế giới khoảng 17 triệu như hôm nay, vàng miếng sẽ quanh 132–129 triệu, và quanh 126 triệu ở vùng 3.500.\nĐừng bắt dao rơi. Chưa cần thì cứ cầm tiền, chờ.\nMuốn mua thì chia phần: một phần khi thế giới về 3.700–3.600, phần lớn hơn để dành cho vùng 3.500.\nKhoản chênh 17 triệu là chi phí mình trả thêm. Giá rơi mạnh, khoản này có thể co lại – lúc đó SJC còn có thể thấp hơn các mức trên.\nAi lỡ mua ở đỉnh 191,3 triệu: đừng hoảng mà bán tháo, cũng đừng vội bình quân giá xuống. Chỉ mua thêm bằng tiền nhàn rỗi, đúng vùng giá đã tính.",
- "_ghi_chu": "Phần giá/lịch sử/world/sjc_compare do scripts/update-vn-gold.py tự sinh. peak/refs/analysis/advice/world_news/quick_advice: sửa tay (chỉ số liệu có nguồn). world_news: mỗi mục {text (1 dòng tiếng Việt), source:{name,url}, intl}; luôn giữ ≥1 nguồn quốc tế (ưu tiên CNBC, rồi Reuters/Kitco/Bloomberg), bài trong ngày, link đã kiểm tra.",
+ "_ghi_chu": "Phần giá/lịch sử/world/sjc_compare do scripts/update-vn-gold.py tự sinh. peak/refs/analysis/advice/world_news/quick_advice: sửa tay (chỉ số liệu có nguồn). world_news: mỗi mục {text (1 dòng tiếng Việt), source:{name,url}, intl}; luôn giữ ≥1 nguồn quốc tế (ưu tiên CNBC, rồi Reuters/Kitco/Bloomberg), bài trong ngày, link đã kiểm tra. EN-only world assessment: h79_view_en + quick_advice_en (no SJC/VND/Vietnam); used on EN macro brief / en/news.html.",
  "updated_vn": "07:50 24/10/2026",
  "rows": [
   {
@@ -648,6 +648,11 @@
   "A buyer at the 191.3 million peak ask (Jan 29, 2026) selling back today at the 138.7 million bid would be down about 52.6 million VND per tael (≈ 27.5%). World markets are shut for the weekend, so local quotes may sit still until Monday morning, but US–Iran escalation risk and the Oct 27–28 Fed meeting could make the first session of the week a volatile one."
  ],
  "advice_en": "Gold broke down through $4,100–$4,150 – the base that held all quarter and all month – and closed the week below $4,000 on Friday (around $3,993–$3,997), down about 4% on the week.\nOnce a base like that gives way, \"cheap\" isn't a reason to buy.\nShort term, the risk is a slide toward $3,700–$3,600. Medium term, $3,500 is in play.\nDon't try to catch a falling knife. If you don't need the metal now, sit on the cash.\nIf you do want to buy, scale in: a starter position around $3,700–$3,600, and save the bigger piece for the $3,500 area.\nMind the dealer premium and the bid/ask spread on bars and coins – that's a real cost, and money you'll need within a few months doesn't belong in physical gold.\nBought near the highs? Don't panic-sell, and don't average down blindly. Add only with spare cash, and only at the levels you planned.",
+ "h79_view_en": [
+  "World gold closed the week below $4,000 for the first time since mid-July: CNBC had spot at $3,998.49/oz at 2:27 PM ET Friday, down 0.6% on the session and about 4% on the week; weekend quotes sit around $3,993–$3,997.",
+  "Brent settled at $116.72 (+3.1%), highest since April 29 — hotter oil and roughly 75% odds of a December Fed hike are the main headwinds keeping the broken $4,100–$4,150 base out of reach."
+ ],
+ "quick_advice_en": "Broke the $4,100–$4,150 base, and Friday closed the week below $4,000: don't catch a falling knife. If you're looking to buy, scale in near $3,700–$3,600 and leave a larger slice for $3,500.",
  "sjc_compare": {
   "d1": {
    "date": "2026-10-23",

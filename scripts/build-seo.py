@@ -51,7 +51,7 @@ EN_REDIRECTS = {
     "en/posts/2026-10-15-gold-plan-night-session-2120.html": "en/posts/2026-10-15-gold-plan-new-york-session-2120.html",
     "en/posts/2026-10-14-gold-plan-night-session-2237.html": "en/posts/2026-10-14-gold-plan-new-york-session-2237.html",
 }
-ASSET_V = "20261020x"  # cache-busting cho css/js trong trang sinh tự động
+ASSET_V = "20261024a"  # cache-busting cho css/js trong trang sinh tự động
 OLD_BASES = ["https://prot1407.github.io/huymastergold79/", "https://huymastergold79.com.vn/", "https://h79gold.com/"]
 VN = dt.timezone(dt.timedelta(hours=7))
 TODAY = dt.datetime.now(VN).date().isoformat()
@@ -552,6 +552,24 @@ def en_summary(s):
             + z(m.get("buy"), "buy", "🟢", "BUY zone") + (f'<div class="n">⚠️ Key risk: {e(note)}</div>' if note else "")
             + (f'<div class="p">💲 {"✅" if m.get("price") == "spot" else "⚠️"} {e(pn)}</div>' if pn else "") + "</section>") + mp_html(s, True)
 
+
+def en_h79_view_block(g):
+    """Separate H79 world-gold assessment for EN pages (no SJC/VND/Vietnam)."""
+    bullets = g.get("h79_view_en") or []
+    tip = (g.get("quick_advice_en") or "").strip()
+    if not bullets and not tip:
+        return ""
+    lis = "".join(f"<li>{e(x)}</li>" for x in bullets)
+    tip_html = f'<p class="vg-tip">👉 {e(tip)}</p>' if tip else ""
+    return (f'<section class="card vg-an" id="h79-view-en"><h3>📝 H79 View</h3>'
+            + (f"<ul>{lis}</ul>" if lis else "")
+            + tip_html
+            + '<p class="small muted" style="margin-top:10px">H79 assessment – world gold only. For information and education; not investment advice.</p></section>')
+
+def vn_gold_day(g):
+    m = re.match(r"(\d\d:\d\d) (\d\d)/(\d\d)/(\d{4})", g.get("updated_vn", "") or "")
+    return f"{m.group(4)}-{m.group(3)}-{m.group(2)}" if m else None
+
 def build_en(arts):
     OUT_EN.mkdir(parents=True, exist_ok=True)
     made = []
@@ -597,6 +615,10 @@ def build_en(arts):
                          f'<p>{e(it.get("summary_en"))}</p>' + (f'<p><b>Gold impact:</b> {e(it["reason_en"])}</p>' if it.get("reason_en") else "")
                          + (f'<p class="small">🔗 Source: {srcs}</p>' if srcs else "") + "</section>")
             d0 = vn_dt(a["date"]); day = f"{d0:%b} {d0.day}, {d0.year}"
+            # Separate H79 world-gold assessment inside this day's international update (EN only).
+            g = load("vn-gold-daily.json")
+            if vn_gold_day(g) == a["date"]:
+                body += en_h79_view_block(g)
             desc = f"Gold macro brief for {day} ({len(its)} stories): " + "; ".join(i["title_en"] for i in its)
             x = dict(path=a["en"], vi="bai/" + a["file"], date=a["date"], sort=a["sort"], kind="Macro brief", title=f"Gold macro brief, {day} – {its[0]['title_en']}",
                      desc=desc[:157].rstrip() + ("…" if len(desc) > 157 else ""), pub=f"{a['date']}T00:00:00+07:00", when=day)

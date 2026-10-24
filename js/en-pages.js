@@ -196,4 +196,16 @@
     $('fl-faq').innerHTML = d.faq.filter(q => q.q_en).map(q => `<details class="card" style="margin-bottom:10px"><summary>${E(q.q_en)}</summary><p style="margin-top:8px">${E(q.a_en)}</p></details>`).join('');
   }).catch(err => { console.warn(err); $('fl-acc').textContent = "Couldn't load the account data."; });
 
+
+  /* ---------- H79 View (world gold only) – data/vn-gold-daily.json h79_view_en + quick_advice_en ---------- */
+  if ($('h79-view-en')) H.getJSON('data/vn-gold-daily.json').then(d => {
+    const bullets = d.h79_view_en || [], tip = (d.quick_advice_en || '').trim();
+    if (!bullets.length && !tip) { $('h79-view-en').hidden = true; return; }
+    $('h79-view-en').innerHTML = `<div class="card vg-an"><h3>📝 H79 View</h3>`
+      + (bullets.length ? `<ul>${bullets.map(x => `<li>${E(x)}</li>`).join('')}</ul>` : '')
+      + (tip ? `<p class="vg-tip">👉 ${E(tip)}</p>` : '')
+      + `<p class="small muted" style="margin-top:10px">H79 assessment – world gold only. For information and education; not investment advice.</p></div>`;
+  }).catch(err => { console.warn(err); $('h79-view-en').hidden = true; });
+
+
 })();
