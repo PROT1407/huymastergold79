@@ -337,3 +337,57 @@ details.h79more>summary::before{content:"▸ "}details.h79more[open]>summary::be
 .rb-fixed{font-size:.72rem;font-weight:700;color:var(--up)}
 .rb-cta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 @media(max-width:900px){.rb-hero,.rb-steps,.rb-calc{grid-template-columns:1fr}.rb-out{grid-column:auto}}
+
+/* FXRebate broker cards — compact row, expandable detail */
+.rb-intro{color:var(--muted);max-width:68ch;margin:-4px 0 14px}
+.rb-brokers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.rb-broker{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:16px 16px 14px;box-shadow:var(--shadow)}
+.rb-live{border-color:rgba(240,185,11,.5);background:linear-gradient(180deg,rgba(240,185,11,.14),var(--bg2) 42%);box-shadow:0 16px 36px rgba(240,185,11,.1)}
+.rb-soon{border-style:dashed;background:color-mix(in srgb,var(--bg2) 92%,transparent);box-shadow:none;opacity:.92}
+.rb-top{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:4px 12px;align-items:center}
+.rb-mark{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-weight:900;font-size:.78rem;letter-spacing:.03em;background:#111;color:#f0b90b;border:1px solid rgba(240,185,11,.5)}
+.rb-mark.cpt{background:#1a2230;color:#9aa6b8;border-color:var(--line);font-size:.68rem}
+.rb-name{margin:0;font-size:1.05rem;font-weight:800;color:var(--txt);display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.rb-tagline{margin:2px 0 0;color:var(--muted);font-size:.8rem;line-height:1.35}
+.rb-offer{text-align:right;margin:0}
+.rb-offer b{display:block;color:var(--gold);font-size:1.02rem;line-height:1.2}
+.rb-soon .rb-offer b{color:var(--txt);opacity:.72}
+.rb-offer small{display:block;margin-top:2px;color:var(--muted);font-size:.72rem;font-weight:600;max-width:9.5rem;margin-left:auto}
+.rb-est{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:12px 0 0;padding:8px 10px;border-radius:10px;background:var(--bg);border:1px solid var(--line);font-size:.82rem;font-weight:700}
+.rb-soon .rb-est{color:var(--muted);font-weight:600}
+.rb-panel{margin-top:4px}
+.rb-panel>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px;padding-top:10px;border-top:1px solid var(--line);color:var(--txt);font-weight:700;cursor:pointer}
+.rb-panel>summary::-webkit-details-marker{display:none}
+.rb-pm{width:24px;height:24px;border-radius:8px;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted);font-size:1rem;line-height:1}
+.rb-panel>summary .rb-pm::before{content:"+"}
+.rb-panel[open]>summary .rb-pm::before{content:"−"}
+.rb-rows{margin:8px 0 4px}
+.rb-rows>div{display:grid;grid-template-columns:minmax(7.2rem,.85fr) minmax(0,1.3fr);gap:8px 12px;align-items:baseline;padding:8px 0;border-top:1px solid var(--line)}
+.rb-rows dt{color:var(--muted);font-size:.82rem;font-weight:600}
+.rb-rows dd{margin:0;text-align:right;font-weight:800;font-size:.9rem;line-height:1.35}
+.rb-row-link dd{display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:flex-end}
+.rb-link{flex:1 1 9rem;min-width:0;font-weight:700;font-size:.78rem;line-height:1.35;text-align:right;white-space:normal;word-break:break-all}
+.rb-clip{flex:none;border:1px solid var(--line);background:var(--bg);color:var(--txt);border-radius:8px;padding:4px 8px;font:700 .72rem 'Be Vietnam Pro',sans-serif;cursor:pointer}
+.rb-clip:hover{border-color:var(--gold);color:var(--gold)}
+.rb-more{margin:8px 0 2px;padding:8px 10px;border-radius:12px;background:var(--bg);border:1px dashed var(--line)}
+.rb-more>summary{cursor:pointer;color:var(--gold);font-weight:700;font-size:.86rem}
+.rb-lots{list-style:none;margin:8px 0;display:grid;gap:6px}
+.rb-lots li{padding:7px 8px;border-radius:10px;background:var(--bg2);border:1px solid var(--line);font-size:.8rem;line-height:1.4}
+.rb-lots b{color:var(--gold)}
+.rb-lots span{display:block;color:var(--muted)}
+.rb-broker .rb-calc{grid-template-columns:1fr;margin-top:8px}
+.rb-broker .rb-out{grid-column:auto}
+.rb-claim{width:100%;justify-content:center;margin-top:12px;text-align:center}
+button.rb-claim{display:flex;padding:11px 16px;border-radius:12px;border:1px dashed var(--line);background:transparent;color:var(--muted);font:700 .95rem 'Be Vietnam Pro',sans-serif;cursor:not-allowed}
+button.rb-claim:hover{transform:none}
+.rb-after{margin:8px 0 0;color:var(--muted);font-size:.78rem;line-height:1.45}
+@media(max-width:860px){.rb-brokers{grid-template-columns:1fr}}
+@media(max-width:520px){
+  .rb-top{grid-template-columns:auto minmax(0,1fr)}
+  .rb-offer{grid-column:1/-1;text-align:left}
+  .rb-offer small{margin-left:0}
+  .rb-rows>div{grid-template-columns:1fr}
+  .rb-rows dd,.rb-row-link dd{text-align:left;justify-content:flex-start}
+  .rb-link{text-align:left}
+}
+@media(prefers-reduced-motion:reduce){.rb-live{box-shadow:none}}
