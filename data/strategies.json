@@ -1,6 +1,317 @@
 {
  "strategies": [
   {
+   "id": "2026-10-26-phien-a-0645",
+   "date": "2026-10-26",
+   "time": "06:45",
+   "session": "Phiên Á",
+   "session_en": "Asia Session (Sunday evening ET)",
+   "url": "bai/2026-10-26-nhan-dinh-vang-phien-a-0645.html",
+   "url_en": "en/posts/2026-10-25-gold-plan-asia-session-sunday-evening.html",
+   "headline": "Vàng 26/10 phiên Á: mở tuần Fed đi ngang dưới 4.000 – BÁN FVG 4.008–4.016, MUA ngắn 3.978–3.983",
+   "headline_en": "H79 Gold Plan – Asia Session (Sunday Evening ET), Oct 25: Fed Week Opens With Gold Stuck Under $4,000 – Sell 4,008–4,016, Buy 3,978–3,983",
+   "title": "Vàng 26/10 phiên Á: mở tuần Fed đi ngang dưới 4.000 – BÁN FVG 4.008–4.016, MUA ngắn 3.978–3.983",
+   "title_en": "H79 Gold Plan – Asia Session (Sunday Evening ET), Oct 25: Fed Week Opens With Gold Stuck Under $4,000 – Sell 4,008–4,016, Buy 3,978–3,983",
+   "image": "img/charts/gold-2026-10-26-phien-a-0645.png",
+   "image_alt": "Biểu đồ vàng 45 phút mở cửa tuần 26/10: đỉnh thứ Sáu 4.032,6, đáy 3.978,1, giá 3.996,5; FVG giảm 4.008–4.025 chưa lấp; vùng BÁN 4.008–4.016, vùng MUA 3.978–3.983",
+   "image_en": "img/charts/gold-2026-10-25-asia-0645-en.png",
+   "image_alt_en": "Gold 45-minute chart at the weekly open, Sunday Oct 25 ET: Friday high 4,032.57, low 3,978.13, last 3,996.5; unfilled bearish gap 4,008–4,025; sell zone 4,008–4,016, buy zone 3,978–3,983",
+   "trend": "Ngắn hạn giảm: vàng mở tuần ở 3.996,4, gần như đứng yên so với giá đóng thứ Sáu 3.994,7 và chỉ dao động 3.993–4.003. Trên đầu là FVG giảm 4.008–4.025 do cú rơi sau tin PMI để lại. Bán hồi ở nửa dưới khoảng trống 4.008–4.016; chỉ mua nhịp ngắn nếu giá quét lại đáy thứ Sáu 3.978–3.983 có nến xác nhận.",
+   "trend_en": "Short-term bearish: gold opened the week at 3,996.39, barely changed from Friday's 3,994.65 close, and has held a 3,993–4,003 range. Overhead sits the unfilled 4,008–4,025 bearish gap left by Friday's post-PMI drop. Sell a bounce into the bottom half of it at 4,008–4,016; buy only a retest of Friday's low at 3,978–3,983 on a confirming close.",
+   "trendType": "down",
+   "support": [
+    3994,
+    3990,
+    3983,
+    3978,
+    3968,
+    3955
+   ],
+   "resistance": [
+    4003,
+    4008,
+    4016,
+    4025,
+    4027,
+    4031
+   ],
+   "entryZones": [
+    "Mua 3.978 – 3.983 (đáy thứ Sáu 3.978,1, dưới pivot S1 phiên 23/10 là 3.971,1). Vào khi có nến 45m hoặc 1H đóng xanh trong vùng. Dừng lỗ 3.968. TP1 3.994 – chốt 50–70%, dời SL về điểm vào; TP2 4.005. Đây là lệnh ngược xu hướng, vào nhỏ. Nến 1H đóng dưới 3.968 thì bỏ mua."
+   ],
+   "entryZones_en": [
+    "Buy 3,978–3,983 (Friday's 3,978.13 low, above the 3,971.1 S1 pivot). Enter on a green 45m or 1H close in the zone. Stop 3,968. TP1 3,994 – take 50–70%, stop to breakeven; TP2 4,005. This is against the trend – keep it small. A 1H close under 3,968 cancels the long."
+   ],
+   "sellZones": [
+    "Bán 4.008 – 4.016 (nửa dưới FVG giảm 45m 4.007,9–4.025,0 do cú rơi sau tin PMI thứ Sáu để lại, trùng FVG 1H 4.004,7–4.017,4; trên đỉnh mở cửa tuần 4.003,2). Vào khi giá chạm vùng và có nến 45m hoặc 1H đóng đỏ. Không bán đuổi trong biên 3.990–4.003. Dừng lỗ 4.027 (trên mép FVG 4.025 và FVG 15m 4.025,8–4.027,4). TP1 3.994 – chốt 50–70%, dời SL hòa vốn; TP2 3.980. Nến 1H đóng trên 4.027 thì bỏ bán."
+   ],
+   "sellZones_en": [
+    "Sell 4,008–4,016 (the bottom half of the 45m bearish gap at 4,007.9–4,025.0 left by Friday's post-PMI drop, lined up with the 1H gap at 4,004.7–4,017.4, above the 4,003.19 weekly-open high). Enter on a red 45m or 1H close in the zone. Don't short the middle of the 3,990–4,003 box. Stop 4,027 (over the 4,025 gap top and the 15m gap at 4,025.8–4,027.4). TP1 3,994 – take 50–70%, stop to breakeven; TP2 3,980. A 1H close above 4,027 cancels the short."
+   ],
+   "scenarios": [
+    "Kế hoạch: BÁN 4.008–4.016 (SL 4.027 · TP1 3.994 → TP2 3.980) · MUA 3.978–3.983 (SL 3.968 · TP1 3.994 → TP2 4.005). Chạm vùng + nến 45m/1H đóng xác nhận.",
+    "Kịch bản chính (~50%): phiên Á đi ngang, hồi lên lấp FVG 4.008–4.016 rồi bị bán, về 3.994 và 3.980.",
+    "Kịch bản phụ (~30%): quét lại đáy thứ Sáu 3.978–3.983, có nến xanh – mua nhịp ngắn về 3.994.",
+    "Kịch bản xấu (~20%): nến 1H đóng dưới 3.968 – không mua, mốc kế 3.955 rồi 3.940–3.950; đóng trên 4.027 – bỏ bán, mốc kế 4.031–4.046.",
+    "Rủi ro: tin Houthi – Iran; 01:00 thứ Năm 29/10 FOMC, 01:30 họp báo; ECB thứ Năm, BOJ thứ Sáu."
+   ],
+   "scenarios_en": [
+    "The plan: sell 4,008–4,016 (stop 4,027 · TP1 3,994 → TP2 3,980) · buy 3,978–3,983 (stop 3,968 · TP1 3,994 → TP2 4,005). Zone tap plus a confirming 45m/1H close.",
+    "Base case (~50%): a quiet Asia drifts into the 4,008–4,016 gap and fails, back to 3,994 and 3,980.",
+    "Alternative (~30%): a retest of Friday's 3,978–3,983 low prints a green close – buy for a quick pop to 3,994.",
+    "Plan-breaker (~20%): a 1H close under 3,968 – no long, next 3,955, then 3,940–3,950; a close above 4,027 cancels the short, next up 4,031–4,046.",
+    "Risk: Houthi/Iran headlines; FOMC Wed 2:00 PM ET, presser 2:30 PM ET; ECB Thursday, BOJ Friday."
+   ],
+   "macro": [],
+   "macro_en": [],
+   "market_picture": {
+    "text": "Vàng mở tuần FOMC ở 3.996,4, gần như đứng yên so với giá đóng thứ Sáu 3.994,7. Cuối tuần Houthi lại bắn tên lửa, drone về Riyadh và cơ sở Aramco ở Yanbu nhưng Ả Rập Xê Út đánh chặn được, chưa có thiệt hại – nên dầu mở cửa hạ nhiệt: Brent lùi gần 1% về 115,6 USD. Dầu bớt nóng giúp hợp đồng S&P nhích lên, USD lùi nhẹ về 101,70, nhưng lợi suất 10 năm vẫn quanh 4,99%. Với vàng, gánh nặng chưa đổi: thị trường cược khoảng 90% Fed giữ lãi rạng sáng 29/10 và gần 70% tăng tháng 12, còn Bank of America dự báo Fed tăng ngay tuần này. Lợi suất gần 5% vẫn đè lên kim loại không có lãi. Quan điểm: 4.000 giờ là kháng cự, phiên Á nhiều khả năng đi ngang hẹp. Nhịp hồi lên khoảng trống 4.008–4.016 là chỗ bán; chỉ mua nhịp ngắn nếu giá quét lại đáy 3.978 có nến xác nhận. Trước Fed, vào nhỏ.",
+    "chips": [
+     {
+      "k": "XAU",
+      "v": "3.996,5 +0,05%",
+      "dir": "up"
+     },
+     {
+      "k": "DXY",
+      "v": "101,70 −0,11%",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "4,990%",
+      "dir": "up"
+     },
+     {
+      "k": "US2Y",
+      "v": "4,688%",
+      "dir": "up"
+     },
+     {
+      "k": "Brent",
+      "v": "115,61 −0,95%",
+      "dir": "down"
+     },
+     {
+      "k": "WTI",
+      "v": "102,08 −1,15%",
+      "dir": "down"
+     },
+     {
+      "k": "S&P 500 fut.",
+      "v": "7.668,5 +0,11%",
+      "dir": "up"
+     },
+     {
+      "k": "Nasdaq fut.",
+      "v": "29.157 +0,13%",
+      "dir": "up"
+     },
+     {
+      "k": "Bạc",
+      "v": "53,89 −0,02%",
+      "dir": ""
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Ả Rập Xê Út đánh chặn tên lửa, drone của Houthi nhắm Riyadh và Aramco ở Yanbu (25/10)",
+      "url": "https://www.cnbc.com/2026/10/25/saudi-arabia-houthi-missile-drone-interceptions.html"
+     },
+     {
+      "name": "CNBC – Chứng khoán Mỹ: hợp đồng tương lai tăng, dầu hạ nhiệt tối Chủ nhật; tuần Fed, ECB, BOJ (25/10)",
+      "url": "https://www.cnbc.com/2026/10/25/stock-market-today-live-updates.html"
+     },
+     {
+      "name": "Investing.com – Fed Rate Monitor (xác suất Fed giữ/tăng lãi)",
+      "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+     },
+     {
+      "name": "ForexFactory – Lịch kinh tế tuần 26–30/10 (hôm nay không có tin đỏ USD; FOMC 01:00 29/10)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "market_picture_en": {
+    "text": "Gold opened Fed week at 3,996.39, barely changed from Friday's 3,994.65 close. Over the weekend the Houthis fired more missiles and drones at Riyadh and Aramco's Yanbu facilities, but the Saudis knocked them down with no damage reported – so crude is cooling at the open, with Brent off about 1% to $115.61. Softer oil has S&P futures a touch higher and the dollar slightly lower at 101.70, but the 10-year is still sitting near 4.99%. For gold, nothing has changed: the market has roughly 90% odds the Fed holds Wednesday and close to 70% on a December hike, and Bank of America is calling for a hike this week. A 5% 10-year is still a heavy lift for a metal that pays nothing. My take: $4,000 is now resistance and Asia probably stays tight. A bounce into the 4,008–4,016 gap is a sale; I'll only buy a retest of the 3,978 low on a confirming close. Size down into the Fed.",
+    "chips": [
+     {
+      "k": "XAU",
+      "v": "3,996.5 +0.05%",
+      "dir": "up"
+     },
+     {
+      "k": "DXY",
+      "v": "101.70 −0.11%",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "4.990%",
+      "dir": "up"
+     },
+     {
+      "k": "US2Y",
+      "v": "4.688%",
+      "dir": "up"
+     },
+     {
+      "k": "Brent",
+      "v": "115.61 −0.95%",
+      "dir": "down"
+     },
+     {
+      "k": "WTI",
+      "v": "102.08 −1.15%",
+      "dir": "down"
+     },
+     {
+      "k": "S&P 500 fut.",
+      "v": "7,668.5 +0.11%",
+      "dir": "up"
+     },
+     {
+      "k": "Nasdaq fut.",
+      "v": "29,157 +0.13%",
+      "dir": "up"
+     },
+     {
+      "k": "Silver",
+      "v": "53.89 −0.02%",
+      "dir": ""
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Saudi Arabia says it intercepted missiles and drones from Iran-backed Houthis",
+      "url": "https://www.cnbc.com/2026/10/25/saudi-arabia-houthi-missile-drone-interceptions.html"
+     },
+     {
+      "name": "CNBC – Stock futures climb as oil cools Sunday evening; Fed, ECB and BOJ decisions this week",
+      "url": "https://www.cnbc.com/2026/10/25/stock-market-today-live-updates.html"
+     },
+     {
+      "name": "Investing.com – Fed Rate Monitor (hold/hike odds)",
+      "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+     },
+     {
+      "name": "ForexFactory – Economic calendar, week of Oct. 26 (no high-impact U.S. data Monday; FOMC Wed 2:00 PM ET)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "physicalAdvice": "Làm theo kế hoạch, đừng chạy theo nến tin.",
+   "physicalAdvice_en": "Trade the plan, not the noise.",
+   "notes": "Các mốc là giá giao ngay XAU/USD (CNBC XAU= 3.989,2–3.996,5 lúc 06:45; gold-api.com 3.994,1 lúc 06:46). Khung 45m dựng từ nến 5m giao ngay CNBC (gộp theo mốc epoch, bỏ giờ nghỉ cuối tuần). Mở cửa tuần 05:00: cao 4.003,2 · thấp 3.993,0. Phiên 23/10: cao 4.032,6 · thấp 3.978,1 · đóng 3.994,8; pivot cổ điển P 4.001,8 · R1 4.025,6 · S1 3.971,1 · S2 3.946,4. FVG chưa lấp – giảm: 45m 4.007,9–4.025,0; 1H 4.004,7–4.017,4 (đã chạm một phần); 15m 4.025,8–4.027,4; 4H 4.031,2–4.045,9; ngày 4.032,6–4.106,1. Bộ lọc H79: giá dưới MA34 và MA89 từ 15m đến 4H, nửa dưới dải BB90 trên mọi khung; RSI 4H 24.",
+   "notes_en": "Levels are spot XAU/USD (CNBC XAU= 3,989.2–3,996.5 at 7:45 PM ET; gold-api.com 3,994.10 at 7:46 PM ET). The 45m frame is built from CNBC XAU= spot 5-minute bars (anchored to the epoch, weekend gap removed). Weekly open at 6:00 PM ET: high 4,003.19 · low 3,993.04. Friday session: high 4,032.57 · low 3,978.13 · close 3,994.82; classic pivots P 4,001.8 · R1 4,025.6 · S1 3,971.1 · S2 3,946.4. Unfilled gaps – bearish: 45m 4,007.9–4,025.0; 1H 4,004.7–4,017.4 (partly tagged); 15m 4,025.8–4,027.4; 4H 4,031.2–4,045.9; daily 4,032.6–4,106.1. H79 filter: price is under the MA34 and MA89 from the 15m through the 4H and in the lower half of the BB90 on every frame; RSI 24 on the 4H.",
+   "dataTime": "Cập nhật 06:45–07:00 ngày 26/10/2026 giờ VN (trước giờ Tokyo mở cửa). Nến 5m và 1H giao ngay CNBC XAU=; gold-api.com XAU; DXY, US10Y, US2Y, Brent, WTI, S&P fut, Nasdaq fut, bạc từ CNBC; xác suất Fed từ Investing.com Fed Rate Monitor và CNBC; lịch tin ForexFactory.",
+   "dataTime_en": "Updated 7:45–8:00 PM ET, Sunday Oct 25, 2026 (before the Tokyo open). Spot 5-minute and hourly bars from CNBC XAU=; gold-api.com XAU; DXY, US10Y, US2Y, Brent, WTI, S&P and Nasdaq futures and silver from CNBC; Fed odds from the Investing.com Fed Rate Monitor and CNBC; calendar from ForexFactory.",
+   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+   "brief": true,
+   "summary": {
+    "trend": "down",
+    "trendText": "Ngắn hạn giảm – vàng mở tuần Fed đi ngang dưới 4.000, lợi suất 10 năm gần 5% vẫn đè giá; bán hồi ở FVG 4.008–4.016, chỉ mua nhịp ngắn ở đáy thứ Sáu 3.978–3.983 khi có nến xác nhận",
+    "trendText_en": "Short-term bearish – gold opens Fed week stuck under $4,000 with the 10-year near 5%; sell a bounce into the 4,008–4,016 gap, buy only a retest of Friday's 3,978–3,983 low on a confirming close",
+    "sell": {
+     "zone": "4.008 – 4.016",
+     "sl": "4.027",
+     "tp": "3.994 → 3.980",
+     "zone_en": "4,008–4,016",
+     "sl_en": "4,027",
+     "tp_en": "TP1 3,994 → TP2 3,980"
+    },
+    "buy": {
+     "zone": "3.978 – 3.983",
+     "sl": "3.968",
+     "tp": "3.994 → 4.005",
+     "zone_en": "3,978–3,983",
+     "sl_en": "3,968",
+     "tp_en": "TP1 3,994 → TP2 4,005"
+    },
+    "note": "Hôm nay không có tin đỏ USD; Fed công bố 01:00 thứ Năm 29/10. Chỉ vào khi chạm vùng + nến 45m/1H đóng xác nhận; dời SL hòa vốn khi chạm TP1, trước Fed vào nhỏ. Nến 1H đóng trên 4.027 bỏ bán; dưới 3.968 bỏ mua.",
+    "note_en": "No high-impact U.S. data Monday; the Fed decides Wed 2:00 PM ET. Only on a zone tap plus a confirming 45m/1H close; stops to breakeven at TP1, size down into the Fed. A 1H close above 4,027 cancels the short; below 3,968 cancels the long.",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD",
+    "priceNote_en": "Spot XAU/USD prices"
+   },
+   "article": {
+    "sections": [
+     {
+      "h": "Nhìn lại ngày 23/10: hụt vùng bán 3 giá, đứng ngoài cú quét 3.978",
+      "p": "Phiên Mỹ thứ Sáu, vàng lên cao nhất 4.032,6 lúc 20:15, thiếu 3,4 giá tới vùng BÁN 4.036–4.044, rồi tin PMI kéo thẳng xuống 3.978,1 – tiếc là không có vị thế vào lệnh. Vùng MUA 4.008–4.013 bị chạm nhưng không có nến xanh, đứng ngoài nên tránh được cú quét qua SL 3.998. Ban ngày 23/10, kế hoạch trưa và phiên Âu cũng chưa khớp vì giá đi ngang 4.010–4.030 – cả ngày không có lệnh nào. Thông thường, khi nhịp hồi cứ hụt vùng bán vài giá, vùng bán kế tiếp nên đặt ngay ở khoảng trống gần nhất – phiên này bán ở 4.008–4.016."
+     },
+     {
+      "h": "Kế hoạch phiên Á",
+      "p": "🔴 BÁN 4.008 – 4.016 | SL 4.027 | TP1 3.994 → TP2 3.980\n🟢 MUA 3.978 – 3.983 (nhịp ngắn) | SL 3.968 | TP1 3.994 → TP2 4.005\nVào lệnh: giá chạm vùng và có nến 45m hoặc 1H đóng xác nhận (đỏ để bán, xanh để mua). Không bán đuổi trong biên 3.990–4.003.\nVô hiệu: nến 1H đóng trên 4.027 bỏ bán – mốc kế 4.031–4.046; đóng dưới 3.968 bỏ mua – mốc kế 3.955 rồi 3.940–3.950.\nChính (~50%): phiên Á đi ngang, hồi lên lấp FVG 4.008–4.016 rồi bị bán, về 3.994 và 3.980.\nPhụ (~30%): quét lại đáy thứ Sáu 3.978–3.983, có nến xanh – mua nhịp ngắn về 3.994.\nXấu (~20%): nến 1H đóng dưới 3.968 – không mua, mốc kế 3.955; đóng trên 4.027 – bỏ bán.\nLưu ý: 07:00 Tokyo mở cửa, 08:30 Thượng Hải – Hồng Kông; 15:00 London mở cửa (Anh đã về giờ mùa đông). Hôm nay không có tin đỏ USD; 21:00 thứ Ba niềm tin tiêu dùng CB (tin cam); 01:00 thứ Năm 29/10 Fed công bố lãi suất, 01:30 họp báo. Trước Fed vào nhỏ, dời SL hòa vốn khi chạm TP1."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Ả Rập Xê Út đánh chặn tên lửa, drone của Houthi nhắm Riyadh và Aramco ở Yanbu (25/10)",
+      "url": "https://www.cnbc.com/2026/10/25/saudi-arabia-houthi-missile-drone-interceptions.html"
+     },
+     {
+      "name": "CNBC – Chứng khoán Mỹ: hợp đồng tương lai tăng, dầu hạ nhiệt tối Chủ nhật; tuần Fed, ECB, BOJ (25/10)",
+      "url": "https://www.cnbc.com/2026/10/25/stock-market-today-live-updates.html"
+     },
+     {
+      "name": "Investing.com – Fed Rate Monitor (xác suất Fed giữ/tăng lãi)",
+      "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+     },
+     {
+      "name": "ForexFactory – Lịch kinh tế tuần 26–30/10 (hôm nay không có tin đỏ USD; FOMC 01:00 29/10)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "article_en": {
+    "sections": [
+     {
+      "h": "Friday's scorecard: sell zone missed by $3, sat out the flush",
+      "p": "Friday's New York session topped at 4,032.57 at 9:15 AM ET, $3.40 shy of the 4,036–4,044 sell zone, and then the PMIs knocked gold straight down to 3,978.13 – no position on for that one. The 4,008–4,013 buy zone got tagged but never printed a green close, so standing aside kept us out of the flush through the 3,998 stop. The midday and London plans didn't fill either – gold chopped 4,010–4,030 – so it was a flat day. When bounces keep stalling a few dollars short of the sell zone, the next short usually belongs right at the nearest gap – that's 4,008–4,016 tonight."
+     },
+     {
+      "h": "Asia Session Plan",
+      "p": "🔴 SELL 4,008–4,016 | Stop 4,027 | Targets 3,994 → 3,980\n🟢 BUY 3,978–3,983 (quick trade) | Stop 3,968 | Targets 3,994 → 4,005\nEntry: price taps the zone and a 45m or 1H bar closes in our favor (red to sell, green to buy). Don't short the middle of the 3,990–4,003 box.\nInvalidation: a 1H close above 4,027 cancels the short – next up 4,031–4,046; a close under 3,968 cancels the long – next 3,955, then 3,940–3,950.\nBase case (~50%): a quiet Asia drifts up into the 4,008–4,016 gap and fails, back to 3,994 and 3,980.\nAlternative (~30%): gold retests Friday's low at 3,978–3,983 and prints a green close – buy for a quick pop to 3,994.\nPlan-breaker (~20%): a 1H close under 3,968 – no long, next 3,955; a close above 4,027 cancels the short.\nNote: Tokyo opens 8:00 PM ET, Shanghai and Hong Kong 9:30 PM ET; London opens 4:00 AM ET (the U.K. is back on GMT, so it's an hour earlier for us this week). No high-impact U.S. data Monday; Conference Board confidence Tue 10:00 AM ET; FOMC Wed 2:00 PM ET, Warsh presser 2:30 PM ET. Size down into the Fed and move stops to breakeven at TP1."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Saudi Arabia says it intercepted missiles and drones from Iran-backed Houthis",
+      "url": "https://www.cnbc.com/2026/10/25/saudi-arabia-houthi-missile-drone-interceptions.html"
+     },
+     {
+      "name": "CNBC – Stock futures climb as oil cools Sunday evening; Fed, ECB and BOJ decisions this week",
+      "url": "https://www.cnbc.com/2026/10/25/stock-market-today-live-updates.html"
+     },
+     {
+      "name": "Investing.com – Fed Rate Monitor (hold/hike odds)",
+      "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+     },
+     {
+      "name": "ForexFactory – Economic calendar, week of Oct. 26 (no high-impact U.S. data Monday; FOMC Wed 2:00 PM ET)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   }
+  },
+  {
    "id": "2026-10-24-tong-ket-tuan",
    "date": "2026-10-24",
    "session": "Tổng kết tuần",

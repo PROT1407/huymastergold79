@@ -2,6 +2,43 @@
  "_note": "Nhật ký kết quả kế hoạch H79. Win = TP1 trước SL; loss = SL trước; hết phiên = P/L tại lúc đánh giá. MFE tính bằng giá ($1/oz). tp1_hit/tp2_hit ghi lại mỗi khi giá chạm TP (kể cả sau đó giá quay lại).",
  "plans": [
   {
+   "id": "2026-10-24-tong-ket-tuan",
+   "date": "2026-10-24",
+   "session": "Tổng kết tuần",
+   "evaluated_at_vn": "06:50 26/10/2026",
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.028 – 4.040",
+    "sl": "4.060",
+    "tp1": "4.000",
+    "tp2": "3.955",
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "entry": null,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "shortfall_to_zone": 24.8,
+    "note": "Kế hoạch tuần 26–30/10, đang chạy. Từ mở cửa 05:00 26/10 tới 06:45 cao nhất 4.003,2 – còn cách vùng bán 24,8 giá. Nguồn CNBC XAU= 5m."
+   },
+   "buy": {
+    "zone": "3.940 – 3.950",
+    "sl": "3.918",
+    "tp1": "3.978",
+    "tp2": "4.005",
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "entry": null,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "shortfall_to_zone": 43.0,
+    "note": "Kế hoạch tuần, đang chạy. Thấp nhất từ mở cửa tuần là 3.993,0 – cách vùng mua 43 giá. Nguồn CNBC XAU= 5m."
+   }
+  },
+  {
    "id": "2026-10-23-phien-my-1915",
    "date": "2026-10-23",
    "session": "Phiên Mỹ",
