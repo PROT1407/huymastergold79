@@ -317,3 +317,23 @@ details.h79more>summary::before{content:"▸ "}details.h79more[open]>summary::be
 .complaint-box ol b{color:var(--txt)}
 @media(max-width:860px){.pay-grid,.risk-grid,.promo-grid,.compare-ex-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.cert-trust:before{animation:none}}
+
+/* FXRebate — hoàn phí IB Exness */
+.rb-hero{display:grid;gap:18px;grid-template-columns:1.35fr .85fr;align-items:stretch}
+.rb-kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rb-kpi{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.rb-kpi small{display:block;color:var(--muted);font-size:.74rem;font-weight:700}
+.rb-kpi b{display:block;margin-top:2px;font-size:1.28rem;color:var(--gold);font-variant-numeric:tabular-nums;line-height:1.25}
+.rb-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.rb-step .n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--gold);color:#1a1405;font-weight:900;margin-bottom:8px}
+.rb-step h3{margin:0 0 6px;font-size:1rem}
+.rb-step p{margin:0;color:var(--muted);font-size:.88rem;line-height:1.55}
+.rb-calc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-items:end;margin-top:14px}
+.rb-out{grid-column:1/-1;border-left:3px solid var(--gold);background:var(--bg2);border-radius:10px;padding:10px 12px}
+.rb-out b{font-size:1.35rem;color:var(--gold);font-variant-numeric:tabular-nums}
+.rb-faq details{border-bottom:1px dashed var(--line);padding:8px 0}
+.rb-faq details p{margin:8px 0 2px;color:var(--muted)}
+.rb-uid{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.86rem;white-space:pre-wrap;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0}
+.rb-fixed{font-size:.72rem;font-weight:700;color:var(--up)}
+.rb-cta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+@media(max-width:900px){.rb-hero,.rb-steps,.rb-calc{grid-template-columns:1fr}.rb-out{grid-column:auto}}

@@ -1,0 +1,2 @@
+date,email,exness_uid,account_type,instrument_focus,lots,ib_commission_usd,rebate_80_usd,usdt_network,txid,notes
+2026-10-25,example@email.com,00000000,Standard,XAUUSD,1,4.80,3.84,TRC-20,,EXAMPLE — delete this row. rebate_80_usd = 80% of ib_commission_usd (here 4.80 Common XAUUSD Standard → 3.84). account_type: Standard | Pro | Zero | Raw. usdt_network: TRC-20 | BEP-20.

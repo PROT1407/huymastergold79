@@ -33,14 +33,15 @@ AUTHOR = "Ngọc Huy"
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "bai"
 MAIN_PAGES = ["index.html", "gia-vang.html", "chien-luoc.html", "bieu-do.html", "live.html",
-              "tin-tuc.html", "lich-kinh-te.html", "kien-thuc.html", "quy-forex.html",
+              "tin-tuc.html", "lich-kinh-te.html", "kien-thuc.html", "quy-forex.html", "fxrebate.html",
               "tai-khoan-follow.html", "ve-toi.html", "lien-he.html"]
 # Trang tiếng Anh (en/, html lang="en"). Cặp VI <-> EN dùng cho hreflang (vi, en, x-default = VI) và sitemap.
 EN_PAGES = ["en/index.html", "en/h79-analysis.html", "en/news.html", "en/economic-calendar.html",
-            "en/charts.html", "en/live.html", "en/learn.html", "en/trading-fund.html", "en/copy-trading.html", "en/about.html", "en/contact.html"]
+            "en/charts.html", "en/live.html", "en/learn.html", "en/trading-fund.html", "en/fxrebate.html", "en/copy-trading.html", "en/about.html", "en/contact.html"]
 LANG_PAIRS = {"index.html": "en/index.html", "chien-luoc.html": "en/h79-analysis.html", "ve-toi.html": "en/about.html",
               "tin-tuc.html": "en/news.html", "lich-kinh-te.html": "en/economic-calendar.html",
               "bieu-do.html": "en/charts.html", "kien-thuc.html": "en/learn.html", "live.html": "en/live.html", "quy-forex.html": "en/trading-fund.html",
+              "fxrebate.html": "en/fxrebate.html",
               "tai-khoan-follow.html": "en/copy-trading.html", "lien-he.html": "en/contact.html"}
 # Bài tiếng Anh tĩnh: en/posts/ (giữ đồng bộ với POST_SES trong js/common.js)
 OUT_EN = ROOT / "en" / "posts"

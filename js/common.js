@@ -36,7 +36,7 @@
   /* ---- VI/EN: cặp trang tương ứng (giữ đồng bộ với thẻ hreflang) ---- */
   const LANG_PAIRS = H.LANG_PAIRS = { 'index.html': 'en/index.html', 'chien-luoc.html': 'en/h79-analysis.html', 've-toi.html': 'en/about.html',
     'tin-tuc.html': 'en/news.html', 'lich-kinh-te.html': 'en/economic-calendar.html', 'bieu-do.html': 'en/charts.html',
-    'kien-thuc.html': 'en/learn.html', 'live.html': 'en/live.html', 'quy-forex.html': 'en/trading-fund.html', 'tai-khoan-follow.html': 'en/copy-trading.html',
+    'kien-thuc.html': 'en/learn.html', 'live.html': 'en/live.html', 'quy-forex.html': 'en/trading-fund.html', 'fxrebate.html': 'en/fxrebate.html', 'tai-khoan-follow.html': 'en/copy-trading.html',
     'lien-he.html': 'en/contact.html', 'bai/index.html': 'en/posts/index.html' };
   /* bài tĩnh: bai/<date>-nhan-dinh-vang-<phiên>[-hhmm].html <-> en/posts/<date>-gold-plan-<session>[-hhmm].html; tin vĩ mô <-> gold-macro-news (khớp scripts/build-seo.py) */
   const POST_SES = [['phien-au-my', 'london-ny-overlap'], ['phien-au', 'london-session'], ['phien-my', 'new-york-session'], ['phien-a', 'asian-session'], ['phien-dem', 'new-york-session']];
@@ -62,6 +62,7 @@
     ['live', 'en/live.html', '🔴 Live'],
     ['forex', 'en/trading-fund.html', '💱 Trading', [
       ['en/trading-fund.html', 'Trading fund model', 'Risk rules and roadmap'],
+      ['en/fxrebate.html', 'FX Rebate', '80% of Exness IB, paid in USDT'],
       ['en/copy-trading.html', 'Copy trading', 'Follow the H79 account']]],
     ['learn', 'en/learn.html', '📚 Learn'],
     ['bai', 'en/posts/index.html', '📰 Archive'],
@@ -87,6 +88,7 @@
       ['lich-kinh-te.html', 'Lịch kinh tế', 'Fed, CPI, việc làm Mỹ…']]],
     ['forex', 'quy-forex.html', '💱 Forex', [
       ['quy-forex.html', 'Xây dựng quỹ Forex', 'Lộ trình vốn, quản trị rủi ro'],
+      ['fxrebate.html', 'Hoàn phí', 'Cashback IB Exness — 80%'],
       ['tai-khoan-follow.html', 'Tài khoản Follow', 'Copy/theo dõi tài khoản giao dịch']]],
     ['learn', 'kien-thuc.html', '📚 Kiến thức', [
       ['kien-thuc.html#mua-vang', 'Cách mua vàng vật chất', 'Cho người mới'],
@@ -117,7 +119,7 @@
         <p class="muted small" style="margin-top:8px">Independent gold (XAU/USD) analysis by Ngọc Huy.</p>
         <div class="share"><a href="${H.YT}" target="_blank" rel="noopener">▶ YouTube</a><a class="tg-link" href="${H.TG}" target="_blank" rel="noopener">✈ Telegram</a><a href="mailto:${H.EMAIL}">✉ Email</a></div></div>
       <div><h4>Analysis</h4><a href="en/h79-analysis.html">H79 Gold Plan</a><a href="en/news.html">Macro news & FedWatch</a><a href="en/economic-calendar.html">Economic calendar</a><a href="en/charts.html">Charts</a><a href="en/live.html">Live room</a><a href="en/posts/index.html">Archive</a></div>
-      <div><h4>More</h4><a href="en/trading-fund.html">Trading fund model</a><a href="en/copy-trading.html">Copy trading</a><a href="en/learn.html">Learn</a><a href="en/about.html">About</a><a href="en/contact.html">Contact</a><a href="index.html" hreflang="vi" lang="vi">Tiếng Việt</a></div>
+      <div><h4>More</h4><a href="en/trading-fund.html">Trading fund model</a><a href="en/fxrebate.html">FX Rebate</a><a href="en/copy-trading.html">Copy trading</a><a href="en/learn.html">Learn</a><a href="en/about.html">About</a><a href="en/contact.html">Contact</a><a href="index.html" hreflang="vi" lang="vi">Tiếng Việt</a></div>
     </div>
     <p class="disc">⚠ <b>Disclaimer:</b> All content is for information and education only and reflects personal opinion; it is <b>not investment advice</b>. Trading gold, forex and CFDs involves a high risk of loss. Past performance does not guarantee future results. Third-party data (TradingView, gold-api.com, Yahoo Finance) may be delayed or inaccurate.<br>© ${new Date().getFullYear()} HuymasterGold79</p>
   </div></footer>`;
@@ -129,7 +131,7 @@
         <div class="share"><a href="${H.YT}" target="_blank" rel="noopener">▶ YouTube</a><a href="#" data-zalo>💬 Zalo</a><a class="tg-link" href="${H.TG}" target="_blank" rel="noopener">✈ Telegram</a><a href="mailto:${H.EMAIL}">✉ Email</a></div>
         <p class="small" style="margin-top:8px">🔴 Kênh live: <a href="${H.YT_LIVE}" target="_blank" rel="noopener">TRADING LIVE XAUUSD</a></p></div>
       <div><h4>Giá vàng</h4><a href="gia-vang.html#bang-gia">Bảng giá trong nước</a><a href="gia-vang.html#quy-doi">Quy đổi thế giới</a><a href="gia-vang.html#may-tinh">Máy tính vàng</a><a href="gia-vang.html#chenh-lech">Chênh lệch SJC</a></div>
-      <div><h4>Phân tích</h4><a href="live.html">🔴 Phòng Live</a><a href="chien-luoc.html">Chiến lược hôm nay</a><a href="bieu-do.html">Biểu đồ toàn màn hình</a><a href="lich-kinh-te.html">Lịch kinh tế</a><a href="tin-tuc.html">Tin tức</a><a href="quy-forex.html">Quỹ Forex</a><a href="tai-khoan-follow.html">Tài khoản Follow</a></div>
+      <div><h4>Phân tích</h4><a href="live.html">🔴 Phòng Live</a><a href="chien-luoc.html">Chiến lược hôm nay</a><a href="bieu-do.html">Biểu đồ toàn màn hình</a><a href="lich-kinh-te.html">Lịch kinh tế</a><a href="tin-tuc.html">Tin tức</a><a href="quy-forex.html">Quỹ Forex</a><a href="fxrebate.html">Hoàn phí FX</a><a href="tai-khoan-follow.html">Tài khoản Follow</a></div>
       <div><h4>Thông tin</h4><a href="kien-thuc.html">Kiến thức</a><a href="ve-toi.html">Về tôi</a><a href="lien-he.html#lien-he">Liên hệ</a><a href="mailto:${H.EMAIL}">${H.EMAIL}</a></div>
     </div>
     <p class="disc">⚠ <b>Miễn trừ trách nhiệm:</b> Nội dung chỉ mang tính tham khảo, là quan điểm cá nhân, <b>không phải lời khuyên đầu tư</b>. Giá quy đổi là ước tính, chưa gồm thuế phí. Dữ liệu từ bên thứ ba (TradingView, gold-api.com, open.er-api.com, webgia.com, website các thương hiệu) có thể chậm hoặc sai lệch.<br>© ${new Date().getFullYear()} HuymasterGold79.com.vn</p>
