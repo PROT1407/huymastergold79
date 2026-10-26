@@ -125,10 +125,52 @@ def og_style_img(s, en=False):  # ảnh xem trước theo og_style (None = dùng
 def og_img(a, en=False):  # ảnh chart riêng > kiểu og_style > mặc định v3
     return a.get("img") or a.get("ogimg") or (OG_IMG_EN if en else OG_IMG_VI)
 
-def og_dim(a):  # kích thước chỉ khai báo cho ảnh 1200x630 (mặc định/kiểu); ảnh chart riêng của bài giữ nguyên
-    if a.get("img"): return ""
-    return ('<meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200">'
-            '<meta property="og:image:height" content="630"><meta property="og:image:alt" content="H79GOLD – h79gold.com">')
+def _img_meta(rel):
+    """(width, height, mime) từ header PNG/JPEG — không cần Pillow (CI chỉ có stdlib)."""
+    path = ROOT / rel
+    if not path.is_file():
+        return None
+    data = path.read_bytes()[:65536]
+    if data[:8] == b"\x89PNG\r\n\x1a\n" and len(data) >= 24:
+        w = int.from_bytes(data[16:20], "big"); h = int.from_bytes(data[20:24], "big")
+        return w, h, "image/png"
+    if data[:2] == b"\xff\xd8":
+        i, n = 2, len(data)
+        while i + 9 < n:
+            if data[i] != 0xFF:
+                break
+            while i < n and data[i] == 0xFF:
+                i += 1
+            if i >= n:
+                break
+            marker = data[i]; i += 1
+            if marker in (0xD8, 0xD9) or marker == 0x01 or 0xD0 <= marker <= 0xD7:
+                continue
+            if i + 1 >= n:
+                break
+            seglen = int.from_bytes(data[i:i+2], "big"); i += 2
+            if marker in (0xC0, 0xC1, 0xC2, 0xC3, 0xC5, 0xC6, 0xC7, 0xC9, 0xCA, 0xCB, 0xCD, 0xCE, 0xCF) and i + 5 <= n:
+                h = int.from_bytes(data[i+1:i+3], "big"); w = int.from_bytes(data[i+3:i+5], "big")
+                return w, h, "image/jpeg"
+            i += max(0, seglen - 2)
+        return None
+    if data[:4] == b"RIFF" and data[8:12] == b"WEBP":
+        return None  # hiếm; bỏ qua kích thước
+    return None
+
+def og_dim(a, en=False):
+    """og:image:type/width/height/alt — luôn khai báo (chart riêng + ảnh mặc định) để Facebook hiện preview."""
+    rel = og_img(a, en)
+    meta = _img_meta(rel)
+    if meta:
+        w, h, mime = meta
+    else:
+        w, h, mime = 1200, 630, "image/png"
+    alt = "H79GOLD – h79gold.com"
+    return (f'<meta property="og:image:type" content="{mime}">'
+            f'<meta property="og:image:width" content="{w}">'
+            f'<meta property="og:image:height" content="{h}">'
+            f'<meta property="og:image:alt" content="{alt}">')
 
 def page(a, body):
     url = BASE_URL + "bai/" + a["file"]
@@ -507,7 +549,7 @@ def en_page(a, body):
 <link rel="canonical" href="{url}">{alt}
 <meta name="theme-color" content="#0d1117">
 <meta property="og:type" content="{og}"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="{SITE}">
-<meta property="og:title" content="{e(a['title'])}"><meta property="og:description" content="{e(a['desc'])}"><meta property="og:url" content="{url}"><meta property="og:image" content="{BASE_URL}{og_img(a, True)}">{og_dim(a)}
+<meta property="og:title" content="{e(a['title'])}"><meta property="og:description" content="{e(a['desc'])}"><meta property="og:url" content="{url}"><meta property="og:image" content="{BASE_URL}{og_img(a, True)}">{og_dim(a, True)}
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{BASE_URL}{og_img(a, True)}">
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
