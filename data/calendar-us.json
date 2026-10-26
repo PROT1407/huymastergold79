@@ -5,8 +5,74 @@
   "url": "https://www.forexfactory.com/calendar",
   "feed": "https://nfs.faireconomy.media/ff_calendar_thisweek.json"
  },
- "updated_vn": "06:58 21/10/2026",
- "updated_utc": "2026-10-20T23:58:52Z",
+ "updated_vn": "07:29 26/10/2026",
+ "updated_utc": "2026-10-26T00:29:05Z",
  "has_actual": false,
- "events": []
+ "events": [
+  {
+   "title": "Federal Funds Rate",
+   "title_vi": "Quyết định lãi suất của Fed (FOMC)",
+   "explain": "Sự kiện lớn nhất. Tăng/giữ cao → áp lực vàng; giảm → hỗ trợ vàng.",
+   "explain_en": "The biggest event of the month. A hike or hawkish hold weighs on gold; a cut supports it.",
+   "impact": "High",
+   "time_utc": "2026-10-28T18:00:00Z",
+   "time_vn": "01:00 29/10/2026",
+   "date_vn": "2026-10-29",
+   "forecast": "4.00%",
+   "previous": "4.00%",
+   "actual": ""
+  },
+  {
+   "title": "FOMC Statement",
+   "title_vi": "FOMC – Ủy ban Thị trường Mở Liên bang",
+   "explain": "Tín hiệu về lộ trình lãi suất – biến động mạnh với vàng.",
+   "explain_en": "Signals on the rate path – expect sharp moves in gold.",
+   "impact": "High",
+   "time_utc": "2026-10-28T18:00:00Z",
+   "time_vn": "01:00 29/10/2026",
+   "date_vn": "2026-10-29",
+   "forecast": "",
+   "previous": "",
+   "actual": ""
+  },
+  {
+   "title": "FOMC Press Conference",
+   "title_vi": "FOMC – Ủy ban Thị trường Mở Liên bang",
+   "explain": "Tín hiệu về lộ trình lãi suất – biến động mạnh với vàng.",
+   "explain_en": "Signals on the rate path – expect sharp moves in gold.",
+   "impact": "High",
+   "time_utc": "2026-10-28T18:30:00Z",
+   "time_vn": "01:30 29/10/2026",
+   "date_vn": "2026-10-29",
+   "forecast": "",
+   "previous": "",
+   "actual": ""
+  },
+  {
+   "title": "Advance GDP q/q",
+   "title_vi": "GDP – tăng trưởng kinh tế",
+   "explain": "Tăng trưởng mạnh → Fed ít lý do nới lỏng → USD mạnh.",
+   "explain_en": "Strong growth gives the Fed less reason to ease → firmer dollar.",
+   "impact": "High",
+   "time_utc": "2026-10-29T12:30:00Z",
+   "time_vn": "19:30 29/10/2026",
+   "date_vn": "2026-10-29",
+   "forecast": "3.2%",
+   "previous": "1.5%",
+   "actual": ""
+  },
+  {
+   "title": "Core PCE Price Index m/m",
+   "title_vi": "PCE lõi – thước đo lạm phát ưa thích của Fed",
+   "explain": "Cao hơn dự báo → Fed cứng rắn → bất lợi cho vàng.",
+   "explain_en": "The Fed's preferred inflation gauge. Above forecast → hawkish Fed → bearish gold.",
+   "impact": "High",
+   "time_utc": "2026-10-29T12:30:00Z",
+   "time_vn": "19:30 29/10/2026",
+   "date_vn": "2026-10-29",
+   "forecast": "0.3%",
+   "previous": "0.2%",
+   "actual": ""
+  }
+ ]
 }
