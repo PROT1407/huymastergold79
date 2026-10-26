@@ -362,7 +362,7 @@
   $('btn-clear').onclick = () => { if (!confirm('Xoá toàn bộ nội dung đang viết?')) return; ls.del(DRAFT); resetNew(false); };
   $('btn-cancel-edit').onclick = () => { resetNew(true); openTab('posts'); };
 
-  /* ảnh: thu nhỏ trên máy (tối đa 1600px, JPEG) để tải nhanh bằng 4G */
+  /* ảnh: luôn xuất JPEG RGB q~0.85 (không alpha) — Facebook OG hay bỏ PNG RGBA, chỉ hiện caption */
   $('p-img').onchange = async () => {
     const file = $('p-img').files[0]; IMG = null; $('img-pv').classList.add('hidden'); if (!file) return;
     if (!/^image\//.test(file.type)) { flash('File này không phải ảnh.', 'err'); return; }
@@ -370,16 +370,16 @@
     try {
       const url = URL.createObjectURL(file), im = new Image();
       await new Promise((ok, no) => { im.onload = ok; im.onerror = () => no(new Error('Không đọc được ảnh')); im.src = url; });
-      let blob = file, ext = (file.type.split('/')[1] || 'png').replace('jpeg', 'jpg');
-      if (file.size > 700 * 1024 || im.naturalWidth > 1600 || !/^(png|jpg|webp)$/.test(ext)) {
-        const w = Math.min(1600, im.naturalWidth), h = Math.round(im.naturalHeight * w / im.naturalWidth), c = document.createElement('canvas'); c.width = w; c.height = h;
-        const g = c.getContext('2d'); g.fillStyle = '#fff'; g.fillRect(0, 0, w, h); g.drawImage(im, 0, 0, w, h);
-        blob = await new Promise(ok => c.toBlob(ok, 'image/jpeg', 0.86)); ext = 'jpg';
-      }
+      const w = Math.min(1600, im.naturalWidth || 1600), h = Math.round((im.naturalHeight || 900) * w / (im.naturalWidth || 1600));
+      const c = document.createElement('canvas'); c.width = w; c.height = h;
+      const g = c.getContext('2d'); g.fillStyle = '#0d1117'; g.fillRect(0, 0, w, h); g.drawImage(im, 0, 0, w, h);
+      const blob = await new Promise(ok => c.toBlob(ok, 'image/jpeg', 0.85));
+      const ext = 'jpg';
       URL.revokeObjectURL(url);
+      if (!blob) throw new Error('Không xuất được JPEG');
       if (blob.size > 5 * 1024 * 1024) throw new Error('Ảnh quá lớn (>5MB)');
       const bytes = new Uint8Array(await blob.arrayBuffer());
-      IMG = { b64: b64encBytes(bytes), ext, dataUrl: 'data:image/' + (ext === 'jpg' ? 'jpeg' : ext) + ';base64,' + b64encBytes(bytes) };
+      IMG = { b64: b64encBytes(bytes), ext, dataUrl: 'data:image/jpeg;base64,' + b64encBytes(bytes) };
       $('img-pv').src = IMG.dataUrl; $('img-pv').classList.remove('hidden');
     } catch (e) { flash('Lỗi ảnh: ' + errMsg(e), 'err'); $('p-img').value = ''; }
     busy(); ogNote();
