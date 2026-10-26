@@ -65,7 +65,7 @@
   const title = s => s.title_en || `H79 Gold Plan – ${ses(s) || 'XAUUSD'}, ${fETd.format(vnDate(s))}`;
   function full(s) {
     const sumLabel = s.brief ? 'More details' : 'Full breakdown: indicators, scenarios, macro';
-    return `<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px"><div><span class="muted">📅 ${ses(s) ? ses(s) + ' · ' : ''}${when(s)}</span><h2 style="font-size:1.4rem;color:var(--txt);margin:4px 0">${E(title(s))}</h2></div><div><span class="badge ex">H79 PLAN</span></div></div>${sumHTML(s)}<details class="h79more"><summary>${sumLabel}</summary>${details(s)}</details><p class="small muted" style="margin-top:8px"><i>${E(s.disclaimer_en || 'Technical analysis for educational purposes only – not investment advice.')}</i></p>`;
+    return `<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px"><div><span class="muted">📅 ${ses(s) ? ses(s) + ' · ' : ''}${when(s)}</span><h2 style="font-size:1.4rem;color:var(--txt);margin:4px 0">${E(title(s))}</h2></div><div><span class="badge ex">H79 PLAN</span></div></div>${sumHTML(s)}<details class="h79more"><summary>${sumLabel}</summary>${details(s)}</details><p class="small muted" style="margin-top:8px"><i>${E(s.disclaimer_en || 'Technical analysis for educational purposes only – not investment advice.')}</i></p>${H.shareHTML(title(s))}`;
   }
   function compact(s) {
     return `<span class="tag">⚡ ${ses(s) ? ses(s) + ' · ' : ''}${when(s)}</span> <span class="badge ex">H79 PLAN</span><h2>${E(title(s))}</h2>${sumHTML(s)}<a class="btn" style="margin-top:10px" href="en/h79-analysis.html">See the full plan →</a>`;
