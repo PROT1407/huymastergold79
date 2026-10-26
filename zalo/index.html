@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <base href="../">
 <!-- Trang nối cho caption Facebook/Zalo: dán https://h79gold.com/zalo thay cho zalo.me.
-     zalo.me/g/... trả 302 sang trang đăng nhập (og:image của Zalo). Link cùng domain giữ thẻ xem trước của bài.
-     CTA trên site (common.js / engage.js) vẫn trỏ thẳng zalo.me. -->
+     Không dùng meta refresh / HTTP redirect sang zalo.me — crawler (facebookexternalhit, …) phải đọc og:image của H79.
+     Khách thường được JS chuyển sau một nhịp; không có JS thì bấm liên kết. CTA trên site vẫn trỏ thẳng zalo.me. -->
 <title>Vào nhóm Zalo H79 gold – HuymasterGold79 (Ngọc Huy)</title>
 <meta name="description" content="Tham gia nhóm Zalo H79 gold của Ngọc Huy (HuymasterGold79): nhận định vàng, kế hoạch phiên và trao đổi cùng anh em.">
 <meta name="robots" content="noindex, follow">
@@ -20,8 +20,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
 <script>document.documentElement.dataset.theme=localStorage.getItem('hmg_theme')||'dark'</script>
 <link rel="stylesheet" href="css/site.css?v=20261026z">
-<meta http-equiv="refresh" content="0; url=https://zalo.me/g/1p7uh1dizyaremqavaae">
-<script>location.replace("https://zalo.me/g/1p7uh1dizyaremqavaae")</script>
+<script>
+(function () {
+  var ua = navigator.userAgent || '';
+  if (/facebookexternalhit|Facebot|facebookcatalog|meta-externalagent|Meta-ExternalFetcher|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp/i.test(ua)) return;
+  var group = 'https://zalo.me/g/1p7uh1dizyaremqavaae';
+  setTimeout(function () { location.replace(group); }, 1200);
+})();
+</script>
 </head>
 <body data-page="zalo">
 <div id="site-header"></div>
@@ -34,6 +40,7 @@
   <section class="card center sec">
     <p>Đang chuyển bạn tới nhóm Zalo H79 gold…</p>
     <p style="margin-top:16px"><a class="btn zalo" href="https://zalo.me/g/1p7uh1dizyaremqavaae">Vào nhóm Zalo</a></p>
+    <noscript><p class="small" style="margin-top:12px"><a href="https://zalo.me/g/1p7uh1dizyaremqavaae">Vào nhóm Zalo</a></p></noscript>
   </section>
 </main>
 <div id="site-footer"></div>
