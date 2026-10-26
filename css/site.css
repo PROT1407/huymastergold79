@@ -135,6 +135,18 @@ footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:24px}foote
 .tg-go{flex:none;padding:9px 16px;border-radius:999px;background:#fff;color:#1565c0;font-weight:800}
 .btn.tg{background:linear-gradient(135deg,#2aabee,#1e88d0);color:#fff!important}
 .share a.tg-link{border-color:#2aabee;color:#2aabee}
+.za-card{background:linear-gradient(135deg,#0068ff,#0054d6 60%,#003fa3);box-shadow:0 10px 30px rgba(0,104,255,.32)}
+.za-card:hover{box-shadow:0 16px 40px rgba(0,104,255,.48)}
+.za-card .tg-ic{color:#0068ff}
+.za-card .tg-go{color:#0050c8}
+.share a.za-link{border-color:#0068ff;color:#0068ff}
+.za-qr{margin:12px 0 0}.za-qr a{display:inline-block;padding:0;border:0;background:transparent}
+.za-qr img,.za-join img{width:min(280px,100%);height:auto;border-radius:16px;display:block;box-shadow:var(--shadow)}
+.za-qr figcaption,.za-join figcaption{font-size:.8rem;color:var(--muted);margin-top:6px}
+.za-join{margin:8px 0 18px}
+.join-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:stretch}
+.join-row .tg-card{margin:18px 0;height:100%}
+@media(max-width:720px){.join-row{grid-template-columns:1fr}}
 @media(max-width:640px){.tg-card{flex-wrap:wrap}.tg-go{width:100%;text-align:center}}
 @media(prefers-reduced-motion:reduce){.tg-ic{animation:none}}
 /* Lịch tin Mỹ – ForexFactory */
@@ -201,7 +213,7 @@ footer .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:24px}foote
 .nt-card{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:22px;border-radius:22px;border:1px solid var(--gold);background:linear-gradient(120deg,rgba(42,171,238,.18),rgba(240,185,11,.14) 55%,var(--card));box-shadow:0 10px 34px rgba(240,185,11,.15)}
 .nt-l{display:flex;gap:14px;align-items:flex-start;flex:1 1 320px}.nt-l h2{font-size:1.35rem;font-weight:800;margin-bottom:4px}.nt-l p{color:var(--muted)}
 .nt-bell{font-size:2.2rem;animation:ntRing 2.5s infinite;display:inline-block}.nt-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-.nt-qr{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;color:var(--muted)}.nt-qr img{width:120px;border-radius:12px;border:2px solid var(--gold)}
+.nt-qr{display:flex;flex-direction:column;align-items:center;gap:4px;text-decoration:none;color:var(--muted)}.nt-qr img{width:120px;border-radius:12px;border:2px solid var(--gold)}.nt-qr.group img{width:148px}
 @media(max-width:640px){.nt-qr{display:none}.nt-btns .btn{flex:1;text-align:center}}
 @media(prefers-reduced-motion:reduce){.sb.nt,.nt-bell,.rxb.pop{animation:none}}
 /* Bình luận Disqus */

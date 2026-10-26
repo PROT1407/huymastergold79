@@ -52,7 +52,7 @@ EN_REDIRECTS = {
     "en/posts/2026-10-15-gold-plan-night-session-2120.html": "en/posts/2026-10-15-gold-plan-new-york-session-2120.html",
     "en/posts/2026-10-14-gold-plan-night-session-2237.html": "en/posts/2026-10-14-gold-plan-new-york-session-2237.html",
 }
-ASSET_V = "20261024a"  # cache-busting cho css/js trong trang sinh tự động
+ASSET_V = "20261026z"  # cache-busting cho css/js trong trang sinh tự động
 OLD_BASES = ["https://prot1407.github.io/huymastergold79/", "https://huymastergold79.com.vn/", "https://h79gold.com/"]
 VN = dt.timezone(dt.timedelta(hours=7))
 TODAY = dt.datetime.now(VN).date().isoformat()
@@ -172,6 +172,7 @@ def page(a, body):
 <h1>{e(a['title'])}</h1>
 {body}
 <p class="muted small" style="margin-top:14px">⚠ Nội dung chỉ mang tính tham khảo, là quan điểm cá nhân, không phải lời khuyên đầu tư.</p>
+<div data-share></div>
 <div class="seo-nav"><a class="btn" href="bai/index.html">📰 Kho bài viết</a><a class="btn ghost" href="chien-luoc.html">🎯 Chiến lược hôm nay</a><a class="btn ghost" href="gia-vang.html">💰 Giá vàng VN</a><a class="btn ghost" href="lich-kinh-te.html">📅 Lịch kinh tế</a><a class="btn ghost" href="live.html">🔴 Phòng Live</a></div>
 </article></main>
 <div id="site-footer"></div>
@@ -521,6 +522,7 @@ def en_page(a, body):
 <main class="wrap"><article class="seo-art">
 {body}
 <p class="muted small" style="margin-top:14px">⚠ For information and education only – not investment advice. Trading gold and CFDs carries a high risk of loss.</p>
+<div data-share></div>
 <div class="seo-nav"><a class="btn" href="en/posts/index.html">📰 Archive</a><a class="btn ghost" href="en/h79-analysis.html">🎯 Latest H79 plan</a><a class="btn ghost" href="en/news.html">🌐 Macro news</a><a class="btn ghost" href="en/economic-calendar.html">📅 Economic calendar</a></div>
 </article></main>
 <div id="site-footer"></div>
