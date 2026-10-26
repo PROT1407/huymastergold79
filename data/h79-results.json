@@ -2,10 +2,48 @@
  "_note": "Nhật ký kết quả kế hoạch H79. Win = TP1 trước SL; loss = SL trước; hết phiên = P/L tại lúc đánh giá. MFE tính bằng giá ($1/oz). tp1_hit/tp2_hit ghi lại mỗi khi giá chạm TP (kể cả sau đó giá quay lại).",
  "plans": [
   {
+   "id": "2026-10-26-phien-a-0645",
+   "date": "2026-10-26",
+   "session": "Phiên Á",
+   "evaluated_at_vn": "13:40 26/10/2026",
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.008 – 4.016",
+    "sl": "4.027",
+    "tp1": "3.994",
+    "tp2": "3.980",
+    "zone_filled": true,
+    "result": "hết phiên",
+    "pl": 7.6,
+    "mfe": 8.8,
+    "entry": 4012.37,
+    "entry_time_vn": "13:00 26/10 (đóng nến 45m 12:15)",
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "carried_to": "2026-10-26-phien-au-1345",
+    "note": "Giá vào vùng từ ~10:00 (nến 45m 10:00, 10:45, 11:30 đóng xanh – chưa vào). Nến 45m 12:15 đóng đỏ 4.012,37 trong vùng (nến 1H 12:00 cũng đóng đỏ) → vào bán 4.012,4. Đỉnh sau khi vào 4.013,6, thấp nhất 4.003,5 (13:30) → MFE 8,8; lúc 13:40 giá 4.004,8 = +7,6. Đỉnh cả phiên ≈4.019 (ước tính, trước khi vào lệnh) – SL 4.027 an toàn. Lệnh giữ sang phiên Âu với SL 4.027, TP1 3.994. Nguồn CNBC XAU= 5m; 07:05–12:15 CNBC thiếu dữ liệu, bù bằng GC=F trừ chênh ≈13,5."
+   },
+   "buy": {
+    "zone": "3.978 – 3.983",
+    "sl": "3.968",
+    "tp1": "3.994",
+    "tp2": "4.005",
+    "zone_filled": true,
+    "result": "không vào lệnh",
+    "mfe": null,
+    "entry": null,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "note": "Đáy phiên Á ≈3.977 quanh 08:00 (ước tính từ GC=F 3.990,9 trừ chênh 13,5; sai số ±1,5) – chạm vùng, SL 3.968 không bị chạm. Không có nến 45m/1H đóng trong vùng (45m 07:45 đóng ≈3.987,6 đỏ, 45m 08:30 đóng ≈3.993,3 xanh nhưng ngoài vùng; 1H 08:00 đóng ≈3.988,5) → không vào. Giá sau đó lên 4.016 – qua cả TP1 3.994 và TP2 4.005: dương tối đa ~36 giá tính từ mép trên vùng nếu đã vào. Tiếc là không có vị thế vào lệnh."
+   }
+  },
+  {
    "id": "2026-10-24-tong-ket-tuan",
    "date": "2026-10-24",
    "session": "Tổng kết tuần",
-   "evaluated_at_vn": "06:50 26/10/2026",
+   "evaluated_at_vn": "13:40 26/10/2026",
    "price_ref": "spot",
    "sell": {
     "zone": "4.028 – 4.040",
@@ -19,8 +57,8 @@
     "tp1_hit": false,
     "tp2_hit": false,
     "sl_hit": false,
-    "shortfall_to_zone": 24.8,
-    "note": "Kế hoạch tuần 26–30/10, đang chạy. Từ mở cửa 05:00 26/10 tới 06:45 cao nhất 4.003,2 – còn cách vùng bán 24,8 giá. Nguồn CNBC XAU= 5m."
+    "shortfall_to_zone": 8.6,
+    "note": "Kế hoạch tuần 26–30/10, đang chạy. Tới 13:40 26/10 đỉnh cao nhất ≈4.019,4 (ước tính GC=F trừ chênh; CNBC đo được 4.016,4) – còn cách vùng bán ~8,6 giá. Nguồn CNBC XAU= 5m."
    },
    "buy": {
     "zone": "3.940 – 3.950",
@@ -34,8 +72,8 @@
     "tp1_hit": false,
     "tp2_hit": false,
     "sl_hit": false,
-    "shortfall_to_zone": 43.0,
-    "note": "Kế hoạch tuần, đang chạy. Thấp nhất từ mở cửa tuần là 3.993,0 – cách vùng mua 43 giá. Nguồn CNBC XAU= 5m."
+    "shortfall_to_zone": 27.4,
+    "note": "Kế hoạch tuần, đang chạy. Thấp nhất tới 13:40 26/10 ≈3.977,4 (ước tính GC=F trừ chênh) – còn cách vùng mua ~27 giá. Nguồn CNBC XAU= 5m."
    }
   },
   {

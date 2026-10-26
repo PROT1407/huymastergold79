@@ -56,6 +56,68 @@
  "items": [
   {
    "date": "2026-10-26",
+   "category": "Dầu mỏ",
+   "priority": 1,
+   "impact": "tăng",
+   "title": "Dầu giảm hơn 2% đầu tuần: WTI về 101 USD, Brent 114,5 USD sau đỉnh 6 tháng – Qatar làm trung gian ở Tehran, nhưng Houthi vẫn đe dọa hạ tầng dầu Ả Rập Xê Út",
+   "summary": "CNBC: WTI giảm 2,19% về 101 USD/thùng, Brent giảm 1,89% về 114,51 USD trong phiên châu Á thứ Hai, sau khi Brent chốt thứ Sáu ở 116,72 USD – cao nhất từ 29/4. Reuters cho biết các nhà trung gian Qatar có mặt ở Tehran hôm Chủ nhật để hạ nhiệt căng thẳng, phối hợp với Mỹ. Theo Bloomberg, Tổng thống Trump nói «đã đến lúc quyết định» giữa thỏa thuận với Iran hay «kết thúc nó»; Israel bầu cử thứ Ba. Gallo Partners ước tính rủi ro địa chính trị đã cộng khoảng 20 USD/thùng vào giá dầu.",
+   "reason": "Ngắn hạn: dầu hạ nhiệt làm giảm lo ngại lạm phát và kéo lợi suất xuống – đây là lực chính giúp vàng hồi từ ~3.977 lên quanh 4.016 trong phiên Á. Dài hạn: phần bù rủi ro ~20 USD vẫn nằm trong giá dầu; chỉ cần một đòn trúng hạ tầng Ả Rập Xê Út là dầu bật lại, lợi suất lên và vàng lại chịu sức ép.",
+   "source": {
+    "name": "CNBC – Dầu giảm hơn 2% khi thị trường cân nhắc rủi ro tấn công Ả Rập Xê Út",
+    "name_en": "CNBC – Oil slides over 2% as traders weigh Saudi attack risks, demand destruction",
+    "url": "https://www.cnbc.com/2026/10/26/oil-prices-today-wti-brent.html"
+   },
+   "source2": {
+    "name": "Bloomberg (qua Moneyweb) – Dầu rời đỉnh 6 tháng khi thị trường đánh giá rủi ro Trung Đông",
+    "name_en": "Bloomberg (via Moneyweb) – Oil declines from six-month high as traders assess Mideast risks",
+    "url": "https://www.moneyweb.co.za/news/markets/oil-declines-from-six-month-high-as-traders-assess-mideast-risks/"
+   },
+   "time_vn": "12:18 VN 26/10 (CNBC)",
+   "title_en": "Crude drops more than 2% to start the week – WTI near $101, Brent $114.51 off six-month highs as Qatari mediators visit Tehran, but Houthi threats to Saudi energy sites linger",
+   "summary_en": "CNBC: WTI slid 2.19% to $101 a barrel and Brent fell 1.89% to $114.51 in Asian trading Monday after Brent settled Friday at $116.72, its highest close since April 29. Reuters reported Qatari mediators were in Tehran on Sunday to help de-escalate in coordination with the U.S. Per Bloomberg, President Trump said it's \"getting to be decision time\" on whether to make a deal with Iran or \"finish it off\"; Israel votes Tuesday. Gallo Partners estimates the geopolitical premium at roughly $20 a barrel.",
+   "reason_en": "Near term: cheaper crude takes some heat off inflation expectations and yields – that's what lifted gold from about 3,977 to the 4,016 area overnight. Longer term: that ~$20 risk premium is still in the price. One hit on Saudi infrastructure and crude pops, yields follow and gold is back under pressure.",
+   "time_en": "Oct 26, 1:18 AM ET (CNBC)"
+  },
+  {
+   "date": "2026-10-26",
+   "category": "Fed",
+   "priority": 2,
+   "impact": "giảm",
+   "title": "Vàng hồi lên trên 4.000 USD nhờ dầu hạ nhiệt, nhưng FedWatch vẫn đặt 75% khả năng Fed tăng lãi tháng 12",
+   "summary": "CNBC (Reuters): vàng giao ngay tăng 0,4% lên 4.009,87 USD/ounce lúc 10:42 giờ VN, sau khi chạm đáy từ giữa tháng 7 ở phiên trước và mất 4% trong tuần trước. Kyle Rodda (Capital.com) cho rằng cú bật chủ yếu nhờ dầu giảm và «có thể dễ bị chặn» khi thị trường chờ FOMC. Thị trường kỳ vọng Fed giữ lãi tuần này, còn xác suất tăng lãi tháng 12 là 75% theo CME FedWatch; PCE công bố ngay sau cuộc họp.",
+   "reason": "Ngắn hạn: nhịp hồi thiếu lực vì không có dòng tiền trú ẩn mới – vùng 4.019–4.025 là kháng cự gần. Dài hạn: kỳ vọng Fed tăng lãi tháng 12 và lợi suất 10 năm gần 5% vẫn là lực đè chính lên vàng; chỉ khi Fed bớt cứng rắn vàng mới lấy lại xu hướng tăng.",
+   "source": {
+    "name": "CNBC – Vàng tăng nhờ dầu hạ nhiệt, chờ quyết định của Fed",
+    "name_en": "CNBC – Gold gains on softer oil prices; Fed decision in focus",
+    "url": "https://www.cnbc.com/2026/10/26/gold-gains-on-softer-oil-prices-fed-decision-in-focus.html"
+   },
+   "time_vn": "13:08 VN 26/10 (CNBC)",
+   "title_en": "Gold bounces back above $4,000 on softer crude, but FedWatch still shows 75% odds of a December hike",
+   "summary_en": "CNBC (Reuters): spot gold rose 0.4% to $4,009.87 an ounce at 11:42 PM ET Sunday after hitting its lowest since mid-July in the prior session and dropping 4% last week. Capital.com's Kyle Rodda called the bounce mostly a relief move on lower oil that \"could easily be capped\" ahead of the FOMC. The market expects a hold this week, with December hike odds at 75% per CME FedWatch; PCE lands the day after the meeting.",
+   "reason_en": "Near term: there's no new haven bid behind this bounce, so 4,019–4,025 is close resistance. Longer term: December hike odds and a 10-year near 5% are still the main weight on gold; it takes a less hawkish Fed to turn the trend.",
+   "time_en": "Oct 26, 2:08 AM ET (CNBC)"
+  },
+  {
+   "date": "2026-10-26",
+   "category": "Lợi suất",
+   "priority": 3,
+   "impact": "tăng",
+   "title": "Lợi suất 10 năm Mỹ lùi về 4,974%, lợi suất 30 năm 5,299% gần đáy 1 tháng; DXY 101,64 – thị trường tiền tệ đi ngang chờ Fed, ECB, BoJ",
+   "summary": "CNBC: trái phiếu Mỹ giữ được phần lớn đà tăng giá gần đây; lợi suất 10 năm 4,974%, 30 năm 5,299%, quanh đáy 1 tháng. Chỉ số USD nhích giảm về 101,64; euro lên 1,122 USD khi Pháp tránh được việc Moody's hạ hạng. Fed, ECB và BoJ được dự báo giữ lãi; thị trường đang định giá khả năng Canada và New Zealand tăng lãi. Pepperstone: định hướng chính sách sẽ quan trọng hơn bản thân quyết định.",
+   "reason": "Ngắn hạn: lợi suất và USD hạ nhẹ hỗ trợ nhịp hồi của vàng. Dài hạn: lợi suất 10 năm vẫn quanh 5% – còn cao với kim loại không sinh lãi; nếu Fed phát tín hiệu tăng tháng 12 rõ hơn, lợi suất sẽ bật lại.",
+   "source": {
+    "name": "CNBC – Thị trường tiền tệ đi ngang trước tuần ngân hàng trung ương",
+    "name_en": "CNBC – Currency markets subdued ahead of pivotal central bank week",
+    "url": "https://www.cnbc.com/2026/10/26/currency-markets-subdued-ahead-of-pivotal-central-bank-week.html"
+   },
+   "time_vn": "11:10 VN 26/10 (CNBC)",
+   "title_en": "10-year Treasury yield slips to 4.974%, 30-year at 5.299% near one-month lows; DXY 101.64 as FX markets idle ahead of the Fed, ECB and BOJ",
+   "summary_en": "CNBC: Treasuries held most of their recent rally, with the 10-year at 4.974% and the 30-year at 5.299%, near one-month lows. The dollar index eased to 101.64; the euro rose to $1.122 after France dodged a Moody's downgrade. The Fed, ECB and BOJ are expected to hold, while markets price possible hikes from the Bank of Canada and the RBNZ. Pepperstone: forward guidance will matter more than the decisions themselves.",
+   "reason_en": "Near term: slightly softer yields and a softer dollar help the gold bounce. Longer term: a 10-year near 5% is still steep competition for a metal with no yield; a clearer December hike signal from the Fed would push yields right back up.",
+   "time_en": "Oct 26, 12:10 AM ET (CNBC)"
+  },
+  {
+   "date": "2026-10-26",
    "category": "Chiến tranh",
    "priority": 1,
    "impact": "giảm",
