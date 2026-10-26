@@ -1,6 +1,6 @@
 {
  "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC | Chiến tranh | Ngân hàng TW. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
- "updated": "2026-10-26",
+ "updated": "2026-10-27",
  "fomc": {
   "source": {
    "name": "Federal Reserve – FOMC calendars",
@@ -54,6 +54,121 @@
   "note_en": "Decision at 2:00 PM ET on day two of the meeting, press conference at 2:30 PM ET. * = with economic projections (dot plot)."
  },
  "items": [
+  {
+   "date": "2026-10-27",
+   "category": "Fed",
+   "priority": 1,
+   "impact": "tăng",
+   "title": "Vàng chốt phiên Mỹ đầu tuần tăng 0,6% lên 4.020,6 USD nhờ dầu hạ nhiệt và lực bắt đáy – thị trường «đứng quanh 4.000» chờ Fed",
+   "summary": "CNBC (Reuters): vàng giao ngay tăng 0,6% lên 4.020,60 USD/ounce lúc 01:09 VN 27/10, hồi từ đáy 3.975 USD hôm thứ Sáu – thấp nhất từ 20/7. Vàng tương lai tháng 12 chốt tăng 0,8% ở 4.038,40 USD. Bob Haberkorn (StoneX): dầu điều chỉnh đang đỡ vàng, có thêm lực mua giá rẻ, nhưng giao dịch sẽ mỏng và giá «quanh mốc 4.000» cho tới khi Fed công bố. Xác suất Fed tăng lãi tháng 12 khoảng 80% theo CME FedWatch; PCE công bố thứ Năm.",
+   "reason": "Ngắn hạn: nhịp hồi có cơ sở (dầu và lợi suất dài hạ nhiệt) nhưng thanh khoản mỏng trước FOMC – 4.000 là mốc trụ, vượt 4.040 mới cho thấy phe mua thật sự quay lại. Dài hạn: kỳ vọng Fed tăng lãi tháng 12 vẫn cao (~70–80%), lãi suất thực cao còn là lực cản chính; vàng cần Fed bớt diều hâu để lấy lại xu hướng tăng.",
+   "source": {
+    "name": "CNBC – Vàng tăng khi dầu giảm làm dịu lo ngại lạm phát trước cuộc họp Fed",
+    "name_en": "CNBC – Gold rises as lower oil prices ease inflation fears ahead of Fed meeting",
+    "url": "https://www.cnbc.com/2026/10/26/gold-gains-on-softer-oil-prices-fed-decision-in-focus.html"
+   },
+   "time_vn": "01:09 VN 27/10 (CNBC)",
+   "title_en": "Gold ends Monday up 0.6% at $4,020.60 as crude cools and dip buyers step in – traders park near $4,000 into the Fed",
+   "summary_en": "CNBC (Reuters): spot gold rose 0.6% to $4,020.60 an ounce by 2:09 PM ET, bouncing off Friday's $3,975 low – the weakest since July 20. December futures settled 0.8% higher at $4,038.40. StoneX's Bob Haberkorn credited the pullback in crude plus some bargain hunting, but expects light trade and prices hanging \"around the $4,000 level\" into the Fed announcement. CME FedWatch puts December hike odds near 80%; PCE is due Thursday.",
+   "reason_en": "Near term: the bounce has real drivers (softer oil, steady long-end yields), but liquidity is thin ahead of the FOMC. $4,000 is the pivot; bulls need a clean break above 4,040 to show they're back. Longer term: December hike odds of roughly 70%–80% keep real rates high, and that's still the main headwind until the Fed sounds less hawkish.",
+   "time_en": "Oct 26, 2:09 PM ET (CNBC)"
+  },
+  {
+   "date": "2026-10-27",
+   "category": "Dầu mỏ",
+   "priority": 1,
+   "impact": "tăng",
+   "title": "Dầu chốt giảm: Brent 115,81 USD, WTI 101,76 USD khi Bộ trưởng Quốc phòng Ả Rập Xê Út gặp Tổng thống Iran ở Tehran – nhưng Houthi vẫn tấn công, dự trữ chiến lược Mỹ thấp nhất từ 1982",
+   "summary": "CNBC: Brent giảm 91 cent, chốt 115,81 USD/thùng sau khi có lúc vượt 117 USD; WTI giảm 1,51 USD về 101,76 USD. Dầu vẫn tăng khoảng 12% trong tháng. Bộ trưởng Quốc phòng Ả Rập Xê Út, Hoàng tử Khalid bin Salman, gặp Tổng thống Iran Masoud Pezeshkian tại Tehran, có quan chức Pakistan và Thổ Nhĩ Kỳ tham dự – cuộc gặp cấp cao đầu tiên kể từ khi xung đột với Houthi leo thang. Theo Reuters, Houthi tuyên bố tấn công các trạm bơm trên đường ống dầu Đông – Tây của Ả Rập Xê Út; quốc hội Ai Cập trao quyền cho Tổng thống al-Sisi «mọi biện pháp cần thiết» để giúp Riyadh tự vệ. Dự trữ dầu chiến lược Mỹ còn 282,6 triệu thùng, thấp nhất từ tháng 10/1982.",
+   "reason": "Ngắn hạn: đàm phán Ả Rập Xê Út – Iran hạ nhiệt giá dầu, giảm áp lực lạm phát và lợi suất – có lợi cho vàng. Dài hạn: phần bù rủi ro địa chính trị vẫn nằm trong giá dầu, dự trữ chiến lược Mỹ cạn khiến khả năng ghìm giá hạn chế; chỉ cần một đòn trúng hạ tầng dầu là dầu và lợi suất bật lại, vàng lại chịu sức ép.",
+   "source": {
+    "name": "CNBC – Dầu giảm khi Bộ trưởng Quốc phòng Ả Rập Xê Út gặp Tổng thống Iran ở Tehran",
+    "name_en": "CNBC – Oil ticks lower as Saudi defense minister meets with Iran's president in Tehran to de-escalate",
+    "url": "https://www.cnbc.com/2026/10/26/oil-prices-today-wti-brent.html"
+   },
+   "source2": {
+    "name": "Reuters (qua Korea Times) – Dầu gần đỉnh 6 tháng vì các cuộc tấn công nhằm vào Ả Rập Xê Út",
+    "name_en": "Reuters (via Korea Times) – Oil stays near six-month highs on Saudi attacks",
+    "url": "https://www.koreatimes.co.kr/world/20261027/oil-inches-higher-stays-near-six-month-highs-on-saudi-attacks"
+   },
+   "time_vn": "Giá chốt phiên Mỹ 26/10 – rạng sáng 27/10 VN (CNBC)",
+   "title_en": "Crude settles lower – Brent $115.81, WTI $101.76 – as Saudi defense chief meets Iran's president, but Houthi strikes continue and the SPR sits at a 1982 low",
+   "summary_en": "CNBC: Brent lost 91 cents to settle at $115.81 after briefly topping $117; WTI fell $1.51 to $101.76. Crude is still up about 12% this month. Saudi Defense Minister Prince Khalid bin Salman met Iranian President Masoud Pezeshkian in Tehran, with Pakistani and Turkish officials attending. Per Reuters, the Houthis claimed hits on pumping stations along Saudi Arabia's East-West pipeline, and Egypt's parliament authorized President el-Sisi to take \"all necessary measures\" to help defend the kingdom. The Strategic Petroleum Reserve fell to 282.6 million barrels, the lowest since October 1982.",
+   "reason_en": "Near term: Saudi-Iran talks take some heat out of crude, easing the inflation and yield pressure that's been capping gold. Longer term: the war premium is still baked into oil and a depleted SPR limits Washington's ability to cap prices – one successful strike on Saudi infrastructure sends crude and yields higher and puts gold back on the defensive.",
+   "time_en": "Oct 26 settlement (CNBC)"
+  },
+  {
+   "date": "2026-10-27",
+   "category": "Lợi suất",
+   "priority": 2,
+   "impact": "trung lập",
+   "title": "Lợi suất 10 năm Mỹ đứng ở 4,987%, 2 năm lên 4,712% sau phiên đấu giá 69 tỷ USD yếu – Deutsche Bank: thông điệp của Fed vẫn sẽ diều hâu",
+   "summary": "WSJ: lúc 02:46 VN 27/10, lợi suất 10 năm không đổi ở 4,987%, 2 năm tăng 3,2 điểm cơ bản lên 4,712%, 30 năm giảm 1,4 điểm về 5,300%. Phiên đấu giá 69 tỷ USD trái phiếu 2 năm có cầu yếu (BMO). CNBC dẫn Deutsche Bank: kể cả khi Fed tạm dừng tuần này, thông điệp chung vẫn diều hâu và Chủ tịch Warsh có thể nói rõ điều kiện tài chính thắt chặt không thay thế được lãi suất cao hơn. Thị trường chờ đơn hàng lâu bền tháng 9 (WSJ dự báo +1,7%) và niềm tin tiêu dùng Conference Board.",
+   "reason": "Ngắn hạn: lợi suất 2 năm nhích lên cho thấy thị trường vẫn giữ cược Fed tăng lãi – kìm nhịp hồi của vàng; lợi suất dài đứng yên nên áp lực chưa tăng thêm. Dài hạn: lợi suất 10 năm quanh 5% vẫn là chi phí cơ hội lớn với vàng; xu hướng vàng chỉ đổi khi lợi suất dài giảm rõ.",
+   "source": {
+    "name": "WSJ – Lợi suất trái phiếu Mỹ trái chiều khi thị trường định giá Fed giữ lãi",
+    "name_en": "WSJ – Treasury yields mixed as markets price in a Fed hold",
+    "url": "https://www.wsj.com/finance/jgb-yields-higher-amid-concerns-about-higher-energy-prices-897f5458"
+   },
+   "source2": {
+    "name": "CNBC – Lợi suất ít thay đổi khi nhà đầu tư chờ quyết định của Fed",
+    "name_en": "CNBC – Treasury yields little changed as investors look ahead to the Fed's rate decision",
+    "url": "https://www.cnbc.com/2026/10/26/us-treasury-yields-investors-feds-interest-rate-decision-.html"
+   },
+   "time_vn": "02:46 VN 27/10 (WSJ)",
+   "title_en": "10-year yield flat at 4.987% while the 2-year climbs to 4.712% after a soft $69 billion auction; Deutsche Bank still sees a hawkish Fed message",
+   "summary_en": "WSJ: as of 3:46 PM ET, the 10-year yield was unchanged at 4.987%, the 2-year rose 3.2 basis points to 4.712%, and the 30-year slipped 1.4 bps to 5.300%. The $69 billion 2-year auction tailed, a sign of soft demand (BMO). Deutsche Bank, via CNBC, says the message will stay hawkish even with a pause this week, and expects Chair Warsh to stress that tighter financial conditions are no substitute for higher policy rates. Up next: September durable goods (WSJ consensus +1.7%) and Conference Board consumer confidence.",
+   "reason_en": "Near term: a firmer 2-year says the market is still holding its hike bets, which caps gold's bounce; a flat long end means no fresh pressure for now. Longer term: a 10-year near 5% is a steep opportunity cost for a non-yielding asset – the trend in gold won't turn until long yields come down for real.",
+   "time_en": "Oct 26, 3:46 PM ET (WSJ)"
+  },
+  {
+   "date": "2026-10-27",
+   "category": "FOMC",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "Fed được dự báo tạm dừng nhưng «có thể không lâu»: Reuters – CPI tăng rộng, thất nghiệp 4,2%; xác suất tăng lãi tháng 12 lên 72,1%",
+   "summary": "Reuters: các quan chức Fed đã phát tín hiệu không tăng lãi tuần này (giữ 3,75–4,00%), nhưng lạm phát tháng 9 tăng lan rộng ngoài giá nhiên liệu, tăng trưởng quý III tăng tốc và thất nghiệp ổn định ở 4,2%. Kathy Bostjancic (Nationwide) cho rằng dữ liệu ủng hộ việc tăng lãi; theo bà, Fed chỉ chùn tay vì lợi suất 10 năm từng vọt gần đỉnh 25 năm sau đợt tăng tháng 9 – John Williams và Phó Chủ tịch Philip Jefferson đều muốn chờ thêm dữ liệu. Investing.com Fed Rate Monitor (dựa trên CME) lúc 06:05 VN 27/10: giữ lãi 28/10 là 89,7%; họp tháng 12 xác suất tăng 25 điểm cơ bản lên 72,1% (từ 67,6%). Quyết định công bố 01:00 VN thứ Năm 29/10.",
+   "reason": "Ngắn hạn: giữ lãi đã được định giá, biến động sẽ nằm ở câu chữ và họp báo của Warsh – nếu khẳng định cửa tăng tháng 12, USD và lợi suất 2 năm đi lên, vàng khó giữ trên 4.000. Dài hạn: Fed vẫn trong chu kỳ thắt chặt khi lạm phát lan rộng; lãi suất thực cao tiếp tục đè vàng cho tới khi lạm phát quay đầu.",
+   "source": {
+    "name": "Reuters (qua US News) – Fed sẽ tạm dừng tăng lãi, nhưng có thể không lâu",
+    "name_en": "Reuters (via U.S. News) – Fed to hit pause on rate hikes, but maybe not for long",
+    "url": "https://money.usnews.com/investing/news/articles/2026-10-26/fed-to-hit-pause-on-rate-hikes-but-maybe-not-for-long"
+   },
+   "source2": {
+    "name": "Investing.com Fed Rate Monitor (CME Fed Funds futures), 26/10 19:05 ET",
+    "name_en": "Investing.com Fed Rate Monitor (CME fed funds futures), Oct 26, 7:05 PM ET",
+    "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+   },
+   "time_vn": "06:05 VN 27/10 (Investing.com)",
+   "title_en": "Fed set to pause, \"but maybe not for long\" – inflation is broadening and December hike odds climb to 72.1%",
+   "summary_en": "Reuters: Fed officials have telegraphed no move this week (3.75%–4.00%), but September inflation broadened well beyond fuel, Q3 growth accelerated and unemployment is steady at 4.2%. Nationwide's Kathy Bostjancic says the data support a hike, and that the Fed only blinked because the 10-year spiked toward quarter-century highs after the September move – New York Fed President John Williams and Vice Chair Philip Jefferson both signaled patience. Investing.com's Fed Rate Monitor (CME-based) as of 7:05 PM ET: 89.7% odds of a hold on Wednesday; December hike odds up to 72.1% from 67.6%. The decision is at 2:00 PM ET Wednesday.",
+   "reason_en": "Near term: the hold is priced, so the move comes from the statement and Warsh's presser – if he keeps December live, the dollar and 2-year yields firm and gold struggles to hold $4,000. Longer term: the Fed is still tightening into broadening inflation, and high real rates keep weighing on gold until inflation rolls over.",
+   "time_en": "Oct 26, 7:05 PM ET (Investing.com)"
+  },
+  {
+   "date": "2026-10-27",
+   "category": "Tương quan",
+   "priority": 3,
+   "impact": "trung lập",
+   "title": "Phố Wall tăng: S&P 500 +0,70% lên 7.676,77, Nasdaq +0,82% nhờ hồ sơ IPO của Anthropic kéo cổ phiếu AI – khẩu vị rủi ro trở lại trước tuần Fed",
+   "summary": "CNBC: Dow tăng 146,42 điểm (0,28%) lên 52.361,58; S&P 500 tăng 0,7% lên 7.676,77; Nasdaq tăng 0,82% lên 26.169,38. Reuters: nhóm bán dẫn bật 2,8% nhưng vẫn giảm 12,2% trong tháng. MarketWatch cho biết dầu và lợi suất giảm cũng hỗ trợ tâm lý. Tuần này có nhiều chất xúc tác: Fed, ECB, BoJ, kết quả kinh doanh các ông lớn công nghệ và PCE.",
+   "reason": "Ngắn hạn: cổ phiếu hồi làm giảm nhu cầu trú ẩn – vàng không được hưởng lực mua phòng thủ, nhịp hồi chủ yếu dựa vào dầu và lợi suất. Dài hạn: nếu tâm lý AI lại lung lay (bán dẫn vẫn giảm mạnh trong tháng), dòng tiền trú ẩn có thể quay lại trái phiếu và vàng.",
+   "source": {
+    "name": "CNBC – Chứng khoán đóng cửa tăng nhờ hồ sơ IPO của Anthropic",
+    "name_en": "CNBC – Stocks close higher as excitement over Anthropic IPO filing propels tech sector",
+    "url": "https://www.cnbc.com/2026/10/25/stock-market-today-live-updates.html"
+   },
+   "source2": {
+    "name": "Reuters (qua Yahoo Finance) – Chứng khoán tăng nhờ hồ sơ IPO của Anthropic",
+    "name_en": "Reuters (via Yahoo Finance) – Equities end higher as Anthropic's IPO filing buoys AI stocks",
+    "url": "https://finance.yahoo.com/markets/stocks/articles/us-stock-futures-edge-oil-100215774.html"
+   },
+   "time_vn": "03:00 VN 27/10 (CNBC)",
+   "title_en": "Stocks rally – S&P 500 +0.70% to 7,676.77, Nasdaq +0.82% – as Anthropic's IPO filing revives the AI trade into Fed week",
+   "summary_en": "CNBC: the Dow added 146.42 points (0.28%) to 52,361.58, the S&P 500 rose 0.7% to 7,676.77 and the Nasdaq gained 0.82% to 26,169.38. Per Reuters, the Philadelphia chip index jumped 2.8% but is still down 12.2% for the month. MarketWatch noted softer oil and lower yields also helped. A heavy week ahead: the Fed, ECB and BOJ, megacap tech earnings and PCE.",
+   "reason_en": "Near term: risk-on equities drain safe-haven demand, so gold's bounce is riding on oil and yields, not defensive buying. Longer term: if the AI trade wobbles again – chips are still down sharply on the month – haven flows could rotate back into Treasuries and gold.",
+   "time_en": "Oct 26, 4:00 PM ET (CNBC)"
+  },
   {
    "date": "2026-10-26",
    "category": "Dầu mỏ",
