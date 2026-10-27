@@ -9,17 +9,17 @@
    "brief": true,
    "url": "bai/2026-10-27-nhan-dinh-vang-phien-my-1915.html",
    "url_en": "en/posts/2026-10-27-gold-plan-new-york-session-1915.html",
-   "headline": "Cập nhật · Vàng 27/10 phiên Mỹ: W hồi phục – MUA pivot/S1, BÁN lần 1 4.038–4.047, BÁN R3 4.052–4.058",
-   "headline_en": "UPDATE · H79 Gold Plan – New York Session, Oct 27: W-Recovery – Buy Pivot/S1, First Sell 4,038–4,047, Sell R3 4,052–4,058",
-   "title": "Cập nhật · Vàng 27/10 phiên Mỹ: W hồi phục – MUA pivot/S1, BÁN lần 1 4.038–4.047, BÁN R3 4.052–4.058",
-   "title_en": "UPDATE · H79 Gold Plan – New York Session, Oct 27: W-Recovery – Buy Pivot/S1, First Sell 4,038–4,047, Sell R3 4,052–4,058",
+   "headline": "Cập nhật · Vàng 27/10 phiên Mỹ: W hồi phục – MUA pivot/S1, BÁN 4.038–4.047",
+   "headline_en": "UPDATE · H79 Gold Plan – New York Session, Oct 27: W-Recovery – Buy Pivot/S1, Sell 4,038–4,047",
+   "title": "Cập nhật · Vàng 27/10 phiên Mỹ: W hồi phục – MUA pivot/S1, BÁN 4.038–4.047",
+   "title_en": "UPDATE · H79 Gold Plan – New York Session, Oct 27: W-Recovery – Buy Pivot/S1, Sell 4,038–4,047",
    "image": "img/charts/gold-2026-10-27-phien-my-1915.jpg",
    "image_en": "img/charts/gold-2026-10-27-ny-1915-en.jpg",
-   "image_alt": "Biểu đồ vàng 45 phút phiên Mỹ 27/10 (cập nhật): W đáy 3.990/3.994, pivot 4.007, R1–R3; MUA 4.002–4.008 và 3.987–3.994; BÁN lần 1 4.038–4.047, BÁN R3 4.052–4.058",
-   "image_alt_en": "Gold 45m New York Oct 27 (updated): W lows 3,990/3,994, pivot 4,007, R1–R3; BUY 4,002–4,008 and 3,987–3,994; first SELL 4,038–4,047, SELL R3 4,052–4,058",
+   "image_alt": "Biểu đồ vàng 45 phút phiên Mỹ 27/10 (cập nhật): W đáy 3.990/3.994, pivot 4.007, R1–R2; MUA 4.002–4.008 và 3.987–3.994; BÁN 4.038–4.047",
+   "image_alt_en": "Gold 45m New York Oct 27 (updated): W lows 3,990/3,994, pivot 4,007, R1–R2; BUY 4,002–4,008 and 3,987–3,994; SELL 4,038–4,047",
    "trendType": "up",
-   "trend": "Cấu trúc W hồi phục: pivot ≈4.007, R1 4.024–4.026, R2 4.038, R3 4.056–4.058. Ưu tiên mua dip; bán lần 1 ở R2 4.038–4.047, bán cao hơn ở R3 4.052–4.058 khi có nến đảo chiều.",
-   "trend_en": "W-recovery: pivot ≈4,007, R1 4,024–4,026, R2 4,038, R3 4,056–4,058. Prefer buying dips; first short at R2 4,038–4,047, higher short at R3 4,052–4,058 on a reversing close.",
+   "trend": "Cấu trúc W hồi phục: pivot ≈4.007, R1 4.024–4.026, R2 4.038. Ưu tiên mua dip pivot/S1; bán ở R2 4.038–4.047 khi có nến đỏ xác nhận.",
+   "trend_en": "W-recovery: pivot ≈4,007, R1 4,024–4,026, R2 4,038. Prefer buying dips at pivot/S1; sell at R2 4,038–4,047 on a confirming red close.",
    "support": [
     4024,
     4010,
@@ -34,19 +34,13 @@
     4026,
     4038,
     4047,
-    4052,
-    4055,
-    4056,
-    4058,
-    4070
+    4055
    ],
    "sellZones": [
-    "Bán 4.038 – 4.047 (R2 / lần bán thứ 1 — vùng bán ổn). Vào khi giá chạm vùng và có nến 45m hoặc 1H đóng đỏ. Dừng lỗ 4.055 (trên đỉnh vùng, dưới cụm R3). TP1 4.024 – chốt 50–70%, dời SL hòa vốn; TP2 4.008. Nến 1H đóng trên 4.055 thì bỏ bán lần 1 – chuyển theo dõi R3.",
-    "Bán 4.052 – 4.058 (R3 / đỉnh cấu trúc W — bán cao hơn). Chỉ vào khi có nến 45m hoặc 1H đóng đỏ đảo chiều trong vùng – không bán đuổi. Dừng lỗ 4.070. TP1 4.038 → TP2 4.024. Nến 1H đóng trên 4.070 bỏ bán."
+    "Bán 4.038 – 4.047 (R2 / lần bán thứ 1 — vùng bán ổn). Vào khi giá chạm vùng và có nến 45m hoặc 1H đóng đỏ. Dừng lỗ 4.055. TP1 4.024 – chốt 50–70%, dời SL hòa vốn; TP2 4.008. Nến 1H đóng trên 4.055 thì bỏ bán."
    ],
    "sellZones_en": [
-    "Sell 4,038–4,047 (R2 / first short — solid sell area). Enter on a red 45m or 1H close in the zone. Stop 4,055 (above the zone top, under the R3 cluster). TP1 4,024 – take 50–70%, stop to breakeven; TP2 4,008. A 1H close above 4,055 cancels the first short – watch R3 next.",
-    "Sell 4,052–4,058 (R3 / W structure top — higher short). Only on a red reversing 45m or 1H close – no chase. Stop 4,070. TP1 4,038 → TP2 4,024. A 1H close above 4,070 cancels the short."
+    "Sell 4,038–4,047 (R2 / first short — solid sell area). Enter on a red 45m or 1H close in the zone. Stop 4,055. TP1 4,024 – take 50–70%, stop to breakeven; TP2 4,008. A 1H close above 4,055 cancels the short."
    ],
    "entryZones": [
     "Mua 4.002 – 4.008 (hộp pivot / FVG tăng 45m–1H 4.002,8–4.008,3). Vào khi giá lùi về hộp và có nến 45m hoặc 1H đóng xanh. Dừng lỗ 3.989. TP1 4.024 – chốt 50–70%, dời SL về điểm vào; TP2 4.038; nếu phá R2 kéo một phần về R3 4.056. Nến 1H đóng dưới 3.975 → bỏ W, không mua thêm.",
@@ -57,27 +51,27 @@
     "Buy 3,987–3,994 (S1 if the pivot box fails). Enter on a zone tap plus a green 45m/1H close. Stop 3,975 (W invalidation). TP1 4,008 → TP2 4,024. Keep it small – structure low into the Fed."
    ],
    "scenarios": [
-    "Cập nhật kế hoạch (W): MUA 4.002–4.008 (SL 3.989 · TP1 4.024 → TP2 4.038) · MUA 3.987–3.994 (SL 3.975 · TP1 4.008 → TP2 4.024) · BÁN lần 1 4.038–4.047 (SL 4.055 · TP1 4.024 → TP2 4.008) · BÁN R3 4.052–4.058 (SL 4.070 · TP1 4.038 → TP2 4.024). Chạm vùng + nến 45m/1H đóng xác nhận.",
-    "Kịch bản chính (~45%): giá lên thử R2 4.038–4.047 rồi bị bán – bán lần 1 về 4.024 / 4.008; mua dip về hộp pivot nếu lùi trước.",
-    "Kịch bản phụ (~30%): phá R2 chạy R3 4.052–4.058 – chờ nến đỏ mới bán cao hơn; hoặc thủng pivot quét S1 rồi bật.",
-    "Kịch bản xấu (~25%): 1H đóng dưới 3.975 bỏ W; hoặc 1H đóng trên 4.055 rồi phá R3 – bỏ bán lần 1, chỉ còn theo dõi R3 / đứng ngoài trước Fed.",
+    "Cập nhật kế hoạch (W): MUA 4.002–4.008 (SL 3.989 · TP1 4.024 → TP2 4.038) · MUA 3.987–3.994 (SL 3.975 · TP1 4.008 → TP2 4.024) · BÁN 4.038–4.047 (SL 4.055 · TP1 4.024 → TP2 4.008). Chạm vùng + nến 45m/1H đóng xác nhận.",
+    "Kịch bản chính (~50%): giá lên thử R2 4.038–4.047 rồi bị bán về 4.024 / 4.008; hoặc lùi về hộp pivot trước rồi bật.",
+    "Kịch bản phụ (~30%): thủng pivot quét S1 3.987–3.994 rồi bật – mua S1 lên 4.008 / 4.024.",
+    "Kịch bản xấu (~20%): 1H đóng dưới 3.975 bỏ W; hoặc 1H đóng trên 4.055 – bỏ bán, đứng ngoài trước Fed.",
     "Rủi ro: 21:00 niềm tin tiêu dùng CB; Fed 01:00 thứ Năm 29/10. Trước Fed vào nhỏ."
    ],
    "scenarios_en": [
-    "Plan update (W): BUY 4,002–4,008 (SL 3,989 · TP1 4,024 → TP2 4,038) · BUY 3,987–3,994 (SL 3,975 · TP1 4,008 → TP2 4,024) · first SELL 4,038–4,047 (SL 4,055 · TP1 4,024 → TP2 4,008) · SELL R3 4,052–4,058 (SL 4,070 · TP1 4,038 → TP2 4,024). Zone tap + confirming 45m/1H close.",
-    "Base (~45%): probes R2 4,038–4,047 and fails – first short toward 4,024 / 4,008; buy dips into the pivot box if it pulls back first.",
-    "Alt (~30%): clears R2 into R3 4,052–4,058 – wait for a red close for the higher short; or slices the pivot, sweeps S1 and bounces.",
-    "Breaker (~25%): 1H close under 3,975 abandons the W; or 1H close above 4,055 then through R3 – cancel first short, only watch R3 / stand aside into the Fed.",
+    "Plan update (W): BUY 4,002–4,008 (SL 3,989 · TP1 4,024 → TP2 4,038) · BUY 3,987–3,994 (SL 3,975 · TP1 4,008 → TP2 4,024) · SELL 4,038–4,047 (SL 4,055 · TP1 4,024 → TP2 4,008). Zone tap + confirming 45m/1H close.",
+    "Base (~50%): probes R2 4,038–4,047 and fails back to 4,024 / 4,008; or dips into the pivot box first then bounces.",
+    "Alt (~30%): slices the pivot, sweeps S1 3,987–3,994 and bounces – buy S1 toward 4,008 / 4,024.",
+    "Breaker (~20%): 1H close under 3,975 abandons the W; or 1H close above 4,055 cancels the short – stand aside into the Fed.",
     "Risks: CB Confidence 10:00 AM ET; Fed Wed 2:00 PM ET. Size down into the Fed."
    ],
    "macro": [],
    "macro_en": [],
    "market_picture": {
-    "text": "Cập nhật giữa phiên Mỹ: vàng giữ trên pivot sau W từ đáy 3.990 – đang quanh ≈4.023–4.026, thử R1. Cấu trúc: pivot ≈4.007 · R1 4.024–4.026 · R2 4.038 · R3 4.056–4.058. Ưu tiên mua dip pivot/S1; bán lần 1 ở R2 4.038–4.047 (vùng bán ổn), bán cao hơn ở R3 khi có nến đảo chiều. Nến 1H đóng dưới 3.975 bỏ W. Tối nay không tin đỏ; 21:00 CB Confidence; Fed 01:00 thứ Năm 29/10 – vào nhỏ.",
+    "text": "Cập nhật giữa phiên Mỹ: vàng giữ trên pivot sau W từ đáy 3.990 – đang quanh ≈4.024, thử R1. Cấu trúc: pivot ≈4.007 · R1 4.024–4.026 · R2 4.038. Ưu tiên mua dip pivot/S1; bán ở R2 4.038–4.047 khi có nến đỏ xác nhận. Nến 1H đóng dưới 3.975 bỏ W. Tối nay không tin đỏ; 21:00 CB Confidence; Fed 01:00 thứ Năm 29/10 – vào nhỏ.",
     "chips": [
      {
       "k": "XAU",
-      "v": "4.023,4 +0,15%",
+      "v": "4.024,4 +0,15%",
       "dir": "up"
      },
      {
@@ -141,11 +135,11 @@
     ]
    },
    "market_picture_en": {
-    "text": "Mid–New York update: gold holds above the pivot after the W off 3,990 – trading ≈4,023–4,026, probing R1. Structure: pivot ≈4,007 · R1 4,024–4,026 · R2 4,038 · R3 4,056–4,058. Prefer buying dips at pivot/S1; first short at R2 4,038–4,047 (solid sell area), higher short at R3 on a reversing close. A 1H close under 3,975 abandons the W. Nothing high-impact tonight; CB Confidence 10:00 AM ET; Fed Wed 2:00 PM ET – size down.",
+    "text": "Mid–New York update: gold holds above the pivot after the W off 3,990 – trading ≈4,024, probing R1. Structure: pivot ≈4,007 · R1 4,024–4,026 · R2 4,038. Prefer buying dips at pivot/S1; sell at R2 4,038–4,047 on a confirming red close. A 1H close under 3,975 abandons the W. Nothing high-impact tonight; CB Confidence 10:00 AM ET; Fed Wed 2:00 PM ET – size down.",
     "chips": [
      {
       "k": "XAU",
-      "v": "4,023.4 +0.15%",
+      "v": "4,024.4 +0.15%",
       "dir": "up"
      },
      {
@@ -210,16 +204,16 @@
    },
    "physicalAdvice": "Làm theo kế hoạch, đừng chạy theo nến tin.",
    "physicalAdvice_en": "Trade the plan, not the noise.",
-   "notes": "Cập nhật thêm BÁN lần 1 4.038–4.047 (CNBC XAU= ≈4.023,4 lúc ≈20:17; cao phiên ≈4.026). Pivot ≈4.007 · R1 4.024–4.026 · R2 4.038 · R3 4.056–4.058. Đáy W: 3.990,1 và ≈3.993–3.994. Vô hiệu: 1H đóng dưới 3.975. Trước Fed vào nhỏ.",
-   "notes_en": "Update adds first SELL 4,038–4,047 (CNBC XAU= ≈4,023.4 around 9:17 AM ET; session high ≈4,026). Pivot ≈4,007 · R1 4,024–4,026 · R2 4,038 · R3 4,056–4,058. W lows: 3,990.09 and ≈3,993–3,994. Invalidation: 1H close under 3,975. Size down into the Fed.",
-   "dataTime": "Cập nhật ≈20:15–20:20 ngày 27/10/2026 giờ VN (giữa phiên Mỹ). Nến 5m CNBC XAU=; DXY/lợi suất/dầu/futures/bạc CNBC; lịch ForexFactory.",
-   "dataTime_en": "Updated ≈9:15–9:20 AM ET, Tuesday Oct 27, 2026 (mid–New York). Spot 5-minute bars CNBC XAU=; DXY/yields/oil/futures/silver from CNBC; calendar ForexFactory.",
+   "notes": "Cập nhật kế hoạch: BÁN 4.038–4.047 | MUA pivot 4.002–4.008 | MUA S1 3.987–3.994 (CNBC XAU= ≈4.024 lúc ≈20:25). Pivot ≈4.007 · R1 4.024–4.026 · R2 4.038. Đáy W: 3.990,1 và ≈3.993–3.994. Vô hiệu: 1H đóng dưới 3.975. Trước Fed vào nhỏ.",
+   "notes_en": "Plan update: SELL 4,038–4,047 | BUY pivot 4,002–4,008 | BUY S1 3,987–3,994 (CNBC XAU= ≈4,024 around 9:25 AM ET). Pivot ≈4,007 · R1 4,024–4,026 · R2 4,038. W lows: 3,990.09 and ≈3,993–3,994. Invalidation: 1H close under 3,975. Size down into the Fed.",
+   "dataTime": "Cập nhật ≈20:25 ngày 27/10/2026 giờ VN (giữa phiên Mỹ). Nến 5m CNBC XAU=; lịch ForexFactory.",
+   "dataTime_en": "Updated ≈9:25 AM ET, Tuesday Oct 27, 2026 (mid–New York). Spot 5-minute bars CNBC XAU=; calendar ForexFactory.",
    "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
    "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
    "summary": {
     "trend": "up",
-    "trendText": "Cập nhật – W hồi phục: mua dip pivot/S1; BÁN lần 1 ở R2 4.038–4.047, BÁN cao hơn ở R3 4.052–4.058; vô hiệu nếu 1H đóng dưới 3.975",
-    "trendText_en": "Update – W-recovery: buy dips pivot/S1; first SELL at R2 4,038–4,047, higher SELL at R3 4,052–4,058; abandon if 1H closes under 3,975",
+    "trendText": "Cập nhật – W hồi phục: mua dip pivot/S1; BÁN ở R2 4.038–4.047; vô hiệu nếu 1H đóng dưới 3.975",
+    "trendText_en": "Update – W-recovery: buy dips pivot/S1; SELL at R2 4,038–4,047; abandon if 1H closes under 3,975",
     "sell": {
      "zone": "4.038 – 4.047",
      "sl": "4.055",
@@ -236,8 +230,8 @@
      "sl_en": "3,989",
      "tp_en": "TP1 4,024 → TP2 4,038"
     },
-    "note": "Cập nhật: thêm BÁN lần 1 4.038–4.047 (SL 4.055). BÁN R3 4.052–4.058 vẫn giữ. Thêm MUA S1 3.987–3.994 (SL 3.975). Tối nay không tin đỏ USD; 21:00 CB Confidence; Fed 01:00 thứ Năm 29/10. Chạm vùng + nến 45m/1H đóng; trước Fed vào nhỏ. Vô hiệu W: 1H đóng dưới 3.975.",
-    "note_en": "Update: added first SELL 4,038–4,047 (SL 4,055). R3 SELL 4,052–4,058 still on. Extra BUY S1 3,987–3,994 (SL 3,975). No high-impact U.S. data tonight; CB Confidence 10:00 AM ET; Fed Wed 2:00 PM ET. Zone tap + confirming close; size down into the Fed. W invalidation: 1H close under 3,975.",
+    "note": "Cập nhật: chỉ giữ BÁN 4.038–4.047. MUA S1 3.987–3.994 vẫn giữ. Tối nay không tin đỏ USD; 21:00 CB Confidence; Fed 01:00 thứ Năm 29/10. Chạm vùng + nến 45m/1H đóng; trước Fed vào nhỏ. Vô hiệu W: 1H đóng dưới 3.975.",
+    "note_en": "Update: SELL 4,038–4,047 only. BUY S1 3,987–3,994 still on. No high-impact U.S. data tonight; CB Confidence 10:00 AM ET; Fed Wed 2:00 PM ET. Zone tap + confirming close; size down into the Fed. W invalidation: 1H close under 3,975.",
     "price": "spot",
     "priceNote": "Giá giao ngay XAU/USD",
     "priceNote_en": "Spot XAU/USD prices"
@@ -246,11 +240,11 @@
     "sections": [
      {
       "h": "Nhìn lại phiên Âu",
-      "p": "Vùng MUA 3.988–3.994 bị quét tới 3.990,1 nhưng nến 45m đóng trên vùng – tiếc là không có vị thế vào lệnh, rồi vàng bật lên trên 4.016. Hai đáy quanh 3.990 và 3.993–3.994 tạo W; kế hoạch Mỹ tiếp tục theo cấu trúc đó, lần này bổ sung vùng bán lần 1 ở R2."
+      "p": "Vùng MUA 3.988–3.994 bị quét tới 3.990,1 nhưng nến 45m đóng trên vùng – tiếc là không có vị thế vào lệnh, rồi vàng bật lên trên 4.016. Hai đáy quanh 3.990 và 3.993–3.994 tạo W; kế hoạch Mỹ theo cấu trúc đó, chỉ giữ một vùng bán ở R2."
      },
      {
       "h": "Kế hoạch phiên Mỹ (cập nhật)",
-      "p": "🟢 MUA 4.002 – 4.008 (hộp pivot) | SL 3.989 | TP1 4.024 → TP2 4.038\n🟢 MUA 3.987 – 3.994 (S1 nếu thủng hộp) | SL 3.975 | TP1 4.008 → TP2 4.024\n🔴 BÁN 4.038 – 4.047 (R2 / lần bán thứ 1 — vùng bán ổn) | SL 4.055 | TP1 4.024 → TP2 4.008\n🔴 BÁN 4.052 – 4.058 (R3 / bán cao hơn) | SL 4.070 | TP1 4.038 → TP2 4.024 — chỉ khi nến đảo chiều\nVào lệnh: chạm vùng + nến 45m hoặc 1H đóng xác nhận. Không đuổi giữa R1 và mép R2.\nVô hiệu W: 1H đóng dưới 3.975 → bỏ W, trở lại giảm.\nChính (~45%): thử R2 4.038–4.047 rồi bị bán – bán lần 1 về 4.024 / 4.008.\nPhụ (~30%): phá R2 chạy R3 – chờ nến đỏ bán cao hơn; hoặc lùi quét S1 rồi bật.\nXấu (~25%): 1H đóng dưới 3.975 bỏ W; 1H đóng trên 4.055 rồi phá R3 – bỏ bán lần 1.\nLưu ý: tối nay không tin đỏ USD; 20:30 Phố Wall, 21:00 CB Confidence. Fed 01:00 thứ Năm 29/10 – vào nhỏ, chạm TP1 dời SL hòa vốn."
+      "p": "🟢 MUA 4.002 – 4.008 (hộp pivot) | SL 3.989 | TP1 4.024 → TP2 4.038\n🟢 MUA 3.987 – 3.994 (S1 nếu thủng hộp) | SL 3.975 | TP1 4.008 → TP2 4.024\n🔴 BÁN 4.038 – 4.047 (R2 / lần bán thứ 1 — vùng bán ổn) | SL 4.055 | TP1 4.024 → TP2 4.008\nVào lệnh: chạm vùng + nến 45m hoặc 1H đóng xác nhận. Không đuổi giữa R1 và mép R2.\nVô hiệu W: 1H đóng dưới 3.975 → bỏ W, trở lại giảm.\nChính (~50%): thử R2 4.038–4.047 rồi bị bán về 4.024 / 4.008.\nPhụ (~30%): lùi quét S1 rồi bật – mua S1.\nXấu (~20%): 1H đóng dưới 3.975 bỏ W; 1H đóng trên 4.055 – bỏ bán.\nLưu ý: tối nay không tin đỏ USD; 20:30 Phố Wall, 21:00 CB Confidence. Fed 01:00 thứ Năm 29/10 – vào nhỏ, chạm TP1 dời SL hòa vốn."
      }
     ],
     "sources": [
@@ -276,11 +270,11 @@
     "sections": [
      {
       "h": "Looking back at the London session",
-      "p": "The 3,988–3,994 buy got tagged at 3,990.09 but the 45m closed above the zone – no position on the rally through 4,016. Twin lows near 3,990 and 3,993–3,994 print the W; this New York update keeps that structure and adds the first short at R2."
+      "p": "The 3,988–3,994 buy got tagged at 3,990.09 but the 45m closed above the zone – no position on the rally through 4,016. Twin lows near 3,990 and 3,993–3,994 print the W; this New York update keeps that structure with a single short at R2."
      },
      {
       "h": "New York Session Plan (update)",
-      "p": "🟢 BUY 4,002–4,008 (pivot box) | SL 3,989 | TP1 4,024 → TP2 4,038\n🟢 BUY 3,987–3,994 (S1 if the box fails) | SL 3,975 | TP1 4,008 → TP2 4,024\n🔴 SELL 4,038–4,047 (R2 / first short — solid sell area) | SL 4,055 | TP1 4,024 → TP2 4,008\n🔴 SELL 4,052–4,058 (R3 / higher short) | SL 4,070 | TP1 4,038 → TP2 4,024 — reversal candle only\nEntry: zone tap + confirming 45m or 1H close. Don't chase between R1 and the R2 edge.\nW invalidation: 1H close under 3,975 abandons the W back to downtrend.\nBase (~45%): probes R2 4,038–4,047 and fails – first short toward 4,024 / 4,008.\nAlt (~30%): clears R2 into R3 – wait for a red close for the higher short; or sweeps S1 and bounces.\nBreaker (~25%): 1H close under 3,975 ends the W; 1H close above 4,055 then through R3 cancels the first short.\nNote: nothing high-impact tonight; opening bell 9:30 AM ET, CB Confidence 10:00 AM ET. Fed Wed 2:00 PM ET – size down; stops to breakeven at TP1."
+      "p": "🟢 BUY 4,002–4,008 (pivot box) | SL 3,989 | TP1 4,024 → TP2 4,038\n🟢 BUY 3,987–3,994 (S1 if the box fails) | SL 3,975 | TP1 4,008 → TP2 4,024\n🔴 SELL 4,038–4,047 (R2 / first short — solid sell area) | SL 4,055 | TP1 4,024 → TP2 4,008\nEntry: zone tap + confirming 45m or 1H close. Don't chase between R1 and the R2 edge.\nW invalidation: 1H close under 3,975 abandons the W back to downtrend.\nBase (~50%): probes R2 4,038–4,047 and fails toward 4,024 / 4,008.\nAlt (~30%): sweeps S1 and bounces – buy S1.\nBreaker (~20%): 1H close under 3,975 ends the W; 1H close above 4,055 cancels the short.\nNote: nothing high-impact tonight; opening bell 9:30 AM ET, CB Confidence 10:00 AM ET. Fed Wed 2:00 PM ET – size down; stops to breakeven at TP1."
      }
     ],
     "sources": [
