@@ -56,6 +56,49 @@
  "items": [
   {
    "date": "2026-10-27",
+   "category": "Tương quan",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "Vàng lùi về sát 4.000 USD khi USD đứng gần đỉnh 1 tuần – FedWatch: 82% khả năng Fed tăng lãi tháng 12",
+   "summary": "CNBC (Reuters): vàng giao ngay giảm 0,2% xuống 4.007,29 USD/ounce lúc 10:21 VN, vàng tương lai tháng 12 giảm 0,5% còn 4.019,70 USD. USD giữ gần đỉnh 1 tuần, làm vàng đắt hơn với người mua ngoài Mỹ. Ilya Spivak (Tastylive): vàng đang «tiêu hóa» trong biên của thứ Sáu sau cú giảm mạnh tuần trước; nếu thủng 3.900 USD có thể giảm sâu về vùng 3.800. CME FedWatch: khoảng 11% khả năng Fed tăng lãi tuần này, 82% cho tháng 12. Đến 13:40 VN, CNBC XAU= còn 3.999,7, DXY 102,10, bạc giảm 2,2%.",
+   "reason": "Ngắn hạn: USD mạnh lên và kỳ vọng Fed tăng lãi tháng 12 giữ vàng dưới áp lực; 4.000 là mốc trụ tâm lý, mỗi nhịp hồi lên 4.014–4.020 dễ bị bán trước FOMC. Dài hạn: lãi suất thực cao vẫn là lực cản chính – vàng cần Fed bớt diều hâu hoặc USD suy yếu để lấy lại xu hướng tăng.",
+   "source": {
+    "name": "CNBC – Vàng giảm nhẹ khi USD mạnh lên trước quyết định của Fed",
+    "name_en": "CNBC – Gold eases on firmer dollar ahead of Fed decision",
+    "url": "https://www.cnbc.com/2026/10/27/gold-eases-on-firmer-dollar-ahead-of-fed-decision.html"
+   },
+   "time_vn": "10:21 VN 27/10 (CNBC)",
+   "title_en": "Gold slips back to $4,000 with the dollar near a one-week high – FedWatch prices 82% odds of a December hike",
+   "summary_en": "CNBC (Reuters): spot gold eased 0.2% to $4,007.29 an ounce by 11:21 PM ET Monday, and December futures fell 0.5% to $4,019.70. The dollar held near a one-week high, making bullion pricier for overseas buyers. Tastylive's Ilya Spivak says gold is digesting inside Friday's range after last week's big drop – and a break through $3,900 could open a slide toward $3,800. CME FedWatch: about 11% odds of a hike this week and 82% for December. By 2:40 AM ET, CNBC XAU= was 3,999.67, DXY 102.10 and silver down 2.2%.",
+   "reason_en": "Near term: a firmer dollar and December hike bets keep a lid on gold; $4,000 is the pivot, and bounces into 4,014–4,020 are likely to get sold ahead of the Fed. Longer term: high real rates are still the main headwind – gold needs a less hawkish Fed or a weaker dollar to get its uptrend back.",
+   "time_en": "Oct 26, 11:21 PM ET (CNBC)"
+  },
+  {
+   "date": "2026-10-27",
+   "category": "Chiến tranh",
+   "priority": 2,
+   "impact": "trung lập",
+   "title": "Dầu giảm phiên thứ hai: Brent 114,8 USD, WTI 100,9 USD khi đàm phán ở Tehran mở lại hy vọng hạ nhiệt chiến sự Mỹ – Iran",
+   "summary": "CNBC: lúc 12:09 VN, Brent giảm 0,87% còn 114,80 USD/thùng, WTI giảm 0,86% còn 100,88 USD sau cuộc gặp giữa Ả Rập Xê Út, Thổ Nhĩ Kỳ, Pakistan và quan chức Iran ở Tehran – các bên đồng ý tiếp tục đối thoại. Tổng thống Trump nói đang gần ra quyết định giữa thỏa thuận với Iran hay tăng cường quân sự. Đà giảm bị hạn chế vì Houthi vẫn tấn công Ả Rập Xê Út; tháng 10 là tháng có nhiều vụ tấn công tàu nhất quanh eo Hormuz.",
+   "reason": "Ngắn hạn: dầu hạ nhiệt làm dịu lo ngại lạm phát nhưng chưa đủ kéo lợi suất và USD xuống, nên vàng không được hưởng lợi; tin xấu về Hormuz/Houthi có thể làm dầu bật lại và gây áp lực lạm phát lên vàng. Dài hạn: chiến sự chưa kết thúc – vừa là rủi ro lạm phát (bất lợi qua kênh lãi suất) vừa là lực đỡ trú ẩn khi leo thang bất ngờ.",
+   "source": {
+    "name": "CNBC – Dầu giảm khi nỗ lực ngoại giao mới làm dịu lo ngại nguồn cung",
+    "name_en": "CNBC – Oil falls as renewed diplomatic efforts to end Mideast conflict ease supply concerns",
+    "url": "https://www.cnbc.com/2026/10/27/oil-today-iran-us-crude-wti-brent-trump.html"
+   },
+   "source2": {
+    "name": "CNBC – Dầu giảm nhờ hy vọng ngoại giao, tấn công nhằm vào Ả Rập Xê Út vẫn gây lo ngại",
+    "name_en": "CNBC – Oil eases on Mideast diplomacy hopes, Saudi attacks stoke supply woes",
+    "url": "https://www.cnbc.com/2026/10/27/oil-eases-on-mideast-diplomacy-hopes-saudi-attacks-stoke-supply-woes.html"
+   },
+   "time_vn": "12:09 VN 27/10 (CNBC)",
+   "title_en": "Crude slides for a second day – Brent $114.80, WTI $100.88 – as Tehran talks revive hopes of cooling the U.S.-Iran war",
+   "summary_en": "CNBC: by 1:09 AM ET, Brent was down 0.87% at $114.80 a barrel and WTI down 0.86% at $100.88 after Saudi, Turkish and Pakistani officials met Iranian leaders in Tehran and agreed to keep talking. President Trump says he's close to deciding between a deal with Iran and stepped-up military action. The drop is capped by ongoing Houthi attacks on Saudi Arabia, and October has been the worst month for shipping attacks around the Strait of Hormuz.",
+   "reason_en": "Near term: cooler crude eases the inflation scare, but not enough to pull yields or the dollar lower – so gold isn't getting the benefit. A bad Hormuz or Houthi headline could send oil right back up. Longer term: the war is still live – an inflation risk that hurts gold through rates, but also a haven bid on any surprise escalation.",
+   "time_en": "Oct 27, 1:09 AM ET (CNBC)"
+  },
+  {
+   "date": "2026-10-27",
    "category": "Fed",
    "priority": 1,
    "impact": "tăng",

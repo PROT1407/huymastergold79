@@ -2,6 +2,43 @@
  "_note": "Nhật ký kết quả kế hoạch H79. Win = TP1 trước SL; loss = SL trước; hết phiên = P/L tại lúc đánh giá. MFE tính bằng giá ($1/oz). tp1_hit/tp2_hit ghi lại mỗi khi giá chạm TP (kể cả sau đó giá quay lại).",
  "plans": [
   {
+   "id": "2026-10-27-phien-a-0830",
+   "date": "2026-10-27",
+   "session": "Phiên Á",
+   "evaluated_at_vn": "13:40 27/10/2026",
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.022 – 4.028",
+    "sl": "4.039",
+    "tp1": "4.008",
+    "tp2": "3.994",
+    "zone_filled": true,
+    "result": "không vào lệnh",
+    "mfe": null,
+    "entry": null,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "near_miss": "Chạm mép vùng ≈4.024,3 (ước tính GC=F trừ chênh 14,6) rồi rơi về 3.999,5 – nếu vào ở 4.022 thì dương tối đa ≈22,5 giá.",
+    "note": "Đoạn 07:00–12:25 VN CNBC XAU= không có nến 5m, bù bằng GC=F (Yahoo) trừ chênh trung vị 14,63. Đỉnh ước tính 4.024,3 lúc 11:20; nến 45m 11:00 đóng đỏ 4.012,6 (dưới vùng), nến 1H 11:00 đóng 4.009,0 – không có nến 45m/1H đóng đỏ trong vùng → không vào. Sau đó giá về thấp nhất 3.999,5 lúc 13:35 (CNBC XAU=). Đã chạm TP1 4.008 của kế hoạch nhưng không có vị thế."
+   },
+   "buy": {
+    "zone": "3.990 – 3.995",
+    "sl": "3.982",
+    "tp1": "4.008",
+    "tp2": "4.019",
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "entry": null,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "shortfall_to_zone": 4.5,
+    "note": "Thấp nhất phiên Á 3.999,5 (13:35, CNBC XAU=) – còn cách vùng mua ~4,5 giá. Nguồn CNBC XAU= 5m + GC=F bù đoạn thiếu."
+   }
+  },
+  {
    "id": "2026-10-26-phien-my-1915",
    "date": "2026-10-26",
    "session": "Phiên Mỹ",

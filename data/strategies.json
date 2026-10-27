@@ -1,6 +1,179 @@
 {
  "strategies": [
   {
+   "id": "2026-10-27-phien-au-1345",
+   "date": "2026-10-27",
+   "time": "13:45",
+   "session": "Phiên Âu",
+   "session_en": "London session (ET early morning)",
+   "brief": true,
+   "title": "Vàng 27/10 phiên Âu: lùi về 4.000 sau cú hồi hụt ở 4.024 – BÁN FVG 4.014–4.019, MUA ngắn 3.988–3.994",
+   "title_en": "H79 Gold Plan – London session, Oct 27: Back to $4,000 After the 4,024 Bounce Fails – Sell 4,014–4,019, Buy 3,988–3,994",
+   "headline": "Vàng 27/10 phiên Âu: lùi về 4.000 sau cú hồi hụt ở 4.024 – BÁN FVG 4.014–4.019, MUA ngắn 3.988–3.994",
+   "headline_en": "H79 Gold Plan – London session, Oct 27: Back to $4,000 After the 4,024 Bounce Fails – Sell 4,014–4,019, Buy 3,988–3,994",
+   "url": "bai/2026-10-27-nhan-dinh-vang-phien-au-1345.html",
+   "url_en": "en/posts/2026-10-27-gold-plan-london-session-1345.html",
+   "image": "img/charts/gold-2026-10-27-phien-au-1345.jpg",
+   "image_en": "img/charts/gold-2026-10-27-london-1345-en.jpg",
+   "image_alt": "Biểu đồ vàng 45 phút phiên Âu 27/10: đỉnh phiên Á ≈4.024, đỉnh phiên Mỹ 4.028,7, giá 4.002; FVG giảm 4.014–4.018, 4.020–4.021, 4.025–4.028, FVG tăng 3.993–3.995; vùng BÁN 4.014–4.019, vùng MUA 3.988–3.994",
+   "image_alt_en": "Gold 45-minute chart, London session Oct 27: Asia high ~4,024, NY high 4,028.71, last 4,002; bearish gaps 4,014–4,018, 4,020–4,021, 4,025–4,028, bullish gap 3,993–3,995; sell zone 4,014–4,019, buy zone 3,988–3,994",
+   "trendType": "down",
+   "trend": "Khung lớn vẫn giảm: cú hồi phiên Á lên ≈4.024 bị bán ngay, vàng lùi về sát 4.000 và để lại FVG giảm 4.014–4.018. Bán hồi ở 4.014–4.019; chỉ mua nhịp ngắn ở 3.988–3.994 khi có nến xác nhận.",
+   "trend_en": "Bigger picture still bearish: the Asia bounce to about 4,024 got sold right away, gold is back near 4,000 and left a 4,014–4,018 bearish gap behind. Sell a bounce into 4,014–4,019; buy only a quick dip into 3,988–3,994 on a confirming close.",
+   "summary": {
+    "trend": "down",
+    "trendText": "Khung lớn giảm – cú hồi lên ≈4.024 bị bán, vàng về sát 4.000 dưới FVG 4.014–4.018; bán hồi ở 4.014–4.019, chỉ mua nhịp ngắn ở 3.988–3.994 khi có nến xác nhận",
+    "trendText_en": "Bigger picture bearish – the bounce to ~4,024 got sold and gold is back near 4,000 under the 4,014–4,018 gap; sell a bounce into 4,014–4,019, buy only a dip into 3,988–3,994 on a confirming close",
+    "sell": {
+     "zone": "4.014 – 4.019",
+     "sl": "4.027",
+     "tp": "4.002 → 3.990",
+     "zone_en": "4,014–4,019",
+     "sl_en": "4,027",
+     "tp_en": "TP1 4,002 → TP2 3,990"
+    },
+    "buy": {
+     "zone": "3.988 – 3.994",
+     "sl": "3.980",
+     "tp": "4.004 → 4.013",
+     "zone_en": "3,988–3,994",
+     "sl_en": "3,980",
+     "tp_en": "TP1 4,004 → TP2 4,013"
+    },
+    "note": "Hôm nay không có tin đỏ USD; 21:00 niềm tin tiêu dùng CB (tin cam); Fed 01:00 thứ Năm 29/10. Chỉ vào khi chạm vùng + nến 45m/1H đóng xác nhận; dời SL hòa vốn khi chạm TP1, trước Fed vào nhỏ.",
+    "note_en": "No high-impact U.S. data today; CB Consumer Confidence 10:00 AM ET (medium); Fed Wed 2:00 PM ET. Only on a zone tap plus a confirming 45m/1H close; stops to breakeven at TP1, size down into the Fed.",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD",
+    "priceNote_en": "Spot XAU/USD prices"
+   },
+   "sellZones": [
+    "Bán 4.014 – 4.019 (FVG giảm 15m 4.013,7–4.017,7 để lại khi giá rơi từ đỉnh phiên Á ≈4.024; ngay dưới FVG 5m 4.019,6–4.021,2). Vào khi giá chạm vùng và có nến 45m hoặc 1H đóng đỏ. Dừng lỗ 4.027 (trên đỉnh phiên Á và FVG 4.025–4.028). TP1 4.002 – chốt 50–70%, dời SL hòa vốn; TP2 3.990. Nến 1H đóng trên 4.027 thì bỏ bán."
+   ],
+   "sellZones_en": [
+    "Sell 4,014–4,019 (the 15m 4,013.7–4,017.7 bearish gap left on the drop from the ~4,024 Asia high, just under the 5m 4,019.6–4,021.2 gap). Enter on a red 45m or 1H close in the zone. Stop 4,027 (over the Asia high and the 4,025–4,028 gap). TP1 4,002 – take 50–70%, stop to breakeven; TP2 3,990. A 1H close above 4,027 cancels the short."
+   ],
+   "entryZones": [
+    "Mua 3.988 – 3.994 (FVG tăng 5m 3.993–3.995 và đáy phiên Mỹ 3.989,5). Vào khi có nến 45m hoặc 1H đóng xanh trong vùng. Dừng lỗ 3.980. TP1 4.004 – chốt 50–70%, dời SL về điểm vào; TP2 4.013. Lệnh ngược xu hướng khung lớn, vào nhỏ. Nến 1H đóng dưới 3.980 thì bỏ mua."
+   ],
+   "entryZones_en": [
+    "Buy 3,988–3,994 (the 5m 3,993–3,995 bullish gap and the New York low at 3,989.52). Enter on a green 45m or 1H close in the zone. Stop 3,980. TP1 4,004 – take 50–70%, stop to breakeven; TP2 4,013. Countertrend on the higher timeframes – keep it small. A 1H close under 3,980 cancels the long."
+   ],
+   "support": [
+    3999,
+    3994,
+    3990,
+    3985,
+    3980,
+    3975
+   ],
+   "resistance": [
+    4005,
+    4012,
+    4014,
+    4019,
+    4024,
+    4027
+   ],
+   "scenarios": [
+    "Kế hoạch: BÁN 4.014–4.019 (SL 4.027 · TP1 4.002 → TP2 3.990) · MUA 3.988–3.994 (SL 3.980 · TP1 4.004 → TP2 4.013). Chạm FVG + nến 45m/1H đóng xác nhận.",
+    "Kịch bản chính (~45%): giằng co quanh 4.000 rồi hồi lên 4.014–4.019 bị bán, về 4.002 và 3.990.",
+    "Kịch bản phụ (~35%): rơi thẳng về 3.988–3.994, có nến xanh – mua nhịp ngắn về 4.004.",
+    "Kịch bản xấu (~20%): nến 1H đóng dưới 3.980 – bỏ mua, về đáy 3.975 rồi 3.955; đóng trên 4.027 – bỏ bán, mốc kế 4.037.",
+    "Rủi ro: 15:00 London mở cửa; 21:00 niềm tin tiêu dùng CB; 01:00 thứ Năm 29/10 FOMC, 01:30 họp báo; tin Iran – Houthi và dầu."
+   ],
+   "scenarios_en": [
+    "The plan: sell 4,014–4,019 (stop 4,027 · TP1 4,002 → TP2 3,990) · buy 3,988–3,994 (stop 3,980 · TP1 4,004 → TP2 4,013). Gap tap plus a confirming 45m/1H close.",
+    "Base case (~45%): chop around 4,000, then a bounce into 4,014–4,019 fails, back to 4,002 and 3,990.",
+    "Alternative (~35%): a straight drop into 3,988–3,994 prints a green close – buy for a quick pop to 4,004.",
+    "Plan-breaker (~20%): a 1H close under 3,980 cancels the long, next the 3,975 low then 3,955; a close above 4,027 cancels the short, next 4,037.",
+    "Risks: London open 4:00 AM ET; CB Consumer Confidence 10:00 AM ET; Fed Wed 2:00 PM ET / presser 2:30 PM ET; Iran–Houthi headlines and crude."
+   ],
+   "macro": [],
+   "macro_en": [],
+   "market_picture": {
+    "text": "Cú hồi phiên Á lên ≈4.024 không giữ được, vàng giao ngay lùi về sát 4.000 (CNBC XAU= 3.999,7 lúc 13:40). Lực đè đến từ USD: DXY lên 102,10, gần đỉnh 1 tuần, lợi suất 10 năm vẫn đứng 4,98%. Dầu giảm tiếp (Brent 115,3, WTI 101,2) nhờ đàm phán ở Tehran, nhưng không đủ cứu vàng vì thị trường vẫn đặt khoảng 82% khả năng Fed tăng lãi tháng 12 (CME FedWatch qua CNBC). Bạc mất 2,2% cho thấy cả nhóm kim loại quý đang bị bán. Quan điểm: xu hướng chính vẫn giảm, hồi lên 4.014–4.019 là chỗ bán; thủng đáy 3.975 thì mở đường về 3.955, còn mua chỉ là nhịp ngắn ở 3.988–3.994."
+   },
+   "market_picture_en": {
+    "text": "The Asia pop to about 4,024 didn't stick, and spot is back near 4,000 (CNBC XAU= 3,999.67 at 2:40 AM ET). The dollar is doing the damage: DXY is up to 102.10, near a one-week high, and the 10-year is still parked at 4.98%. Crude keeps leaking lower on the Tehran talks (Brent $115.31, WTI $101.23), but that isn't enough to help gold while the market prices roughly 82% odds of a December hike (CME FedWatch via CNBC). Silver is down 2.2%, so the whole metals complex is getting sold. Our view: the trend is still down and a bounce into 4,014–4,019 is a sale; lose the 3,975 low and 3,955 opens up. Longs are only a quick trade at 3,988–3,994."
+   },
+   "physicalAdvice": "Làm theo kế hoạch, đừng chạy theo nến tin.",
+   "physicalAdvice_en": "Trade the plan, not the noise.",
+   "notes": "Các mốc là giá giao ngay XAU/USD (CNBC XAU= 3.999,7 lúc 13:40; gold-api.com 4.003,3 lúc 13:38). Đoạn 07:00–12:25 CNBC không có nến 5m, bù bằng GC=F trừ chênh ≈14,6 – đỉnh phiên Á ≈4.024 là giá ước tính. Khung 45m dựng từ nến 5m (gộp theo mốc epoch). FVG chưa lấp – giảm: 15m 4.013,7–4.017,7, 5m 4.019,6–4.021,2, 45m 4.011–4.012, 5m 4.025,3–4.027,6; tăng: 5m 3.993–3.995. Bộ lọc H79 (nội bộ): 5m/15m dưới MA34 và MA89; 45m dưới MA34/MA89 và giữa BB90; 1H–4H dưới MA89.",
+   "notes_en": "Levels are spot XAU/USD (CNBC XAU= 3,999.67 at 2:40 AM ET; gold-api.com 4,003.30 at 2:38 AM ET). CNBC printed no 5-minute bars from 8:00 PM to 1:25 AM ET, so that stretch is filled from GC=F less ≈$14.6 basis – the ~4,024 Asia high is an estimate. The 45m frame is built from 5-minute bars anchored to the epoch. Unfilled gaps – bearish: 15m 4,013.7–4,017.7, 5m 4,019.6–4,021.2, 45m 4,011–4,012, 5m 4,025.3–4,027.6; bullish: 5m 3,993–3,995. H79 filter (internal): 5m/15m under the MA34 and MA89; 45m under both MAs around the BB90 mid; 1H–4H under the MA89.",
+   "dataTime": "Cập nhật 13:40–13:45 ngày 27/10/2026 giờ VN (trước giờ London mở cửa). Nến 5m và 1H giao ngay CNBC XAU=, bù đoạn 07:00–12:25 bằng GC=F (Yahoo Finance) trừ chênh ≈14,6; gold-api.com XAU; DXY, US10Y, US2Y, Brent, WTI, S&P fut, Nasdaq fut, bạc từ CNBC; xác suất Fed theo CME FedWatch (CNBC); lịch tin ForexFactory.",
+   "dataTime_en": "Updated 2:40–2:45 AM ET, Tuesday Oct 27, 2026 (ahead of the London open). Spot 5-minute and hourly bars from CNBC XAU=, with the 8:00 PM–1:25 AM ET gap filled from GC=F (Yahoo Finance) less ≈$14.6 basis; gold-api.com XAU; DXY, US10Y, US2Y, Brent, WTI, S&P and Nasdaq futures and silver from CNBC; Fed odds from CME FedWatch via CNBC; calendar from ForexFactory.",
+   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+   "article": {
+    "sections": [
+     {
+      "h": "Nhìn lại phiên Á: bán 4.022–4.028 hụt nến xác nhận",
+      "p": "Giá hồi lên ≈4.024, chạm mép vùng BÁN nhưng cả nến 45m lẫn 1H đều đóng dưới vùng nên không vào; sau đó vàng rơi về 3.999,5 – tiếc là không có vị thế vào lệnh. Vùng MUA 3.990–3.995 chưa tới, đáy còn cách khoảng 4,5 giá. Thông thường, khi giá chỉ chạm mép vùng rồi quay đầu nhanh, FVG mới để lại phía dưới sẽ là chỗ bán gần hơn."
+     },
+     {
+      "h": "Kế hoạch phiên Âu",
+      "p": "🔴 BÁN 4.014 – 4.019 (FVG 4.014–4.018) | SL 4.027 | TP1 4.002 → TP2 3.990\n🟢 MUA 3.988 – 3.994 (nhịp ngắn) | SL 3.980 | TP1 4.004 → TP2 4.013\nVào lệnh: giá chạm vùng FVG và có nến 45m hoặc 1H đóng xác nhận (đỏ để bán, xanh để mua).\nVô hiệu: nến 1H đóng trên 4.027 bỏ bán; đóng dưới 3.980 bỏ mua – mốc kế 3.975 rồi 3.955.\nChính (~45%): giằng co quanh 4.000 rồi hồi lên 4.014–4.019 bị bán, về 4.002 và 3.990.\nPhụ (~35%): rơi thẳng về 3.988–3.994, có nến xanh – mua nhịp ngắn về 4.004.\nXấu (~20%): nến 1H đóng dưới 3.980 – bỏ mua; đóng trên 4.027 – bỏ bán.\nLưu ý: 15:00 London mở cửa. Hôm nay không có tin đỏ USD; 21:00 niềm tin tiêu dùng CB (tin cam). 01:00 thứ Năm 29/10 Fed công bố lãi suất, 01:30 họp báo. Trước Fed vào nhỏ, dời SL hòa vốn khi chạm TP1."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Vàng giảm nhẹ khi USD mạnh lên trước quyết định của Fed",
+      "url": "https://www.cnbc.com/2026/10/27/gold-eases-on-firmer-dollar-ahead-of-fed-decision.html"
+     },
+     {
+      "name": "CNBC – Dầu giảm khi nỗ lực ngoại giao mới làm dịu lo ngại nguồn cung",
+      "url": "https://www.cnbc.com/2026/10/27/oil-today-iran-us-crude-wti-brent-trump.html"
+     },
+     {
+      "name": "CNBC – Kỳ vọng cho cuộc họp Fed tháng 10",
+      "url": "https://www.cnbc.com/2026/10/26/fed-decision-expectations-october-meeting.html"
+     },
+     {
+      "name": "ForexFactory – Lịch kinh tế 27/10 (không có tin đỏ USD; CB Confidence 21:00; FOMC 01:00 29/10)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "article_en": {
+    "sections": [
+     {
+      "h": "Looking back at Asia: the 4,022–4,028 short never confirmed",
+      "p": "Gold bounced to about 4,024 and tagged the edge of the sell zone, but both the 45m and 1H closed below it, so no trade – then it slid to 3,999.52, and we had no position for the move. The 3,990–3,995 buy zone never came into play; the low stopped about $4.50 short. When price only grazes a zone and reverses fast, the fresh gap it leaves underneath is usually the better place to sell."
+     },
+     {
+      "h": "Plan for the London session",
+      "p": "🔴 SELL 4,014 – 4,019 (gap 4,014–4,018) | Stop 4,027 | TP1 4,002 → TP2 3,990\n🟢 BUY 3,988 – 3,994 (quick dip) | Stop 3,980 | TP1 4,004 → TP2 4,013\nEntry: a tap of the gap zone plus a confirming 45m or 1H close (red to sell, green to buy).\nInvalidation: a 1H close above 4,027 cancels the short; a close under 3,980 cancels the long – next the 3,975 low, then 3,955.\nBase case (~45%): chop around 4,000, then a bounce into 4,014–4,019 fails, back to 4,002 and 3,990.\nAlternative (~35%): a straight drop into 3,988–3,994 prints a green close – buy for a quick pop to 4,004.\nPlan-breaker (~20%): a 1H close under 3,980 – no long; a close above 4,027 – no short.\nNote: London opens 4:00 AM ET. No high-impact U.S. data today; CB Consumer Confidence at 10:00 AM ET (medium). Fed decision Wed 2:00 PM ET, press conference 2:30 PM ET. Size down into the Fed; stops to breakeven at TP1."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Gold eases on firmer dollar ahead of Fed decision",
+      "url": "https://www.cnbc.com/2026/10/27/gold-eases-on-firmer-dollar-ahead-of-fed-decision.html"
+     },
+     {
+      "name": "CNBC – Oil falls as renewed diplomatic efforts to end Mideast conflict ease supply concerns",
+      "url": "https://www.cnbc.com/2026/10/27/oil-today-iran-us-crude-wti-brent-trump.html"
+     },
+     {
+      "name": "CNBC – Fed decision: What to expect from October rate-setting meeting",
+      "url": "https://www.cnbc.com/2026/10/26/fed-decision-expectations-october-meeting.html"
+     },
+     {
+      "name": "ForexFactory – Calendar Oct 27 (no USD red; CB Confidence 10:00 AM ET; FOMC Wed 2:00 PM ET)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   }
+  },
+  {
    "id": "2026-10-27-phien-a-0830",
    "date": "2026-10-27",
    "time": "08:30",
