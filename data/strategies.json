@@ -18,8 +18,8 @@
    "image_alt": "Biểu đồ vàng 45 phút phiên Á 28/10 (cập nhật): đỉnh Á 4.069, giá ~4.047; MUA 4.023–4.032, BÁN 4.062–4.068, MUA 2 3.981–3.989; Support 1 4.010, supply 4.068–4.072",
    "image_alt_en": "Gold 45-minute chart, Asia session UPDATE Tuesday evening ET Oct 27: Asia high 4,069, last ~4,047; BUY 4,023–4,032, SELL 4,062–4,068, BUY 2 3,981–3,989; Support 1 4,010, supply 4,068–4,072",
    "trendType": "down",
-   "trend": "Cập nhật giữa phiên Á theo chart vùng: ưu tiên mua dip 4.023–4.032, bán strength 4.062–4.068 (không bán vào nhịp rơi), mua sâu 3.981–3.989 nếu xả tiếp. Âu/Mỹ hôm nay dừng.",
-   "trend_en": "Mid-Asia update off the zone chart: prefer buying the 4,023–4,032 dip, selling strength at 4,062–4,068 (not into the drop), and the deep 3,981–3,989 demand if it flushes. London/NY paused today.",
+   "trend": "Cập nhật giữa phiên Á: ưu tiên mua dip 4.023–4.032, bán strength 4.062–4.068 (không bán vào nhịp rơi), mua sâu 3.981–3.989 nếu xả tiếp. Âu/Mỹ hôm nay dừng.",
+   "trend_en": "Mid-Asia update: prefer buying the 4,023–4,032 dip, selling strength at 4,062–4,068 (not into the drop), and the deep 3,981–3,989 demand if it flushes. London/NY paused today.",
    "support": [
     4032,
     4023,
@@ -48,7 +48,7 @@
     "Mua 2 3.981 – 3.989 (ô cầu đáy). Chỉ khi xuyên Support 1 / band 3.992–4.002. Dừng lỗ 3.972. TP1 4.001 → TP2 4.010. Nến 1H đóng dưới 3.972 thì bỏ mua sâu."
    ],
    "entryZones_en": [
-    "Buy 4,023–4,032 (mid red/blue box on the owner chart). Enter on a pullback into the zone with a green 45m or 1H close. Stop 4,010 (Support 1). TP1 4,039 – take 50–70%, stop to entry; TP2 4,045–4,050.",
+    "Buy 4,023–4,032 (mid red/blue box on the chart). Enter on a pullback into the zone with a green 45m or 1H close. Stop 4,010 (Support 1). TP1 4,039 – take 50–70%, stop to entry; TP2 4,045–4,050.",
     "Buy 2 3,981–3,989 (bottom demand box). Only if Support 1 / the 3,992–4,002 band give way. Stop 3,972. TP1 4,001 → TP2 4,010. A 1H close under 3,972 cancels the deep long."
    ],
    "scenarios": [
@@ -205,10 +205,10 @@
    },
    "physicalAdvice": "Làm theo kế hoạch, đừng chạy theo nến tin.",
    "physicalAdvice_en": "Trade the plan, not the noise.",
-   "notes": "Các mốc theo chart vùng chủ tài khoản (làm tròn để đăng): MUA 4.023–4.032 (chart 4.023,56–4.031,60), BÁN 4.062–4.068 (cung cao gần 4.068,48–4.071), MUA 2 3.981–3.989 (chart 3.981,45–3.988,65); Support 1 4.010,08; band 3.992,03–4.001,77; supply 4.068,48–4.071,60; pivot xanh 4.039,28. Giá CNBC XAU= ~4.047,0 lúc ~09:35; gold-api ~4.048,2. Đỉnh Á 4.069,3 (07:10). Không vẽ MA/BB trên chart công khai.",
-   "notes_en": "Levels from the owner's zone chart (rounded for the post): BUY 4,023–4,032 (chart 4,023.56–4,031.60), SELL 4,062–4,068 (higher supply near 4,068.48–4,071), BUY 2 3,981–3,989 (chart 3,981.45–3,988.65); Support 1 4,010.08; band 3,992.03–4,001.77; supply 4,068.48–4,071.60; blue pivot 4,039.28. CNBC XAU= ~4,047.0 around 10:35 PM ET; gold-api ~4,048.2. Asia high 4,069.3. No MA/BB on the public chart.",
-   "dataTime": "Cập nhật giữa phiên Á ~09:35 ngày 28/10/2026 giờ VN. Nến 5m/45m/1H giao ngay CNBC XAU=; gold-api.com XAU; DXY, US10Y, US2Y, Brent, WTI, S&P fut, Nasdaq fut, bạc từ CNBC; lịch ForexFactory. Chart vùng do chủ tài khoản cung cấp.",
-   "dataTime_en": "Updated mid-Asia ~10:35 PM ET, Tuesday Oct 27, 2026. Spot 5m/45m/1H from CNBC XAU=; gold-api.com XAU; DXY, US10Y, US2Y, Brent, WTI, S&P and Nasdaq futures and silver from CNBC; calendar ForexFactory. Zone chart provided by the account owner.",
+   "notes": "Các mốc (làm tròn để đăng): MUA 4.023–4.032 (chart 4.023,56–4.031,60), BÁN 4.062–4.068 (cung cao gần 4.068,48–4.071), MUA 2 3.981–3.989 (chart 3.981,45–3.988,65); Support 1 4.010,08; band 3.992,03–4.001,77; supply 4.068,48–4.071,60; pivot xanh 4.039,28. Giá CNBC XAU= ~4.047,0 lúc ~09:35; gold-api ~4.048,2. Đỉnh Á 4.069,3 (07:10). Không vẽ MA/BB trên chart công khai.",
+   "notes_en": "Levels (rounded for the post): BUY 4,023–4,032 (chart 4,023.56–4,031.60), SELL 4,062–4,068 (higher supply near 4,068.48–4,071), BUY 2 3,981–3,989 (chart 3,981.45–3,988.65); Support 1 4,010.08; band 3,992.03–4,001.77; supply 4,068.48–4,071.60; blue pivot 4,039.28. CNBC XAU= ~4,047.0 around 10:35 PM ET; gold-api ~4,048.2. Asia high 4,069.3. No MA/BB on the public chart.",
+   "dataTime": "Cập nhật giữa phiên Á ~09:35 ngày 28/10/2026 giờ VN. Nến 5m/45m/1H giao ngay CNBC XAU=; gold-api.com XAU; DXY, US10Y, US2Y, Brent, WTI, S&P fut, Nasdaq fut, bạc từ CNBC; lịch ForexFactory.",
+   "dataTime_en": "Updated mid-Asia ~10:35 PM ET, Tuesday Oct 27, 2026. Spot 5m/45m/1H from CNBC XAU=; gold-api.com XAU; DXY, US10Y, US2Y, Brent, WTI, S&P and Nasdaq futures and silver from CNBC; calendar ForexFactory.",
    "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
    "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
    "summary": {
@@ -241,7 +241,7 @@
     "sections": [
      {
       "h": "Kế hoạch Á sáng đã hết – cập nhật theo cấu trúc mới",
-      "p": "Kế hoạch Á sáng (MUA 4.047–4.054 / BÁN 4.068–4.074) đã hết hiệu lực theo cấu trúc mới. Sau đỉnh Á 4.069,3 lúc 07:10, vàng lùi về ~4.045–4.047: vùng MUA cũ bị xuyên bằng nến đỏ 45m/1H (đóng ~4.046) nên không có lệnh mua sạch; vùng BÁN chỉ chạm mép (cao 4.069,3) rồi đóng lại dưới vùng – không xác nhận. Đang cập nhật theo chart vùng của chủ tài khoản."
+      "p": "Kế hoạch Á sáng (MUA 4.047–4.054 / BÁN 4.068–4.074) đã hết hiệu lực theo cấu trúc mới. Sau đỉnh Á 4.069,3 lúc 07:10, vàng lùi về ~4.045–4.047: vùng MUA cũ bị xuyên bằng nến đỏ 45m/1H (đóng ~4.046) nên không có lệnh mua sạch; vùng BÁN chỉ chạm mép (cao 4.069,3) rồi đóng lại dưới vùng – không xác nhận."
      },
      {
       "h": "Kế hoạch phiên Á (cập nhật)",
@@ -271,7 +271,7 @@
     "sections": [
      {
       "h": "This morning's Asia plan is done – updating to the new structure",
-      "p": "This morning's Asia plan (BUY 4,047–4,054 / SELL 4,068–4,074) is retired on the new structure. After the Asia high at 4,069.3 (7:10 AM VN), gold slid to ~4,045–4,047: the old buy zone was sliced by red 45m/1H closes (~4,046) so no clean long; the sell only tagged the edge (high 4,069.3) and closed back below – no confirm. Updating to the owner's exact zone chart."
+      "p": "This morning's Asia plan (BUY 4,047–4,054 / SELL 4,068–4,074) is retired on the new structure. After the Asia high at 4,069.3 (7:10 AM VN), gold slid to ~4,045–4,047: the old buy zone was sliced by red 45m/1H closes (~4,046) so no clean long; the sell only tagged the edge (high 4,069.3) and closed back below – no confirm."
      },
      {
       "h": "Asia Session Plan (updated)",
