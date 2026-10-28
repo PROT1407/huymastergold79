@@ -68,7 +68,7 @@
    "macro": [],
    "macro_en": [],
    "market_picture": {
-    "text": "Giá đang ~4.047 sau cú đỉnh Á 4.069 – DXY ~102,4, lợi suất 10 năm ~5,02%, dầu vẫn nóng (WTI ~101, Brent ~116). Cấu trúc trên chart chủ: kỳ vọng lùi vào hộp giữa 4.023–4.032, bật mạnh lên cung 4.062–4.068 rồi xả sâu về cầu 3.981–3.989 trước khi hồi. Fed tối nay là rủi ro lớn – vào nhỏ, ưu tiên xác nhận nến đóng. Phiên Âu và Mỹ hôm nay dừng theo chỉ đạo.",
+    "text": "Vàng giao ngay quanh ~4.047 sau đỉnh phiên Á 4.069. Bối cảnh toàn cục trước Fed tối nay (~01:00 VN thứ Năm 29/10, họp báo 01:30): DXY ~102,4 và lợi suất 10 năm ~5,02% vẫn là lực đè chính; dầu còn nóng (WTI ~101, Brent ~116) đỡ phía dưới nhưng chưa đủ kéo vàng phá kháng cự. Tin tức: thị trường nghiêng giữ lãi lần này, song FedWatch vẫn đặt ~83% khả năng tăng vào tháng 12 (CNBC/Reuters) — vàng sẽ nhạy với mọi tín hiệu hawkish/dovish. Xu hướng trung–dài hạn vẫn là sóng tăng cấu trúc lớn; nhịp hiện tại là chỉnh/tích lũy trong biên rộng chờ định hướng Fed — ưu tiên mua dip có xác nhận, tránh đuổi đỉnh khi USD–lợi suất còn cứng.",
     "chips": [
      {
       "k": "XAU",
@@ -136,7 +136,7 @@
     ]
    },
    "market_picture_en": {
-    "text": "Spot is ~4,047 after the Asia high at 4,069 – DXY ~102.4, 10-year ~5.02%, crude still hot (WTI ~101, Brent ~116). Owner chart path: dip into the mid box 4,023–4,032, rally into supply 4,062–4,068, then a deeper flush into demand at 3,981–3,989 before recovering. The Fed tonight is the main risk – size down and wait for the close. London and New York sessions are paused today.",
+    "text": "Spot gold is ~4,047 after the Asia high at 4,069. Global setup into tonight's Fed (~01:00 VN Thu 29/10 / 2:00 PM ET Wed, presser 01:30 VN): DXY ~102.4 and the 10-year ~5.02% remain the main headwinds; crude still hot (WTI ~101, Brent ~116) supports the floor but isn't enough to clear resistance. News: markets lean toward a hold this meeting, yet FedWatch still prices ~83% odds of a hike by December (CNBC/Reuters) — gold will whip on any hawkish or dovish cue. The medium-to-longer trend remains a durable structural uptrend; the current phase is consolidation/correction in a wide range into the Fed — prefer confirmed dip buys over chasing highs while USD and yields stay firm.",
     "chips": [
      {
       "k": "XAU",
