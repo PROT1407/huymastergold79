@@ -2,6 +2,78 @@
  "_note": "Nhật ký kết quả kế hoạch H79. Win = TP1 trước SL; loss = SL trước; hết phiên = P/L tại lúc đánh giá. MFE tính bằng giá ($1/oz). tp1_hit/tp2_hit ghi lại mỗi khi giá chạm TP (kể cả sau đó giá quay lại).",
  "plans": [
   {
+   "id": "2026-10-27-phien-my-1915",
+   "date": "2026-10-27",
+   "session": "Phiên Mỹ",
+   "evaluated_at_vn": "06:10 28/10/2026",
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.038 – 4.047",
+    "sl": "4.055",
+    "tp1": "4.024",
+    "tp2": "4.008",
+    "zone_filled": true,
+    "result": "không vào lệnh",
+    "mfe": null,
+    "entry": null,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "note": "Kế hoạch cập nhật (bản cuối). Nến 45m 20:45 chạm vùng (cao 4.040,4) đóng xanh 4.040,0; nến 45m 21:30 đóng xanh 4.056,3 vượt SL; nến 1H 20:00/21:00 đóng xanh 4.026,4/4.051,9 – không có nến đỏ đóng trong vùng → không vào (nếu vào sẽ dính SL 4.055). Bản đầu BÁN FVG 4.020–4.027: nến 45m 19:15 chạm 4.025,8 nhưng đóng xanh 4.022,9 → cũng không vào. Đỉnh phiên 4.064,95 lúc 00:35 28/10. Nguồn CNBC XAU= 5m."
+   },
+   "buy": {
+    "zone": "4.002 – 4.008",
+    "sl": "3.989",
+    "tp1": "4.024",
+    "tp2": "4.038",
+    "zone_filled": false,
+    "result": "chưa khớp",
+    "mfe": null,
+    "entry": null,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "shortfall_to_zone": 4.5,
+    "note": "Thấp nhất phiên Mỹ 4.012,5 (19:15) – không lùi về vùng mua (còn cách ~4,5 giá). Vùng MUA S1 3.987–3.994 cũng không chạm. Cấu trúc W đúng: giá lên R1 4.024, R2 4.038, R3 4.056 và đỉnh 4.064,95 – tiếc là không có vị thế vào lệnh. Nguồn CNBC XAU= 5m."
+   }
+  },
+  {
+   "id": "2026-10-27-phien-au-1345",
+   "date": "2026-10-27",
+   "session": "Phiên Âu",
+   "evaluated_at_vn": "06:10 28/10/2026",
+   "price_ref": "spot",
+   "sell": {
+    "zone": "4.014 – 4.019",
+    "sl": "4.027",
+    "tp1": "4.002",
+    "tp2": "3.990",
+    "zone_filled": true,
+    "result": "không vào lệnh",
+    "mfe": null,
+    "entry": null,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "note": "Chạm vùng ở nến 45m 17:45 (cao 4.015,1, đóng xanh 4.011,4) và 18:30 (cao 4.016,8, đóng xanh 4.013,2); nến 1H 17:00/18:00 đóng xanh – không có nến đỏ đóng trong vùng → không vào. Sau đó giá vượt SL 4.027 trong phiên Mỹ. Nguồn CNBC XAU= 5m."
+   },
+   "buy": {
+    "zone": "3.988 – 3.994",
+    "sl": "3.980",
+    "tp1": "4.004",
+    "tp2": "4.013",
+    "zone_filled": true,
+    "result": "không vào lệnh",
+    "mfe": null,
+    "entry": null,
+    "tp1_hit": false,
+    "tp2_hit": false,
+    "sl_hit": false,
+    "near_miss": "Đáy 3.990,1 lúc 15:50 nằm trong vùng; nếu vào ở 3.994 thì dương tối đa ≈22,8 giá (đỉnh phiên 4.016,8 lúc 19:10) – đã chạm TP1 4.004 và TP2 4.013 nhưng không có vị thế.",
+    "note": "Nến 45m 14:45 đóng đỏ 3.994,0; nến 45m 15:30 (thấp 3.990,1) đóng xanh 3.998,4 – trên vùng; nến 1H 15:00 đóng đỏ 3.992,9; nến 1H 16:00 đóng xanh 4.001,6 ngoài vùng – không có nến xanh đóng trong vùng → không vào. Nguồn CNBC XAU= 5m."
+   }
+  },
+  {
    "id": "2026-10-27-phien-a-0830",
    "date": "2026-10-27",
    "session": "Phiên Á",
