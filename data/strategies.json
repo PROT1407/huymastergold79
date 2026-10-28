@@ -9,17 +9,17 @@
    "brief": true,
    "url": "bai/2026-10-28-nhan-dinh-vang-phien-a-0645.html",
    "url_en": "en/posts/2026-10-27-gold-plan-asia-session-tuesday-evening.html",
-   "headline": "Vàng 28/10 phiên Á (cập nhật): mua dip 4.023–4.032, bán hồi 4.045–4.052, mua sâu 3.981–3.989 trước Fed",
-   "headline_en": "H79 Gold Plan – Asia Session UPDATE (Tuesday Evening ET), Oct 27: Buy Dip 4,023–4,032, Sell Bounce 4,045–4,052, Deep Buy 3,981–3,989 Into the Fed",
-   "title": "Vàng 28/10 phiên Á (cập nhật): mua dip 4.023–4.032, bán hồi 4.045–4.052, mua sâu 3.981–3.989 trước Fed",
-   "title_en": "H79 Gold Plan – Asia Session UPDATE (Tuesday Evening ET), Oct 27: Buy Dip 4,023–4,032, Sell Bounce 4,045–4,052, Deep Buy 3,981–3,989 Into the Fed",
+   "headline": "Vàng 28/10 phiên Á (cập nhật): mua dip 4.023–4.032, bán 4.062–4.068, mua sâu 3.981–3.989 trước Fed",
+   "headline_en": "H79 Gold Plan – Asia Session UPDATE (Tuesday Evening ET), Oct 27: Buy Dip 4,023–4,032, Sell 4,062–4,068, Deep Buy 3,981–3,989 Into the Fed",
+   "title": "Vàng 28/10 phiên Á (cập nhật): mua dip 4.023–4.032, bán 4.062–4.068, mua sâu 3.981–3.989 trước Fed",
+   "title_en": "H79 Gold Plan – Asia Session UPDATE (Tuesday Evening ET), Oct 27: Buy Dip 4,023–4,032, Sell 4,062–4,068, Deep Buy 3,981–3,989 Into the Fed",
    "image": "img/charts/gold-2026-10-28-phien-a-0645.jpg",
    "image_en": "img/charts/gold-2026-10-27-asia-tuesday-evening-en.jpg",
-   "image_alt": "Biểu đồ vàng 45 phút phiên Á 28/10 (cập nhật): đỉnh Á 4.069, giá ~4.047; MUA 4.023–4.032, BÁN 4.045–4.052, MUA 2 3.981–3.989; Support 1 4.010, supply 4.068–4.072",
-   "image_alt_en": "Gold 45-minute chart, Asia session UPDATE Tuesday evening ET Oct 27: Asia high 4,069, last ~4,047; BUY 4,023–4,032, SELL 4,045–4,052, BUY 2 3,981–3,989; Support 1 4,010, supply 4,068–4,072",
+   "image_alt": "Biểu đồ vàng 45 phút phiên Á 28/10 (cập nhật): đỉnh Á 4.069, giá ~4.047; MUA 4.023–4.032, BÁN 4.062–4.068, MUA 2 3.981–3.989; Support 1 4.010, supply 4.068–4.072",
+   "image_alt_en": "Gold 45-minute chart, Asia session UPDATE Tuesday evening ET Oct 27: Asia high 4,069, last ~4,047; BUY 4,023–4,032, SELL 4,062–4,068, BUY 2 3,981–3,989; Support 1 4,010, supply 4,068–4,072",
    "trendType": "down",
-   "trend": "Cập nhật giữa phiên Á theo chart vùng: ưu tiên mua dip 4.023–4.032, bán nhịp hồi 4.045–4.052, mua sâu 3.981–3.989 nếu xả tiếp. Âu/Mỹ hôm nay dừng.",
-   "trend_en": "Mid-Asia update off the zone chart: prefer buying the 4,023–4,032 dip, selling the 4,045–4,052 bounce, and the deep 3,981–3,989 demand if it flushes. London/NY paused today.",
+   "trend": "Cập nhật giữa phiên Á theo chart vùng: ưu tiên mua dip 4.023–4.032, bán strength 4.062–4.068 (không bán vào nhịp rơi), mua sâu 3.981–3.989 nếu xả tiếp. Âu/Mỹ hôm nay dừng.",
+   "trend_en": "Mid-Asia update off the zone chart: prefer buying the 4,023–4,032 dip, selling strength at 4,062–4,068 (not into the drop), and the deep 3,981–3,989 demand if it flushes. London/NY paused today.",
    "support": [
     4032,
     4023,
@@ -32,15 +32,16 @@
    "resistance": [
     4045,
     4052,
-    4060,
+    4062,
     4068,
-    4072
+    4072,
+    4078
    ],
    "sellZones": [
-    "Bán 4.045 – 4.052 (ô xanh bounce / quanh 4.045,73) sau nhịp hồi từ vùng mua giữa. Vào khi giá chạm vùng và có nến 45m hoặc 1H đóng đỏ. Dừng lỗ 4.068 (mép supply). TP1 4.010 – chốt 50–70%, dời SL hòa vốn; TP2 4.001–3.992. Nến 1H đóng trên 4.072 thì bỏ bán."
+    "Bán 4.062 – 4.068 (cung cao / gần đỉnh 4.068,48–4.071). Chỉ bán khi giá mạnh lên vùng và có nến 45m hoặc 1H đóng đỏ – không bán vào nhịp rơi hiện tại quanh 4.045. Dừng lỗ ~4.078 (trên đỉnh 4.072). TP1 4.032 – chốt 50–70%, dời SL hòa vốn; TP2 4.010 (mở rộng 4.001–3.992 nếu còn vừa RR). Nến 1H đóng trên ~4.078 thì bỏ bán."
    ],
    "sellZones_en": [
-    "Sell 4,045–4,052 (bounce blue box / around 4,045.73) after the rebound from the mid buy zone. Enter on a red 45m or 1H close in the zone. Stop 4,068 (supply edge). TP1 4,010 – take 50–70%, stop to breakeven; TP2 4,001–3,992. A 1H close above 4,072 cancels the short."
+    "Sell 4,062–4,068 (higher supply / near the 4,068.48–4,071 tops). Only on strength into the zone with a red 45m or 1H close – do not short into the current drop around 4,045. Stop ~4,078 (above the 4,072 top). TP1 4,032 – take 50–70%, stop to breakeven; TP2 4,010 (extend 4,001–3,992 if RR still fits). A 1H close above ~4,078 cancels the short."
    ],
    "entryZones": [
     "Mua 4.023 – 4.032 (vùng đỏ/xanh giữa trên chart chủ). Vào khi giá lùi về vùng và có nến 45m hoặc 1H đóng xanh. Dừng lỗ 4.010 (Support 1). TP1 4.039 – chốt 50–70%, dời SL về điểm vào; TP2 4.045–4.050.",
@@ -51,23 +52,23 @@
     "Buy 2 3,981–3,989 (bottom demand box). Only if Support 1 / the 3,992–4,002 band give way. Stop 3,972. TP1 4,001 → TP2 4,010. A 1H close under 3,972 cancels the deep long."
    ],
    "scenarios": [
-    "Kế hoạch (cập nhật): MUA 4.023–4.032 (SL 4.010 · TP1 4.039 → TP2 4.045–4.050) · BÁN 4.045–4.052 (SL 4.068 · TP1 4.010 → TP2 4.001–3.992) · MUA 2 3.981–3.989 (SL 3.972 · TP1 4.001 → TP2 4.010). Chạm vùng + nến 45m/1H đóng xác nhận.",
-    "Kịch bản chính: lùi 4.023–4.032 rồi bật lên 4.039 / 4.045–4.050; nếu bị từ chối ở ô bounce – bán về 4.010 / 3.992.",
+    "Kế hoạch (cập nhật): MUA 4.023–4.032 (SL 4.010 · TP1 4.039 → TP2 4.045–4.050) · BÁN 4.062–4.068 (SL ~4.078 · TP1 4.032 → TP2 4.010) · MUA 2 3.981–3.989 (SL 3.972 · TP1 4.001 → TP2 4.010). Chạm vùng + nến 45m/1H đóng xác nhận; không bán vào nhịp rơi.",
+    "Kịch bản chính: lùi 4.023–4.032 rồi bật lên 4.039 / 4.045–4.050; nếu mạnh lên 4.062–4.068 và bị từ chối – bán về 4.032 / 4.010.",
     "Kịch bản phụ: xuyên Support 1 xuống ô cầu 3.981–3.989 – mua sâu lên 4.001 / 4.010.",
-    "Kịch bản xấu: 1H đóng dưới 3.972 – bỏ mua sâu; 1H đóng trên 4.072 – bỏ bán, nhìn lại supply 4.068–4.072.",
+    "Kịch bản xấu: 1H đóng dưới 3.972 – bỏ mua sâu; 1H đóng trên ~4.078 – bỏ bán.",
     "Rủi ro: Fed 01:00 thứ Năm 29/10, họp báo 01:30; phiên Âu/Mỹ hôm nay tạm dừng; dầu / Iran."
    ],
    "scenarios_en": [
-    "Updated plan: buy 4,023–4,032 (stop 4,010 · TP1 4,039 → TP2 4,045–4,050) · sell 4,045–4,052 (stop 4,068 · TP1 4,010 → TP2 4,001–3,992) · buy 2 3,981–3,989 (stop 3,972 · TP1 4,001 → TP2 4,010). Zone tap plus confirming 45m/1H close.",
-    "Base: dip 4,023–4,032 then bounce to 4,039 / 4,045–4,050; rejection in the bounce box – sell for 4,010 / 3,992.",
+    "Updated plan: buy 4,023–4,032 (stop 4,010 · TP1 4,039 → TP2 4,045–4,050) · sell 4,062–4,068 (stop ~4,078 · TP1 4,032 → TP2 4,010) · buy 2 3,981–3,989 (stop 3,972 · TP1 4,001 → TP2 4,010). Zone tap plus confirming 45m/1H close; do not short into the drop.",
+    "Base: dip 4,023–4,032 then bounce to 4,039 / 4,045–4,050; rally into 4,062–4,068 that rejects – sell for 4,032 / 4,010.",
     "Alt: Support 1 breaks into demand 3,981–3,989 – buy the deep for 4,001 / 4,010.",
-    "Plan-breaker: 1H close under 3,972 – no deep long; 1H close above 4,072 – no short, reassess supply 4,068–4,072.",
+    "Plan-breaker: 1H close under 3,972 – no deep long; 1H close above ~4,078 – no short.",
     "Risks: FOMC Wed 2:00 PM ET, presser 2:30 PM ET; London/NY paused today; crude / Iran headlines."
    ],
    "macro": [],
    "macro_en": [],
    "market_picture": {
-    "text": "Giá đang ~4.047 sau cú đỉnh Á 4.069 – DXY ~102,4, lợi suất 10 năm ~5,02%, dầu vẫn nóng (WTI ~101, Brent ~116). Cấu trúc trên chart chủ: kỳ vọng lùi vào hộp giữa 4.023–4.032, bật lên ô ~4.050 rồi xả sâu về cầu 3.981–3.989 trước khi hồi. Fed tối nay là rủi ro lớn – vào nhỏ, ưu tiên xác nhận nến đóng. Phiên Âu và Mỹ hôm nay dừng theo chỉ đạo.",
+    "text": "Giá đang ~4.047 sau cú đỉnh Á 4.069 – DXY ~102,4, lợi suất 10 năm ~5,02%, dầu vẫn nóng (WTI ~101, Brent ~116). Cấu trúc trên chart chủ: kỳ vọng lùi vào hộp giữa 4.023–4.032, bật mạnh lên cung 4.062–4.068 rồi xả sâu về cầu 3.981–3.989 trước khi hồi. Fed tối nay là rủi ro lớn – vào nhỏ, ưu tiên xác nhận nến đóng. Phiên Âu và Mỹ hôm nay dừng theo chỉ đạo.",
     "chips": [
      {
       "k": "XAU",
@@ -135,7 +136,7 @@
     ]
    },
    "market_picture_en": {
-    "text": "Spot is ~4,047 after the Asia high at 4,069 – DXY ~102.4, 10-year ~5.02%, crude still hot (WTI ~101, Brent ~116). Owner chart path: dip into the mid box 4,023–4,032, bounce toward ~4,050, then a deeper flush into demand at 3,981–3,989 before recovering. The Fed tonight is the main risk – size down and wait for the close. London and New York sessions are paused today.",
+    "text": "Spot is ~4,047 after the Asia high at 4,069 – DXY ~102.4, 10-year ~5.02%, crude still hot (WTI ~101, Brent ~116). Owner chart path: dip into the mid box 4,023–4,032, rally into supply 4,062–4,068, then a deeper flush into demand at 3,981–3,989 before recovering. The Fed tonight is the main risk – size down and wait for the close. London and New York sessions are paused today.",
     "chips": [
      {
       "k": "XAU",
@@ -204,23 +205,23 @@
    },
    "physicalAdvice": "Làm theo kế hoạch, đừng chạy theo nến tin.",
    "physicalAdvice_en": "Trade the plan, not the noise.",
-   "notes": "Các mốc theo chart vùng chủ tài khoản (làm tròn để đăng): MUA 4.023–4.032 (chart 4.023,56–4.031,60), BÁN 4.045–4.052 (ô bounce ~4.048–4.052 / 4.045,73), MUA 2 3.981–3.989 (chart 3.981,45–3.988,65); Support 1 4.010,08; band 3.992,03–4.001,77; supply 4.068,48–4.071,60; pivot xanh 4.039,28. Giá CNBC XAU= ~4.047,0 lúc ~09:35; gold-api ~4.048,2. Đỉnh Á 4.069,3 (07:10). Không vẽ MA/BB trên chart công khai.",
-   "notes_en": "Levels from the owner's zone chart (rounded for the post): BUY 4,023–4,032 (chart 4,023.56–4,031.60), SELL 4,045–4,052 (bounce box ~4,048–4,052 / 4,045.73), BUY 2 3,981–3,989 (chart 3,981.45–3,988.65); Support 1 4,010.08; band 3,992.03–4,001.77; supply 4,068.48–4,071.60; blue pivot 4,039.28. CNBC XAU= ~4,047.0 around 10:35 PM ET; gold-api ~4,048.2. Asia high 4,069.3. No MA/BB on the public chart.",
+   "notes": "Các mốc theo chart vùng chủ tài khoản (làm tròn để đăng): MUA 4.023–4.032 (chart 4.023,56–4.031,60), BÁN 4.062–4.068 (cung cao gần 4.068,48–4.071), MUA 2 3.981–3.989 (chart 3.981,45–3.988,65); Support 1 4.010,08; band 3.992,03–4.001,77; supply 4.068,48–4.071,60; pivot xanh 4.039,28. Giá CNBC XAU= ~4.047,0 lúc ~09:35; gold-api ~4.048,2. Đỉnh Á 4.069,3 (07:10). Không vẽ MA/BB trên chart công khai.",
+   "notes_en": "Levels from the owner's zone chart (rounded for the post): BUY 4,023–4,032 (chart 4,023.56–4,031.60), SELL 4,062–4,068 (higher supply near 4,068.48–4,071), BUY 2 3,981–3,989 (chart 3,981.45–3,988.65); Support 1 4,010.08; band 3,992.03–4,001.77; supply 4,068.48–4,071.60; blue pivot 4,039.28. CNBC XAU= ~4,047.0 around 10:35 PM ET; gold-api ~4,048.2. Asia high 4,069.3. No MA/BB on the public chart.",
    "dataTime": "Cập nhật giữa phiên Á ~09:35 ngày 28/10/2026 giờ VN. Nến 5m/45m/1H giao ngay CNBC XAU=; gold-api.com XAU; DXY, US10Y, US2Y, Brent, WTI, S&P fut, Nasdaq fut, bạc từ CNBC; lịch ForexFactory. Chart vùng do chủ tài khoản cung cấp.",
    "dataTime_en": "Updated mid-Asia ~10:35 PM ET, Tuesday Oct 27, 2026. Spot 5m/45m/1H from CNBC XAU=; gold-api.com XAU; DXY, US10Y, US2Y, Brent, WTI, S&P and Nasdaq futures and silver from CNBC; calendar ForexFactory. Zone chart provided by the account owner.",
    "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
    "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
    "summary": {
     "trend": "down",
-    "trendText": "Cập nhật giữa phiên Á – mua dip 4.023–4.032, bán hồi 4.045–4.052, mua sâu 3.981–3.989; Âu/Mỹ hôm nay dừng; Fed 01:00 29/10 vào nhỏ",
-    "trendText_en": "Mid-Asia update – buy the 4,023–4,032 dip, sell the 4,045–4,052 bounce, deep buy 3,981–3,989; London/NY paused today; size down into the Fed Wed 2:00 PM ET",
+    "trendText": "Cập nhật giữa phiên Á – mua dip 4.023–4.032, bán 4.062–4.068 (không bán vào nhịp rơi), mua sâu 3.981–3.989; Âu/Mỹ hôm nay dừng; Fed 01:00 29/10 vào nhỏ",
+    "trendText_en": "Mid-Asia update – buy the 4,023–4,032 dip, sell 4,062–4,068 on strength (not into the drop), deep buy 3,981–3,989; London/NY paused today; size down into the Fed Wed 2:00 PM ET",
     "sell": {
-     "zone": "4.045 – 4.052",
-     "sl": "4.068",
-     "tp": "4.010 → 4.001 – 3.992",
-     "zone_en": "4,045–4,052",
-     "sl_en": "4,068",
-     "tp_en": "TP1 4,010 → TP2 4,001–3,992"
+     "zone": "4.062 – 4.068",
+     "sl": "~4.078",
+     "tp": "4.032 → 4.010",
+     "zone_en": "4,062–4,068",
+     "sl_en": "~4,078",
+     "tp_en": "TP1 4,032 → TP2 4,010"
     },
     "buy": {
      "zone": "4.023 – 4.032",
@@ -230,8 +231,8 @@
      "sl_en": "4,010",
      "tp_en": "TP1 4,039 → TP2 4,045–4,050"
     },
-    "note": "MUA 2 3.981–3.989 | SL 3.972 | TP 4.001 → 4.010. Chỉ vào khi chạm vùng + nến 45m/1H đóng xác nhận; trước Fed vào nhỏ. 1H đóng dưới 3.972 bỏ mua sâu; trên 4.072 bỏ bán. Phiên Âu/Mỹ hôm nay tạm dừng.",
-    "note_en": "BUY 2 3,981–3,989 | SL 3,972 | TP 4,001 → 4,010. Only on a zone tap plus confirming 45m/1H close; size down into the Fed. 1H close under 3,972 cancels the deep long; above 4,072 cancels the short. London/NY paused today.",
+    "note": "MUA 2 3.981–3.989 | SL 3.972 | TP 4.001 → 4.010. Chỉ vào khi chạm vùng + nến 45m/1H đóng xác nhận; trước Fed vào nhỏ. 1H đóng dưới 3.972 bỏ mua sâu; trên ~4.078 bỏ bán. Không bán vào nhịp rơi. Phiên Âu/Mỹ hôm nay tạm dừng.",
+    "note_en": "BUY 2 3,981–3,989 | SL 3,972 | TP 4,001 → 4,010. Only on a zone tap plus confirming 45m/1H close; size down into the Fed. 1H close under 3,972 cancels the deep long; above ~4,078 cancels the short. Do not short into the drop. London/NY paused today.",
     "price": "spot",
     "priceNote": "Giá giao ngay XAU/USD",
     "priceNote_en": "Spot XAU/USD prices"
@@ -244,7 +245,7 @@
      },
      {
       "h": "Kế hoạch phiên Á (cập nhật)",
-      "p": "🟢 MUA 4.023 – 4.032 (vùng đỏ/xanh giữa trên chart) | SL 4.010 (Support 1) | TP1 4.039 → TP2 4.045 – 4.050\n🔴 BÁN 4.045 – 4.052 (ô xanh bounce / quanh 4.045,73) sau nhịp hồi từ vùng mua | SL 4.068 | TP1 4.010 → TP2 4.001 – 3.992\n🟢 MUA 2 3.981 – 3.989 (ô cầu đáy) | SL 3.972 | TP1 4.001 → TP2 4.010\nVào lệnh: giá chạm vùng và có nến 45m hoặc 1H đóng xác nhận (xanh mua / đỏ bán). Không đuổi giữa các vùng.\nVô hiệu: nến 1H đóng dưới 3.972 bỏ mua sâu; đóng trên 4.072 bỏ bán.\nChính: lùi về 4.023–4.032 có nến xanh – mua lên 4.039 / 4.045–4.050; nếu bật vào 4.045–4.052 và bị từ chối – bán về 4.010 / 3.992.\nPhụ: xuyên Support 1 và band 3.992–4.002 rồi về ô cầu 3.981–3.989 – mua sâu lên 4.001 / 4.010.\nLưu ý: Fed công bố ~01:00 thứ Năm 29/10, họp báo 01:30 – trước Fed vào nhỏ, chạm TP1 dời SL hòa vốn. Phiên Âu/Mỹ hôm nay tạm dừng theo lệnh."
+      "p": "🟢 MUA 4.023 – 4.032 (vùng đỏ/xanh giữa trên chart) | SL 4.010 (Support 1) | TP1 4.039 → TP2 4.045 – 4.050\n🔴 BÁN 4.062 – 4.068 (cung cao / gần đỉnh 4.068,48–4.071) – bán khi giá mạnh lên vùng, không bán vào nhịp rơi hiện tại | SL ~4.078 (trên đỉnh 4.072) | TP1 4.032 → TP2 4.010\n🟢 MUA 2 3.981 – 3.989 (ô cầu đáy) | SL 3.972 | TP1 4.001 → TP2 4.010\nVào lệnh: giá chạm vùng và có nến 45m hoặc 1H đóng xác nhận (xanh mua / đỏ bán). Không đuổi giữa các vùng; không bán lúc giá đang rơi dưới vùng bán.\nVô hiệu: nến 1H đóng dưới 3.972 bỏ mua sâu; đóng trên ~4.078 bỏ bán.\nChính: lùi về 4.023–4.032 có nến xanh – mua lên 4.039 / 4.045–4.050; nếu bật mạnh lên 4.062–4.068 và bị từ chối – bán về 4.032 / 4.010.\nPhụ: xuyên Support 1 và band 3.992–4.002 rồi về ô cầu 3.981–3.989 – mua sâu lên 4.001 / 4.010.\nLưu ý: Fed công bố ~01:00 thứ Năm 29/10, họp báo 01:30 – trước Fed vào nhỏ, chạm TP1 dời SL hòa vốn. Phiên Âu/Mỹ hôm nay tạm dừng theo lệnh."
      }
     ],
     "sources": [
@@ -274,7 +275,7 @@
      },
      {
       "h": "Asia Session Plan (updated)",
-      "p": "🟢 BUY 4,023–4,032 (mid red/blue box on the chart) | Stop 4,010 (Support 1) | TP1 4,039 → TP2 4,045–4,050\n🔴 SELL 4,045–4,052 (bounce blue box / around 4,045.73) after the rebound from the buy zone | Stop 4,068 | TP1 4,010 → TP2 4,001–3,992\n🟢 BUY 2 3,981–3,989 (bottom demand box) | Stop 3,972 | TP1 4,001 → TP2 4,010\nEntry: zone tap plus a confirming 45m/1H close (green to buy, red to sell). Don't chase between zones.\nInvalidation: a 1H close under 3,972 cancels the deep long; a close above 4,072 cancels the short.\nBase: dip into 4,023–4,032 with a green close – buy for 4,039 / 4,045–4,050; if it pops into 4,045–4,052 and rejects – sell for 4,010 / 3,992.\nAlt: slice Support 1 and the 3,992–4,002 band into the 3,981–3,989 demand box – buy the deep for 4,001 / 4,010.\nNote: Fed Wed 2:00 PM ET, presser 2:30 PM ET – size down into the Fed; stops to breakeven at TP1. London/NY sessions paused today."
+      "p": "🟢 BUY 4,023–4,032 (mid red/blue box on the chart) | Stop 4,010 (Support 1) | TP1 4,039 → TP2 4,045–4,050\n🔴 SELL 4,062–4,068 (higher supply / near the 4,068.48–4,071 tops) – sell on strength into the zone, not into the current drop | Stop ~4,078 (above the 4,072 top) | TP1 4,032 → TP2 4,010\n🟢 BUY 2 3,981–3,989 (bottom demand box) | Stop 3,972 | TP1 4,001 → TP2 4,010\nEntry: zone tap plus a confirming 45m/1H close (green to buy, red to sell). Don't chase between zones; don't short while price is falling under the sell zone.\nInvalidation: a 1H close under 3,972 cancels the deep long; a close above ~4,078 cancels the short.\nBase: dip into 4,023–4,032 with a green close – buy for 4,039 / 4,045–4,050; if it rallies into 4,062–4,068 and rejects – sell for 4,032 / 4,010.\nAlt: slice Support 1 and the 3,992–4,002 band into the 3,981–3,989 demand box – buy the deep for 4,001 / 4,010.\nNote: Fed Wed 2:00 PM ET, presser 2:30 PM ET – size down into the Fed; stops to breakeven at TP1. London/NY sessions paused today."
      }
     ],
     "sources": [
