@@ -1,6 +1,6 @@
 {
  "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC | Chiến tranh | Ngân hàng TW. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
- "updated": "2026-10-28",
+ "updated": "2026-10-29",
  "fomc": {
   "source": {
    "name": "Federal Reserve – FOMC calendars",
@@ -43,7 +43,9 @@
    {
     "dates": "27–28/10",
     "decision": "2026-10-28T18:00:00Z",
-    "sep": false
+    "sep": false,
+    "result": "Giữ 3,75–4,00% (10–2; Cook, Hammack muốn tăng 0,25)",
+    "result_en": "Held at 3.75%–4.00% (10–2; Cook, Hammack dissented for a 25 bp hike)"
    },
    {
     "dates": "08–09/12",
@@ -54,6 +56,126 @@
   "note_en": "Decision at 2:00 PM ET on day two of the meeting, press conference at 2:30 PM ET. * = with economic projections (dot plot)."
  },
  "items": [
+  {
+   "date": "2026-10-29",
+   "category": "FOMC",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "FOMC giữ lãi 3,75–4,00% với tỷ lệ 10–2: Cook và Hammack muốn tăng ngay 0,25 điểm – Warsh không cam kết gì cho tháng 12",
+   "summary": "Fed (01:00 VN 29/10) giữ lãi suất 3,75–4,00% như dự báo, nhưng hai phiếu chống (Thống đốc Lisa Cook và Chủ tịch Fed Cleveland Beth Hammack) đều muốn tăng 0,25 điểm %. Tuyên bố nâng đánh giá kinh tế «tăng trưởng mạnh», nhắc «lạm phát vẫn ở mức cao» và cần «tích lũy thêm thông tin». Họp báo: Chủ tịch Kevin Warsh không đoán trước quyết định tháng 12, nói Fed «sẵn sàng hành động khi cần»; từ 2027 sẽ có một cuộc họp chỉ bàn chiến lược, không bỏ phiếu lãi suất. CNBC nhận xét phiếu chống của Cook là bất ngờ lớn – bà chưa từng phản đối kể từ 2022.",
+   "reason": "Ngắn hạn: giữ lãi đúng dự báo nhưng 2 phiếu đòi tăng giữ nguyên cửa tăng lãi tháng 12 (khoảng 82–86%) – vàng khó bứt mạnh, các nhịp hồi lên 4.080–4.100 dễ gặp bán. Dài hạn: Fed vẫn nghiêng về thắt chặt khi kinh tế Mỹ chạy nhanh, nên lãi suất thực cao tiếp tục là lực cản lớn nhất với vàng cho tới khi lạm phát hạ rõ.",
+   "source": {
+    "name": "Federal Reserve – Tuyên bố FOMC 28/10/2026",
+    "name_en": "Federal Reserve – FOMC statement, Oct 28, 2026",
+    "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm"
+   },
+   "source2": {
+    "name": "CNBC – 5 điểm chính từ quyết định Fed và họp báo của Warsh",
+    "name_en": "CNBC – Fed rate decision and Warsh news conference: 5 takeaways",
+    "url": "https://www.cnbc.com/2026/10/28/fed-rate-decision-warsh-takeaways.html"
+   },
+   "time_vn": "01:00 VN 29/10 (tuyên bố) – họp báo 01:30 VN",
+   "title_en": "Fed holds at 3.75%–4.00% on a 10–2 vote – Cook and Hammack dissent for a hike, Warsh won't pre-commit on December",
+   "summary_en": "The FOMC left the funds rate at 3.75%–4.00%, as expected, but Governor Lisa Cook and Cleveland Fed President Beth Hammack both dissented in favor of a quarter-point hike. The statement upgraded growth to a \"strong pace,\" said inflation \"remains elevated\" and that the \"accumulation of more information\" will guide the next move. At the presser, Chair Kevin Warsh refused to prejudge December, saying the Fed has \"made clear our readiness to act,\" and announced that one 2027 meeting will be strategy-only, with no rate vote. CNBC called Cook's dissent the real stunner – her first since joining the Board in 2022.",
+   "reason_en": "Near term: a hold with two hawkish dissents keeps a December hike priced at roughly 82%–86%, so gold lacks a catalyst to break out and rallies into 4,080–4,100 are likely to be sold. Longer term: a Fed still leaning toward tightening into a fast-growing economy keeps real rates high – the biggest headwind for bullion until inflation clearly rolls over.",
+   "time_en": "Oct 28, 2:00 PM ET (statement) – presser 2:30 PM ET"
+  },
+  {
+   "date": "2026-10-29",
+   "category": "Tương quan",
+   "priority": 1,
+   "impact": "trung lập",
+   "title": "Vàng đi ngang quanh 4.050 USD sau Fed: bật lên khi Warsh nói rồi lại rơi – chờ GDP và PCE tối nay",
+   "summary": "CNBC (Reuters): vàng giao ngay giảm 0,5% về 4.039,39 USD/ounce, vàng tương lai tháng 12 chốt giảm 0,6% ở 4.051,60 USD; vàng đi ngang sau tuyên bố, có lúc tăng khi Warsh phát biểu rồi giảm lại. Kitco cuối phiên Mỹ: vàng giao ngay 4.056,80 USD (−0,06%), bạc giảm 1,07% về 53,72 USD. FXStreet (06:20 VN 29/10): vàng quanh 4.050 USD đầu phiên Á. Trader Tai Wong: lợi suất dài hạn tăng sẽ giữ áp lực lên vàng, khó bán tháo mạnh nhưng dư địa tăng hạn chế.",
+   "reason": "Ngắn hạn: Kitco xem 4.059 rồi 4.079–4.103 là cản, hỗ trợ 4.039 rồi 4.015 và 3.975 – vàng nằm trong biên hẹp chờ GDP + PCE lúc 19:30 VN. PCE nóng sẽ đẩy cược tăng lãi và kéo vàng về 4.000. Dài hạn: giá vẫn dưới các đường trung bình ngày chính (FXStreet), xu hướng trung hạn còn nghiêng giảm cho đến khi lợi suất 10 năm lùi khỏi vùng 5%.",
+   "source": {
+    "name": "CNBC – Vàng giảm do dầu tăng; thị trường cân nhắc phát biểu của Warsh sau khi Fed giữ lãi",
+    "name_en": "CNBC – Gold slips on higher oil as markets assess Warsh after Fed hold",
+    "url": "https://www.cnbc.com/2026/10/28/gold-slips-on-oil-fueled-inflation-fears-ahead-of-fed-meeting.html"
+   },
+   "source2": {
+    "name": "Kitco – Vàng ổn định, bạc giảm khi Fed giữ lãi, hai quan chức muốn tăng",
+    "name_en": "Kitco – Gold steadies, silver falls as Fed holds, two officials favor a hike",
+    "url": "https://www.kitco.com/news/article/2026-10-28/gold-steadies-silver-falls-fed-holds-rates-two-officials-favor-hike-kitco"
+   },
+   "time_vn": "Cuối phiên Mỹ 28/10 → 06:20 VN 29/10 (FXStreet)",
+   "title_en": "Gold flatlines near $4,050 after the Fed – pops on Warsh, fades again; GDP and PCE up next",
+   "summary_en": "CNBC (Reuters): spot gold slipped 0.5% to $4,039.39 an ounce and December futures settled 0.6% lower at $4,051.60. Bullion barely moved on the statement, briefly turned positive while Warsh spoke, then faded. Kitco had spot at $4,056.80 (−0.06%) late in New York, with silver down 1.07% at $53.72. FXStreet shows gold around $4,050 early in Asian trade. Independent metals trader Tai Wong: rising long-end yields keep pressure on gold – no aggressive selloff, but limited upside.",
+   "reason_en": "Near term: Kitco maps resistance at 4,059 then 4,079–4,103, support at 4,039, 4,015 and 3,975 – a tight range into 8:30 AM ET GDP and PCE. A hot PCE firms up hike bets and puts $4,000 back on the table. Longer term: price is still below its key daily moving averages (FXStreet), so the intermediate trend leans lower until the 10-year backs off 5%.",
+   "time_en": "Oct 28, late NY session → 7:20 PM ET (FXStreet)"
+  },
+  {
+   "date": "2026-10-29",
+   "category": "Dầu mỏ",
+   "priority": 2,
+   "impact": "giảm",
+   "title": "Dầu bật lại: Brent chốt 115,32 USD (+1,3%), WTI 102,78 USD (+2,9%) sau tin Houthi bắn tên lửa vào nhà máy lọc dầu Ras Tanura",
+   "summary": "CNBC/Reuters: Brent tăng 1,44 USD lên 115,32 USD/thùng, WTI tăng 2,88 USD lên 102,78 USD. Houthi nói đã bắn tên lửa đạn đạo vào nhà máy lọc dầu Ras Tanura (550.000 thùng/ngày) của Ả Rập Xê Út – phía Saudi chưa xác nhận – và tấn công sân bay Aden ở Yemen. Thị trường lo Mỹ sẽ nối lại tấn công Iran sau bầu cử giữa kỳ tuần tới. EIA: tồn kho dầu thô Mỹ giảm 1,9 triệu thùng còn 410,6 triệu, thấp nhất từ 31/7; kho dự trữ chiến lược thấp nhất từ 10/1982 (DTN).",
+   "reason": "Ngắn hạn: dầu trên 115 USD làm nóng lại lo ngại lạm phát và củng cố cược Fed tăng lãi tháng 12 – bất lợi cho vàng dù căng thẳng địa chính trị vẫn đỡ phần nào nhu cầu trú ẩn. Dài hạn: nguồn cung eo hẹp và chiến sự kéo dài giữ giá dầu cao, khiến lạm phát dai dẳng và lãi suất cao lâu hơn – lực cản trung hạn với vàng.",
+   "source": {
+    "name": "CNBC – Dầu tăng khi nhà đầu tư cân nhắc xung đột kéo dài ở Trung Đông",
+    "name_en": "CNBC – Oil rises as investors weigh a prolonged Middle East conflict",
+    "url": "https://www.cnbc.com/2026/10/28/oil-price-today-wti-brent-hormuz.html"
+   },
+   "source2": {
+    "name": "DTN – WTI trở lại trên 100 USD nhờ vụ tấn công Saudi và tồn kho Mỹ giảm",
+    "name_en": "DTN – WTI back above $100 on Saudi attack, US inventory draws",
+    "url": "https://www.dtnpf.com/agriculture/web/AG/news/world-policy/article/2026/10/28/wti-back-100-saudi-attack-u-s-draws"
+   },
+   "time_vn": "≈01:30 VN 29/10 (giá chốt NYMEX/ICE)",
+   "title_en": "Crude bounces back: Brent settles $115.32 (+1.3%), WTI $102.78 (+2.9%) after Houthi missile claim on Ras Tanura",
+   "summary_en": "CNBC/Reuters: Brent rose $1.44 to $115.32 a barrel and WTI gained $2.88 to $102.78. The Houthis claimed a ballistic missile strike on Saudi Arabia's 550,000-bpd Ras Tanura refinery – not yet confirmed by Riyadh – and attacked Aden airport in Yemen, while traders worry the US will resume strikes on Iran after next week's midterms. EIA data showed commercial crude stocks down 1.9 million barrels to 410.6 million, the lowest since July 31, and the SPR at its lowest since October 1982 (DTN).",
+   "reason_en": "Near term: Brent above $115 revives the inflation scare and backs up December hike pricing – a net negative for gold, even if the war premium props up some haven demand. Longer term: tight supply and an open-ended conflict keep oil elevated, which means sticky inflation and higher-for-longer rates – an intermediate-term headwind for bullion.",
+   "time_en": "Oct 28, ~2:30 PM ET (settlement)"
+  },
+  {
+   "date": "2026-10-29",
+   "category": "Lợi suất",
+   "priority": 2,
+   "impact": "giảm",
+   "title": "Lợi suất 10 năm Mỹ tăng mạnh nhất 1 tháng lên 5,044%, 2 năm giảm về 4,731% – USD hạ nhẹ về quanh 102",
+   "summary": "WSJ (03:01 VN 29/10): lợi suất 10 năm tăng 5,2 điểm cơ bản lên 5,044% – mức tăng trong ngày lớn nhất một tháng; lợi suất 2 năm gần như đứng yên ở 4,731% sau khi giảm mạnh trong lúc Warsh họp báo; lợi suất 30 năm 5,36% (MarketWatch). Đường cong dốc lên khi Warsh tránh định hướng. CNBC: chỉ số USD giảm 0,2% về 102,15, euro tăng 0,3% lên 1,1160 USD. Phố Wall tăng nhẹ: S&P 500 +0,28% lên 7.743,98.",
+   "reason": "Ngắn hạn: USD hạ nhẹ đỡ vàng phần nào, nhưng lợi suất dài hạn trên 5% vẫn là trần với giá vàng – vàng chỉ hồi bền khi lợi suất 10 năm quay lại dưới 5%. Dài hạn: lợi suất dài hạn quanh đỉnh 24 năm cho thấy thị trường đòi bù rủi ro lạm phát và nợ công cao – chi phí cơ hội giữ vàng còn lớn.",
+   "source": {
+    "name": "WSJ – Lợi suất trái phiếu Mỹ trái chiều sau khi Fed giữ lãi",
+    "name_en": "WSJ – Treasury yields mixed after Fed hold",
+    "url": "https://www.wsj.com/finance/jgb-yields-rise-as-ai-trade-regains-momentum-1a6b70cd"
+   },
+   "source2": {
+    "name": "CNBC – USD giảm sau khi Fed giữ lãi",
+    "name_en": "CNBC – Dollar falls after Fed holds rates steady",
+    "url": "https://www.cnbc.com/2026/10/28/dollar-steady-ahead-of-fed-decision-kiwi-slumps-after-rbnz-holds.html"
+   },
+   "time_vn": "03:01 VN 29/10 (WSJ, giá chốt)",
+   "title_en": "10-year yield posts its biggest jump in a month to 5.044% while the 2-year slips to 4.731% – dollar eases to ~102",
+   "summary_en": "WSJ: the 10-year yield settled up 5.2 bp at 5.044%, its largest one-day rise in a month, while the 2-year finished little changed at 4.731% after dropping sharply during Warsh's press conference; the 30-year hit 5.36% (MarketWatch). The curve steepened as Warsh avoided forward guidance. CNBC: the dollar index fell 0.2% to 102.15 and the euro rose 0.3% to $1.1160. Stocks edged up, with the S&P 500 +0.28% at 7,743.98.",
+   "reason_en": "Near term: a softer dollar helps at the margin, but a 10-year above 5% is a lid on gold – a sustainable bounce needs yields back under 5%. Longer term: long-end yields near 24-year highs show investors demanding more compensation for inflation and deficit risk, keeping the opportunity cost of owning gold high.",
+   "time_en": "Oct 28, 4:01 PM ET (WSJ, close)"
+  },
+  {
+   "date": "2026-10-29",
+   "category": "Fed",
+   "priority": 2,
+   "impact": "trung lập",
+   "title": "Cược Fed tăng lãi tháng 12 lên 81,8% sau FOMC – tối nay GDP quý 3 và PCE tháng 9 lúc 19:30 VN",
+   "summary": "Investing.com Fed Rate Monitor (theo hợp đồng Fed Funds 30 ngày của CME, 06:05 VN 29/10): họp 08–09/12 – tăng lên 4,00–4,25% 81,8% (hôm trước 72,8%), giữ 18,2%; khả năng tăng 0,5 điểm về 0. Bloomberg (qua FXStreet): thị trường giữ cược tăng tháng 12 nhưng giảm cược tăng thêm năm 2027. WSJ: GDP và chỉ số giá PCE – thước đo lạm phát Fed ưa dùng – công bố hôm nay (19:30 VN).",
+   "reason": "Ngắn hạn: PCE lõi nóng hơn dự báo sẽ đẩy cược tháng 12 lên gần chắc chắn, vàng dễ thủng 4.000; PCE nguội có thể kéo vàng lên thử 4.080–4.100. Dài hạn: thị trường bớt định giá chuỗi tăng lãi kéo dài sang 2027 – nếu xu hướng này tiếp diễn, áp lực lãi suất lên vàng sẽ giảm dần.",
+   "source": {
+    "name": "Investing.com – Fed Rate Monitor (CME Fed Funds futures)",
+    "name_en": "Investing.com – Fed Rate Monitor (CME fed funds futures)",
+    "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+   },
+   "source2": {
+    "name": "FXStreet – Vàng giảm về gần 4.050 sau khi Fed giữ lãi, chờ PCE",
+    "name_en": "FXStreet – Gold declines to near $4,050 after Fed hold, markets await PCE",
+    "url": "https://www.fxstreet.com/news/gold-declines-to-near-4-050-after-fed-rate-hold-markets-await-us-pce-data-202610282320"
+   },
+   "time_vn": "06:05 VN 29/10 (Investing.com) – GDP/PCE 19:30 VN",
+   "title_en": "December hike odds climb to 81.8% after the Fed – Q3 GDP and September PCE hit at 8:30 AM ET",
+   "summary_en": "Investing.com's Fed Rate Monitor (CME 30-day fed funds futures, 7:05 PM ET Wednesday): for Dec. 8–9, 81.8% odds of a move to 4.00%–4.25% (72.8% a day earlier) vs. 18.2% for a hold, with a 50 bp hike priced out. Bloomberg (via FXStreet) says traders kept the December bet but trimmed wagers on further hikes in 2027. WSJ: GDP and PCE, the Fed's preferred inflation gauge, are both due Thursday.",
+   "reason_en": "Near term: a hot core PCE would make December a near-lock and open a break below $4,000; a cooler print gives gold a shot at 4,080–4,100. Longer term: the market is pricing out an extended 2027 hiking run – if that continues, rate pressure on gold should ease over time.",
+   "time_en": "Oct 28, 7:05 PM ET (Investing.com) – GDP/PCE Oct 29, 8:30 AM ET"
+  },
   {
    "date": "2026-10-28",
    "category": "Tương quan",
