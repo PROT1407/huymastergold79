@@ -1,6 +1,357 @@
 {
  "strategies": [
   {
+   "id": "2026-10-29-nhan-dinh-chung",
+   "date": "2026-10-29",
+   "time": "10:40",
+   "session": "Nhận định chung",
+   "session_en": "Daily Outlook",
+   "url": "bai/2026-10-29-nhan-dinh-vang-nhan-dinh-chung-1040.html",
+   "url_en": "en/posts/2026-10-29-gold-plan-daily-outlook-1040.html",
+   "headline": "Vàng 29/10 nhận định chung: Fed giữ lãi kiểu diều hâu, vàng bị từ chối ở 4.075–4.085 – BÁN hồi, đường về 3.900 còn nguyên",
+   "headline_en": "H79 Gold Plan – Daily Outlook, Oct 29: Fed Spike Rejected at 4,075–4,085 – Sell the Rally, 3,900 Still the Target",
+   "title": "Vàng 29/10 nhận định chung: Fed giữ lãi kiểu diều hâu, vàng bị từ chối ở 4.075–4.085 – BÁN hồi, đường về 3.900 còn nguyên",
+   "title_en": "H79 Gold Plan – Daily Outlook, Oct 29: Fed Spike Rejected at 4,075–4,085 – Sell the Rally, 3,900 Still the Target",
+   "image": "img/charts/gold-2026-10-29-nhan-dinh-chung.jpg",
+   "image_alt": "Biểu đồ vàng nhận định chung 29/10: sau FOMC giá chạm ~4.079 rồi bị từ chối ở vùng 4.075–4.085; đỉnh thấp dần 4.141 → 4.079 → 4.066; vùng BÁN 4.075–4.085, SL 4.105, TP 4.040 → 4.015 → 3.975 → 3.900",
+   "image_en": "img/charts/gold-2026-10-29-daily-outlook.jpg",
+   "image_alt_en": "Gold daily outlook chart Oct 29: post-FOMC spike to ~4,079 rejected at 4,075–4,085; lower highs 4,141 → 4,079 → 4,066; sell zone 4,075–4,085, stop 4,105, targets 4,040 → 4,015 → 3,975 → 3,900",
+   "trend": "Áp lực bán chủ đạo; nhịp tăng sau FOMC bị từ chối ở 4.075–4.085; đỉnh thấp dần; kỳ vọng về 3.900 qua 4.028 / 4.015 / 3.975. Bán hồi dưới 4.105.",
+   "trend_en": "Sellers in control; the post-FOMC spike was rejected at 4,075–4,085; lower highs intact; path toward 3,900 via 4,028 / 4,015 / 3,975. Sell rallies below 4,105.",
+   "trendType": "down",
+   "support": [
+    4028,
+    4015,
+    4000,
+    3975,
+    3918,
+    3900
+   ],
+   "resistance": [
+    4059,
+    4066,
+    4075,
+    4085,
+    4100,
+    4105
+   ],
+   "entryZones": [
+    "Không chủ động mua. Chỉ xét MUA ngắn ở 3.900–3.918 khi có nến 45m/1H đảo chiều rõ. SL dưới đáy quét."
+   ],
+   "entryZones_en": [
+    "No active buys. Only consider a short-term long at 3,900–3,918 on a clear 45m/1H reversal candle. Stop under the sweep."
+   ],
+   "sellZones": [
+    "Bán 4.075 – 4.085 (vùng đã từ chối sau FOMC). Chỉ vào khi chạm vùng + nến 45m/1H đóng đỏ. SL 4.105. TP 4.040 → 4.015 → 3.975 → mở rộng 3.900.",
+    "Bán phá vỡ: thủng 4.028, hồi test 4.028–4.035. SL 4.052. TP 4.000 → 3.975 → 3.900. Nến ngày đóng trên 4.105 thì bỏ thế bán."
+   ],
+   "sellZones_en": [
+    "Sell 4,075–4,085 (the post-FOMC rejection zone). Only on a tag + a red 45m/1H close. Stop 4,105. TP 4,040 → 4,015 → 3,975 → ext. 3,900.",
+    "Sell the break: lose 4,028, retest 4,028–4,035. Stop 4,052. TP 4,000 → 3,975 → 3,900. A daily close above 4,105 cancels the short."
+   ],
+   "scenarios": [
+    "Kế hoạch: BÁN 4.075–4.085 (SL 4.105 · TP 4.040 → 4.015 → 3.975 → 3.900) · BÁN phá vỡ khi thủng 4.028 rồi test lại (SL 4.052 · TP 4.000 → 3.975 → 3.900). Chỉ vào khi chạm vùng + nến 45m/1H đóng đỏ.",
+    "Kịch bản chính (~55%): hồi lên 4.060–4.085 bị bán, thủng 4.028 → 4.015 → 3.975 rồi 3.900; PCE nóng đẩy nhanh nhịp này.",
+    "Kịch bản phụ (~30%): PCE mềm, vàng giật lên 4.080–4.100 – vùng bán đẹp hơn, chờ nến từ chối.",
+    "Vô hiệu (~15%): nến ngày đóng trên 4.105 – gác thế bán, mốc kế 4.123–4.141.",
+    "Rủi ro: 19:30 VN GDP + PCE + thất nghiệp · 20:15 VN ECB – giảm size, chạm TP1 dời SL hòa vốn."
+   ],
+   "scenarios_en": [
+    "The plan: sell 4,075–4,085 (stop 4,105 · TP 4,040 → 4,015 → 3,975 → 3,900) · sell the break of 4,028 on a retest (stop 4,052 · TP 4,000 → 3,975 → 3,900). Only on a zone tag + a red 45m/1H close.",
+    "Base case (~55%): a bounce into 4,060–4,085 gets sold, 4,028 breaks → 4,015 → 3,975, then 3,900; a hot PCE speeds it up.",
+    "Alternative (~30%): a soft PCE squeezes gold into 4,080–4,100 — a better sell, on a rejection candle.",
+    "Invalidation (~15%): daily close above 4,105 — shelve the short; next 4,123–4,141.",
+    "Risk: 8:30 AM ET GDP + PCE + claims (pre-market) · 9:15 AM ET ECB — go light, bank TP1 and move stops to breakeven."
+   ],
+   "macro": [],
+   "macro_en": [],
+   "market_picture": {
+    "text": "Fed giữ lãi 3,75–4,00% đúng dự báo, nhưng điều đáng nghe là hai phiếu chống: Thống đốc Cook và Chủ tịch Fed Cleveland Hammack muốn tăng thêm 25 điểm cơ bản ngay. Thông báo vẫn gọi lạm phát là «còn cao», kinh tế được nâng đánh giá, còn Chủ tịch Warsh không hứa gì cho tháng 12. Đọc gọn: giữ lãi nhưng nghiêng diều hâu.\nTrái phiếu hiểu ngay – lợi suất 10 năm Mỹ đóng cửa quanh 5,03%, FedWatch vẫn đặt trên 80% khả năng tăng lãi tháng 12. Dầu châm thêm lửa: tin Houthi bắn tên lửa vào nhà máy lọc Ras Tanura của Saudi đẩy Brent lên 115,3 USD, WTI 102,8. Dầu cao → lạm phát khó hạ → Fed khó nới → lợi suất cao → vàng mất lực. Chuỗi này vẫn chạy một chiều.\nPhản ứng của chính vàng nói rõ nhất: nến Warsh kéo giá chạm ~4.079, đúng vùng 4.075–4.085, rồi bị bán ngược về 4.04x. Sáng nay nhịp hồi lên 4.066 lại hụt hơi, thấp hơn đỉnh đêm qua. Lợi suất sáng nay hạ nhẹ về ~4,99%, DXY đi ngang ~102,15, vậy mà vàng vẫn không giữ được nhịp tăng – bên bán vẫn cầm trịch. Tháng 10 vàng đã mất hơn 2%, đang hướng tới tháng giảm thứ hai liên tiếp.\nThị trường đã xác nhận quan điểm hôm qua: hồi là để bán, hướng chính vẫn là 3.900. Cửa lớn cuối cùng trong tuần là PCE tối nay.",
+    "chips": [
+     {
+      "k": "XAU",
+      "v": "4.040 −0,67%",
+      "dir": "down"
+     },
+     {
+      "k": "DXY",
+      "v": "102,15",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "4,99%",
+      "dir": "down"
+     },
+     {
+      "k": "US2Y",
+      "v": "4,68%",
+      "dir": "down"
+     },
+     {
+      "k": "Brent",
+      "v": "114,2",
+      "dir": "down"
+     },
+     {
+      "k": "WTI",
+      "v": "101,4",
+      "dir": "down"
+     },
+     {
+      "k": "S&P 500 fut.",
+      "v": "7.745 −0,49%",
+      "dir": "down"
+     },
+     {
+      "k": "Bạc",
+      "v": "53,17 −1,50%",
+      "dir": "down"
+     }
+    ],
+    "sources": [
+     {
+      "name": "Business Times (Bloomberg) – Fed giữ lãi 10–2, Cook và Hammack muốn tăng; «giữ lãi kiểu diều hâu» (29/10)",
+      "url": "https://www.businesstimes.com.sg/companies-markets/energy-commodities/gold-cuts-losses-fed-pauses-and-stays-silent-future-hikes"
+     },
+     {
+      "name": "CNBC (Reuters) – Vàng giảm vì dầu cao; lợi suất 10 năm 5,03%, FedWatch ~86% tăng lãi tháng 12 (28/10)",
+      "url": "https://www.cnbc.com/2026/10/28/gold-slips-on-oil-fueled-inflation-fears-ahead-of-fed-meeting.html"
+     },
+     {
+      "name": "CNBC – Dầu tăng: Brent 115,32, WTI 102,78 sau tin tấn công Ras Tanura (28/10)",
+      "url": "https://www.cnbc.com/2026/10/28/oil-price-today-wti-brent-hormuz.html"
+     },
+     {
+      "name": "Investing.com – Vàng giảm sau quyết định Fed, chờ PCE (29/10)",
+      "url": "https://uk.investing.com/news/commodities-news/gold-slips-after-fed-holds-rates-pce-inflation-data-in-focus-4939656"
+     },
+     {
+      "name": "Dow Jones/WSJ – Dự báo GDP quý 3, PCE tháng 9, đơn thất nghiệp",
+      "url": "https://www.morningstar.com/news/dow-jones/202610237517/3q-gdp-growth-seen-higher-data-week-ahead"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "market_picture_en": {
+    "text": "The Fed held at 3.75%–4.00% as expected, but the real headline is the two dissents: Governor Cook and Cleveland's Hammack wanted another quarter-point hike now. The statement kept \"inflation remains elevated,\" upgraded the growth read, and Chair Warsh refused to tip his hand on December. Call it a hawkish hold.\nBonds got the message — the 10-year finished around 5.03%, and FedWatch still prices better than 80% odds of a December hike. Crude adds fuel: the Houthi missile claim on Saudi Arabia's Ras Tanura refinery lifted Brent to $115.32 and WTI to $102.78. Hot oil keeps inflation sticky, sticky inflation keeps the Fed leaning tight, and tight policy keeps yields a headwind for a metal that pays nothing.\nGold's own tape says the rest. The Warsh presser squeezed spot to ~4,079 — right into 4,075–4,085 — and it got sold straight back to the low 4,040s. The overnight bounce stalled at 4,066, a lower high. Yields and the dollar are flat-to-softer this morning, and gold still can't hold a bid. Sellers own this tape. Gold is down more than 2% in October, on track for a second straight monthly loss.\nYesterday's call — sell rallies, target 3,900 — is playing out. This morning's PCE is the last big hurdle of the week.",
+    "chips": [
+     {
+      "k": "XAU",
+      "v": "4,040 −0.67%",
+      "dir": "down"
+     },
+     {
+      "k": "DXY",
+      "v": "102.15",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "4.99%",
+      "dir": "down"
+     },
+     {
+      "k": "US2Y",
+      "v": "4.68%",
+      "dir": "down"
+     },
+     {
+      "k": "Brent",
+      "v": "114.2",
+      "dir": "down"
+     },
+     {
+      "k": "WTI",
+      "v": "101.4",
+      "dir": "down"
+     },
+     {
+      "k": "S&P 500 fut.",
+      "v": "7,745 −0.49%",
+      "dir": "down"
+     },
+     {
+      "k": "Silver",
+      "v": "53.17 −1.50%",
+      "dir": "down"
+     }
+    ],
+    "sources": [
+     {
+      "name": "Business Times (Bloomberg) – Fed holds 10–2 with Cook and Hammack dissenting; \"a somewhat hawkish hold\"",
+      "url": "https://www.businesstimes.com.sg/companies-markets/energy-commodities/gold-cuts-losses-fed-pauses-and-stays-silent-future-hikes"
+     },
+     {
+      "name": "CNBC (Reuters) – Gold slips on higher oil; 10-year at 5.03%, FedWatch ~86% for a December hike",
+      "url": "https://www.cnbc.com/2026/10/28/gold-slips-on-oil-fueled-inflation-fears-ahead-of-fed-meeting.html"
+     },
+     {
+      "name": "CNBC – Oil: Brent settles $115.32, WTI $102.78 after Ras Tanura attack claim",
+      "url": "https://www.cnbc.com/2026/10/28/oil-price-today-wti-brent-hormuz.html"
+     },
+     {
+      "name": "Investing.com – Gold slips after Fed holds rates, PCE data in focus",
+      "url": "https://uk.investing.com/news/commodities-news/gold-slips-after-fed-holds-rates-pce-inflation-data-in-focus-4939656"
+     },
+     {
+      "name": "Dow Jones/WSJ – Consensus for Q3 GDP, September PCE, jobless claims",
+      "url": "https://www.morningstar.com/news/dow-jones/202610237517/3q-gdp-growth-seen-higher-data-week-ahead"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "physicalAdvice": "Làm theo kế hoạch, đừng chạy theo nến tin.",
+   "physicalAdvice_en": "Trade the plan, not the noise.",
+   "notes": "Các mốc là giá giao ngay XAU/USD (CNBC XAU= quanh 4.040 lúc nhận định). Đỉnh sau FOMC ~4.079; đỉnh phiên Á ~4.066; đáy kép 4.028. Không chồng chỉ báo lên chart publish.",
+   "notes_en": "Levels are spot XAU/USD (CNBC XAU= near 4,040 at publish). Post-FOMC high ~4,079; overnight high ~4,066; double low 4,028. No indicator stack on the publish chart.",
+   "dataTime": "Cập nhật ~10:40 ngày 29/10/2026 giờ VN. Giá giao ngay CNBC XAU=; DXY, US10Y, US2Y, Brent, WTI, S&P fut, bạc theo CNBC; xác suất Fed theo CME FedWatch; dự báo số liệu theo khảo sát WSJ.",
+   "dataTime_en": "Updated ~11:40 PM ET, Wednesday Oct 28, 2026. Spot from CNBC XAU=; DXY, US10Y, US2Y, Brent, WTI, S&P futures and silver from CNBC; Fed odds from CME FedWatch; data consensus from the WSJ survey.",
+   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+   "brief": true,
+   "summary": {
+    "trend": "down",
+    "trendText": "Áp lực bán chủ đạo – nhịp tăng sau FOMC bị từ chối ở 4.075–4.085; kỳ vọng về 3.900. Bán hồi dưới 4.105",
+    "trendText_en": "Sellers in control – the post-FOMC spike was rejected at 4,075–4,085; path toward 3,900. Sell rallies below 4,105",
+    "sell": {
+     "zone": "4.075 – 4.085",
+     "sl": "4.105",
+     "tp": "4.040 → 4.015 → 3.975 → 3.900",
+     "zone_en": "4,075–4,085",
+     "sl_en": "4,105",
+     "tp_en": "TP1 4,040 → 4,015 → 3,975 → ext. 3,900"
+    },
+    "note": "Chỉ vào khi chạm vùng + nến 45m/1H đóng đỏ. Thủng 4.028 rồi test lại: bán phá vỡ (SL 4.052). Nến ngày đóng trên 4.105 bỏ bán. 19:30 VN GDP + PCE · 20:15 ECB – vào nhỏ, chạm TP1 dời SL hòa vốn.",
+    "note_en": "Only on a zone tag + a red 45m/1H close. Lose 4,028 and retest: sell the break (stop 4,052). A daily close above 4,105 cancels the short. 8:30 AM ET GDP + PCE · 9:15 AM ET ECB – go light, bank TP1 and move stops to breakeven.",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD",
+    "priceNote_en": "Spot XAU/USD prices"
+   },
+   "article": {
+    "sections": [
+     {
+      "h": "Bức tranh chung",
+      "p": "Fed giữ lãi 3,75–4,00% đúng dự báo, nhưng điều đáng nghe là hai phiếu chống: Thống đốc Cook và Chủ tịch Fed Cleveland Hammack muốn tăng thêm 25 điểm cơ bản ngay. Thông báo vẫn gọi lạm phát là «còn cao», kinh tế được nâng đánh giá, còn Chủ tịch Warsh không hứa gì cho tháng 12. Đọc gọn: giữ lãi nhưng nghiêng diều hâu.\nTrái phiếu hiểu ngay – lợi suất 10 năm Mỹ đóng cửa quanh 5,03%, FedWatch vẫn đặt trên 80% khả năng tăng lãi tháng 12. Dầu châm thêm lửa: tin Houthi bắn tên lửa vào nhà máy lọc Ras Tanura của Saudi đẩy Brent lên 115,3 USD, WTI 102,8. Dầu cao → lạm phát khó hạ → Fed khó nới → lợi suất cao → vàng mất lực. Chuỗi này vẫn chạy một chiều.\nPhản ứng của chính vàng nói rõ nhất: nến Warsh kéo giá chạm ~4.079, đúng vùng 4.075–4.085, rồi bị bán ngược về 4.04x. Sáng nay nhịp hồi lên 4.066 lại hụt hơi, thấp hơn đỉnh đêm qua. Lợi suất sáng nay hạ nhẹ về ~4,99%, DXY đi ngang ~102,15, vậy mà vàng vẫn không giữ được nhịp tăng – bên bán vẫn cầm trịch. Tháng 10 vàng đã mất hơn 2%, đang hướng tới tháng giảm thứ hai liên tiếp.\nThị trường đã xác nhận quan điểm hôm qua: hồi là để bán, hướng chính vẫn là 3.900. Cửa lớn cuối cùng trong tuần là PCE tối nay."
+     },
+     {
+      "h": "Cấu trúc / đường giá",
+      "p": "Chuỗi đỉnh thấp dần vẫn nguyên: ~4.141 (21/10) → 4.079 (sau FOMC) → 4.066 (phiên Á sáng nay). Mỗi nhịp hồi ngắn hơn nhịp trước.\nPhía dưới, 4.028 là đáy kép (đáy 28/10 và đáy nến Fed). Thủng mốc này, cửa xuống 4.000 rồi 3.975 mở rộng. Lực đỡ thật sự nằm ở 3.900–3.918.\nCòn dưới 4.105, mọi cú bật đều là cơ hội bán."
+     },
+     {
+      "h": "Kịch bản",
+      "p": "🔻 Chính (~55%): hồi lên 4.060–4.085 bị bán, thủng 4.028 → 4.015 → 3.975, rồi 3.900. PCE nóng sẽ đẩy nhanh nhịp này, có thể xuyên 4.000 ngay trong tối.\n🔺 Phụ (~30%): PCE mềm, vàng giật lên 4.080–4.100. Còn dưới trần 4.105 thì đây là vùng bán đẹp hơn – chờ nến từ chối rồi mới vào.\n⚠️ Vô hiệu (~15%): nến ngày đóng trên 4.105 – gác thế bán, mốc kế 4.123–4.141."
+     },
+     {
+      "h": "Mốc quyết định",
+      "p": "Kháng cự: 4.059–4.066 · 4.075–4.085 (vùng đã từ chối) · 4.100–4.105 (trần)\nHỗ trợ: 4.028 · 4.015 · 4.000 · 3.975 · 3.900"
+     },
+     {
+      "h": "Lịch tin lớn – PCE tối nay",
+      "p": "19:30 VN: GDP quý 3 (dự báo 3,2%, trước 2,2%) · PCE lõi tháng 9 (dự báo +0,3% m/m, 3,1% y/y; trước +0,2% / 3,0%) · PCE chung (dự báo 3,7% y/y; trước 3,4%) · đơn trợ cấp thất nghiệp (dự báo 200K; trước 194K).\n20:15 VN: ECB công bố lãi suất.\nPCE lõi từ 0,4% trở lên → vàng dễ thủng 4.000. PCE lõi 0,2% hoặc thấp hơn → có thể giật lên test 4.080–4.100; chỗ đó để bán, không phải để mua đuổi."
+     },
+     {
+      "h": "📋 Kế hoạch dự trù",
+      "p": "🔴 BÁN 4.075 – 4.085 | SL 4.105 | TP 4.040 → 4.015 → 3.975 → mở rộng 3.900\n🔴 BÁN phá vỡ: thủng 4.028, hồi test 4.028–4.035 | SL 4.052 | TP 4.000 → 3.975 → 3.900\n🟢 MUA: không chủ động – chỉ xét ở 3.900–3.918 khi có nến đảo rõ.\nXác nhận: chạm vùng + nến 45m/1H đóng đỏ. Không bán đuổi giữa đường.\nVô hiệu: nến ngày đóng trên 4.105.\nLưu ý: 19:30 GDP + PCE + thất nghiệp · 20:15 ECB. Giảm size quanh tin, chạm TP1 dời SL hòa vốn."
+     },
+     {
+      "h": "Tin song song",
+      "p": "• Business Times (Bloomberg) – Fed giữ lãi 10–2, hai phiếu đòi tăng; TD Securities gọi là «giữ lãi kiểu diều hâu» → lãi suất còn nằm trên đường tăng.\nhttps://www.businesstimes.com.sg/companies-markets/energy-commodities/gold-cuts-losses-fed-pauses-and-stays-silent-future-hikes\n• CNBC (Reuters) – Vàng bật lên khi Warsh phát biểu rồi giảm lại; lợi suất 10 năm 5,03% → lực đè chưa nhả.\nhttps://www.cnbc.com/2026/10/28/gold-slips-on-oil-fueled-inflation-fears-ahead-of-fed-meeting.html\n• CNBC – Brent 115,32, WTI 102,78 sau tin tấn công Ras Tanura → dầu giữ lạm phát cao.\nhttps://www.cnbc.com/2026/10/28/oil-price-today-wti-brent-hormuz.html\n• Investing.com – Vàng giảm sau Fed, thị trường chờ PCE tháng 9 → tối nay là phép thử tiếp theo.\nhttps://uk.investing.com/news/commodities-news/gold-slips-after-fed-holds-rates-pce-inflation-data-in-focus-4939656\n• CNBC – Vàng giao ngay (XAU=) quanh 4.040 lúc nhận định.\nhttps://www.cnbc.com/quotes/XAU="
+     }
+    ],
+    "sources": [
+     {
+      "name": "Business Times (Bloomberg) – Fed giữ lãi 10–2, Cook và Hammack muốn tăng; «giữ lãi kiểu diều hâu» (29/10)",
+      "url": "https://www.businesstimes.com.sg/companies-markets/energy-commodities/gold-cuts-losses-fed-pauses-and-stays-silent-future-hikes"
+     },
+     {
+      "name": "CNBC (Reuters) – Vàng giảm vì dầu cao; lợi suất 10 năm 5,03%, FedWatch ~86% tăng lãi tháng 12 (28/10)",
+      "url": "https://www.cnbc.com/2026/10/28/gold-slips-on-oil-fueled-inflation-fears-ahead-of-fed-meeting.html"
+     },
+     {
+      "name": "CNBC – Dầu tăng: Brent 115,32, WTI 102,78 sau tin tấn công Ras Tanura (28/10)",
+      "url": "https://www.cnbc.com/2026/10/28/oil-price-today-wti-brent-hormuz.html"
+     },
+     {
+      "name": "Investing.com – Vàng giảm sau quyết định Fed, chờ PCE (29/10)",
+      "url": "https://uk.investing.com/news/commodities-news/gold-slips-after-fed-holds-rates-pce-inflation-data-in-focus-4939656"
+     },
+     {
+      "name": "Dow Jones/WSJ – Dự báo GDP quý 3, PCE tháng 9, đơn thất nghiệp",
+      "url": "https://www.morningstar.com/news/dow-jones/202610237517/3q-gdp-growth-seen-higher-data-week-ahead"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "article_en": {
+    "sections": [
+     {
+      "h": "The Big Picture",
+      "p": "The Fed held at 3.75%–4.00% as expected, but the real headline is the two dissents: Governor Cook and Cleveland's Hammack wanted another quarter-point hike now. The statement kept \"inflation remains elevated,\" upgraded the growth read, and Chair Warsh refused to tip his hand on December. Call it a hawkish hold.\nBonds got the message — the 10-year finished around 5.03%, and FedWatch still prices better than 80% odds of a December hike. Crude adds fuel: the Houthi missile claim on Saudi Arabia's Ras Tanura refinery lifted Brent to $115.32 and WTI to $102.78. Hot oil keeps inflation sticky, sticky inflation keeps the Fed leaning tight, and tight policy keeps yields a headwind for a metal that pays nothing.\nGold's own tape says the rest. The Warsh presser squeezed spot to ~4,079 — right into 4,075–4,085 — and it got sold straight back to the low 4,040s. The overnight bounce stalled at 4,066, a lower high. Yields and the dollar are flat-to-softer this morning, and gold still can't hold a bid. Sellers own this tape. Gold is down more than 2% in October, on track for a second straight monthly loss.\nYesterday's call — sell rallies, target 3,900 — is playing out. This morning's PCE is the last big hurdle of the week."
+     },
+     {
+      "h": "Structure",
+      "p": "Lower highs are intact: ~4,141 (Oct 21) → 4,079 (post-FOMC) → 4,066 (overnight). Each bounce is shorter than the last.\nBelow, 4,028 is a double low (Wednesday's low and the Fed-candle low). Lose it and 4,000 then 3,975 open up; real demand doesn't show until 3,900–3,918.\nAs long as we're under 4,105, every pop is a selling opportunity."
+     },
+     {
+      "h": "Scenarios",
+      "p": "🔻 Base (~55%): a bounce into 4,060–4,085 gets sold, 4,028 gives way → 4,015 → 3,975, then 3,900. A hot PCE speeds this up and could take out 4,000 by the New York afternoon.\n🔺 Alt (~30%): a soft PCE squeezes gold into 4,080–4,100. Below the 4,105 ceiling, that's a better place to sell — wait for the rejection candle.\n⚠️ Invalidation (~15%): a daily close above 4,105 shelves the short; next up is 4,123–4,141."
+     },
+     {
+      "h": "Key Levels",
+      "p": "Resistance: 4,059–4,066 · 4,075–4,085 (rejected zone) · 4,100–4,105 (ceiling)\nSupport: 4,028 · 4,015 · 4,000 · 3,975 · 3,900"
+     },
+     {
+      "h": "Data Calendar – PCE Today",
+      "p": "8:30 AM ET (pre-market): Q3 GDP (consensus 3.2%, prior 2.2%) · September core PCE (+0.3% m/m, 3.1% y/y; prior +0.2% / 3.0%) · headline PCE (3.7% y/y; prior 3.4%) · jobless claims (200K; prior 194K).\n9:15 AM ET: ECB decision, just ahead of the New York open.\nCore at 0.4% or hotter → 4,000 likely breaks. Core at 0.2% or softer → a squeeze toward 4,080–4,100; that's where you sell, not where you chase."
+     },
+     {
+      "h": "📋 Trade Plan",
+      "p": "🔴 SELL 4,075–4,085 | Stop 4,105 | TP 4,040 → 4,015 → 3,975 → ext. 3,900\n🔴 SELL the break: lose 4,028, retest 4,028–4,035 | Stop 4,052 | TP 4,000 → 3,975 → 3,900\n🟢 BUY: not looking for it — only at 3,900–3,918 on a clear reversal candle.\nTrigger: zone tag + a red 45m/1H close. Don't chase mid-drop.\nInvalidation: daily close above 4,105.\nNote: 8:30 AM ET GDP + PCE + claims (pre-market) · 9:15 AM ET ECB. Go light into the data; bank TP1 and move stops to breakeven."
+     },
+     {
+      "h": "Other Headlines",
+      "p": "• Business Times (Bloomberg) – Fed holds 10–2; TD Securities calls it \"a somewhat hawkish hold\" → the rate path still points up.\nhttps://www.businesstimes.com.sg/companies-markets/energy-commodities/gold-cuts-losses-fed-pauses-and-stays-silent-future-hikes\n• CNBC (Reuters) – Gold popped on Warsh, then faded; 10-year at 5.03% → the yield weight hasn't lifted.\nhttps://www.cnbc.com/2026/10/28/gold-slips-on-oil-fueled-inflation-fears-ahead-of-fed-meeting.html\n• CNBC – Brent $115.32, WTI $102.78 after the Ras Tanura claim → crude keeps inflation sticky.\nhttps://www.cnbc.com/2026/10/28/oil-price-today-wti-brent-hormuz.html\n• Investing.com – Gold slips after the Fed as traders eye September PCE → today's data is the next test.\nhttps://uk.investing.com/news/commodities-news/gold-slips-after-fed-holds-rates-pce-inflation-data-in-focus-4939656\n• CNBC – Spot gold (XAU=) near 4,040 at publish.\nhttps://www.cnbc.com/quotes/XAU="
+     }
+    ],
+    "sources": [
+     {
+      "name": "Business Times (Bloomberg) – Fed holds 10–2 with Cook and Hammack dissenting; \"a somewhat hawkish hold\"",
+      "url": "https://www.businesstimes.com.sg/companies-markets/energy-commodities/gold-cuts-losses-fed-pauses-and-stays-silent-future-hikes"
+     },
+     {
+      "name": "CNBC (Reuters) – Gold slips on higher oil; 10-year at 5.03%, FedWatch ~86% for a December hike",
+      "url": "https://www.cnbc.com/2026/10/28/gold-slips-on-oil-fueled-inflation-fears-ahead-of-fed-meeting.html"
+     },
+     {
+      "name": "CNBC – Oil: Brent settles $115.32, WTI $102.78 after Ras Tanura attack claim",
+      "url": "https://www.cnbc.com/2026/10/28/oil-price-today-wti-brent-hormuz.html"
+     },
+     {
+      "name": "Investing.com – Gold slips after Fed holds rates, PCE data in focus",
+      "url": "https://uk.investing.com/news/commodities-news/gold-slips-after-fed-holds-rates-pce-inflation-data-in-focus-4939656"
+     },
+     {
+      "name": "Dow Jones/WSJ – Consensus for Q3 GDP, September PCE, jobless claims",
+      "url": "https://www.morningstar.com/news/dow-jones/202610237517/3q-gdp-growth-seen-higher-data-week-ahead"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   }
+  },
+  {
    "id": "2026-10-28-nhan-dinh-chung",
    "date": "2026-10-28",
    "time": "11:15",
