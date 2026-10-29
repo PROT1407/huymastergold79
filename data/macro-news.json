@@ -1,6 +1,6 @@
 {
  "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC | Chiến tranh | Ngân hàng TW. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
- "updated": "2026-10-29",
+ "updated": "2026-10-30",
  "fomc": {
   "source": {
    "name": "Federal Reserve – FOMC calendars",
@@ -56,6 +56,102 @@
   "note_en": "Decision at 2:00 PM ET on day two of the meeting, press conference at 2:30 PM ET. * = with economic projections (dot plot)."
  },
  "items": [
+  {
+   "date": "2026-10-30",
+   "category": "Lạm phát",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "GDP quý 3 Mỹ tăng 3,4%, PCE tháng 9 lên 3,6% – vàng mất 1% về quanh 4.025 USD, cược Fed tăng lãi tháng 12 vẫn trên 70%",
+   "summary": "BEA/CNBC (19:30 VN 29/10): GDP quý 3 tăng 3,4% (dự báo 3,1–3,2%, quý 2: 2,2%). PCE tháng 9 tăng 0,5% so với tháng trước, 3,6% so với cùng kỳ (tháng 8: 3,4%); PCE lõi 0,3% và 3,1% – đúng dự báo. Giá xăng và năng lượng tăng mạnh là động lực chính. Đơn xin trợ cấp thất nghiệp giảm còn khoảng 194.000. Kitco cuối phiên Mỹ: vàng giao ngay 4.024,60 USD (−42 USD, −1,03%), bạc 52,18 USD (−3,1%), chạm đáy 11 tháng. Phần lớn nhịp giảm của vàng diễn ra từ phiên Á–Âu, trước khi số liệu ra; lúc ra tin vàng chỉ nhích vài USD rồi trả lại ngay. CNBC (Reuters): vàng hướng tới tháng giảm thứ hai liên tiếp.",
+   "reason": "Ngắn hạn: kinh tế Mỹ chạy nhanh + lạm phát 3,6% giữ cửa Fed tăng lãi tháng 12 – vàng chưa có lực hồi bền. Kitco: cản 4.084 rồi 4.146, hỗ trợ 4.024 rồi 3.986; mất 4.024 thì 4.000 và 3.986 là đích kế tiếp. Dài hạn: lạm phát năng lượng lan sang dịch vụ (PCE dịch vụ trừ nhà ở 3,6%) khiến lãi suất cao lâu hơn – xu hướng trung hạn của vàng còn nghiêng giảm cho tới khi lạm phát hạ rõ.",
+   "source": {
+    "name": "CNBC – GDP quý 3 tăng 3,4%, lạm phát tháng 9 tăng tốc",
+    "name_en": "CNBC – Q3 GDP rises a better-than-expected 3.4% as September inflation accelerates",
+    "url": "https://www.cnbc.com/2026/10/29/pce-inflation-report-september-2026-.html"
+   },
+   "source2": {
+    "name": "Kitco – Vàng, bạc giảm khi GDP và lạm phát Mỹ mạnh củng cố cược Fed thắt chặt",
+    "name_en": "Kitco PM Report – Gold, silver fall as strong US GDP, inflation support Fed tightening bets",
+    "url": "https://www.kitco.com/news/article/2026-10-29/gold-silver-fall-strong-us-gdp-inflation-support-fed-tightening-bets-kitco"
+   },
+   "time_vn": "19:30 VN 29/10 (GDP + PCE) → cuối phiên Mỹ ≈04:00 VN 30/10",
+   "title_en": "Q3 GDP runs at 3.4%, September PCE hits 3.6% – gold sheds 1% to ~$4,025 as December hike odds stay above 70%",
+   "summary_en": "BEA/CNBC: third-quarter GDP grew at a 3.4% annualized pace (consensus 3.1%–3.2%, Q2 2.2%). September PCE rose 0.5% m/m and 3.6% y/y (August 3.4%), while core printed 0.3% and 3.1% – right on consensus. Gasoline and energy did the heavy lifting. Initial jobless claims dropped to about 194,000. Kitco had spot gold at $4,024.60 late in New York, down $42.00 (−1.03%), with silver off 3.1% at $52.18, an 11-month low. Most of gold's damage was done in Asia and early London, before the numbers; the print itself got a few dollars of pop that faded right away. CNBC (Reuters): bullion is on track for a second straight monthly loss.",
+   "reason_en": "Near term: a hot economy plus 3.6% inflation keeps a December hike on the table, so gold has no fuel for a durable bounce. Kitco maps resistance at 4,084 then 4,146, support at 4,024 then 3,986 – lose 4,024 and the $4,000 handle and 3,986 come into play. Longer term: energy inflation bleeding into services (core services ex-housing at 3.6% y/y) means higher-for-longer rates, so the intermediate trend still leans lower until inflation clearly turns.",
+   "time_en": "Oct 29, 8:30 AM ET (GDP + PCE) → NY close"
+  },
+  {
+   "date": "2026-10-30",
+   "category": "Lợi suất",
+   "priority": 2,
+   "impact": "tăng",
+   "title": "Lợi suất Mỹ lùi về dưới 5%, USD giảm về quanh 101,8 khi cổ phiếu công nghệ bị bán mạnh – nhưng vàng không hưởng lợi",
+   "summary": "Newsquawk (giá chốt): lợi suất 2 năm giảm 3,1 điểm cơ bản còn 4,654%, 10 năm giảm 1,9 điểm còn 4,984%, 30 năm 5,324% – đường cong dốc lên; đấu giá 7 năm tốt. CNBC: lợi suất 10 năm có lúc 4,964%. Investing.com (tối 29/10 giờ Mỹ): chỉ số USD 101,76 (−0,27%). Phố Wall: S&P 500 −0,3% về 7.720,39, Nasdaq −1,44% do Alphabet rơi khoảng 13% sau báo cáo lợi nhuận, lo ngại chi tiêu AI (Kitco). Kitco nhận xét: lợi suất và USD giảm nhưng vàng vẫn mất 1% – dòng tiền trú ẩn không chảy vào kim loại quý.",
+   "reason": "Ngắn hạn: lợi suất 10 năm quay lại dưới 5% và USD yếu là yếu tố đỡ vàng; nếu giữ được dưới 5% vài phiên, vàng có cơ sở giữ vùng 4.000. Dài hạn: vàng giảm ngay cả khi lợi suất và USD hạ cho thấy thị trường đang định giá cả chu kỳ lãi suất cao kéo dài – tín hiệu yếu, cần lợi suất giảm sâu hơn hẳn mới đảo chiều được.",
+   "source": {
+    "name": "CNBC – Lợi suất 10 năm Mỹ dưới 5% sau GDP mạnh và lạm phát tăng",
+    "name_en": "CNBC – 10-year Treasury yield hovers below 5% after strong GDP, rising inflation",
+    "url": "https://www.cnbc.com/2026/10/29/treasury-yields-federal-reserve-rates.html"
+   },
+   "source2": {
+    "name": "Newsquawk – Tổng kết thị trường Mỹ 29/10",
+    "name_en": "Newsquawk – US Market Wrap, Oct 29",
+    "url": "https://www.newsquawk.com/headlines/us-market-wrap-ai-jitters-hit-tech-as-alphabet-earnings-disappoint-bonds-rally"
+   },
+   "time_vn": "≈03:00 VN 30/10 (giá chốt)",
+   "title_en": "Yields slip back under 5% and the dollar eases to ~101.8 as tech gets hit – but gold doesn't catch the bid",
+   "summary_en": "Newsquawk (settlement): the 2-year fell 3.1 bp to 4.654%, the 10-year 1.9 bp to 4.984% and the 30-year finished at 5.324% as the curve steepened; a solid 7-year auction helped. CNBC had the 10-year as low as 4.964% intraday. Investing.com showed the dollar index at 101.76 (−0.27%) in the evening. Stocks: S&P 500 −0.3% to 7,720.39 and Nasdaq −1.44% as Alphabet dropped about 13% on earnings and AI-spending worries (Kitco). Kitco's read: lower yields and a softer dollar still couldn't spark safe-haven buying in metals.",
+   "reason_en": "Near term: a 10-year back under 5% and a softer dollar are supportive; hold that for a few sessions and gold has a case to defend the $4,000 area. Longer term: gold falling even as yields and the dollar ease says the market is pricing a long higher-for-longer cycle – a weak tell. It will take a much deeper drop in yields to turn the trend.",
+   "time_en": "Oct 29, ~4:00 PM ET (close)"
+  },
+  {
+   "date": "2026-10-30",
+   "category": "Ngân hàng TW",
+   "priority": 2,
+   "impact": "trung lập",
+   "title": "ECB giữ lãi 2,5% nhưng báo hiệu tăng tháng 12 – Lagarde: «hướng đi đã rõ», thị trường đặt khoảng 67%",
+   "summary": "ECB (20:15 VN 29/10) giữ lãi suất tiền gửi 2,50%, tái cấp vốn 2,65%, cho vay cận biên 2,90%. Tuyên bố cảnh báo giá năng lượng tăng đẩy rủi ro lạm phát lên và kéo tăng trưởng xuống; lạm phát eurozone 3,8%, cao nhất từ 9/2023 (CNBC). Lagarde cho biết Hội đồng đã thảo luận tăng lãi ngay nhưng chờ thêm dữ liệu, «trừ khi có biến lớn, hướng đi đã khá rõ». Nguồn tin Reuters: tăng lãi ngày 17/12 gần như chắc chắn rồi tạm dừng. Thị trường tiền tệ đặt khoảng 67% khả năng tăng tháng 12 (LSEG). Lagarde cũng thông báo sẽ rời nhiệm sở sớm.",
+   "reason": "Ngắn hạn: ECB diều hâu giúp euro tăng, USD yếu đi – đỡ nhẹ cho vàng. Dài hạn: các ngân hàng trung ương lớn cùng nghiêng về thắt chặt vì cú sốc năng lượng – mặt bằng lãi suất toàn cầu cao là lực cản chung với vàng.",
+   "source": {
+    "name": "ECB – Tuyên bố chính sách tiền tệ 29/10/2026",
+    "name_en": "ECB – Monetary policy statement, Oct 29, 2026",
+    "url": "https://www.ecb.europa.eu/press/press_conference/monetary-policy-statement/2026/html/ecb.is261029~5c5ffe99e5.en.html"
+   },
+   "source2": {
+    "name": "CNBC – ECB giữ lãi suất chủ chốt ở 2,5%",
+    "name_en": "CNBC – ECB keeps key rate on hold at 2.5%",
+    "url": "https://www.cnbc.com/2026/10/29/european-central-bank-interest-rates.html"
+   },
+   "time_vn": "20:15 VN 29/10 (quyết định) – họp báo 20:45 VN",
+   "title_en": "ECB holds at 2.5% but flags a December hike – Lagarde says the 'direction of travel' is clear; markets price ~67%",
+   "summary_en": "The ECB left the deposit rate at 2.50%, the refi rate at 2.65% and the marginal lending rate at 2.90%, warning that rising energy prices skew inflation risks higher and growth risks lower; euro-area inflation is running at 3.8%, the highest since September 2023 (CNBC). Lagarde said the Governing Council debated a hike before choosing to wait for more data, and that barring a major development 'the direction of travel is quite clear.' Reuters sources say a Dec. 17 hike is all but certain, followed by a pause. Money markets price roughly a 67% chance of a December move (LSEG). Lagarde also announced she will step down early.",
+   "reason_en": "Near term: a hawkish ECB lifts the euro and trims the dollar – a modest tailwind for gold. Longer term: major central banks are all leaning toward tightening on the energy shock, and a higher global rate floor remains a shared headwind for bullion.",
+   "time_en": "Oct 29, 9:15 AM ET (decision) – presser 9:45 AM ET"
+  },
+  {
+   "date": "2026-10-30",
+   "category": "Chiến tranh",
+   "priority": 2,
+   "impact": "giảm",
+   "title": "Mỹ gửi thư đề nghị nối lại đàm phán với Iran qua Qatar – dầu hạ nhẹ: Brent 114,88 USD, WTI 102,00 USD",
+   "summary": "Phó Tổng thống Mỹ JD Vance gửi thư qua trung gian Qatar tới Mohsen Rezaei, người đứng đầu Hội đồng An ninh Quốc gia Iran, đề nghị nối lại đàm phán hòa bình; Qatar cũng đưa ra một dự thảo thỏa thuận riêng nhưng một quan chức cấp cao Iran gọi là «không thể chấp nhận» (Kitco, Al Jazeera). Iran chưa phản hồi chính thức. CNBC/Reuters: Brent chốt giảm 0,44 USD (−0,38%) còn 114,88 USD/thùng, WTI giảm 0,78 USD (−0,76%) còn 102,00 USD, sau khi có lúc giảm hơn 2 USD; WTI chạm đáy phiên 99,79 USD (DTN). Hợp đồng Brent tháng 12 đáo hạn thứ Sáu, OPEC+ họp Chủ nhật.",
+   "reason": "Ngắn hạn: hy vọng đàm phán hạ nhiệt giá dầu, giảm bớt lo ngại lạm phát năng lượng – nhưng cũng giảm nhu cầu trú ẩn, nên vàng gần như không được lợi. Dài hạn: khoảng cách giữa Mỹ và Iran còn lớn (trừng phạt, eo Hormuz), rủi ro leo thang vẫn còn; dầu quanh 100–115 USD tiếp tục nuôi lạm phát và lãi suất cao.",
+   "source": {
+    "name": "CNBC – Dầu giảm khi triển vọng đàm phán hòa bình mới xuất hiện",
+    "name_en": "CNBC – Oil falls as prospects of renewed peace talks ease supply fears",
+    "url": "https://www.cnbc.com/2026/10/29/oil-price-today-wti-brent.html"
+   },
+   "source2": {
+    "name": "Al Jazeera – Những gì đã biết về thư của Vance gửi Rezaei",
+    "name_en": "Al Jazeera – What we know of Vance's letter to Rezaei",
+    "url": "https://www.aljazeera.com/news/2026/10/29/what-we-know-of-vances-letter-to-rezaei-as-trump-warns-gulf-to-prepare"
+   },
+   "time_vn": "29/10 → ≈01:30 VN 30/10 (giá chốt dầu)",
+   "title_en": "Washington reaches out to Tehran via Qatar on restarting talks – crude eases: Brent $114.88, WTI $102.00",
+   "summary_en": "Vice President JD Vance sent a letter through Qatari mediators to Mohsen Rezaei, head of Iran's Supreme National Security Council, proposing to restart peace talks; Qatar also tabled a separate draft deal that a senior Iranian official called unacceptable (Kitco, Al Jazeera). Tehran has not formally responded. CNBC/Reuters: Brent settled down 44 cents (−0.38%) at $114.88 a barrel and WTI down 78 cents (−0.76%) at $102.00, after both were off more than $2 intraday; WTI touched $99.79 (DTN). December Brent expires Friday and OPEC+ meets Sunday.",
+   "reason_en": "Near term: talk of talks takes some heat out of crude and the energy-inflation story, but it also drains haven demand, so gold gets little out of it. Longer term: the gap between Washington and Tehran on sanctions and Hormuz is still wide and escalation risk hasn't gone away; oil in the $100–$115 range keeps inflation and rates elevated.",
+   "time_en": "Oct 29 → ~2:30 PM ET (crude settlement)"
+  },
   {
    "date": "2026-10-29",
    "category": "FOMC",
