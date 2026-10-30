@@ -58,6 +58,30 @@
  "items": [
   {
    "date": "2026-10-30",
+   "category": "Fed",
+   "priority": 1,
+   "impact": "trung lập",
+   "title": "Báo trước: Daly 23:00 và Musalem 23:30 VN tối nay – vàng đã rơi gần 3% về quanh 3.906 USD, giọng diều hâu dễ kéo thêm",
+   "summary": "Lịch Fed (Newsquawk, ForexFactory): 23:00 VN Daly (Fed San Francisco, bỏ phiếu 2027 – năm nay không bỏ phiếu) phát biểu khai mạc hội thảo «AI và Kinh tế»; 23:30 VN Musalem (Fed St. Louis, không bỏ phiếu 2026) nói tại Shadow Open Market Committee ở New York. Giữa tháng 10 Daly nói Fed có lẽ sẽ cần tăng lãi thêm, dù tháng 10 chưa gấp; đầu tháng 10 Musalem nói cần thắt chặt thêm vì lạm phát là vấn đề số một. Dự đoán: Daly trung lập 55% / diều hâu 35% / bồ câu 10% (bài khai mạc về AI, ít nói lãi suất); Musalem diều hâu 65% / trung lập 30% / bồ câu 5%. Kitco 11:30 ET: vàng giao ngay 3.906,40 USD (−114,10, −2,84%), đáy ngày 3.890,90. FedWatch (Investing.com 29/10): tăng lãi 08–09/12 khoảng 71%.",
+   "reason": "Diều hâu (khả năng cao hơn): USD và lợi suất giữ cao, vàng dễ thủng 3.890 và tìm 3.850. Trung lập: thị trường bỏ qua, vàng chạy theo dầu và dòng bán thanh lý. Bồ câu (ít khả năng): nhịp hồi kỹ thuật về 3.950–4.000 sau cú rơi gần 3%. Cả hai đều không bỏ phiếu năm nay nên tác động thường ngắn. Làm theo kế hoạch, đừng chạy theo nến tin.",
+   "source": {
+    "name": "Newsquawk – Lịch phát biểu Fed hôm nay: Barkin, Daly, Musalem, Cook, Hammack",
+    "name_en": "Newsquawk – Today's Fedspeak: Barkin, Daly, Musalem, Cook, Hammack",
+    "url": "https://www.newsquawk.com/headlines/primer---todays-fedspeak-includes-barkin-daly-musalem-cook-hammack"
+   },
+   "source2": {
+    "name": "Kitco – Giá vàng giao ngay 30/10, 11:30 ET",
+    "name_en": "Kitco – Live spot gold, Oct 30, 11:30 AM ET",
+    "url": "https://www.kitco.com/charts/gold"
+   },
+   "time_vn": "23:00 VN (Daly) – 23:30 VN (Musalem) 30/10",
+   "title_en": "Heads-up: Daly at noon ET, Musalem at 12:30 – gold already down nearly 3% near $3,906, and a hawkish tone could add to it",
+   "summary_en": "On the Fed calendar (Newsquawk, ForexFactory): at 12:00 PM ET, San Francisco Fed President Mary Daly (2027 voter, not voting this year) opens the SF Fed's \"AI and the Economy\" conference; at 12:30 PM ET, St. Louis Fed President Alberto Musalem (non-voter in 2026) speaks to the Shadow Open Market Committee in New York. In mid-October Daly said the Fed will probably need further hikes, though there was no urgency in October; earlier this month Musalem said more firming is needed and called inflation the economy's primary problem. Our read: Daly neutral 55% / hawkish 35% / dovish 10% (an AI-focused welcome, light on policy); Musalem hawkish 65% / neutral 30% / dovish 5%. Kitco at 11:30 AM ET: spot gold $3,906.40 (−$114.10, −2.84%), day low $3,890.90. FedWatch (Investing.com, Oct 29): roughly 71% odds of a December hike.",
+   "reason_en": "Hawkish (the likelier case): the dollar and yields stay firm and gold can lose 3,890 and look for 3,850. Neutral: the market shrugs and gold keeps trading off crude and liquidation flows. Dovish (unlikely): room for a technical bounce toward 3,950–4,000 after a near-3% drop. Neither votes this year, so any move tends to be short-lived. Trade the plan, not the noise.",
+   "time_en": "Oct 30, 12:00 PM ET (Daly) – 12:30 PM ET (Musalem)"
+  },
+  {
+   "date": "2026-10-30",
    "category": "Lạm phát",
    "priority": 1,
    "impact": "giảm",
