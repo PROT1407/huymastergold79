@@ -1,6 +1,6 @@
 {
  "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC | Chiến tranh | Ngân hàng TW. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
- "updated": "2026-10-30",
+ "updated": "2026-11-02",
  "fomc": {
   "source": {
    "name": "Federal Reserve – FOMC calendars",
@@ -56,6 +56,102 @@
   "note_en": "Decision at 2:00 PM ET on day two of the meeting, press conference at 2:30 PM ET. * = with economic projections (dot plot)."
  },
  "items": [
+  {
+   "date": "2026-11-02",
+   "category": "Tương quan",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "Vàng chốt tuần mất 3,7% về quanh 3.875 USD sau cú bán tháo cổ phiếu công nghệ – sáng thứ Hai hồi nhẹ lên lại 3.900",
+   "summary": "Kitco: thứ Sáu 30/10 vàng giao ngay rơi 3,52–3,62% trong phiên, chốt tuần quanh 3.875 USD (−3,74% cả tuần), đáy tuần 3.870,25 – thấp nhất hơn một năm theo Kitco. Đỉnh tuần 4.082,50 lập ngay trước khi Fed ra quyết định. Bạc mất khoảng 6% còn ~49 USD, lần đầu dưới 50 USD sau 11 tháng. Nguyên nhân chính: Nasdaq giảm 2,86% vì lo chi tiêu AI không sinh lời, kéo theo dòng bán thanh lý và gọi ký quỹ trên kim loại quý (Commerzbank, trader Tai Wong). Reuters: vàng hướng tới tháng giảm thứ hai liên tiếp. Đầu phiên Á sáng 2/11 (fx678): vàng giao ngay quanh 3.892 USD rồi đứng lại trên 3.900 USD, tăng khoảng 0,5–0,7%.",
+   "reason": "Ngắn hạn: nhịp hồi sáng nay là hồi kỹ thuật sau cú xả cuối tháng, chưa đổi xu hướng. Kitco: cản 3.890–3.910 rồi 3.943, 3.975; hỗ trợ 3.800 rồi 3.780 – còn dưới 3.910 thì phe bán vẫn cầm trịch. Điều đáng chú ý là lợi suất và USD giảm mà vàng vẫn rơi: khi cổ phiếu bị bán mạnh, vàng bị bán theo để lấy tiền mặt. Dài hạn: vàng đã mất khoảng 30% từ đỉnh 5.595 USD tháng 1; dưới 4.000 thường kéo ngân hàng trung ương vào mua, nhưng chừng nào Fed còn nghiêng tăng lãi thì lực hồi khó bền.",
+   "source": {
+    "name": "Kitco – Vàng thủng 3.900 USD, bạc lao dốc khi Phố Wall bán tháo",
+    "name_en": "Kitco PM Report – Gold falls below $3,900, silver tumbles as Wall Street selloff triggers liquidation",
+    "url": "https://www.kitco.com/news/article/2026-10-30/gold-falls-below-3900-silver-tumbles-wall-street-selloff-triggers"
+   },
+   "source2": {
+    "name": "fx678 – Điểm tin sáng 2/11: vàng giao ngay quanh 3.892 USD đầu phiên Á",
+    "name_en": "fx678 – Nov 2 morning brief: spot gold near $3,892 in early Asian trade",
+    "url": "https://gold.fx678.com/content/202611011753442468"
+   },
+   "time_vn": "04:00 VN 31/10 (chốt tuần) → 06:00 VN 2/11 (mở tuần)",
+   "title_en": "Gold drops 3.7% on the week to ~$3,875 as the tech rout forces liquidation – a modest bounce back to $3,900 at the Sunday open",
+   "summary_en": "Kitco: spot gold lost 3.5%–3.6% on Friday and finished the week near $3,875 (−3.74% w/w), with a weekly low of $3,870.25 – Kitco's weakest print in more than a year. The weekly high of $4,082.50 came right before the Fed decision. Silver shed about 6% to roughly $49, below $50 for the first time in 11 months. The trigger was a 2.86% slide in the Nasdaq on doubts about AI spending returns, which spilled into forced selling and margin calls across precious metals (Commerzbank, independent trader Tai Wong). Reuters: bullion is headed for a second straight monthly loss. In early Asian trade (fx678), spot traded near $3,892 before reclaiming $3,900, up roughly 0.5%–0.7%.",
+   "reason_en": "Near term: the Sunday-night pop is a technical bounce off a month-end flush, not a trend change. Kitco maps resistance at $3,890–$3,910, then $3,943 and $3,975; support at $3,800, then $3,780 – as long as price stays under $3,910, sellers are in control. The tell is that gold fell even as yields and the dollar eased: when equities get hit this hard, gold gets sold to raise cash. Bigger picture: bullion is down about 30% from January's $5,595 record; sub-$4,000 prices tend to draw central-bank buying, but with the Fed still leaning toward a hike, rallies are hard to sustain.",
+   "time_en": "Oct 30, 4:00 PM ET close → Nov 1, 6:00 PM ET Sunday open"
+  },
+  {
+   "date": "2026-11-02",
+   "category": "Chiến tranh",
+   "priority": 1,
+   "impact": "trung lập",
+   "title": "Iran – Qatar đàm phán ngày thứ ba ở Doha về kế hoạch mở lại Hormuz trong 2 ngày – Brent đầu tuần lùi hơn 1% về 111,9 USD",
+   "summary": "CNBC (Reuters, 20:30 VN 1/11): đoàn Iran họp ngày thứ ba liên tiếp với trung gian Qatar tại Doha nhằm chấm dứt chiến tranh Mỹ – Israel với Iran. Ngoại trưởng Araqchi nói thảo luận về «kế hoạch hai ngày» – mở lại eo Hormuz trong 2 ngày nếu đạt thỏa thuận với Washington – «đang tiến triển» nhưng chưa có kết luận. Ông Trump nói Mỹ sẽ không tấn công Iran trước bầu cử giữa kỳ 3/11 nhưng không loại trừ hành động sau đó. Thứ Sáu, một tàu chở dầu ở Hormuz trúng mìn gắn thân tàu; Brent kỳ hạn tháng 12 chốt 117,64 USD (+2,4%), cao nhất từ cuối tháng 4, WTI 104,12 USD; cả tháng Brent +13,6%. OPEC+ giữ nguyên sản lượng tháng 12 (CNBC 1/11). Reuters 06:03 VN 2/11: Brent −1,33% còn 111,92 USD, WTI −1,71% còn 102,34 USD.",
+   "reason": "Ngắn hạn: dầu hạ nhờ hy vọng đàm phán giúp giảm bớt nỗi lo lạm phát và áp lực Fed tăng lãi – hỗ trợ nhẹ cho nhịp hồi của vàng. Nhưng rủi ro lớn nằm sau ngày 3/11: nếu Mỹ quay lại tấn công, dầu tăng vọt sẽ đẩy cược tăng lãi lên và vàng lại bị ép, như đã thấy suốt tháng 10. Dài hạn: dầu trên 100 USD kéo dài giữ lạm phát cao, lãi suất cao lâu hơn – bất lợi cho vàng; một thỏa thuận mở lại Hormuz thật sự mới là yếu tố đổi chiều.",
+   "source": {
+    "name": "CNBC – Iran và trung gian Qatar đàm phán ngày thứ ba để chấm dứt chiến tranh",
+    "name_en": "CNBC – Iran, Qatari mediators hold third day of talks to end U.S.-Iran war",
+    "url": "https://www.cnbc.com/2026/11/01/iranian-negotiators-in-qatar-to-continue-talks-to-end-war-reuters.html"
+   },
+   "source2": {
+    "name": "CNBC – Dầu tăng 2%, chốt đỉnh 6 tháng vì lo leo thang ở Iran",
+    "name_en": "CNBC – Oil jumps 2%, settles at 6-month highs on fears of escalation in Iran",
+    "url": "https://www.cnbc.com/2026/10/30/oil-rises-on-supply-concerns-as-houthis-attack-saudi-arabia.html"
+   },
+   "time_vn": "02:30 VN 31/10 (dầu chốt phiên) – 20:30 VN 1/11 (đàm phán Doha) – 06:03 VN 2/11 (dầu đầu phiên Á)",
+   "title_en": "Iran and Qatar hold a third day of talks on a two-day plan to reopen Hormuz – Brent slips more than 1% to $111.92 at the open",
+   "summary_en": "CNBC (Reuters): Iranian negotiators met Qatari mediators in Doha for a third straight day on Sunday, pushing for a deal to end the U.S.-Israeli war on Iran. Foreign Minister Abbas Araqchi said talks on a \"two-day proposal\" – reopening the Strait of Hormuz within two days of an agreement with Washington – are \"ongoing and progressing,\" with no final conclusion. President Trump has said the U.S. won't launch new strikes before Tuesday's midterms but hasn't ruled out action afterward. On Friday a tanker in the strait was hit by limpet mines; December Brent settled at $117.64 (+2.4%), its highest since late April, and WTI at $104.12, with Brent up 13.6% in October. OPEC+ left December output targets unchanged. Reuters at 6:03 PM ET Sunday: Brent −1.33% to $111.92, WTI −1.71% to $102.34.",
+   "reason_en": "Near term: crude backing off on diplomacy takes a little heat out of the inflation story and the hike odds, which gives gold some room to bounce. The real risk sits after Nov 3 – if strikes resume, an oil spike lifts hike bets and squeezes gold again, the same pattern we saw all October. Longer term: $100-plus crude keeps inflation sticky and rates higher for longer, which is a headwind for gold; only an actual deal that reopens Hormuz changes that.",
+   "time_en": "Oct 30, 2:30 PM ET (oil settle) – Nov 1, 8:30 AM ET (Doha talks) – Nov 1, 6:03 PM ET (Asian open)"
+  },
+  {
+   "date": "2026-11-02",
+   "category": "Lợi suất",
+   "priority": 2,
+   "impact": "trung lập",
+   "title": "Lợi suất 10 năm Mỹ chốt tuần 4,93–4,94%, thấp nhất khoảng 7 tuần, USD đứng quanh 102 – nhưng vàng không được hưởng lợi",
+   "summary": "Stocktwits/BondStats: lợi suất 10 năm chốt tuần 4,93–4,94% (−4 điểm cơ bản thứ Sáu, −7 điểm cả tuần), 2 năm 4,56–4,59% (giảm khoảng 10 điểm trong tuần), 30 năm 5,31–5,32% gần như đứng yên. Dòng tiền rời cổ phiếu AI (chỉ số bán dẫn SOX −7,2% thứ Sáu) chạy sang trái phiếu. Chỉ số USD chốt 101,96–101,97, đi ngang cả tuần (+0,08% phiên thứ Sáu).",
+   "reason": "Ngắn hạn: bình thường lợi suất giảm là gió thuận cho vàng, nhưng tuần qua tiền chạy vào trái phiếu chứ không vào vàng – vàng bị bán để bù lỗ cổ phiếu. Khi cơn bán tháo cổ phiếu dịu lại, lợi suất thấp hơn có thể giúp vàng hồi. Dài hạn: lợi suất thực 10 năm vẫn quanh 2,6% – còn cao, giữ chi phí cơ hội của vàng lớn chừng nào Fed chưa quay đầu.",
+   "source": {
+    "name": "Stocktwits – Điều gì định hình lợi suất và USD tuần này",
+    "name_en": "Stocktwits Weekly Spread – What shaped Treasury yields and the dollar this week",
+    "url": "https://stocktwits.com/news-articles/markets/equity/stocktwits-weekly-spread-what-shaped-treasury-yields-and-the-dollar-this-week-3/cZUK1ucR9ca"
+   },
+   "source2": {
+    "name": "BondStats – Lợi suất 10 năm Mỹ chốt 4,94% ngày 30/10",
+    "name_en": "BondStats Daily – US rates close with the 10-year at 4.94%",
+    "url": "https://www.bondstats.org/daily/2026-10-30/"
+   },
+   "time_vn": "04:00 VN 31/10 (chốt tuần)",
+   "title_en": "10-year yield ends the week at 4.93%–4.94%, a roughly 7-week low, with the dollar flat near 102 – gold gets no help",
+   "summary_en": "Stocktwits/BondStats: the 10-year Treasury yield closed the week at 4.93%–4.94% (−4 bps Friday, −7 bps w/w), the 2-year at 4.56%–4.59% (down about 10 bps on the week), and the 30-year was little changed at 5.31%–5.32%. Money rotated out of AI names (the SOX fell 7.2% Friday) and into duration. The Dollar Index settled at 101.96–101.97, flat on the week (+0.08% Friday).",
+   "reason_en": "Near term: falling yields are usually a tailwind for gold, but last week the safety bid went into Treasuries, not bullion – gold was sold to cover equity losses. Once the equity selling calms down, lower yields can help a bounce. Longer term: the 10-year real yield is still around 2.6%, which keeps the opportunity cost of holding gold high until the Fed turns.",
+   "time_en": "Oct 30, 4:00 PM ET close"
+  },
+  {
+   "date": "2026-11-02",
+   "category": "Fed",
+   "priority": 1,
+   "impact": "trung lập",
+   "title": "Tuần bản lề: bầu cử giữa kỳ Mỹ 3/11 và bảng lương NFP 20:30 VN thứ Sáu 6/11 – FedWatch đặt khoảng 72% Fed tăng lãi tháng 12",
+   "summary": "CME FedWatch (FXBus trích dẫn, sáng 31/10): họp 08–09/12 tăng 25 điểm cơ bản 72%, giữ 28%; tới tháng 1/2027 tăng tổng 25 điểm 58,4%, 50 điểm 22,3%. Lịch tuần (FXStreet/XM): ISM sản xuất 22:00 VN thứ Hai 2/11; bầu cử giữa kỳ thứ Ba 3/11 (Dân chủ được dự báo giành Hạ viện, Thượng viện còn sát nút); ADP và ISM dịch vụ thứ Tư 4/11; RBA (thứ Ba) và BoE (thứ Năm) được kỳ vọng tăng lãi; NFP tháng 10 lúc 20:30 VN thứ Sáu 6/11 – tháng 9 chỉ +29.000. Kết quả kinh doanh: Apple, Palantir thứ Hai, AMD thứ Ba, Qualcomm thứ Tư. FOMC 28/10 giữ lãi 3,75–4,00% với 2 phiếu (Cook, Hammack) đòi tăng ngay.",
+   "reason": "Ngắn hạn: NFP là phép thử chính – số việc làm mạnh có thể «chốt» cửa tăng lãi tháng 12 và ép vàng thêm; số yếu như tháng 9 sẽ cho vàng cơ hội hồi. Bầu cử: Cộng hòa giữ cả hai viện dễ đẩy USD và lợi suất lên (lo thuế quan, lạm phát) – bất lợi cho vàng; Quốc hội chia rẽ thường làm USD dịu lại. Cuối tuần sau bầu cử còn rủi ro Mỹ quay lại tấn công Iran. Dài hạn: thị trường đang định giá lãi suất Fed cao hơn khoảng 70 điểm cơ bản vào cuối 2027 – xu hướng lớn của vàng chưa có lý do đảo chiều.",
+   "source": {
+    "name": "FXStreet (XM) – Tuần tới: NFP và bầu cử giữa kỳ Mỹ là tâm điểm",
+    "name_en": "FXStreet (XM) – Week ahead: Nonfarm Payrolls and US midterm elections take center stage",
+    "url": "https://www.fxstreet.com/analysis/week-ahead-nonfarm-payrolls-and-us-midterm-elections-take-center-stage-202610301019"
+   },
+   "source2": {
+    "name": "FXBus – CME FedWatch: 72% khả năng tăng lãi tháng 12",
+    "name_en": "FXBus – CME FedWatch: 72% odds of a December hike",
+    "url": "https://www.fxbus.com/en/news/20261031060035448344.html"
+   },
+   "time_vn": "22:00 VN 2/11 (ISM) – 3/11 (bầu cử) – 20:30 VN 6/11 (NFP)",
+   "title_en": "Pivotal week: Tuesday's midterms and Friday's 8:30 AM ET payrolls – FedWatch prices about 72% odds of a December hike",
+   "summary_en": "CME FedWatch (via FXBus, late Oct 30): 72% odds of a 25-bp hike at the Dec 8–9 meeting vs. 28% for a hold; by January 2027, 58.4% for a cumulative 25 bps and 22.3% for 50 bps. The calendar (FXStreet/XM): ISM manufacturing Monday at 10:00 AM ET; midterm elections Tuesday (Democrats favored to take the House, the Senate a toss-up); ADP and ISM services Wednesday; RBA (Tuesday) and BoE (Thursday) both expected to hike; October nonfarm payrolls Friday at 8:30 AM ET after September's weak +29,000. Earnings: Apple and Palantir Monday, AMD Tuesday, Qualcomm Wednesday. The Oct 28 FOMC held at 3.75%–4.00% with two dissents (Cook, Hammack) for an immediate hike.",
+   "reason_en": "Near term: payrolls are the main test – a strong print could lock in December and push gold lower; another soft number like September's opens the door to a relief rally. Midterms: a Republican sweep likely lifts the dollar and yields on tariff and inflation worries, a negative for gold, while a split Congress tends to cool the dollar. And once the vote is done, the risk of renewed U.S. strikes on Iran comes back into play. Longer term: markets price the fed funds rate roughly 70 bps higher by the end of 2027 – nothing yet argues for a turn in gold's bigger trend.",
+   "time_en": "Nov 2, 10:00 AM ET (ISM) – Nov 3 (midterms) – Nov 6, 8:30 AM ET (payrolls)"
+  },
   {
    "date": "2026-10-30",
    "category": "Fed",
