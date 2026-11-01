@@ -7,61 +7,46 @@
    "session_en": "Weekly Recap",
    "url": "bai/2026-11-01-nhan-dinh-vang-tong-ket-tuan.html",
    "url_en": "en/posts/2026-11-01-gold-weekly-recap.html",
-   "headline": "Tổng kết tuần 26–30/10: vàng mất 3%, thủng 3.900 về đáy 1 năm – tuần tới BÁN hồi 3.945–3.955, chờ bầu cử Mỹ và NFP",
-   "headline_en": "H79 Gold Weekly Recap, Oct. 26–30: Gold Drops 3% to a One-Year Low Under $3,900 – Next Week Sell 3,945–3,955 Into the Midterms and Payrolls",
+   "headline": "Tổng kết tuần 26–30/10: vàng mất 3%, đóng tuần đáy 1 năm 3.875 – xu hướng giảm còn nguyên, tháng 11 mở màn chặng về 3.600–3.500",
+   "headline_en": "H79 Gold Weekly Recap, Oct. 26–30: Gold Drops 3% to a One-Year Low – The Downtrend Holds as November Opens the Leg Toward $3,600–$3,500",
    "image": "img/charts/gold-2026-11-01-tong-ket-tuan.jpg",
-   "image_alt": "Biểu đồ vàng khung ngày tuần 26–30/10: đỉnh tuần 4.078,6, đáy 3.870,4, đóng 3.875,1; Fibonacci 4.078,6–3.870,4, FVG 4H 3.902–3.964 và các FVG chưa lấp phía trên; vùng BÁN 3.945–3.955 (SL 3.978), vùng MUA 3.800–3.815 (SL 3.780)",
+   "image_alt": "Biểu đồ vàng khung ngày từ 6/2026: chuỗi đỉnh thấp dần 4.695 → 4.510 → 4.224 → 4.153 → 4.079, nền 4.100–4.150 đã gãy, đóng tuần 3.875,1 (đáy 1 năm); FVG 4H 3.902–3.964, FVG ngày 4.079–4.106; Fib sóng tăng 2025–26: 50% 4.100, 61,8% 3.749; mục tiêu H79 3.600–3.500",
    "image_en": "img/charts/gold-2026-11-01-weekly-recap-en.jpg",
-   "image_alt_en": "Gold daily chart, week of Oct 26–30: week high 4,078.59, low 3,870.41, close 3,875.06; Fibonacci 4,078.59–3,870.41, 4H fair value gap 3,902–3,964 and unfilled gaps above; sell zone 3,945–3,955 (stop 3,978), buy zone 3,800–3,815 (stop 3,780)",
-   "trend": "Trung hạn giảm: Fed nghiêng tăng lãi, lạm phát 3,6%, dầu cao; vàng mất 3% trong tuần và đóng ở đáy 1 năm 3.875. Vùng 3.900–3.965 (FVG 4H) giờ là vùng cung. Tuần tới bán hồi 3.945–3.955; chỉ mua nhịp ngắn ở 3.800–3.815 khi có nến xác nhận.",
-   "trend_en": "Intermediate-term bearish: a hike-leaning Fed, 3.6% PCE and hot crude sent gold down 3% on the week to a one-year-low close at 3,875. The 3,900–3,965 4H gap is now supply. Next week, sell a bounce into 3,945–3,955; buy only a quick flush into 3,800–3,815 on a confirming close.",
+   "image_alt_en": "Gold daily chart since June 2026: lower highs 4,695 → 4,510 → 4,224 → 4,153 → 4,079, broken 4,100–4,150 base, weekly close 3,875.06 (one-year low); 4H fair value gap 3,902–3,964, daily gap 4,079–4,106; Fibonacci of the 2025–26 rally: 50% 4,100, 61.8% 3,749; H79 target 3,600–3,500",
+   "trend": "Xu hướng giảm trung hạn còn nguyên: chuỗi đỉnh thấp dần từ 4.695 (25/8), nền 4.100–4.150 đã gãy, tuần này thủng đáy tháng 6 (3.943) và đóng ở đáy 1 năm 3.875. Fed nghiêng tăng lãi, lạm phát dai dẳng, lợi suất thực dương. Mục tiêu lớn 3.600–3.500 giữ nguyên, tiến trình đang diễn ra trong tháng 11 – chặng cuối năm của quý IV.",
+   "trend_en": "The intermediate-term downtrend is intact: lower highs since 4,695 on Aug. 25, a broken 4,100–4,150 base, and this week a break of June's 3,943 low into a one-year-low close at 3,875. A hike-leaning Fed, sticky inflation and positive real yields back it up. Our 3,600–3,500 target stands, and November opens the year-end leg of Q4.",
    "trendType": "down",
    "support": [
     3870,
-    3814,
-    3800,
-    3780,
-    3742
+    3820,
+    3749,
+    3600,
+    3500
    ],
    "resistance": [
     3902,
-    3920,
-    3945,
     3964,
-    3975,
-    3999,
-    4034
-   ],
-   "entryZones": [
-    "Mua 3.800 – 3.815 (Fib mở rộng 127,2% 3.813,8 + mốc tròn 3.800). Vào khi có nến 1H hoặc 4H đóng xanh trong vùng. Dừng lỗ 3.780. TP1 3.850 – chốt 50–70%, dời SL hòa vốn; TP2 3.872. Lệnh ngược xu hướng, vào nhỏ. Nến 4H đóng dưới 3.780 thì bỏ mua."
-   ],
-   "entryZones_en": [
-    "Buy 3,800–3,815 (127.2% extension at 3,813.8 plus the 3,800 round number). Enter on a green 1H or 4H close in the zone. Stop 3,780. TP1 3,850 – take 50–70%, stop to breakeven; TP2 3,872. Counter-trend – keep it small. A 4H close under 3,780 cancels the long."
-   ],
-   "sellZones": [
-    "Bán 3.945 – 3.955 (Fib 38,2% 3.949,9 trong FVG 2H/4H 3.923–3.964 do cú xả thứ Sáu để lại). Vào khi có nến 1H hoặc 4H đóng đỏ trong vùng. Không bán đuổi dưới 3.870. Dừng lỗ 3.978 (trên Fib 50% 3.974,5 và đỉnh FVG). TP1 3.905 – chốt 50–70%, dời SL hòa vốn; TP2 3.872; TP3 3.815. Nến 4H đóng trên 3.978 thì bỏ bán."
-   ],
-   "sellZones_en": [
-    "Sell 3,945–3,955 (38.2% Fib at 3,949.9 inside the 3,923–3,964 2H/4H gap left by Friday's flush). Enter on a red 1H or 4H close in the zone. No chasing shorts under 3,870. Stop 3,978 (over the 50% Fib at 3,974.5 and the top of the gap). TP1 3,905 – take 50–70%, stop to breakeven; TP2 3,872; TP3 3,815. A 4H close above 3,978 cancels the short."
+    4079,
+    4100
    ],
    "scenarios": [
-    "Kế hoạch: BÁN 3.945–3.955 (SL 3.978 · TP 3.905 → 3.872 → 3.815) · MUA 3.800–3.815 (SL 3.780 · TP 3.850 → 3.872). Chạm vùng + nến 1H/4H đóng xác nhận.",
-    "Kịch bản chính (~55%): đầu tuần hồi kỹ thuật lên 3.920–3.955, bị bán lại, thủng 3.870 rồi về 3.815–3.800 trước NFP.",
-    "Kịch bản phụ (~30%): không hồi, rơi thẳng về 3.800–3.815 – có nến xanh mới mua nhịp ngắn về 3.850–3.872.",
-    "Vô hiệu (~15%): nến 4H đóng trên 3.978 – bỏ bán, mốc kế 3.999 rồi 4.025–4.034.",
-    "Rủi ro: thứ Ba 3/11 bầu cử giữa kỳ Mỹ (kết quả từ sáng 4/11 giờ VN); 20:30 thứ Sáu 6/11 NFP, thất nghiệp, lương giờ."
+    "Bức tranh lớn: xu hướng giảm trung hạn, mục tiêu 3.600–3.500 giữ nguyên – tiến trình diễn ra trong tháng 11, mở màn chặng cuối năm của quý IV.",
+    "Mốc phía trên: 3.902–3.964 (FVG 4H cú xả thứ Sáu) · 4.079–4.106 (FVG ngày) · 4.100 (Fib 50% sóng tăng 2025–26, cũng là nền đã gãy).",
+    "Mốc phía dưới: 3.870 (đáy tuần) · 3.820 (đáy tháng 10/2025) · 3.749 (Fib 61,8%) · 3.600–3.500.",
+    "Xu hướng chỉ đổi khi giá lấy lại 4.100 và Fed đổi giọng – hiện chưa có dấu hiệu nào.",
+    "Theo dõi: thứ Ba 3/11 bầu cử giữa kỳ Mỹ (kết quả từ sáng 4/11 giờ VN); 20:30 thứ Sáu 6/11 bảng lương phi nông nghiệp (NFP)."
    ],
    "scenarios_en": [
-    "The plan: sell 3,945–3,955 (stop 3,978 · targets 3,905 → 3,872 → 3,815) · buy 3,800–3,815 (stop 3,780 · targets 3,850 → 3,872). Zone tap plus a confirming 1H/4H close.",
-    "Base case (~55%): an early-week bounce into 3,920–3,955 gets sold, 3,870 breaks, then 3,815–3,800 before payrolls.",
-    "Alternative (~30%): no bounce, a straight drop into 3,800–3,815 – buy a quick pop to 3,850–3,872 only on a green close.",
-    "Invalidation (~15%): a 4H close above 3,978 shelves the short; next up 3,999, then 4,025–4,034.",
-    "Risk: Tue Nov. 3 midterm elections (results overnight); Fri Nov. 6, 8:30 AM ET payrolls, unemployment rate, hourly earnings."
+    "Big picture: intermediate-term downtrend; the 3,600–3,500 target stands, with November opening the year-end leg of Q4.",
+    "Overhead: 3,902–3,964 (4H gap from Friday's flush) · 4,079–4,106 (daily gap) · 4,100 (50% retracement of the 2025–26 rally and the broken base).",
+    "Below: 3,870 (week low) · 3,820 (Oct. 2025 low) · 3,749 (61.8% retracement) · 3,600–3,500.",
+    "The trend only turns if gold reclaims 4,100 and the Fed changes its tune – no sign of either yet.",
+    "On deck: midterm elections Tue. Nov. 3; October payrolls Fri. Nov. 6, 8:30 AM ET."
    ],
    "macro": [],
    "macro_en": [],
    "market_picture": {
-    "text": "Tuần 26–30/10 vàng mở cửa 3.996,4, lên cao nhất 4.078,6 ngay sau FOMC rạng sáng 29/10, rồi rơi xuống 3.870,4 và đóng tuần 3.875,1 – mất 119,6 giá (−3,0%), mức đóng cửa thấp nhất hơn một năm. Riêng thứ Sáu mất 3,6%, phiên giảm mạnh nhất kể từ tháng 6.\nCả tuần chỉ kể một câu chuyện: Fed chưa xong việc. Fed giữ lãi 3,75–4,00% nhưng hai phiếu chống muốn tăng ngay, Chủ tịch Warsh không hứa gì cho tháng 12. Hôm sau GDP quý 3 ra 3,4%, PCE tháng 9 lên 3,6% – kinh tế còn nóng, lạm phát chưa chịu hạ. Tối thứ Sáu Musalem nói thắt chặt thêm là cần thiết «và sớm», FedWatch vẫn đặt khoảng 75% khả năng tăng lãi tháng 12. Dầu châm thêm lửa: thêm một tàu chở dầu bị tấn công ở eo Hormuz, giá dầu tăng hơn 2% trong phiên thứ Sáu.\nĐiều đáng chú ý nhất nằm ở phiên cuối tuần: lợi suất 10 năm giảm về 4,93%, DXY đi ngang 101,96, vậy mà vàng vẫn rơi 145 giá. Cổ phiếu công nghệ bị bán mạnh (S&P 500 −1,8%), dòng thanh lý kéo cả vàng lẫn bạc (bạc −6,7%). Khi USD và lợi suất cùng hạ mà vàng không giữ nổi giá, phe mua đang yếu thật.\nQuan điểm: xu hướng giảm còn nguyên, vùng 3.900–3.965 – nơi cú xả thứ Sáu để lại khoảng trống giá – giờ là vùng cung. Tuần tới ưu tiên bán hồi, chưa bắt đáy khi chưa về vùng hỗ trợ sâu 3.800–3.815. Trong nước, SJC phiên 30/10 ở 138,4–141,4 triệu đồng/lượng, sẽ còn chịu sức ép theo giá thế giới.",
+    "text": "Tuần 26–30/10 vàng mở cửa 3.996,4, lên cao nhất 4.078,6 ngay sau FOMC rạng sáng 29/10, rồi rơi xuống 3.870,4 và đóng tuần 3.875,1 – mất 119,6 giá (−3,0%), mức đóng cửa thấp nhất hơn một năm. Riêng thứ Sáu mất 3,6%, phiên giảm mạnh nhất kể từ tháng 6.\nFed giữ lãi 3,75–4,00% nhưng hai phiếu chống muốn tăng ngay, Chủ tịch Warsh không hứa gì cho tháng 12. Hôm sau GDP quý 3 ra 3,4%, PCE tháng 9 lên 3,6%. Tối thứ Sáu Musalem nói cần thắt chặt thêm «và sớm». Thêm một tàu chở dầu bị tấn công ở eo Hormuz, dầu tăng hơn 2% trong phiên thứ Sáu.\nĐáng chú ý nhất là phiên cuối tuần: lợi suất 10 năm giảm về 4,93%, DXY đi ngang 101,96, vậy mà vàng vẫn rơi 145 giá. Cổ phiếu công nghệ bị bán mạnh (S&P 500 −1,8%), dòng thanh lý kéo cả vàng lẫn bạc (bạc −6,7%). USD và lợi suất cùng hạ mà vàng không giữ nổi giá – phe mua đang yếu thật.\nTrong nước, SJC phiên 30/10 ở 138,4–141,4 triệu đồng/lượng, sẽ còn chịu sức ép theo giá thế giới.",
     "chips": [
      {
       "k": "XAU",
@@ -140,7 +125,7 @@
     ]
    },
    "market_picture_en": {
-    "text": "Gold opened the week of Oct. 26 at 3,996.39, tagged its high of 4,078.59 right after Wednesday's Fed decision, then slid to 3,870.41 and closed at 3,875.06 – down $119.59 (−3.0%) and its lowest close in more than a year. Friday alone took off 3.6%, the biggest one-day drop since June.\nThe whole week told one story: the Fed isn't done. The FOMC held at 3.75%–4.00%, but two members dissented in favor of a hike and Chair Warsh offered no guidance on December. A day later Q3 GDP came in at 3.4% and September PCE ran 3.6% – a hot economy with inflation that won't cool. Friday, St. Louis Fed President Musalem said more tightening is needed \"and soon,\" and FedWatch still prices roughly 75% odds of a December hike. Crude piled on: another tanker attack in the Strait of Hormuz lifted oil more than 2% on Friday.\nHere's the tell: on Friday the 10-year slipped to 4.93% and the dollar index sat flat at 101.96, and gold still dropped $145. A tech-led stock rout (S&P 500 −1.8%) triggered liquidation across metals, with silver down 6.7%. When gold can't hold up on a softer dollar and lower yields, the bulls are in real trouble.\nMy take: the downtrend is intact, and the 3,900–3,965 gap left by Friday's flush is now supply. Next week I'm selling bounces and I'm not bottom-fishing until we reach the 3,800–3,815 support.",
+    "text": "Gold opened the week of Oct. 26 at 3,996.39, tagged its high of 4,078.59 right after Wednesday's Fed decision, then slid to 3,870.41 and closed at 3,875.06 – down $119.59 (−3.0%) and its lowest close in more than a year. Friday alone took off 3.6%, the biggest one-day drop since June.\nThe Fed held at 3.75%–4.00%, but two dissenters wanted a hike now and Chair Warsh offered nothing on December. Third-quarter GDP came in at 3.4% the next morning and September PCE inflation ran 3.6%. On Friday night St. Louis Fed President Musalem said more tightening is needed \"soon.\" Another tanker was hit near the Strait of Hormuz, and crude added more than 2% Friday.\nThe tell came Friday: the 10-year yield eased to 4.93% and the dollar index sat flat at 101.96, yet gold still fell $145. Tech led a broad equity selloff (S&P 500 −1.8%), and the liquidation dragged gold and silver (−6.7%) down with it. When gold can't hold up with yields and the dollar both lower, buyers are genuinely weak.",
     "chips": [
      {
       "k": "XAU",
@@ -220,8 +205,8 @@
    },
    "physicalAdvice": "Làm theo kế hoạch, đừng chạy theo nến tin.",
    "physicalAdvice_en": "Trade the plan, not the noise.",
-   "notes": "Các mốc là giá giao ngay XAU/USD (CNBC XAU=). Tuần 26–30/10: mở 3.996,4 · cao 4.078,6 (03:00 29/10) · thấp 3.870,4 (02:45 31/10) · đóng 3.875,1; tuần trước đóng 3.994,7. Fibonacci kéo từ đỉnh tuần 4.078,6 tới đáy 3.870,4. FVG chưa lấp – 4H: 3.902,4–3.964,0 · 4.041,1–4.050,5; 2H: 3.923,0–3.964,0 · 3.902,4–3.916,6; ngày: 4.025,4–4.028,1 · 4.032,6–4.106,1 (lấp tới 4.078,6). Kết quả kế hoạch theo nhật ký H79 (nến 5m CNBC XAU=).",
-   "notes_en": "Levels are spot XAU/USD (CNBC XAU=). Week of Oct 26–30: open 3,996.39 · high 4,078.59 (Wed 4:00 PM ET) · low 3,870.41 (Fri 3:45 PM ET) · close 3,875.06; prior weekly close 3,994.65. Fibonacci drawn from the 4,078.59 weekly high to the 3,870.41 low. Unfilled gaps – 4H: 3,902.4–3,964.0 · 4,041.1–4,050.5; 2H: 3,923.0–3,964.0 · 3,902.4–3,916.6; daily: 4,025.4–4,028.1 · 4,032.6–4,106.1 (filled to 4,078.59). Plan results from the H79 trade log (CNBC XAU= 5-minute bars).",
+   "notes": "Các mốc là giá giao ngay XAU/USD (CNBC XAU=). Tuần 26–30/10: mở 3.996,4 · cao 4.078,6 (03:00 29/10) · thấp 3.870,4 (02:45 31/10) · đóng 3.875,1; tuần trước đóng 3.994,7. Tháng 10: 4.156,2 → 3.875,1 (−6,8%). Đỉnh thấp dần: 4.694,8 (25/8) · 4.509,9 (3/9) · 4.224,0 (2/10) · 4.153,5 (20/10) · 4.078,6 (29/10). Fibonacci sóng tăng 2.613,9 (1/2025) → 5.585,3 (29/1/2026): 50% 4.099,6 · 61,8% 3.749,0. FVG chưa lấp – 4H 3.902,4–3.964,0; ngày 4.078,6–4.106,1. Đáy tháng 6/2026 3.943,3; đáy tháng 10/2025 3.820,4; đỉnh tháng 4/2025 3.498,2.",
+   "notes_en": "Levels are spot XAU/USD (CNBC XAU=). Week of Oct. 26–30: open 3,996.39 · high 4,078.59 (Wed. 4:00 PM ET) · low 3,870.41 (Fri. 3:45 PM ET) · close 3,875.06; prior weekly close 3,994.65. October: 4,156.24 → 3,875.06 (−6.8%). Lower highs: 4,694.84 (Aug. 25) · 4,509.89 (Sept. 3) · 4,223.95 (Oct. 2) · 4,153.48 (Oct. 20) · 4,078.59 (Oct. 28). Fibonacci of the 2,613.93 (Jan. 2025) → 5,585.33 (Jan. 29, 2026) rally: 50% 4,099.6 · 61.8% 3,749.0. Unfilled gaps – 4H 3,902.4–3,964.0; daily 4,078.6–4,106.1. June 2026 low 3,943.30; October 2025 low 3,820.4; April 2025 high 3,498.2.",
    "dataTime": "Số liệu chốt sau phiên đóng cửa tuần 30/10/2026 (04:00 thứ Bảy 31/10 giờ VN). Nến ngày, 1H và 5m giao ngay CNBC XAU=; DXY, US10Y, US2Y, S&P 500, bạc từ CNBC; FedWatch theo FXStreet; lịch tin ForexFactory.",
    "dataTime_en": "Data as of the weekly close, Friday Oct 30, 2026 (5:00 PM ET). Daily, hourly and 5-minute spot bars from CNBC XAU=; DXY, 10- and 2-year yields, S&P 500 and silver from CNBC; FedWatch odds via FXStreet; calendar from ForexFactory.",
    "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
@@ -229,26 +214,10 @@
    "brief": true,
    "summary": {
     "trend": "down",
-    "trendText": "Trung hạn giảm – Fed nghiêng tăng lãi, PCE 3,6%, vàng mất 3% và đóng tuần ở đáy 1 năm 3.875; tuần tới bán hồi ở 3.945–3.955, chỉ mua nhịp ngắn ở 3.800–3.815 khi có nến xác nhận",
-    "trendText_en": "Intermediate-term bearish – a hike-leaning Fed and 3.6% PCE sent gold down 3% to a one-year-low close at 3,875; next week sell a bounce into 3,945–3,955, buy only a quick flush into 3,800–3,815 on a confirming close",
-    "sell": {
-     "zone": "3.945 – 3.955",
-     "sl": "3.978",
-     "tp": "3.905 → 3.872 → 3.815",
-     "zone_en": "3,945–3,955",
-     "sl_en": "3,978",
-     "tp_en": "TP1 3,905 → TP2 3,872 → TP3 3,815"
-    },
-    "buy": {
-     "zone": "3.800 – 3.815",
-     "sl": "3.780",
-     "tp": "3.850 → 3.872",
-     "zone_en": "3,800–3,815",
-     "sl_en": "3,780",
-     "tp_en": "TP1 3,850 → TP2 3,872"
-    },
-    "note": "Tin đỏ Mỹ: thứ Ba 3/11 bầu cử giữa kỳ (kết quả từ sáng 4/11 giờ VN); 20:30 thứ Sáu 6/11 NFP, thất nghiệp, lương giờ. Từ 2/11 tin Mỹ ra muộn hơn 1 tiếng. Chỉ vào khi chạm vùng + nến 1H/4H đóng xác nhận; dời SL hòa vốn khi chạm TP1. Nến 4H đóng trên 3.978 bỏ bán; dưới 3.780 bỏ mua.",
-    "note_en": "High-impact U.S. events: midterm elections Tue Nov. 3 (results overnight); October payrolls, unemployment rate and hourly earnings Fri Nov. 6, 8:30 AM ET. Only on a zone tap plus a confirming 1H/4H close; stops to breakeven at TP1. A 4H close above 3,978 cancels the short; under 3,780 cancels the long.",
+    "trendText": "Xu hướng giảm còn nguyên – đỉnh thấp dần từ 4.695, nền 4.100–4.150 đã gãy, vàng đóng tuần ở đáy 1 năm 3.875; Fed nghiêng tăng lãi, lạm phát dai dẳng. Mục tiêu lớn 3.600–3.500, tiến trình đang diễn ra trong tháng 11 – chặng cuối năm của quý IV",
+    "trendText_en": "Downtrend intact – lower highs since 4,695, a broken 4,100–4,150 base and a one-year-low close at 3,875; a hike-leaning Fed and sticky inflation back it up. Our 3,600–3,500 target stands, with November opening the year-end leg of Q4",
+    "note": "Theo dõi tuần 2–6/11 (giờ VN): thứ Ba 3/11 bầu cử giữa kỳ Mỹ (kết quả từ sáng 4/11); 20:30 thứ Sáu 6/11 NFP, tỷ lệ thất nghiệp, lương giờ. Từ 2/11 Mỹ dùng giờ mùa đông, tin Mỹ ra muộn hơn 1 tiếng.",
+    "note_en": "Midterm elections Tue. Nov. 3 (results overnight); October payrolls, unemployment rate and hourly earnings Fri. Nov. 6, 8:30 AM ET.",
     "price": "spot",
     "priceNote": "Giá giao ngay XAU/USD",
     "priceNote_en": "Spot XAU/USD prices"
@@ -256,16 +225,28 @@
    "article": {
     "sections": [
      {
-      "h": "Nhìn lại kế hoạch tuần",
-      "p": "Hai lệnh ăn chính của tuần là BÁN 4.062–4.068 (nhận định chung 28/10, vào sau nến FOMC đóng đỏ 4.066,8) và BÁN phá vỡ 4.028–4.035 (29/10) – cả hai chạy hết mục tiêu về 3.900; đầu tuần có thêm hai lệnh phiên 26/10 chạm TP. Vùng bán tuần 4.028–4.040 bị hủy khi nến 4H tối 27/10 đóng 4.062,8 trên 4.060, còn vùng bán 4.075–4.085 (29/10) giá không quay lại, tiếc là không có vị thế vào lệnh ở đó. Vùng mua 3.900–3.918 không có nến đảo chiều rõ nên đứng ngoài khi giá xuyên xuống 3.870."
+      "h": "Tuần 26–30/10 tóm gọn",
+      "p": "Vàng mở tuần 3.996,4, lên cao nhất 4.078,6 ngay sau FOMC rạng sáng 29/10 rồi bị bán ngược, chạm đáy 3.870,4 và đóng tuần 3.875,1. Cả tuần mất 119,6 giá (−3,0%), riêng thứ Sáu −3,6% – mức đóng cửa thấp nhất hơn một năm. Tháng 10 khép lại ở mức giảm 6,8% (4.156,2 → 3.875,1), tháng giảm thứ hai liên tiếp. Nhận định nghiêng giảm từ tuần trước đã đi đúng hướng: giá về và xuyên qua mốc 3.900."
      },
      {
-      "h": "Mốc giá và kịch bản tuần 2–6/11",
-      "p": "Kháng cự: 3.902–3.920 (mép dưới FVG 4H + Fib 23,6% 3.919,5) · 3.945–3.964 (FVG 2H/4H + Fib 38,2% 3.949,9) · 3.974,5 (Fib 50%) · 3.999 (Fib 61,8%) · 4.025–4.034 (FVG ngày + Fib 78,6%)\nHỗ trợ: 3.870 (đáy tuần) · 3.814 (Fib 127,2%) · 3.800 · 3.780 · 3.742 (Fib 161,8%)\n🔻 Chính (~55%): đầu tuần hồi kỹ thuật lên 3.920–3.955, bị bán lại, thủng 3.870 rồi về 3.815–3.800 trước NFP.\n🔺 Phụ (~30%): không có nhịp hồi, giá rơi thẳng về 3.800–3.815 – chỉ mua nhịp ngắn khi có nến xanh, mục tiêu 3.850–3.872.\n⚠️ Vô hiệu (~15%): nến 4H đóng trên 3.978 – bỏ bán, mốc kế 3.999 rồi 4.025–4.034."
+      "h": "Kỹ thuật: xu hướng giảm đã thành hình rõ",
+      "p": "Từ đỉnh 4.694,8 ngày 25/8, mỗi nhịp hồi đều dừng thấp hơn nhịp trước: 4.509,9 (3/9) → 4.224,0 (2/10) → 4.153,5 (20/10) → 4.078,6 (sau FOMC). Đáy cũng thấp dần: 4.068,8 đầu tháng 10, 3.978,1 tuần trước, nay 3.870,4.\nNền 4.100–4.150 – vùng đỡ giá suốt tháng 9 và tháng 10 – đã gãy, trùng với Fib 50% của cả sóng tăng 2.614 → 5.585 (1/2025 – 1/2026) ở 4.100. Tuần này giá thủng luôn đáy tháng 6 là 3.943, mốc đã giữ giá cả mùa hè.\nPhía trên, khoảng trống giá (FVG) 4H 3.902–3.964 do cú xả thứ Sáu để lại và FVG ngày 4.079–4.106 giờ là vùng cung. Muốn nói đến đảo chiều, giá phải lấy lại 4.100 – hiện chưa có dấu hiệu.\nPhía dưới, mốc kế tiếp là đáy tháng 10/2025 quanh 3.820, rồi Fib 61,8% của cả sóng tăng ở 3.749. Xa hơn là 3.600–3.500, nằm sát trên vùng đi ngang tháng 4–8/2025 (đỉnh 3.435–3.500) – điểm xuất phát của cú bứt phá tháng 9/2025."
      },
      {
-      "h": "📋 Kế hoạch dự trù tuần 2–6/11",
-      "p": "🔴 BÁN 3.945 – 3.955 | SL 3.978 | TP 3.905 → 3.872 → 3.815\n🟢 MUA 3.800 – 3.815 (nhịp ngắn, vào nhỏ) | SL 3.780 | TP 3.850 → 3.872\nVào lệnh: chạm vùng + nến 1H/4H đóng xác nhận (đỏ để bán, xanh để mua). Không bán đuổi dưới 3.870.\nVô hiệu: nến 4H đóng trên 3.978 bỏ bán; nến 4H đóng dưới 3.780 bỏ mua – mốc kế 3.742.\nTin đỏ Mỹ (giờ VN): thứ Ba 3/11 bầu cử giữa kỳ – kết quả ra dần từ sáng thứ Tư 4/11, giá dễ giật mạnh. 20:30 thứ Sáu 6/11 bảng lương phi nông nghiệp tháng 10 (dự báo +63K, trước +29K), tỷ lệ thất nghiệp (dự báo 4,2%), lương giờ (dự báo +0,3%). Tin cam: 22:00 thứ Hai 2/11 ISM sản xuất, 22:00 thứ Tư 4/11 ISM dịch vụ.\nLưu ý: từ 2/11 Mỹ dùng giờ mùa đông, tin Mỹ ra muộn hơn 1 tiếng so với tuần trước (8:30 ET = 20:30 VN). Không mở lệnh mới 30 phút quanh tin; chạm TP1 chốt 50–70%, dời SL hòa vốn."
+      "h": "Tin tức – vĩ mô: Fed chưa xong việc",
+      "p": "Fed giữ lãi nhưng có hai phiếu muốn tăng ngay, GDP quý 3 tăng 3,4%, PCE 3,6% – kinh tế còn nóng, lạm phát dai dẳng. FedWatch đặt khoảng 75% khả năng tăng lãi tháng 12. Lợi suất 10 năm 4,93% trong khi lạm phát 3,6%, tức lợi suất thực vẫn dương rõ – giữ vàng, tài sản không sinh lãi, ngày càng tốn kém. USD giữ quanh 102 điểm. Dầu tăng vì căng thẳng Hormuz chỉ làm rủi ro lạm phát nặng thêm, không kéo được dòng tiền trú ẩn về vàng. Khi cổ phiếu công nghệ bị bán, vàng bị thanh lý cùng: lúc này vàng là chỗ lấy tiền, không phải chỗ trú ẩn."
+     },
+     {
+      "h": "Tháng 11: mở màn chặng cuối năm",
+      "p": "Mục tiêu 3.600–3.500 H79 đặt ra từ khi giá thủng nền 4.100–4.150 vẫn giữ nguyên, và tiến trình đó đang diễn ra. Tháng 11 mở màn chặng cuối của quý IV: Fed họp tháng 12 với khả năng tăng lãi cao, các quỹ cân đối lại danh mục cuối năm – bối cảnh dễ kéo dài nhịp giảm khi lãi suất còn ở thế đi lên. Những nhịp hồi lên vùng 3.902–3.964 nếu có chỉ là hồi kỹ thuật trong xu hướng giảm. Xu hướng chỉ đổi khi giá lấy lại 4.100 và Fed đổi giọng."
+     },
+     {
+      "h": "Lịch cần theo dõi tuần 2–6/11 (giờ VN)",
+      "p": "22:00 thứ Hai 2/11: ISM sản xuất.\nThứ Ba 3/11: bầu cử giữa kỳ Mỹ – kết quả ra dần từ sáng thứ Tư 4/11, giá dễ giật mạnh.\n22:00 thứ Tư 4/11: ISM dịch vụ.\n20:30 thứ Sáu 6/11: bảng lương phi nông nghiệp tháng 10 (dự báo +63K, trước +29K), tỷ lệ thất nghiệp (dự báo 4,2%), lương giờ (dự báo +0,3%). Việc làm mạnh sẽ thêm lý do cho Fed tăng lãi tháng 12.\nTừ 2/11 Mỹ dùng giờ mùa đông, tin Mỹ ra muộn hơn 1 tiếng so với tuần trước."
+     },
+     {
+      "h": "Cuối tuần",
+      "p": "Chúc anh em trader cuối tuần vui vẻ, nghỉ ngơi đầy năng lượng cho tuần mới.\nLàm theo kế hoạch, đừng chạy theo nến tin."
      }
     ],
     "sources": [
@@ -306,16 +287,28 @@
    "article_en": {
     "sections": [
      {
-      "h": "How this week's plans played out",
-      "p": "The two big winners were the 4,062–4,068 short from the Oct. 28 outlook (filled on the red post-FOMC close at 4,066.8) and the 4,028–4,035 break-and-retest short from Oct. 29 – both ran all the way to 3,900; two session trades on Oct. 26 also hit their targets. The weekly 4,028–4,040 short was canceled when a 4H bar closed at 4,062.8 above 4,060 on Tuesday, and price never came back to the Oct. 29 sell zone at 4,075–4,085, so no position there. The 3,900–3,918 long never printed a clean reversal, so we stayed out as gold sliced to 3,870."
+      "h": "The week in brief",
+      "p": "Gold opened at 3,996.39, spiked to 4,078.59 right after Wednesday's Fed decision, got sold back down to 3,870.41 and closed at 3,875.06. That's $119.59 lower on the week (−3.0%), with Friday alone down 3.6% – the lowest close in more than a year. October finished down 6.8% (4,156.24 → 3,875.06), a second straight monthly loss. Last week's bearish call played out, with price driving through 3,900."
      },
      {
-      "h": "Key levels and scenarios for the week of Nov. 2",
-      "p": "Resistance: 3,902–3,920 (bottom of the 4H gap + 23.6% Fib at 3,919.5) · 3,945–3,964 (2H/4H gap + 38.2% Fib at 3,949.9) · 3,974.5 (50% Fib) · 3,999 (61.8% Fib) · 4,025–4,034 (daily gap + 78.6% Fib)\nSupport: 3,870 (weekly low) · 3,814 (127.2% extension) · 3,800 · 3,780 · 3,742 (161.8% extension)\n🔻 Base case (~55%): an early-week bounce into 3,920–3,955 gets sold, 3,870 gives way, then 3,815–3,800 before payrolls.\n🔺 Alternative (~30%): no bounce, a straight drop into 3,800–3,815 – buy only a quick pop on a green close, targeting 3,850–3,872.\n⚠️ Invalidation (~15%): a 4H close above 3,978 shelves the short; next up 3,999, then 4,025–4,034."
+      "h": "Technicals: the downtrend is well defined",
+      "p": "Since the Aug. 25 peak at 4,694.84, every rally has stalled below the last one: 4,509.89 (Sept. 3), 4,223.95 (Oct. 2), 4,153.48 (Oct. 20) and 4,078.59 after the Fed. Lows keep stepping down too: 4,068.8 in early October, 3,978.1 last week, 3,870.41 now.\nThe 4,100–4,150 base that held through September and October is broken, and it lines up with the 50% retracement of the entire 2,614 → 5,585 rally (January 2025 – January 2026) at 4,100. This week also took out June's 3,943 low, the level that held all summer.\nOverhead, the 3,902–3,964 4H fair value gap left by Friday's flush and the 4,079–4,106 daily gap now act as supply. Any talk of a reversal starts with reclaiming 4,100, and there's no sign of that.\nBelow, the next marker is the October 2025 low near 3,820, then the 61.8% retracement at 3,749. Beyond that sits 3,600–3,500, just above the April–August 2025 range (tops at 3,435–3,500) that launched the September 2025 breakout."
      },
      {
-      "h": "📋 Contingency plan for the week of Nov. 2",
-      "p": "🔴 SELL 3,945–3,955 | Stop 3,978 | Targets 3,905 → 3,872 → 3,815\n🟢 BUY 3,800–3,815 (quick trade, small size) | Stop 3,780 | Targets 3,850 → 3,872\nEntry: price taps the zone and a 1H or 4H bar closes in our favor (red to sell, green to buy). No chasing shorts under 3,870.\nInvalidation: a 4H close above 3,978 cancels the short; a 4H close under 3,780 cancels the long – next down 3,742.\nHigh-impact U.S. events (ET): Tue Nov. 3 – midterm elections, with results rolling in overnight, so expect a jumpy tape. Fri Nov. 6, 8:30 AM – October payrolls (est. +63K, prior +29K), unemployment rate (est. 4.2%), average hourly earnings (est. +0.3%). Also on watch: ISM manufacturing Mon 10:00 AM and ISM services Wed 10:00 AM.\nNote: no new trades 30 minutes either side of the data; take 50–70% at TP1 and move the stop to breakeven."
+      "h": "Macro: the Fed isn't done",
+      "p": "The Fed held, but two members wanted a hike now; GDP grew 3.4% and PCE inflation hit 3.6% – the economy is running hot and inflation is sticky. FedWatch puts the odds of a December hike near 75%. With the 10-year at 4.93% against 3.6% inflation, real yields are clearly positive, which makes holding a non-yielding asset like gold more expensive. The dollar is holding around 102. Hormuz-driven crude strength adds to the inflation risk rather than pulling haven money into gold. And when tech sells off, gold gets liquidated alongside it – right now it's a source of cash, not a haven."
+     },
+     {
+      "h": "November opens the year-end leg",
+      "p": "Our 3,600–3,500 target, set when gold broke the 4,100–4,150 base, stands, and that move is under way. November opens the final stretch of Q4: a December Fed meeting with a live hike, plus year-end portfolio rebalancing – a backdrop that can extend the decline while rates are still pointed higher. Bounces into 3,902–3,964 would be technical rallies inside a downtrend. The trend only turns if gold reclaims 4,100 and the Fed changes its tune."
+     },
+     {
+      "h": "What to watch, Nov. 2–6 (ET)",
+      "p": "Mon. Nov. 2, 10:00 AM: ISM manufacturing.\nTue. Nov. 3: U.S. midterm elections – results come in overnight, so expect sharp swings.\nWed. Nov. 4, 10:00 AM: ISM services.\nFri. Nov. 6, 8:30 AM: October payrolls (consensus +63K, prior +29K), unemployment rate (4.2% expected) and average hourly earnings (+0.3% expected). A strong jobs number adds to the case for a December hike."
+     },
+     {
+      "h": "Weekend",
+      "p": "Have a great weekend, traders.\nTrade the plan, not the noise."
      }
     ],
     "sources": [
@@ -353,8 +346,8 @@
      }
     ]
    },
-   "title": "Tổng kết tuần 26–30/10: vàng mất 3%, thủng 3.900 về đáy 1 năm – tuần tới BÁN hồi 3.945–3.955, chờ bầu cử Mỹ và NFP",
-   "title_en": "H79 Gold Weekly Recap, Oct. 26–30: Gold Drops 3% to a One-Year Low Under $3,900 – Next Week Sell 3,945–3,955 Into the Midterms and Payrolls",
+   "title": "Tổng kết tuần 26–30/10: vàng mất 3%, đóng tuần đáy 1 năm 3.875 – xu hướng giảm còn nguyên, tháng 11 mở màn chặng về 3.600–3.500",
+   "title_en": "H79 Gold Weekly Recap, Oct. 26–30: Gold Drops 3% to a One-Year Low – The Downtrend Holds as November Opens the Leg Toward $3,600–$3,500",
    "telegram_sent": {
     "at": "2026-11-01T07:26:16+07:00",
     "chat": "-1001396622973",
