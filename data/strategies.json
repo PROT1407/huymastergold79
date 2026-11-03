@@ -1,6 +1,195 @@
 {
  "strategies": [
   {
+   "id": "2026-11-03-nhan-dinh-chung",
+   "date": "2026-11-03",
+   "time": "09:12",
+   "session": "Nhận định chung",
+   "session_en": "Daily Outlook",
+   "url": "bai/2026-11-03-nhan-dinh-vang-nhan-dinh-chung-0912.html",
+   "url_en": "en/posts/2026-11-03-gold-plan-daily-outlook-0912.html",
+   "headline": "Vàng 3/11 nhận định chung: hồi hụt dưới 4.000 – bên bán vẫn giữ thế",
+   "headline_en": "H79 Gold Plan – Daily Outlook, Nov 3: Monday's Bounce Stalls Under 4,000 – Sellers Still in Control",
+   "title": "Vàng 3/11 nhận định chung: hồi hụt dưới 4.000 – bên bán vẫn giữ thế",
+   "title_en": "H79 Gold Plan – Daily Outlook, Nov 3: Monday's Bounce Stalls Under 4,000 – Sellers Still in Control",
+   "image": "img/charts/gold-2026-11-03-nhan-dinh-chung.jpg",
+   "image_alt": "Biểu đồ vàng 1 giờ 3/11: đỉnh thấp dần 4.078,6 → 3.969,4 (thứ Hai, chưa chạm 4.000) → 3.962,5 (phiên Á) trong kênh giảm song song; kháng cự 3.970–4.000, vô hiệu khi đóng vững trên 4.000; mục tiêu 3.892–3.876 (đáy tuần trước 3.870,4) → 3.842 → 3.812–3.791; dài hạn 3.600–3.500",
+   "image_en": "img/charts/gold-2026-11-03-daily-outlook.jpg",
+   "image_alt_en": "Gold 1-hour chart Nov 3: lower highs 4,078.6 → 3,969.4 (Monday, never tagged 4,000) → 3,962.5 (Asia) inside a descending parallel channel; resistance 3,970–4,000, view invalid on a firm close above 4,000; targets 3,892–3,876 (last week's low 3,870.4) → 3,842 → 3,812–3,791; long-term 3,600–3,500",
+   "trend": "Xu hướng giảm khung lớn được củng cố: giá đi trong kênh giảm từ 4.078,6, nhịp hồi thứ Hai dừng ở cạnh trên 3.969, chưa chạm 4.000 rồi bị bán lại. Vùng 3.970–4.000 là cản chính; kỳ vọng test lại 3.892–3.876, thủng thì 3.842 rồi 3.812–3.791; dài hạn 3.600–3.500. Đóng vững trên 4.000 thì bỏ quan điểm bán.",
+   "trend_en": "The bigger-picture downtrend is reinforced: gold is in a descending channel from 4,078.6 and Monday's bounce stalled at the upper edge, 3,969,, never tagged 4,000 and was sold. 3,970–4,000 is the key resistance; expect a retest of 3,892–3,876, then 3,842 and 3,812–3,791 on a break; long-term 3,600–3,500. A firm close above 4,000 voids the bearish view.",
+   "trendType": "down",
+   "support": [
+    3892,
+    3876,
+    3870,
+    3842,
+    3812,
+    3791
+   ],
+   "resistance": [
+    3970,
+    3990,
+    4000,
+    4035
+   ],
+   "scenarios": [
+    "Cấu trúc: từ đỉnh 4.078,6 (29/10) giá đi trong một kênh giảm song song. Nhịp hồi thứ Hai chạm hai lần quanh 3.969 – sát cạnh trên của kênh, ngay dưới 4.000 – rồi lùi; phiên Á sáng nay chỉ hồi tới 3.962,5, thêm một đỉnh thấp hơn. Cạnh dưới kênh nằm quanh đáy tuần trước 3.870, thủng xuống thì mở đường về 3.842 và 3.812–3.791.",
+    "Vùng 3.970–4.000 có nhiều lớp cản chồng nhau: mốc tâm lý 4.000, Fib 50–61,8% của nhịp giảm 4.078,6 → 3.870,4 (3.974–3.999) và vùng giá từng bị bán mạnh cuối tháng 10. Kitco cũng đặt kháng cự gần 3.978.",
+    "Động lượng: RSI 1H đạt đỉnh quanh 63 lúc giá chạm 3.969 rồi lùi về quanh 55 dù phiên Á hồi lại – nhịp hồi yếu dần. RSI 4H dưới 50; RSI ngày quanh 37, vừa thoát vùng quá bán chứ chưa phải đảo chiều.",
+    "Thanh khoản: 3.892–3.876 là vùng đi ngang phiên Á–Âu thứ Hai và giá đóng tuần trước; ngay dưới là đáy 3.870,4, nơi lệnh dừng của bên mua dễ tập trung. Thủng gọn vùng này thì 3.842 và 3.812–3.791 (vùng đáy cuối tháng 9 – đầu tháng 10/2025) là các nấc kế tiếp.",
+    "Lưu ý: giá vừa rơi nhanh về đáy tuần trước nên nhịp hồi kỹ thuật có thể kéo thêm vào vùng cản trước khi giảm tiếp – chờ giá lên vùng thay vì bán đuổi. Vô hiệu: nến 4H đóng vững trên 4.000.",
+    "Lịch tin (giờ VN): bầu cử giữa kỳ Mỹ hôm nay 3/11, kết quả ra dần từ sáng 4/11 · JOLTS 22:00 tối nay · ISM dịch vụ 22:00 thứ Tư 4/11 · NFP 20:30 thứ Sáu 6/11."
+   ],
+   "scenarios_en": [
+    "Structure: since the 4,078.6 high (Oct 29) gold has traded inside a descending parallel channel. Monday's bounce tapped ~3,969 twice — the upper edge, just under 4,000 — and backed off; Asia this morning only reached 3,962.5, another lower high. The lower edge sits around last week's 3,870 low; a break below opens 3,842 and 3,812–3,791.",
+    "3,970–4,000 stacks several layers: the 4,000 handle, the 50%–61.8% retracement of the 4,078.6 → 3,870.4 leg (3,974–3,999), and the area where sellers stepped in hard in late October. Kitco also flags resistance near 3,978.",
+    "Momentum: 1H RSI peaked near 63 at the 3,969 tag and slipped to about 55 even as Asia bounced — the rally is fading. 4H RSI is below 50; daily RSI near 37 is just out of oversold, not a reversal.",
+    "Liquidity: 3,892–3,876 is Monday's Asia/London range and last week's close; just below sits the 3,870.4 low, where long stops tend to cluster. A clean break opens 3,842 and 3,812–3,791 (the late-Sept/early-Oct 2025 base).",
+    "Caveat: price just dropped fast into last week's low, so the technical bounce can stretch into resistance first — wait for the zone rather than chasing. Invalidation: a firm 4H close above 4,000.",
+    "Calendar (ET): midterms today, results overnight · JOLTS 10:00 AM today · ISM services 10:00 AM Wed · payrolls 8:30 AM Fri Nov 6."
+   ],
+   "macro": [],
+   "macro_en": [],
+   "market_picture": {
+    "text": "Nhịp hồi thứ Hai có lý do rõ ràng: dầu giảm khoảng 7–8% nhờ tin Iran–Qatar đàm phán, lợi suất 10 năm Mỹ lùi nhẹ về quanh 4,91%. Nhưng ngay cả với lực đỡ đó, vàng chỉ lên tới 3.969 rồi bị bán lại, cho thấy bên mua vẫn chưa đủ niềm tin. Nền lãi suất vẫn đè lên giá: FedWatch còn khoảng 73–75% khả năng Fed tăng lãi tháng 12, ISM sản xuất tháng 10 lên 55,5 với giá đầu vào 75,2 – lạm phát chưa nguội. Tuần này còn bầu cử giữa kỳ Mỹ (hôm nay), JOLTS 22:00 tối nay và bảng lương NFP 20:30 thứ Sáu 6/11; số việc làm mạnh sẽ thêm lý do để Fed cứng rắn và thêm sức ép lên vàng.",
+    "chips": [
+     {
+      "k": "XAU",
+      "v": "3.951,8 +0,11%",
+      "dir": "up"
+     },
+     {
+      "k": "DXY",
+      "v": "101,79",
+      "dir": "up"
+     },
+     {
+      "k": "US10Y",
+      "v": "4,915%",
+      "dir": "up"
+     },
+     {
+      "k": "FedWatch T12",
+      "v": "tăng 73,4%",
+      "dir": ""
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC (Reuters) – Vàng hồi từ đáy 1 năm nhờ dầu giảm; FedWatch ~75% khả năng tăng lãi tháng 12 (2/11)",
+      "url": "https://www.cnbc.com/2026/11/02/gold-rises-on-softer-oil-markets-parse-fed-signals.html"
+     },
+     {
+      "name": "CNBC – Lợi suất 10 năm Mỹ quanh 4,91% trước bầu cử giữa kỳ (2/11)",
+      "url": "https://www.cnbc.com/2026/11/02/us-treasury-yields-bonds.html"
+     },
+     {
+      "name": "Reuters (Investing.com) – ISM sản xuất tháng 10 lên 55,5, giá đầu vào vẫn cao 75,2 (2/11)",
+      "url": "https://www.investing.com/news/economy-news/us-manufacturing-picks-up-in-october-input-prices-stay-high-4992186"
+     },
+     {
+      "name": "The Edge Malaysia (Reuters) – Vàng nhích nhẹ phiên Á 3/11; FedWatch 73% khả năng tăng lãi tháng 12",
+      "url": "https://theedgemalaysia.com/node/824294"
+     },
+     {
+      "name": "Kitco PM – Vàng, bạc hồi sau đợt bán tháo tháng 10; kháng cự 3.978 rồi 4.035 (2/11)",
+      "url": "https://www.kitco.com/news/article/2026-11-02/gold-silver-recover-october-rout-oil-drops-fed-tightening-bets-persist"
+     },
+     {
+      "name": "ForexFactory – Lịch kinh tế tuần 2–6/11 (JOLTS, ISM dịch vụ, NFP)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "market_picture_en": {
+    "text": "Monday's bounce had a clear driver: oil fell roughly 7%–8% on Iran–Qatar talks and the U.S. 10-year yield eased to about 4.91%. Even with that tailwind, gold only reached 3,969 before sellers pushed it back — buyers still lack conviction. Rates remain the weight: FedWatch still prices about 73%–75% odds of a December hike, and October ISM manufacturing rose to 55.5 with prices paid at 75.2, so inflation isn't cooling. This week brings the midterms (today), JOLTS at 10:00 AM ET today and payrolls Friday at 8:30 AM ET; a strong jobs print would give the Fed more reason to stay hawkish and add pressure on gold.",
+    "chips": [
+     {
+      "k": "XAU",
+      "v": "3,951.8 +0.11%",
+      "dir": "up"
+     },
+     {
+      "k": "DXY",
+      "v": "101.79",
+      "dir": "up"
+     },
+     {
+      "k": "US10Y",
+      "v": "4.915%",
+      "dir": "up"
+     },
+     {
+      "k": "FedWatch Dec",
+      "v": "hike 73.4%",
+      "dir": ""
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC (Reuters) – Gold rises from one-year low on softer oil; FedWatch ~75% for a December hike (Nov 2)",
+      "url": "https://www.cnbc.com/2026/11/02/gold-rises-on-softer-oil-markets-parse-fed-signals.html"
+     },
+     {
+      "name": "CNBC – 10-year Treasury yield near 4.91% ahead of the midterms (Nov 2)",
+      "url": "https://www.cnbc.com/2026/11/02/us-treasury-yields-bonds.html"
+     },
+     {
+      "name": "Reuters via Investing.com – October ISM manufacturing 55.5, prices paid still high at 75.2 (Nov 2)",
+      "url": "https://www.investing.com/news/economy-news/us-manufacturing-picks-up-in-october-input-prices-stay-high-4992186"
+     },
+     {
+      "name": "The Edge Malaysia (Reuters) – Gold edges higher in Asia; FedWatch 73% for a December hike (Nov 3)",
+      "url": "https://theedgemalaysia.com/node/824294"
+     },
+     {
+      "name": "Kitco PM – Gold, silver recover from October rout; resistance 3,978 then 4,035 (Nov 2)",
+      "url": "https://www.kitco.com/news/article/2026-11-02/gold-silver-recover-october-rout-oil-drops-fed-tightening-bets-persist"
+     },
+     {
+      "name": "ForexFactory – Economic calendar, week of Nov 2 (JOLTS, ISM services, NFP)",
+      "url": "https://www.forexfactory.com/calendar"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "physicalAdvice": "Làm theo kế hoạch, đừng chạy theo nến tin.",
+   "physicalAdvice_en": "Trade the plan, not the noise.",
+   "notes": "Các mốc là giá giao ngay XAU/USD (CNBC XAU=). Tuần 26–30/10: cao 4.078,6 (03:00 29/10) · thấp 3.870,4 (02:45 31/10) · đóng 3.875,0. Thứ Hai 2/11: mở 3.874,95 · phiên Á–Âu đi ngang 3.889–3.914 · cao 3.969,4 (23:00–00:00 VN, chạm hai lần) · lùi về 3.938,9 lúc 03:00 VN 3/11. Phiên Á 3/11: hồi lên 3.962,5 (07:35) rồi về quanh 3.951,8 lúc 08:50. Fib nhịp 4.078,6 → 3.870,4: 38,2% 3.949,9 · 50% 3.974,5 · 61,8% 3.999,1. Mốc dưới: đáy 3/10/2025 3.838 · 2/10/2025 3.820 · 30/9/2025 3.794.",
+   "notes_en": "Levels are spot XAU/USD (CNBC XAU=). Week of Oct 26–30: high 4,078.6 · low 3,870.4 · close 3,875.0. Monday Nov 2: open 3,874.95 · Asia/London range 3,889–3,914 · high 3,969.4 (tapped twice ~noon–1 PM ET) · dip to 3,938.9 at 3 PM ET. Asia Nov 3: bounce to 3,962.5 then ~3,951.8 at 8:50 PM ET. Fibonacci of 4,078.6 → 3,870.4: 38.2% 3,949.9 · 50% 3,974.5 · 61.8% 3,999.1.",
+   "dataTime": "Cập nhật ~08:50 ngày 3/11/2026 giờ VN. Nến giao ngay CNBC XAU= (khoảng trống dữ liệu 08:00–12:00 VN 2/11 bù bằng GC=F trừ chênh lệch ~10,6); DXY, US10Y từ CNBC; xác suất Fed theo CME FedWatch (CNBC/Reuters/Investing.com); lịch tin ForexFactory.",
+   "dataTime_en": "Updated ~8:50 PM ET, Monday Nov 2, 2026. Spot from CNBC XAU= (Nov 2 Asia data gap filled with GC=F minus ~10.6 basis); DXY and US10Y from CNBC; Fed odds from CME FedWatch via CNBC/Reuters/Investing.com; calendar from ForexFactory.",
+   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+   "brief": true,
+   "summary": {
+    "trend": "down",
+    "trendText": "Giảm khung lớn còn nguyên – giá đi trong kênh giảm từ 4.078,6, nhịp hồi thứ Hai dừng ở cạnh trên 3.969, chưa chạm 4.000",
+    "trendText_en": "Bigger-picture downtrend intact – gold is in a descending channel from 4,078.6; Monday's bounce stalled at the upper edge, 3,969, never tagging 4,000",
+    "sell": {
+     "zone": "3.970 – 4.000",
+     "sl": "đóng vững trên 4.000",
+     "tp": "3.892–3.876 → 3.842 → 3.812–3.791",
+     "zone_en": "3,970–4,000",
+     "sl_en": "firm close above 4,000",
+     "tp_en": "3,892–3,876 → 3,842 → 3,812–3,791"
+    },
+    "note": "Dài hạn 3.600–3.500. Chỉ bán khi giá hồi vào vùng và có nến đỏ xác nhận, không bán đuổi giữa đường. Tin: JOLTS 22:00 tối nay, NFP 20:30 thứ Sáu.",
+    "note_en": "Long-term 3,600–3,500. Sell only a rally into the zone with a confirming red close; don't chase. Data: JOLTS 10:00 AM ET today, payrolls Fri 8:30 AM ET.",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD",
+    "priceNote_en": "Spot XAU/USD prices"
+   }
+  },
+  {
    "id": "2026-11-01-tong-ket-tuan",
    "date": "2026-11-01",
    "session": "Tổng kết tuần",
