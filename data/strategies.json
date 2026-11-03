@@ -1,6 +1,75 @@
 {
  "strategies": [
   {
+   "id": "2026-11-03-cap-nhat-cau-truc-2022",
+   "date": "2026-11-03",
+   "time": "20:22",
+   "session": "Cập nhật cấu trúc",
+   "session_en": "Structure Update",
+   "url": "bai/2026-11-03-nhan-dinh-vang-cap-nhat-cau-truc-2022.html",
+   "url_en": "en/posts/2026-11-03-gold-plan-structure-update-2022.html",
+   "headline": "Cập nhật vàng 3/11: cấu trúc giảm cũ đã thay đổi",
+   "headline_en": "H79 Gold Plan – Structure Update, Nov 3: The Old Down-Structure Has Changed",
+   "title": "Cập nhật vàng 3/11: cấu trúc giảm cũ đã thay đổi",
+   "title_en": "H79 Gold Plan – Structure Update, Nov 3: The Old Down-Structure Has Changed",
+   "image": "img/charts/gold-2026-11-03-cap-nhat-cau-truc.jpg",
+   "image_alt": "Biểu đồ vàng 4 giờ 3/11: giá giữ nền 3.884–3.900, đáy 3.894,9 cao hơn đáy tuần trước 3.870,4, ép lên cạnh trên cấu trúc giảm cũ; lộ trình kỳ vọng về test 3.999–4.022, kháng cự 4.042,5; xác nhận khi 3.900 giữ vững",
+   "image_en": "img/charts/gold-2026-11-03-structure-update.jpg",
+   "image_alt_en": "Gold 4-hour chart Nov 3: price holds the 3,884–3,900 base, 3,894.9 low above last week's 3,870.4, pressing the top of the old down-structure; expected path to test 3,999–4,022, resistance 4,042.5; confirmation while 3,900 holds",
+   "trend": "Cấu trúc giảm cũ không còn đúng: giá giữ nền 3.884–3.900, không tạo đáy mới. Khả năng hình thành đáy W để về test 3.999–4.022. Xác nhận khi nến H4 đóng xanh và 3.900 giữ vững; mất 3.884–3.900 thì quay lại hướng giảm.",
+   "trend_en": "The old down-structure no longer holds: price is holding the 3,884–3,900 base without a new low. A W-bottom could take it to test 3,999–4,022. Confirmed by a green 4H close with 3,900 holding; losing 3,884–3,900 puts the down path back on.",
+   "trendType": "up",
+   "support": [
+    3910,
+    3900,
+    3884
+   ],
+   "resistance": [
+    3999,
+    4022,
+    4042
+   ],
+   "scenarios": [
+    "Trạng thái: vàng giao ngay quanh 3.936 (20:15 VN), hồi lên từ đáy 3.895 chiều nay; nền 3.884–3.900 giữ thêm một lần, không thủng đáy tuần trước.",
+    "Cấu trúc thay đổi: nhịp giảm không tạo đáy mới mà để lại đáy sau cao hơn, cấu trúc giảm cũ không còn đúng. Giá ép lên cạnh trên nêm giảm, có khả năng hình thành đáy W về test 3.999–4.022.",
+    "Xác nhận: nến H4 đóng xanh và 3.900 giữ vững → tuần này có thể vững. Vô hiệu: mất 3.884–3.900.",
+    "Lịch tin (giờ VN): JOLTS 22:00 tối nay · bầu cử giữa kỳ Mỹ hôm nay · NFP 20:30 thứ Sáu 6/11."
+   ],
+   "scenarios_en": [
+    "Where we are: spot near 3,936 (8:15 AM ET), bouncing off this afternoon's 3,895 low; the 3,884–3,900 base held again and last week's low was never broken.",
+    "What changed: the drop made a higher low instead of a new low, so the old down-structure no longer holds. Price is pressing the top of the falling wedge; a W-bottom could test 3,999–4,022.",
+    "Confirmation: a green 4H close with 3,900 holding points to a firm week. Invalidation: losing 3,884–3,900.",
+    "Calendar (ET): JOLTS 10:00 AM today · US midterms today · payrolls Fri 8:30 AM."
+   ],
+   "macro": [],
+   "macro_en": [],
+   "notes": "Giá giao ngay XAU/USD (CNBC XAU=), 20:15 VN 3/11: 3.936,4 · phiên hôm nay cao 3.962,5 (07:35) · thấp 3.894,95 (16:00). Đáy tuần trước 3.870,4. GC=F 3.946,1.",
+   "notes_en": "Spot XAU/USD (CNBC XAU=), 8:15 AM ET Nov 3: 3,936.4 · session high 3,962.5 · low 3,894.95. Last week's low 3,870.4. GC=F 3,946.1.",
+   "dataTime": "Cập nhật ~20:15 ngày 3/11/2026 giờ VN. Nến giao ngay CNBC XAU=; đối chiếu GC=F (Yahoo/CNBC).",
+   "dataTime_en": "Updated ~8:15 AM ET, Tuesday Nov 3, 2026. Spot candles from CNBC XAU=; cross-checked with GC=F (Yahoo/CNBC).",
+   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+   "brief": true,
+   "summary": {
+    "trend": "up",
+    "trendText": "Cấu trúc giảm cũ đã thay đổi – nền 3.884–3.900 giữ vững, hướng test 3.999–4.022",
+    "trendText_en": "Old down-structure has changed – 3,884–3,900 base holding, eyes on 3,999–4,022",
+    "buy": {
+     "zone": "3.900 – 3.910",
+     "sl": "dưới 3.880",
+     "tp": "3.999–4.022",
+     "zone_en": "3,900–3,910",
+     "sl_en": "below 3,880",
+     "tp_en": "3,999–4,022"
+    },
+    "note": "Xác nhận: nến H4 đóng xanh, 3.900 giữ vững. Mất 3.884–3.900 thì quay lại hướng giảm. Tin: JOLTS 22:00 tối nay, NFP 20:30 thứ Sáu.",
+    "note_en": "Confirmation: green 4H close with 3,900 holding. Losing 3,884–3,900 puts the down path back on. Data: JOLTS 10:00 AM ET today, payrolls Fri 8:30 AM ET.",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD",
+    "priceNote_en": "Spot XAU/USD prices"
+   }
+  },
+  {
    "id": "2026-11-03-nhan-dinh-chung",
    "date": "2026-11-03",
    "time": "09:12",
