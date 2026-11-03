@@ -1,6 +1,6 @@
 {
   "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC | Chiến tranh | Ngân hàng TW. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
-  "updated": "2026-11-03",
+  "updated": "2026-11-04",
   "fomc": {
     "source": {
       "name": "Federal Reserve – FOMC calendars",
@@ -56,6 +56,126 @@
     "note_en": "Decision at 2:00 PM ET on day two of the meeting, press conference at 2:30 PM ET. * = with economic projections (dot plot)."
   },
   "items": [
+    {
+      "date": "2026-11-04",
+      "category": "Vàng",
+      "priority": 1,
+      "impact": "giảm",
+      "title": "Vàng lùi ~0,5–0,55% về quanh 3.924–3.927 USD; bạc −2,1% dưới 50 USD – JOLTS mạnh đẩy lợi suất/USD lên, dầu giảm chưa đủ đỡ",
+      "summary": "Kitco PM: spot vàng quanh 3.924,10 USD (−21,60; −0,55%), bạc quanh 49,450 USD (−1,076; −2,13%) cuối phiên Mỹ thứ Ba 3/11. CNBC: spot 3.927,49 (−0,5%), đáy phiên 3.893,31; futures vàng tháng 12 −0,8% về 3.936,80. Lực bán chính: JOLTS tháng 9 mạnh + đơn hàng nhà máy +1,8% → lợi suất 10 năm ~4,951% (+~6 bps) và USD dịu tăng. Dầu tiếp tục giảm nhưng không đủ bù lực đè từ lãi suất. Thị trường chờ kết quả bầu cử giữa kỳ Mỹ và chuỗi việc làm (ADP/ISM dịch vụ thứ Tư; NFP thứ Sáu).",
+      "reason": "Ngắn hạn: nhịp hồi nhờ dầu −7% ngày 2/11 đã bị cắt; vàng quay lại test vùng dưới 3.930–3.900. Kitco: kháng cự 3.975 rồi 4.084; hỗ trợ 3.871 rồi 3.797. Dài hạn: cửa Fed tăng lãi tháng 12 vẫn cao → lợi suất thực đè kim loại quý; chỉ khi ADP/NFP dịu hoặc thỏa thuận Hormuz rõ ràng mới mở lại cửa hồi bền trên 4.000.",
+      "source": {
+        "name": "CNBC – Vàng lùi khi USD và lợi suất tăng; bầu cử giữa kỳ Mỹ trong tầm ngắm",
+        "name_en": "CNBC – Gold edges lower as dollar and yields strengthen; U.S. midterms in focus",
+        "url": "https://www.cnbc.com/2026/11/03/gold-eases-ahead-of-us-midterm-elections.html"
+      },
+      "source2": {
+        "name": "Kitco PM – Vàng, bạc giảm khi dữ liệu việc làm Mỹ mạnh đẩy lợi suất ngày bầu cử",
+        "name_en": "Kitco PM Report – Gold, silver decline as strong U.S. jobs data lifts yields on election day",
+        "url": "https://www.kitco.com/news/article/2026-11-03/gold-silver-decline-strong-us-jobs-data-lifts-yields-election-day-kitco-pm"
+      },
+      "time_vn": "Kitco PM chốt phiên Mỹ 3/11 (≈ 05:00–06:00 VN 4/11) – CNBC spot trong phiên 3/11 ET",
+      "title_en": "Gold slips ~0.5%–0.55% to around $3,924–$3,927; silver −2.1% back under $50 as hot JOLTS lifts yields and the dollar — softer oil isn’t enough",
+      "summary_en": "Kitco’s PM wrap: spot gold near $3,924.10 (−$21.60, −0.55%) and silver near $49.450 (−$1.076, −2.13%) in late U.S. trade Tuesday. CNBC: spot at $3,927.49 (−0.5%) after a session low of $3,893.31; December COMEX futures −0.8% at $3,936.80. The seller was data — stronger September JOLTS and factory orders (+1.8%) pushed the 10-year yield up about 6 bps to ~4.951% and firmed the dollar. Another day of lower oil helped only briefly. Markets are waiting on midterm results plus Wednesday’s ADP/ISM services prints and Friday’s payrolls.",
+      "reason_en": "Near term: Monday’s oil-led bounce got clipped; bullion is back testing the $3,930–$3,900 area. Kitco maps resistance at $3,975 then $4,084; support at $3,871 then $3,797. Bigger picture: December hike odds still dominate, so real yields remain the lid. Softer ADP/NFP or a clear Hormuz deal would reopen a sustained push above $4,000 — until then, rallies stay sellable.",
+      "time_en": "Nov 3 Kitco PM U.S. close wrap — CNBC spot print during the U.S. session"
+    },
+    {
+      "date": "2026-11-04",
+      "category": "Dầu mỏ",
+      "priority": 1,
+      "impact": "tăng",
+      "title": "Brent chốt −1,1% về 103,60 USD, WTI −0,4% về 96,09 – Qatar vẫn trung gian; Iran bác ngoại giao cưỡng ép; Mỹ đã đánh đảo Qeshm",
+      "summary": "CNBC/Kitco: Brent futures chốt −1,17 USD (−1,1%) ở 103,60 USD/thùng; WTI −0,37 USD (−0,4%) ở 96,09 – ngày giảm thứ hai sau cú −7% thứ Hai. Động lực: đồn đoán tiến triển đàm phán Mỹ–Iran; Bộ Ngoại giao Qatar nói phái đoàn đã gặp Tehran, hai bên đang xem xét đề xuất trung gian. Phát ngôn viên Bộ Ngoại giao Iran Baqaei: Tehran không chấp nhận ngoại giao dựa trên cưỡng ép (IRNA). Wall Street Journal (qua CNBC): Mỹ đã không kích đảo Qeshm (Hormuz) hôm 2/11 – giới chức mô tả là đòn hạn chế, phòng thủ. UKMTO: ít nhất 4 vụ tấn công tàu từ đầu tháng. Aramco CEO: lưu lượng Hormuz vẫn dưới mức trước xung đột.",
+      "reason": "Ngắn hạn: dầu tiếp tục dịu → bớt áp lực lạm phát năng lượng, vốn hỗ trợ vàng nếu lợi suất không tăng. Dài hạn: chưa có thỏa thuận; quan chức Iran nói còn xa deal; đòn Qeshm và tấn công tàu giữ rủi ro nguồn cung. Mọi tin xấu Hormuz có thể đẩy Brent và kỳ vọng lãi suất lên lại, đè vàng.",
+      "source": {
+        "name": "CNBC – Dầu giảm ngày thứ hai khi thị trường hy vọng giải pháp ngoại giao Iran",
+        "name_en": "CNBC – Crude oil falls for a second day as market hopes for a diplomatic Iran settlement",
+        "url": "https://www.cnbc.com/2026/11/03/oil-prices-climb-after-us-reportedly-strikes-irans-qeshm-island.html"
+      },
+      "source2": {
+        "name": "Kitco PM – WTI 96,09 (−0,4%), Brent 103,60 (−1,1%) dù Mỹ đánh Qeshm; Qatar tiếp tục trung gian",
+        "name_en": "Kitco PM – WTI $96.09 (−0.4%), Brent $103.60 (−1.1%) despite Qeshm strike; Qatar mediation continues",
+        "url": "https://www.kitco.com/news/article/2026-11-03/gold-silver-decline-strong-us-jobs-data-lifts-yields-election-day-kitco-pm"
+      },
+      "time_vn": "Chốt phiên Mỹ 3/11 (≈ 02:30–05:00 VN 4/11) – Qatar brief / Iran phản ứng trong ngày 3/11 ET",
+      "title_en": "Brent settles −1.1% at $103.60, WTI −0.4% at $96.09 — Qatar still mediating; Iran rejects “coercion” diplomacy; U.S. hit Qeshm Island",
+      "summary_en": "CNBC/Kitco: Brent futures settled $1.17 (−1.1%) at $103.60/bbl; WTI lost $0.37 (−0.4%) to $96.09 — a second down day after Monday’s 7% slide. The driver: deal chatter. Qatar’s Foreign Ministry said a delegation met Tehran and both sides are reviewing mediator proposals. Iran’s FM spokesman Baqaei (IRNA): Tehran will not accept diplomacy based on coercion. WSJ via CNBC: the U.S. struck Iran’s Qeshm Island in the Strait of Hormuz on Monday — officials called it a limited, defensive action. UKMTO: at least four ship attacks since the start of the month. Aramco’s CEO: Hormuz flows remain below pre-conflict levels.",
+      "reason_en": "Near term: softer oil eases energy-inflation pressure — that would help gold if yields weren’t rising. Longer term: there is still no deal; Iranian officials say one remains distant; the Qeshm strike and ship attacks keep supply risk alive. Any Hormuz setback can reprice Brent and December hike odds higher again, and that would cap bullion.",
+      "time_en": "Nov 3 U.S. settle — Qatar briefing / Iran response during the U.S. day"
+    },
+    {
+      "date": "2026-11-04",
+      "category": "Lợi suất",
+      "priority": 1,
+      "impact": "giảm",
+      "title": "Lợi suất 10 năm Mỹ lên ~4,951% (+~6 bps), 2 năm ~4,61%, DXY ~101,83 – JOLTS và đơn hàng nhà máy cứng trước ngày bầu cử",
+      "summary": "Kitco/MarketWatch: lợi suất 10 năm Mỹ tăng khoảng 5,8–6 bps lên ~4,951%; 30 năm ~5,323% (+~5,5 bps); 2 năm ~4,612% (+~3 bps). CNBC trong phiên ghi 10 năm ~4,96%, 30 năm ~5,332%, 2 năm ~4,623%. Reuters: DXY +0,07% về 101,83 sau khi JOLTS và đơn hàng nhà máy (+1,8% tháng 9) cứng hơn dự báo. Cổ phiếu pha tạp: Dow −0,38% (51.786,72), S&P 500 +0,36% (7.568,92), Nasdaq +0,83% (25.372,01) – bán dẫn chọn lọc hồi, Apple yếu. Thị trường vẫn định giá rủi ro kết quả Quốc hội và tuần việc làm.",
+      "reason": "Ngắn hạn: lợi suất và USD tăng là lực đè trực tiếp lên vàng – cắt đứt nhịp hồi 2/11. Dài hạn: nếu Đảng Dân chủ lấy Hạ viện (kịch bản thăm dò trước bầu cử), linh hoạt tài khóa của chính quyền có thể bị siết → lợi suất dài hạn dịu, hỗ trợ vàng; nhưng JOLTS/NFP cứng vẫn giữ cửa Fed tăng lãi tháng 12.",
+      "source": {
+        "name": "CNBC – Lợi suất kho bạc Mỹ tăng trước bầu cử giữa kỳ và dữ liệu việc làm",
+        "name_en": "CNBC – Treasury yields rise as investors weigh the midterm vote and jobs data",
+        "url": "https://www.cnbc.com/2026/11/03/us-treasury-yields-bonds.html"
+      },
+      "source2": {
+        "name": "Reuters (Yahoo Finance) – USD dao động nhẹ tăng khi cân nhắc Iran và bầu cử giữa kỳ",
+        "name_en": "Reuters via Yahoo Finance – Dollar choppy but little changed as Mideast and midterms weighed",
+        "url": "https://finance.yahoo.com/markets/currencies/articles/dollar-drifts-mideast-midterm-risks-035756460.html"
+      },
+      "time_vn": "Phiên Mỹ 3/11 – lợi suất/Kitco chốt ≈ 05:00–06:00 VN 4/11; DXY Reuters trong phiên",
+      "title_en": "U.S. 10-year yield climbs to ~4.951% (+~6 bps), 2-year ~4.61%, DXY near 101.83 — hot JOLTS and factory orders into election day",
+      "summary_en": "Kitco/MarketWatch: the U.S. 10-year yield rose about 5.8–6 bps to ~4.951%; the 30-year ~5.323% (+~5.5 bps); the 2-year ~4.612% (+~3 bps). CNBC’s intraday wrap had the 10-year near 4.96%, the 30-year near 5.332% and the 2-year near 4.623%. Reuters: the dollar index edged 0.07% higher to 101.83 after stronger-than-expected JOLTS and September factory orders (+1.8%). Equities mixed: Dow −0.38% (51,786.72), S&P 500 +0.36% (7,568.92), Nasdaq +0.83% (25,372.01) — selective semis bounce, Apple soft. Markets are still pricing Congress risk and the rest of the labor week.",
+      "reason_en": "Near term: higher yields and a firmer dollar are the direct gold headwind — they cut Monday’s rebound short. Longer term: if Democrats take the House (the pre-election base case), fiscal flexibility shrinks and longer yields could ease — that would help bullion. But hot JOLTS/NFP keeps December hike odds elevated, so any gold bounce still has to clear the real-yield bar.",
+      "time_en": "Nov 3 U.S. session — yields/Kitco into the U.S. close; DXY Reuters intraday"
+    },
+    {
+      "date": "2026-11-04",
+      "category": "Fed",
+      "priority": 1,
+      "impact": "giảm",
+      "title": "JOLTS tháng 9: 7,523 triệu vị trí trống (dự báo ~7,15); FedWatch Investing.com chốt 3/11: cửa tăng 25 bps tháng 12 77,4% / giữ 22,6%",
+      "summary": "BLS/CNBC: số vị trí trống tháng 9 lên 7,523 triệu (+333.000 so với tháng 8 điều chỉnh lại 7,190 triệu), vượt dự báo ~7,15 triệu – cao nhất từ tháng 5. Tỷ lệ mở cửa việc làm 4,5% (+0,2 điểm %). Tuyển dụng ~5,4 triệu; thôi việc tự nguyện ~3,37 triệu; sa thải ~1,64 triệu. Đơn hàng nhà máy tháng 9 +1,8% (dự báo ~1,2–1,3%). Investing.com Fed Rate Monitor (CME futures), 18:05 ET 3/11: họp 09/12 – giữ 22,6% (ngày trước 26,2%); tăng lên 4,00–4,25% 77,4% (ngày trước 73,8%). Họp 27/01/2027: giữ 16,1%; 4,00–4,25% 61,7%; 4,25–4,50% 22,1%. CNBC trong phiên từng trích CME quanh 73% (lùi từ 76% sớm hơn).",
+      "reason": "Ngắn hạn: lao động và nhà máy cứng → thị trường nâng xác suất tăng lãi tháng 12 → vàng bị đè qua kênh lợi suất/USD. Dài hạn: nếu ADP thứ Tư hoặc NFP thứ Sáu dịu rõ, cửa giữ lãi có thể mở lại nhanh; ngược lại số cứng sẽ khóa lực bán trên vàng quanh kháng cự 3.975–4.000.",
+      "source": {
+        "name": "CNBC – JOLTS tháng 9 tăng mạnh trước báo cáo lương phi nông nghiệp thứ Sáu",
+        "name_en": "CNBC – September job openings surge ahead of Friday’s payrolls report",
+        "url": "https://www.cnbc.com/2026/11/03/job-openings-posted-big-september-gain-in-positive-sign-for-labor-market-ahead-of-payrolls-report.html"
+      },
+      "source2": {
+        "name": "Investing.com – Fed Rate Monitor (CME Fed Funds futures), cập nhật 03/11/2026 18:05 ET",
+        "name_en": "Investing.com – Fed Rate Monitor (CME Fed Funds futures), updated Nov 3, 2026 6:05 PM ET",
+        "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+      },
+      "time_vn": "JOLTS 22:00 VN 3/11 (10:00 ET) – FedWatch Investing.com 18:05 ET 3/11 ≈ 06:05 VN 4/11",
+      "title_en": "September JOLTS: 7.523 million openings (vs ~7.15M expected); FedWatch (Investing.com/CME) as of Nov 3 close: 77.4% chance of a 25 bp December hike / 22.6% hold",
+      "summary_en": "BLS via CNBC: September job openings rose to 7.523 million (+333,000 from an upwardly revised 7.190 million in August), well above the ~7.15 million consensus — highest since May. The openings rate climbed to 4.5% (+0.2 ppt). Hires ~5.4 million; quits ~3.37 million; layoffs ~1.64 million. September factory orders +1.8% (vs ~1.2%–1.3% expected). Investing.com Fed Rate Monitor (CME futures), 6:05 p.m. ET Nov 3: Dec 9 — hold 22.6% (prior day 26.2%); hike to 4.00%–4.25% 77.4% (prior day 73.8%). Jan 27, 2027: hold 16.1%; 4.00%–4.25% 61.7%; 4.25%–4.50% 22.1%. CNBC’s intraday FedWatch print sat near 73% (down from 76% earlier Tuesday).",
+      "reason_en": "Near term: hot labor and factory data lifted December hike odds — gold gets hit through yields and the dollar. Longer term: a soft ADP on Wednesday or a soft NFP on Friday can reopen the hold case quickly; another hot print locks in selling pressure into the $3,975–$4,000 resistance band.",
+      "time_en": "JOLTS 10:00 AM ET Nov 3 — Investing.com FedWatch 6:05 PM ET Nov 3"
+    },
+    {
+      "date": "2026-11-04",
+      "category": "Fed",
+      "priority": 1,
+      "impact": "trung lập",
+      "title": "Bầu cử giữa kỳ Mỹ 3/11 – kết quả sơ bộ sáng 4/11; hôm nay ADP + ISM dịch vụ; thứ Sáu NFP tháng 10 (ước ~+59.000, thất nghiệp 4,2%)",
+      "summary": "Kitco/CNBC: cử tri Mỹ bỏ phiếu thứ Ba 3/11; thăm dò và dự báo độc lập nghiêng Đảng Dân chủ lấy lại Hạ viện, Thượng viện còn cạnh tranh. Kết quả sơ bộ thường rõ hơn sáng thứ Tư (giờ Mỹ). Lịch kinh tế: thứ Tư 4/11 – ADP việc làm tư nhân ~08:15 ET (20:15 VN), cán cân thương mại 08:30 ET, ISM dịch vụ 10:00 ET (22:00 VN). Thứ Năm: đơn xin trợ cấp thất nghiệp + năng suất sơ bộ Q3. Thứ Sáu: NFP tháng 10 – CNBC dẫn đồng thuận Wall Street ~+59.000 sau tháng 9 chỉ +29.000; tỷ lệ thất nghiệp giữ 4,2%. World Gold Council (CNBC): hạ dự báo tăng đầu tư vàng năm nay xuống 200 tấn từ 400 tấn, nhưng nâng ước mua của ngân hàng trung ương.",
+      "reason": "Ngắn hạn: kết quả Quốc hội + ADP/ISM/NFP là ba nút quyết định hướng lợi suất và vàng trong 48–72 giờ tới. Dài hạn: Quốc hội chia rẽ có thể hạn chế chi tiêu/thuế mới → dịu áp lực phát hành trái phiếu dài hạn (hỗ trợ vàng), nhưng chỉ khi dữ liệu việc làm không đẩy Fed tăng lãi tháng 12.",
+      "source": {
+        "name": "Kitco PM – Bầu cử giữa kỳ Mỹ và lịch việc làm tuần này trong tầm ngắm vàng",
+        "name_en": "Kitco PM – U.S. midterms and this week’s labor calendar in gold’s sights",
+        "url": "https://www.kitco.com/news/article/2026-11-03/gold-silver-decline-strong-us-jobs-data-lifts-yields-election-day-kitco-pm"
+      },
+      "source2": {
+        "name": "CNBC – Vàng lùi trước bầu cử giữa kỳ; WGC hạ dự báo đầu tư vàng năm nay",
+        "name_en": "CNBC – Gold eases ahead of midterms; WGC cuts 2026 gold investment growth forecast",
+        "url": "https://www.cnbc.com/2026/11/03/gold-eases-ahead-of-us-midterm-elections.html"
+      },
+      "time_vn": "Bỏ phiếu 3/11 ET – kết quả sơ bộ sáng 4/11 ET (chiều–tối VN) – ADP/ISM 4/11; NFP 6/11 20:30 VN",
+      "title_en": "U.S. midterms Nov 3 — early results Wednesday; today ADP + ISM services; Friday’s October NFP (~+59k, unemployment 4.2%)",
+      "summary_en": "Kitco/CNBC: Americans voted Tuesday; pre-election polls and nonpartisan forecasts favored Democrats to retake the House, with the Senate more competitive. Firmer reads usually land Wednesday morning ET. Data calendar: Wednesday — ADP private payrolls ~8:15 AM ET, international trade 8:30 AM ET, ISM services 10:00 AM ET. Thursday: weekly jobless claims + preliminary Q3 productivity. Friday: October nonfarm payrolls — CNBC cites a Wall Street consensus near +59,000 after September’s +29,000, with unemployment holding at 4.2%. World Gold Council (via CNBC) cut its 2026 gold investment growth forecast to 200 tonnes from 400, while raising its central-bank buying estimate.",
+      "reason_en": "Near term: Congress, ADP/ISM and Friday’s NFP are the three switches for yields — and gold — over the next 48–72 hours. Longer term: a divided Congress could curb new spending/tax bills and ease long-end issuance pressure (gold-friendly), but only if the labor data doesn’t lock in a December hike.",
+      "time_en": "Voting Nov 3 ET — early results Wed morning ET — ADP/ISM Nov 4; NFP Nov 6 8:30 AM ET"
+    },
     {
       "date": "2026-11-03",
       "category": "Vàng",
