@@ -1,6 +1,6 @@
 {
   "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC | Chiến tranh | Ngân hàng TW. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
-  "updated": "2026-11-05",
+  "updated": "2026-11-06",
   "fomc": {
     "source": {
       "name": "Federal Reserve – FOMC calendars",
@@ -56,6 +56,102 @@
     "note_en": "Decision at 2:00 PM ET on day two of the meeting, press conference at 2:30 PM ET. * = with economic projections (dot plot)."
   },
   "items": [
+    {
+      "date": "2026-11-06",
+      "category": "Vàng",
+      "priority": 1,
+      "impact": "tăng",
+      "title": "Vàng spot giữ đà hồi: Kitco PM ~4.087,26 (+0,64%); đỉnh phiên ~4.148 – USD/lợi suất dịu, Phố Wall lao dốc tech",
+      "summary": "Kitco PM phiên Mỹ thứ Năm 5/11: spot vàng quanh 4.087,26 USD (+25,93; +0,64%), bạc quanh 51,778 USD (−0,407; −0,78%). Đỉnh trong phiên ~4.148 (cao nhất từ 20/10). CNBC: spot +1% ở 4.100,27 lúc 14:05 ET sau đỉnh 4.146,63; futures vàng tháng 12 chốt +1% ở 4.113,50. Động lực: lợi suất 10 năm lùi về ~4,82–4,84%, DXY quanh 101,57 gần như đi ngang sau cú giảm mạnh hôm trước; S&P 500 −4,36%, Nasdaq ~−5,5% khi cổ phiếu AI/chip bị bán mạnh → dòng tiền trú ẩn. FedWatch cửa tăng tháng 12 hạ rõ (Investing.com 60,3%).",
+      "reason": "Ngắn hạn: vàng giữ phần lớn nhịp hồi sau bầu cử nhờ lợi suất giảm + kỳ vọng Fed dịu hơn – nhưng bạc yếu cho thấy lực thanh lý công nghiệp/tech vẫn nặng. Dài hạn: NFP thứ Sáu (ước tính ~59–65 nghìn) và dầu hồi về gần 100 USD có thể đảo chiều lợi suất; cần giữ trên ~4.075 (Kitco) để củng cố nhịp phục hồi về kháng cự 4.146–4.212.",
+      "source": {
+        "name": "CNBC – Vàng cao nhất hơn 2 tuần khi USD và lợi suất yếu; chờ NFP",
+        "name_en": "CNBC – Gold at more than two-week high as dollar, yields weaken; U.S. payrolls awaited",
+        "url": "https://www.cnbc.com/2026/11/05/gold-hits-two-week-high-as-dollar-yields-ease-after-us-midterms.html"
+      },
+      "source2": {
+        "name": "Kitco PM – Vàng giữ đà tăng, bạc giảm khi Phố Wall lao dốc, cửa tăng lãi Fed dịu",
+        "name_en": "Kitco PM Report – Gold holds gains, silver slips as Wall Street plunges, Fed hike bets ease",
+        "url": "https://www.kitco.com/news/article/2026-11-05/gold-holds-gains-silver-slips-wall-street-plunges-fed-hike-bets-ease-kitco"
+      },
+      "time_vn": "Kitco PM chốt phiên Mỹ 5/11 (≈ 05:00–06:30 VN 6/11) – CNBC spot/futures trong phiên 5/11 ET",
+      "title_en": "Spot gold holds the rebound: Kitco PM ~$4,087.26 (+0.64%); session high ~$4,148 — softer yields, tech-led Wall Street plunge",
+      "summary_en": "Kitco’s PM wrap Thursday: spot gold near $4,087.26 (+$25.93, +0.64%) and silver near $51.778 (−$0.407, −0.78%). Session high ~$4,148 — highest since Oct. 20. CNBC: spot +1% at $4,100.27 by 2:05 PM ET after a high of $4,146.63; December COMEX futures settled +1% at $4,113.50. Drivers: the 10-year eased toward ~4.82%–4.84%, the dollar index hovered near 101.57 after Wednesday’s drop, and equities cratered (S&P 500 −4.36%, Nasdaq ~−5.5%) on an AI/chip washout — defensive flows helped bullion. December hike odds fell sharply (Investing.com 60.3%).",
+      "reason_en": "Near term: gold kept most of the post-election bounce on lower yields and softer December hike odds — but silver’s fade shows industrial/tech liquidation still bites. Bigger picture: Friday’s NFP (est. ~59k–65k) and oil’s rebound toward $100 can reprice yields fast. Holding above Kitco’s ~$4,075 support is the first test that the recovery sticks toward $4,146–$4,212 resistance.",
+      "time_en": "Nov 5 Kitco PM U.S. close wrap — CNBC spot/futures during the U.S. session"
+    },
+    {
+      "date": "2026-11-06",
+      "category": "Dầu mỏ",
+      "priority": 1,
+      "impact": "trung lập",
+      "title": "Brent +3,8% chốt 98,29 USD; WTI +2,7% về 90,52 – tanker Hormuz bị tấn; Eurasia hạ xác suất deal Iran xuống 10%",
+      "summary": "CNBC/Kitco: Brent futures +3,8% chốt 98,29 USD/thùng; WTI +2,7% chốt 90,52 – lấy lại một phần cú −8%+ hôm trước. Động lực: tấn công tàu chở dầu quanh Hormuz (UKMTO: ít nhất 5 vụ từ Chủ nhật; Iran tuyên bố nhiều tàu/tàu kéo hỏa hoạn do thủy lôi/đường đi không phép). Qatar vẫn trung gian nhưng chưa có thỏa thuận. Eurasia Group: xác suất đòn Mỹ mới 60% (từ 65%), deal 10% (từ 20%), bế tắc kéo dài 30% (từ 15%); nếu leo thang Brent có thể về 110–125. Citi cảnh báo Nhà Trắng có thể dùng quyền hành pháp đẩy chiến tranh sau bầu cử.",
+      "reason": "Ngắn hạn: dầu hồi → tái áp lực lạm phát năng lượng, có thể hạn chế đà vàng nếu lợi suất bật lại; mặt khác bất ổn Hormuz vẫn đỡ nhu cầu trú ẩn. Dài hạn: chưa có deal Hormuz; Quốc hội Dân chủ từ tháng 1 mới siết ngân sách chiến tranh. Mọi tin xấu Iran có thể đẩy Brent và cửa tăng lãi Fed lên lại.",
+      "source": {
+        "name": "CNBC – Dầu tăng khi thị trường đánh giá lại chiến Iran và tấn công tanker",
+        "name_en": "CNBC – Oil jumps as investors assess Iran war future, tanker attacks",
+        "url": "https://www.cnbc.com/2026/11/05/oil-falls-for-a-fourth-day-on-expectations-for-lower-risk-of-iran-war-escalation.html"
+      },
+      "source2": {
+        "name": "Kitco PM – Brent 98,29 (+3,88%), WTI 90,52 (+2,72%) khi tấn tàu Hormuz tái định giá rủi ro",
+        "name_en": "Kitco PM – Brent $98.29 (+3.88%), WTI $90.52 (+2.72%) as Hormuz tanker attacks reprice risk",
+        "url": "https://www.kitco.com/news/article/2026-11-05/gold-holds-gains-silver-slips-wall-street-plunges-fed-hike-bets-ease-kitco"
+      },
+      "time_vn": "Chốt phiên Mỹ 5/11 (≈ 02:30–05:00 VN 6/11) – UKMTO/Iran cập nhật trong ngày 5/11 ET",
+      "title_en": "Brent +3.8% settles at $98.29; WTI +2.7% at $90.52 — Hormuz tanker hits; Eurasia cuts Iran deal odds to 10%",
+      "summary_en": "CNBC/Kitco: Brent futures rose 3.8% to settle at $98.29/bbl; WTI +2.7% to $90.52 — clawing back part of Wednesday’s 8%+ collapse. The driver: fresh tanker attacks around Hormuz (UKMTO: at least five vessel incidents since Sunday; Iran claimed multiple ships/a tug caught fire after unauthorized routes/mines). Qatar is still mediating with no deal. Eurasia Group: chance of renewed U.S. strikes 60% (from 65%), a deal 10% (from 20%), prolonged standoff 30% (from 15%); escalation could push Brent toward $110–$125. Citi flagged the White House may lean on executive powers to escalate after the midterms.",
+      "reason_en": "Near term: oil’s rebound reloads energy-inflation pressure — that can cap gold if yields bounce; Hormuz chaos still feeds safe-haven demand. Longer term: still no Hormuz deal; a Democratic Congress only seats in January. Any Iran setback can reprice Brent and December hike odds higher again.",
+      "time_en": "Nov 5 U.S. settle — UKMTO/Iran updates during the U.S. day"
+    },
+    {
+      "date": "2026-11-06",
+      "category": "Lợi suất",
+      "priority": 1,
+      "impact": "tăng",
+      "title": "Lợi suất 10 năm Mỹ lùi về ~4,82–4,84% (−~5–7 bps), 2 năm ~4,47% (−~11 bps); DXY ~101,57 đi ngang; S&P −4,36%",
+      "summary": "CNBC: lợi suất 10 năm giảm hơn 5 bps về 4,839%; 2 năm − hơn 11 bps về 4,466%; 30 năm ~5,26% (−2 bps). Kitco: 10 năm quanh 4,82% (thấp nhất từ đầu tháng 9 trong phiên); 2 năm về vùng 4,48%. DXY gần như đứng ở 101,57 (CNBC) sau cú giảm mạnh nhất nhiều tuần hôm trước; euro ~1,1222. Phố Wall risk-off mạnh: Dow 51.523 (−3,44%), S&P 500 ~7.353,7 (−4,36%), Nasdaq ~−5,5% khi Nvidia/AMD và nhóm bán dẫn bị bán tháo vì lo siết AI/data center sau khi Đảng Dân chủ thắng lưỡng viện.",
+      "reason": "Ngắn hạn: lợi suất giảm + USD yếu là lực đỡ trực tiếp cho vàng dù dầu hồi. Dài hạn: NFP thứ Sáu và dầu về gần 100 USD có thể kéo lợi suất lên lại; vàng cần lợi suất thực tiếp tục dịu và cửa Fed tăng lãi không bật lại mới giữ đà trên 4.100.",
+      "source": {
+        "name": "CNBC – Lợi suất 10 năm giảm khi nhà đầu tư thoát tech, chờ NFP",
+        "name_en": "CNBC – 10-year Treasury yield falls as traders exit tech stocks, look ahead to jobs data",
+        "url": "https://www.cnbc.com/2026/11/05/treasury-yields-bonds-interest-rates.html"
+      },
+      "source2": {
+        "name": "CNBC – USD gần như đi ngang khi dầu hồi, thị trường chờ payrolls",
+        "name_en": "CNBC – Dollar little changed as oil prices bounce, payrolls eyed",
+        "url": "https://www.cnbc.com/2026/11/05/dollar-edges-lower-as-us-election-outcome-cheers-global-markets.html"
+      },
+      "time_vn": "Phiên Mỹ 5/11 – lợi suất/Kitco chốt ≈ 05:00–06:30 VN 6/11; DXY CNBC trong phiên",
+      "title_en": "U.S. 10-year yield eases to ~4.82%–4.84% (−~5–7 bps), 2-year ~4.47% (−~11 bps); DXY ~101.57 flat; S&P −4.36%",
+      "summary_en": "CNBC: the 10-year yield fell more than 5 bps to 4.839%; the 2-year dropped more than 11 bps to 4.466%; the 30-year ~5.26% (−2 bps). Kitco: the 10-year near 4.82% (lowest since early September intraday); the 2-year toward 4.48%. DXY was little changed at 101.57 (CNBC) after Wednesday’s multi-week drop; euro near $1.1222. Risk-off equities: Dow 51,523 (−3.44%), S&P 500 ~7,353.7 (−4.36%), Nasdaq ~−5.5% as Nvidia/AMD and semis were dumped on fears of tighter AI/data-center oversight after Democrats took Congress.",
+      "reason_en": "Near term: lower yields plus a soft dollar remain the direct gold tailwind — even with oil bouncing. Longer term: Friday’s NFP and oil back near $100 can push yields higher again; bullion needs real yields to keep easing and December hike odds not to re-spike if it’s going to hold above $4,100.",
+      "time_en": "Nov 5 U.S. session — yields/Kitco into the U.S. close; DXY CNBC intraday"
+    },
+    {
+      "date": "2026-11-06",
+      "category": "Fed",
+      "priority": 1,
+      "impact": "tăng",
+      "title": "Claims 189.000 (thấp nhất ~57 năm); năng suất Q3 +3,6%; FedWatch Investing.com: cửa tăng 25 bps tháng 12 còn 60,3% / giữ 39,7%",
+      "summary": "BLS/CNBC/Reuters: đơn xin trợ cấp thất nghiệp tuần kết thúc 31/10 giảm 6.000 về 189.000 (ước tính Reuters ~196.000 / Dow Jones ~197.000) – khớp đáy giữa tháng 7, thấp nhất từ ~1969. Trung bình 4 tuần ~194.750; continuing claims ~1,718 triệu. Năng suất phi nông nghiệp Q3 +3,6% theo năm (dự báo ~2,8%); chi phí lao động đơn vị −0,7%. Investing.com Fed Rate Monitor (CME futures), 18:15 ET 5/11: họp 09/12 – giữ 39,7% (ngày trước 18,5%); tăng lên 4,00–4,25% 60,3% (ngày trước 81,5%). Họp 27/01/2027: giữ 33,1%; 4,00–4,25% 56,9%; 4,25–4,50% 10,1%. Chủ tịch Cleveland Fed Hammack: cần chuyển sang lập trường thắt chặt hơn để kéo lạm phát về 2%; ưa điều chỉnh nhỏ, thường xuyên hơn. Barkin (Richmond): nhịp tăng lãi dần «hợp lý». Thị trường chờ NFP tháng 10 thứ Sáu 20:30 VN (8:30 ET) – ước tính Dow Jones ~59.000 / Reuters ~65.000; thất nghiệp ~4,2%.",
+      "reason": "Ngắn hạn: cửa tăng lãi tháng 12 hạ mạnh từ ~82% xuống ~60% là lực đỡ vàng rõ nhất phiên – dù claims cứng và Hammack vẫn hawkish. Dài hạn: NFP/tiền lương thứ Sáu quyết định; số cứng có thể kéo cửa tăng lãi và lợi suất lên lại, cắt nhịp hồi vàng quanh 4.100–4.150; số dịu sẽ củng cố kịch bản giữ lãi và mở cửa test kháng cự cao hơn.",
+      "source": {
+        "name": "CNBC – USD gần như đi ngang; claims 189.000, chờ payrolls; Hammack vẫn nghiêng thắt chặt",
+        "name_en": "CNBC – Dollar little changed; claims at 189,000, payrolls eyed; Hammack still leans restrictive",
+        "url": "https://www.cnbc.com/2026/11/05/dollar-edges-lower-as-us-election-outcome-cheers-global-markets.html"
+      },
+      "source2": {
+        "name": "Investing.com – Fed Rate Monitor (CME Fed Funds futures), cập nhật 05/11/2026 18:15 ET",
+        "name_en": "Investing.com – Fed Rate Monitor (CME Fed Funds futures), updated Nov 5, 2026 6:15 PM ET",
+        "url": "https://www.investing.com/central-banks/fed-rate-monitor"
+      },
+      "time_vn": "Claims/năng suất 20:30 VN 5/11 (8:30 ET) – Hammack phát biểu trong ngày 5/11 ET – FedWatch Investing.com 18:15 ET 5/11 ≈ 06:15 VN 6/11",
+      "title_en": "Claims 189,000 (~57-year low); Q3 productivity +3.6%; FedWatch (Investing.com/CME) as of Nov 5 close: 60.3% chance of a 25 bp December hike / 39.7% hold",
+      "summary_en": "BLS/CNBC/Reuters: initial jobless claims fell 6,000 to a seasonally adjusted 189,000 for the week ended Oct. 31 (Reuters est. ~196,000 / Dow Jones ~197,000) — matching the mid-July trough, the lowest since around 1969. Four-week average ~194,750; continuing claims ~1.718 million. Nonfarm productivity rose at a 3.6% annualized pace in Q3 (est. ~2.8%); unit labor costs −0.7%. Investing.com Fed Rate Monitor (CME futures), 6:15 PM ET Nov 5: Dec. 9 — hold 39.7% (prior day 18.5%); hike to 4.00%–4.25% 60.3% (prior day 81.5%). Jan. 27, 2027: hold 33.1%; 4.00%–4.25% 56.9%; 4.25%–4.50% 10.1%. Cleveland Fed’s Hammack: policy needs to move more restrictive to get inflation back to 2%; she prefers more frequent, smaller steps. Richmond’s Barkin: a gradual hike pace “makes sense.” Markets await October NFP Friday 8:30 AM ET — Dow Jones ~59,000 / Reuters ~65,000; unemployment ~4.2%.",
+      "reason_en": "Near term: December hike odds crashing from ~82% to ~60% is the clearest gold tailwind of the session — even with firm claims and a still-hawkish Hammack. Bigger picture: Friday’s payrolls/wages decide it. A hot print can re-spike hike odds and yields and clip the $4,100–$4,150 bounce; a soft one cements the hold path and opens a clean test of higher resistance.",
+      "time_en": "Nov 5 claims/productivity 8:30 AM ET — Hammack remarks during the U.S. day — FedWatch Investing.com 6:15 PM ET Nov 5"
+    },
     {
       "date": "2026-11-05",
       "category": "Vàng",
