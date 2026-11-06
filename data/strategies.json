@@ -1,6 +1,202 @@
 {
  "strategies": [
   {
+   "id": "2026-11-06-nhan-dinh-chung",
+   "date": "2026-11-06",
+   "time": "10:15",
+   "session": "Nhận định chung",
+   "session_en": "Daily Outlook",
+   "url": "bai/2026-11-06-nhan-dinh-vang-nhan-dinh-chung-1015.html",
+   "url_en": "en/posts/2026-11-06-gold-plan-daily-outlook-1015.html",
+   "headline": "Vàng 6/11 nhận định chung: hồi bầu cử bị bán ở mép kênh, chờ hồi để bán",
+   "headline_en": "H79 Gold Plan – Daily Outlook, Nov 6: Election Bounce Rejected at the Channel Cap – Sell the Retest",
+   "title": "Vàng 6/11 nhận định chung: hồi bầu cử bị bán ở mép kênh, chờ hồi để bán",
+   "title_en": "H79 Gold Plan – Daily Outlook, Nov 6: Election Bounce Rejected at the Channel Cap – Sell the Retest",
+   "image": "img/charts/gold-2026-11-06-nhan-dinh-chung.jpg",
+   "image_alt": "Biểu đồ vàng 4 giờ 6/11: kênh giảm song song, đỉnh 4.144,9 chạm mép kênh và vùng cung 4.146–4.206 rồi bị bán; FVG giảm 4.072–4.097, BÁN 4.075–4.095, SL 4.166; TP 4.005 → 3.900 → 3.689; quét thanh khoản đáy 3.870,4",
+   "image_en": "img/charts/gold-2026-11-06-daily-outlook.jpg",
+   "image_alt_en": "Gold 4-hour chart Nov 6: descending parallel channel, the 4,144.9 high rejected at the channel cap and 4,146–4,206 supply; bearish FVG 4,072–4,097, SELL 4,075–4,095, SL 4,166; TP 4,005 → 3,900 → 3,689; liquidity sweep at the 3,870.4 low",
+   "article": {
+    "sections": [
+     {
+      "h": "Mô phỏng H79",
+      "p": "Nhịp hồi chạm mép trên kênh giảm và vùng cung cũ rồi bị bán. Lộ trình đi theo kênh xuống – bán quanh 4.086, SL 4.166, mục tiêu 3.689.",
+      "img": "img/charts/gold-2026-11-06-mo-phong-h79.jpg",
+      "alt": "Mô phỏng H79 (OANDA XAUUSD 4 giờ): kênh giảm song song, vùng cung đỏ quanh đỉnh cũ, lệnh bán 4.086,4, SL 4.165,8, mục tiêu 3.689,1"
+     }
+    ]
+   },
+   "article_en": {
+    "sections": [
+     {
+      "h": "H79 projection",
+      "p": "The bounce hit the top of the descending channel and the old supply and was sold. The path follows the channel lower – sell near 4,086, SL 4,166, target 3,689.",
+      "img": "img/charts/gold-2026-11-06-mo-phong-h79.jpg",
+      "alt": "H79 projection (OANDA XAUUSD 4-hour): descending parallel channel, red supply over the old highs, short at 4,086.4, SL 4,165.8, target 3,689.1"
+     }
+    ]
+   },
+   "trend": "Nhịp hồi bầu cử chạm mép trên kênh giảm và vùng cung 4.146–4.206 (đỉnh 4.144,9) rồi bị bán; giá không giữ được 4.100. Vẫn là hồi trong kênh giảm: BÁN khi hồi lấp FVG 4.075–4.095, mục tiêu 4.005 → 3.900 → 3.689; dài hạn 3.600–3.500. Nến H4 đóng trên 4.166 thì vô hiệu.",
+   "trend_en": "The election bounce hit the descending-channel cap and 4,146–4,206 supply (high 4,144.9) and was sold; 4,100 didn't hold. Still a bounce inside a down-channel: SELL a retest of the 4,075–4,095 FVG for 4,005 → 3,900 → 3,689; long-term 3,600–3,500. A 4H close above 4,166 voids the view.",
+   "trendType": "down",
+   "support": [
+    4031,
+    4005,
+    3964,
+    3900,
+    3870,
+    3689
+   ],
+   "resistance": [
+    4075,
+    4095,
+    4146,
+    4166,
+    4206
+   ],
+   "scenarios": [
+    "Kế hoạch phiên Âu – Mỹ 6/11: BÁN 4.075–4.095 | SL 4.166 | TP 4.005 → 3.900 → 3.689.",
+    "Xác nhận: giá hồi chạm vùng + nến H1 đóng đỏ từ chối. Giá đã rơi xa vùng thì không bán đuổi.",
+    "Vô hiệu: nến H4 đóng trên 4.166 → kênh giảm bị phá; khi đó chỉ MUA nếu giữ được trên 4.166, hướng 4.206 → 4.246.",
+    "Chính (~55%): hồi lấp FVG 4.072–4.097 rồi bị bán, về 4.005–4.031, tiếp 3.900.",
+    "Phụ (~25%): rơi thẳng qua 4.005 không hồi – không đuổi, chờ hồi lên 4.005–4.031 mới tính.",
+    "Vô hiệu (~20%): NFP rất yếu, giá vọt vào vùng cung và nến H4 đóng trên 4.166.",
+    "Kênh giảm: mép trên nối đỉnh 4.224 (2/10) – 4.205,6 (9/10) – 4.144,9 (5/11); mép dưới song song qua đáy 3.870,4 (30/10), hiện quanh 3.856.",
+    "FVG giảm (chưa lấp): H1 4.072,3–4.084,6 (cú rơi 08:00 sáng nay) và 4.088,9–4.096,7 (nến 03:00–05:00); H4 4.072,3–4.082,1.",
+    "FVG tăng chưa lấp phía dưới: H4 4.005,2–4.030,7 và 3.963,6–3.997,2 (nhịp bật 4/11) – giá dễ về lấp nếu bán tiếp.",
+    "Fib nhịp 3.870,4 → 4.144,9: 50% 4.008 · 61,8% 3.975 trùng hai FVG trên; mở rộng 161,8% ~3.701 sát mục tiêu 3.689. Đáy 3.870–3.895 là vùng thanh khoản phe mua. RSI H4 ~55, H1 ~41.",
+    "Lịch (giờ VN): phiên Âu mở ~15:00 · NFP 20:30 (dự báo ~59–65 nghìn, trước 29 nghìn; thất nghiệp 4,2%) · phiên Mỹ mở 21:30. Vào nhỏ quanh tin, chạm TP1 dời SL về hòa vốn."
+   ],
+   "scenarios_en": [
+    "London / New York session plan, Nov 6: SELL 4,075–4,095 | SL 4,166 | TP 4,005 → 3,900 → 3,689.",
+    "Confirm: a retest of the zone + a red 1H rejection close. If price has already dropped well away from the zone, don't chase.",
+    "Invalidation: a 4H close above 4,166 → the channel is broken; only then BUY while it holds above 4,166, toward 4,206 → 4,246.",
+    "Base (~55%): the 4,072–4,097 FVG gets filled and sold, back to 4,005–4,031, then 3,900.",
+    "Alt (~25%): straight drop through 4,005 with no retest – don't chase, wait for a bounce into 4,005–4,031.",
+    "Breaker (~20%): very weak payrolls squeeze price into supply and a 4H candle closes above 4,166.",
+    "Channel: upper edge through the 4,224 (Oct 2), 4,205.6 (Oct 9) and 4,144.9 (Nov 5) highs; lower edge parallel through the 3,870.4 low (Oct 30), now near 3,856.",
+    "Bearish FVGs (unfilled): 1H 4,072.3–4,084.6 (the 8:00 PM ET drop on Nov 5) and 4,088.9–4,096.7 (3:00–5:00 PM ET candles); 4H 4,072.3–4,082.1.",
+    "Unfilled bullish FVGs below: 4H 4,005.2–4,030.7 and 3,963.6–3,997.2 (the Nov 4 bounce) – likely to get filled if selling continues.",
+    "Fibonacci of 3,870.4 → 4,144.9: 50% 4,008 · 61.8% 3,975, lining up with those gaps; the 161.8% extension ~3,701 sits near the 3,689 target. The 3,870–3,895 lows hold buy-side stops. 4H RSI ~55, 1H ~41.",
+    "Calendar (ET): London open 3:00 AM · payrolls 8:30 AM (f/c ~59–65K, prior 29K; unemployment 4.2%) · New York open 9:30 AM. Go light around the number; bank TP1 and move the stop to breakeven."
+   ],
+   "macro": [],
+   "macro_en": [],
+   "market_picture": {
+    "text": "Nhịp tăng sau bầu cử giữa kỳ Mỹ đến từ USD và lợi suất cùng giảm, cộng với việc thị trường hạ cửa Fed tăng lãi tháng 12 từ khoảng 82% còn khoảng 60%. Vàng nhờ vậy bật từ 3.920 lên 4.144,9 sáng 5/11. Nhưng đỉnh đó chạm đúng mép trên kênh giảm và chân vùng cung cũ 4.146–4.206 (vùng đỉnh giữa tháng 10) rồi bị bán. Giá không giữ được 4.100, sáng nay về quanh 4.060.\nKhung H4 vẫn là kênh giảm song song. Cú quét thanh khoản dưới đáy 3.870 cuối tháng 10 tạo ra cú bật chữ V, nhưng đỉnh mới 4.144,9 vẫn thấp hơn 4.205,6 (9/10) và 4.224 (2/10). RSI H4 hạ từ ~70 về ~55 – đà tăng yếu dần ngay tại cản. Đây là nhịp hồi trong xu hướng giảm, chưa phải đảo chiều.\nCú rơi sáng nay để lại khoảng trống giá (FVG) 4.072–4.097. Hồi lên lấp vùng này mà bị từ chối là chỗ bán theo kênh, mục tiêu 4.005 → 3.900, xa hơn 3.689 và dài hạn 3.600–3.500. NFP 20:30 tối nay là ngòi nổ: việc làm mạnh kéo lợi suất lên sẽ đẩy nhanh kịch bản này; số quá yếu thì giá có thể vọt lên test lại vùng cung trước.",
+    "chips": [
+     {
+      "k": "XAU",
+      "v": "4.062 −0,6%",
+      "dir": "down"
+     },
+     {
+      "k": "DXY",
+      "v": "101,70",
+      "dir": "up"
+     },
+     {
+      "k": "US10Y",
+      "v": "4,85%",
+      "dir": "up"
+     },
+     {
+      "k": "FedWatch T12",
+      "v": "tăng ~60%",
+      "dir": ""
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Vàng cao nhất hơn 2 tuần khi USD và lợi suất yếu; chờ NFP (5/11)",
+      "url": "https://www.cnbc.com/2026/11/05/gold-hits-two-week-high-as-dollar-yields-ease-after-us-midterms.html"
+     },
+     {
+      "name": "Kitco PM – Vàng giữ đà tăng, cửa tăng lãi Fed dịu (5/11)",
+      "url": "https://www.kitco.com/news/article/2026-11-05/gold-holds-gains-silver-slips-wall-street-plunges-fed-hike-bets-ease-kitco"
+     },
+     {
+      "name": "CNBC – Báo cáo việc làm tháng 10: dự báo +59 nghìn, thất nghiệp 4,2%",
+      "url": "https://www.cnbc.com/2026/11/05/october-jobs-report-preview.html"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "market_picture_en": {
+    "text": "The post-midterm rally came from a weaker dollar and lower yields, plus the market cutting the odds of a December Fed hike from about 82% to about 60%. Gold bounced from 3,920 to 4,144.9 late on Nov 4 (ET). But that high landed right on the top of the descending channel and the base of the old 4,146–4,206 supply (the mid-October highs), and it was sold. Price couldn't hold 4,100 and is back near 4,060 in Asian trade.\nThe 4H chart is still a descending parallel channel. The liquidity sweep under the 3,870 low at the end of October produced a V-shaped bounce, but the new high at 4,144.9 is still below 4,205.6 (Oct 9) and 4,224 (Oct 2). 4H RSI has cooled from ~70 to ~55 – momentum is fading right at resistance. This is a bounce inside a downtrend, not a reversal.\nThe Asian-session drop left a fair value gap (FVG) at 4,072–4,097. A retest of that gap that gets rejected is the spot to sell with the channel, targeting 4,005 → 3,900, then 3,689 and the long-term 3,600–3,500. Friday's payrolls (8:30 AM ET) are the trigger: a strong jobs number lifting yields speeds this up; a very weak one could squeeze price back into supply first.",
+    "chips": [
+     {
+      "k": "XAU",
+      "v": "4,062 −0.6%",
+      "dir": "down"
+     },
+     {
+      "k": "DXY",
+      "v": "101.70",
+      "dir": "up"
+     },
+     {
+      "k": "US10Y",
+      "v": "4.85%",
+      "dir": "up"
+     },
+     {
+      "k": "FedWatch Dec",
+      "v": "hike ~60%",
+      "dir": ""
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Gold at more than two-week high as dollar, yields weaken; payrolls awaited (Nov 5)",
+      "url": "https://www.cnbc.com/2026/11/05/gold-hits-two-week-high-as-dollar-yields-ease-after-us-midterms.html"
+     },
+     {
+      "name": "Kitco PM – Gold holds gains as Fed hike bets ease (Nov 5)",
+      "url": "https://www.kitco.com/news/article/2026-11-05/gold-holds-gains-silver-slips-wall-street-plunges-fed-hike-bets-ease-kitco"
+     },
+     {
+      "name": "CNBC – October jobs report preview: +59K expected, unemployment 4.2%",
+      "url": "https://www.cnbc.com/2026/11/05/october-jobs-report-preview.html"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "physicalAdvice": "Làm theo kế hoạch, đừng chạy theo nến tin.",
+   "physicalAdvice_en": "Trade the plan, not the noise.",
+   "notes": "Các mốc là giá giao ngay XAU/USD (CNBC XAU=). 6/11 (giờ VN): ~4.062,6 lúc 10:00 · thấp phiên 4.058,2 (nến H1 08:00) · đỉnh 5/11 4.144,9 (10:00–11:00 VN). Đỉnh kênh: 4.224,0 (2/10) · 4.205,6 (9/10). Đáy 3.870,4 (30–31/10). GC=F ~4.077 (chênh ~14).",
+   "notes_en": "Levels are spot XAU/USD (CNBC XAU=). Nov 5 (ET): ~4,062.6 at 10:00 PM · session low 4,058.2 (8:00 PM 1H candle) · Nov 4–5 high 4,144.9 (10–11 PM ET Nov 4). Channel highs 4,224.0 (Oct 2) · 4,205.6 (Oct 9). Low 3,870.4 (Oct 30). GC=F ~4,077 (~14 basis).",
+   "dataTime": "Cập nhật ~10:05 ngày 6/11/2026 giờ VN. Nến giao ngay CNBC XAU=; DXY, US10Y từ CNBC; xác suất Fed theo CME FedWatch (Investing.com); dự báo NFP theo CNBC/Reuters.",
+   "dataTime_en": "Updated ~10:05 PM ET, Thursday Nov 5, 2026. Spot candles from CNBC XAU=; DXY and US10Y from CNBC; Fed odds from CME FedWatch via Investing.com; payrolls forecasts from CNBC/Reuters.",
+   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+   "brief": true,
+   "summary": {
+    "trend": "down",
+    "trendText": "Hồi bầu cử bị bán ở mép kênh giảm và vùng cung – chờ hồi lấp FVG để bán theo kênh",
+    "trendText_en": "Election bounce rejected at the channel cap and supply – sell the FVG retest with the channel",
+    "sell": {
+     "zone": "4.075 – 4.095",
+     "sl": "4.166",
+     "tp": "4.005 → 3.900 → 3.689",
+     "zone_en": "4,075–4,095",
+     "sl_en": "4,166",
+     "tp_en": "4,005 → 3,900 → 3,689"
+    },
+    "note": "Chỉ vào khi chạm vùng + nến H1 đóng đỏ từ chối, không bán đuổi. Nến H4 đóng trên 4.166 thì vô hiệu. Dài hạn 3.600–3.500. Tin: NFP 20:30 tối nay – vào nhỏ, chạm TP1 dời SL về hòa vốn.",
+    "note_en": "Only on a zone retest + a red 1H rejection close; don't chase. A 4H close above 4,166 voids the view. Long-term 3,600–3,500. Data: payrolls 8:30 AM ET – go light, move the stop to breakeven at TP1.",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD",
+    "priceNote_en": "Spot XAU/USD prices"
+   }
+  },
+  {
    "id": "2026-11-03-cap-nhat-cau-truc-2213",
    "date": "2026-11-03",
    "time": "22:13",
