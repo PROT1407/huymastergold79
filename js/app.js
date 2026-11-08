@@ -147,7 +147,7 @@
   }
   if ($('quick') || $('strategy')) {
     H.getJSON('data/strategies.json').then(d => {
-      const key = s => s.id || s.date, list = (d.strategies || []).sort((a, b) => (b.date + (b.time || '')).localeCompare(a.date + (a.time || ''))); if (!list.length) return;
+      const key = s => s.id || s.date, list = (d.strategies || []).filter(s => !s.news).sort((a, b) => (b.date + (b.time || '')).localeCompare(a.date + (a.time || ''))); if (!list.length) return;
       if ($('quick')) $('quick').innerHTML = strategyHTML(list[0], true);
       if ($('strategy')) {
         const want = new URLSearchParams(location.search).get('ngay'), show = s => { $('strategy').innerHTML = strategyHTML(s); arc.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.d === key(s))); };
