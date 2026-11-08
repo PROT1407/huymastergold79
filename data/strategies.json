@@ -1,6 +1,95 @@
 {
  "strategies": [
   {
+   "id": "2026-11-08-tong-hop-tin-vang",
+   "date": "2026-11-08",
+   "news": true,
+   "session": "Bản tin tuần",
+   "session_en": "Week in the news",
+   "url": "bai/2026-11-08-tong-hop-tin-vang-tuan-qua.html",
+   "url_en": "en/posts/2026-11-08-gold-week-news-recap.html",
+   "headline": "Vàng tăng 4,8% tuần qua: bầu cử Mỹ nâng giá, việc làm thứ Sáu hãm đà",
+   "headline_en": "Gold rose 4.8% last week: midterms lifted prices, Friday's jobs report cooled the rally",
+   "title": "Vàng tăng 4,8% tuần qua: bầu cử Mỹ nâng giá, việc làm thứ Sáu hãm đà",
+   "title_en": "Gold rose 4.8% last week: midterms lifted prices, Friday's jobs report cooled the rally",
+   "article": {
+    "sections": [
+     {
+      "h": "",
+      "p": "Tuần qua (từ 2/11 đến hết 6/11/2026), vàng hồi khá mạnh rồi bị hãm lại cuối tuần. Theo CNBC, vàng giao ngay tăng 4,8% trong tuần; lúc bài được cập nhật 1:06 PM ET ngày 6/11, giá giảm 0,7% xuống 4.059,90 USD/oz, thấp trong phiên ở 4.033,29. Hợp đồng futures giao tháng 12 cùng lúc giảm 1% còn 4.071,80 USD. Trước đó, ngày 30/10, vàng từng xuống đáy một năm 3.869,85 USD/oz."
+     },
+     {
+      "h": "",
+      "p": "Động lực giữa tuần đến từ bầu cử giữa nhiệm kỳ Mỹ. Reuters (qua Kitco) cho biết Đảng Dân Chủ giành cả Hạ viện và Thượng viện; USD và lợi suất trái phiếu giảm, vàng được đỡ. Ngày 4/11, spot tăng gần 3,4% — mạnh nhất một ngày kể từ 19/8 — lên 4.046,74 USD/oz, cao phiên 4.050,99. Ngày 5/11 đà tăng kéo dài: spot tăng 1,4% lên 4.117,69 USD/oz lúc 13:16 GMT, cao phiên 4.146,63 (mốc chưa thấy kể từ 20/10). Tính đến thứ Năm, Reuters ghi nhận vàng đã tăng hơn 250 USD từ đáy một năm. Kỳ vọng hạ nhiệt căng thẳng Mỹ–Iran sau bầu cử từng kéo dầu Brent giảm gần 9% hôm thứ Tư và còn dưới 100 USD/thùng vào thứ Năm, cũng bớt áp lực lạm phát lên vàng."
+     },
+     {
+      "h": "",
+      "p": "Thứ Sáu 6/11, báo cáo việc làm tháng 10 đổi nhịp. CNBC dẫn số BLS: payrolls tăng 165.000 (dự báo Dow Jones 59.000), thất nghiệp còn 4,1%, lương giờ tăng hơn dự kiến, số tháng 8 và tháng 9 được điều chỉnh tăng. USD hồi 0,7% lên mức cao nhất kể từ 29/10, lợi suất trái phiếu 10 năm cũng tăng, kéo vàng giao ngay giảm 0,7% trong phiên."
+     },
+     {
+      "h": "",
+      "p": "Kỳ vọng lãi suất thay đổi theo từng mốc CME FedWatch được báo chí dẫn: khoảng 82% khả năng Fed tăng lãi tháng 12 vào 4/11 và 81% vào 5/11 (Reuters/Kitco); sáng 6/11 sau số việc làm, CNBC dẫn 76,8% cho họp 8–9/12; đầu giờ chiều cùng ngày bài vàng của CNBC dẫn 74,8%, so với 72,8% ngay trước báo cáo việc làm. Hai quan chức Fed hôm thứ Năm ủng hộ tăng lãi nhỏ, đều. Giá thấp hơn trong phiên cũng kích thích người mua lẻ Ấn Độ trước lễ Diwali, theo CNBC. Thị trường tiếp tục nhìn vào các dữ liệu tới để đo bước đi tiếp theo của Fed trong tháng 12."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Vàng, cập nhật 1:06 PM ET ngày 6/11/2026",
+      "url": "https://www.cnbc.com/2026/11/06/gold-eases-on-inflation-worries-from-higher-oil-us-payrolls-data-in-focus.html"
+     },
+     {
+      "name": "CNBC – Báo cáo việc làm tháng 10/2026",
+      "url": "https://www.cnbc.com/2026/11/06/jobs-report-october-2026.html"
+     },
+     {
+      "name": "Kitco (Reuters) – 4/11/2026",
+      "url": "https://www.kitco.com/news/off-the-wire/2026-11-04/gold-gains-3-dollar-slides-after-democratic-midterm-gains"
+     },
+     {
+      "name": "Kitco (Reuters) – 5/11/2026",
+      "url": "https://www.kitco.com/news/off-the-wire/2026-11-05/gold-hits-2-week-high-dollar-yields-oil-fall-after-us-midterms"
+     }
+    ]
+   },
+   "article_en": {
+    "sections": [
+     {
+      "h": "",
+      "p": "Last week (Nov. 2 through the Nov. 6 U.S. session), gold recovered sharply before cooling into the weekend. According to CNBC, spot gold gained 4.8% on the week. As of CNBC's 1:06 p.m. ET update on Nov. 6, spot was down 0.7% at $4,059.90 an ounce after a session low of $4,033.29. December U.S. gold futures were down 1% at $4,071.80 at the same update. On Oct. 30, gold had fallen to a one-year low of $3,869.85."
+     },
+     {
+      "h": "",
+      "p": "The midweek impulse came from the U.S. midterm elections. Reuters (via Kitco) reported that Democrats won both the House and the Senate; the dollar and Treasury yields fell, which supported gold. On Nov. 4, spot climbed nearly 3.4% — the strongest daily gain since Aug. 19 — to $4,046.74, with a session high of $4,050.99. On Nov. 5 the advance continued: spot rose 1.4% to $4,117.69 at 1:16 p.m. GMT and hit a session high of $4,146.63, a level last seen on Oct. 20. By Thursday, Reuters said gold was up more than $250 from that one-year low. Hopes that post-election tensions between the U.S. and Iran might ease pulled Brent down nearly 9% on Wednesday and left it below $100 a barrel on Thursday, taking some inflation pressure off bullion."
+     },
+     {
+      "h": "",
+      "p": "Friday, Nov. 6, brought a shift after the October employment report. CNBC, citing BLS data, said payrolls rose by 165,000 (versus a Dow Jones forecast of 59,000), the unemployment rate fell to 4.1%, hourly earnings rose more than expected, and the August and September figures were revised higher. The dollar rebounded 0.7% to its highest level since Oct. 29, and 10-year Treasury yields also rose, helping pull spot gold down 0.7% on the session."
+     },
+     {
+      "h": "",
+      "p": "Rate-hike odds moved with each CME FedWatch print cited in the press: about 82% for a December hike on Nov. 4 and 81% on Nov. 5 (Reuters/Kitco); on the morning of Nov. 6 after the jobs report, CNBC cited 76.8% for the Dec. 8–9 FOMC meeting; later that afternoon CNBC's gold story cited 74.8%, versus 72.8% just before the report. Two Fed officials on Thursday backed small, steady rate increases. Lower prices also encouraged Indian retail buying ahead of Diwali, CNBC said. Markets will keep watching incoming data for clues about the Fed's next step in December."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Gold, 1:06 p.m. ET update, Nov. 6, 2026",
+      "url": "https://www.cnbc.com/2026/11/06/gold-eases-on-inflation-worries-from-higher-oil-us-payrolls-data-in-focus.html"
+     },
+     {
+      "name": "CNBC – October 2026 jobs report",
+      "url": "https://www.cnbc.com/2026/11/06/jobs-report-october-2026.html"
+     },
+     {
+      "name": "Kitco (Reuters) – Nov. 4, 2026",
+      "url": "https://www.kitco.com/news/off-the-wire/2026-11-04/gold-gains-3-dollar-slides-after-democratic-midterm-gains"
+     },
+     {
+      "name": "Kitco (Reuters) – Nov. 5, 2026",
+      "url": "https://www.kitco.com/news/off-the-wire/2026-11-05/gold-hits-2-week-high-dollar-yields-oil-fall-after-us-midterms"
+     }
+    ]
+   }
+  },
+  {
    "id": "2026-11-06-nhan-dinh-chung",
    "date": "2026-11-06",
    "time": "10:15",
