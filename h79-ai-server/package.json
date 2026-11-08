@@ -1,0 +1,14 @@
+{
+  "name": "h79-ai-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Internal weekday news-board generator for HuymasterGold79.",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node --test --test-concurrency=1"
+  }
+}
