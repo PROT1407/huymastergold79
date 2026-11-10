@@ -355,10 +355,13 @@ function decideGrouped(token, roles) {
 function polishVn(text, roles) {
   const known = roles || { decimals: new Set(), integers: new Set(), aliases: new Set() };
   const urls = [];
-  let out = String(text || '').replace(/https?:\/\/\S+/g, (url) => {
-    urls.push(url);
-    return `«${urls.length - 1}»`;
-  });
+  let out = String(text || '')
+    .replace(/Commodity Markets Outlook/gi, 'Triển vọng Thị trường Hàng hóa')
+    .replace(/\bWorld Bank\b/gi, 'Ngân hàng Thế giới')
+    .replace(/https?:\/\/\S+/g, (url) => {
+      urls.push(url);
+      return `«${urls.length - 1}»`;
+    });
   out = out
     .replace(/\$?\s*(\d{1,3}),(\d{3})\.(\d{1,2})\b/g, (_, whole, thou, frac) => `${whole}.${thou},${frac.length === 1 ? `${frac}0` : frac}`)
     .replace(/(?<![\d.])(\d{1,3}),(\d{3})(?![\d.])/g, (full, head, frac) => {
@@ -432,11 +435,44 @@ function dropGenericWorldBank(text) {
   }).join(' ');
 }
 
-function tidyWeeklyCopy(board) {
-  const fix = (value) => dropGenericWorldBank(splitDebt(value));
+function formatWeekLabel(week) {
+  if (!week || !week.start || !week.end) return '';
+  const bit = (iso) => {
+    const parts = String(iso).split('-');
+    if (parts.length < 3) return '';
+    return `${Number(parts[2])}/${Number(parts[1])}`;
+  };
+  const start = bit(week.start);
+  const end = bit(week.end);
+  if (!start || !end) return '';
+  return `tuần ${start}–${end}`;
+}
+
+function ensureWeekLabel(board, week) {
+  const label = formatWeekLabel(week);
+  if (!label) return;
+  const blob = `${board.title || ''}\n${(board.sections || []).map((section) => section.p || '').join('\n')}`;
+  const [start, end] = label.replace(/^tuần\s+/, '').split('–');
+  if (start && end && blob.includes(start) && blob.includes(end)) return;
+  board.title = board.title ? `${board.title} (${label})` : label;
+}
+
+function iranClaimSupported(corpus) {
+  return /iran/i.test(corpus || '') && /(support|premium|safe[- ]haven|hỗ trợ|đàm phán)/i.test(corpus || '');
+}
+
+function stripIranClaim(text, corpus) {
+  if (iranClaimSupported(corpus)) return text;
+  const cleaned = String(text || '').replace(/,?\s*[^,.!?]{0,220}iran[^,.!?]{0,220}/gi, '');
+  return sentencesOf(cleaned).filter((sentence) => /\p{L}/u.test(sentence)).join(' ');
+}
+
+function tidyWeeklyCopy(board, week, corpus) {
+  const fix = (value) => stripIranClaim(dropGenericWorldBank(splitDebt(value)), corpus);
   if (typeof board.title === 'string') board.title = fix(board.title);
   for (const section of board.sections || []) section.p = fix(section.p || '');
   board.sections = (board.sections || []).filter((section) => section && section.p && section.p.trim());
+  ensureWeekLabel(board, week);
 }
 
 function sentencesOf(text) {
@@ -445,6 +481,66 @@ function sentencesOf(text) {
     out.push(...line.split(/(?<=[.!?])\s+/).map((part) => part.trim()).filter(Boolean));
   }
   return out;
+}
+
+const FACT_ALIASES = [
+  ['vàng', 'gold'],
+  ['bạc', 'silver'],
+  ['dầu', 'oil'],
+  ['lợi suất', 'yield'],
+  ['việc làm', 'payroll'],
+  ['lương', 'payroll'],
+  ['đô la', 'dollar'],
+  ['usd', 'dollar'],
+  ['nợ', 'debt'],
+  ['ngân hàng thế giới', 'world bank'],
+  ['lạm phát', 'inflation'],
+  ['fed', 'fed'],
+  ['cpi', 'cpi'],
+  ['nfp', 'payroll'],
+];
+
+function sentenceSupported(sentence, corpus) {
+  if (/\d/.test(sentence || '')) return true;
+  const hay = String(corpus || '').toLowerCase();
+  const text = String(sentence || '').toLowerCase();
+  for (const [left, right] of FACT_ALIASES) {
+    if ((text.includes(left) || text.includes(right)) && (hay.includes(left) || hay.includes(right))) return true;
+  }
+  const factTerms = new Set((hay.match(/\p{L}{4,}/gu) || []).filter((word) => !REPEAT_SKIP.has(word)));
+  return (text.match(/\p{L}{4,}/gu) || []).some((word) => factTerms.has(word) && !REPEAT_SKIP.has(word));
+}
+
+function percentsIn(text) {
+  const found = [];
+  for (const match of String(text || '').matchAll(/(\d{1,3}(?:[.,]\d+)?)\s*%/g)) found.push(normPercent(match[1]));
+  return found;
+}
+
+function alignTitlePercents(board) {
+  for (const item of board.items || []) {
+    const body = [item.summary, item.reason, board.fedwatch_note].filter(Boolean).join(' ');
+    const precise = [...new Set(percentsIn(body).filter((value) => value.includes('.')))];
+    if (precise.length !== 1) continue;
+    const exact = precise[0];
+    item.title = String(item.title || '').replace(/(\d{1,3}(?:[.,]\d+)?)\s*%/g, (full, raw) => {
+      const value = normPercent(raw);
+      if (value === exact) return `${exact.replace('.', ',')}%`;
+      if (!value.includes('.') && Math.abs(Number(value) - Number(exact)) <= 5) return `${exact.replace('.', ',')}%`;
+      return full;
+    });
+  }
+}
+
+function titlePercentMismatch(board) {
+  const problems = [];
+  for (const item of board.items || []) {
+    const body = new Set(percentsIn([item.summary, item.reason, board.fedwatch_note].filter(Boolean).join(' ')));
+    for (const value of percentsIn(item.title)) {
+      if (!body.has(value)) problems.push(`title percent ${value}% is not in the body`);
+    }
+  }
+  return problems;
 }
 
 function repeatedWord(sentence) {
@@ -610,6 +706,7 @@ function lintBoard(task, board, ctx) {
   if (ctx.moved && /đi ngang|ổn định/i.test(vn)) problems.push('says prices are flat while they moved');
   if (ctx.payrollMonth === 10 && /việc làm tháng 11/.test(vn)) problems.push('payroll data month mixed up with the release month');
   if (ctx.fedwatchRequired && /chưa có (số|xác suất) fedwatch/i.test(blob)) problems.push('FedWatch figure was extracted but the board says there is none');
+  if (task === 'macro') problems.push(...titlePercentMismatch(board));
   if (task === 'weekly') {
     if ((vn.match(/giao dịch trong tuần đi từ/gi) || []).length > 1) problems.push('price path sentence repeated');
     if (/→|➔/.test(vn)) problems.push('arrow chain in Vietnamese prose');
@@ -623,6 +720,7 @@ function lintBoard(task, board, ctx) {
       if (phrase) problems.push(`banned phrase: ${phrase}`);
       const word = repeatedWord(sentence);
       if (word) problems.push(`repeated word: ${word}`);
+      if (!sentenceSupported(sentence, ctx.corpus || '')) problems.push('unsupported claim');
     }
   }
   if (!(board.share_fb || '').includes(SLOGAN)) problems.push('share text missing the Vietnamese line');
@@ -673,6 +771,7 @@ function gate(input) {
       const fedwatchRequired = Boolean(input.fedwatch && input.fedwatch.stated && (input.fedwatch.items || []).length);
       applyFedwatch(board, input.fedwatch);
       styleVnFields(board, corpus);
+      alignTitlePercents(board);
       const blob = board.items.map((item) => [item.title, item.title_en, item.summary, item.summary_en, item.reason, item.reason_en, item.time_vn, item.time_en].join('\n')).join('\n');
       if (contradictsClock(blob, clock)) return reject('Bản tin sai thứ hoặc gọi nhầm tuần mới.', { failedNumbers: [], missingFacts: [], detail: 'wrong weekday' }, !input.final);
       const tokens = extractNumbers(blob);
@@ -704,7 +803,7 @@ function gate(input) {
       if (problems.length) return reject('Bản tin chưa đạt kiểm tra nội dung.', { failedNumbers: [], missingFacts: [], detail: problems.join('; ') }, !input.final);
     } else {
       board.sections = (Array.isArray(board.sections) ? board.sections : []).filter((item) => item && item.h !== 'Số liệu trong nguồn' && item.h !== 'Diễn biến và số liệu' && !looksEnglish(item.p) && !NAV_RE.test(item.p || ''));
-      tidyWeeklyCopy(board);
+      tidyWeeklyCopy(board, input.week, corpus);
       styleVnFields(board, corpus);
       const sections = board.sections.length ? board.sections : [{ h: 'Tuần qua', p: 'Bản tin tuần ghép từ các mốc giá và số liệu đã đọc trong nguồn.' }];
       board.sections = sections;
@@ -748,10 +847,10 @@ function gate(input) {
       const payroll = (input.facts || []).find((fact) => fact.kind === 'payroll');
       applyShares('weekly', board, clock);
       styleVnFields(board, corpus);
-      const problems = lintBoard('weekly', board, { payrollMonth: payroll && payroll.month });
+      const problems = lintBoard('weekly', board, { payrollMonth: payroll && payroll.month, corpus });
       if (problems.length) {
-        const flagged = sentencesOf([board.title, ...(board.sections || []).map((item) => item.p)].filter(Boolean).join('\n')).filter((sentence) => bannedHit(sentence) || repeatedWord(sentence));
-        const phraseOnly = flagged.length > 0 && problems.every((problem) => problem.startsWith('banned phrase') || problem.startsWith('repeated word'));
+        const flagged = sentencesOf([board.title, ...(board.sections || []).map((item) => item.p)].filter(Boolean).join('\n')).filter((sentence) => bannedHit(sentence) || repeatedWord(sentence) || !sentenceSupported(sentence, corpus));
+        const phraseOnly = flagged.length > 0 && problems.every((problem) => problem.startsWith('banned phrase') || problem.startsWith('repeated word') || problem.startsWith('unsupported claim'));
         if (phraseOnly) {
           return {
             ok: false,

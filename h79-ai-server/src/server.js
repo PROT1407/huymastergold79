@@ -240,6 +240,7 @@ function createServer(options = {}) {
       facts: collected.facts || [],
       pricePath: collected.pricePath || '',
       priceLines: collected.priceLines || [],
+      sleep: options.sleep,
     };
     let rewrotePhrases = false;
     const gateInput = (raw, final) => ({
@@ -254,6 +255,7 @@ function createServer(options = {}) {
       priceLines: collected.priceLines || [],
       sourceTime: collected.sourceTime || '',
       previous,
+      week: collected.week,
       final,
     });
     async function rewritePhrases(current) {
@@ -263,7 +265,7 @@ function createServer(options = {}) {
       if (!flagged.length) return current;
       let reply;
       try {
-        reply = await rewriteSentences({ fetchImpl, apiKey, model, sentences: flagged });
+        reply = await rewriteSentences({ fetchImpl, apiKey, model, sentences: flagged, sleep: options.sleep });
       } catch {
         return current;
       }
@@ -275,7 +277,10 @@ function createServer(options = {}) {
         if (!to || digitSignature(from) !== digitSignature(to)) return;
         replaceFlagged(current.board, from, to);
       });
-      return gate(gateInput(JSON.stringify(current.board), true));
+      const again = gate(gateInput(JSON.stringify(current.board), true));
+      if (again.ok || !again.debug || !again.debug.phraseRewrite) return again;
+      for (const sentence of again.debug.flagged || []) replaceFlagged(again.board, sentence, '');
+      return gate(gateInput(JSON.stringify(again.board), true));
     }
     let text;
     try {
@@ -284,20 +289,7 @@ function createServer(options = {}) {
       send(res, 502, { ok: false, error: 'Không tạo được bản tin lúc này. Vui lòng thử lại sau.' });
       return;
     }
-    let checked = gate({
-      task: body.task,
-      text,
-      sources: collected.sources,
-      clock,
-      prices: collected.prices,
-      fedwatch: collected.fedwatch,
-      facts: collected.facts || [],
-      pricePath: collected.pricePath || '',
-      priceLines: collected.priceLines || [],
-      sourceTime: collected.sourceTime || '',
-      previous,
-      final: false,
-    });
+    let checked = gate(gateInput(text, false));
     checked = await rewritePhrases(checked);
     if (!checked.ok && checked.retryable) {
       try {
@@ -306,20 +298,7 @@ function createServer(options = {}) {
         send(res, 502, { ok: false, error: 'Không tạo được bản tin lúc này. Vui lòng thử lại sau.' });
         return;
       }
-      checked = gate({
-        task: body.task,
-        text,
-        sources: collected.sources,
-        clock,
-        prices: collected.prices,
-        fedwatch: collected.fedwatch,
-        facts: collected.facts || [],
-        pricePath: collected.pricePath || '',
-        priceLines: collected.priceLines || [],
-        sourceTime: collected.sourceTime || '',
-        previous,
-        final: true,
-      });
+      checked = gate(gateInput(text, true));
     }
     checked = await rewritePhrases(checked);
     if (!checked.ok) {
@@ -327,21 +306,8 @@ function createServer(options = {}) {
       return;
     }
     try {
-      const proofed = await proofreadBoard({ fetchImpl, apiKey, model, text: JSON.stringify(checked.board) });
-      const again = gate({
-        task: body.task,
-        text: proofed,
-        sources: collected.sources,
-        clock,
-        prices: collected.prices,
-        fedwatch: collected.fedwatch,
-        facts: collected.facts || [],
-        pricePath: collected.pricePath || '',
-        priceLines: collected.priceLines || [],
-        sourceTime: collected.sourceTime || '',
-        previous,
-        final: true,
-      });
+      const proofed = await proofreadBoard({ fetchImpl, apiKey, model, text: JSON.stringify(checked.board), sleep: options.sleep });
+      const again = gate(gateInput(proofed, true));
       if (again.ok && digitSignature(again.board) === digitSignature(checked.board)) checked = again;
     } catch { /* keep the unproofed draft */ }
     send(res, 200, {

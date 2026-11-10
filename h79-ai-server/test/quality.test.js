@@ -436,6 +436,92 @@ test('Vietnamese numbers, spacing, dropped words, and English parentheses are no
   assert.match(gated.board.items[0].summary, /spot vàng/);
 });
 
+test('a rounded title percent is replaced and a distant one is rejected', () => {
+  const source = {
+    name: 'Kitco',
+    url: 'https://www.kitco.com/news/article/2026-11-09/fedwatch',
+    excerpt: 'CME FedWatch showed an 82.2% probability of a December hike. A separate print was 70%.',
+  };
+  const aligned = gate({
+    task: 'macro',
+    clock: tuesday,
+    sources: [source],
+    fedwatch: { stated: true, items: [{ url: source.url, sentence: 'CME FedWatch showed an 82.2% probability of a December hike.', published: '2026-11-09T17:03:15-05:00' }] },
+    prices: [],
+    text: JSON.stringify({
+      items: [{
+        title: 'FedWatch quanh mức 80%',
+        summary: 'Xác suất tháng 12 nằm trong bài.',
+        reason: 'Lợi suất dịu khi cửa tăng được định giá lại trong bài này.',
+        title_en: 'FedWatch',
+        summary_en: 'CME FedWatch showed an 82.2% probability of a December hike.',
+        reason_en: 'Yields eased.',
+      }],
+    }),
+  });
+  assert.equal(aligned.ok, true, JSON.stringify(aligned.debug || aligned.error));
+  assert.match(aligned.board.items[0].title, /82,2%/);
+  assert.equal(aligned.board.items[0].title.includes('80%'), false);
+  const distant = gate({
+    task: 'macro',
+    clock: tuesday,
+    sources: [source],
+    fedwatch: { stated: true, items: [{ url: source.url, sentence: 'CME FedWatch showed an 82.2% probability of a December hike.', published: '2026-11-09T17:03:15-05:00' }] },
+    prices: [],
+    text: JSON.stringify({
+      items: [{
+        title: 'Vàng quanh mức 70%',
+        summary: 'Xác suất tháng 12 nằm trong bài và chưa được làm tròn.',
+        reason: 'Lợi suất dịu khi cửa tăng được định giá lại trong bài này.',
+        title_en: 'Gold holds',
+        summary_en: 'CME FedWatch showed an 82.2% probability of a December hike.',
+        reason_en: 'Yields eased.',
+      }],
+    }),
+  });
+  assert.equal(distant.ok, false);
+  assert.match(distant.debug.detail, /title percent 70%/);
+});
+
+test('weekly drops an unsupported Iran claim and names the week', () => {
+  const result = gate({
+    task: 'weekly',
+    final: true,
+    clock: clockFromVnString('2026-11-08 09:00'),
+    week: { start: '2026-11-02', end: '2026-11-06' },
+    facts: [
+      { kind: 'payroll', value: 165000, month: 10, sentence: 'October payrolls rose by 165,000.', vn: 'Báo cáo việc làm tháng 10 tăng 165.000 người.' },
+      { kind: 'forecast', sentence: 'The World Bank Commodity Markets Outlook puts gold at $4,600 then $4,250 then $4,000.', vn: 'Dự báo World Bank trong Commodity Markets Outlook: 4.600, 4.250, 4.000 USD/oz.' },
+    ],
+    pricePath: 'Trong tuần, giá vàng đi từ khoảng 3.900 lên đỉnh 4.145.',
+    sources: [{
+      name: 'Kitco',
+      url: 'https://www.kitco.com/news/article/2026-11-08/week-review',
+      normalized: 'Gold bounced from $3,900 to $4,145. October payrolls rose by 165,000. The World Bank Commodity Markets Outlook puts gold at $4,600 then $4,250 then $4,000. US debt is above $40 trillion and the dollar eased.',
+    }],
+    fedwatch: { stated: false, items: [] },
+    text: JSON.stringify({
+      title: 'Mốc 4.000',
+      title_en: 'Gold week',
+      sections: [{
+        h: 'Tuần',
+        p: 'Trong tuần, giá vàng đi từ khoảng 3.900 lên đỉnh 4.145. Mốc 4.000 được thử. Việc làm tháng 10 tăng 165.000 người. Dự báo World Bank trong Commodity Markets Outlook: 4.600, 4.250, 4.000. Nợ công Mỹ đã trên 40 nghìn tỷ USD, khả năng đàm phán với Iran tiếp tục giữ vai trò hỗ trợ dài hạn cho kim loại quý. Nhà đầu tư châu Âu chờ tín hiệu mới.',
+      }],
+      sections_en: [{ h: 'Week', p: 'Gold traded from 3900 to 4145. October payrolls rose by 165,000. World Bank outlook 4600, 4250 and 4000.' }],
+    }),
+  });
+  const prose = `${result.board.title}\n${result.board.sections.map((section) => section.p).join(' ')}`;
+  assert.match(prose, /tuần 2\/11–6\/11/);
+  assert.match(prose, /Ngân hàng Thế giới/);
+  assert.match(prose, /Triển vọng Thị trường Hàng hóa/);
+  assert.match(prose, /Nợ công Mỹ đã trên 40 nghìn tỷ USD/);
+  assert.equal(/iran/i.test(prose), false);
+  assert.equal(/World Bank|Commodity Markets Outlook/.test(prose), false);
+  assert.equal(result.ok, false);
+  assert.equal(result.debug.phraseRewrite, true);
+  assert.equal(result.debug.flagged.some((sentence) => /châu Âu/.test(sentence)), true);
+});
+
 test('weekly boilerplate is split, dropped, or sent back for one rewrite', () => {
   const result = gate({
     task: 'weekly',

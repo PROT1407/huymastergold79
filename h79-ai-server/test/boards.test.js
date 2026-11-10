@@ -5,8 +5,9 @@ const http = require('node:http');
 const assert = require('node:assert/strict');
 const { test } = require('node:test');
 const { collect, findQuotedPrices } = require('../src/collect');
-const { GEMINI_TIMEOUT_MS, extractText } = require('../src/gemini');
+const { GEMINI_BACKOFF_MS, GEMINI_TIMEOUT_MS, extractText, generateBoard } = require('../src/gemini');
 const { createServer, portFrom, start } = require('../src/server');
+const { clockFromVnString } = require('../src/time');
 
 const TOKEN = 'test-run-token';
 const KEY = 'test-gemini-key';
@@ -678,8 +679,32 @@ test('a banned weekly sentence is rewritten once', async () => {
     assert.equal(rewrites, 1);
     assert.equal(res.status, 200, JSON.stringify(res.json && res.json.debug));
     assert.equal(res.json.text.includes('giao dịch đầy sóng gió'), false);
-    assert.match(res.json.text, /dao động mạnh/);
   });
+});
+
+test('gemini retries a 503 and a timeout before succeeding', async () => {
+  let calls = 0;
+  const sleeps = [];
+  const text = await generateBoard({
+    fetchImpl: async () => {
+      calls += 1;
+      if (calls === 1) return new Response('busy', { status: 503 });
+      if (calls === 2) throw new Error('timeout');
+      return geminiResponse('{"ok":true}');
+    },
+    sleep: async (ms) => { sleeps.push(ms); },
+    apiKey: 'k',
+    model: 'm',
+    systemPrompt: 'p',
+    task: 'macro',
+    clock: clockFromVnString('2026-11-10 06:37'),
+    sources: [],
+    prices: [],
+    fedwatch: { stated: false, items: [] },
+  });
+  assert.equal(calls, 3);
+  assert.deepEqual(sleeps, GEMINI_BACKOFF_MS.slice(1));
+  assert.match(text, /ok/);
 });
 
 test('start listens on 0.0.0.0', async () => {

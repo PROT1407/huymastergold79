@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import importlib.util
 import json
+import os
 import sys
 import tempfile
 import unittest
@@ -161,6 +162,65 @@ class PublishTests(unittest.TestCase):
             share = pub.apply_share({}, 'macro', payload())
             self.assertEqual(share['macro']['facebook'], 'Vàng 4.087')
             self.assertNotIn('H79_RUN_TOKEN', json.dumps(share))
+
+
+class PostRetryTests(unittest.TestCase):
+    def setUp(self):
+        self._token = os.environ.get('H79_RUN_TOKEN')
+        os.environ['H79_RUN_TOKEN'] = 'test-token'
+
+    def tearDown(self):
+        if self._token is None:
+            os.environ.pop('H79_RUN_TOKEN', None)
+        else:
+            os.environ['H79_RUN_TOKEN'] = self._token
+
+    def test_503_then_success_waits_and_returns_the_board(self):
+        import io
+        import urllib.error
+        calls = []
+        sleeps = []
+
+        class Body(io.BytesIO):
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *args):
+                return False
+
+        def opener(req, timeout=0):
+            calls.append(timeout)
+            if len(calls) < 3:
+                raise urllib.error.HTTPError(req.full_url, 503, 'down', {}, None)
+            return Body(json.dumps(payload()).encode())
+
+        got = pub.post_board('https://h79.example', 'macro', '2026-11-10 06:37', opener=opener, sleep=sleeps.append)
+        self.assertEqual(calls, [180, 180, 180])
+        self.assertEqual(sleeps, [90, 150])
+        self.assertTrue(got['ok'])
+        self.assertIn('board', got)
+
+    def test_422_fails_immediately_and_three_503s_give_up(self):
+        import urllib.error
+        calls = []
+
+        def reject(req, timeout=0):
+            calls.append(req.full_url)
+            raise urllib.error.HTTPError(req.full_url, 422, 'no', {}, None)
+
+        with self.assertRaises(SystemExit) as early:
+            pub.post_board('https://h79.example', 'macro', '2026-11-10 06:37', opener=reject, sleep=lambda seconds: (_ for _ in ()).throw(AssertionError(seconds)))
+        self.assertIn('422', str(early.exception))
+        self.assertEqual(len(calls), 1)
+
+        def always_down(req, timeout=0):
+            raise urllib.error.HTTPError(req.full_url, 503, 'down', {}, None)
+
+        slept = []
+        with self.assertRaises(SystemExit) as gave_up:
+            pub.post_board('https://h79.example', 'weekly', '2026-11-15 09:00', opener=always_down, sleep=slept.append)
+        self.assertIn('after 3 tries', str(gave_up.exception))
+        self.assertEqual(slept, [90, 150])
 
 
 if __name__ == '__main__':

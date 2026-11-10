@@ -133,28 +133,43 @@ def quotes_before(data, datetime_vn):
     return {'bar': latest.get('bar'), 'ring': latest.get('ring')}
 
 
-def post_board(base, task, datetime_vn, opener=None, previous=None):
+# Three tries spread over about five minutes: immediate, then 90s, then 150s.
+POST_RETRY_WAITS = (90, 150)
+
+
+def post_board(base, task, datetime_vn, opener=None, previous=None, sleep=time.sleep):
     token = os.environ.get('H79_RUN_TOKEN') or ''
     if not token:
         raise SystemExit('H79_RUN_TOKEN is not set')
-    payload = {'task': task, 'datetime_vn': datetime_vn}
+    body_payload = {'task': task, 'datetime_vn': datetime_vn}
     if previous:
-        payload['previous'] = previous
-    body = json.dumps(payload).encode()
-    req = urllib.request.Request(base + '/api/boards', data=body, method='POST', headers={
-        'Authorization': 'Bearer ' + token,
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-    })
+        body_payload['previous'] = previous
+    body = json.dumps(body_payload).encode()
     open_url = opener or urllib.request.urlopen
-    try:
-        with open_url(req, timeout=100) as response:
-            payload = json.load(response)
-    except urllib.error.HTTPError as exc:
-        raise SystemExit(f'generator HTTP {exc.code}')
-    if not isinstance(payload, dict) or not payload.get('ok') or not payload.get('board'):
-        raise SystemExit('generator rejected the draft')
-    return payload
+    last = 'unreachable'
+    for attempt in range(3):
+        if attempt:
+            sleep(POST_RETRY_WAITS[attempt - 1])
+        req = urllib.request.Request(base + '/api/boards', data=body, method='POST', headers={
+            'Authorization': 'Bearer ' + token,
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+        })
+        try:
+            with open_url(req, timeout=180) as response:
+                payload = json.load(response)
+        except urllib.error.HTTPError as exc:
+            if exc.code == 429 or 500 <= exc.code <= 599:
+                last = exc.code
+                continue
+            raise SystemExit(f'generator HTTP {exc.code}')
+        except (urllib.error.URLError, TimeoutError, OSError):
+            last = 'timeout'
+            continue
+        if not isinstance(payload, dict) or not payload.get('ok') or not payload.get('board'):
+            raise SystemExit('generator rejected the draft')
+        return payload
+    raise SystemExit(f'generator failed after 3 tries ({last})')
 
 
 def read_json(path, fallback):

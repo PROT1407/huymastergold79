@@ -272,7 +272,7 @@ function forecastFact(sentence) {
   if (spots.length < 2) return null;
   return {
     kind: 'forecast',
-    vn: `Dự báo World Bank: ${spots.map(formatGoldVn).join(', ')} USD/oz, không phải giá đã giao dịch trong tuần.`,
+    vn: `Dự báo Ngân hàng Thế giới: ${spots.map(formatGoldVn).join(', ')} USD/oz, không phải giá đã giao dịch trong tuần.`,
   };
 }
 

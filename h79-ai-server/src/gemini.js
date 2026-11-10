@@ -16,6 +16,7 @@ function taskInstruction(task, clock, extra) {
       'Nhiệm vụ: macro = Phần B tin vĩ mô.',
       ...clockLines,
       'Chỉ dùng các số liệu đã tách bên dưới. Chép đúng từng số, kèm URL của câu đó. Không thêm số khác.',
+      'Tiêu đề chép đúng phần trăm đã có trong bài. Không làm tròn, ví dụ không viết 80% khi bài nói 82,2%.',
       extra.fedwatch && extra.fedwatch.stated
         ? 'FedWatch: chỉ được dùng các câu đã đánh dấu, kèm nguồn và thời điểm của câu đó.'
         : 'FedWatch: không có câu nào nêu xác suất. Phải ghi rõ chưa có số FedWatch trong nguồn, không điền phần trăm.',
@@ -34,7 +35,10 @@ function taskInstruction(task, clock, extra) {
       'Cấm các cụm: "giao dịch đầy sóng gió", "tâm điểm chi phối tâm lý nhà đầu tư", "kim loại quý không sinh lời này", "bệ đỡ vững chắc", "vẫn duy trì cao hơn đáng kể so với giai đoạn trước", "tâm lý nhà đầu tư", "động lực tăng giá ban đầu".',
       'Không lặp một từ hai lần trong sáu từ. Tiêu đề nêu mốc hoặc sự kiện, ví dụ "Mốc 4.000".',
       'Nợ công Mỹ là một câu sự kiện riêng: "Nợ công Mỹ đã trên 40 nghìn tỷ USD." Không gắn câu nợ công vào câu về đáy giá vàng.',
-      'Chỉ viết World Bank khi câu có số dự báo. Không thêm câu kết World Bank chung chung.',
+      'Chỉ viết Ngân hàng Thế giới khi câu có số dự báo. Không thêm câu kết chung chung.',
+      'Trong tiếng Việt viết "Ngân hàng Thế giới" thay cho World Bank, và "Triển vọng Thị trường Hàng hóa" thay cho Commodity Markets Outlook.',
+      'Tiêu đề hoặc câu mở phải ghi khoảng tuần, ví dụ tuần 2/11–6/11.',
+      'Không thêm nhận định địa chính trị. Không viết đàm phán với Iran là lực hỗ trợ giá, trừ khi một câu dữ kiện nói đúng điều đó.',
       'Không viết vùng vào lệnh và không viết kế hoạch mua hoặc bán.',
       'Phải đưa đủ diễn biến giá và mọi số liệu đã tách (lương, phần trăm, lộ trình các năm). Chép đúng câu nguồn. Không biến một mốc tương lai thành mức giá đang giữ.',
       'Trả về một khối ```json với khóa title, title_en, sections[{h,p}], sections_en[{h,p}], share_fb, share_zalo.',
@@ -118,6 +122,46 @@ function extractText(data) {
   return chunks.join('').trim();
 }
 
+const GEMINI_BACKOFF_MS = [0, 400, 1200];
+
+function retryableGeminiStatus(status) {
+  return status === 429 || (typeof status === 'number' && status >= 500);
+}
+
+async function callGemini({ fetchImpl, apiKey, model, body, sleep }) {
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
+  const wait = sleep || ((ms) => new Promise((resolve) => setTimeout(resolve, ms)));
+  let lastStatus;
+  for (let attempt = 0; attempt < GEMINI_BACKOFF_MS.length; attempt += 1) {
+    if (GEMINI_BACKOFF_MS[attempt]) await wait(GEMINI_BACKOFF_MS[attempt]);
+    let res;
+    try {
+      res = await fetchImpl(url, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json', 'x-goog-api-key': apiKey },
+        body: JSON.stringify(body),
+        signal: AbortSignal.timeout(GEMINI_TIMEOUT_MS),
+      });
+    } catch {
+      lastStatus = undefined;
+      if (attempt === GEMINI_BACKOFF_MS.length - 1) throw fail(undefined);
+      continue;
+    }
+    if (!res || !res.ok) {
+      try { await res?.body?.cancel?.(); } catch { /* ignore */ }
+      lastStatus = res && typeof res.status === 'number' ? res.status : undefined;
+      if (!retryableGeminiStatus(lastStatus) || attempt === GEMINI_BACKOFF_MS.length - 1) throw fail(lastStatus);
+      continue;
+    }
+    let data;
+    try { data = await res.json(); } catch { throw fail(res.status); }
+    const text = extractText(data);
+    if (!text) throw fail(res.status);
+    return text;
+  }
+  throw fail(lastStatus);
+}
+
 function fail(status) {
   const payload = { msg: 'gemini_http_error' };
   if (typeof status === 'number') payload.status = status;
@@ -127,104 +171,37 @@ function fail(status) {
   return error;
 }
 
-async function generateBoard({ fetchImpl, apiKey, model, systemPrompt, task, clock, sources, prices, fedwatch, week, facts, pricePath, priceLines, feedback }) {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
+async function generateBoard({ fetchImpl, apiKey, model, systemPrompt, task, clock, sources, prices, fedwatch, week, facts, pricePath, priceLines, feedback, sleep }) {
   const body = {
     systemInstruction: { parts: [{ text: systemPrompt }] },
     contents: [{ role: 'user', parts: [{ text: buildUserText({ task, clock, sources, prices, fedwatch, week, facts, pricePath, priceLines, feedback }) }] }],
     generationConfig: { temperature: 0.3, maxOutputTokens: 8192 },
   };
-  let res;
-  try {
-    res = await fetchImpl(url, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        'x-goog-api-key': apiKey,
-      },
-      body: JSON.stringify(body),
-      signal: AbortSignal.timeout(GEMINI_TIMEOUT_MS),
-    });
-  } catch {
-    throw fail(undefined);
-  }
-  if (!res || !res.ok) {
-    try { await res?.body?.cancel?.(); } catch { /* ignore */ }
-    throw fail(res && typeof res.status === 'number' ? res.status : undefined);
-  }
-  let data;
-  try {
-    data = await res.json();
-  } catch {
-    throw fail(res.status);
-  }
-  const text = extractText(data);
-  if (!text) throw fail(res.status);
-  return text;
+  return callGemini({ fetchImpl, apiKey, model, body, sleep });
 }
 
-async function proofreadBoard({ fetchImpl, apiKey, model, text }) {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
+async function proofreadBoard({ fetchImpl, apiKey, model, text, sleep }) {
   const instruction = 'Sửa lỗi chính tả, chữ dính, từ tiếng Việt sai, và từ bị rơi. Được phép chèn từ còn thiếu. Không đổi bất kỳ chữ số nào, không đổi tên riêng, URL hoặc ý. Trả về đúng JSON như đầu vào.';
   const body = {
     systemInstruction: { parts: [{ text: instruction }] },
     contents: [{ role: 'user', parts: [{ text: String(text || '') }] }],
     generationConfig: { temperature: 0, maxOutputTokens: 8192 },
   };
-  let res;
-  try {
-    res = await fetchImpl(url, {
-      method: 'POST',
-      headers: { 'content-type': 'application/json', 'x-goog-api-key': apiKey },
-      body: JSON.stringify(body),
-      signal: AbortSignal.timeout(GEMINI_TIMEOUT_MS),
-    });
-  } catch {
-    throw fail(undefined);
-  }
-  if (!res || !res.ok) {
-    try { await res?.body?.cancel?.(); } catch { /* ignore */ }
-    throw fail(res && typeof res.status === 'number' ? res.status : undefined);
-  }
-  let data;
-  try { data = await res.json(); } catch { throw fail(res.status); }
-  const reply = extractText(data);
-  if (!reply) throw fail(res.status);
-  return reply;
+  return callGemini({ fetchImpl, apiKey, model, body, sleep });
 }
 
 function digitSignature(value) {
   return (JSON.stringify(value).match(/\d+/g) || []).join('');
 }
 
-async function rewriteSentences({ fetchImpl, apiKey, model, sentences }) {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
-  const instruction = 'Viết lại chỉ các câu sau. Câu ngắn, tiếng Việt thường, như trader viết tổng kết tuần. Không dùng câu sáo, không lặp từ. Không đổi số, tên riêng hay URL. Nợ công Mỹ viết thành câu riêng "Nợ công Mỹ đã trên 40 nghìn tỷ USD." Trả về JSON {"sentences":[...]} cùng số câu, cùng thứ tự.';
+async function rewriteSentences({ fetchImpl, apiKey, model, sentences, sleep }) {
+  const instruction = 'Viết lại chỉ các câu sau. Câu ngắn, tiếng Việt thường, như trader viết tổng kết tuần. Không dùng câu sáo, không lặp từ. Không đổi số, tên riêng hay URL. Nếu câu không có số hoặc từ khóa từ dữ kiện, bỏ câu đó. Không viết đàm phán Iran là lực hỗ trợ giá. Nợ công Mỹ viết thành câu riêng "Nợ công Mỹ đã trên 40 nghìn tỷ USD." Trả về JSON {"sentences":[...]} cùng số câu, cùng thứ tự.';
   const body = {
     systemInstruction: { parts: [{ text: instruction }] },
     contents: [{ role: 'user', parts: [{ text: JSON.stringify({ sentences }) }] }],
     generationConfig: { temperature: 0, maxOutputTokens: 2048 },
   };
-  let res;
-  try {
-    res = await fetchImpl(url, {
-      method: 'POST',
-      headers: { 'content-type': 'application/json', 'x-goog-api-key': apiKey },
-      body: JSON.stringify(body),
-      signal: AbortSignal.timeout(GEMINI_TIMEOUT_MS),
-    });
-  } catch {
-    throw fail(undefined);
-  }
-  if (!res || !res.ok) {
-    try { await res?.body?.cancel?.(); } catch { /* ignore */ }
-    throw fail(res && typeof res.status === 'number' ? res.status : undefined);
-  }
-  let data;
-  try { data = await res.json(); } catch { throw fail(res.status); }
-  const reply = extractText(data);
-  if (!reply) throw fail(res.status);
-  return reply;
+  return callGemini({ fetchImpl, apiKey, model, body, sleep });
 }
 
-module.exports = { GEMINI_TIMEOUT_MS, buildUserText, digitSignature, extractText, generateBoard, proofreadBoard, rewriteSentences };
+module.exports = { GEMINI_BACKOFF_MS, GEMINI_TIMEOUT_MS, buildUserText, digitSignature, extractText, generateBoard, proofreadBoard, rewriteSentences };
