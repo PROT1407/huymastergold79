@@ -2,10 +2,15 @@
 
 Internal generator for HuymasterGold79 weekday boards. It is not a public chat widget and it does not update the website.
 
-Two tasks:
+Three tasks:
 
-- `macro` — Phần B tin vĩ mô (about 06:37 Vietnam time, weekdays)
-- `domestic` — Phần C vàng trong nước (about 08:43 Vietnam time, weekdays)
+- `macro` — Phần B tin vĩ mô (06:37 Vietnam time, weekdays)
+- `domestic` — Phần C vàng trong nước (08:43 Vietnam time, weekdays)
+- `weekly` — bản tin thứ Hai–thứ Sáu (09:00 Vietnam time, Sunday)
+
+The service follows links from public index pages to same-day or recent articles. Returned sources are those article URLs. Domestic prices are parsed from the live pages; the model only writes prose around those numbers. A draft with no concrete figures, only homepages, a wrong weekday, or prices that were not parsed returns 422.
+
+Publishing to the site is `.github/workflows/h79-publish.yml` (secret `H79_RUN_TOKEN` only). That workflow runs from `main` after this pull request is merged. Auto-deploy of this Render service stays OFF.
 
 The service fetches a small set of public HTTPS pages, then asks Gemini to write from those facts and URLs only. Gemini Search grounding is not enabled.
 
@@ -55,7 +60,7 @@ curl -sS -X POST "https://<h79-ai-service>.onrender.com/api/boards" \
   -d '{"task":"macro","datetime_vn":"2026-11-10 06:37"}'
 ```
 
-`task` is `macro` or `domestic`. `datetime_vn` is optional; when omitted, the service uses the current Vietnam time. Domestic requests return 422 when no real public price quote was collected.
+`task` is `macro`, `domestic`, or `weekly`. `datetime_vn` is optional (`YYYY-MM-DD HH:MM`); when omitted, the service uses the current Vietnam time and converts ET as Vietnam minus 12 hours. Domestic requests return 422 when no real public price quote was parsed.
 
 ## Tests
 

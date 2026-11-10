@@ -306,7 +306,7 @@ def build_strategies():
         if s.get("example") or not s.get("date") or not s.get("title"): continue
         t = s.get("time")
         sid = slug(s.get("session", "")) or "phien"
-        f = f"{s['date']}-nhan-dinh-vang-{sid}{'-' + t.replace(':', '') if t else ''}.html"
+        f = f"{s['date']}-tong-hop-tin-vang-tuan-qua.html" if s.get("news") else f"{s['date']}-nhan-dinh-vang-{sid}{'-' + t.replace(':', '') if t else ''}.html"
         tr = {"down": ("down", "Giảm"), "up": ("up", "Tăng")}.get(s.get("trendType"), ("side", "Đi ngang"))
         lv = "".join(f'<span class="s">HT {num(x)}</span>' for x in s.get("support", [])) + \
              "".join(f'<span class="r">KC {num(x)}</span>' for x in s.get("resistance", []))
@@ -320,7 +320,9 @@ def build_strategies():
             body = (card("🧭 Kế hoạch &amp; kịch bản", ul(s.get("scenarios")))
                     + card("💡 Lời khuyên", f'<p>{e(s["physicalAdvice"])}</p>' if s.get("physicalAdvice") else "")
                     + (f'<p class="small muted">{e(s["disclaimer"])}</p>' if s.get("disclaimer") else ""))
-        if s.get("summary"):
+        if s.get("news"):  # bản tin tuần: không hộp BÁN/MUA
+            body = img_html(s) + article_html(s.get("article")) + article_src(s.get("article"))
+        elif s.get("summary"):
             body = article_html(s.get("article")) + summary_html(s) + article_src(s.get("article")) + '<details class="h79more"><summary>' + ("Xem thêm" if s.get("brief") else "Xem thêm: chỉ báo, kịch bản, vĩ mô") + '</summary>' + body + "</details>"
         elif (s.get("article") or {}).get("sections"):  # bài chỉ có nội dung (không có hộp kế hoạch), vd viết từ /admin/
             body = img_html(s) + article_html(s.get("article")) + article_src(s.get("article")) + body
@@ -625,6 +627,15 @@ def build_en(arts):
         if a["kind"] == "nd":
             s = next((x for k, x in strat.items() if a["pub"].startswith(x["date"] + "T" + (x.get("time") or "00:00"))), None)
             if not s or not (s.get("title_en") or s.get("headline_en")): continue  # chỉ sinh bản EN khi bài có tiêu đề EN (bài chỉ VN từ /admin/ thì bỏ qua)
+            if s.get("news"):
+                title = s.get("headline_en") or s.get("title_en")
+                ses = s.get("session_en") or "Week in review"
+                x = dict(path=a["en"], vi="bai/" + a["file"], date=a["date"], sort=a["sort"], kind="Gold news", title=title,
+                         desc=title[:157], pub=f"{a['date']}T09:00:00+07:00", when=ses)
+                if s.get("image_en") or s.get("image"): x["img"] = s.get("image_en") or s["image"]
+                x["body"] = en_head(x, "📰 Gold news") + article_html(s.get("article_en"), True) + article_src(s.get("article_en"), True)
+                made.append(x)
+                continue
             t = vn_dt(s["date"], s.get("time"))
             # Always derive EN session label from ET clock (fixes Phiên đêm → NY morning, etc.)
             ses = et_session_label(t) if s.get("time") else (SES_EN.get(s.get("session_en")) or SES_EN.get(s.get("session")) or s.get("session_en") or "")

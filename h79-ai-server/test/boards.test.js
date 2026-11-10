@@ -5,7 +5,7 @@ const http = require('node:http');
 const assert = require('node:assert/strict');
 const { test } = require('node:test');
 const { collect, findQuotedPrices } = require('../src/collect');
-const { extractText } = require('../src/gemini');
+const { GEMINI_TIMEOUT_MS, extractText } = require('../src/gemini');
 const { createServer, portFrom, start } = require('../src/server');
 
 const TOKEN = 'test-run-token';
@@ -201,39 +201,76 @@ test('503 when the system prompt is blank or missing', async () => {
   }
 });
 
-test('macro happy path returns model text and only successful sources', async () => {
+const ARTICLE = 'https://www.cnbc.com/2026/11/09/gold-holds-near-4087.html';
+
+function indexPage(links) {
+  const anchors = links.map((href) => `<a href="${href}">story</a>`).join('');
+  return new Response(`<html><title>Index</title>${anchors}</html>`, {
+    status: 200,
+    headers: { 'content-type': 'text/html; charset=utf-8' },
+  });
+}
+
+function articlePage() {
+  return new Response(`<html><head><title>Gold holds near 4087</title><meta property="article:published_time" content="2026-11-09T18:05:00-05:00"></head><body><p>Spot gold steadied near $4,087 after the dollar eased. CME FedWatch showed a 60.3% chance of a December hike.</p></body></html>`, {
+    status: 200,
+    headers: { 'content-type': 'text/html; charset=utf-8' },
+  });
+}
+
+function macroDraft() {
+  return `\`\`\`json\n${JSON.stringify({
+    items: [{
+      title: 'Vàng giữ 4.087 USD',
+      title_en: 'Gold holds near $4,087',
+      summary: 'Spot gold steadied near $4,087. FedWatch 60,3%.',
+      summary_en: 'Spot gold steadied near $4,087. FedWatch 60.3%.',
+      reason: 'Lợi suất dịu giúp vàng giữ 4.087 USD.',
+      reason_en: 'Softer yields left gold near $4,087.',
+      category: 'Vàng',
+      impact: 'tăng',
+      time_en: 'Monday, November 9, 2025, 18:37 EST',
+      source_url: ARTICLE,
+    }],
+    fedwatch_note: 'CME FedWatch 60,3% cửa tăng tháng 12.',
+    share_fb: 'Vàng 4.087 USD.',
+    share_zalo: 'Vàng giữ 4.087 USD.',
+  })}\n\`\`\``;
+}
+
+test('macro happy path returns an article source and fixes the ET year', async () => {
   const calls = [];
   const fetchImpl = async (url, init) => {
     const target = String(url);
     calls.push({ url: target, init });
-    if (target.includes('generativelanguage.googleapis.com')) return geminiResponse('Bản tin vĩ mô thử.');
-    if (target.includes('kitco.com')) return new Response('down', { status: 503, headers: { 'content-type': 'text/html' } });
-    return htmlPage('Spot gold steadied near 4087 dollars after the dollar eased.');
+    if (target.includes('generativelanguage.googleapis.com')) return geminiResponse(macroDraft());
+    if (target === ARTICLE) return articlePage();
+    if (target.includes('cnbc.com') || target.includes('investing.com')) return indexPage([ARTICLE, 'https://www.cnbc.com/gold/']);
+    return new Response('down', { status: 503, headers: { 'content-type': 'text/html' } });
   };
   await withServer({ env: env(), fetchImpl }, async (port) => {
     const res = await request(port, {
       method: 'POST',
       path: '/api/boards',
       headers: authHeaders(),
-      body: JSON.stringify({ task: 'macro', datetime_vn: '2026-11-09 06:37' }),
+      body: JSON.stringify({ task: 'macro', datetime_vn: '2026-11-10 06:37' }),
     });
     assert.equal(res.status, 200);
     assert.equal(res.json.ok, true);
     assert.equal(res.json.task, 'macro');
-    assert.equal(res.json.text, 'Bản tin vĩ mô thử.');
     assert.equal(res.json.text.includes('hidden-thought'), false);
-    assert.equal(res.json.sources.some((src) => src.url.includes('kitco.com')), false);
-    assert.equal(res.json.sources.length, 3);
-    for (const src of res.json.sources) {
-      assert.equal(typeof src.name, 'string');
-      assert.equal(src.url.startsWith('https://'), true);
-      assert.equal(Object.hasOwn(src, 'excerpt'), false);
-    }
+    assert.deepEqual(res.json.sources.map((src) => src.url), [ARTICLE]);
+    assert.equal(res.json.clock.weekdayEn, 'Tuesday');
+    assert.equal(res.json.clock.timeEn, 'Monday, November 9, 2026, 18:37 EST');
+    assert.equal(res.json.board.items[0].time_en, 'Monday, November 9, 2026, 18:37 EST');
+    assert.equal(res.json.board.items[0].time_en.includes('2025'), false);
+    assert.equal(res.json.fedwatch.stated, true);
     const gemini = calls.find((call) => call.url.includes('generativelanguage.googleapis.com'));
     assert.ok(gemini);
     assert.equal(gemini.url.includes(KEY), false);
     assert.equal(gemini.url.includes('key='), false);
     assert.equal(gemini.init.headers['x-goog-api-key'], KEY);
+    assert.equal(gemini.init.signal.aborted, false);
     const payload = JSON.parse(gemini.init.body);
     assert.equal(payload.systemInstruction.parts[0].text, PROMPT);
     assert.equal(payload.generationConfig.temperature, 0.3);
@@ -241,11 +278,31 @@ test('macro happy path returns model text and only successful sources', async ()
     assert.equal(Object.hasOwn(payload, 'tools'), false);
     assert.equal(JSON.stringify(payload).includes('google_search'), false);
     const user = payload.contents[0].parts[0].text;
-    assert.match(user, /Thời gian Việt Nam: 2026-11-09 06:37/);
     assert.match(user, /Phần B tin vĩ mô/);
-    assert.match(user, /Chỉ dùng các dữ kiện và URL đã thu thập bên dưới/);
-    assert.match(user, /Không bịa số liệu hoặc nguồn/);
-    assert.match(user, /Spot gold steadied near 4087/);
+    assert.match(user, /Thứ Ba \(Tuesday\)/);
+    assert.match(user, /Monday, November 9, 2026, 18:37 EST/);
+    assert.match(user, /Không gọi hôm nay là tuần mới/);
+    assert.match(user, new RegExp(ARTICLE.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+    assert.equal(user.includes('https://www.cnbc.com/gold/'), false);
+  });
+});
+
+test('homepage-only indexes are rejected before Gemini', async () => {
+  let gemini = false;
+  const fetchImpl = async (url) => {
+    if (String(url).includes('generativelanguage')) { gemini = true; throw new Error('should not call'); }
+    return indexPage(['https://www.cnbc.com/gold/', 'https://www.cnbc.com/markets/']);
+  };
+  await withServer({ env: env(), fetchImpl }, async (port) => {
+    const res = await request(port, {
+      method: 'POST',
+      path: '/api/boards',
+      headers: authHeaders(),
+      body: JSON.stringify({ task: 'macro', datetime_vn: '2026-11-10 06:37' }),
+    });
+    assert.equal(res.status, 422);
+    assert.match(res.json.error, /bài báo|trang chủ/);
+    assert.equal(gemini, false);
   });
 });
 
@@ -277,7 +334,16 @@ test('domestic with a collected price returns that source and model text', async
   const fetchImpl = async (url, init) => {
     const target = String(url);
     calls.push({ url: target, init });
-    if (target.includes('generativelanguage.googleapis.com')) return geminiResponse('Bảng giá trong nước.');
+    if (target.includes('generativelanguage.googleapis.com')) {
+      return geminiResponse(`\`\`\`json\n${JSON.stringify({
+        analysis: ['PNJ vàng miếng SJC mua 145.200.000, bán 147.800.000 đồng/lượng.'],
+        analysis_en: ['PNJ SJC bars bid 145.200.000, ask 147.800.000 VND per tael.'],
+        advice: 'Giá bán 147.800.000 đã có nguồn PNJ.',
+        quick_advice: 'SJC bán 147.800.000.',
+        share_fb: 'SJC 145.200.000 / 147.800.000',
+        share_zalo: 'SJC bán 147.800.000',
+      })}\n\`\`\``);
+    }
     if (target.includes('edge-api.pnj.io')) {
       calls[calls.length - 1].kind = 'pnj';
       return new Response(JSON.stringify({ data: [{ masp: 'SJC', giamua: 14520, giaban: 14780 }] }), {
@@ -296,14 +362,14 @@ test('domestic with a collected price returns that source and model text', async
     });
     assert.equal(res.status, 200);
     assert.equal(res.json.task, 'domestic');
-    assert.equal(res.json.text, 'Bảng giá trong nước.');
+    assert.equal(res.json.board.analysis[0].includes('145.200.000'), true);
     assert.deepEqual(res.json.sources, [{ name: 'PNJ', url: 'https://edge-api.pnj.io/ecom-frontend/v1/get-gold-price?zone=00' }]);
     const gemini = calls.find((call) => call.url.includes('generativelanguage.googleapis.com'));
     const payload = JSON.parse(gemini.init?.body || '{}');
     const user = payload.contents[0].parts[0].text;
     assert.match(user, /Phần C vàng trong nước/);
-    assert.match(user, /14520/);
-    assert.equal(user.includes('145200000'), false);
+    assert.match(user, /145\.200\.000/);
+    assert.match(user, /147\.800\.000/);
   });
 });
 
@@ -313,20 +379,23 @@ test('Gemini HTTP errors return 502 and logs keep only the status', async () => 
   console.error = (line) => { lines.push(String(line)); };
   try {
     const fetchImpl = async (url) => {
-      if (String(url).includes('generativelanguage.googleapis.com')) {
+      const target = String(url);
+      if (target.includes('generativelanguage.googleapis.com')) {
         return new Response(JSON.stringify({ error: `${KEY} ${PROMPT} ${TOKEN}` }), {
           status: 500,
           headers: { 'content-type': 'application/json' },
         });
       }
-      return htmlPage('Spot gold steadied near 4087 dollars.');
+      if (target === ARTICLE) return articlePage();
+      if (target.includes('cnbc.com') || target.includes('investing.com')) return indexPage([ARTICLE]);
+      return new Response('down', { status: 404, headers: { 'content-type': 'text/html' } });
     };
     await withServer({ env: env(), fetchImpl }, async (port) => {
       const res = await request(port, {
         method: 'POST',
         path: '/api/boards',
         headers: authHeaders(),
-        body: JSON.stringify({ task: 'macro' }),
+        body: JSON.stringify({ task: 'macro', datetime_vn: '2026-11-10 06:37' }),
       });
       assert.equal(res.status, 502);
       assert.match(res.json.error, /Không tạo được bản tin/);
@@ -359,6 +428,98 @@ test('POST rate limit', async () => {
     const blocked = await send();
     assert.equal(blocked.status, 429);
     assert.equal(calls, 0);
+  });
+});
+
+test('Gemini timeout stays long enough for a full board', () => {
+  assert.ok(GEMINI_TIMEOUT_MS >= 45000);
+});
+
+test('generic macro draft is rejected', async () => {
+  const fetchImpl = async (url) => {
+    if (String(url).includes('generativelanguage')) return geminiResponse('Vàng giằng co, chưa rõ hướng.');
+    if (String(url) === ARTICLE) return articlePage();
+    if (String(url).includes('cnbc.com') || String(url).includes('investing.com')) return indexPage([ARTICLE]);
+    return new Response('down', { status: 404 });
+  };
+  await withServer({ env: env(), fetchImpl }, async (port) => {
+    const res = await request(port, {
+      method: 'POST',
+      path: '/api/boards',
+      headers: authHeaders(),
+      body: JSON.stringify({ task: 'macro', datetime_vn: '2026-11-10 06:37' }),
+    });
+    assert.equal(res.status, 422);
+    assert.match(res.json.error, /số liệu/);
+  });
+});
+
+test('domestic draft with a different ring price is rejected', async () => {
+  const fetchImpl = async (url) => {
+    const target = String(url);
+    if (target.includes('generativelanguage')) {
+      return geminiResponse('```json\n{"analysis":["Nhẫn SJC bán 140.000.000 đồng/lượng."],"advice":"Nhẫn 140.000.000.","quick_advice":"Nhẫn 140.000.000."}\n```');
+    }
+    if (target.includes('edge-api.pnj.io')) {
+      return new Response(JSON.stringify({ data: [{ masp: 'SJC', giamua: 14520, giaban: 14780 }] }), {
+        status: 200,
+        headers: { 'content-type': 'application/json' },
+      });
+    }
+    return new Response('down', { status: 500, headers: { 'content-type': 'text/plain' } });
+  };
+  await withServer({ env: env(), fetchImpl }, async (port) => {
+    const res = await request(port, {
+      method: 'POST',
+      path: '/api/boards',
+      headers: authHeaders(),
+      body: JSON.stringify({ task: 'domestic', datetime_vn: '2026-11-10 08:43' }),
+    });
+    assert.equal(res.status, 422);
+    assert.match(res.json.error, /không khớp|giá/);
+  });
+});
+
+test('weekly digest uses Monday-Friday articles and no trade plan', async () => {
+  const weekArticle = 'https://www.cnbc.com/2026/11/13/gold-week-finishes-near-4080.html';
+  const fetchImpl = async (url, init) => {
+    const target = String(url);
+    if (target.includes('generativelanguage')) {
+      const body = JSON.parse(init.body);
+      const user = body.contents[0].parts[0].text;
+      assert.match(user, /Không viết vùng vào lệnh/);
+      assert.match(user, /2026-11-09/);
+      assert.match(user, /2026-11-13/);
+      return geminiResponse(`\`\`\`json\n${JSON.stringify({
+        title: 'Tuần vàng khép lại gần 4.080 USD',
+        title_en: 'Gold finished the week near $4,080',
+        sections: [{ h: 'Diễn biến', p: 'Gold finished the week near $4,080.' }],
+        sections_en: [{ h: 'The week', p: 'Gold finished the week near $4,080.' }],
+        share_fb: 'Vàng tuần qua gần 4.080 USD.',
+        share_zalo: 'Tuần vàng gần 4.080 USD.',
+      })}\n\`\`\``);
+    }
+    if (target === weekArticle) {
+      return new Response('<html><title>Gold week</title><meta property="article:published_time" content="2026-11-13T16:00:00-05:00"><p>Gold finished the week near $4,080 after Friday trade.</p></html>', {
+        status: 200,
+        headers: { 'content-type': 'text/html' },
+      });
+    }
+    if (target.includes('cnbc.com') || target.includes('investing.com')) return indexPage([weekArticle, 'https://www.cnbc.com/2026/11/02/too-old.html']);
+    return new Response('down', { status: 404 });
+  };
+  await withServer({ env: env(), fetchImpl }, async (port) => {
+    const res = await request(port, {
+      method: 'POST',
+      path: '/api/boards',
+      headers: authHeaders(),
+      body: JSON.stringify({ task: 'weekly', datetime_vn: '2026-11-15 09:00' }),
+    });
+    assert.equal(res.status, 200);
+    assert.equal(res.json.task, 'weekly');
+    assert.deepEqual(res.json.sources.map((src) => src.url), [weekArticle]);
+    assert.equal(res.json.clock.weekdayEn, 'Sunday');
+    assert.equal(res.json.board.title.includes('4.080'), true);
   });
 });
 

@@ -4,7 +4,8 @@ const http = require('node:http');
 const { readBearer, tokensMatch } = require('./auth');
 const { collect } = require('./collect');
 const { generateBoard } = require('./gemini');
-const { vietnamDateTime } = require('./time');
+const { gate } = require('./quality');
+const { resolveClock } = require('./time');
 
 const BODY_LIMIT = 256 * 1024;
 const DEFAULT_RATE = { windowMs: 10 * 60 * 1000, max: 20 };
@@ -52,11 +53,9 @@ function modelName(value) {
   return model;
 }
 
-function cleanDatetime(value, fallback) {
-  if (typeof value !== 'string') return fallback;
-  const text = value.replace(/[\u0000-\u001F\u007F]/g, ' ').replace(/\s+/g, ' ').trim();
-  if (!text || text.length > 80) return fallback;
-  return text;
+function cleanDatetime(value) {
+  if (typeof value !== 'string') return '';
+  return value.replace(/[\u0000-\u001F\u007F]/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 80);
 }
 
 function send(res, status, payload) {
@@ -189,12 +188,21 @@ function createServer(options = {}) {
       send(res, 400, { ok: false, error: 'Yêu cầu không hợp lệ.' });
       return;
     }
-    if (body.task !== 'macro' && body.task !== 'domestic') {
-      send(res, 400, { ok: false, error: 'task phải là macro hoặc domestic.' });
+    if (body.task !== 'macro' && body.task !== 'domestic' && body.task !== 'weekly') {
+      send(res, 400, { ok: false, error: 'task phải là macro, domestic hoặc weekly.' });
       return;
     }
-    const datetimeVn = cleanDatetime(body.datetime_vn, vietnamDateTime(now()));
-    const collected = await collect(body.task, fetchImpl);
+    const datetimeInput = cleanDatetime(body.datetime_vn);
+    const clock = resolveClock(datetimeInput, now());
+    if (!clock || (datetimeInput && clock.datetimeVn !== datetimeInput.slice(0, 16))) {
+      send(res, 400, { ok: false, error: 'datetime_vn phải là YYYY-MM-DD HH:MM.' });
+      return;
+    }
+    const collected = await collect(body.task, fetchImpl, clock);
+    if ((body.task === 'macro' || body.task === 'weekly') && !collected.sources.length) {
+      send(res, 422, { ok: false, error: 'Không có bài báo cùng ngày hoặc gần đây. Không dùng trang chủ làm nguồn.' });
+      return;
+    }
     if (body.task === 'domestic' && !collected.hasPrices) {
       send(res, 422, {
         ok: false,
@@ -210,18 +218,49 @@ function createServer(options = {}) {
         model,
         systemPrompt: prompt,
         task: body.task,
-        datetimeVn,
+        clock,
         sources: collected.sources,
+        prices: collected.prices,
+        fedwatch: collected.fedwatch,
+        week: collected.week,
       });
     } catch {
       send(res, 502, { ok: false, error: 'Không tạo được bản tin lúc này. Vui lòng thử lại sau.' });
       return;
     }
+    const checked = gate({
+      task: body.task,
+      text,
+      sources: collected.sources,
+      clock,
+      prices: collected.prices,
+      fedwatch: collected.fedwatch,
+    });
+    if (!checked.ok) {
+      send(res, checked.status || 422, { ok: false, error: checked.error });
+      return;
+    }
     send(res, 200, {
       ok: true,
       task: body.task,
-      text,
-      sources: collected.sources.map((src) => ({ name: src.name, url: src.url })),
+      text: checked.text,
+      sources: checked.sources,
+      board: checked.board,
+      clock: {
+        dateVn: clock.dateVn,
+        timeVn: clock.timeVn,
+        weekdayVn: clock.weekdayVn,
+        weekdayEn: clock.weekdayEn,
+        dateEt: clock.dateEt,
+        timeEt: clock.timeEt,
+        timeEn: clock.timeEn,
+        year: clock.year,
+      },
+      fedwatch: {
+        stated: Boolean(collected.fedwatch && collected.fedwatch.stated),
+        note: checked.board.fedwatch_note || (collected.fedwatch && collected.fedwatch.note) || '',
+        items: (collected.fedwatch && collected.fedwatch.items) || [],
+      },
     });
   }
 
