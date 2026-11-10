@@ -116,7 +116,7 @@ CSS = """<style>
 @media(max-width:600px){.seo-art{padding:0 4px}.seo-art h1{font-size:1.25rem}}
 </style>"""
 
-KIND = {"nd": ("🎯", "Nhận định H79"), "vm": ("🌐", "Tin vĩ mô"), "gv": ("💰", "Vàng trong nước")}
+KIND = {"nd": ("🎯", "Nhận định H79"), "vm": ("🌐", "Tin vĩ mô"), "gv": ("💰", "Vàng trong nước"), "tn": ("📰", "Tin vàng")}
 
 def og_style_img(s, en=False):  # ảnh xem trước theo og_style (None = dùng mặc định)
     st = OG_STYLES.get(str(s.get("og_style") or ""))
@@ -293,8 +293,31 @@ def summary_html(s):
 
 def article_html(a, en=False):
     if not a or not a.get("sections"): return ""
-    h = '<article class="h79art">' + (f'<h2>{e(a["title"])}</h2>' if a.get("title") else "") + "".join(f'<p><b>{e(x.get("h",""))}:</b>{"<br>" if chr(10) in x.get("p","") else " "}{re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", e(x.get("p",""))).replace(chr(10), "<br>")}</p>' + (f'<figure class="h79img"><a href="{e(x["img"])}" target="_blank" rel="noopener"><img src="{e(x["img"])}" alt="{e(x.get("alt") or "")}" loading="lazy" width="1600" height="900"></a></figure>' if x.get("img") else "") for x in a["sections"])
+    def para(x):
+        body = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", e(x.get("p", ""))).replace(chr(10), "<br>")
+        if x.get("h"):
+            gap = "<br>" if chr(10) in x.get("p", "") else " "
+            return f'<p><b>{e(x["h"])}:</b>{gap}{body}</p>'
+        return f"<p>{body}</p>"
+    h = '<article class="h79art">' + (f'<h2>{e(a["title"])}</h2>' if a.get("title") else "") + "".join(para(x) + (f'<figure class="h79img"><a href="{e(x["img"])}" target="_blank" rel="noopener"><img src="{e(x["img"])}" alt="{e(x.get("alt") or "")}" loading="lazy" width="1600" height="900"></a></figure>' if x.get("img") else "") for x in a["sections"])
     return h + "</article>"
+
+def news_desc(article, fallback):
+    """Meta description from the opening of a news post. Keep whole sentences so a price like 4.8 is not cut."""
+    secs = (article or {}).get("sections") or []
+    text = re.sub(r"\s+", " ", (secs[0].get("p") if secs else "") or fallback or "").strip()
+    if len(text) <= 157:
+        return text
+    out = ""
+    for sent in re.split(r"(?<=[.!?])\s+(?=[A-ZĂÂĐÊÔƠƯ])", text):
+        nxt = (out + " " + sent).strip() if out else sent
+        if len(nxt) > 157:
+            break
+        out = nxt
+    if out:
+        return out
+    sp = text[:157].rfind(" ")
+    return (text[:sp] if sp > 40 else text[:157]).rstrip(" ,;:—-") + "…"
 
 def article_src(a, en=False):
     if not a or not a.get("sources"): return ""
@@ -306,7 +329,21 @@ def build_strategies():
         if s.get("example") or not s.get("date") or not s.get("title"): continue
         t = s.get("time")
         sid = slug(s.get("session", "")) or "phien"
-        f = f"{s['date']}-tong-hop-tin-vang-tuan-qua.html" if s.get("news") else f"{s['date']}-nhan-dinh-vang-{sid}{'-' + t.replace(':', '') if t else ''}.html"
+        f = f"{s['date']}-nhan-dinh-vang-{sid}{'-' + t.replace(':', '') if t else ''}.html"
+        if s.get("news") and str(s.get("url", "")).startswith("bai/") and str(s["url"]).endswith(".html"):
+            f = s["url"][4:]
+        if s.get("news"):
+            # Bản tin (không phải kế hoạch): chỉ bài viết + nguồn. Không hộp BÁN/MUA, không bức tranh giá.
+            title = s.get("headline") or s["title"]
+            body = article_html(s.get("article")) + article_src(s.get("article"))
+            item = dict(kind="tn", file=f, date=s["date"], sort=s["date"] + (t or "00:00"), title=title,
+                        desc=news_desc(s.get("article"), title), pub=f"{s['date']}T{t or '00:00'}:00+07:00",
+                        when=f"{s.get('session') or 'Bản tin'} · {dvn(s['date'])[:5]}", body=body)
+            if s.get("image"): item["img"] = s["image"]
+            elif og_style_img(s): item["ogimg"] = og_style_img(s)
+            item["en"] = (s["url_en"] if str(s.get("url_en", "")).startswith("en/posts/") else en_post_file(f)) if any(s.get(k) for k in ("url_en", "headline_en", "title_en")) else None
+            out.append(item)
+            continue
         tr = {"down": ("down", "Giảm"), "up": ("up", "Tăng")}.get(s.get("trendType"), ("side", "Đi ngang"))
         lv = "".join(f'<span class="s">HT {num(x)}</span>' for x in s.get("support", [])) + \
              "".join(f'<span class="r">KC {num(x)}</span>' for x in s.get("resistance", []))
@@ -320,9 +357,7 @@ def build_strategies():
             body = (card("🧭 Kế hoạch &amp; kịch bản", ul(s.get("scenarios")))
                     + card("💡 Lời khuyên", f'<p>{e(s["physicalAdvice"])}</p>' if s.get("physicalAdvice") else "")
                     + (f'<p class="small muted">{e(s["disclaimer"])}</p>' if s.get("disclaimer") else ""))
-        if s.get("news"):  # bản tin tuần: không hộp BÁN/MUA
-            body = img_html(s) + article_html(s.get("article")) + article_src(s.get("article"))
-        elif s.get("summary"):
+        if s.get("summary"):
             body = article_html(s.get("article")) + summary_html(s) + article_src(s.get("article")) + '<details class="h79more"><summary>' + ("Xem thêm" if s.get("brief") else "Xem thêm: chỉ báo, kịch bản, vĩ mô") + '</summary>' + body + "</details>"
         elif (s.get("article") or {}).get("sections"):  # bài chỉ có nội dung (không có hộp kế hoạch), vd viết từ /admin/
             body = img_html(s) + article_html(s.get("article")) + article_src(s.get("article")) + body
@@ -624,19 +659,21 @@ def build_en(arts):
     macro = load("macro-news.json").get("items", [])
     for a in arts:
         if not a.get("en"): continue
-        if a["kind"] == "nd":
+        if a["kind"] in ("nd", "tn"):
             s = next((x for k, x in strat.items() if a["pub"].startswith(x["date"] + "T" + (x.get("time") or "00:00"))), None)
             if not s or not (s.get("title_en") or s.get("headline_en")): continue  # chỉ sinh bản EN khi bài có tiêu đề EN (bài chỉ VN từ /admin/ thì bỏ qua)
-            if s.get("news"):
+            t = vn_dt(s["date"], s.get("time"))
+            if s.get("news") or a["kind"] == "tn":
                 title = s.get("headline_en") or s.get("title_en")
-                ses = s.get("session_en") or "Week in review"
+                ses = s.get("session_en") or "Gold news"
+                wt = et_str(t, bool(s.get("time")))
                 x = dict(path=a["en"], vi="bai/" + a["file"], date=a["date"], sort=a["sort"], kind="Gold news", title=title,
-                         desc=title[:157], pub=f"{a['date']}T09:00:00+07:00", when=ses)
+                         desc=news_desc(s.get("article_en"), title), pub=t.isoformat(), when=f"{ses} · {wt}")
                 if s.get("image_en") or s.get("image"): x["img"] = s.get("image_en") or s["image"]
+                elif og_style_img(s, True): x["ogimg"] = og_style_img(s, True)
                 x["body"] = en_head(x, "📰 Gold news") + article_html(s.get("article_en"), True) + article_src(s.get("article_en"), True)
                 made.append(x)
                 continue
-            t = vn_dt(s["date"], s.get("time"))
             # Always derive EN session label from ET clock (fixes Phiên đêm → NY morning, etc.)
             ses = et_session_label(t) if s.get("time") else (SES_EN.get(s.get("session_en")) or SES_EN.get(s.get("session")) or s.get("session_en") or "")
             title = s.get("headline_en") or s.get("title_en") or f"H79 Gold Plan – {ses}, {et_str(t, False)}"
