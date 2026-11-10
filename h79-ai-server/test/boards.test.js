@@ -454,7 +454,7 @@ test('generic macro draft is rejected', async () => {
   });
 });
 
-test('domestic draft with a different ring price is rejected', async () => {
+test('domestic price lines replace numbers the model typed', async () => {
   const fetchImpl = async (url) => {
     const target = String(url);
     if (target.includes('generativelanguage')) {
@@ -475,8 +475,12 @@ test('domestic draft with a different ring price is rejected', async () => {
       headers: authHeaders(),
       body: JSON.stringify({ task: 'domestic', datetime_vn: '2026-11-10 08:43' }),
     });
-    assert.equal(res.status, 422);
-    assert.match(res.json.error, /không khớp|giá/);
+    assert.equal(res.status, 200);
+    assert.match(res.json.text, /145\.200\.000/);
+    assert.match(res.json.text, /147\.800\.000/);
+    assert.equal(res.json.text.includes('140.000.000'), false);
+    assert.equal(res.json.text.includes('```'), false);
+    assert.equal(res.json.board.price_lines.some((line) => line.includes('145.200.000')), true);
   });
 });
 
@@ -491,16 +495,16 @@ test('weekly digest uses Monday-Friday articles and no trade plan', async () => 
       assert.match(user, /2026-11-09/);
       assert.match(user, /2026-11-13/);
       return geminiResponse(`\`\`\`json\n${JSON.stringify({
-        title: 'Tuần vàng khép lại gần 4.080 USD',
-        title_en: 'Gold finished the week near $4,080',
-        sections: [{ h: 'Diễn biến', p: 'Gold finished the week near $4,080.' }],
-        sections_en: [{ h: 'The week', p: 'Gold finished the week near $4,080.' }],
+        title: 'Tuần vàng',
+        title_en: 'Gold week',
+        sections: [{ h: 'Diễn biến', p: 'Gold finished the week near $4,000.' }],
+        sections_en: [{ h: 'The week', p: 'Gold finished the week near $4,000.' }],
         share_fb: 'Vàng tuần qua gần 4.080 USD.',
         share_zalo: 'Tuần vàng gần 4.080 USD.',
       })}\n\`\`\``);
     }
     if (target === weekArticle) {
-      return new Response('<html><title>Gold week</title><meta property="article:published_time" content="2026-11-13T16:00:00-05:00"><p>Gold finished the week near $4,080 after Friday trade.</p></html>', {
+      return new Response('<html><title>Gold week</title><meta property="article:published_time" content="2026-11-13T16:00:00-05:00"><p>Gold election bounce ran from about $3,900 to a high near $4,145. October payrolls rose by 165,000. The World Bank gold path is $4,600 in 2026, then $4,250 in 2027, and $4,000 in 2028.</p></html>', {
         status: 200,
         headers: { 'content-type': 'text/html' },
       });
@@ -519,7 +523,50 @@ test('weekly digest uses Monday-Friday articles and no trade plan', async () => 
     assert.equal(res.json.task, 'weekly');
     assert.deepEqual(res.json.sources.map((src) => src.url), [weekArticle]);
     assert.equal(res.json.clock.weekdayEn, 'Sunday');
-    assert.equal(res.json.board.title.includes('4.080'), true);
+    assert.equal(res.json.text.includes('```'), false);
+    assert.match(res.json.text, /4,?145|4145/);
+    assert.match(res.json.text, /165[,.]?000|165000/);
+    assert.match(res.json.text, /4,?600|4600/);
+    assert.match(res.json.text, /4,?250|4250/);
+    assert.match(res.json.text, /3,?900|3900/);
+    assert.match(res.json.text, /Diễn biến giá trong các bài/);
+  });
+});
+
+test('macro retries once and 422 debug lists numbers that were not sourced', async () => {
+  let calls = 0;
+  const fetchImpl = async (url, init) => {
+    const target = String(url);
+    if (target.includes('generativelanguage')) {
+      calls += 1;
+      const user = JSON.parse(init.body).contents[0].parts[0].text;
+      if (calls === 1) {
+        return geminiResponse(`\`\`\`json\n${JSON.stringify({
+          items: [{ title: 'SECRETPHRASE vàng 9.999', summary: 'Giá 9.999 USD.', reason: 'Không rõ.', title_en: 'SECRETPHRASE', summary_en: 'Price 9,999.', reason_en: 'Unclear.', category: 'Vàng', impact: 'trung lập', source_url: ARTICLE }],
+          fedwatch_note: 'Chưa có xác suất FedWatch trong nguồn.',
+        })}\n\`\`\``);
+      }
+      assert.match(user, /9999|9\.999/);
+      return geminiResponse(`\`\`\`json\n${JSON.stringify({
+        items: [{ title: 'Vàng giữ 4.087', summary: 'Spot gold steadied near $4,087. FedWatch 60.3%.', reason: 'Lợi suất dịu, vàng 4.087.', title_en: 'Gold holds', summary_en: 'Spot gold steadied near $4,087. FedWatch 60.3%.', reason_en: 'Yields eased near $4,087.', category: 'Vàng', impact: 'tăng', source_url: ARTICLE }],
+        fedwatch_note: 'FedWatch 60.3%.',
+      })}\n\`\`\``);
+    }
+    if (target === ARTICLE) return articlePage();
+    if (target.includes('cnbc.com') || target.includes('investing.com')) return indexPage([ARTICLE]);
+    return new Response('down', { status: 404, headers: { 'content-type': 'text/html' } });
+  };
+  await withServer({ env: env(), fetchImpl }, async (port) => {
+    const res = await request(port, {
+      method: 'POST',
+      path: '/api/boards',
+      headers: authHeaders(),
+      body: JSON.stringify({ task: 'macro', datetime_vn: '2026-11-10 06:37' }),
+    });
+    assert.equal(calls, 2);
+    assert.equal(res.status, 200);
+    assert.equal(res.json.text.includes('SECRETPHRASE'), false);
+    assert.equal(res.json.text.includes('```'), false);
   });
 });
 

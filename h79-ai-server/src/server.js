@@ -4,7 +4,7 @@ const http = require('node:http');
 const { readBearer, tokensMatch } = require('./auth');
 const { collect } = require('./collect');
 const { generateBoard } = require('./gemini');
-const { gate } = require('./quality');
+const { gate, renderText } = require('./quality');
 const { resolveClock } = require('./time');
 
 const BODY_LIMIT = 256 * 1024;
@@ -200,50 +200,79 @@ function createServer(options = {}) {
     }
     const collected = await collect(body.task, fetchImpl, clock);
     if ((body.task === 'macro' || body.task === 'weekly') && !collected.sources.length) {
-      send(res, 422, { ok: false, error: 'Không có bài báo cùng ngày hoặc gần đây. Không dùng trang chủ làm nguồn.' });
+      send(res, 422, { ok: false, error: 'Không có bài báo cùng ngày hoặc gần đây. Không dùng trang chủ làm nguồn.', debug: { failedNumbers: [], missingFacts: [], detail: 'no articles' } });
       return;
     }
     if (body.task === 'domestic' && !collected.hasPrices) {
       send(res, 422, {
         ok: false,
         error: 'Không lấy được giá vàng trong nước thật từ nguồn công khai. Cần giá thật; không được tự điền số SJC hoặc PNJ.',
+        debug: { failedNumbers: [], missingFacts: [], detail: 'no parsed prices' },
       });
       return;
     }
+    const modelInput = {
+      fetchImpl,
+      apiKey,
+      model,
+      systemPrompt: prompt,
+      task: body.task,
+      clock,
+      sources: collected.sources,
+      prices: collected.prices,
+      fedwatch: collected.fedwatch,
+      week: collected.week,
+      facts: collected.facts || [],
+      pricePath: collected.pricePath || '',
+      priceLines: collected.priceLines || [],
+    };
     let text;
     try {
-      text = await generateBoard({
-        fetchImpl,
-        apiKey,
-        model,
-        systemPrompt: prompt,
-        task: body.task,
-        clock,
-        sources: collected.sources,
-        prices: collected.prices,
-        fedwatch: collected.fedwatch,
-        week: collected.week,
-      });
+      text = await generateBoard(modelInput);
     } catch {
       send(res, 502, { ok: false, error: 'Không tạo được bản tin lúc này. Vui lòng thử lại sau.' });
       return;
     }
-    const checked = gate({
+    let checked = gate({
       task: body.task,
       text,
       sources: collected.sources,
       clock,
       prices: collected.prices,
       fedwatch: collected.fedwatch,
+      facts: collected.facts || [],
+      pricePath: collected.pricePath || '',
+      priceLines: collected.priceLines || [],
+      final: false,
     });
+    if (!checked.ok && checked.retryable) {
+      try {
+        text = await generateBoard({ ...modelInput, feedback: checked.debug });
+      } catch {
+        send(res, 502, { ok: false, error: 'Không tạo được bản tin lúc này. Vui lòng thử lại sau.' });
+        return;
+      }
+      checked = gate({
+        task: body.task,
+        text,
+        sources: collected.sources,
+        clock,
+        prices: collected.prices,
+        fedwatch: collected.fedwatch,
+        facts: collected.facts || [],
+        pricePath: collected.pricePath || '',
+        priceLines: collected.priceLines || [],
+        final: true,
+      });
+    }
     if (!checked.ok) {
-      send(res, checked.status || 422, { ok: false, error: checked.error });
+      send(res, checked.status || 422, { ok: false, error: checked.error, debug: checked.debug || { failedNumbers: [], missingFacts: [] } });
       return;
     }
     send(res, 200, {
       ok: true,
       task: body.task,
-      text: checked.text,
+      text: renderText(body.task, checked.board, checked.text),
       sources: checked.sources,
       board: checked.board,
       clock: {

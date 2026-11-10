@@ -3,7 +3,7 @@
 const UA = 'Mozilla/5.0 (compatible; H79BoardBot/1.0; +https://h79gold.com/)';
 const MAX_BYTES = 400000;
 const TIMEOUT_MS = 8000;
-const MAX_ARTICLES = 6;
+const MAX_ARTICLES = 8;
 
 const ARTICLE_HOSTS = new Set([
   'cnbc.com', 'www.cnbc.com',
@@ -11,14 +11,24 @@ const ARTICLE_HOSTS = new Set([
   'kitco.com', 'www.kitco.com',
   'investing.com', 'www.investing.com',
   'federalreserve.gov', 'www.federalreserve.gov',
+  'fxstreet.com', 'www.fxstreet.com',
 ]);
 
 const NEWS_INDEXES = [
+  { name: 'Kitco News', url: 'https://www.kitco.com/news' },
+  { name: 'Kitco RSS', url: 'https://www.kitco.com/news/rss' },
   { name: 'CNBC Gold', url: 'https://www.cnbc.com/gold/' },
   { name: 'CNBC Markets', url: 'https://www.cnbc.com/markets/' },
-  { name: 'Kitco', url: 'https://www.kitco.com/news' },
-  { name: 'Investing.com', url: 'https://www.investing.com/news/commodities-news' },
+  { name: 'CNBC RSS', url: 'https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000664' },
+  { name: 'Reuters commodities', url: 'https://www.reuters.com/markets/commodities/' },
+  { name: 'FXStreet', url: 'https://www.fxstreet.com/news/latest' },
+  { name: 'FXStreet RSS', url: 'https://www.fxstreet.com/rss/news' },
+  { name: 'Fed press', url: 'https://www.federalreserve.gov/feeds/press_all.xml' },
 ];
+
+const WORLD_SPOT = { name: 'Gold API', url: 'https://api.gold-api.com/price/XAU' };
+const USDVND = { name: 'USDVND', url: 'https://open.er-api.com/v6/latest/USD' };
+const LUONG_FACTOR = 1.20565;
 
 const DOMESTIC_SOURCES = [
   { name: 'PNJ', url: 'https://edge-api.pnj.io/ecom-frontend/v1/get-gold-price?zone=00', kind: 'pnj' },
@@ -64,8 +74,9 @@ function isHomepageUrl(urlStr) {
     const path = parsed.pathname.replace(/\/+$/, '') || '/';
     if (path === '/') return true;
     const sections = new Set([
-      '/gold', '/markets', '/news', '/news/commodities-news',
-      '/monetarypolicy/openmarket.htm',
+      '/gold', '/markets', '/news', '/news/commodities-news', '/news/latest', '/news/rss',
+      '/rss/news', '/markets/commodities', '/monetarypolicy/openmarket.htm',
+      '/feeds/press_all.xml', '/feeds/press_monetary.xml',
     ]);
     return sections.has(path.toLowerCase());
   } catch {
@@ -86,6 +97,7 @@ function isArticleUrl(urlStr) {
   if (host.endsWith('kitco.com') && /\/news\/article\//i.test(path)) return true;
   if (host.endsWith('reuters.com') && path.split('/').filter(Boolean).length >= 3) return true;
   if (host.endsWith('federalreserve.gov') && /\/newsevents\/pressreleases\//i.test(path)) return true;
+  if (host.endsWith('fxstreet.com') && /\/news\/[^/]+/i.test(path) && !/\/news\/latest\/?$/i.test(path)) return true;
   return false;
 }
 
@@ -156,12 +168,47 @@ function htmlToText(html) {
 }
 
 function extractLinks(html, baseUrl) {
-  const links = [];
-  const re = /<a\b[^>]*href\s*=\s*["']([^"'#]+)["']/gi;
-  for (const match of String(html || '').matchAll(re)) {
-    try { links.push(new URL(match[1], baseUrl).href.split('#')[0]); } catch { /* skip bad href */ }
+  const found = new Set();
+  const add = (value) => {
+    try { found.add(new URL(String(value).trim(), baseUrl).href.split('#')[0]); } catch { /* skip bad href */ }
+  };
+  const raw = String(html || '');
+  for (const match of raw.matchAll(/<a\b[^>]*href\s*=\s*["']([^"'#]+)["']/gi)) add(match[1]);
+  for (const match of raw.matchAll(/<link>(?:<!\[CDATA\[)?([^\]<]+)/gi)) add(match[1]);
+  for (const match of raw.matchAll(/<guid(?:\s[^>]*)?>(?:<!\[CDATA\[)?(https?:[^\]<]+)/gi)) add(match[1]);
+  return [...found];
+}
+
+function extractFacts(text, url, name) {
+  const sentences = String(text || '').split(/(?<=[.!?])\s+/).map((part) => part.trim()).filter((part) => part.length > 20 && part.length < 420 && /\d/.test(part));
+  const interesting = sentences.filter((part) => /%|\$|USD|gold|vàng|payroll|Fed|Brent|WTI|ounce|\boz\b|World Bank|yield|lợi suất/i.test(part));
+  return (interesting.length ? interesting : sentences).slice(0, 8).map((sentence) => ({ sentence, url, name }));
+}
+
+function spotValues(sentence) {
+  if (!/gold|vàng|spot|ounce|\boz\b|bullion|XAU/i.test(sentence)) return [];
+  const out = [];
+  const re = /\$\s*(\d{1,2}[.,]\d{3}(?:[.,]\d+)?)|(?<!\d)(\d{1,2}[.,]\d{3})(?!\d)/g;
+  for (const match of String(sentence).matchAll(re)) {
+    const raw = match[1] || match[2];
+    let value = null;
+    if (/^\d{1,2}[.,]\d{3}$/.test(raw)) value = Number(raw.replace(/[.,]/g, ''));
+    else if (raw.includes(',') && raw.includes('.')) value = Number(raw.replace(/,/g, '').split('.')[0]);
+    else if (/[.,]\d{3}/.test(raw)) value = Number(raw.replace(/[.,](?=\d{3}\b)/g, '').split(/[.,]/)[0]);
+    if (value >= 1500 && value <= 8000 && !(value >= 1900 && value <= 2100 && !match[0].includes('$')) && !out.includes(value)) out.push(value);
   }
-  return links;
+  return out;
+}
+
+function pricePathFromFacts(facts) {
+  const spots = [];
+  for (const fact of facts || []) {
+    for (const value of spotValues(fact.sentence)) {
+      if (!spots.includes(value)) spots.push(value);
+    }
+  }
+  if (spots.length < 2) return '';
+  return `Diễn biến giá trong các bài (USD/oz, đúng thứ tự trong nguồn, không diễn giải lại): ${spots.join(' → ')}.`;
 }
 
 function extractTitle(html) {
@@ -255,7 +302,7 @@ async function fetchDocument(src, fetchImpl, hosts) {
   }
   const finalUrl = typeof res.url === 'string' && res.url ? res.url : src.url;
   const contentType = String(res.headers?.get?.('content-type') || '');
-  if (!hostAllowed(finalUrl, hosts) || (contentType && !/text\/html|text\/plain|application\/json|application\/xml|text\/xml/i.test(contentType))) {
+  if (!hostAllowed(finalUrl, hosts) || (contentType && !/text\/html|text\/plain|application\/json|application\/xml|text\/xml|rss|atom/i.test(contentType))) {
     try { await res.body?.cancel?.(); } catch { /* ignore */ }
     console.error(JSON.stringify({ msg: 'source_skip', name: src.name, status: res.status }));
     return null;
@@ -297,7 +344,11 @@ function parseHtmlPrices(text, src) {
     const key = `${label.brand}:${label.type}:${buy}:${sell}`;
     if (seen.has(key)) continue;
     seen.add(key);
-    rows.push({ brand: label.brand, type: label.type, buy, sell, unit: 'đồng/lượng', sourceName: src.name, sourceUrl: src.url });
+    const chg = parseChange(text.slice(match.index, match.index + 220));
+    rows.push({
+      brand: label.brand, type: label.type, buy, sell, unit: 'đồng/lượng', sourceName: src.name, sourceUrl: src.url,
+      chgBuy: chg, chgSell: chg,
+    });
   }
   return rows;
 }
@@ -326,8 +377,61 @@ function parsePnj(raw, src) {
   return out;
 }
 
-function priceExcerpt(rows) {
-  return rows.map((row) => `${row.brand} ${row.type}: mua ${formatVnd(row.buy)}, bán ${formatVnd(row.sell)} đồng/lượng.`).join(' ');
+function signedVnd(amount) {
+  if (amount == null) return '';
+  const sign = amount > 0 ? '+' : amount < 0 ? '−' : '';
+  return `${sign}${formatVnd(Math.abs(amount))}`;
+}
+
+function renderPriceLines(prices, market) {
+  const lines = [];
+  for (const row of prices || []) {
+    let line = `${row.brand} ${row.type}: mua ${formatVnd(row.buy)}, bán ${formatVnd(row.sell)} đồng/lượng.`;
+    if (row.chgBuy != null || row.chgSell != null) line += ` Thay đổi mua ${signedVnd(row.chgBuy)}, bán ${signedVnd(row.chgSell)}.`;
+    line += ` Nguồn: ${row.sourceUrl}`;
+    lines.push(line);
+  }
+  if (market && market.xau) lines.push(`Vàng thế giới: ${formatUsd(market.xau)} USD/oz. Nguồn: ${market.spotUrl}`);
+  if (market && market.gap != null) lines.push(`Chênh SJC bán so với giá quy đổi: ${formatVnd(market.gap)} đồng/lượng. Nguồn quy đổi: ${market.spotUrl} và ${market.fxUrl}.`);
+  return lines;
+}
+
+function formatUsd(amount) {
+  const rounded = Math.round(Number(amount) * 100) / 100;
+  const [whole, frac] = rounded.toFixed(2).split('.');
+  const grouped = whole.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  return frac === '00' ? grouped : `${grouped},${frac}`;
+}
+
+function convertedLuong(xau, usdvnd) {
+  return Math.round(xau * usdvnd * LUONG_FACTOR / 1e5) * 1e5;
+}
+
+function parseChange(slice) {
+  const match = String(slice || '').match(/(tăng|giảm|\+|−|-)\s*(\d{1,3}(?:\.\d{3}){1,3}|\d{1,3}(?:[.,]\d)?)\s*(triệu)?/i);
+  if (!match) return null;
+  const negative = /giảm|−|-/i.test(match[1]) && match[1] !== '+';
+  let amount;
+  if (match[3]) amount = Number(match[2].replace(',', '.')) * 1000000;
+  else amount = Number(match[2].replace(/\./g, ''));
+  if (!Number.isFinite(amount) || amount <= 0 || amount > 50000000) return null;
+  return negative ? -amount : amount;
+}
+
+function parseSpot(raw) {
+  try {
+    const price = Number(JSON.parse(raw).price);
+    if (price >= 500 && price <= 20000) return price;
+  } catch { /* not a spot quote */ }
+  return null;
+}
+
+function parseUsdvnd(raw) {
+  try {
+    const rate = Number(JSON.parse(raw).rates.VND);
+    if (rate >= 10000 && rate <= 100000) return rate;
+  } catch { /* not an FX quote */ }
+  return null;
 }
 
 async function collectDomestic(fetchImpl) {
@@ -339,9 +443,20 @@ async function collectDomestic(fetchImpl) {
     const rows = src.kind === 'pnj' ? parsePnj(page.raw, src) : parseHtmlPrices(htmlToText(page.raw), src);
     if (!rows.length) continue;
     prices.push(...rows);
-    sources.push({ name: src.name, url: src.url, published: '', excerpt: priceExcerpt(rows) });
+    sources.push({ name: src.name, url: src.url, published: '', excerpt: renderPriceLines(rows).join(' ') });
   }
-  return { sources, prices, hasPrices: prices.length > 0, week: null, fedwatch: { stated: false, items: [], note: '' } };
+  const market = { xau: null, usdvnd: null, gap: null, spotUrl: WORLD_SPOT.url, fxUrl: USDVND.url };
+  if (prices.length) {
+    const spotPage = await fetchDocument(WORLD_SPOT, fetchImpl, allowedHosts(WORLD_SPOT.url));
+    const fxPage = await fetchDocument(USDVND, fetchImpl, allowedHosts(USDVND.url));
+    if (spotPage) market.xau = parseSpot(spotPage.raw);
+    if (fxPage) market.usdvnd = parseUsdvnd(fxPage.raw);
+    const sjc = prices.find((row) => /miếng|SJC/i.test(row.type) && row.sell) || prices.find((row) => row.sell);
+    if (market.xau && market.usdvnd && sjc) market.gap = sjc.sell - convertedLuong(market.xau, market.usdvnd);
+    if (market.xau) sources.push({ name: WORLD_SPOT.name, url: WORLD_SPOT.url, published: '', excerpt: `Vàng thế giới ${market.xau} USD/oz.` });
+  }
+  const priceLines = renderPriceLines(prices, market.xau ? market : null);
+  return { sources, prices, priceLines, market, hasPrices: prices.length > 0, facts: [], pricePath: '', week: null, fedwatch: { stated: false, items: [], note: '' } };
 }
 
 async function collectNews(task, fetchImpl, clock) {
@@ -362,7 +477,7 @@ async function collectNews(task, fetchImpl, clock) {
   const chosen = [];
   for (const candidate of candidates) {
     if (chosen.length >= MAX_ARTICLES) break;
-    if (!candidate.dated && chosen.filter((item) => !item.dated).length >= 2) continue;
+    if (!candidate.dated && chosen.filter((item) => !item.dated).length >= 4) continue;
     chosen.push(candidate);
   }
   const pages = (await Promise.all(chosen.map((item) => fetchDocument({ name: 'article', url: item.url }, fetchImpl, ARTICLE_HOSTS)))).filter(Boolean);
@@ -373,17 +488,23 @@ async function collectNews(task, fetchImpl, clock) {
     const published = extractPublished(page.raw) || articleDate(page.url);
     const day = isoDay(published) || articleDate(page.url);
     if (!inWindow(day, window)) continue;
-    const excerpt = keySentences(htmlToText(page.raw));
-    if (!excerpt || !/\d/.test(excerpt)) continue;
-    const hits = fedwatchSentences(htmlToText(page.raw));
+    const plain = htmlToText(page.raw.replace(/<title\b[^>]*>[\s\S]*?<\/title>/gi, ' '));
     const name = extractTitle(page.raw) || new URL(page.url).hostname;
+    const facts = extractFacts(plain, page.url, name);
+    const excerpt = facts.map((fact) => fact.sentence).join(' ') || keySentences(plain);
+    if (!excerpt || !/\d/.test(excerpt)) continue;
+    const hits = fedwatchSentences(plain);
     for (const sentence of hits) fedItems.push({ sentence, name, url: page.url, published });
-    sources.push({ name, url: page.url, published, excerpt, fedwatch: hits });
+    sources.push({ name, url: page.url, published, excerpt, facts, fedwatch: hits });
   }
+  const facts = sources.flatMap((src) => src.facts || []);
   return {
     sources,
     prices: [],
+    priceLines: [],
     hasPrices: false,
+    facts,
+    pricePath: pricePathFromFacts(facts),
     week: window,
     fedwatch: {
       stated: fedItems.length > 0,
@@ -402,9 +523,12 @@ async function collect(task, fetchImpl, clock) {
 module.exports = {
   collect,
   dateWindow,
+  extractFacts,
   findQuotedPrices,
   formatVnd,
   isArticleUrl,
   isHomepageUrl,
+  pricePathFromFacts,
+  renderPriceLines,
   sourcesFor,
 };
