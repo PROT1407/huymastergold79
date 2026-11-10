@@ -158,4 +158,38 @@ async function generateBoard({ fetchImpl, apiKey, model, systemPrompt, task, clo
   return text;
 }
 
-module.exports = { GEMINI_TIMEOUT_MS, buildUserText, extractText, generateBoard };
+async function proofreadBoard({ fetchImpl, apiKey, model, text }) {
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
+  const instruction = 'Sửa chỉ lỗi chính tả, chữ dính hoặc từ tiếng Việt sai. Không đổi số, tên riêng, URL hoặc ý. Trả về đúng JSON như đầu vào.';
+  const body = {
+    systemInstruction: { parts: [{ text: instruction }] },
+    contents: [{ role: 'user', parts: [{ text: String(text || '') }] }],
+    generationConfig: { temperature: 0, maxOutputTokens: 8192 },
+  };
+  let res;
+  try {
+    res = await fetchImpl(url, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', 'x-goog-api-key': apiKey },
+      body: JSON.stringify(body),
+      signal: AbortSignal.timeout(GEMINI_TIMEOUT_MS),
+    });
+  } catch {
+    throw fail(undefined);
+  }
+  if (!res || !res.ok) {
+    try { await res?.body?.cancel?.(); } catch { /* ignore */ }
+    throw fail(res && typeof res.status === 'number' ? res.status : undefined);
+  }
+  let data;
+  try { data = await res.json(); } catch { throw fail(res.status); }
+  const reply = extractText(data);
+  if (!reply) throw fail(res.status);
+  return reply;
+}
+
+function digitSignature(value) {
+  return (JSON.stringify(value).match(/\d+/g) || []).join('');
+}
+
+module.exports = { GEMINI_TIMEOUT_MS, buildUserText, digitSignature, extractText, generateBoard, proofreadBoard };

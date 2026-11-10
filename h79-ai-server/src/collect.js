@@ -212,16 +212,37 @@ function isForecast(sentence) {
   return /world bank|forecast|dự báo|target price|in 202[7-9]|by 202[7-9]|april/i.test(sentence || '');
 }
 
+function formatGoldVn(amount) {
+  const rounded = Math.round(Number(amount) * 100) / 100;
+  const [whole, frac] = rounded.toFixed(2).split('.');
+  const grouped = whole.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  return frac === '00' ? grouped : `${grouped},${frac}`;
+}
+
+function tradedSpots(sentence) {
+  if (!sentence || isForecast(sentence)) return [];
+  if (/\b(could|would|may|might|if)\b/i.test(sentence)) return [];
+  const technical = /\b(support|resistance|target)\b|hỗ trợ|kháng cự|mục tiêu/i.test(sentence);
+  const actual = /\b(from|bounce|bounced|rose|fell|rallied|high|low|traded|settled|closed|broke|break|tested|test)\b/i.test(sentence);
+  if (technical && !actual) return [];
+  if (!actual) return [];
+  return spotValues(sentence);
+}
+
 function pricePathFromFacts(facts) {
   const spots = [];
   for (const fact of facts || []) {
-    if (isForecast(fact.sentence) || fact.kind === 'forecast' || fact.kind === 'payroll') continue;
-    for (const value of spotValues(fact.sentence)) {
+    if (fact.kind === 'forecast' || fact.kind === 'payroll') continue;
+    for (const value of tradedSpots(fact.sentence)) {
       if (!spots.includes(value)) spots.push(value);
     }
   }
   if (spots.length < 2) return '';
-  return `Trong tuần, giá vàng giao dịch đi qua các mốc ${spots.join(' → ')} USD/oz.`;
+  const low = Math.min(...spots);
+  const high = Math.max(...spots);
+  const extras = spots.filter((value) => value !== low && value !== high).slice(0, 2);
+  const extra = extras.length ? ` Nhịp giao dịch khác trong tuần: ${extras.map(formatGoldVn).join(', ')}.` : '';
+  return `Trong tuần, giá vàng đi từ khoảng ${formatGoldVn(low)} lên đỉnh ${formatGoldVn(high)}.${extra}`;
 }
 
 const DATA_MONTHS = {
@@ -251,7 +272,7 @@ function forecastFact(sentence) {
   if (spots.length < 2) return null;
   return {
     kind: 'forecast',
-    vn: `Dự báo, không phải giá đã giao dịch trong tuần: ${spots.join(' → ')} USD/oz.`,
+    vn: `Dự báo World Bank: ${spots.map(formatGoldVn).join(', ')} USD/oz, không phải giá đã giao dịch trong tuần.`,
   };
 }
 
@@ -574,7 +595,7 @@ async function collectNews(task, fetchImpl, clock) {
     const name = extractTitle(page.raw) || new URL(page.url).hostname;
     const facts = preferNewest(extractFacts(plain, page.url, name).map((fact) => {
       const spots = spotValues(fact.sentence);
-      const extra = payrollFact(fact.sentence) || forecastFact(fact.sentence) || (spots.length >= 2 ? { kind: 'market', vn: `Giá vàng giao dịch trong tuần đi từ ${spots[0]} tới ${spots[spots.length - 1]} USD/oz.` } : { kind: 'market' });
+      const extra = payrollFact(fact.sentence) || forecastFact(fact.sentence) || { kind: 'market' };
       return { ...fact, published, ...extra };
     }));
     const excerpt = (plain || keySentences(plain)).slice(0, 20000);
@@ -621,6 +642,7 @@ module.exports = {
   payrollFact,
   preferNewest,
   pricePathFromFacts,
+  tradedSpots,
   renderPriceLines,
   sourcesFor,
 };

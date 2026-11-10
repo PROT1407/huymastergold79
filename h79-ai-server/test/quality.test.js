@@ -46,8 +46,22 @@ test('price lines and the weekly path come from parsed figures', () => {
     { sentence: 'Gold election bounce ran from about $3,900 to a high near $4,145.' },
     { sentence: 'The World Bank gold path is $4,600 in 2026, then $4,250 in 2027, and $4,000 in 2028.' },
   ]);
-  assert.match(path, /3900 → 4145/);
-  assert.equal(path.includes('4600'), false);
+  assert.match(path, /3\.900/);
+  assert.match(path, /4\.145/);
+  assert.equal(path.includes('→'), false);
+  assert.equal(path.includes('4.600'), false);
+  assert.equal(path.includes('4.032'), false);
+  const crowded = pricePathFromFacts([
+    { sentence: 'Gold election bounce ran from about $3,900 to a high near $4,145.' },
+    { sentence: 'Price tested $4,000 support and a forced break took the low to $3,970.' },
+    { sentence: 'Analysts see support at $4,032, resistance at $4,016 and targets at $4,064 and $4,089.' },
+    { sentence: 'Gold could reach $4,700 if the April forecast holds, with another target at $4,300.' },
+    { sentence: 'The World Bank gold path is $4,600 in 2026, then $4,250 in 2027, and $4,000 in 2028.' },
+  ]);
+  assert.match(crowded, /3\.900/);
+  assert.match(crowded, /4\.145/);
+  assert.equal(/4\.032|4\.016|4\.064|4\.089|4\.700|4\.600/.test(crowded), false);
+  assert.equal((crowded.match(/giao dịch trong tuần đi từ/gi) || []).length, 0);
 });
 
 test('wrong weekday and unsourced FedWatch percent are rejected', () => {
@@ -202,10 +216,10 @@ test('the 08:56 snapshot beats the Nov 6 history row', () => {
 test('weekly core ignores optional World Bank percentages', () => {
   const facts = [
     { kind: 'payroll', value: 165000, month: 10, sentence: 'October payrolls rose by 165,000.', vn: 'Báo cáo việc làm tháng 10 tăng 165.000 người.' },
-    { kind: 'forecast', sentence: 'World Bank gold path with side notes of 11% and 6.5% and 40% and 8.3% and 6% and 5%.', vn: 'Dự báo, không phải giá đã giao dịch trong tuần: 4600 → 4250 → 4000 USD/oz.' },
+    { kind: 'forecast', sentence: 'World Bank gold path with side notes of 11% and 6.5% and 40% and 8.3% and 6% and 5%.', vn: 'Dự báo World Bank: 4.600, 4.250, 4.000 USD/oz, không phải giá đã giao dịch trong tuần.' },
     { kind: 'market', sentence: 'Spot bounced from $3,970, up 11%.' },
   ];
-  const path = 'Trong tuần, giá vàng giao dịch đi qua các mốc 3970 → 4145 USD/oz.';
+  const path = 'Trong tuần, giá vàng đi từ khoảng 3.970 lên đỉnh 4.145.';
   const blob = `${path} Mốc 4000 nằm trong dự báo 4600, 4250 và 4000. Báo cáo việc làm tháng 10 tăng 165.000.`;
   assert.deepEqual(missingCore(blob, facts, path), []);
   const result = gate({

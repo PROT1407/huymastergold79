@@ -544,6 +544,10 @@ test('macro retries once and 422 debug lists numbers that were not sourced', asy
     if (target.includes('generativelanguage')) {
       calls += 1;
       const user = JSON.parse(init.body).contents[0].parts[0].text;
+      const payload = JSON.parse(init.body);
+      if (payload.generationConfig && payload.generationConfig.temperature === 0) {
+        return geminiResponse(user);
+      }
       if (calls === 1) {
         return geminiResponse(`\`\`\`json\n${JSON.stringify({
           items: [{ title: 'SECRETPHRASE vàng 9.999', summary: 'Giá 9.999 USD.', reason: 'Không rõ.', title_en: 'SECRETPHRASE', summary_en: 'Price 9,999.', reason_en: 'Unclear.', category: 'Vàng', impact: 'trung lập', source_url: ARTICLE }],
@@ -567,10 +571,53 @@ test('macro retries once and 422 debug lists numbers that were not sourced', asy
       headers: authHeaders(),
       body: JSON.stringify({ task: 'macro', datetime_vn: '2026-11-10 06:37' }),
     });
-    assert.equal(calls, 2);
+    assert.equal(calls, 3);
     assert.equal(res.status, 200);
     assert.equal(res.json.text.includes('SECRETPHRASE'), false);
     assert.equal(res.json.text.includes('```'), false);
+  });
+});
+
+test('proofreading fixes a Vietnamese typo and a bad proofread is discarded', async () => {
+  let stage = 0;
+  const fetchImpl = async (url, init) => {
+    const target = String(url);
+    if (target.includes('generativelanguage')) {
+      const payload = JSON.parse(init.body);
+      stage += 1;
+      if (payload.generationConfig.temperature === 0) {
+        const draft = payload.contents[0].parts[0].text;
+        if (stage === 2) return geminiResponse(draft.replace('hoàn tiếp', 'hoàn toàn'));
+        return geminiResponse(draft.replace('4.087', '4.999'));
+      }
+      return geminiResponse(`\`\`\`json\n${JSON.stringify({
+        items: [{ title: 'Vàng giữ 4.087', summary: 'Diễn biến phụ thuộc hoàn tiếp vào dữ liệu CPI, vàng quanh 4.087.', reason: 'Lợi suất dịu.', title_en: 'Gold holds', summary_en: 'Spot gold steadied near $4,087. FedWatch 60.3%.', reason_en: 'Yields eased near $4,087.', category: 'Vàng', impact: 'tăng', source_url: ARTICLE }],
+        fedwatch_note: 'FedWatch 60,3%.',
+      })}\n\`\`\``);
+    }
+    if (target === ARTICLE) return articlePage();
+    if (target.includes('cnbc.com') || target.includes('investing.com')) return indexPage([ARTICLE]);
+    return new Response('down', { status: 404, headers: { 'content-type': 'text/html' } });
+  };
+  await withServer({ env: env(), fetchImpl }, async (port) => {
+    const fixed = await request(port, {
+      method: 'POST',
+      path: '/api/boards',
+      headers: authHeaders(),
+      body: JSON.stringify({ task: 'macro', datetime_vn: '2026-11-10 06:37' }),
+    });
+    assert.equal(fixed.status, 200);
+    assert.match(fixed.json.text, /hoàn toàn/);
+    assert.match(fixed.json.text, /60,3%/);
+    const kept = await request(port, {
+      method: 'POST',
+      path: '/api/boards',
+      headers: authHeaders(),
+      body: JSON.stringify({ task: 'macro', datetime_vn: '2026-11-10 06:37' }),
+    });
+    assert.equal(kept.status, 200);
+    assert.equal(kept.json.text.includes('4.999'), false);
+    assert.match(kept.json.text, /4\.087/);
   });
 });
 

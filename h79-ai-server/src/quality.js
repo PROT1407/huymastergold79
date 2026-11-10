@@ -303,10 +303,36 @@ function cleanVietnameseFacts(facts, pricePath) {
   return lines;
 }
 
-function appendWeeklyFacts(board, facts, pricePath) {
-  const lines = cleanVietnameseFacts(facts, pricePath).filter((line) => !looksEnglish(line) && !NAV_RE.test(line));
-  if (!lines.length) return;
-  board.sections = [...(board.sections || []).filter((item) => item && item.h !== 'Số liệu trong nguồn' && !looksEnglish(item.p)), { h: 'Diễn biến và số liệu', p: lines.join(' ') }];
+function styleVnNumbers(text) {
+  return String(text || '')
+    .replace(/(\d{1,3})\.(\d{1,2})\s*%/g, '$1,$2%')
+    .replace(/\$?\s*(\d{1,2}),(\d{3})\.(\d{1,2})\b/g, (_, whole, thou, frac) => `${whole}.${thou},${frac.length === 1 ? `${frac}0` : frac}`)
+    .replace(/\$?\s*(\d{1,2}),(\d{3})\b/g, '$1.$2');
+}
+
+function styleVnFields(board) {
+  const touch = (value) => (typeof value === 'string' ? styleVnNumbers(value) : value);
+  if (typeof board.fedwatch_note === 'string') board.fedwatch_note = touch(board.fedwatch_note);
+  for (const key of ['analysis', 'advice', 'quick_advice', 'share_fb', 'share_zalo', 'share_lead']) {
+    if (Array.isArray(board[key])) board[key] = board[key].map(touch);
+    else board[key] = touch(board[key]);
+  }
+  for (const item of board.items || []) {
+    item.title = touch(item.title);
+    item.summary = touch(item.summary);
+    item.reason = touch(item.reason);
+  }
+  for (const section of board.sections || []) section.p = touch(section.p);
+}
+
+function foldWeeklySentence(board, sentence) {
+  if (!sentence) return;
+  board.sections = (board.sections || []).filter((item) => item && item.h !== 'Diễn biến và số liệu' && item.h !== 'Số liệu trong nguồn');
+  const blob = (board.sections || []).map((item) => item.p || '').join(' ');
+  sentence = String(sentence).replace(/\s*[→➔]\s*/g, ', ').replace(/\s+,/g, ',');
+  if (blob.includes(sentence.slice(0, 32))) return;
+  if (!board.sections.length) board.sections = [{ h: 'Tuần qua', p: sentence }];
+  else board.sections[0].p = `${board.sections[0].p} ${sentence}`.trim();
 }
 
 function weeklyBlob(board) {
@@ -436,6 +462,14 @@ function lintBoard(task, board, ctx) {
   if (ctx.moved && /đi ngang|ổn định/i.test(vn)) problems.push('says prices are flat while they moved');
   if (ctx.payrollMonth === 10 && /việc làm tháng 11/.test(vn)) problems.push('payroll data month mixed up with the release month');
   if (ctx.fedwatchRequired && /chưa có (số|xác suất) fedwatch/i.test(blob)) problems.push('FedWatch figure was extracted but the board says there is none');
+  if (task === 'weekly') {
+    if ((vn.match(/giao dịch trong tuần đi từ/gi) || []).length > 1) problems.push('price path sentence repeated');
+    if (/→|➔/.test(vn)) problems.push('arrow chain in Vietnamese prose');
+    for (const sentence of vn.split(/[.!?]/)) {
+      const levels = sentence.match(/\d\.\d{3}/g) || [];
+      if (levels.length > 4 && /đi từ|giao dịch|mốc/.test(sentence)) problems.push('path has more than 4 levels');
+    }
+  }
   if (!(board.share_fb || '').includes(SLOGAN)) problems.push('share text missing the Vietnamese line');
   if ((board.share_fb || '').includes('/tin-tuc.html')) problems.push('share text uses the generic news URL');
   return problems;
@@ -498,10 +532,11 @@ function gate(input) {
         board.fedwatch_note = 'Chưa có xác suất FedWatch trong nguồn.';
       }
       applyShares('macro', board, clock);
+      styleVnFields(board);
       const problems = lintBoard('macro', board, { fedwatchRequired });
       if (problems.length) return reject('Bản tin chưa đạt kiểm tra nội dung.', { failedNumbers: [], missingFacts: [], detail: problems.join('; ') }, !input.final);
     } else {
-      board.sections = (Array.isArray(board.sections) ? board.sections : []).filter((item) => item && item.h !== 'Số liệu trong nguồn' && !looksEnglish(item.p) && !NAV_RE.test(item.p || ''));
+      board.sections = (Array.isArray(board.sections) ? board.sections : []).filter((item) => item && item.h !== 'Số liệu trong nguồn' && item.h !== 'Diễn biến và số liệu' && !looksEnglish(item.p) && !NAV_RE.test(item.p || ''));
       const sections = board.sections.length ? board.sections : [{ h: 'Tuần qua', p: 'Bản tin tuần ghép từ các mốc giá và số liệu đã đọc trong nguồn.' }];
       board.sections = sections;
       const sectionsEn = Array.isArray(board.sections_en) ? board.sections_en : [];
@@ -523,8 +558,12 @@ function gate(input) {
           detail: 'weekly figures incomplete',
         }, true);
       }
-      if (missing.length || (input.pricePath && !blob.includes('Trong tuần, giá vàng giao dịch'))) {
-        appendWeeklyFacts(board, input.facts, input.pricePath);
+      if (input.final && (missing.length || (input.pricePath && !/đi từ khoảng/.test(weeklyBlob(board))))) {
+        foldWeeklySentence(board, input.pricePath);
+        const forecast = (input.facts || []).find((fact) => fact.kind === 'forecast' && fact.vn);
+        const payroll = (input.facts || []).find((fact) => fact.kind === 'payroll' && fact.vn);
+        foldWeeklySentence(board, payroll && payroll.vn);
+        foldWeeklySentence(board, forecast && forecast.vn);
         blob = weeklyBlob(board);
         tokens = extractNumbers(blob);
         bad = failedNumbers(tokens, allowed);
@@ -537,9 +576,9 @@ function gate(input) {
           detail: 'weekly figures incomplete',
         }, false);
       }
-      if (input.pricePath && !weeklyBlob(board).includes('Trong tuần, giá vàng giao dịch')) appendWeeklyFacts(board, [], input.pricePath);
       const payroll = (input.facts || []).find((fact) => fact.kind === 'payroll');
       applyShares('weekly', board, clock);
+      styleVnFields(board);
       const problems = lintBoard('weekly', board, { payrollMonth: payroll && payroll.month });
       if (problems.length) return reject('Bản tin chưa đạt kiểm tra nội dung.', { failedNumbers: [], missingFacts: [], detail: problems.join('; ') }, !input.final);
     }
@@ -582,6 +621,7 @@ function gate(input) {
     }, false);
   }
   applyShares('domestic', board, clock);
+  styleVnFields(board);
   const problems = lintBoard('domestic', board, { moved: board.moved });
   if (problems.length) {
     return reject('Bản tin chưa đạt kiểm tra nội dung.', { failedNumbers: [], missingFacts: [], detail: problems.join('; ') }, !input.final);

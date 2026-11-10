@@ -3,7 +3,7 @@
 const http = require('node:http');
 const { readBearer, tokensMatch } = require('./auth');
 const { collect } = require('./collect');
-const { generateBoard } = require('./gemini');
+const { digitSignature, generateBoard, proofreadBoard } = require('./gemini');
 const { gate, quotesBefore, renderText, sanitizePrevious } = require('./quality');
 const { resolveClock } = require('./time');
 
@@ -288,6 +288,24 @@ function createServer(options = {}) {
       send(res, checked.status || 422, { ok: false, error: checked.error, debug: checked.debug || { failedNumbers: [], missingFacts: [] } });
       return;
     }
+    try {
+      const proofed = await proofreadBoard({ fetchImpl, apiKey, model, text: JSON.stringify(checked.board) });
+      const again = gate({
+        task: body.task,
+        text: proofed,
+        sources: collected.sources,
+        clock,
+        prices: collected.prices,
+        fedwatch: collected.fedwatch,
+        facts: collected.facts || [],
+        pricePath: collected.pricePath || '',
+        priceLines: collected.priceLines || [],
+        sourceTime: collected.sourceTime || '',
+        previous,
+        final: true,
+      });
+      if (again.ok && digitSignature(again.board) === digitSignature(checked.board)) checked = again;
+    } catch { /* keep the unproofed draft */ }
     send(res, 200, {
       ok: true,
       task: body.task,
