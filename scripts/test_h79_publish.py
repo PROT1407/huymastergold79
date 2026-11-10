@@ -50,6 +50,16 @@ def payload(task='macro'):
 
 
 class PublishTests(unittest.TestCase):
+    def test_previous_quote_is_the_last_entry_before_the_run_date(self):
+        data = {'history': {'SJL1L10': [
+            {'date': '2026-11-09', 'buy': 138500000, 'sell': 141500000},
+            {'date': '2026-11-10', 'buy': 137900000, 'sell': 140900000},
+        ], 'SJ9999': [{'date': '2026-11-09', 'buy': 136500000, 'sell': 140500000}]}}
+        got = pub.quotes_before(data, '2026-11-10')
+        self.assertEqual(got['bar'], {'buy': 138500000, 'sell': 141500000})
+        self.assertEqual(got['ring']['sell'], 140500000)
+        self.assertIsNone(pub.quotes_before({'history': {}}, '2026-11-10'))
+
     def test_schedule_mapping(self):
         self.assertEqual(pub.task_for_schedule('37 23 * * 0-4'), 'macro')
         self.assertEqual(pub.task_for_schedule('43 1 * * 1-5'), 'domestic')

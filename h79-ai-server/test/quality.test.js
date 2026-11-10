@@ -3,7 +3,7 @@
 const assert = require('node:assert/strict');
 const { test } = require('node:test');
 const { dateWindow, fedwatchSentences, htmlToText, isArticleUrl, isHomepageUrl, payrollFact, preferNewest, pricePathFromFacts, renderPriceLines } = require('../src/collect');
-const { contradictsClock, extractNumbers, gate, lockDomesticBoard } = require('../src/quality');
+const { contradictsClock, extractNumbers, failedNumbers, gate, lockDomesticBoard, missingCore } = require('../src/quality');
 const { clockFromVnString } = require('../src/time');
 
 const tuesday = clockFromVnString('2026-11-10 06:37');
@@ -127,6 +127,84 @@ test('a string analysis stays a sentence and a moved price is not called flat', 
   assert.equal(/đi ngang|ổn định/i.test(board.advice), false);
   assert.equal(board.as_of, '2026-11-10 08:40');
   assert.notEqual(board.quick_advice_en, 'D');
+});
+
+test('Kitco December probability stays 82.2 percent after normalization', () => {
+  const sentence = 'approximately an 82.2\u00a0% probability of a 25-basis-point rate increase in December';
+  assert.equal(fedwatchSentences(sentence).length, 1);
+  const allowed = extractNumbers(sentence);
+  const draft = extractNumbers('FedWatch 82.2% for December.');
+  assert.deepEqual(failedNumbers(draft, allowed), []);
+  const result = gate({
+    task: 'macro',
+    final: true,
+    clock: tuesday,
+    facts: [],
+    priceLines: [],
+    prices: [],
+    previous: null,
+    sources: [{
+      name: 'Kitco PM',
+      url: 'https://www.kitco.com/news/article/2026-11-09/gold-silver-advance-dollar-weakens-fed-rate-expectations-face-inflation',
+      normalized: sentence,
+      excerpt: '',
+    }],
+    fedwatch: { stated: true, items: [{ name: 'Kitco PM', url: 'https://www.kitco.com/news/article/2026-11-09/gold-silver-advance-dollar-weakens-fed-rate-expectations-face-inflation', published: '2026-11-09T21:00:00Z', sentence }] },
+    text: JSON.stringify({
+      items: [{ title: 'FedWatch tháng 12', summary: 'Xác suất tăng tháng 12 là 82.2%.', reason: 'Kỳ vọng lãi suất chi phối vàng.', title_en: 'December FedWatch', summary_en: 'December probability is 82.2%.', reason_en: 'Rate expectations led gold.' }],
+      fedwatch_note: '82.2%',
+    }),
+  });
+  assert.equal(result.ok, true, JSON.stringify(result.debug || result.error));
+  assert.match(result.board.fedwatch_note, /82\.2%/);
+});
+
+test('weekly core ignores optional World Bank percentages', () => {
+  const facts = [
+    { kind: 'payroll', value: 165000, month: 10, sentence: 'October payrolls rose by 165,000.', vn: 'Báo cáo việc làm tháng 10 tăng 165.000 người.' },
+    { kind: 'forecast', sentence: 'World Bank gold path with side notes of 11% and 6.5% and 40% and 8.3% and 6% and 5%.', vn: 'Dự báo, không phải giá đã giao dịch trong tuần: 4600 → 4250 → 4000 USD/oz.' },
+    { kind: 'market', sentence: 'Spot bounced from $3,970, up 11%.' },
+  ];
+  const path = 'Trong tuần, giá vàng giao dịch đi qua các mốc 3970 → 4145 USD/oz.';
+  const blob = `${path} Mốc 4000 nằm trong dự báo 4600, 4250 và 4000. Báo cáo việc làm tháng 10 tăng 165.000.`;
+  assert.deepEqual(missingCore(blob, facts, path), []);
+});
+
+test('shares put the Zalo line only on Zalo and drop prompt leaks', () => {
+  const board = {
+    analysis: ['Giữ khung, chỉ đổi số. Lời bình đủ dài để còn lại sau khi bỏ câu hướng dẫn khỏi phần giá trong nước.'],
+    advice: 'tránhua khi giá chạy, câu này đủ dài để kiểm tra chữ dính và nhẫn tròn trơn trong lời bình.',
+    quick_advice: 'x',
+  };
+  lockDomesticBoard(board, ['PNJ dòng giá đủ dài để không bị coi là cụt: mua 137.900.000, bán 140.900.000 đồng/lượng.'], {
+    prices: [{ brand: 'SJC', type: 'Vàng miếng SJC', buy: 137900000, sell: 140900000 }],
+    previous: null,
+    sourceTime: '2026-11-10 12:20',
+    clock: tuesday,
+  });
+  assert.match(board.analysis[0], /Cập nhật 12:20/);
+  assert.equal(/Giá nguồn lúc/.test(board.analysis.join(' ')), false);
+  assert.equal(/tránhua|Giữ khung/i.test(JSON.stringify(board.analysis.concat(board.advice))), false);
+  assert.match(board.advice, /tránh mua/);
+  assert.ok(board.analysis_en[0].length >= 40);
+  const result = gate({
+    task: 'domestic',
+    final: true,
+    clock: tuesday,
+    sourceTime: '2026-11-10 12:20',
+    previous: null,
+    prices: [{ brand: 'SJC', type: 'Vàng miếng SJC', buy: 137900000, sell: 140900000 }],
+    priceLines: ['SJC Vàng miếng SJC: mua 137.900.000, bán 140.900.000 đồng/lượng. Nguồn: https://example.test/sjc'],
+    sources: [{ name: 'SJC', url: 'https://example.test/sjc', normalized: 'mua 137.900.000 bán 140.900.000' }],
+    fedwatch: { stated: false, items: [] },
+    facts: [],
+    text: JSON.stringify({ analysis: ['Giữ khung, chỉ đổi số. Lời bình đủ dài để còn lại sau khi bỏ câu hướng dẫn khỏi phần giá trong nước.'], advice: 'tránhua khi giá chạy, câu này đủ dài để kiểm tra chữ dính trong lời bình hôm nay.' }),
+  });
+  assert.equal(result.ok, true, JSON.stringify(result.debug || result.error));
+  assert.match(result.board.share_zalo, /https:\/\/h79gold\.com\/zalo/);
+  assert.equal(result.board.share_fb.includes('h79gold.com/zalo'), false);
+  assert.match(result.board.share_fb, /gia-vang\.html/);
+  assert.equal(/Giá nguồn lúc/.test(result.board.share_fb), false);
 });
 
 test('an extracted FedWatch percent replaces a no-figure note', () => {

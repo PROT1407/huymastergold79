@@ -91,11 +91,27 @@ def wake(base, opener=None, sleep=time.sleep):
         sleep(3)
 
 
-def post_board(base, task, datetime_vn, opener=None):
+def quotes_before(data, date):
+    history = (data or {}).get('history') or {}
+    def last(code):
+        rows = [row for row in history.get(code) or [] if row.get('date') and row['date'] < date and row.get('buy') and row.get('sell')]
+        if not rows:
+            return None
+        return {'buy': rows[-1]['buy'], 'sell': rows[-1]['sell']}
+    bar, ring = last('SJL1L10'), last('SJ9999')
+    if not bar and not ring:
+        return None
+    return {'bar': bar, 'ring': ring}
+
+
+def post_board(base, task, datetime_vn, opener=None, previous=None):
     token = os.environ.get('H79_RUN_TOKEN') or ''
     if not token:
         raise SystemExit('H79_RUN_TOKEN is not set')
-    body = json.dumps({'task': task, 'datetime_vn': datetime_vn}).encode()
+    payload = {'task': task, 'datetime_vn': datetime_vn}
+    if previous:
+        payload['previous'] = previous
+    body = json.dumps(payload).encode()
     req = urllib.request.Request(base + '/api/boards', data=body, method='POST', headers={
         'Authorization': 'Bearer ' + token,
         'Content-Type': 'application/json',
@@ -415,7 +431,10 @@ def main(argv=None):
         return 0
     base = api_base()
     wake(base)
-    payload = post_board(base, task, datetime_vn)
+    previous = None
+    if task == 'domestic':
+        previous = quotes_before(read_json(ROOT / 'data' / 'vn-gold-daily.json', {}), date)
+    payload = post_board(base, task, datetime_vn, previous=previous)
     if task == 'domestic':
         result = subprocess.run([sys.executable, str(ROOT / 'scripts' / 'update-vn-gold.py')], cwd=ROOT)
         if result.returncode != 0:

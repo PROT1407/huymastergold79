@@ -166,6 +166,11 @@ function htmlToText(html) {
     .replace(/\s+/g, ' ')
     .replace(/\b(?:presidents,?\s*since\s*1971|Cryptos|Base Metals|About Kitco|Kitco Forum|Mining News)\b/gi, ' ')
     .replace(/\(tính từ mốc năm 1971\)/gi, ' ')
+    .replace(/[\u00a0\u202f\u2007\u2009\ufeff]/g, ' ')
+    .replace(/％/g, '%')
+    .replace(/(\d)\s+%/g, '$1%')
+    .replace(/(\d),(\d{1,2})(?=\s*%)/g, '$1.$2')
+    .replace(/basis-point/gi, 'basis point')
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -185,7 +190,7 @@ function extractLinks(html, baseUrl) {
 function extractFacts(text, url, name) {
   const sentences = String(text || '').split(/(?<=[.!?])\s+/).map((part) => part.trim()).filter((part) => part.length > 20 && part.length < 420 && /\d/.test(part));
   const interesting = sentences.filter((part) => /%|\$|USD|gold|vàng|payroll|Fed|Brent|WTI|ounce|\boz\b|World Bank|yield|lợi suất/i.test(part));
-  return (interesting.length ? interesting : sentences).slice(0, 8).map((sentence) => ({ sentence, url, name }));
+  return (interesting.length ? interesting : sentences).slice(0, 16).map((sentence) => ({ sentence, url, name }));
 }
 
 function spotValues(sentence) {
@@ -572,11 +577,11 @@ async function collectNews(task, fetchImpl, clock) {
       const extra = payrollFact(fact.sentence) || forecastFact(fact.sentence) || (spots.length >= 2 ? { kind: 'market', vn: `Giá vàng giao dịch trong tuần đi từ ${spots[0]} tới ${spots[spots.length - 1]} USD/oz.` } : { kind: 'market' });
       return { ...fact, published, ...extra };
     }));
-    const excerpt = facts.map((fact) => fact.sentence).join(' ') || keySentences(plain);
+    const excerpt = (plain || keySentences(plain)).slice(0, 20000);
     if (!excerpt || !/\d/.test(excerpt)) continue;
     const hits = fedwatchSentences(plain);
     for (const sentence of hits) fedItems.push({ sentence, name, url: page.url, published });
-    sources.push({ name, url: page.url, published, excerpt, facts, fedwatch: hits });
+    sources.push({ name, url: page.url, published, excerpt, normalized: plain.slice(0, 20000), facts, fedwatch: hits });
   }
   const facts = preferNewest(sources.flatMap((src) => src.facts || []));
   return {

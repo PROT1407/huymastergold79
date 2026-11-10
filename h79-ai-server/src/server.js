@@ -1,12 +1,10 @@
 'use strict';
 
-const fs = require('node:fs');
 const http = require('node:http');
-const path = require('node:path');
 const { readBearer, tokensMatch } = require('./auth');
 const { collect } = require('./collect');
 const { generateBoard } = require('./gemini');
-const { gate, renderText } = require('./quality');
+const { gate, quotesBefore, renderText, sanitizePrevious } = require('./quality');
 const { resolveClock } = require('./time');
 
 const BODY_LIMIT = 256 * 1024;
@@ -118,12 +116,15 @@ function createRateLimiter(rate) {
   };
 }
 
-function loadPreviousQuotes() {
+async function resolvePrevious(body, fetchImpl, dateVn, override) {
+  if (override !== undefined) return override;
+  const supplied = sanitizePrevious(body.previous);
+  if (supplied) return supplied;
+  if (body.task !== 'domestic') return null;
   try {
-    const data = JSON.parse(fs.readFileSync(path.join(__dirname, '../../data/vn-gold-daily.json'), 'utf8'));
-    const rows = data.rows || [];
-    const pick = (row) => (row && row.buy && row.sell ? { buy: row.buy, sell: row.sell, prevBuy: row.prev_buy, prevSell: row.prev_sell } : null);
-    return { bar: pick(rows.find((row) => row.code === 'SJL1L10')), ring: pick(rows.find((row) => row.code === 'SJ9999')) };
+    const response = await fetchImpl('https://h79gold.com/data/vn-gold-daily.json', { signal: AbortSignal.timeout(8000) });
+    if (!response || !response.ok) return null;
+    return quotesBefore(await response.json(), dateVn);
   } catch {
     return null;
   }
@@ -212,6 +213,7 @@ function createServer(options = {}) {
       return;
     }
     const collected = await collect(body.task, fetchImpl, clock);
+    const previous = await resolvePrevious(body, fetchImpl, clock.dateVn, options.previousQuotes);
     if ((body.task === 'macro' || body.task === 'weekly') && !collected.sources.length) {
       send(res, 422, { ok: false, error: 'Không có bài báo cùng ngày hoặc gần đây. Không dùng trang chủ làm nguồn.', debug: { failedNumbers: [], missingFacts: [], detail: 'no articles' } });
       return;
@@ -257,7 +259,7 @@ function createServer(options = {}) {
       pricePath: collected.pricePath || '',
       priceLines: collected.priceLines || [],
       sourceTime: collected.sourceTime || '',
-      previous: options.previousQuotes === undefined ? loadPreviousQuotes() : options.previousQuotes,
+      previous,
       final: false,
     });
     if (!checked.ok && checked.retryable) {
@@ -278,7 +280,7 @@ function createServer(options = {}) {
         pricePath: collected.pricePath || '',
         priceLines: collected.priceLines || [],
         sourceTime: collected.sourceTime || '',
-        previous: options.previousQuotes === undefined ? loadPreviousQuotes() : options.previousQuotes,
+        previous,
         final: true,
       });
     }

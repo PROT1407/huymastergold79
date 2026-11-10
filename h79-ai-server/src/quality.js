@@ -50,11 +50,22 @@ function grouped(raw) {
   return { int: String(Number(intPart)), exact: exact.replace(/^0+(?=\d)/, '') };
 }
 
+function normalizeArticleText(text) {
+  return String(text || '')
+    .replace(/[\u00a0\u202f\u2007\u2009\ufeff]/g, ' ')
+    .replace(/％/g, '%')
+    .replace(/(\d)\s+%/g, '$1%')
+    .replace(/(\d),(\d{1,2})(?=\s*%)/g, '$1.$2')
+    .replace(/basis-point/gi, 'basis point')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 function extractNumbers(text) {
   const percents = new Set();
   const ints = new Set();
   const exact = new Set();
-  let src = String(text || '');
+  let src = normalizeArticleText(text);
   src = src.replace(/(\d{1,3}(?:[.,]\d+)?)\s*%/g, (_, value) => {
     const percent = normPercent(value);
     if (percent) percents.add(percent);
@@ -150,12 +161,17 @@ function asLines(value) {
   return [];
 }
 
+const PROMPT_LEAK = /Giữ khung, chỉ đổi số|Chỉ dùng các dữ kiện|Không bịa số|Không viết chữ số|Lần viết trước bị từ chối|H79_SYSTEM_PROMPT/i;
+
 function scrubDigits(text) {
   return String(text || '')
     .replace(/24\s*K/gi, 'NHAN24K')
-    .replace(/\d+(?:[.,]\d+)*/g, ' ')
+    .replace(/(?<!\p{L})\d+(?:[.,]\d+)*(?!\p{L})/gu, ' ')
     .replace(/NHAN24K/g, '24K')
+    .replace(/tránhua/gi, 'tránh mua')
+    .replace(/nhẫn\s+tròn\s*trơn/gi, 'nhẫn trơn')
     .replace(/nhẫn\s+trơn\s*K\b/gi, 'nhẫn trơn 24K')
+    .replace(PROMPT_LEAK, ' ')
     .replace(/\s{2,}/g, ' ')
     .trim();
 }
@@ -173,13 +189,21 @@ function formatVndLocal(amount) {
   return String(Math.abs(amount)).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 }
 
+function sideMove(delta, side) {
+  if (!delta) return `không đổi chiều ${side}`;
+  return `${delta < 0 ? 'giảm' : 'tăng'} ${formatVndLocal(delta)} đồng chiều ${side}`;
+}
+
 function changeSentence(current, previous, label) {
-  if (!current || !previous || previous.sell == null || current.sell == null) return '';
-  const delta = current.sell - previous.sell;
-  if (delta === 0) return `${label} giữ nguyên bán ${formatVndLocal(current.sell)} đồng/lượng so với mốc trước ${formatVndLocal(previous.buy)} / ${formatVndLocal(previous.sell)}.`;
-  const verb = delta < 0 ? 'giảm' : 'tăng';
-  const toward = delta < 0 ? 'xuống còn' : 'lên mức';
-  return `${label} ${verb} ${formatVndLocal(delta)} đồng/lượng, từ mua ${formatVndLocal(previous.buy)} / bán ${formatVndLocal(previous.sell)} ${toward} mua ${formatVndLocal(current.buy)} / bán ${formatVndLocal(current.sell)}.`;
+  if (!current || !previous || previous.buy == null || previous.sell == null || current.buy == null || current.sell == null) return '';
+  const buyDelta = current.buy - previous.buy;
+  const sellDelta = current.sell - previous.sell;
+  if (buyDelta === 0 && sellDelta === 0) return '';
+  if (buyDelta === sellDelta) {
+    const verb = buyDelta < 0 ? 'giảm' : 'tăng';
+    return `${label} ${verb} ${formatVndLocal(buyDelta)} đồng/lượng mỗi chiều, từ mua ${formatVndLocal(previous.buy)} / bán ${formatVndLocal(previous.sell)} còn mua ${formatVndLocal(current.buy)} / bán ${formatVndLocal(current.sell)}.`;
+  }
+  return `${label} ${sideMove(buyDelta, 'mua')}, ${sideMove(sellDelta, 'bán')}, từ mua ${formatVndLocal(previous.buy)} / bán ${formatVndLocal(previous.sell)} còn mua ${formatVndLocal(current.buy)} / bán ${formatVndLocal(current.sell)}.`;
 }
 
 function lockDomesticBoard(board, lines, context) {
@@ -188,22 +212,28 @@ function lockDomesticBoard(board, lines, context) {
   const bar = prices.find((row) => /miếng/i.test(row.type)) || prices[0];
   const ring = prices.find((row) => /nhẫn|24K/i.test(row.type));
   const when = context.sourceTime || context.clock.datetimeVn;
-  const moves = [changeSentence(bar, previous.bar, 'Vàng miếng SJC'), changeSentence(ring, previous.ring, 'Nhẫn trơn 24K')].filter(Boolean);
+  const hour = ((when || '').match(/(\d{2}:\d{2})/) || [])[1] || context.clock.timeVn;
+  const moves = [changeSentence(bar, previous.bar, 'SJC miếng'), changeSentence(ring, previous.ring, 'Nhẫn trơn')].filter(Boolean);
   const moved = moves.some((line) => /tăng|giảm/.test(line));
-  const story = [
-    `Giá nguồn lúc ${when}: ${bar ? `${bar.brand} ${bar.type} mua ${formatVndLocal(bar.buy)} / bán ${formatVndLocal(bar.sell)} đồng/lượng.` : ''}`,
-    ...moves,
-    ring ? `Nhẫn trơn 24K mua ${formatVndLocal(ring.buy)} / bán ${formatVndLocal(ring.sell)} đồng/lượng.` : '',
-  ].filter(Boolean);
+  const quote = [
+    bar ? `SJC miếng mua ${formatVndLocal(bar.buy)} / bán ${formatVndLocal(bar.sell)}` : '',
+    ring ? `nhẫn trơn 24K mua ${formatVndLocal(ring.buy)} / bán ${formatVndLocal(ring.sell)}` : '',
+  ].filter(Boolean).join(', ');
+  const story = [`Cập nhật ${hour}. ${quote}. ${moves.join(' ')}`.replace(/\s+/g, ' ').trim()];
+  const storyEn = [[
+    bar ? `As of ${hour}, SJC bars are bid ${formatVndLocal(bar.buy)} and offered ${formatVndLocal(bar.sell)} VND per tael.` : '',
+    ring ? `Plain 24K rings are bid ${formatVndLocal(ring.buy)} and offered ${formatVndLocal(ring.sell)} VND per tael.` : '',
+    moves.length ? 'The change is measured against the previous published quote, with buy and sell stated separately when they differ.' : '',
+  ].filter(Boolean).join(' ')];
   const commentary = wholeCommentary(board.analysis).concat(wholeCommentary(board.advice)).filter((line) => !(moved && /đi ngang|ổn định/i.test(line)));
   board.price_lines = (lines || []).slice();
   board.as_of = when;
   board.analysis = [...story, ...commentary];
-  board.analysis_en = wholeCommentary(board.analysis_en);
+  board.analysis_en = storyEn;
   board.advice = commentary.join(' ') || story.join(' ');
-  board.advice_en = wholeCommentary(board.advice_en).join(' ');
+  board.advice_en = storyEn.join(' ');
   board.quick_advice = story.join(' ');
-  board.quick_advice_en = story.join(' ');
+  board.quick_advice_en = storyEn.join(' ');
   board.moved = moved;
   return board;
 }
@@ -220,15 +250,24 @@ function factTokens(text) {
   return out;
 }
 
-function missingFactTokens(blob, facts) {
-  const have = new Set(factTokens(blob));
-  const missing = [];
+function coreTokens(facts, pricePath) {
+  const need = factTokens(pricePath || '');
   for (const fact of facts || []) {
-    for (const token of factTokens(fact.sentence || '')) {
-      if (!have.has(token)) missing.push(token);
+    if (fact.kind === 'payroll' && fact.value) need.push(String(fact.value));
+    if (fact.kind === 'forecast' || /world bank|dự báo/i.test(fact.sentence || '')) {
+      const spots = String(fact.vn || fact.sentence || '').match(/\d{3,5}/g) || [];
+      for (const spot of spots) {
+        const value = Number(spot);
+        if (value >= 1500 && value <= 8000) need.push(String(value));
+      }
     }
   }
-  return [...new Set(missing)].slice(0, 30);
+  return [...new Set(need)];
+}
+
+function missingCore(blob, facts, pricePath) {
+  const have = new Set([...factTokens(blob), ...[...extractNumbers(blob).percents].map((value) => `${value}%`)]);
+  return coreTokens(facts, pricePath).filter((token) => !have.has(token));
 }
 
 function failedNumbers(draft, allowed) {
@@ -312,9 +351,10 @@ function applyShares(task, board, clock) {
     : task === 'weekly'
       ? ((board.sections || []).map((item) => item.p).join(' ') || board.title || '')
       : ((board.items && board.items[0] && board.items[0].title) || board.fedwatch_note || '');
-  const text = `${lead}\n${url}\n${SLOGAN}`.replace(/Trade the plan, not the noise\.?/gi, '').trim();
+  const leadShort = task === 'domestic' ? (board.quick_advice || lead) : lead;
+  const text = `${leadShort}\n${url}\n${SLOGAN}`.replace(/Trade the plan, not the noise\.?/gi, '').replace(/Giá nguồn lúc[^.]*/gi, '').trim();
   board.share_fb = text;
-  board.share_zalo = text;
+  board.share_zalo = `${text}\n👥 Join nhóm Zalo H79 - Nhận tín hiệu free: https://h79gold.com/zalo`;
 }
 
 function lintBoard(task, board, ctx) {
@@ -328,7 +368,9 @@ function lintBoard(task, board, ctx) {
     }
   }
   const blob = JSON.stringify(board);
-  if (NAV_RE.test(blob)) problems.push('navigation or raw fact dump');
+  if (NAV_RE.test(blob) || PROMPT_LEAK.test(blob) || /tránhua|nhẫn\s+tròn\s*trơn/i.test(blob)) problems.push('navigation, prompt leak, or glued word');
+  if ((board.share_zalo || '').includes('h79gold.com/zalo') && (board.share_fb || '').includes('h79gold.com/zalo')) problems.push('Facebook share includes the Zalo line');
+  if (!(board.share_zalo || '').includes('https://h79gold.com/zalo')) problems.push('Zalo share missing the group line');
   const vn = [board.analysis, board.advice, board.quick_advice, board.share_fb, ...(board.sections || []).map((item) => `${item.h} ${item.p}`)].flat().filter(Boolean).join('\n');
   if (looksEnglish(vn)) problems.push('raw English in a Vietnamese field');
   if (ctx.moved && /đi ngang|ổn định/i.test(vn)) problems.push('says prices are flat while they moved');
@@ -345,7 +387,8 @@ function gate(input) {
   const board = parseBoard(text);
   if (!board) return reject('Bản tin không có số liệu cụ thể để đăng.', { failedNumbers: [], missingFacts: [], detail: 'no structured draft' }, true);
   const allowed = extractNumbers([
-    ...(input.sources || []).map((src) => src.excerpt || ''),
+    ...(input.sources || []).map((src) => src.normalized || src.excerpt || ''),
+    ...((input.fedwatch && input.fedwatch.items) || []).map((item) => item.sentence || ''),
     ...(input.priceLines || []),
     ...((input.facts || []).map((fact) => fact.sentence)),
   ].join('\n'));
@@ -412,11 +455,7 @@ function gate(input) {
       }
       let tokens = extractNumbers(blob);
       let bad = failedNumbers(tokens, allowed);
-      let missing = missingFactTokens(blob, input.facts);
-      if (input.pricePath && !blob.includes('Trong tuần, giá vàng giao dịch')) {
-        const have = new Set(factTokens(blob));
-        missing = [...new Set([...missing, ...factTokens(input.pricePath).filter((token) => !have.has(token))])];
-      }
+      let missing = missingCore(blob, input.facts, input.pricePath);
       if ((bad.length || missing.length || !concrete(tokens, clock.year)) && !input.final) {
         return reject('Bản tin tuần thiếu số liệu lấy từ bài báo, hoặc có số không có trong nguồn.', {
           failedNumbers: bad,
@@ -429,7 +468,7 @@ function gate(input) {
         blob = weeklyBlob(board);
         tokens = extractNumbers(blob);
         bad = failedNumbers(tokens, allowed);
-        missing = missingFactTokens(blob, input.facts);
+        missing = missingCore(blob, input.facts, input.pricePath);
       }
       if (!concrete(tokens, clock.year) || bad.length || missing.length) {
         return reject('Bản tin tuần thiếu số liệu lấy từ bài báo, hoặc có số không có trong nguồn.', {
@@ -522,13 +561,47 @@ function publicSource(src) {
   return out;
 }
 
+function quotesBefore(data, dateVn) {
+  if (!data || typeof data !== 'object' || !dateVn) return null;
+  const history = data.history || {};
+  const last = (code) => {
+    const rows = (history[code] || []).filter((row) => row && row.date && row.date < dateVn && row.buy && row.sell);
+    if (!rows.length) return null;
+    const row = rows[rows.length - 1];
+    return { buy: row.buy, sell: row.sell, date: row.date };
+  };
+  const bar = last('SJL1L10');
+  const ring = last('SJ9999');
+  if (!bar && !ring) return null;
+  return { bar, ring };
+}
+
+function sanitizePrevious(value) {
+  if (!value || typeof value !== 'object') return null;
+  const one = (row) => {
+    if (!row || typeof row !== 'object') return null;
+    const buy = Number(row.buy);
+    const sell = Number(row.sell);
+    if (!(buy >= 50000000 && sell >= buy && sell <= 500000000)) return null;
+    return { buy, sell };
+  };
+  const bar = one(value.bar);
+  const ring = one(value.ring);
+  if (!bar && !ring) return null;
+  return { bar, ring };
+}
+
 module.exports = {
   concrete,
   contradictsClock,
   extractNumbers,
+  failedNumbers,
   gate,
   lockDomesticBoard,
+  missingCore,
   parseBoard,
+  quotesBefore,
+  sanitizePrevious,
   renderText,
   stripFences,
 };
