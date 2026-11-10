@@ -504,7 +504,7 @@ test('weekly digest uses Monday-Friday articles and no trade plan', async () => 
       })}\n\`\`\``);
     }
     if (target === weekArticle) {
-      return new Response('<html><title>Gold week</title><meta property="article:published_time" content="2026-11-13T16:00:00-05:00"><p>Gold election bounce ran from about $3,900 to a high near $4,145. October payrolls rose by 165,000. The World Bank gold path is $4,600 in 2026, then $4,250 in 2027, and $4,000 in 2028.</p></html>', {
+      return new Response('<html><title>Gold week</title><meta property="article:published_time" content="2026-11-13T16:00:00-05:00"><p>presidents, since 1971 Cryptos Base Metals About Kitco Forum</p><p>Gold election bounce ran from about $3,900 to a high near $4,145. October payrolls rose by 165,000. The World Bank gold path is $4,600 in 2026, then $4,250 in 2027, and $4,000 in 2028.</p></html>', {
         status: 200,
         headers: { 'content-type': 'text/html' },
       });
@@ -524,12 +524,16 @@ test('weekly digest uses Monday-Friday articles and no trade plan', async () => 
     assert.deepEqual(res.json.sources.map((src) => src.url), [weekArticle]);
     assert.equal(res.json.clock.weekdayEn, 'Sunday');
     assert.equal(res.json.text.includes('```'), false);
-    assert.match(res.json.text, /4,?145|4145/);
-    assert.match(res.json.text, /165[,.]?000|165000/);
-    assert.match(res.json.text, /4,?600|4600/);
-    assert.match(res.json.text, /4,?250|4250/);
-    assert.match(res.json.text, /3,?900|3900/);
-    assert.match(res.json.text, /Diễn biến giá trong các bài/);
+    assert.equal(res.json.text.includes('Số liệu trong nguồn'), false);
+    assert.equal(/since 1971|About Kitco|tính từ mốc năm 1971/i.test(res.json.text), false);
+    assert.match(res.json.text, /4[,.]?145|4145/);
+    assert.match(res.json.text, /165[.]\d{3}|165000/);
+    assert.match(res.json.text, /tháng 10/);
+    assert.equal(/việc làm tháng 11/.test(res.json.text), false);
+    assert.match(res.json.text, /Dự báo/);
+    assert.match(res.json.text, /tong-hop-tin-vang-tuan-qua\.html/);
+    assert.match(res.json.text, /Làm theo kế hoạch, đừng chạy theo nến tin\./);
+    assert.equal(/Trade the plan/i.test(res.json.text), false);
   });
 });
 
@@ -574,6 +578,7 @@ test('start listens on 0.0.0.0', async () => {
   const server = start({
     env: env({ PORT: '0' }),
     fetchImpl: async () => { throw new Error('network'); },
+    previousQuotes: null,
   });
   await once(server, 'listening');
   try {

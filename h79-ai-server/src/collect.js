@@ -164,6 +164,9 @@ function htmlToText(html) {
       return value > 0 && value < 0x110000 ? String.fromCodePoint(value) : ' ';
     })
     .replace(/\s+/g, ' ')
+    .replace(/\b(?:presidents,?\s*since\s*1971|Cryptos|Base Metals|About Kitco|Kitco Forum|Mining News)\b/gi, ' ')
+    .replace(/\(tính từ mốc năm 1971\)/gi, ' ')
+    .replace(/\s+/g, ' ')
     .trim();
 }
 
@@ -200,15 +203,80 @@ function spotValues(sentence) {
   return out;
 }
 
+function isForecast(sentence) {
+  return /world bank|forecast|dự báo|target price|in 202[7-9]|by 202[7-9]|april/i.test(sentence || '');
+}
+
 function pricePathFromFacts(facts) {
   const spots = [];
   for (const fact of facts || []) {
+    if (isForecast(fact.sentence) || fact.kind === 'forecast' || fact.kind === 'payroll') continue;
     for (const value of spotValues(fact.sentence)) {
       if (!spots.includes(value)) spots.push(value);
     }
   }
   if (spots.length < 2) return '';
-  return `Diễn biến giá trong các bài (USD/oz, đúng thứ tự trong nguồn, không diễn giải lại): ${spots.join(' → ')}.`;
+  return `Trong tuần, giá vàng giao dịch đi qua các mốc ${spots.join(' → ')} USD/oz.`;
+}
+
+const DATA_MONTHS = {
+  january: 1, february: 2, march: 3, april: 4, may: 5, june: 6,
+  july: 7, august: 8, september: 9, october: 10, november: 11, december: 12,
+};
+
+function payrollFact(sentence) {
+  if (!/payroll|nonfarm|việc làm/i.test(sentence || '')) return null;
+  const monthWord = String(sentence).match(/\b(january|february|march|april|may|june|july|august|september|october|november|december)\b/i);
+  const amount = String(sentence).match(/(\d{2,3}(?:[.,]\d{3})+)/);
+  if (!monthWord || !amount) return null;
+  const month = DATA_MONTHS[monthWord[1].toLowerCase()];
+  const value = Number(amount[1].replace(/[.,]/g, ''));
+  if (!month || !value) return null;
+  return {
+    kind: 'payroll',
+    month,
+    value,
+    vn: `Báo cáo việc làm tháng ${month} tăng ${formatVnd(value)} người. Đây là tháng của số liệu, không phải tháng công bố.`,
+  };
+}
+
+function forecastFact(sentence) {
+  if (!isForecast(sentence)) return null;
+  const spots = spotValues(sentence.includes('gold') || /world bank/i.test(sentence) ? sentence.replace(/world bank/i, 'gold') : `gold ${sentence}`);
+  if (spots.length < 2) return null;
+  return {
+    kind: 'forecast',
+    vn: `Dự báo, không phải giá đã giao dịch trong tuần: ${spots.join(' → ')} USD/oz.`,
+  };
+}
+
+function topicOf(sentence) {
+  if (/brent/i.test(sentence)) return 'brent';
+  if (/\bwti\b/i.test(sentence)) return 'wti';
+  if (/fed\s*watch|\bcme\b/i.test(sentence) && /%/.test(sentence) && /hike|cut|december|tháng\s*12|probability|xác suất/i.test(sentence)) return 'fedwatch';
+  return '';
+}
+
+function preferNewest(facts) {
+  const best = new Map();
+  const rest = [];
+  for (const fact of facts || []) {
+    const key = topicOf(fact.sentence);
+    if (!key) {
+      rest.push(fact);
+      continue;
+    }
+    const prev = best.get(key);
+    if (!prev || String(fact.published || '') >= String(prev.published || '')) best.set(key, fact);
+  }
+  return [...best.values(), ...rest];
+}
+
+function extractSourceTime(text) {
+  const match = String(text || '').match(/(?:cập nhật lúc|cập nhật)\s*(\d{1,2}):(\d{2})(?::\d{2})?\s*(\d{1,2})\/(\d{1,2})\/(\d{4})/i);
+  if (!match) return '';
+  const pad = (value) => String(value).padStart(2, '0');
+  return `${match[5]}-${pad(match[4])}-${pad(match[3])} ${pad(match[1])}:${match[2]}`;
 }
 
 function extractTitle(html) {
@@ -243,7 +311,12 @@ function keySentences(text) {
 }
 
 function fedwatchSentences(text) {
-  return String(text || '').split(/(?<=[.!?])\s+/).filter((part) => /fed\s*watch|cme fed|fed rate monitor/i.test(part) && /\d+(?:[.,]\d+)?\s*%/.test(part)).slice(0, 3).map((part) => part.trim().slice(0, 400));
+  return String(text || '').split(/(?<=[.!?])\s+/).map((part) => part.trim()).filter((part) => {
+    if (!/\d+(?:[.,]\d+)?\s*%/.test(part)) return false;
+    const cue = /fed\s*watch|\bcme\b|probability|xác suất/i.test(part);
+    const move = /hike|cut|december|tháng\s*12|25\s*bp|basis point|tăng lãi|giảm lãi/i.test(part);
+    return cue && move;
+  }).slice(0, 4).map((part) => part.slice(0, 400));
 }
 
 function formatVnd(amount) {
@@ -357,7 +430,7 @@ function parsePnj(raw, src) {
   let data;
   try { data = JSON.parse(raw); } catch { return []; }
   const rows = Array.isArray(data && data.data) ? data.data : [];
-  const names = { SJC: 'Vàng miếng SJC', N24K: 'Nhẫn 24K' };
+  const names = { SJC: 'Vàng miếng SJC', N24K: 'Nhẫn trơn 24K' };
   const out = [];
   for (const row of rows) {
     const type = names[row && row.masp];
@@ -438,9 +511,13 @@ async function collectDomestic(fetchImpl) {
   const pages = await Promise.all(DOMESTIC_SOURCES.map((src) => fetchDocument(src, fetchImpl, allowedHosts(src.url)).then((page) => ({ src, page }))));
   const prices = [];
   const sources = [];
+  let sourceTime = '';
   for (const { src, page } of pages) {
     if (!page) continue;
-    const rows = src.kind === 'pnj' ? parsePnj(page.raw, src) : parseHtmlPrices(htmlToText(page.raw), src);
+    const plain = htmlToText(page.raw);
+    const foundTime = extractSourceTime(plain);
+    if (foundTime > sourceTime) sourceTime = foundTime;
+    const rows = src.kind === 'pnj' ? parsePnj(page.raw, src) : parseHtmlPrices(plain, src);
     if (!rows.length) continue;
     prices.push(...rows);
     sources.push({ name: src.name, url: src.url, published: '', excerpt: renderPriceLines(rows).join(' ') });
@@ -456,7 +533,7 @@ async function collectDomestic(fetchImpl) {
     if (market.xau) sources.push({ name: WORLD_SPOT.name, url: WORLD_SPOT.url, published: '', excerpt: `Vàng thế giới ${market.xau} USD/oz.` });
   }
   const priceLines = renderPriceLines(prices, market.xau ? market : null);
-  return { sources, prices, priceLines, market, hasPrices: prices.length > 0, facts: [], pricePath: '', week: null, fedwatch: { stated: false, items: [], note: '' } };
+  return { sources, prices, priceLines, market, sourceTime, hasPrices: prices.length > 0, facts: [], pricePath: '', week: null, fedwatch: { stated: false, items: [], note: '' } };
 }
 
 async function collectNews(task, fetchImpl, clock) {
@@ -490,14 +567,18 @@ async function collectNews(task, fetchImpl, clock) {
     if (!inWindow(day, window)) continue;
     const plain = htmlToText(page.raw.replace(/<title\b[^>]*>[\s\S]*?<\/title>/gi, ' '));
     const name = extractTitle(page.raw) || new URL(page.url).hostname;
-    const facts = extractFacts(plain, page.url, name);
+    const facts = preferNewest(extractFacts(plain, page.url, name).map((fact) => {
+      const spots = spotValues(fact.sentence);
+      const extra = payrollFact(fact.sentence) || forecastFact(fact.sentence) || (spots.length >= 2 ? { kind: 'market', vn: `Giá vàng giao dịch trong tuần đi từ ${spots[0]} tới ${spots[spots.length - 1]} USD/oz.` } : { kind: 'market' });
+      return { ...fact, published, ...extra };
+    }));
     const excerpt = facts.map((fact) => fact.sentence).join(' ') || keySentences(plain);
     if (!excerpt || !/\d/.test(excerpt)) continue;
     const hits = fedwatchSentences(plain);
     for (const sentence of hits) fedItems.push({ sentence, name, url: page.url, published });
     sources.push({ name, url: page.url, published, excerpt, facts, fedwatch: hits });
   }
-  const facts = sources.flatMap((src) => src.facts || []);
+  const facts = preferNewest(sources.flatMap((src) => src.facts || []));
   return {
     sources,
     prices: [],
@@ -524,10 +605,16 @@ module.exports = {
   collect,
   dateWindow,
   extractFacts,
+  htmlToText,
+  extractSourceTime,
+  fedwatchSentences,
   findQuotedPrices,
   formatVnd,
   isArticleUrl,
+  isForecast,
   isHomepageUrl,
+  payrollFact,
+  preferNewest,
   pricePathFromFacts,
   renderPriceLines,
   sourcesFor,

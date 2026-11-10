@@ -1,6 +1,8 @@
 'use strict';
 
+const fs = require('node:fs');
 const http = require('node:http');
+const path = require('node:path');
 const { readBearer, tokensMatch } = require('./auth');
 const { collect } = require('./collect');
 const { generateBoard } = require('./gemini');
@@ -114,6 +116,17 @@ function createRateLimiter(rate) {
     if (hits.size > 5000) hits.delete(hits.keys().next().value);
     return bucket.count > rate.max;
   };
+}
+
+function loadPreviousQuotes() {
+  try {
+    const data = JSON.parse(fs.readFileSync(path.join(__dirname, '../../data/vn-gold-daily.json'), 'utf8'));
+    const rows = data.rows || [];
+    const pick = (row) => (row && row.buy && row.sell ? { buy: row.buy, sell: row.sell, prevBuy: row.prev_buy, prevSell: row.prev_sell } : null);
+    return { bar: pick(rows.find((row) => row.code === 'SJL1L10')), ring: pick(rows.find((row) => row.code === 'SJ9999')) };
+  } catch {
+    return null;
+  }
 }
 
 function createServer(options = {}) {
@@ -243,6 +256,8 @@ function createServer(options = {}) {
       facts: collected.facts || [],
       pricePath: collected.pricePath || '',
       priceLines: collected.priceLines || [],
+      sourceTime: collected.sourceTime || '',
+      previous: options.previousQuotes === undefined ? loadPreviousQuotes() : options.previousQuotes,
       final: false,
     });
     if (!checked.ok && checked.retryable) {
@@ -262,6 +277,8 @@ function createServer(options = {}) {
         facts: collected.facts || [],
         pricePath: collected.pricePath || '',
         priceLines: collected.priceLines || [],
+        sourceTime: collected.sourceTime || '',
+        previous: options.previousQuotes === undefined ? loadPreviousQuotes() : options.previousQuotes,
         final: true,
       });
     }
