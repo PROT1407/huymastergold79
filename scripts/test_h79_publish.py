@@ -58,6 +58,18 @@ class PublishTests(unittest.TestCase):
         got = pub.quotes_before(data, '2026-11-10')
         self.assertEqual(got['bar'], {'buy': 138500000, 'sell': 141500000})
         self.assertEqual(got['ring']['sell'], 140500000)
+        live = {
+            'updated_vn': '08:56 10/11/2026',
+            'rows': [
+                {'code': 'SJL1L10', 'buy': 138500000, 'sell': 141500000},
+                {'code': 'PQHN24NTT', 'buy': 136400000, 'sell': 140600000},
+            ],
+            'history': {'SJL1L10': [{'date': '2026-11-06', 'buy': 138000000, 'sell': 141000000}]},
+        }
+        noon = pub.quotes_before(live, '2026-11-10 12:32')
+        self.assertEqual(noon['bar']['sell'], 141500000)
+        self.assertEqual(noon['ring']['buy'], 136400000)
+        self.assertEqual(pub.quotes_before(live, '2026-11-10 08:43')['bar']['buy'], 138000000)
         self.assertIsNone(pub.quotes_before({'history': {}}, '2026-11-10'))
 
     def test_schedule_mapping(self):

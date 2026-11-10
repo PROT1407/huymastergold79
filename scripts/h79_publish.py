@@ -91,17 +91,46 @@ def wake(base, opener=None, sleep=time.sleep):
         sleep(3)
 
 
-def quotes_before(data, date):
-    history = (data or {}).get('history') or {}
-    def last(code):
-        rows = [row for row in history.get(code) or [] if row.get('date') and row['date'] < date and row.get('buy') and row.get('sell')]
-        if not rows:
-            return None
-        return {'buy': rows[-1]['buy'], 'sell': rows[-1]['sell']}
-    bar, ring = last('SJL1L10'), last('SJ9999')
-    if not bar and not ring:
+def parse_vn_stamp(text):
+    import re
+    clock = re.search(r'(\d{1,2}):(\d{2})(?::\d{2})?\s+(\d{1,2})/(\d{1,2})/(\d{4})', text or '')
+    if clock:
+        return f'{clock.group(5)}-{int(clock.group(4)):02d}-{int(clock.group(3)):02d} {int(clock.group(1)):02d}:{clock.group(2)}'
+    iso = re.search(r'(\d{4})-(\d{2})-(\d{2})(?:[ T](\d{2}):(\d{2}))?', text or '')
+    if iso:
+        return f'{iso.group(1)}-{iso.group(2)}-{iso.group(3)} {iso.group(4) or "23"}:{iso.group(5) or "59"}'
+    return ''
+
+
+def quotes_before(data, datetime_vn):
+    target = parse_vn_stamp(datetime_vn if ':' in (datetime_vn or '') or '/' in (datetime_vn or '') else f'{datetime_vn} 23:59')
+    if not target:
         return None
-    return {'bar': bar, 'ring': ring}
+    data = data or {}
+    snapshots = []
+    stamp = parse_vn_stamp(data.get('updated_vn') or data.get('price_time') or '')
+    rows = data.get('rows') or []
+    def row(code):
+        found = next((item for item in rows if item.get('code') == code and item.get('buy') and item.get('sell')), None)
+        return {'buy': found['buy'], 'sell': found['sell']} if found else None
+    if stamp and stamp < target:
+        snapshots.append({'at': stamp, 'bar': row('SJL1L10'), 'ring': row('PQHN24NTT') or row('SJ9999')})
+    history = data.get('history') or {}
+    dated = {}
+    for code in ('SJL1L10', 'PQHN24NTT', 'SJ9999'):
+        for item in history.get(code) or []:
+            at = f"{item['date']} 23:59" if item.get('date') else ''
+            if not at or at >= target or not item.get('buy') or not item.get('sell'):
+                continue
+            dated.setdefault(at, {})[code] = {'buy': item['buy'], 'sell': item['sell']}
+    for at, codes in dated.items():
+        snapshots.append({'at': at, 'bar': codes.get('SJL1L10'), 'ring': codes.get('PQHN24NTT') or codes.get('SJ9999')})
+    if not snapshots:
+        return None
+    latest = max(snapshots, key=lambda item: item['at'])
+    if not latest.get('bar') and not latest.get('ring'):
+        return None
+    return {'bar': latest.get('bar'), 'ring': latest.get('ring')}
 
 
 def post_board(base, task, datetime_vn, opener=None, previous=None):

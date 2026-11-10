@@ -213,7 +213,9 @@ function lockDomesticBoard(board, lines, context) {
   const ring = prices.find((row) => /nhẫn|24K/i.test(row.type));
   const when = context.sourceTime || context.clock.datetimeVn;
   const hour = ((when || '').match(/(\d{2}:\d{2})/) || [])[1] || context.clock.timeVn;
-  const moves = [changeSentence(bar, previous.bar, 'SJC miếng'), changeSentence(ring, previous.ring, 'Nhẫn trơn')].filter(Boolean);
+  const barMove = changeSentence(bar, previous.bar, 'SJC miếng');
+  const ringMove = changeSentence(ring, previous.ring, 'Nhẫn trơn');
+  const moves = [barMove, ringMove].filter(Boolean);
   const moved = moves.some((line) => /tăng|giảm/.test(line));
   const quote = [
     bar ? `SJC miếng mua ${formatVndLocal(bar.buy)} / bán ${formatVndLocal(bar.sell)}` : '',
@@ -234,8 +236,18 @@ function lockDomesticBoard(board, lines, context) {
   board.advice_en = storyEn.join(' ');
   board.quick_advice = story.join(' ');
   board.quick_advice_en = storyEn.join(' ');
+  const brief = (move) => (move ? move.replace(/, từ mua[\s\S]*$/, '') : '');
+  board.share_lead = [
+    bar ? `SJC miếng ${formatVndLocal(bar.buy)}/${formatVndLocal(bar.sell)}${barMove ? `, ${brief(barMove).replace(/^SJC miếng\s*/, '')}` : ''}` : '',
+    ring ? `Nhẫn trơn 24K ${formatVndLocal(ring.buy)}/${formatVndLocal(ring.sell)}${ringMove ? `, ${brief(ringMove).replace(/^Nhẫn trơn\s*/, '')}` : ''}` : '',
+  ].filter(Boolean).join('\n');
   board.moved = moved;
   return board;
+}
+
+function isYearToken(value) {
+  const number = Number(String(value).replace('%', ''));
+  return number >= 1900 && number <= 2100 && String(Math.trunc(number)).length === 4;
 }
 
 function factTokens(text) {
@@ -243,8 +255,7 @@ function factTokens(text) {
   const out = [];
   for (const value of tokens.percents) out.push(`${value}%`);
   for (const value of tokens.ints) {
-    const year = Number(value);
-    if (year >= 1900 && year <= 2100) continue;
+    if (isYearToken(value)) continue;
     if (value.length >= 4 || (value.length >= 3 && value !== '100')) out.push(value);
   }
   return out;
@@ -254,14 +265,15 @@ function coreTokens(facts, pricePath) {
   const need = factTokens(pricePath || '');
   for (const fact of facts || []) {
     if (fact.kind === 'payroll' && fact.value) need.push(String(fact.value));
-    if (fact.kind === 'forecast' || /world bank|dự báo/i.test(fact.sentence || '')) {
-      const spots = String(fact.vn || fact.sentence || '').match(/\d{3,5}/g) || [];
+    if (fact.kind === 'forecast' || /world bank|dự báo/i.test(`${fact.sentence || ''} ${fact.vn || ''}`)) {
+      const spots = String(fact.vn || '').match(/\d{3,5}/g) || [];
       for (const spot of spots) {
         const value = Number(spot);
-        if (value >= 1500 && value <= 8000) need.push(String(value));
+        if (value >= 1500 && value <= 8000 && !isYearToken(value)) need.push(String(value));
       }
     }
   }
+  if (!need.includes('4000') && (facts || []).some((fact) => /4[,.]?000|4000/.test(`${fact.vn || ''} ${fact.sentence || ''}`))) need.push('4000');
   return [...new Set(need)];
 }
 
@@ -276,6 +288,7 @@ function failedNumbers(draft, allowed) {
     if (!allowed.percents.has(value)) failed.push(`${value}%`);
   }
   for (const value of draft.exact) {
+    if (isYearToken(value)) continue;
     if (!allowed.exact.has(value) && !allowed.ints.has(value)) failed.push(value);
   }
   return [...new Set(failed)].slice(0, 30);
@@ -316,6 +329,44 @@ function minutesApart(left, right) {
   return Math.abs(a - b) / 60000;
 }
 
+function sourceLabel(url) {
+  const host = String(url || '').toLowerCase();
+  if (host.includes('kitco')) return 'Kitco';
+  if (host.includes('cnbc')) return 'CNBC';
+  if (host.includes('reuters')) return 'Reuters';
+  if (host.includes('fxstreet')) return 'FXStreet';
+  if (host.includes('federalreserve')) return 'Fed';
+  return 'nguồn';
+}
+
+function estStamp(iso) {
+  const instant = Date.parse(iso || '');
+  if (Number.isNaN(instant)) return '';
+  const parts = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'America/New_York',
+    hour: '2-digit',
+    minute: '2-digit',
+    day: 'numeric',
+    month: 'numeric',
+    hourCycle: 'h23',
+  }).formatToParts(new Date(instant));
+  const pick = (type) => (parts.find((part) => part.type === type) || {}).value || '';
+  let hour = pick('hour');
+  if (hour === '24') hour = '00';
+  return `${hour}:${pick('minute')} EST ${Number(pick('day'))}/${pick('month')}`;
+}
+
+function cleanVnField(text) {
+  return String(text || '')
+    .replace(/https?:\/\/\S+/g, ' ')
+    .replace(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(?::\d{2})?(?:Z|[+-]\d{2}:\d{2})?/g, ' ')
+    .split(/(?<=[.!?])\s+/)
+    .filter((sentence) => sentence && !looksEnglish(sentence))
+    .join(' ')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
 function applyFedwatch(board, fedwatch) {
   const items = (fedwatch && fedwatch.items) || [];
   if (!items.length) {
@@ -323,15 +374,18 @@ function applyFedwatch(board, fedwatch) {
     return false;
   }
   const item = [...items].sort((a, b) => String(b.published || '').localeCompare(String(a.published || '')))[0];
-  const percent = ((item.sentence || '').match(/(\d{1,3}(?:[.,]\d+)?)\s*%/) || [])[1] || '';
-  const line = `${item.name} (${item.published || 'không rõ giờ bài'}): xác suất CME FedWatch cho lần tăng tháng 12 là ${percent}%. Nguồn: ${item.url}`;
+  const percent = ((normalizeArticleText(item.sentence || '').match(/(\d{1,3}(?:[.,]\d+)?)%/) || [])[1] || '').replace(',', '.');
+  const basis = /25[-\s]*basis point|25\s*bp|25 điểm/i.test(item.sentence || '') ? '25 điểm cơ bản ' : '';
+  const when = estStamp(item.published);
+  const line = `Theo ${sourceLabel(item.url)} (${when || 'không rõ giờ'}), xác suất CME FedWatch cho một lần tăng ${basis}tháng 12 là ${percent.replace('.', ',')}%.`;
   board.fedwatch_note = line;
   if (Array.isArray(board.items)) {
     for (const entry of board.items) {
-      entry.summary = String(entry.summary || '').replace(/chưa có số fedwatch[^.]*\.?/gi, '').trim();
-      entry.summary_en = String(entry.summary_en || '').replace(/no fedwatch figure[^.]*\.?/gi, '').trim();
+      entry.summary = cleanVnField(entry.summary).replace(/chưa có (số|xác suất) fedwatch[^.]*\.?/gi, '').trim();
+      entry.reason = cleanVnField(entry.reason).replace(/chưa có (số|xác suất) fedwatch[^.]*\.?/gi, '').trim();
+      if (looksEnglish(entry.title || '')) entry.title = 'FedWatch và vàng';
     }
-    if (board.items[0] && percent && !`${board.items[0].summary} ${board.items[0].title}`.includes(percent)) {
+    if (board.items[0] && percent && !String(board.items[0].summary || '').includes(percent.replace('.', ','))) {
       board.items[0].summary = `${board.items[0].summary} ${line}`.trim();
     }
   }
@@ -347,11 +401,11 @@ function postUrl(task, clock) {
 function applyShares(task, board, clock) {
   const url = postUrl(task, clock);
   const lead = task === 'domestic'
-    ? (board.quick_advice || '')
+    ? (board.share_lead || '')
     : task === 'weekly'
-      ? ((board.sections || []).map((item) => item.p).join(' ') || board.title || '')
-      : ((board.items && board.items[0] && board.items[0].title) || board.fedwatch_note || '');
-  const leadShort = task === 'domestic' ? (board.quick_advice || lead) : lead;
+      ? (board.title || '')
+      : ((board.items && board.items[0] && board.items[0].title) || '');
+  const leadShort = lead;
   const text = `${leadShort}\n${url}\n${SLOGAN}`.replace(/Trade the plan, not the noise\.?/gi, '').replace(/Giá nguồn lúc[^.]*/gi, '').trim();
   board.share_fb = text;
   board.share_zalo = `${text}\n👥 Join nhóm Zalo H79 - Nhận tín hiệu free: https://h79gold.com/zalo`;
@@ -371,8 +425,14 @@ function lintBoard(task, board, ctx) {
   if (NAV_RE.test(blob) || PROMPT_LEAK.test(blob) || /tránhua|nhẫn\s+tròn\s*trơn/i.test(blob)) problems.push('navigation, prompt leak, or glued word');
   if ((board.share_zalo || '').includes('h79gold.com/zalo') && (board.share_fb || '').includes('h79gold.com/zalo')) problems.push('Facebook share includes the Zalo line');
   if (!(board.share_zalo || '').includes('https://h79gold.com/zalo')) problems.push('Zalo share missing the group line');
-  const vn = [board.analysis, board.advice, board.quick_advice, board.share_fb, ...(board.sections || []).map((item) => `${item.h} ${item.p}`)].flat().filter(Boolean).join('\n');
-  if (looksEnglish(vn)) problems.push('raw English in a Vietnamese field');
+  const vnFields = [
+    board.fedwatch_note,
+    board.analysis, board.advice, board.quick_advice,
+    ...(board.items || []).flatMap((item) => [item.title, item.summary, item.reason]),
+    ...(board.sections || []).map((item) => `${item.h} ${item.p}`),
+  ].flat().filter(Boolean).join('\n');
+  if (looksEnglish(vnFields) || /https?:\/\//.test(vnFields) || /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(vnFields)) problems.push('English, URL, or ISO time in a Vietnamese field');
+  const vn = vnFields;
   if (ctx.moved && /đi ngang|ổn định/i.test(vn)) problems.push('says prices are flat while they moved');
   if (ctx.payrollMonth === 10 && /việc làm tháng 11/.test(vn)) problems.push('payroll data month mixed up with the release month');
   if (ctx.fedwatchRequired && /chưa có (số|xác suất) fedwatch/i.test(blob)) problems.push('FedWatch figure was extracted but the board says there is none');
@@ -561,19 +621,48 @@ function publicSource(src) {
   return out;
 }
 
-function quotesBefore(data, dateVn) {
-  if (!data || typeof data !== 'object' || !dateVn) return null;
+function parseVnStamp(text) {
+  const clock = String(text || '').match(/(\d{1,2}):(\d{2})(?::\d{2})?\s+(\d{1,2})\/(\d{1,2})\/(\d{4})/);
+  if (clock) {
+    const pad = (value) => String(value).padStart(2, '0');
+    return `${clock[5]}-${pad(clock[4])}-${pad(clock[3])} ${pad(clock[1])}:${clock[2]}`;
+  }
+  const iso = String(text || '').match(/(\d{4})-(\d{2})-(\d{2})(?:[ T](\d{2}):(\d{2}))?/);
+  if (!iso) return '';
+  return `${iso[1]}-${iso[2]}-${iso[3]} ${iso[4] || '23'}:${iso[5] || '59'}`;
+}
+
+function quotesBefore(data, datetimeVn) {
+  if (!data || typeof data !== 'object') return null;
+  const target = parseVnStamp(datetimeVn);
+  if (!target) return null;
+  const candidates = [];
+  const stamp = parseVnStamp(data.updated_vn || data.price_time || '');
+  if (stamp && stamp < target && Array.isArray(data.rows)) {
+    const row = (code) => data.rows.find((item) => item && item.code === code && item.buy && item.sell);
+    candidates.push({ at: stamp, bar: row('SJL1L10'), ring: row('PQHN24NTT') || row('SJ9999') });
+  }
   const history = data.history || {};
-  const last = (code) => {
-    const rows = (history[code] || []).filter((row) => row && row.date && row.date < dateVn && row.buy && row.sell);
-    if (!rows.length) return null;
-    const row = rows[rows.length - 1];
-    return { buy: row.buy, sell: row.sell, date: row.date };
-  };
-  const bar = last('SJL1L10');
-  const ring = last('SJ9999');
-  if (!bar && !ring) return null;
-  return { bar, ring };
+  for (const code of ['SJL1L10', 'PQHN24NTT', 'SJ9999']) {
+    for (const row of history[code] || []) {
+      const at = row && row.date ? `${row.date} 23:59` : '';
+      if (!at || at >= target || !row.buy || !row.sell) continue;
+      candidates.push({ at, code, buy: row.buy, sell: row.sell });
+    }
+  }
+  if (!candidates.length) return null;
+  const latest = candidates.map((item) => item.at).sort().at(-1);
+  const current = candidates.find((item) => item.at === latest && item.bar);
+  if (current) return { bar: quoteOf(current.bar), ring: quoteOf(current.ring), at: latest };
+  const bar = candidates.filter((item) => item.code === 'SJL1L10' && item.at === latest).at(-1);
+  const ring = candidates.filter((item) => item.code === 'PQHN24NTT' && item.at === latest).at(-1)
+    || candidates.filter((item) => item.code === 'SJ9999' && item.at === latest).at(-1);
+  return { bar: quoteOf(bar), ring: quoteOf(ring), at: latest };
+}
+
+function quoteOf(row) {
+  if (!row || !row.buy || !row.sell) return null;
+  return { buy: row.buy, sell: row.sell };
 }
 
 function sanitizePrevious(value) {

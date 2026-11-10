@@ -156,7 +156,47 @@ test('Kitco December probability stays 82.2 percent after normalization', () => 
     }),
   });
   assert.equal(result.ok, true, JSON.stringify(result.debug || result.error));
-  assert.match(result.board.fedwatch_note, /82\.2%/);
+  assert.match(result.board.fedwatch_note, /82[,.]2%/);
+  assert.equal(/https?:\/\//.test(result.board.fedwatch_note), false);
+  assert.equal(/\d{4}-\d{2}-\d{2}T/.test(result.board.fedwatch_note), false);
+});
+
+test('the 08:56 snapshot beats the Nov 6 history row', () => {
+  const data = {
+    updated_vn: '08:56 10/11/2026',
+    price_time: '08:55 10/11/2026',
+    rows: [
+      { code: 'SJL1L10', buy: 138500000, sell: 141500000 },
+      { code: 'PQHN24NTT', buy: 136400000, sell: 140600000 },
+      { code: 'SJ9999', buy: 137200000, sell: 141200000 },
+    ],
+    history: {
+      SJL1L10: [{ date: '2026-11-06', buy: 138000000, sell: 141000000 }],
+      SJ9999: [{ date: '2026-11-06', buy: 136500000, sell: 140500000 }],
+    },
+  };
+  const { quotesBefore } = require('../src/quality');
+  const previous = quotesBefore(data, '2026-11-10 12:32');
+  assert.equal(previous.bar.buy, 138500000);
+  assert.equal(previous.bar.sell, 141500000);
+  assert.equal(previous.ring.buy, 136400000);
+  assert.equal(previous.ring.sell, 140600000);
+  const morning = quotesBefore(data, '2026-11-10 08:43');
+  assert.equal(morning.bar.buy, 138000000);
+  const board = {};
+  lockDomesticBoard(board, [], {
+    prices: [
+      { brand: 'SJC', type: 'Vàng miếng SJC', buy: 137900000, sell: 140900000 },
+      { brand: 'PNJ', type: 'Nhẫn trơn 24K', buy: 136100000, sell: 140300000 },
+    ],
+    previous,
+    sourceTime: '2026-11-10 12:32',
+    clock: clockFromVnString('2026-11-10 12:32'),
+  });
+  assert.match(board.quick_advice, /600\.000/);
+  assert.match(board.quick_advice, /300\.000/);
+  assert.equal(board.share_lead.split('\n').length, 2);
+  assert.equal(board.share_lead.includes(board.analysis[0]), false);
 });
 
 test('weekly core ignores optional World Bank percentages', () => {
@@ -168,6 +208,32 @@ test('weekly core ignores optional World Bank percentages', () => {
   const path = 'Trong tuần, giá vàng giao dịch đi qua các mốc 3970 → 4145 USD/oz.';
   const blob = `${path} Mốc 4000 nằm trong dự báo 4600, 4250 và 4000. Báo cáo việc làm tháng 10 tăng 165.000.`;
   assert.deepEqual(missingCore(blob, facts, path), []);
+  const result = gate({
+    task: 'weekly',
+    final: true,
+    clock: clockFromVnString('2026-11-08 09:00'),
+    facts,
+    pricePath: path,
+    priceLines: [],
+    prices: [],
+    previous: null,
+    sources: [{
+      name: 'Kitco',
+      url: 'https://www.kitco.com/news/article/2026-11-08/week-review',
+      normalized: 'Gold traded 3970 to 4145 in 2025, 2026, 2027 and 2028. October payrolls rose by 165,000. World Bank sees 4,600 then 4,250 then 4,000, with side rates of 11%, 6.5%, 40%, 8.3%, 6% and 5% discussed in 2023.',
+    }],
+    fedwatch: { stated: false, items: [] },
+    text: JSON.stringify({
+      title: 'Tuần vàng 2–6/11',
+      title_en: 'Gold week',
+      sections: [{ h: 'Tuần', p: 'Trong tuần, giá vàng giao dịch đi qua các mốc 3970 tới 4145 USD/oz. Mốc 4000 nằm trong dự báo 4600, 4250 và 4000. Báo cáo việc làm tháng 10 tăng 165.000 người.' }],
+      sections_en: [{ h: 'Week', p: 'Gold traded from 3970 to 4145. October payrolls rose by 165,000. The World Bank path is 4600, 4250 and 4000.' }],
+      share_fb: 'draft',
+      share_zalo: 'draft',
+    }),
+  });
+  assert.equal(result.ok, true, JSON.stringify(result.debug || result.error));
+  assert.equal((result.debug && result.debug.missingFacts || []).some((token) => /^20\d\d$/.test(token)), false);
 });
 
 test('shares put the Zalo line only on Zalo and drop prompt leaks', () => {
@@ -243,7 +309,9 @@ test('an extracted FedWatch percent replaces a no-figure note', () => {
     }),
   });
   assert.equal(result.ok, true, JSON.stringify(result.debug || result.error));
-  assert.match(result.board.fedwatch_note, /82\.2%/);
+  assert.match(result.board.fedwatch_note, /82[,.]2%/);
+  assert.equal(/https?:\/\//.test(result.board.fedwatch_note), false);
+  assert.equal(/\d{4}-\d{2}-\d{2}T/.test(result.board.fedwatch_note), false);
   assert.equal(/chưa có số fedwatch/i.test(result.board.fedwatch_note), false);
   assert.match(result.board.share_fb, /tin-vi-mo-anh-huong-gia-vang\.html/);
   assert.match(result.board.share_fb, /Làm theo kế hoạch, đừng chạy theo nến tin\./);
