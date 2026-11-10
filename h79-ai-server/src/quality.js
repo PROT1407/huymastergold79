@@ -303,15 +303,101 @@ function cleanVietnameseFacts(facts, pricePath) {
   return lines;
 }
 
-function styleVnNumbers(text) {
-  return String(text || '')
-    .replace(/(\d{1,3})\.(\d{1,2})\s*%/g, '$1,$2%')
-    .replace(/\$?\s*(\d{1,2}),(\d{3})\.(\d{1,2})\b/g, (_, whole, thou, frac) => `${whole}.${thou},${frac.length === 1 ? `${frac}0` : frac}`)
-    .replace(/\$?\s*(\d{1,2}),(\d{3})\b/g, '$1.$2');
+const BANNED_PHRASES = [
+  'giao dịch đầy sóng gió',
+  'tâm điểm chi phối tâm lý nhà đầu tư',
+  'kim loại quý không sinh lời này',
+  'bệ đỡ vững chắc',
+  'vẫn duy trì cao hơn đáng kể so với giai đoạn trước',
+  'tâm lý nhà đầu tư',
+  'động lực tăng giá ban đầu',
+];
+const REPEAT_SKIP = new Set(['vàng', 'giá', 'tuần', 'mức', 'mốc', 'tháng', 'năm', 'theo', 'trong', 'không', 'được', 'nhưng', 'hoặc', 'cũng', 'nhiều', 'sau', 'trước', 'khoảng', 'đỉnh', 'đáy', 'này', 'đây', 'đang', 'vẫn', 'một', 'các', 'cho', 'với', 'khi', 'như', 'đến', 'tới', 'hơn']);
+const PAREN_ALLOW = /^(?:Fed|CPI|NFP|DXY|WGC|CME|USD)$/i;
+
+function learnNumberRoles(text) {
+  const decimals = new Set();
+  const integers = new Set();
+  const aliases = new Set();
+  const re = /\$?\s*(\d{1,3}(?:,\d{3})+(?:\.\d{1,2})?|\d+\.\d{1,3})/g;
+  for (const match of String(text || '').matchAll(re)) {
+    const raw = match[1];
+    if (raw.includes(',')) {
+      const [head, frac] = raw.split('.');
+      integers.add(String(Number(head.replace(/,/g, ''))));
+      if (frac) decimals.add(`${Number(head.replace(/,/g, ''))}.${frac.replace(/0+$/, '') || '0'}`);
+    } else {
+      const [head, frac] = raw.split('.');
+      const trimmed = frac.replace(/0+$/, '');
+      decimals.add(`${Number(head)}.${trimmed || '0'}`);
+      if (frac.length === 3 && frac.endsWith('0') && frac !== '000') aliases.add(`${Number(head)}${trimmed}`);
+    }
+  }
+  return { decimals, integers, aliases };
 }
 
-function styleVnFields(board) {
-  const touch = (value) => (typeof value === 'string' ? styleVnNumbers(value) : value);
+function decideGrouped(token, roles) {
+  const [head, frac] = token.split('.');
+  const thou = String(Number(head + frac));
+  const trimmed = frac.replace(/0+$/, '');
+  const decKey = `${Number(head)}.${trimmed || '0'}`;
+  const asDecimal = roles.decimals.has(decKey);
+  const asInteger = roles.integers.has(thou);
+  if (asDecimal && !asInteger && trimmed) return `${Number(head)},${trimmed}`;
+  if (asInteger && !asDecimal) return token;
+  if (asDecimal && trimmed) return `${Number(head)},${trimmed}`;
+  const asGoldThousands = Number(thou) >= 1000 && Number(thou) <= 20000;
+  if (frac === '000' || asGoldThousands || !frac.endsWith('0')) return token;
+  if (trimmed) return `${Number(head)},${trimmed}`;
+  return token;
+}
+
+function polishVn(text, roles) {
+  const known = roles || { decimals: new Set(), integers: new Set(), aliases: new Set() };
+  const urls = [];
+  let out = String(text || '').replace(/https?:\/\/\S+/g, (url) => {
+    urls.push(url);
+    return `«${urls.length - 1}»`;
+  });
+  out = out
+    .replace(/\$?\s*(\d{1,3}),(\d{3})\.(\d{1,2})\b/g, (_, whole, thou, frac) => `${whole}.${thou},${frac.length === 1 ? `${frac}0` : frac}`)
+    .replace(/(?<![\d.])(\d{1,3}),(\d{3})(?![\d.])/g, (full, head, frac) => {
+      const trimmed = frac.replace(/0+$/, '');
+      const decKey = `${Number(head)}.${trimmed || '0'}`;
+      const thou = String(Number(head + frac));
+      if (known.decimals.has(decKey) && !known.integers.has(thou) && trimmed && frac !== '000') return `${Number(head)},${trimmed}`;
+      if (known.integers.has(thou) && !known.decimals.has(decKey)) return `${head}.${frac}`;
+      return full;
+    })
+    .replace(/\d{1,3}(?:\.\d{3})+(?:,\d{1,2})?|\d+\.\d{1,3}/g, (token) => {
+      if (/^\d{1,3}(?:\.\d{3})+,\d{1,2}$/.test(token) || /^\d{1,3}(?:\.\d{3}){2,}$/.test(token)) return token;
+      if (/^\d+\.\d{1,2}$/.test(token)) return token.replace('.', ',');
+      if (/^\d{1,3}\.\d{3}$/.test(token)) return decideGrouped(token, known);
+      return token;
+    });
+  out = out.replace(/(\p{L})(\d)/gu, (full, letter, digit, offset, src) => {
+    if (/[A-Z]/.test(letter) && /(?:^|[^A-Za-z])[A-Z]$/.test(src.slice(Math.max(0, offset - 2), offset + 1))) return full;
+    if (/(?:^|[^A-Za-z])(?:FY|No)$/i.test(src.slice(Math.max(0, offset - 2), offset + 1))) return full;
+    return `${letter} ${digit}`;
+  });
+  out = out.replace(/kỳ hạn\s+(2|10)(?!\s*năm)\b/gi, 'kỳ hạn $1 năm');
+  out = out.replace(/\(([^)]{1,80})\)/g, (full, inner) => {
+    const trimmed = inner.trim();
+    if (PAREN_ALLOW.test(trimmed)) return `(${trimmed})`;
+    if (/[ăâđêôơưáàảãạéèẻẽẹíìỉĩịóòỏõọúùủũụýỳỷỹ]/i.test(trimmed)) return full;
+    if (/spot gold/i.test(trimmed)) return 'spot vàng';
+    if (/non-?farm payrolls/i.test(trimmed)) return 'NFP';
+    if (/^[A-Za-z0-9 ,.'’+\-/]+$/.test(trimmed) && /\b[A-Za-z]{3,}\b/.test(trimmed)) return '';
+    return full;
+  });
+  out = out.replace(/«(\d+)»/g, (_, index) => urls[Number(index)] || '');
+  return out.replace(/[ \t]{2,}/g, ' ').trim();
+}
+
+function styleVnFields(board, corpus) {
+  const roles = learnNumberRoles(corpus || '');
+  const touch = (value) => (typeof value === 'string' ? polishVn(value, roles) : value);
+  if (typeof board.title === 'string') board.title = touch(board.title);
   if (typeof board.fedwatch_note === 'string') board.fedwatch_note = touch(board.fedwatch_note);
   for (const key of ['analysis', 'advice', 'quick_advice', 'share_fb', 'share_zalo', 'share_lead']) {
     if (Array.isArray(board[key])) board[key] = board[key].map(touch);
@@ -323,6 +409,68 @@ function styleVnFields(board) {
     item.reason = touch(item.reason);
   }
   for (const section of board.sections || []) section.p = touch(section.p);
+}
+
+function splitDebt(text) {
+  return String(text || '').split(/(?<=[.!?])\s+/).map((sentence) => {
+    if (!/nợ công/i.test(sentence) || !/40/.test(sentence) || !/bệ đỡ|vượt qua mốc|đã vượt/i.test(sentence)) return sentence;
+    const debt = 'Nợ công Mỹ đã trên 40 nghìn tỷ USD.';
+    const gold = sentence
+      .replace(/,?\s*tạo bệ đỡ vững chắc[\s\S]*$/i, '')
+      .replace(/,?\s*vượt qua mốc nợ công[\s\S]*$/i, '')
+      .replace(/[.!?]\s*$/, '')
+      .trim();
+    if (gold && /\d/.test(gold)) return `${gold}. ${debt}`;
+    return debt;
+  }).join(' ');
+}
+
+function dropGenericWorldBank(text) {
+  return String(text || '').split(/(?<=[.!?])\s+/).filter((sentence) => {
+    if (!/world bank|ngân hàng thế giới/i.test(sentence)) return true;
+    return /\d/.test(sentence);
+  }).join(' ');
+}
+
+function tidyWeeklyCopy(board) {
+  const fix = (value) => dropGenericWorldBank(splitDebt(value));
+  if (typeof board.title === 'string') board.title = fix(board.title);
+  for (const section of board.sections || []) section.p = fix(section.p || '');
+  board.sections = (board.sections || []).filter((section) => section && section.p && section.p.trim());
+}
+
+function sentencesOf(text) {
+  const out = [];
+  for (const line of String(text || '').split(/\n+/)) {
+    out.push(...line.split(/(?<=[.!?])\s+/).map((part) => part.trim()).filter(Boolean));
+  }
+  return out;
+}
+
+function repeatedWord(sentence) {
+  const words = String(sentence || '').toLowerCase().match(/\p{L}+/gu) || [];
+  for (let i = 0; i < words.length; i += 1) {
+    const word = words[i];
+    if (word.length < 4 || REPEAT_SKIP.has(word)) continue;
+    for (let j = i + 1; j <= i + 6 && j < words.length; j += 1) {
+      if (words[j] === word) return word;
+    }
+  }
+  return '';
+}
+
+function bannedHit(sentence) {
+  const hay = String(sentence || '').toLowerCase();
+  return BANNED_PHRASES.find((phrase) => hay.includes(phrase)) || '';
+}
+
+function englishParen(text) {
+  return [...String(text || '').matchAll(/\(([^)]{1,80})\)/g)].some((match) => {
+    const inner = match[1].trim();
+    if (PAREN_ALLOW.test(inner)) return false;
+    if (/[ăâđêôơưáàảãạéèẻẽẹíìỉĩịóòỏõọúùủũụýỳỷỹ]/i.test(inner)) return false;
+    return /^[A-Za-z0-9 ,.'’+\-/]+$/.test(inner) && /\b[A-Za-z]{3,}\b/.test(inner);
+  });
 }
 
 function foldWeeklySentence(board, sentence) {
@@ -457,7 +605,7 @@ function lintBoard(task, board, ctx) {
     ...(board.items || []).flatMap((item) => [item.title, item.summary, item.reason]),
     ...(board.sections || []).map((item) => `${item.h} ${item.p}`),
   ].flat().filter(Boolean).join('\n');
-  if (looksEnglish(vnFields) || /https?:\/\//.test(vnFields) || /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(vnFields)) problems.push('English, URL, or ISO time in a Vietnamese field');
+  if (looksEnglish(vnFields) || /https?:\/\//.test(vnFields) || /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(vnFields) || englishParen(vnFields)) problems.push('English, URL, or ISO time in a Vietnamese field');
   const vn = vnFields;
   if (ctx.moved && /đi ngang|ổn định/i.test(vn)) problems.push('says prices are flat while they moved');
   if (ctx.payrollMonth === 10 && /việc làm tháng 11/.test(vn)) problems.push('payroll data month mixed up with the release month');
@@ -468,6 +616,13 @@ function lintBoard(task, board, ctx) {
     for (const sentence of vn.split(/[.!?]/)) {
       const levels = sentence.match(/\d\.\d{3}/g) || [];
       if (levels.length > 4 && /đi từ|giao dịch|mốc/.test(sentence)) problems.push('path has more than 4 levels');
+    }
+    const weeklyText = [board.title, vn].filter(Boolean).join('\n');
+    for (const sentence of sentencesOf(weeklyText)) {
+      const phrase = bannedHit(sentence);
+      if (phrase) problems.push(`banned phrase: ${phrase}`);
+      const word = repeatedWord(sentence);
+      if (word) problems.push(`repeated word: ${word}`);
     }
   }
   if (!(board.share_fb || '').includes(SLOGAN)) problems.push('share text missing the Vietnamese line');
@@ -488,6 +643,17 @@ function gate(input) {
   ].join('\n'));
   allowed.ints.add(String(clock.year));
   allowed.exact.add(String(clock.year));
+  const corpus = [
+    ...(input.sources || []).map((src) => src.normalized || src.excerpt || ''),
+    ...((input.fedwatch && input.fedwatch.items) || []).map((item) => item.sentence || ''),
+    ...((input.facts || []).map((fact) => fact.sentence)),
+  ].join('\n');
+  if (input.task === 'macro' || input.task === 'weekly') {
+    for (const alias of learnNumberRoles(corpus).aliases) {
+      allowed.exact.add(alias);
+      allowed.ints.add(alias);
+    }
+  }
   for (const row of [...(input.prices || []), input.previous && input.previous.bar, input.previous && input.previous.ring]) {
     if (!row) continue;
     for (const amount of [row.buy, row.sell, row.prevBuy, row.prevSell]) {
@@ -506,6 +672,7 @@ function gate(input) {
       stampItems(board.items, clock);
       const fedwatchRequired = Boolean(input.fedwatch && input.fedwatch.stated && (input.fedwatch.items || []).length);
       applyFedwatch(board, input.fedwatch);
+      styleVnFields(board, corpus);
       const blob = board.items.map((item) => [item.title, item.title_en, item.summary, item.summary_en, item.reason, item.reason_en, item.time_vn, item.time_en].join('\n')).join('\n');
       if (contradictsClock(blob, clock)) return reject('Bản tin sai thứ hoặc gọi nhầm tuần mới.', { failedNumbers: [], missingFacts: [], detail: 'wrong weekday' }, !input.final);
       const tokens = extractNumbers(blob);
@@ -532,11 +699,13 @@ function gate(input) {
         board.fedwatch_note = 'Chưa có xác suất FedWatch trong nguồn.';
       }
       applyShares('macro', board, clock);
-      styleVnFields(board);
+      styleVnFields(board, corpus);
       const problems = lintBoard('macro', board, { fedwatchRequired });
       if (problems.length) return reject('Bản tin chưa đạt kiểm tra nội dung.', { failedNumbers: [], missingFacts: [], detail: problems.join('; ') }, !input.final);
     } else {
       board.sections = (Array.isArray(board.sections) ? board.sections : []).filter((item) => item && item.h !== 'Số liệu trong nguồn' && item.h !== 'Diễn biến và số liệu' && !looksEnglish(item.p) && !NAV_RE.test(item.p || ''));
+      tidyWeeklyCopy(board);
+      styleVnFields(board, corpus);
       const sections = board.sections.length ? board.sections : [{ h: 'Tuần qua', p: 'Bản tin tuần ghép từ các mốc giá và số liệu đã đọc trong nguồn.' }];
       board.sections = sections;
       const sectionsEn = Array.isArray(board.sections_en) ? board.sections_en : [];
@@ -578,9 +747,23 @@ function gate(input) {
       }
       const payroll = (input.facts || []).find((fact) => fact.kind === 'payroll');
       applyShares('weekly', board, clock);
-      styleVnFields(board);
+      styleVnFields(board, corpus);
       const problems = lintBoard('weekly', board, { payrollMonth: payroll && payroll.month });
-      if (problems.length) return reject('Bản tin chưa đạt kiểm tra nội dung.', { failedNumbers: [], missingFacts: [], detail: problems.join('; ') }, !input.final);
+      if (problems.length) {
+        const flagged = sentencesOf([board.title, ...(board.sections || []).map((item) => item.p)].filter(Boolean).join('\n')).filter((sentence) => bannedHit(sentence) || repeatedWord(sentence));
+        const phraseOnly = flagged.length > 0 && problems.every((problem) => problem.startsWith('banned phrase') || problem.startsWith('repeated word'));
+        if (phraseOnly) {
+          return {
+            ok: false,
+            status: 422,
+            error: 'Bản tin chưa đạt kiểm tra nội dung.',
+            debug: { failedNumbers: [], missingFacts: [], detail: problems.join('; '), phraseRewrite: true, flagged },
+            board,
+            retryable: false,
+          };
+        }
+        return reject('Bản tin chưa đạt kiểm tra nội dung.', { failedNumbers: [], missingFacts: [], detail: problems.join('; ') }, !input.final);
+      }
     }
     return { ok: true, board, text, sources: articles.map(publicSource) };
   }
@@ -621,7 +804,7 @@ function gate(input) {
     }, false);
   }
   applyShares('domestic', board, clock);
-  styleVnFields(board);
+  styleVnFields(board, corpus);
   const problems = lintBoard('domestic', board, { moved: board.moved });
   if (problems.length) {
     return reject('Bản tin chưa đạt kiểm tra nội dung.', { failedNumbers: [], missingFacts: [], detail: problems.join('; ') }, !input.final);
@@ -720,16 +903,27 @@ function sanitizePrevious(value) {
   return { bar, ring };
 }
 
+function replaceFlagged(board, from, to) {
+  if (typeof board.title === 'string' && board.title.includes(from)) board.title = board.title.replace(from, to);
+  for (const section of board.sections || []) {
+    if (section.p && section.p.includes(from)) section.p = section.p.replace(from, to);
+  }
+  return board;
+}
+
 module.exports = {
   concrete,
   contradictsClock,
   extractNumbers,
   failedNumbers,
   gate,
+  learnNumberRoles,
   lockDomesticBoard,
   missingCore,
   parseBoard,
+  polishVn,
   quotesBefore,
+  replaceFlagged,
   sanitizePrevious,
   renderText,
   stripFences,

@@ -491,7 +491,18 @@ test('weekly digest uses Monday-Friday articles and no trade plan', async () => 
     if (target.includes('generativelanguage')) {
       const body = JSON.parse(init.body);
       const user = body.contents[0].parts[0].text;
+      const instruction = body.systemInstruction.parts[0].text;
+      if (body.generationConfig.temperature === 0) {
+        if (instruction.startsWith('Viết lại chỉ các câu')) {
+          const asked = JSON.parse(user);
+          return geminiResponse(JSON.stringify({
+            sentences: asked.sentences.map((sentence) => sentence.replace(/giao dịch đầy sóng gió/g, 'dao động mạnh')),
+          }));
+        }
+        return geminiResponse(user);
+      }
       assert.match(user, /Không viết vùng vào lệnh/);
+      assert.match(user, /giao dịch đầy sóng gió/);
       assert.match(user, /2026-11-09/);
       assert.match(user, /2026-11-13/);
       return geminiResponse(`\`\`\`json\n${JSON.stringify({
@@ -618,6 +629,56 @@ test('proofreading fixes a Vietnamese typo and a bad proofread is discarded', as
     assert.equal(kept.status, 200);
     assert.equal(kept.json.text.includes('4.999'), false);
     assert.match(kept.json.text, /4\.087/);
+  });
+});
+
+test('a banned weekly sentence is rewritten once', async () => {
+  const weekArticle = 'https://www.cnbc.com/2026/11/13/gold-week-finishes-near-4080.html';
+  let rewrites = 0;
+  const fetchImpl = async (url, init) => {
+    const target = String(url);
+    if (target.includes('generativelanguage')) {
+      const body = JSON.parse(init.body);
+      const user = body.contents[0].parts[0].text;
+      const instruction = body.systemInstruction.parts[0].text;
+      if (body.generationConfig.temperature === 0 && instruction.startsWith('Viết lại chỉ các câu')) {
+        rewrites += 1;
+        const asked = JSON.parse(user);
+        return geminiResponse(JSON.stringify({
+          sentences: asked.sentences.map((sentence) => sentence.replace(/giao dịch đầy sóng gió/g, 'dao động mạnh')),
+        }));
+      }
+      if (body.generationConfig.temperature === 0) return geminiResponse(user);
+      return geminiResponse(JSON.stringify({
+        title: 'Mốc 4.000',
+        title_en: 'Gold week',
+        sections: [{
+          h: 'Tuần',
+          p: 'Trong tuần, giá vàng đi từ khoảng 3.900 lên đỉnh 4.145. Mốc 4.000 được thử. Việc làm tháng 10 tăng 165.000 người. Dự báo World Bank: 4.600, 4.250, 4.000. Tuần giao dịch đầy sóng gió.',
+        }],
+        sections_en: [{ h: 'Week', p: 'Gold traded from 3900 to 4145. October payrolls rose by 165,000. World Bank path 4600, 4250 and 4000.' }],
+      }));
+    }
+    if (target === weekArticle) {
+      return new Response('<html><title>Gold week</title><meta property="article:published_time" content="2026-11-13T16:00:00-05:00"><p>Gold election bounce ran from about $3,900 to a high near $4,145. October payrolls rose by 165,000. The World Bank gold path is $4,600 in 2026, then $4,250 in 2027, and $4,000 in 2028.</p></html>', {
+        status: 200,
+        headers: { 'content-type': 'text/html' },
+      });
+    }
+    if (target.includes('cnbc.com') || target.includes('investing.com')) return indexPage([weekArticle]);
+    return new Response('down', { status: 404 });
+  };
+  await withServer({ env: env(), fetchImpl }, async (port) => {
+    const res = await request(port, {
+      method: 'POST',
+      path: '/api/boards',
+      headers: authHeaders(),
+      body: JSON.stringify({ task: 'weekly', datetime_vn: '2026-11-15 09:00' }),
+    });
+    assert.equal(rewrites, 1);
+    assert.equal(res.status, 200, JSON.stringify(res.json && res.json.debug));
+    assert.equal(res.json.text.includes('giao dịch đầy sóng gió'), false);
+    assert.match(res.json.text, /dao động mạnh/);
   });
 });
 

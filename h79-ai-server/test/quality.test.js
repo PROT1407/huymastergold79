@@ -3,7 +3,7 @@
 const assert = require('node:assert/strict');
 const { test } = require('node:test');
 const { dateWindow, fedwatchSentences, htmlToText, isArticleUrl, isHomepageUrl, payrollFact, preferNewest, pricePathFromFacts, renderPriceLines } = require('../src/collect');
-const { contradictsClock, extractNumbers, failedNumbers, gate, lockDomesticBoard, missingCore } = require('../src/quality');
+const { contradictsClock, extractNumbers, failedNumbers, gate, learnNumberRoles, lockDomesticBoard, missingCore, polishVn } = require('../src/quality');
 const { clockFromVnString } = require('../src/time');
 
 const tuesday = clockFromVnString('2026-11-10 06:37');
@@ -379,4 +379,95 @@ test('time_en year is replaced with the computed year', () => {
   assert.equal(result.board.items[0].date, '2026-11-10');
   const numbers = extractNumbers('$4,087 and 4.087');
   assert.equal(numbers.ints.has('4087'), true);
+});
+
+test('Vietnamese numbers, spacing, dropped words, and English parentheses are normalized', () => {
+  const corpus = 'Silver at $53.320 and oil at $69.40. Index 101.88. Yields 5.75 and 92.57. Brent 3.98. Copper 86.85. A quote of $1.350. Payrolls rose by 165,000. Gold $4,140.40.';
+  const roles = learnNumberRoles(corpus);
+  const text = polishVn('Giá mức53.320, dầu 69.40, chỉ số 101.88, lợi suất 5.75 và 92.57, Brent 3.98, đồng 86.85, đơn giá 1.350, việc làm 165.000, vàng 4.140,40. (spot gold) (nonfarm payrolls) (Fed) (dollar index). kỳ hạn 2 nhạy cảm và kỳ hạn 10. Q3 FY2026 https://h79gold.com/zalo', roles);
+  assert.match(text, /mức 53,32/);
+  assert.match(text, /69,40/);
+  assert.match(text, /101,88/);
+  assert.match(text, /5,75/);
+  assert.match(text, /92,57/);
+  assert.match(text, /3,98/);
+  assert.match(text, /86,85/);
+  assert.match(text, /1,35/);
+  assert.match(text, /165\.000/);
+  assert.match(text, /4\.140,40/);
+  assert.match(text, /spot vàng/);
+  assert.match(text, /NFP/);
+  assert.match(text, /\(Fed\)/);
+  assert.match(text, /kỳ hạn 2 năm nhạy cảm/);
+  assert.match(text, /kỳ hạn 10 năm/);
+  assert.match(text, /Q3/);
+  assert.match(text, /FY2026/);
+  assert.match(text, /https:\/\/h79gold\.com\/zalo/);
+  assert.equal(text.includes('(spot gold)'), false);
+  assert.equal(text.includes('(dollar index)'), false);
+  assert.equal(text.includes('53.320'), false);
+  const gated = gate({
+    task: 'macro',
+    clock: tuesday,
+    sources: [{
+      name: 'Kitco',
+      url: 'https://www.kitco.com/news/article/2026-11-09/silver-oil',
+      excerpt: corpus,
+    }],
+    fedwatch: { stated: false, items: [] },
+    prices: [],
+    text: JSON.stringify({
+      items: [{
+        title: 'Bạc mức53.320',
+        summary: 'Bạc giao dịch 53.320 USD và dầu 69.40 USD (spot gold). kỳ hạn 2 nhạy cảm với CPI.',
+        reason: 'Dầu 69.40 vẫn là lực kéo chi phí trong phiên này.',
+        title_en: 'Silver',
+        summary_en: 'Silver traded at $53.320. Oil was $69.40.',
+        reason_en: 'Oil was $69.40 and silver at $53.320.',
+      }],
+      fedwatch_note: 'Chưa có xác suất FedWatch trong nguồn.',
+    }),
+  });
+  assert.equal(gated.ok, true, JSON.stringify(gated.debug || gated.error));
+  assert.match(gated.board.items[0].summary, /53,32/);
+  assert.match(gated.board.items[0].summary, /69,40/);
+  assert.match(gated.board.items[0].title, /mức 53,32/);
+  assert.match(gated.board.items[0].summary, /kỳ hạn 2 năm/);
+  assert.match(gated.board.items[0].summary, /spot vàng/);
+});
+
+test('weekly boilerplate is split, dropped, or sent back for one rewrite', () => {
+  const result = gate({
+    task: 'weekly',
+    final: true,
+    clock: clockFromVnString('2026-11-08 09:00'),
+    facts: [
+      { kind: 'payroll', value: 165000, month: 10, sentence: 'October payrolls rose by 165,000.', vn: 'Báo cáo việc làm tháng 10 tăng 165.000 người.' },
+      { kind: 'forecast', sentence: 'The World Bank gold path is $4,600 then $4,250 then $4,000.', vn: 'Dự báo World Bank: 4.600, 4.250, 4.000 USD/oz.' },
+    ],
+    pricePath: 'Trong tuần, giá vàng đi từ khoảng 3.900 lên đỉnh 4.145.',
+    sources: [{
+      name: 'Kitco',
+      url: 'https://www.kitco.com/news/article/2026-11-08/week-review',
+      normalized: 'Gold bounced from $3,900 to $4,145. October payrolls rose by 165,000. The World Bank gold path is $4,600 then $4,250 then $4,000.',
+    }],
+    fedwatch: { stated: false, items: [] },
+    text: JSON.stringify({
+      title: 'Mốc 4.000',
+      title_en: 'Gold week',
+      sections: [{
+        h: 'Tuần',
+        p: 'Trong tuần, giá vàng đi từ khoảng 3.900 lên đỉnh 4.145. Mốc 4.000 được thử. Việc làm tháng 10 tăng 165.000 người. Dự báo World Bank: 4.600, 4.250, 4.000. Giá giữ 4.000, tạo bệ đỡ vững chắc về dài hạn cho vàng, vượt qua mốc nợ công đã vượt 40 nghìn tỷ USD. Ngân hàng Thế giới vẫn lạc quan. Tuần giao dịch đầy sóng gió. Vượt qua mốc 4.000 rồi giá đã vượt tiếp.',
+      }],
+      sections_en: [{ h: 'Week', p: 'Gold traded from 3900 to 4145. October payrolls rose by 165,000.' }],
+    }),
+  });
+  assert.equal(result.ok, false);
+  assert.equal(result.debug.phraseRewrite, true);
+  const prose = result.board.sections.map((section) => section.p).join(' ');
+  assert.match(prose, /Nợ công Mỹ đã trên 40 nghìn tỷ USD/);
+  assert.equal(prose.includes('bệ đỡ vững chắc'), false);
+  assert.equal(prose.includes('Ngân hàng Thế giới vẫn lạc quan'), false);
+  assert.equal(result.debug.flagged.some((sentence) => sentence.includes('giao dịch đầy sóng gió')), true);
+  assert.equal(result.debug.flagged.some((sentence) => /vượt/i.test(sentence)), true);
 });

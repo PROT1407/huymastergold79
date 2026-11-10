@@ -30,6 +30,11 @@ function taskInstruction(task, clock, extra) {
       `Khoảng ngày: ${week.start || ''} đến ${week.end || ''}.`,
       ...clockLines,
       'Viết bản tin tiếng Việt, tiếng Anh, một dòng Facebook và một dòng Zalo.',
+      'Viết như một trader đang làm việc viết tổng kết tuần: câu ngắn, tiếng thường. Không dùng câu sáo.',
+      'Cấm các cụm: "giao dịch đầy sóng gió", "tâm điểm chi phối tâm lý nhà đầu tư", "kim loại quý không sinh lời này", "bệ đỡ vững chắc", "vẫn duy trì cao hơn đáng kể so với giai đoạn trước", "tâm lý nhà đầu tư", "động lực tăng giá ban đầu".',
+      'Không lặp một từ hai lần trong sáu từ. Tiêu đề nêu mốc hoặc sự kiện, ví dụ "Mốc 4.000".',
+      'Nợ công Mỹ là một câu sự kiện riêng: "Nợ công Mỹ đã trên 40 nghìn tỷ USD." Không gắn câu nợ công vào câu về đáy giá vàng.',
+      'Chỉ viết World Bank khi câu có số dự báo. Không thêm câu kết World Bank chung chung.',
       'Không viết vùng vào lệnh và không viết kế hoạch mua hoặc bán.',
       'Phải đưa đủ diễn biến giá và mọi số liệu đã tách (lương, phần trăm, lộ trình các năm). Chép đúng câu nguồn. Không biến một mốc tương lai thành mức giá đang giữ.',
       'Trả về một khối ```json với khóa title, title_en, sections[{h,p}], sections_en[{h,p}], share_fb, share_zalo.',
@@ -160,7 +165,7 @@ async function generateBoard({ fetchImpl, apiKey, model, systemPrompt, task, clo
 
 async function proofreadBoard({ fetchImpl, apiKey, model, text }) {
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
-  const instruction = 'Sửa chỉ lỗi chính tả, chữ dính hoặc từ tiếng Việt sai. Không đổi số, tên riêng, URL hoặc ý. Trả về đúng JSON như đầu vào.';
+  const instruction = 'Sửa lỗi chính tả, chữ dính, từ tiếng Việt sai, và từ bị rơi. Được phép chèn từ còn thiếu. Không đổi bất kỳ chữ số nào, không đổi tên riêng, URL hoặc ý. Trả về đúng JSON như đầu vào.';
   const body = {
     systemInstruction: { parts: [{ text: instruction }] },
     contents: [{ role: 'user', parts: [{ text: String(text || '') }] }],
@@ -192,4 +197,34 @@ function digitSignature(value) {
   return (JSON.stringify(value).match(/\d+/g) || []).join('');
 }
 
-module.exports = { GEMINI_TIMEOUT_MS, buildUserText, digitSignature, extractText, generateBoard, proofreadBoard };
+async function rewriteSentences({ fetchImpl, apiKey, model, sentences }) {
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
+  const instruction = 'Viết lại chỉ các câu sau. Câu ngắn, tiếng Việt thường, như trader viết tổng kết tuần. Không dùng câu sáo, không lặp từ. Không đổi số, tên riêng hay URL. Nợ công Mỹ viết thành câu riêng "Nợ công Mỹ đã trên 40 nghìn tỷ USD." Trả về JSON {"sentences":[...]} cùng số câu, cùng thứ tự.';
+  const body = {
+    systemInstruction: { parts: [{ text: instruction }] },
+    contents: [{ role: 'user', parts: [{ text: JSON.stringify({ sentences }) }] }],
+    generationConfig: { temperature: 0, maxOutputTokens: 2048 },
+  };
+  let res;
+  try {
+    res = await fetchImpl(url, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', 'x-goog-api-key': apiKey },
+      body: JSON.stringify(body),
+      signal: AbortSignal.timeout(GEMINI_TIMEOUT_MS),
+    });
+  } catch {
+    throw fail(undefined);
+  }
+  if (!res || !res.ok) {
+    try { await res?.body?.cancel?.(); } catch { /* ignore */ }
+    throw fail(res && typeof res.status === 'number' ? res.status : undefined);
+  }
+  let data;
+  try { data = await res.json(); } catch { throw fail(res.status); }
+  const reply = extractText(data);
+  if (!reply) throw fail(res.status);
+  return reply;
+}
+
+module.exports = { GEMINI_TIMEOUT_MS, buildUserText, digitSignature, extractText, generateBoard, proofreadBoard, rewriteSentences };

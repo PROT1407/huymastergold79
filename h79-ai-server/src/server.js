@@ -3,8 +3,8 @@
 const http = require('node:http');
 const { readBearer, tokensMatch } = require('./auth');
 const { collect } = require('./collect');
-const { digitSignature, generateBoard, proofreadBoard } = require('./gemini');
-const { gate, quotesBefore, renderText, sanitizePrevious } = require('./quality');
+const { digitSignature, generateBoard, proofreadBoard, rewriteSentences } = require('./gemini');
+const { gate, parseBoard, quotesBefore, renderText, replaceFlagged, sanitizePrevious } = require('./quality');
 const { resolveClock } = require('./time');
 
 const BODY_LIMIT = 256 * 1024;
@@ -241,6 +241,42 @@ function createServer(options = {}) {
       pricePath: collected.pricePath || '',
       priceLines: collected.priceLines || [],
     };
+    let rewrotePhrases = false;
+    const gateInput = (raw, final) => ({
+      task: body.task,
+      text: raw,
+      sources: collected.sources,
+      clock,
+      prices: collected.prices,
+      fedwatch: collected.fedwatch,
+      facts: collected.facts || [],
+      pricePath: collected.pricePath || '',
+      priceLines: collected.priceLines || [],
+      sourceTime: collected.sourceTime || '',
+      previous,
+      final,
+    });
+    async function rewritePhrases(current) {
+      if (rewrotePhrases || !current || current.ok || !current.debug || !current.debug.phraseRewrite || !current.board) return current;
+      rewrotePhrases = true;
+      const flagged = current.debug.flagged || [];
+      if (!flagged.length) return current;
+      let reply;
+      try {
+        reply = await rewriteSentences({ fetchImpl, apiKey, model, sentences: flagged });
+      } catch {
+        return current;
+      }
+      const parsed = parseBoard(reply);
+      const sentences = parsed && Array.isArray(parsed.sentences) ? parsed.sentences : [];
+      if (sentences.length !== flagged.length) return current;
+      flagged.forEach((from, index) => {
+        const to = String(sentences[index] || '').trim();
+        if (!to || digitSignature(from) !== digitSignature(to)) return;
+        replaceFlagged(current.board, from, to);
+      });
+      return gate(gateInput(JSON.stringify(current.board), true));
+    }
     let text;
     try {
       text = await generateBoard(modelInput);
@@ -262,6 +298,7 @@ function createServer(options = {}) {
       previous,
       final: false,
     });
+    checked = await rewritePhrases(checked);
     if (!checked.ok && checked.retryable) {
       try {
         text = await generateBoard({ ...modelInput, feedback: checked.debug });
@@ -284,6 +321,7 @@ function createServer(options = {}) {
         final: true,
       });
     }
+    checked = await rewritePhrases(checked);
     if (!checked.ok) {
       send(res, checked.status || 422, { ok: false, error: checked.error, debug: checked.debug || { failedNumbers: [], missingFacts: [] } });
       return;
