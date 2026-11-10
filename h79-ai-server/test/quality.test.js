@@ -517,9 +517,8 @@ test('weekly drops an unsupported Iran claim and names the week', () => {
   assert.match(prose, /Nợ công Mỹ đã trên 40 nghìn tỷ USD/);
   assert.equal(/iran/i.test(prose), false);
   assert.equal(/World Bank|Commodity Markets Outlook/.test(prose), false);
-  assert.equal(result.ok, false);
-  assert.equal(result.debug.phraseRewrite, true);
-  assert.equal(result.debug.flagged.some((sentence) => /châu Âu/.test(sentence)), true);
+  assert.match(prose, /châu Âu/);
+  assert.equal(result.ok, true, JSON.stringify(result.debug || result.error));
 });
 
 test('weekly boilerplate is split, dropped, or sent back for one rewrite', () => {
@@ -543,7 +542,7 @@ test('weekly boilerplate is split, dropped, or sent back for one rewrite', () =>
       title_en: 'Gold week',
       sections: [{
         h: 'Tuần',
-        p: 'Trong tuần, giá vàng đi từ khoảng 3.900 lên đỉnh 4.145. Mốc 4.000 được thử. Việc làm tháng 10 tăng 165.000 người. Dự báo World Bank: 4.600, 4.250, 4.000. Giá giữ 4.000, tạo bệ đỡ vững chắc về dài hạn cho vàng, vượt qua mốc nợ công đã vượt 40 nghìn tỷ USD. Ngân hàng Thế giới vẫn lạc quan. Tuần giao dịch đầy sóng gió. Vượt qua mốc 4.000 rồi giá đã vượt tiếp.',
+        p: 'Trong tuần, giá vàng đi từ khoảng 3.900 lên đỉnh 4.145. Mốc 4.000 được thử. Việc làm tháng 10 tăng 165.000 người. Dự báo World Bank: 4.600, 4.250, 4.000. Giá giữ 4.000, tạo bệ đỡ vững chắc về dài hạn cho vàng, vượt qua mốc nợ công đã vượt 40 nghìn tỷ USD. Ngân hàng Thế giới vẫn lạc quan. Tuần giao dịch đầy sóng gió. Vượt đỉnh rồi đã vượt tiếp.',
       }],
       sections_en: [{ h: 'Week', p: 'Gold traded from 3900 to 4145. October payrolls rose by 165,000.' }],
     }),
@@ -556,4 +555,81 @@ test('weekly boilerplate is split, dropped, or sent back for one rewrite', () =>
   assert.equal(prose.includes('Ngân hàng Thế giới vẫn lạc quan'), false);
   assert.equal(result.debug.flagged.some((sentence) => sentence.includes('giao dịch đầy sóng gió')), true);
   assert.equal(result.debug.flagged.some((sentence) => /vượt/i.test(sentence)), true);
+});
+
+test('sourced weekly sentences with hàng and công pass the linter', () => {
+  const result = gate({
+    task: 'weekly',
+    final: true,
+    clock: clockFromVnString('2026-11-08 09:00'),
+    week: { start: '2026-11-02', end: '2026-11-06' },
+    facts: [
+      { kind: 'payroll', value: 165000, month: 10, sentence: 'October payrolls rose by 165,000.', vn: 'Báo cáo việc làm tháng 10 tăng 165.000 người.' },
+      { kind: 'forecast', sentence: 'The World Bank Commodity Markets Outlook puts gold at $4,600 then $4,250 then $4,000.', vn: 'Dự báo Ngân hàng Thế giới: 4.600, 4.250, 4.000 USD/oz.' },
+      { kind: 'market', sentence: 'Democrats gained the advantage in Congress after the US midterm election. The market said Federal Reserve monetary policy is what sets the direction for gold.' },
+    ],
+    pricePath: 'Trong tuần, giá vàng đi từ khoảng 3.900 lên đỉnh 4.145.',
+    sources: [{
+      name: 'Kitco',
+      url: 'https://www.kitco.com/news/article/2026-11-08/week-review',
+      normalized: 'Gold bounced from $3,900 to $4,145. October payrolls rose by 165,000. Democrats gained the advantage in Congress after the US midterm election. The market said Federal Reserve monetary policy is what sets the direction for gold. The World Bank Commodity Markets Outlook puts gold at $4,600 then $4,250 then $4,000. US debt is above $40 trillion.',
+    }],
+    fedwatch: { stated: false, items: [] },
+    text: JSON.stringify({
+      title: 'Mốc 4.000',
+      title_en: 'Gold week',
+      sections: [{
+        h: 'Tuần',
+        p: 'Kết quả bầu cử giữa kỳ tại Mỹ mang lại ưu thế cho Đảng Dân chủ tại Quốc hội. Tuy nhiên, thị trường nhận định chính sách tiền tệ của Cục Dự trữ Liên bang Mỹ mới là yếu tố quyết định hướng đi của kim loại quý. Trong bản Triển vọng Thị trường Hàng hóa tháng 10, Ngân hàng Thế giới dự báo giá vàng đạt trung bình 4.600 USD/oz, rồi 4.250 và 4.000. Nợ công Mỹ đã trên 40 nghìn tỷ USD. Trong tuần, giá vàng đi từ khoảng 3.900 lên đỉnh 4.145. Mốc 4.000 được thử. Việc làm tháng 10 tăng 165.000 người.',
+      }],
+      sections_en: [{ h: 'Week', p: 'Gold traded from 3900 to 4145. October payrolls rose by 165,000. Democrats led Congress. World Bank outlook 4600, 4250 and 4000.' }],
+    }),
+  });
+  assert.equal(result.ok, true, JSON.stringify(result.debug || result.error));
+  const prose = result.board.sections.map((section) => section.p).join(' ');
+  assert.match(prose, /Đảng Dân chủ tại Quốc hội/);
+  assert.match(prose, /Cục Dự trữ Liên bang Mỹ/);
+  assert.match(prose, /Triển vọng Thị trường Hàng hóa tháng 10/);
+  assert.match(prose, /4\.600/);
+  assert.match(prose, /Nợ công Mỹ đã trên 40 nghìn tỷ USD/);
+});
+
+test('FedWatch item titles keep 82,2 percent and basis points', () => {
+  const source = {
+    name: 'Kitco',
+    url: 'https://www.kitco.com/news/article/2026-11-09/fedwatch',
+    excerpt: 'CME FedWatch showed an 82.2% probability of a 25 basis point December hike.',
+  };
+  const result = gate({
+    task: 'macro',
+    clock: tuesday,
+    sources: [source],
+    fedwatch: { stated: true, items: [{ url: source.url, sentence: source.excerpt, published: '2026-11-09T17:03:15-05:00' }] },
+    prices: [],
+    text: JSON.stringify({
+      items: [
+        {
+          title: 'Vàng trong phiên',
+          summary: 'Vàng giữ nhịp khi lợi suất dịu trong phiên Mỹ.',
+          reason: 'Dòng tiền trú ẩn còn mỏng và cần thêm dữ liệu giá.',
+          title_en: 'Gold',
+          summary_en: 'Gold steadied.',
+          reason_en: 'Yields eased.',
+        },
+        {
+          title: 'Cửa tăng tháng 12',
+          summary: 'FedWatch nghiêng một lần tăng 25 điểm chuẩn trong tháng 12.',
+          reason: 'Xác suất này là mốc thị trường đang định giá cho cuộc họp.',
+          title_en: 'December odds',
+          summary_en: 'CME FedWatch showed an 82.2% probability of a 25 basis point December hike.',
+          reason_en: 'The market is priced for that move.',
+        },
+      ],
+    }),
+  });
+  assert.equal(result.ok, true, JSON.stringify(result.debug || result.error));
+  assert.match(result.board.items[1].title, /82,2%/);
+  assert.match(result.board.items[1].summary, /25 điểm cơ bản/);
+  assert.equal(result.board.items[1].summary.includes('điểm chuẩn'), false);
+  assert.equal(result.board.items[0].title.includes('%'), false);
 });

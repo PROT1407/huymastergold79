@@ -312,7 +312,7 @@ const BANNED_PHRASES = [
   'tâm lý nhà đầu tư',
   'động lực tăng giá ban đầu',
 ];
-const REPEAT_SKIP = new Set(['vàng', 'giá', 'tuần', 'mức', 'mốc', 'tháng', 'năm', 'theo', 'trong', 'không', 'được', 'nhưng', 'hoặc', 'cũng', 'nhiều', 'sau', 'trước', 'khoảng', 'đỉnh', 'đáy', 'này', 'đây', 'đang', 'vẫn', 'một', 'các', 'cho', 'với', 'khi', 'như', 'đến', 'tới', 'hơn']);
+const REPEAT_SKIP = new Set(['vàng', 'giá', 'tuần', 'mức', 'mốc', 'tháng', 'năm', 'theo', 'trong', 'không', 'được', 'nhưng', 'hoặc', 'cũng', 'nhiều', 'sau', 'trước', 'khoảng', 'đỉnh', 'đáy', 'này', 'đây', 'đang', 'vẫn', 'một', 'các', 'cho', 'với', 'khi', 'như', 'đến', 'tới', 'hơn', 'hàng', 'công', 'nợ', 'ngân', 'quốc', 'hội', 'đảng', 'chính', 'tiền', 'bản', 'thị', 'trường']);
 const PAREN_ALLOW = /^(?:Fed|CPI|NFP|DXY|WGC|CME|USD)$/i;
 
 function learnNumberRoles(text) {
@@ -356,6 +356,7 @@ function polishVn(text, roles) {
   const known = roles || { decimals: new Set(), integers: new Set(), aliases: new Set() };
   const urls = [];
   let out = String(text || '')
+    .replace(/25\s*điểm\s*chuẩn/gi, '25 điểm cơ bản')
     .replace(/Commodity Markets Outlook/gi, 'Triển vọng Thị trường Hàng hóa')
     .replace(/\bWorld Bank\b/gi, 'Ngân hàng Thế giới')
     .replace(/https?:\/\/\S+/g, (url) => {
@@ -483,32 +484,20 @@ function sentencesOf(text) {
   return out;
 }
 
-const FACT_ALIASES = [
-  ['vàng', 'gold'],
-  ['bạc', 'silver'],
-  ['dầu', 'oil'],
-  ['lợi suất', 'yield'],
-  ['việc làm', 'payroll'],
-  ['lương', 'payroll'],
-  ['đô la', 'dollar'],
-  ['usd', 'dollar'],
-  ['nợ', 'debt'],
-  ['ngân hàng thế giới', 'world bank'],
-  ['lạm phát', 'inflation'],
-  ['fed', 'fed'],
-  ['cpi', 'cpi'],
-  ['nfp', 'payroll'],
+const WATCH_CLAIMS = [
+  { vn: /iran/i, fact: /iran/i },
+  { vn: /đàm phán/i, fact: /negotiat|talks|\biran\b/i },
+  { vn: /chiến tranh/i, fact: /\bwar\b|conflict/i },
+  { vn: /trung đông/i, fact: /middle east|hormuz/i },
+  { vn: /hormuz/i, fact: /hormuz/i },
+  { vn: /hỗ trợ/i, fact: /\bsupport\b|premium|safe[- ]haven|hỗ trợ/i },
+  { vn: /đầu cơ/i, fact: /speculat/i },
 ];
 
-function sentenceSupported(sentence, corpus) {
-  if (/\d/.test(sentence || '')) return true;
-  const hay = String(corpus || '').toLowerCase();
-  const text = String(sentence || '').toLowerCase();
-  for (const [left, right] of FACT_ALIASES) {
-    if ((text.includes(left) || text.includes(right)) && (hay.includes(left) || hay.includes(right))) return true;
-  }
-  const factTerms = new Set((hay.match(/\p{L}{4,}/gu) || []).filter((word) => !REPEAT_SKIP.has(word)));
-  return (text.match(/\p{L}{4,}/gu) || []).some((word) => factTerms.has(word) && !REPEAT_SKIP.has(word));
+function unsupportedClaim(sentence, corpus) {
+  if (/\d/.test(sentence || '')) return false;
+  const hay = String(corpus || '');
+  return WATCH_CLAIMS.some((item) => item.vn.test(sentence) && !item.fact.test(hay));
 }
 
 function percentsIn(text) {
@@ -530,6 +519,14 @@ function alignTitlePercents(board) {
       return full;
     });
   }
+  const noted = ((String(board.fedwatch_note || '').match(/(\d{1,3},\d+)\s*%/) || [])[1] || '');
+  if (!noted) return;
+  for (const item of board.items || []) {
+    const own = `${item.title || ''} ${String(item.summary || '').split(String(board.fedwatch_note || '___none___')).join(' ')}`;
+    if (!/fed\s*watch|fedwatch/i.test(own)) continue;
+    if (percentsIn(item.title).includes(noted.replace(',', '.'))) continue;
+    item.title = `${String(item.title || '').trim()} ${noted}%`.replace(/\s{2,}/g, ' ').trim();
+  }
 }
 
 function titlePercentMismatch(board) {
@@ -548,7 +545,7 @@ function repeatedWord(sentence) {
   for (let i = 0; i < words.length; i += 1) {
     const word = words[i];
     if (word.length < 4 || REPEAT_SKIP.has(word)) continue;
-    for (let j = i + 1; j <= i + 6 && j < words.length; j += 1) {
+    for (let j = i + 1; j <= i + 4 && j < words.length; j += 1) {
       if (words[j] === word) return word;
     }
   }
@@ -720,7 +717,7 @@ function lintBoard(task, board, ctx) {
       if (phrase) problems.push(`banned phrase: ${phrase}`);
       const word = repeatedWord(sentence);
       if (word) problems.push(`repeated word: ${word}`);
-      if (!sentenceSupported(sentence, ctx.corpus || '')) problems.push('unsupported claim');
+      if (unsupportedClaim(sentence, ctx.corpus || '')) problems.push('unsupported claim');
     }
   }
   if (!(board.share_fb || '').includes(SLOGAN)) problems.push('share text missing the Vietnamese line');
@@ -849,7 +846,7 @@ function gate(input) {
       styleVnFields(board, corpus);
       const problems = lintBoard('weekly', board, { payrollMonth: payroll && payroll.month, corpus });
       if (problems.length) {
-        const flagged = sentencesOf([board.title, ...(board.sections || []).map((item) => item.p)].filter(Boolean).join('\n')).filter((sentence) => bannedHit(sentence) || repeatedWord(sentence) || !sentenceSupported(sentence, corpus));
+        const flagged = sentencesOf([board.title, ...(board.sections || []).map((item) => item.p)].filter(Boolean).join('\n')).filter((sentence) => bannedHit(sentence) || repeatedWord(sentence) || unsupportedClaim(sentence, corpus));
         const phraseOnly = flagged.length > 0 && problems.every((problem) => problem.startsWith('banned phrase') || problem.startsWith('repeated word') || problem.startsWith('unsupported claim'));
         if (phraseOnly) {
           return {

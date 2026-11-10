@@ -263,21 +263,19 @@ function createServer(options = {}) {
       rewrotePhrases = true;
       const flagged = current.debug.flagged || [];
       if (!flagged.length) return current;
-      let reply;
       try {
-        reply = await rewriteSentences({ fetchImpl, apiKey, model, sentences: flagged, sleep: options.sleep });
-      } catch {
-        return current;
-      }
-      const parsed = parseBoard(reply);
-      const sentences = parsed && Array.isArray(parsed.sentences) ? parsed.sentences : [];
-      if (sentences.length !== flagged.length) return current;
-      flagged.forEach((from, index) => {
-        const to = String(sentences[index] || '').trim();
-        if (!to || digitSignature(from) !== digitSignature(to)) return;
-        replaceFlagged(current.board, from, to);
-      });
-      const again = gate(gateInput(JSON.stringify(current.board), true));
+        const reply = await rewriteSentences({ fetchImpl, apiKey, model, sentences: flagged, sleep: options.sleep });
+        const parsed = parseBoard(reply);
+        const sentences = parsed && Array.isArray(parsed.sentences) ? parsed.sentences : [];
+        if (sentences.length === flagged.length) {
+          flagged.forEach((from, index) => {
+            const to = String(sentences[index] || '').trim();
+            if (!to || digitSignature(from) !== digitSignature(to)) return;
+            replaceFlagged(current.board, from, to);
+          });
+        }
+      } catch { /* a failed rewrite still drops the flagged sentence below */ }
+      let again = gate(gateInput(JSON.stringify(current.board), true));
       if (again.ok || !again.debug || !again.debug.phraseRewrite) return again;
       for (const sentence of again.debug.flagged || []) replaceFlagged(again.board, sentence, '');
       return gate(gateInput(JSON.stringify(again.board), true));
