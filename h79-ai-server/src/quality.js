@@ -352,10 +352,82 @@ function decideGrouped(token, roles) {
   return token;
 }
 
+function unstutterGold(text) {
+  return String(text || '')
+    .replace(/giao ngay\s+spot(?:\s+gold)?\s+vàng\s+giao dịch/gi, 'giao ngay')
+    .replace(/giao ngay\s+spot(?:\s+gold)?(?:\s+vàng)?/gi, 'giao ngay')
+    .replace(/gold\s+spot\s+vàng/gi, 'vàng')
+    .replace(/spot\s+vàng\s+giao dịch/gi, 'vàng giao ngay')
+    .replace(/vàng(?:\s+vàng)+/gi, 'vàng');
+}
+
+function contentWords(sentence) {
+  const folded = String(sentence || '').toLowerCase()
+    .replace(/đã\s+vượt/g, 'đã trên')
+    .replace(/\b(exceeded|surpassed|above|over)\b/g, 'trên')
+    .replace(/\b(debt)\b/g, 'nợ')
+    .replace(/\b(public)\b/g, 'công')
+    .replace(/\b(trillion)\b/g, 'nghìn');
+  return folded
+    .replace(/[^\p{L}\p{N}\s]/gu, ' ')
+    .split(/\s+/)
+    .filter((word) => word.length >= 2 && !/^(đã|là|các|một|cho|với|khi|và|của|the|and|for|has|was|is|usd|oz)$/.test(word));
+}
+
+function numberKey(sentence) {
+  return (String(sentence || '').match(/\d+(?:[.,]\d+)*/g) || [])
+    .map((token) => token.replace(/[.,]/g, ''))
+    .filter((token) => token.length >= 2)
+    .sort()
+    .join(',');
+}
+
+function nearDuplicate(left, right) {
+  const a = contentWords(left);
+  const b = contentWords(right);
+  if (a.length < 3 || b.length < 3) return false;
+  const keyA = numberKey(left);
+  const keyB = numberKey(right);
+  if (!keyA || keyA !== keyB) return false;
+  const setB = new Set(b);
+  const shared = a.filter((word) => setB.has(word)).length;
+  const union = new Set([...a, ...b]).size;
+  return union > 0 && shared / union >= 0.6;
+}
+
+function preferSentence(current, next) {
+  if (/đã trên|is above|above\s+\$/i.test(next) && !/đã trên|is above|above\s+\$/i.test(current)) return next;
+  return current;
+}
+
+function dedupeSentences(text) {
+  const kept = [];
+  for (const sentence of sentencesOf(text)) {
+    const index = kept.findIndex((item) => nearDuplicate(item, sentence));
+    if (index === -1) kept.push(sentence);
+    else kept[index] = preferSentence(kept[index], sentence);
+  }
+  return kept.join(' ');
+}
+
+function unsourcedGoldHedge(sentence, corpus) {
+  const hedge = /phòng thủ dài hạn|vai trò phòng thủ|long-term hedge|acts as a hedge/i.test(sentence || '');
+  const gold = /kim loại quý|\bvàng\b|\bgold\b|\bbullion\b/i.test(sentence || '');
+  const geo = /hormuz|eo biển|đàm phán|diplomatic/i.test(sentence || '');
+  if (!(hedge && gold && geo)) return false;
+  const hay = String(corpus || '');
+  const sourced = /hormuz|eo biển/i.test(hay) && /(gold|bullion|vàng).{0,140}(hedge|safe[- ]haven|phòng thủ)|(hedge|safe[- ]haven|phòng thủ).{0,140}(gold|bullion|vàng)/i.test(hay);
+  return !sourced;
+}
+
+function stripUnsourcedHedge(text, corpus) {
+  return sentencesOf(text).filter((sentence) => !unsourcedGoldHedge(sentence, corpus)).join(' ');
+}
+
 function polishVn(text, roles) {
   const known = roles || { decimals: new Set(), integers: new Set(), aliases: new Set() };
   const urls = [];
-  let out = String(text || '')
+  let out = unstutterGold(String(text || ''))
     .replace(/25\s*điểm\s*chuẩn/gi, '25 điểm cơ bản')
     .replace(/Commodity Markets Outlook/gi, 'Triển vọng Thị trường Hàng hóa')
     .replace(/\bWorld Bank\b/gi, 'Ngân hàng Thế giới')
@@ -395,12 +467,13 @@ function polishVn(text, roles) {
     return full;
   });
   out = out.replace(/«(\d+)»/g, (_, index) => urls[Number(index)] || '');
-  return out.replace(/[ \t]{2,}/g, ' ').trim();
+  return dedupeSentences(unstutterGold(out).replace(/[ \t]{2,}/g, ' ').trim());
 }
 
 function styleVnFields(board, corpus) {
   const roles = learnNumberRoles(corpus || '');
-  const touch = (value) => (typeof value === 'string' ? polishVn(value, roles) : value);
+  const touch = (value) => (typeof value === 'string' ? stripUnsourcedHedge(polishVn(value, roles), corpus) : value);
+  const touchEn = (value) => (typeof value === 'string' ? stripUnsourcedHedge(dedupeSentences(value), corpus) : value);
   if (typeof board.title === 'string') board.title = touch(board.title);
   if (typeof board.fedwatch_note === 'string') board.fedwatch_note = touch(board.fedwatch_note);
   for (const key of ['analysis', 'advice', 'quick_advice', 'share_fb', 'share_zalo', 'share_lead']) {
@@ -411,20 +484,24 @@ function styleVnFields(board, corpus) {
     item.title = touch(item.title);
     item.summary = touch(item.summary);
     item.reason = touch(item.reason);
+    item.summary_en = touchEn(item.summary_en);
+    item.reason_en = touchEn(item.reason_en);
   }
   for (const section of board.sections || []) section.p = touch(section.p);
+  for (const section of board.sections_en || []) section.p = touchEn(section.p);
 }
 
 function splitDebt(text) {
-  return String(text || '').split(/(?<=[.!?])\s+/).map((sentence) => {
-    if (!/nợ công/i.test(sentence) || !/40/.test(sentence) || !/bệ đỡ|vượt qua mốc|đã vượt/i.test(sentence)) return sentence;
+  return sentencesOf(text).map((sentence) => {
+    if (!/nợ công/i.test(sentence) || !/40/.test(sentence)) return sentence;
     const debt = 'Nợ công Mỹ đã trên 40 nghìn tỷ USD.';
+    if (!/bệ đỡ|vượt qua mốc/i.test(sentence)) return debt;
     const gold = sentence
       .replace(/,?\s*tạo bệ đỡ vững chắc[\s\S]*$/i, '')
       .replace(/,?\s*vượt qua mốc nợ công[\s\S]*$/i, '')
       .replace(/[.!?]\s*$/, '')
       .trim();
-    if (gold && /\d/.test(gold)) return `${gold}. ${debt}`;
+    if (gold && /\d/.test(gold) && !/nợ công/i.test(gold)) return `${gold}. ${debt}`;
     return debt;
   }).join(' ');
 }
@@ -700,6 +777,8 @@ function lintBoard(task, board, ctx) {
   ].flat().filter(Boolean).join('\n');
   if (looksEnglish(vnFields) || /https?:\/\//.test(vnFields) || /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(vnFields) || englishParen(vnFields)) problems.push('English, URL, or ISO time in a Vietnamese field');
   const vn = vnFields;
+  if (/giao ngay\s+spot|spot\s+vàng\s+giao dịch|gold\s+spot\s+vàng/i.test(vn)) problems.push('gold opener stutter');
+  if (/phòng thủ dài hạn|vai trò phòng thủ/i.test(vn) && sentencesOf(vn).some((sentence) => unsourcedGoldHedge(sentence, ctx.corpus || ''))) problems.push('unsourced gold hedge');
   if (ctx.moved && /đi ngang|ổn định/i.test(vn)) problems.push('says prices are flat while they moved');
   if (ctx.payrollMonth === 10 && /việc làm tháng 11/.test(vn)) problems.push('payroll data month mixed up with the release month');
   if (ctx.fedwatchRequired && /chưa có (số|xác suất) fedwatch/i.test(blob)) problems.push('FedWatch figure was extracted but the board says there is none');
@@ -796,7 +875,7 @@ function gate(input) {
       }
       applyShares('macro', board, clock);
       styleVnFields(board, corpus);
-      const problems = lintBoard('macro', board, { fedwatchRequired });
+      const problems = lintBoard('macro', board, { fedwatchRequired, corpus });
       if (problems.length) return reject('Bản tin chưa đạt kiểm tra nội dung.', { failedNumbers: [], missingFacts: [], detail: problems.join('; ') }, !input.final);
     } else {
       board.sections = (Array.isArray(board.sections) ? board.sections : []).filter((item) => item && item.h !== 'Số liệu trong nguồn' && item.h !== 'Diễn biến và số liệu' && !looksEnglish(item.p) && !NAV_RE.test(item.p || ''));
@@ -1017,7 +1096,9 @@ module.exports = {
   lockDomesticBoard,
   missingCore,
   parseBoard,
+  dedupeSentences,
   polishVn,
+  stripUnsourcedHedge,
   quotesBefore,
   replaceFlagged,
   sanitizePrevious,

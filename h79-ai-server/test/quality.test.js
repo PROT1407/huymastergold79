@@ -3,7 +3,7 @@
 const assert = require('node:assert/strict');
 const { test } = require('node:test');
 const { dateWindow, fedwatchSentences, htmlToText, isArticleUrl, isHomepageUrl, payrollFact, preferNewest, pricePathFromFacts, renderPriceLines } = require('../src/collect');
-const { contradictsClock, extractNumbers, failedNumbers, gate, learnNumberRoles, lockDomesticBoard, missingCore, polishVn } = require('../src/quality');
+const { contradictsClock, dedupeSentences, extractNumbers, failedNumbers, gate, learnNumberRoles, lockDomesticBoard, missingCore, polishVn, stripUnsourcedHedge } = require('../src/quality');
 const { clockFromVnString } = require('../src/time');
 
 const tuesday = clockFromVnString('2026-11-10 06:37');
@@ -632,4 +632,115 @@ test('FedWatch item titles keep 82,2 percent and basis points', () => {
   assert.match(result.board.items[1].summary, /25 điểm cơ bản/);
   assert.equal(result.board.items[1].summary.includes('điểm chuẩn'), false);
   assert.equal(result.board.items[0].title.includes('%'), false);
+});
+
+test('a gold opener does not stutter giao ngay with spot', () => {
+  const raw = 'Giá vàng giao ngay spot vàng giao dịch quanh mức 4.140,40 USD/ounce trong phiên Mỹ.';
+  const cleaned = polishVn(raw, learnNumberRoles('Spot gold traded near $4,140.40.'));
+  assert.match(cleaned, /Giá vàng giao ngay quanh mức 4\.140,40 USD\/ounce/);
+  assert.equal(/giao ngay\s+spot|spot\s+vàng\s+giao dịch|gold\s+spot\s+vàng|vàng\s+vàng/i.test(cleaned), false);
+  assert.equal(/giao ngay\s+spot/i.test(polishVn('Vàng giao ngay spot quanh 4.140,40.')), false);
+  assert.equal(/gold\s+spot\s+vàng/i.test(polishVn('Giá gold spot vàng quanh mức 4.140,40.')), false);
+  const source = {
+    name: 'CNBC',
+    url: 'https://www.cnbc.com/2026/11/10/gold-spot-4140.html',
+    excerpt: 'Spot gold traded near $4,140.40 an ounce. CNBC quotes XAU=.',
+  };
+  const result = gate({
+    task: 'macro',
+    clock: tuesday,
+    sources: [source],
+    fedwatch: { stated: false, items: [] },
+    prices: [],
+    text: JSON.stringify({
+      items: [{
+        title: 'Vàng giao ngay',
+        summary: raw,
+        reason: 'Phiên Mỹ giữ vàng quanh mức đã khớp trong bài CNBC.',
+        title_en: 'Spot gold',
+        summary_en: 'Spot gold traded near $4,140.40 an ounce.',
+        reason_en: 'The CNBC print matches that level.',
+      }],
+      fedwatch_note: 'Chưa có xác suất FedWatch trong nguồn.',
+    }),
+  });
+  assert.equal(result.ok, true, JSON.stringify(result.debug || result.error));
+  assert.match(result.board.items[0].summary, /Giá vàng giao ngay quanh mức 4\.140,40/);
+  assert.equal(/giao ngay\s+spot|spot\s+vàng\s+giao dịch/i.test(result.board.items[0].summary), false);
+  assert.equal(/giao ngay\s+spot|spot\s+vàng\s+giao dịch/i.test(result.board.share_fb), false);
+});
+
+test('an unsourced Hormuz gold hedge is dropped and not replaced', () => {
+  const hedge = 'Dài hạn: Sự bất ổn tại eo biển Hormuz vẫn tiềm ẩn rủi ro quay đầu nếu đàm phán ngoại giao thất bại, giữ vai trò phòng thủ dài hạn cho kim loại quý.';
+  const oil = 'Brent crude fell as diplomatic hopes eased the risk of a strike near the Strait of Hormuz. Brent was $92.57 and spot gold was $4,140.40.';
+  assert.equal(stripUnsourcedHedge(`Ngắn hạn: dầu Brent về 92,57. ${hedge}`, oil).includes('phòng thủ dài hạn'), false);
+  assert.equal(/hormuz|đàm phán|eo biển/i.test(stripUnsourcedHedge(hedge, oil)), false);
+  const sourced = 'Gold remains a long-term hedge if Hormuz talks fail.';
+  assert.match(stripUnsourcedHedge(hedge, `${oil} ${sourced}`), /phòng thủ dài hạn/);
+  const source = {
+    name: 'CNBC',
+    url: 'https://www.cnbc.com/2026/11/10/oil-hormuz.html',
+    excerpt: oil,
+  };
+  const result = gate({
+    task: 'macro',
+    clock: tuesday,
+    sources: [source],
+    fedwatch: { stated: false, items: [] },
+    prices: [],
+    text: JSON.stringify({
+      items: [{
+        title: 'Dầu và vàng',
+        summary: 'Dầu Brent quanh 92,57 USD và vàng quanh 4.140,40 sau khi hy vọng ngoại giao hạ rủi ro.',
+        reason: `Ngắn hạn: dầu Brent về 92,57, vàng 4.140,40. ${hedge}`,
+        title_en: 'Oil',
+        summary_en: oil,
+        reason_en: 'Brent fell as diplomatic hopes eased strike risk.',
+      }],
+      fedwatch_note: 'Chưa có xác suất FedWatch trong nguồn.',
+    }),
+  });
+  assert.equal(result.ok, true, JSON.stringify(result.debug || result.error));
+  const reason = result.board.items[0].reason;
+  assert.match(reason, /92,57/);
+  assert.equal(/phòng thủ dài hạn|Hormuz|đàm phán/i.test(reason), false);
+});
+
+test('near-duplicate debt sentences collapse to one', () => {
+  const pair = 'Nợ công Mỹ đã vượt 40 nghìn tỷ USD. Nợ công Mỹ đã trên 40 nghìn tỷ USD.';
+  const cleaned = dedupeSentences(pair);
+  assert.equal((cleaned.match(/Nợ công/g) || []).length, 1);
+  assert.match(cleaned, /đã trên 40 nghìn tỷ USD/);
+  const result = gate({
+    task: 'weekly',
+    final: true,
+    clock: clockFromVnString('2026-11-08 09:00'),
+    week: { start: '2026-11-02', end: '2026-11-06' },
+    facts: [
+      { kind: 'payroll', value: 165000, month: 10, sentence: 'October payrolls rose by 165,000.', vn: 'Báo cáo việc làm tháng 10 tăng 165.000 người.' },
+      { kind: 'forecast', sentence: 'The World Bank gold path is $4,600 then $4,250 then $4,000.', vn: 'Dự báo Ngân hàng Thế giới: 4.600, 4.250, 4.000 USD/oz.' },
+    ],
+    pricePath: 'Trong tuần, giá vàng đi từ khoảng 3.900 lên đỉnh 4.145.',
+    sources: [{
+      name: 'Kitco',
+      url: 'https://www.kitco.com/news/article/2026-11-08/week-review',
+      normalized: 'Gold bounced from $3,900 to $4,145. October payrolls rose by 165,000. The World Bank gold path is $4,600 then $4,250 then $4,000. US debt is above $40 trillion.',
+    }],
+    fedwatch: { stated: false, items: [] },
+    text: JSON.stringify({
+      title: 'Mốc 4.000',
+      title_en: 'Gold week',
+      sections: [{
+        h: 'Tuần',
+        p: `Trong tuần, giá vàng đi từ khoảng 3.900 lên đỉnh 4.145. Mốc 4.000 được thử. Việc làm tháng 10 tăng 165.000 người. Dự báo Ngân hàng Thế giới: 4.600, 4.250, 4.000. ${pair}`,
+      }],
+      sections_en: [{ h: 'Week', p: 'US debt has exceeded 40 trillion USD. US debt is above 40 trillion USD. Gold traded from 3900 to 4145.' }],
+    }),
+  });
+  assert.equal(result.ok, true, JSON.stringify(result.debug || result.error));
+  const prose = result.board.sections.map((section) => section.p).join(' ');
+  assert.equal((prose.match(/Nợ công/g) || []).length, 1);
+  assert.match(prose, /4\.600/);
+  const english = result.board.sections_en.map((section) => section.p).join(' ');
+  assert.equal((english.match(/US debt/g) || []).length, 1);
 });
