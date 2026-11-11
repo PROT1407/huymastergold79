@@ -3,7 +3,7 @@
 const assert = require('node:assert/strict');
 const { test } = require('node:test');
 const { dateWindow, fedwatchSentences, htmlToText, isArticleUrl, isHomepageUrl, payrollFact, preferNewest, pricePathFromFacts, renderPriceLines } = require('../src/collect');
-const { contradictsClock, dedupeSentences, extractNumbers, failedNumbers, gate, learnNumberRoles, lintBoard, lockDomesticBoard, missingCore, polishVn, repeatedWord, stripUnsourcedHedge, styleVnFields } = require('../src/quality');
+const { contradictsClock, dedupeSentences, extractNumbers, failedNumbers, gate, learnNumberRoles, lintBoard, lockDomesticBoard, missingCore, movesMatchProducts, polishVn, repeatedWord, stripUnsourcedHedge, styleVnFields } = require('../src/quality');
 const { clockFromVnString } = require('../src/time');
 
 const tuesday = clockFromVnString('2026-11-10 06:37');
@@ -194,6 +194,9 @@ test('the 08:56 snapshot beats the Nov 6 history row', () => {
   assert.equal(previous.bar.buy, 138500000);
   assert.equal(previous.bar.sell, 141500000);
   assert.equal(previous.ring.buy, 136400000);
+  assert.equal(previous.pnjRing.buy, 136400000);
+  assert.equal(previous.sjcRing.buy, 137200000);
+  assert.equal(previous.sjcRing.sell, 141200000);
   assert.equal(previous.ring.sell, 140600000);
   const morning = quotesBefore(data, '2026-11-10 08:43');
   assert.equal(morning.bar.buy, 138000000);
@@ -347,6 +350,47 @@ test('a domestic source time far from the request is rejected', () => {
   });
   assert.equal(result.ok, false);
   assert.match(result.error, /lệch/);
+});
+
+test('11/11 domestic changes stay on the same product and a 2 million drop is not called quiet', () => {
+  const prices = [
+    { brand: 'SJC', type: 'Vàng miếng SJC', buy: 136500000, sell: 139500000 },
+    { brand: 'SJC', type: 'Nhẫn SJC', buy: 135300000, sell: 139300000 },
+    { brand: 'PNJ', type: 'Nhẫn trơn 24K', buy: 134700000, sell: 138900000 },
+  ];
+  const previous = {
+    bar: { buy: 138500000, sell: 141500000 },
+    sjcRing: { buy: 137200000, sell: 141200000 },
+    pnjRing: { buy: 136400000, sell: 140600000 },
+    ring: { buy: 137200000, sell: 141200000 },
+  };
+  const crossed = 'Nhẫn trơn 24K giảm 2.500.000 đồng chiều mua, giảm 2.300.000 đồng chiều bán.';
+  assert.equal(movesMatchProducts(crossed, prices, previous), false);
+  const lines = prices.map((row) => `${row.brand} ${row.type}: mua ${row.buy}, bán ${row.sell}. Nguồn: https://example.test/gold`);
+  const result = gate({
+    task: 'domestic',
+    final: true,
+    clock: clockFromVnString('2026-11-11 08:55'),
+    sourceTime: '2026-11-11 08:55',
+    previous,
+    prices,
+    priceLines: lines,
+    sources: [{ name: 'SJC', url: 'https://example.test/gold', excerpt: lines.join(' ') }],
+    fedwatch: { stated: false, items: [] },
+    facts: [],
+    text: JSON.stringify({
+      analysis: ['Sáng nay không ghi nhận biến động mạnh, câu này đủ dài để lẽ ra lọt vào bản tin nếu bộ lọc không bỏ câu phủ nhận đà giảm.'],
+      advice: 'Thị trường đi ngang và ổn định dù bảng giá đã đổi hai triệu mỗi chiều, câu này đủ dài.',
+    }),
+  });
+  assert.equal(result.ok, true, JSON.stringify(result.debug || result.error));
+  const text = `${result.board.quick_advice}\n${result.board.share_lead}`;
+  assert.match(text, /SJC miếng giảm 2\.000\.000/);
+  assert.match(text, /Nhẫn SJC giảm 1\.900\.000/);
+  assert.match(text, /Nhẫn trơn 24K giảm 1\.700\.000/);
+  assert.equal(/2\.500\.000|2\.300\.000/.test(text), false);
+  assert.equal(/không ghi nhận biến động|đi ngang|ổn định/i.test(result.board.analysis.join(' ')), false);
+  assert.equal(result.board.share_lead.split('\n').length, 3);
 });
 
 test('time_en year is replaced with the computed year', () => {

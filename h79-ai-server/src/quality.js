@@ -206,28 +206,81 @@ function changeSentence(current, previous, label) {
   return `${label} ${sideMove(buyDelta, 'mua')}, ${sideMove(sellDelta, 'bán')}, từ mua ${formatVndLocal(previous.buy)} / bán ${formatVndLocal(previous.sell)} còn mua ${formatVndLocal(current.buy)} / bán ${formatVndLocal(current.sell)}.`;
 }
 
+function pickDomesticProducts(prices) {
+  const rows = prices || [];
+  const bars = rows.filter((row) => /miếng/i.test(row.type || ''));
+  const bar = bars.find((row) => /^sjc$/i.test(row.brand || '')) || bars[0] || null;
+  const sjcRing = rows.find((row) => /^sjc$/i.test(row.brand || '') && /nhẫn/i.test(row.type || '')) || null;
+  const pnjRing = rows.find((row) => /pnj/i.test(row.brand || '') && /nhẫn|24K/i.test(row.type || '') && !/miếng/i.test(row.type || ''))
+    || rows.find((row) => !/^sjc$/i.test(row.brand || '') && /nhẫn|24K/i.test(row.type || '') && !/miếng/i.test(row.type || ''))
+    || null;
+  return { bar, sjcRing, pnjRing };
+}
+
+function previousForProduct(key, products, previous) {
+  const stored = previous || {};
+  if (key === 'bar') return stored.bar || null;
+  if (key === 'sjcRing') {
+    if (stored.sjcRing) return stored.sjcRing;
+    if (!products.pnjRing && !stored.pnjRing) return stored.ring || null;
+    return null;
+  }
+  if (key === 'pnjRing') {
+    if (stored.pnjRing) return stored.pnjRing;
+    if (!products.sjcRing && !stored.sjcRing) return stored.ring || null;
+    return null;
+  }
+  return null;
+}
+
+const FLAT_LARGE_RE = /không ghi nhận biến động|không có biến động|biến động không đáng kể|không biến động mạnh|không đổi đáng kể|không có thay đổi đáng kể/i;
+
+function domesticPairs(prices, previous) {
+  const products = pickDomesticProducts(prices);
+  return [
+    ['SJC miếng', 'SJC miếng', products.bar, previousForProduct('bar', products, previous)],
+    ['Nhẫn SJC', 'Nhẫn SJC', products.sjcRing, previousForProduct('sjcRing', products, previous)],
+    ['Nhẫn trơn 24K', 'nhẫn trơn 24K', products.pnjRing, previousForProduct('pnjRing', products, previous)],
+  ].map(([shareLabel, quoteLabel, current, stored]) => {
+    const buyDelta = current && stored ? current.buy - stored.buy : 0;
+    const sellDelta = current && stored ? current.sell - stored.sell : 0;
+    return { shareLabel, quoteLabel, current, stored, buyDelta, sellDelta };
+  });
+}
+
+function movesMatchProducts(text, prices, previous) {
+  const legit = new Set();
+  for (const pair of domesticPairs(prices, previous)) {
+    if (!pair.current || !pair.stored) continue;
+    if (pair.buyDelta) legit.add(String(Math.abs(pair.buyDelta)));
+    if (pair.sellDelta) legit.add(String(Math.abs(pair.sellDelta)));
+  }
+  if (!legit.size) return true;
+  for (const match of String(text || '').matchAll(/(?:tăng|giảm)\s+(\d{1,3}(?:\.\d{3})+)\s+đồng/g)) {
+    const amount = match[1].replace(/\./g, '');
+    if (Number(amount) >= 50000000) continue;
+    if (!legit.has(amount)) return false;
+  }
+  return true;
+}
+
 function lockDomesticBoard(board, lines, context) {
   const prices = context.prices || [];
   const previous = context.previous || {};
-  const bar = prices.find((row) => /miếng/i.test(row.type)) || prices[0];
-  const ring = prices.find((row) => /nhẫn|24K/i.test(row.type));
+  const pairs = domesticPairs(prices, previous);
   const when = context.sourceTime || context.clock.datetimeVn;
   const hour = ((when || '').match(/(\d{2}:\d{2})/) || [])[1] || context.clock.timeVn;
-  const barMove = changeSentence(bar, previous.bar, 'SJC miếng');
-  const ringMove = changeSentence(ring, previous.ring, 'Nhẫn trơn');
-  const moves = [barMove, ringMove].filter(Boolean);
+  const moves = pairs.map((pair) => changeSentence(pair.current, pair.stored, pair.shareLabel)).filter(Boolean);
   const moved = moves.some((line) => /tăng|giảm/.test(line));
-  const quote = [
-    bar ? `SJC miếng mua ${formatVndLocal(bar.buy)} / bán ${formatVndLocal(bar.sell)}` : '',
-    ring ? `nhẫn trơn 24K mua ${formatVndLocal(ring.buy)} / bán ${formatVndLocal(ring.sell)}` : '',
-  ].filter(Boolean).join(', ');
-  const story = [`Cập nhật ${hour}. ${quote}. ${moves.join(' ')}`.replace(/\s+/g, ' ').trim()];
-  const storyEn = [[
-    bar ? `As of ${hour}, SJC bars are bid ${formatVndLocal(bar.buy)} and offered ${formatVndLocal(bar.sell)} VND per tael.` : '',
-    ring ? `Plain 24K rings are bid ${formatVndLocal(ring.buy)} and offered ${formatVndLocal(ring.sell)} VND per tael.` : '',
-    moves.length ? 'The change is measured against the previous published quote, with buy and sell stated separately when they differ.' : '',
-  ].filter(Boolean).join(' ')];
-  const commentary = wholeCommentary(board.analysis).concat(wholeCommentary(board.advice)).filter((line) => !(moved && /đi ngang|ổn định/i.test(line)));
+  const largeMove = pairs.some((pair) => Math.abs(pair.buyDelta) >= 1000000 || Math.abs(pair.sellDelta) >= 1000000);
+  const quote = pairs.map((pair) => (pair.current ? `${pair.quoteLabel} mua ${formatVndLocal(pair.current.buy)} / bán ${formatVndLocal(pair.current.sell)}` : '')).filter(Boolean).join(', ');
+  const story = [`Cập nhật ${hour}. ${quote}. ${moves.join(' ')}`.replace(/[ \t]+/g, ' ').trim()];
+  const storyEn = [pairs.map((pair) => {
+    if (!pair.current) return '';
+    return `${pair.shareLabel} is bid ${formatVndLocal(pair.current.buy)} and offered ${formatVndLocal(pair.current.sell)} VND per tael as of ${hour}.`;
+  }).filter(Boolean).join(' ')].filter(Boolean);
+  const quietClaim = (line) => (moved && /đi ngang|ổn định/i.test(line)) || (largeMove && FLAT_LARGE_RE.test(line));
+  const commentary = wholeCommentary(board.analysis).concat(wholeCommentary(board.advice)).filter((line) => !quietClaim(line));
   board.price_lines = (lines || []).slice();
   board.as_of = when;
   board.analysis = [...story, ...commentary];
@@ -237,11 +290,13 @@ function lockDomesticBoard(board, lines, context) {
   board.quick_advice = story.join(' ');
   board.quick_advice_en = storyEn.join(' ');
   const brief = (move) => (move ? move.replace(/, từ mua[\s\S]*$/, '') : '');
-  board.share_lead = [
-    bar ? `SJC miếng ${formatVndLocal(bar.buy)}/${formatVndLocal(bar.sell)}${barMove ? `, ${brief(barMove).replace(/^SJC miếng\s*/, '')}` : ''}` : '',
-    ring ? `Nhẫn trơn 24K ${formatVndLocal(ring.buy)}/${formatVndLocal(ring.sell)}${ringMove ? `, ${brief(ringMove).replace(/^Nhẫn trơn\s*/, '')}` : ''}` : '',
-  ].filter(Boolean).join('\n');
+  board.share_lead = pairs.map((pair) => {
+    if (!pair.current) return '';
+    const move = changeSentence(pair.current, pair.stored, pair.shareLabel);
+    return `${pair.shareLabel} ${formatVndLocal(pair.current.buy)}/${formatVndLocal(pair.current.sell)}${move ? `, ${brief(move).replace(new RegExp(`^${pair.shareLabel}\\s*`), '')}` : ''}`;
+  }).filter(Boolean).join('\n');
   board.moved = moved;
+  board.largeMove = largeMove;
   return board;
 }
 
@@ -795,6 +850,7 @@ function lintBoard(task, board, ctx) {
   if (/spot\s+gold|gold\s+spot/i.test(publishedVn)) problems.push('english spot gold left in Vietnamese');
   if (/phòng thủ dài hạn|vai trò phòng thủ/i.test(vn) && sentencesOf(vn).some((sentence) => unsourcedGoldHedge(sentence, ctx.corpus || ''))) problems.push('unsourced gold hedge');
   if (ctx.moved && /đi ngang|ổn định/i.test(vn)) problems.push('says prices are flat while they moved');
+  if (ctx.largeMove && FLAT_LARGE_RE.test(vn)) problems.push('says the move is small while a side changed by at least 1 million');
   if (ctx.payrollMonth === 10 && /việc làm tháng 11/.test(vn)) problems.push('payroll data month mixed up with the release month');
   if (ctx.fedwatchRequired && /chưa có (số|xác suất) fedwatch/i.test(blob)) problems.push('FedWatch figure was extracted but the board says there is none');
   if (task === 'macro') problems.push(...titlePercentMismatch(board));
@@ -843,7 +899,7 @@ function gate(input) {
       allowed.ints.add(alias);
     }
   }
-  for (const row of [...(input.prices || []), input.previous && input.previous.bar, input.previous && input.previous.ring]) {
+  for (const row of [...(input.prices || []), input.previous && input.previous.bar, input.previous && input.previous.sjcRing, input.previous && input.previous.pnjRing, input.previous && input.previous.ring]) {
     if (!row) continue;
     for (const amount of [row.buy, row.sell, row.prevBuy, row.prevSell]) {
       if (!amount) continue;
@@ -959,22 +1015,27 @@ function gate(input) {
   }
   const prices = input.prices || [];
   if (!prices.length) return reject('Không lấy được giá vàng trong nước thật từ nguồn công khai. Cần giá thật; không được tự điền số SJC hoặc PNJ.', { failedNumbers: [], missingFacts: [], detail: 'no parsed prices' }, false);
-  const bar = prices.find((row) => /miếng/i.test(row.type)) || prices[0];
-  const ring = prices.find((row) => /nhẫn|24K/i.test(row.type));
-  for (const [current, stored] of [[bar, input.previous && input.previous.bar], [ring, input.previous && input.previous.ring]]) {
-    if (!current || !stored) continue;
-    for (const key of ['buy', 'sell']) {
-      if (stored[key] == null || current[key] == null) continue;
-      const delta = String(Math.abs(current[key] - stored[key]));
-      allowed.ints.add(delta);
-      allowed.exact.add(delta);
+  for (const pair of domesticPairs(prices, input.previous)) {
+    if (!pair.current || !pair.stored) continue;
+    for (const delta of [pair.buyDelta, pair.sellDelta]) {
+      if (!delta) continue;
+      const amount = String(Math.abs(delta));
+      allowed.ints.add(amount);
+      allowed.exact.add(amount);
     }
   }
   if (input.sourceTime && minutesApart(input.sourceTime, clock.datetimeVn) > 360) {
     return reject('Giờ cập nhật của nguồn lệch quá xa mốc yêu cầu.', { failedNumbers: [], missingFacts: [], detail: `source time ${input.sourceTime}` }, false);
   }
   lockDomesticBoard(board, input.priceLines && input.priceLines.length ? input.priceLines : [], { prices, previous: input.previous, sourceTime: input.sourceTime, clock });
-  const prose = [...(board.price_lines || []), ...(board.analysis || []), board.advice].filter(Boolean).join('\n');
+  const prose = [...(board.price_lines || []), ...(board.analysis || []), board.advice, board.quick_advice, board.share_lead].filter(Boolean).join('\n');
+  if (!movesMatchProducts(prose, prices, input.previous)) {
+    return reject('Mức tăng giảm không khớp giá hiện tại so với chính sản phẩm đó ở lần trước.', {
+      failedNumbers: [],
+      missingFacts: [],
+      detail: 'domestic change mismatch',
+    }, false);
+  }
   if (contradictsClock(prose, clock)) return reject('Bản tin sai thứ hoặc gọi nhầm tuần mới.', { failedNumbers: [], missingFacts: [], detail: 'wrong weekday' }, false);
   const tokens = extractNumbers(prose);
   const priceInts = new Set(prices.flatMap((row) => [String(row.buy), String(row.sell)]));
@@ -995,7 +1056,7 @@ function gate(input) {
   }
   applyShares('domestic', board, clock);
   styleVnFields(board, corpus);
-  const problems = lintBoard('domestic', board, { moved: board.moved });
+  const problems = lintBoard('domestic', board, { moved: board.moved, largeMove: board.largeMove });
   if (problems.length) {
     return reject('Bản tin chưa đạt kiểm tra nội dung.', { failedNumbers: [], missingFacts: [], detail: problems.join('; ') }, !input.final);
   }
@@ -1049,28 +1110,31 @@ function quotesBefore(data, datetimeVn) {
   if (!data || typeof data !== 'object') return null;
   const target = parseVnStamp(datetimeVn);
   if (!target) return null;
-  const candidates = [];
+  const series = { SJL1L10: [], PQHN24NTT: [], SJ9999: [] };
   const stamp = parseVnStamp(data.updated_vn || data.price_time || '');
   if (stamp && stamp < target && Array.isArray(data.rows)) {
-    const row = (code) => data.rows.find((item) => item && item.code === code && item.buy && item.sell);
-    candidates.push({ at: stamp, bar: row('SJL1L10'), ring: row('PQHN24NTT') || row('SJ9999') });
+    for (const code of Object.keys(series)) {
+      const row = data.rows.find((item) => item && item.code === code && item.buy && item.sell);
+      if (row) series[code].push({ at: stamp, buy: row.buy, sell: row.sell });
+    }
   }
   const history = data.history || {};
-  for (const code of ['SJL1L10', 'PQHN24NTT', 'SJ9999']) {
+  for (const code of Object.keys(series)) {
     for (const row of history[code] || []) {
       const at = row && row.date ? `${row.date} 23:59` : '';
       if (!at || at >= target || !row.buy || !row.sell) continue;
-      candidates.push({ at, code, buy: row.buy, sell: row.sell });
+      series[code].push({ at, buy: row.buy, sell: row.sell });
     }
   }
-  if (!candidates.length) return null;
-  const latest = candidates.map((item) => item.at).sort().at(-1);
-  const current = candidates.find((item) => item.at === latest && item.bar);
-  if (current) return { bar: quoteOf(current.bar), ring: quoteOf(current.ring), at: latest };
-  const bar = candidates.filter((item) => item.code === 'SJL1L10' && item.at === latest).at(-1);
-  const ring = candidates.filter((item) => item.code === 'PQHN24NTT' && item.at === latest).at(-1)
-    || candidates.filter((item) => item.code === 'SJ9999' && item.at === latest).at(-1);
-  return { bar: quoteOf(bar), ring: quoteOf(ring), at: latest };
+  const latest = (code) => {
+    const rows = series[code].sort((a, b) => (a.at < b.at ? -1 : 1));
+    return rows.length ? quoteOf(rows[rows.length - 1]) : null;
+  };
+  const bar = latest('SJL1L10');
+  const pnjRing = latest('PQHN24NTT');
+  const sjcRing = latest('SJ9999');
+  if (!bar && !pnjRing && !sjcRing) return null;
+  return { bar, pnjRing, sjcRing, ring: pnjRing || sjcRing };
 }
 
 function quoteOf(row) {
@@ -1088,9 +1152,11 @@ function sanitizePrevious(value) {
     return { buy, sell };
   };
   const bar = one(value.bar);
+  const sjcRing = one(value.sjcRing);
+  const pnjRing = one(value.pnjRing);
   const ring = one(value.ring);
-  if (!bar && !ring) return null;
-  return { bar, ring };
+  if (!bar && !sjcRing && !pnjRing && !ring) return null;
+  return { bar, sjcRing, pnjRing, ring };
 }
 
 function replaceFlagged(board, from, to) {
@@ -1109,6 +1175,7 @@ module.exports = {
   gate,
   learnNumberRoles,
   lockDomesticBoard,
+  movesMatchProducts,
   missingCore,
   parseBoard,
   dedupeSentences,

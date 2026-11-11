@@ -107,30 +107,32 @@ def quotes_before(data, datetime_vn):
     if not target:
         return None
     data = data or {}
-    snapshots = []
+    codes = ('SJL1L10', 'PQHN24NTT', 'SJ9999')
+    series = {code: [] for code in codes}
     stamp = parse_vn_stamp(data.get('updated_vn') or data.get('price_time') or '')
     rows = data.get('rows') or []
-    def row(code):
-        found = next((item for item in rows if item.get('code') == code and item.get('buy') and item.get('sell')), None)
-        return {'buy': found['buy'], 'sell': found['sell']} if found else None
     if stamp and stamp < target:
-        snapshots.append({'at': stamp, 'bar': row('SJL1L10'), 'ring': row('PQHN24NTT') or row('SJ9999')})
+        for code in codes:
+            found = next((item for item in rows if item.get('code') == code and item.get('buy') and item.get('sell')), None)
+            if found:
+                series[code].append((stamp, {'buy': found['buy'], 'sell': found['sell']}))
     history = data.get('history') or {}
-    dated = {}
-    for code in ('SJL1L10', 'PQHN24NTT', 'SJ9999'):
+    for code in codes:
         for item in history.get(code) or []:
             at = f"{item['date']} 23:59" if item.get('date') else ''
             if not at or at >= target or not item.get('buy') or not item.get('sell'):
                 continue
-            dated.setdefault(at, {})[code] = {'buy': item['buy'], 'sell': item['sell']}
-    for at, codes in dated.items():
-        snapshots.append({'at': at, 'bar': codes.get('SJL1L10'), 'ring': codes.get('PQHN24NTT') or codes.get('SJ9999')})
-    if not snapshots:
+            series[code].append((at, {'buy': item['buy'], 'sell': item['sell']}))
+    def latest(code):
+        if not series[code]:
+            return None
+        return max(series[code], key=lambda item: item[0])[1]
+    bar = latest('SJL1L10')
+    pnj = latest('PQHN24NTT')
+    sjc = latest('SJ9999')
+    if not bar and not pnj and not sjc:
         return None
-    latest = max(snapshots, key=lambda item: item['at'])
-    if not latest.get('bar') and not latest.get('ring'):
-        return None
-    return {'bar': latest.get('bar'), 'ring': latest.get('ring')}
+    return {'bar': bar, 'pnjRing': pnj, 'sjcRing': sjc, 'ring': pnj or sjc}
 
 
 # Three tries spread over about five minutes: immediate, then 90s, then 150s.

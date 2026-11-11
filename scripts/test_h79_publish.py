@@ -70,6 +70,8 @@ class PublishTests(unittest.TestCase):
         noon = pub.quotes_before(live, '2026-11-10 12:32')
         self.assertEqual(noon['bar']['sell'], 141500000)
         self.assertEqual(noon['ring']['buy'], 136400000)
+        self.assertEqual(noon['pnjRing']['buy'], 136400000)
+        self.assertIsNone(noon['sjcRing'])
         self.assertEqual(pub.quotes_before(live, '2026-11-10 08:43')['bar']['buy'], 138000000)
         self.assertIsNone(pub.quotes_before({'history': {}}, '2026-11-10'))
 
