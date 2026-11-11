@@ -2,11 +2,15 @@
 """Cập nhật data/calendar-us.json từ ForexFactory (feed tuần: nfs.faireconomy.media).
 Lọc country == USD, impact == High (tin đỏ) – chỉ tin tác động cao. Giờ đổi sang Asia/Ho_Chi_Minh.
 Chạy: python3 scripts/update-calendar.py   (feed giới hạn tần suất – đừng gọi quá vài lần/giờ)
-Lưu ý: feed tuần KHÔNG có trường 'actual' (số thực tế); nếu sau này có sẽ tự ghi vào."""
+      python3 scripts/update-calendar.py --check
+Lưu ý: feed tuần KHÔNG có trường 'actual'. Số đã điền (actual*) được giữ lại.
+Số thực tế mới do scripts/calendar_actuals.py điền từ CNBC rồi BLS/BEA/Fed.
+Feed rỗng, không có tin USD High, hoặc file không hợp lệ: không ghi đè, thoát lỗi."""
 import json, sys, urllib.request, datetime as dt
+from pathlib import Path
 from zoneinfo import ZoneInfo
+import calendar_io
 URL = 'https://nfs.faireconomy.media/ff_calendar_thisweek.json'
-OUT = __file__.rsplit('/scripts/', 1)[0] + '/data/calendar-us.json'
 VN = ZoneInfo('Asia/Ho_Chi_Minh')
 # (từ khóa trong tiêu đề, tên tiếng Việt, giải thích)
 VI = [
@@ -70,35 +74,99 @@ def en(title):
     for k, _n, _x in VI:
         if k.lower() in title.lower(): return EN.get(k, '')
     return ''
-def main():
-    req = urllib.request.Request(URL, headers={'User-Agent': 'Mozilla/5.0 (huymastergold79 calendar)'})
-    raw = json.load(urllib.request.urlopen(req, timeout=30))
-    if not isinstance(raw, list) or not raw: sys.exit('Feed rỗng/không hợp lệ – giữ nguyên file cũ')
+NOTE = 'Tự sinh bởi scripts/update-calendar.py từ ForexFactory – đừng sửa tay. Giờ: Asia/Ho_Chi_Minh.'
+
+
+def events_from_feed(raw, old_events):
+    if not isinstance(raw, list) or not raw:
+        raise ValueError('Feed rỗng/không hợp lệ – giữ nguyên file cũ')
+    old = {(o.get('title'), o.get('time_utc')): o for o in (old_events or []) if isinstance(o, dict)}
     ev = []
     for x in raw:
-        if x.get('country') != 'USD' or x.get('impact') != 'High': continue
+        if x.get('country') != 'USD' or x.get('impact') != 'High':
+            continue
+        if not x.get('title') or not x.get('date'):
+            raise ValueError('Feed thiếu title/date – không ghi file')
         t = dt.datetime.fromisoformat(x['date']).astimezone(VN)
-        n, ex = vi(x['title'])
-        ev.append({'title': x['title'], 'title_vi': n, 'explain': ex, 'explain_en': en(x['title']), 'impact': x['impact'],
-                   'time_utc': t.astimezone(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
-                   'time_vn': t.strftime('%H:%M %d/%m/%Y'), 'date_vn': t.strftime('%Y-%m-%d'),
-                   'forecast': x.get('forecast', ''), 'previous': x.get('previous', ''), 'actual': x.get('actual', '')})
-    ev.sort(key=lambda e: e['time_utc'])
-    # Giữ lại số thực tế đã điền tay (từ nguồn uy tín) khi feed không có 'actual'
+        name, explain = vi(x['title'])
+        event = {
+            'title': x['title'], 'title_vi': name, 'explain': explain, 'explain_en': en(x['title']),
+            'impact': x['impact'],
+            'time_utc': t.astimezone(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+            'time_vn': t.strftime('%H:%M %d/%m/%Y'), 'date_vn': t.strftime('%Y-%m-%d'),
+            'forecast': x.get('forecast') or '', 'previous': x.get('previous') or '',
+            'actual': x.get('actual') or '',
+        }
+        # Giữ số thực tế đã có nguồn khi feed không có actual. Không xóa actual cũ.
+        prev = old.get((event['title'], event['time_utc']))
+        if prev and not event['actual'] and prev.get('actual'):
+            for key, value in prev.items():
+                if key.startswith('actual'):
+                    event[key] = value
+        ev.append(event)
+    ev.sort(key=lambda event: event['time_utc'])
+    if not ev:
+        raise ValueError('Không có tin USD High – không ghi file trống')
+    return ev
+
+
+def document_text(events, old_doc, now):
+    doc = {
+        '_ghi_chu': NOTE,
+        'source': {'name': 'ForexFactory', 'url': 'https://www.forexfactory.com/calendar', 'feed': URL},
+        'updated_vn': now.astimezone(VN).strftime('%H:%M %d/%m/%Y'),
+        'updated_utc': now.astimezone(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
+        'has_actual': any(bool(event.get('actual')) for event in events),
+        'events': events,
+    }
+    calendar_io.validate_calendar(doc)
+    if isinstance(old_doc, dict) and old_doc.get('updated_vn') and old_doc.get('updated_utc'):
+        kept = dict(doc)
+        kept['updated_vn'] = old_doc['updated_vn']
+        kept['updated_utc'] = old_doc['updated_utc']
+        if calendar_io.render(kept) == calendar_io.render(old_doc):
+            return None
+    return calendar_io.render(doc)
+
+
+def prepare(raw, old_doc, now):
+    return document_text(events_from_feed(raw, (old_doc or {}).get('events') if isinstance(old_doc, dict) else None), old_doc, now)
+
+
+def load_old(path):
     try:
-        old = {(o['title'], o['time_utc']): o for o in json.load(open(OUT)).get('events', [])}
+        return json.loads(Path(path).read_text(encoding='utf-8'))
     except Exception:
-        old = {}
-    for e in ev:
-        o = old.get((e['title'], e['time_utc']))
-        if o and not e['actual'] and o.get('actual'):
-            for k, v in o.items():
-                if k.startswith('actual'): e[k] = v
-    now = dt.datetime.now(VN)
-    out = {'_ghi_chu': 'Tự sinh bởi scripts/update-calendar.py từ ForexFactory – đừng sửa tay. Giờ: Asia/Ho_Chi_Minh.',
-           'source': {'name': 'ForexFactory', 'url': 'https://www.forexfactory.com/calendar', 'feed': URL},
-           'updated_vn': now.strftime('%H:%M %d/%m/%Y'), 'updated_utc': now.astimezone(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
-           'has_actual': any(e.get('actual') for e in ev), 'events': ev}
-    json.dump(out, open(OUT, 'w'), ensure_ascii=False, indent=1)
-    print(f'{len(ev)} sự kiện USD (High) → {OUT}')
-if __name__ == '__main__': main()
+        return None
+
+
+def fetch_feed():
+    req = urllib.request.Request(URL, headers={'User-Agent': 'Mozilla/5.0 (huymastergold79 calendar)'})
+    with urllib.request.urlopen(req, timeout=30) as response:
+        return json.load(response)
+
+
+def main(argv=None):
+    argv = list(sys.argv[1:] if argv is None else argv)
+    out = calendar_io.OUT
+    if '--check' in argv:
+        try:
+            calendar_io.validate_calendar(json.loads(Path(out).read_text(encoding='utf-8')))
+        except Exception as ex:
+            sys.exit(f'Lịch không hợp lệ: {ex}')
+        print(f'calendar ok {out}')
+        return 0
+    try:
+        text = prepare(fetch_feed(), load_old(out), dt.datetime.now(VN))
+    except Exception as ex:
+        sys.exit(f'Không ghi lịch: {ex}')
+    if text is None:
+        print(f'không đổi → {out}')
+        return 0
+    calendar_io.atomic_write(out, text)
+    print(f'{len(json.loads(text)["events"])} sự kiện USD (High) → {out}')
+    return 0
+
+
+if __name__ == '__main__':
+    sys.exit(main())

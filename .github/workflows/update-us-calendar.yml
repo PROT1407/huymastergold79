@@ -1,0 +1,52 @@
+name: update-us-calendar
+# Làm mới lịch tin đỏ Mỹ (data/calendar-us.json) trên GitHub Actions.
+# Không gửi Telegram, Facebook hay Zalo. Không dùng secret.
+# Giờ lịch là UTC; trang web hiển thị Asia/Ho_Chi_Minh (UTC+7, không DST).
+#   23 0 * * 1    Thứ Hai 00:23 UTC = 07:23 VN — nạp tuần mới từ ForexFactory
+#   0 14 * * 1-5  ngày làm việc 14:00 UTC = 21:00 VN — điền actual sau tin 08:30 ET
+#                 (21:00 VN = 09:00 EST / 10:00 EDT, sau giờ ra tin thường lệ)
+on:
+  schedule:
+    - cron: '23 0 * * 1'
+    - cron: '0 14 * * 1-5'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: update-us-calendar
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test calendar scripts
+        run: python3 scripts/test_calendar_actuals.py
+      - name: Refresh ForexFactory week
+        run: python3 scripts/update-calendar.py
+      - name: Fill released actuals
+        run: python3 scripts/calendar_actuals.py
+      - name: Reject an empty or invalid calendar
+        run: python3 scripts/update-calendar.py --check
+      - name: Commit and push on main when the calendar changed
+        if: github.ref == 'refs/heads/main'
+        run: |
+          set -euo pipefail
+          if [ "${GITHUB_REF}" != "refs/heads/main" ]; then
+            echo "Không commit: ref=${GITHUB_REF}"
+            exit 0
+          fi
+          git diff --quiet -- data/calendar-us.json && { echo "Lịch không đổi"; exit 0; }
+          python3 scripts/update-calendar.py --check
+          git config user.name "PROT1407"
+          git config user.email "201034500+PROT1407@users.noreply.github.com"
+          git add -- data/calendar-us.json
+          git commit -m "Lịch tin Mỹ: làm mới tuần ForexFactory và số thực tế (GitHub Actions)"
+          git pull --rebase origin main
+          git push origin HEAD:main
