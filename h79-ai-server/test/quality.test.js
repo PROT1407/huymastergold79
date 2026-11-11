@@ -3,7 +3,7 @@
 const assert = require('node:assert/strict');
 const { test } = require('node:test');
 const { dateWindow, fedwatchSentences, htmlToText, isArticleUrl, isHomepageUrl, payrollFact, preferNewest, pricePathFromFacts, renderPriceLines } = require('../src/collect');
-const { contradictsClock, dedupeSentences, extractNumbers, failedNumbers, gate, learnNumberRoles, lockDomesticBoard, missingCore, polishVn, stripUnsourcedHedge } = require('../src/quality');
+const { contradictsClock, dedupeSentences, extractNumbers, failedNumbers, gate, learnNumberRoles, lintBoard, lockDomesticBoard, missingCore, polishVn, repeatedWord, stripUnsourcedHedge, styleVnFields } = require('../src/quality');
 const { clockFromVnString } = require('../src/time');
 
 const tuesday = clockFromVnString('2026-11-10 06:37');
@@ -395,7 +395,7 @@ test('Vietnamese numbers, spacing, dropped words, and English parentheses are no
   assert.match(text, /1,35/);
   assert.match(text, /165\.000/);
   assert.match(text, /4\.140,40/);
-  assert.match(text, /spot vàng/);
+  assert.match(text, /vàng giao ngay/);
   assert.match(text, /NFP/);
   assert.match(text, /\(Fed\)/);
   assert.match(text, /kỳ hạn 2 năm nhạy cảm/);
@@ -433,7 +433,7 @@ test('Vietnamese numbers, spacing, dropped words, and English parentheses are no
   assert.match(gated.board.items[0].summary, /69,40/);
   assert.match(gated.board.items[0].title, /mức 53,32/);
   assert.match(gated.board.items[0].summary, /kỳ hạn 2 năm/);
-  assert.match(gated.board.items[0].summary, /spot vàng/);
+  assert.match(gated.board.items[0].summary, /vàng giao ngay/);
 });
 
 test('a rounded title percent is replaced and a distant one is rejected', () => {
@@ -743,4 +743,77 @@ test('near-duplicate debt sentences collapse to one', () => {
   assert.match(prose, /4\.600/);
   const english = result.board.sections_en.map((section) => section.p).join(' ');
   assert.equal((english.match(/US debt/g) || []).length, 1);
+});
+
+test('bare Spot gold in a Vietnamese sentence becomes a Vietnamese opener', () => {
+  const raw = 'Core CPI tăng 0,3%, cao hơn dự báo 0,2%. Spot gold giao dịch quanh mức 4.031,80 USD/ounce, giảm 107,60 USD (tương đương 2,60%).';
+  const cleaned = polishVn(raw, learnNumberRoles('Core CPI rose 0.3%. Spot gold traded near $4,031.80, down $107.60.'));
+  assert.match(cleaned, /Core CPI tăng 0,3%/);
+  assert.match(cleaned, /Giá vàng giao ngay quanh mức 4\.031,80 USD\/ounce, giảm 107,60 USD/);
+  assert.equal(/spot\s+gold|gold\s+spot/i.test(cleaned), false);
+  assert.equal(/spot\s+gold|gold\s+spot/i.test(polishVn('Kim loại gold spot giữ nhịp.')), false);
+  const stale = lintBoard('macro', {
+    items: [{
+      title: 'Vàng',
+      summary: 'Spot gold giao dịch quanh mức 4.031,80.',
+      reason: 'Lợi suất dịu đủ dài để câu nhận xét không bị cắt vì ngắn.',
+    }],
+    share_fb: 'Vàng\nhttps://h79gold.com/bai/x.html\nLàm theo kế hoạch, đừng chạy theo nến tin.',
+    share_zalo: 'Vàng\nhttps://h79gold.com/bai/x.html\nLàm theo kế hoạch, đừng chạy theo nến tin.\n👥 Join nhóm Zalo H79 - Nhận tín hiệu free: https://h79gold.com/zalo',
+  }, {});
+  assert.equal(stale.some((problem) => problem === 'english spot gold left in Vietnamese'), true);
+});
+
+test('multiline share text keeps its line breaks', () => {
+  const share = [
+    'SJC miếng mua 145.200.000 / bán 147.800.000',
+    'Nhẫn trơn 24K mua 140.000.000 / bán 144.000.000',
+    'https://h79gold.com/gia-vang.html',
+    'Làm theo kế hoạch, đừng chạy theo nến tin.',
+  ].join('\n');
+  const zalo = `${share}\n👥 Join nhóm Zalo H79 - Nhận tín hiệu free: https://h79gold.com/zalo`;
+  assert.equal(polishVn(share).split('\n').length, 4);
+  assert.match(polishVn(share), /SJC miếng[\s\S]*\nNhẫn trơn 24K/);
+  const board = { share_fb: share, share_zalo: zalo, share_lead: share };
+  styleVnFields(board, 'Spot gold traded near $4,140.40.');
+  assert.equal(board.share_fb.split('\n').length, 4);
+  assert.equal(board.share_lead.split('\n').length, 4);
+  assert.equal(board.share_zalo.split('\n').length, 5);
+  assert.match(board.share_fb, /^SJC miếng/);
+  assert.match(board.share_zalo, /h79gold\.com\/zalo$/);
+});
+
+test('việc làm twice is not a repeated-word failure', () => {
+  const line = 'Báo cáo việc làm tháng 10 tăng 165.000 người và việc làm khu vực tư vẫn tăng.';
+  assert.equal(repeatedWord(line), '');
+  assert.equal(repeatedWord('Giá vượt đỉnh rồi đã vượt tiếp.'), 'vượt');
+  const result = gate({
+    task: 'weekly',
+    final: true,
+    clock: clockFromVnString('2026-11-08 09:00'),
+    week: { start: '2026-11-02', end: '2026-11-06' },
+    facts: [
+      { kind: 'payroll', value: 165000, month: 10, sentence: 'October payrolls rose by 165,000.', vn: 'Báo cáo việc làm tháng 10 tăng 165.000 người.' },
+      { kind: 'forecast', sentence: 'The World Bank gold path is $4,600 then $4,250 then $4,000.', vn: 'Dự báo Ngân hàng Thế giới: 4.600, 4.250, 4.000 USD/oz.' },
+    ],
+    pricePath: 'Trong tuần, giá vàng đi từ khoảng 3.900 lên đỉnh 4.145.',
+    sources: [{
+      name: 'Kitco',
+      url: 'https://www.kitco.com/news/article/2026-11-08/week-review',
+      normalized: 'Gold bounced from $3,900 to $4,145. October payrolls rose by 165,000. The World Bank gold path is $4,600 then $4,250 then $4,000.',
+    }],
+    fedwatch: { stated: false, items: [] },
+    text: JSON.stringify({
+      title: 'Mốc 4.000',
+      title_en: 'Gold week',
+      sections: [{
+        h: 'Tuần',
+        p: `Trong tuần, giá vàng đi từ khoảng 3.900 lên đỉnh 4.145. Mốc 4.000 được thử. ${line} Dự báo Ngân hàng Thế giới: 4.600, 4.250, 4.000.`,
+      }],
+      sections_en: [{ h: 'Week', p: 'Gold traded from 3900 to 4145. October payrolls rose by 165,000.' }],
+    }),
+  });
+  assert.equal(result.ok, true, JSON.stringify(result.debug || result.error));
+  assert.equal(/repeated word: việc/.test((result.debug && result.debug.detail) || ''), false);
+  assert.match(result.board.sections.map((section) => section.p).join(' '), /việc làm/);
 });

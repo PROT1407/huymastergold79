@@ -312,7 +312,7 @@ const BANNED_PHRASES = [
   'tâm lý nhà đầu tư',
   'động lực tăng giá ban đầu',
 ];
-const REPEAT_SKIP = new Set(['vàng', 'giá', 'tuần', 'mức', 'mốc', 'tháng', 'năm', 'theo', 'trong', 'không', 'được', 'nhưng', 'hoặc', 'cũng', 'nhiều', 'sau', 'trước', 'khoảng', 'đỉnh', 'đáy', 'này', 'đây', 'đang', 'vẫn', 'một', 'các', 'cho', 'với', 'khi', 'như', 'đến', 'tới', 'hơn', 'hàng', 'công', 'nợ', 'ngân', 'quốc', 'hội', 'đảng', 'chính', 'tiền', 'bản', 'thị', 'trường']);
+const REPEAT_SKIP = new Set(['vàng', 'giá', 'tuần', 'mức', 'mốc', 'tháng', 'năm', 'theo', 'trong', 'không', 'được', 'nhưng', 'hoặc', 'cũng', 'nhiều', 'sau', 'trước', 'khoảng', 'đỉnh', 'đáy', 'này', 'đây', 'đang', 'vẫn', 'một', 'các', 'cho', 'với', 'khi', 'như', 'đến', 'tới', 'hơn', 'hàng', 'công', 'nợ', 'ngân', 'quốc', 'hội', 'đảng', 'chính', 'tiền', 'bản', 'thị', 'trường', 'việc']);
 const PAREN_ALLOW = /^(?:Fed|CPI|NFP|DXY|WGC|CME|USD)$/i;
 
 function learnNumberRoles(text) {
@@ -354,11 +354,18 @@ function decideGrouped(token, roles) {
 
 function unstutterGold(text) {
   return String(text || '')
+    .replace(/(?:giá\s+)?spot\s+gold\s+giao dịch\s+quanh mức/gi, 'Giá vàng giao ngay quanh mức')
+    .replace(/(?:giá\s+)?gold\s+spot\s+giao dịch\s+quanh mức/gi, 'Giá vàng giao ngay quanh mức')
+    .replace(/(?:giá\s+)?spot\s+gold\s+giao dịch/gi, 'Giá vàng giao ngay')
+    .replace(/(?:giá\s+)?gold\s+spot\s+giao dịch/gi, 'Giá vàng giao ngay')
+    .replace(/spot\s+gold/gi, 'vàng giao ngay')
+    .replace(/gold\s+spot/gi, 'vàng giao ngay')
     .replace(/giao ngay\s+spot(?:\s+gold)?\s+vàng\s+giao dịch/gi, 'giao ngay')
     .replace(/giao ngay\s+spot(?:\s+gold)?(?:\s+vàng)?/gi, 'giao ngay')
     .replace(/gold\s+spot\s+vàng/gi, 'vàng')
     .replace(/spot\s+vàng\s+giao dịch/gi, 'vàng giao ngay')
-    .replace(/vàng(?:\s+vàng)+/gi, 'vàng');
+    .replace(/vàng(?:\s+vàng)+/gi, 'vàng')
+    .replace(/giao ngay(?:\s+giao ngay)+/gi, 'giao ngay');
 }
 
 function contentWords(sentence) {
@@ -400,14 +407,20 @@ function preferSentence(current, next) {
   return current;
 }
 
+function eachLine(text, fn) {
+  return String(text ?? '').split('\n').map((line) => fn(line)).join('\n');
+}
+
 function dedupeSentences(text) {
-  const kept = [];
-  for (const sentence of sentencesOf(text)) {
-    const index = kept.findIndex((item) => nearDuplicate(item, sentence));
-    if (index === -1) kept.push(sentence);
-    else kept[index] = preferSentence(kept[index], sentence);
-  }
-  return kept.join(' ');
+  return eachLine(text, (line) => {
+    const kept = [];
+    for (const sentence of sentencesOf(line)) {
+      const index = kept.findIndex((item) => nearDuplicate(item, sentence));
+      if (index === -1) kept.push(sentence);
+      else kept[index] = preferSentence(kept[index], sentence);
+    }
+    return kept.join(' ');
+  });
 }
 
 function unsourcedGoldHedge(sentence, corpus) {
@@ -421,7 +434,7 @@ function unsourcedGoldHedge(sentence, corpus) {
 }
 
 function stripUnsourcedHedge(text, corpus) {
-  return sentencesOf(text).filter((sentence) => !unsourcedGoldHedge(sentence, corpus)).join(' ');
+  return eachLine(text, (line) => sentencesOf(line).filter((sentence) => !unsourcedGoldHedge(sentence, corpus)).join(' '));
 }
 
 function polishVn(text, roles) {
@@ -778,6 +791,8 @@ function lintBoard(task, board, ctx) {
   if (looksEnglish(vnFields) || /https?:\/\//.test(vnFields) || /\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(vnFields) || englishParen(vnFields)) problems.push('English, URL, or ISO time in a Vietnamese field');
   const vn = vnFields;
   if (/giao ngay\s+spot|spot\s+vàng\s+giao dịch|gold\s+spot\s+vàng/i.test(vn)) problems.push('gold opener stutter');
+  const publishedVn = [vn, board.share_lead, board.share_fb, board.share_zalo].filter(Boolean).join('\n');
+  if (/spot\s+gold|gold\s+spot/i.test(publishedVn)) problems.push('english spot gold left in Vietnamese');
   if (/phòng thủ dài hạn|vai trò phòng thủ/i.test(vn) && sentencesOf(vn).some((sentence) => unsourcedGoldHedge(sentence, ctx.corpus || ''))) problems.push('unsourced gold hedge');
   if (ctx.moved && /đi ngang|ổn định/i.test(vn)) problems.push('says prices are flat while they moved');
   if (ctx.payrollMonth === 10 && /việc làm tháng 11/.test(vn)) problems.push('payroll data month mixed up with the release month');
@@ -1097,8 +1112,11 @@ module.exports = {
   missingCore,
   parseBoard,
   dedupeSentences,
+  lintBoard,
   polishVn,
+  repeatedWord,
   stripUnsourcedHedge,
+  styleVnFields,
   quotesBefore,
   replaceFlagged,
   sanitizePrevious,
