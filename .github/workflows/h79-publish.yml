@@ -1,0 +1,45 @@
+name: h79-publish
+# Weekday boards and the Sunday news recap. Vietnam is UTC+7, no daylight saving.
+# macro weekdays 06:37 VN = 23:37 UTC Sun–Thu → 37 23 * * 0-4
+# domestic weekdays 08:43 VN = 01:43 UTC Mon–Fri → 43 1 * * 1-5
+# weekly Sunday 09:00 VN = 02:00 UTC Sunday → 0 2 * * 0
+# Secret: H79_RUN_TOKEN only. The generator prompt and Gemini key stay on Render.
+on:
+  schedule:
+    - cron: '37 23 * * 0-4'
+    - cron: '43 1 * * 1-5'
+    - cron: '0 2 * * 0'
+  workflow_dispatch:
+    inputs:
+      task:
+        description: macro, domestic, or weekly
+        required: true
+        type: choice
+        options:
+          - macro
+          - domestic
+          - weekly
+permissions:
+  contents: write
+concurrency:
+  group: h79-publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Publish board
+        env:
+          H79_RUN_TOKEN: ${{ secrets.H79_RUN_TOKEN }}
+          H79_API_URL: https://h79-ai-server.onrender.com
+          H79_TASK: ${{ github.event_name == 'workflow_dispatch' && inputs.task || '' }}
+          GITHUB_EVENT_SCHEDULE: ${{ github.event.schedule }}
+        run: python3 scripts/h79_publish.py
