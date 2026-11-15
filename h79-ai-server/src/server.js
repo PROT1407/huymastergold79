@@ -1,0 +1,349 @@
+'use strict';
+
+const http = require('node:http');
+const { readBearer, tokensMatch } = require('./auth');
+const { collect } = require('./collect');
+const { digitSignature, generateBoard, proofreadBoard, rewriteSentences } = require('./gemini');
+const { gate, parseBoard, quotesBefore, renderText, replaceFlagged, sanitizePrevious } = require('./quality');
+const { resolveClock } = require('./time');
+
+const BODY_LIMIT = 256 * 1024;
+const DEFAULT_RATE = { windowMs: 10 * 60 * 1000, max: 20 };
+
+function portFrom(value) {
+  if (value === undefined || value === null || String(value).trim() === '') return 10000;
+  const port = Number(value);
+  if (!Number.isInteger(port) || port < 0 || port > 65535) return 10000;
+  return port;
+}
+
+function pathnameOf(url) {
+  try {
+    return new URL(url || '/', 'http://127.0.0.1').pathname;
+  } catch {
+    return '/';
+  }
+}
+
+function clientIp(req) {
+  const raw = req.headers['x-forwarded-for'];
+  const header = Array.isArray(raw) ? raw[0] : raw;
+  if (typeof header === 'string') {
+    const first = header.split(',')[0].trim();
+    if (first && first.length <= 80 && /^[A-Za-z0-9:.\-]+$/.test(first)) return first;
+  }
+  return req.socket.remoteAddress || 'unknown';
+}
+
+function cleanKey(value) {
+  if (typeof value !== 'string') return '';
+  const key = value.trim();
+  if (!key || /[\r\n\0]/.test(key)) return '';
+  return key;
+}
+
+function systemPrompt(value) {
+  if (typeof value !== 'string' || value.trim() === '') return '';
+  return value;
+}
+
+function modelName(value) {
+  const model = typeof value === 'string' && value.trim() ? value.trim() : 'gemini-3.5-flash-lite';
+  if (!/^[A-Za-z0-9][A-Za-z0-9._-]{0,80}$/.test(model)) return '';
+  return model;
+}
+
+function cleanDatetime(value) {
+  if (typeof value !== 'string') return '';
+  return value.replace(/[\u0000-\u001F\u007F]/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 80);
+}
+
+function send(res, status, payload) {
+  const body = JSON.stringify(payload);
+  res.writeHead(status, {
+    'content-type': 'application/json; charset=utf-8',
+    'content-length': Buffer.byteLength(body),
+    'cache-control': 'no-store',
+    'x-content-type-options': 'nosniff',
+  });
+  res.end(body);
+}
+
+function drain(req) {
+  req.resume();
+}
+
+function readBody(req, limit) {
+  return new Promise((resolve, reject) => {
+    const chunks = [];
+    let size = 0;
+    let settled = false;
+    const fail = (error) => {
+      if (settled) return;
+      settled = true;
+      reject(error);
+    };
+    req.on('data', (chunk) => {
+      size += chunk.length;
+      if (size > limit) {
+        fail(Object.assign(new Error('too_large'), { code: 'TOO_LARGE' }));
+        req.destroy();
+        return;
+      }
+      chunks.push(chunk);
+    });
+    req.on('end', () => {
+      if (settled) return;
+      settled = true;
+      resolve(Buffer.concat(chunks).toString('utf8'));
+    });
+    req.on('error', (error) => fail(error));
+  });
+}
+
+function createRateLimiter(rate) {
+  const hits = new Map();
+  return (ip) => {
+    const now = Date.now();
+    let bucket = hits.get(ip);
+    if (!bucket || now - bucket.start >= rate.windowMs) {
+      bucket = { start: now, count: 0 };
+      hits.set(ip, bucket);
+    }
+    bucket.count += 1;
+    if (hits.size > 5000) hits.delete(hits.keys().next().value);
+    return bucket.count > rate.max;
+  };
+}
+
+async function resolvePrevious(body, fetchImpl, dateVn, override) {
+  if (override !== undefined) return override;
+  const supplied = sanitizePrevious(body.previous);
+  if (supplied) return supplied;
+  if (body.task !== 'domestic') return null;
+  try {
+    const response = await fetchImpl('https://h79gold.com/data/vn-gold-daily.json', { signal: AbortSignal.timeout(8000) });
+    if (!response || !response.ok) return null;
+    return quotesBefore(await response.json(), dateVn);
+  } catch {
+    return null;
+  }
+}
+
+function createServer(options = {}) {
+  const env = options.env || process.env;
+  const fetchImpl = options.fetchImpl || globalThis.fetch;
+  const now = options.now || (() => new Date());
+  const limited = createRateLimiter(options.rateLimit || DEFAULT_RATE);
+
+  async function handle(req, res) {
+    const pathname = pathnameOf(req.url);
+    if ((req.method === 'GET' || req.method === 'HEAD') && pathname === '/health') {
+      if (req.method === 'HEAD') {
+        res.writeHead(200, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' });
+        res.end();
+        return;
+      }
+      send(res, 200, { ok: true });
+      return;
+    }
+    if (pathname !== '/api/boards') {
+      send(res, 404, { ok: false, error: 'Not found' });
+      return;
+    }
+    if (req.method !== 'POST') {
+      send(res, 405, { ok: false, error: 'Method not allowed.' });
+      return;
+    }
+    if (limited(clientIp(req))) {
+      drain(req);
+      send(res, 429, { ok: false, error: 'Quá nhiều yêu cầu. Thử lại sau.' });
+      return;
+    }
+    const expected = typeof env.H79_RUN_TOKEN === 'string' ? env.H79_RUN_TOKEN.trim() : '';
+    if (!tokensMatch(readBearer(req.headers.authorization), expected)) {
+      drain(req);
+      send(res, 401, { ok: false, error: 'Unauthorized' });
+      return;
+    }
+    const apiKey = cleanKey(env.GEMINI_API_KEY);
+    const prompt = systemPrompt(env.H79_SYSTEM_PROMPT);
+    const model = modelName(env.GEMINI_MODEL);
+    if (!apiKey || !prompt || !model) {
+      drain(req);
+      send(res, 503, { ok: false, error: 'Dịch vụ tạm thời chưa sẵn sàng.' });
+      return;
+    }
+    const declared = Number(req.headers['content-length'] || 0);
+    if (Number.isFinite(declared) && declared > BODY_LIMIT) {
+      drain(req);
+      send(res, 413, { ok: false, error: 'Nội dung quá lớn.' });
+      return;
+    }
+    let raw = '';
+    try {
+      raw = await readBody(req, BODY_LIMIT);
+    } catch (error) {
+      if (error && error.code === 'TOO_LARGE') {
+        send(res, 413, { ok: false, error: 'Nội dung quá lớn.' });
+        return;
+      }
+      send(res, 400, { ok: false, error: 'Yêu cầu không hợp lệ.' });
+      return;
+    }
+    let body;
+    try {
+      body = raw ? JSON.parse(raw) : {};
+    } catch {
+      send(res, 400, { ok: false, error: 'Yêu cầu không hợp lệ.' });
+      return;
+    }
+    if (!body || typeof body !== 'object' || Array.isArray(body)) {
+      send(res, 400, { ok: false, error: 'Yêu cầu không hợp lệ.' });
+      return;
+    }
+    if (body.task !== 'macro' && body.task !== 'domestic' && body.task !== 'weekly') {
+      send(res, 400, { ok: false, error: 'task phải là macro, domestic hoặc weekly.' });
+      return;
+    }
+    const datetimeInput = cleanDatetime(body.datetime_vn);
+    const clock = resolveClock(datetimeInput, now());
+    if (!clock || (datetimeInput && clock.datetimeVn !== datetimeInput.slice(0, 16))) {
+      send(res, 400, { ok: false, error: 'datetime_vn phải là YYYY-MM-DD HH:MM.' });
+      return;
+    }
+    const collected = await collect(body.task, fetchImpl, clock);
+    const previous = await resolvePrevious(body, fetchImpl, clock.dateVn, options.previousQuotes);
+    if ((body.task === 'macro' || body.task === 'weekly') && !collected.sources.length) {
+      send(res, 422, { ok: false, error: 'Không có bài báo cùng ngày hoặc gần đây. Không dùng trang chủ làm nguồn.', debug: { failedNumbers: [], missingFacts: [], detail: 'no articles' } });
+      return;
+    }
+    if (body.task === 'domestic' && !collected.hasPrices) {
+      send(res, 422, {
+        ok: false,
+        error: 'Không lấy được giá vàng trong nước thật từ nguồn công khai. Cần giá thật; không được tự điền số SJC hoặc PNJ.',
+        debug: { failedNumbers: [], missingFacts: [], detail: 'no parsed prices' },
+      });
+      return;
+    }
+    const modelInput = {
+      fetchImpl,
+      apiKey,
+      model,
+      systemPrompt: prompt,
+      task: body.task,
+      clock,
+      sources: collected.sources,
+      prices: collected.prices,
+      fedwatch: collected.fedwatch,
+      week: collected.week,
+      facts: collected.facts || [],
+      pricePath: collected.pricePath || '',
+      priceLines: collected.priceLines || [],
+      sleep: options.sleep,
+    };
+    let rewrotePhrases = false;
+    const gateInput = (raw, final) => ({
+      task: body.task,
+      text: raw,
+      sources: collected.sources,
+      clock,
+      prices: collected.prices,
+      fedwatch: collected.fedwatch,
+      facts: collected.facts || [],
+      pricePath: collected.pricePath || '',
+      priceLines: collected.priceLines || [],
+      sourceTime: collected.sourceTime || '',
+      previous,
+      week: collected.week,
+      final,
+    });
+    async function rewritePhrases(current) {
+      if (rewrotePhrases || !current || current.ok || !current.debug || !current.debug.phraseRewrite || !current.board) return current;
+      rewrotePhrases = true;
+      const flagged = current.debug.flagged || [];
+      if (!flagged.length) return current;
+      try {
+        const reply = await rewriteSentences({ fetchImpl, apiKey, model, sentences: flagged, sleep: options.sleep });
+        const parsed = parseBoard(reply);
+        const sentences = parsed && Array.isArray(parsed.sentences) ? parsed.sentences : [];
+        if (sentences.length === flagged.length) {
+          flagged.forEach((from, index) => {
+            const to = String(sentences[index] || '').trim();
+            if (!to || digitSignature(from) !== digitSignature(to)) return;
+            replaceFlagged(current.board, from, to);
+          });
+        }
+      } catch { /* a failed rewrite still drops the flagged sentence below */ }
+      let again = gate(gateInput(JSON.stringify(current.board), true));
+      if (again.ok || !again.debug || !again.debug.phraseRewrite) return again;
+      for (const sentence of again.debug.flagged || []) replaceFlagged(again.board, sentence, '');
+      return gate(gateInput(JSON.stringify(again.board), true));
+    }
+    let text;
+    try {
+      text = await generateBoard(modelInput);
+    } catch {
+      send(res, 502, { ok: false, error: 'Không tạo được bản tin lúc này. Vui lòng thử lại sau.' });
+      return;
+    }
+    let checked = gate(gateInput(text, false));
+    checked = await rewritePhrases(checked);
+    if (!checked.ok && checked.retryable) {
+      try {
+        text = await generateBoard({ ...modelInput, feedback: checked.debug });
+      } catch {
+        send(res, 502, { ok: false, error: 'Không tạo được bản tin lúc này. Vui lòng thử lại sau.' });
+        return;
+      }
+      checked = gate(gateInput(text, true));
+    }
+    checked = await rewritePhrases(checked);
+    if (!checked.ok) {
+      send(res, checked.status || 422, { ok: false, error: checked.error, debug: checked.debug || { failedNumbers: [], missingFacts: [] } });
+      return;
+    }
+    try {
+      const proofed = await proofreadBoard({ fetchImpl, apiKey, model, text: JSON.stringify(checked.board), sleep: options.sleep });
+      const again = gate(gateInput(proofed, true));
+      if (again.ok && digitSignature(again.board) === digitSignature(checked.board)) checked = again;
+    } catch { /* keep the unproofed draft */ }
+    send(res, 200, {
+      ok: true,
+      task: body.task,
+      text: renderText(body.task, checked.board, checked.text),
+      sources: checked.sources,
+      board: checked.board,
+      clock: {
+        dateVn: clock.dateVn,
+        timeVn: clock.timeVn,
+        weekdayVn: clock.weekdayVn,
+        weekdayEn: clock.weekdayEn,
+        dateEt: clock.dateEt,
+        timeEt: clock.timeEt,
+        timeEn: clock.timeEn,
+        year: clock.year,
+      },
+      fedwatch: {
+        stated: Boolean(collected.fedwatch && collected.fedwatch.stated),
+        note: checked.board.fedwatch_note || (collected.fedwatch && collected.fedwatch.note) || '',
+        items: (collected.fedwatch && collected.fedwatch.items) || [],
+      },
+    });
+  }
+
+  return http.createServer((req, res) => {
+    handle(req, res).catch(() => {
+      if (!res.headersSent) send(res, 500, { ok: false, error: 'Lỗi máy chủ.' });
+    });
+  });
+}
+
+function start(options = {}) {
+  const env = options.env || process.env;
+  const server = createServer(options);
+  server.listen(portFrom(env.PORT), '0.0.0.0');
+  return server;
+}
+
+module.exports = { createServer, start, portFrom, BODY_LIMIT };
