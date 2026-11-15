@@ -224,7 +224,7 @@ function macroDraft() {
     items: [{
       title: 'Vàng giữ 4.087 USD',
       title_en: 'Gold holds near $4,087',
-      summary: 'Spot gold steadied near $4,087. FedWatch 60,3%.',
+      summary: 'Vàng giao ngay giữ quanh 4.087 USD. FedWatch 60,3% cửa tăng tháng 12.',
       summary_en: 'Spot gold steadied near $4,087. FedWatch 60.3%.',
       reason: 'Lợi suất dịu giúp vàng giữ 4.087 USD.',
       reason_en: 'Softer yields left gold near $4,087.',
@@ -568,7 +568,7 @@ test('macro retries once and 422 debug lists numbers that were not sourced', asy
       }
       assert.match(user, /9999|9\.999/);
       return geminiResponse(`\`\`\`json\n${JSON.stringify({
-        items: [{ title: 'Vàng giữ 4.087', summary: 'Spot gold steadied near $4,087. FedWatch 60.3%.', reason: 'Lợi suất dịu, vàng 4.087.', title_en: 'Gold holds', summary_en: 'Spot gold steadied near $4,087. FedWatch 60.3%.', reason_en: 'Yields eased near $4,087.', category: 'Vàng', impact: 'tăng', source_url: ARTICLE }],
+        items: [{ title: 'Vàng giữ 4.087', summary: 'Vàng giao ngay giữ quanh 4.087 USD. FedWatch 60,3% cửa tăng tháng 12.', reason: 'Lợi suất dịu, vàng 4.087.', title_en: 'Gold holds', summary_en: 'Spot gold steadied near $4,087. FedWatch 60.3%.', reason_en: 'Yields eased near $4,087.', category: 'Vàng', impact: 'tăng', source_url: ARTICLE }],
         fedwatch_note: 'FedWatch 60.3%.',
       })}\n\`\`\``);
     }

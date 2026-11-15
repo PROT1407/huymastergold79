@@ -16,6 +16,9 @@ function taskInstruction(task, clock, extra) {
       'Nhiệm vụ: macro = Phần B tin vĩ mô.',
       ...clockLines,
       'Chỉ dùng các số liệu đã tách bên dưới. Chép đúng từng số, kèm URL của câu đó. Không thêm số khác.',
+      'Mọi câu tiếng Việt phải là tiếng Việt. Không chép nguyên câu tiếng Anh. Được giữ tên riêng và mã ngắn như FedWatch, CPI, USD.',
+      'Giữ đúng nhãn của số trong nguồn: headline không gọi là cơ bản hay lõi; số theo tháng không gọi là theo năm.',
+      'Giá USD viết 4.150 USD/oz, không viết $4,650 hay $4.650.',
       'Tiêu đề chép đúng phần trăm đã có trong bài. Không làm tròn, ví dụ không viết 80% khi bài nói 82,2%.',
       extra.fedwatch && extra.fedwatch.stated
         ? 'FedWatch: chỉ được dùng các câu đã đánh dấu, kèm nguồn và thời điểm của câu đó.'
@@ -31,6 +34,7 @@ function taskInstruction(task, clock, extra) {
       `Khoảng ngày: ${week.start || ''} đến ${week.end || ''}.`,
       ...clockLines,
       'Viết bản tin tiếng Việt, tiếng Anh, một dòng Facebook và một dòng Zalo.',
+      'Mọi câu tiếng Việt phải là tiếng Việt. Không chép nguyên câu tiếng Anh. Giữ đúng nhãn headline và core, tháng và năm. Giá USD viết 4.150 USD/oz.',
       'Viết như một trader đang làm việc viết tổng kết tuần: câu ngắn, tiếng thường. Không dùng câu sáo.',
       'Cấm các cụm: "giao dịch đầy sóng gió", "tâm điểm chi phối tâm lý nhà đầu tư", "kim loại quý không sinh lời này", "bệ đỡ vững chắc", "vẫn duy trì cao hơn đáng kể so với giai đoạn trước", "tâm lý nhà đầu tư", "động lực tăng giá ban đầu".',
       'Không lặp một từ hai lần trong sáu từ. Tiêu đề nêu mốc hoặc sự kiện, ví dụ "Mốc 4.000".',
@@ -47,7 +51,7 @@ function taskInstruction(task, clock, extra) {
   return [
     'Nhiệm vụ: domestic = Phần C vàng trong nước.',
     ...clockLines,
-    'Không viết chữ số. Bảng giá được gắn bằng mã nguồn từ số đã đọc. Chỉ viết lời bình không có số.',
+    'Không viết chữ số. Bảng giá được gắn bằng mã nguồn từ số đã đọc. Chỉ viết lời bình tiếng Việt, không chép câu tiếng Anh.',
     'Trả về một khối ```json với khóa analysis, analysis_en, advice, advice_en, quick_advice, quick_advice_en, refs, world_news, share_fb, share_zalo.',
   ].join('\n');
 }

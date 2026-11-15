@@ -408,7 +408,7 @@ test('time_en year is replaced with the computed year', () => {
     text: JSON.stringify({
       items: [{
         title: 'Vàng giữ 4.087',
-        summary: 'Spot gold steadied near $4,087.',
+        summary: 'Vàng giao ngay giữ quanh 4.087 USD trong phiên.',
         reason: 'Lợi suất dịu.',
         title_en: 'Gold holds',
         summary_en: 'Spot gold steadied near $4,087.',
@@ -860,4 +860,61 @@ test('việc làm twice is not a repeated-word failure', () => {
   assert.equal(result.ok, true, JSON.stringify(result.debug || result.error));
   assert.equal(/repeated word: việc/.test((result.debug && result.debug.detail) || ''), false);
   assert.match(result.board.sections.map((section) => section.p).join(' '), /việc làm/);
+});
+
+test('13/11 macro text rejects English sentences and a core label on headline PPI', () => {
+  const source = {
+    name: 'CNBC',
+    url: 'https://www.cnbc.com/2026/11/13/ppi-gold.html',
+    excerpt: 'The Labor Department reported Friday that the producer price index increased 0.3% in October, below expectations. Headline PPI rose 6.5% from a year earlier. Goldman Sachs Research strategists led by Lina Thomas said in a recent note that they have lowered their gold view to $4,650 and see $4,800 later.',
+  };
+  const bad = gate({
+    task: 'macro',
+    final: true,
+    clock: clockFromVnString('2026-11-13 06:37'),
+    sources: [source],
+    fedwatch: { stated: false, items: [] },
+    prices: [],
+    facts: [],
+    text: JSON.stringify({
+      items: [{
+        title: 'PPI và vàng',
+        summary: 'Labor Department reported Friday that the producer price index increased 0,3% in October, below expectations. Goldman Sachs Research strategists led by Lina Thomas said in a recent note that they have lowered their gold view to $4.650 and $4,800. Lạm phát cơ bản đạt 6,5% theo năm.',
+        reason: 'Thị trường đang phản ứng với số PPI và dự báo giá vàng trong phiên.',
+        title_en: 'PPI and gold',
+        summary_en: source.excerpt,
+        reason_en: 'Markets reacted to PPI and the gold forecast.',
+      }],
+      fedwatch_note: 'Chưa có xác suất cuộc họp trong nguồn đã đọc.',
+    }),
+  });
+  assert.equal(bad.ok, false);
+  assert.match(bad.debug.detail, /english sentence in Vietnamese field/);
+  assert.match(bad.debug.detail, /core label on headline 6\.5%/);
+  const good = gate({
+    task: 'macro',
+    final: true,
+    clock: clockFromVnString('2026-11-13 06:37'),
+    sources: [source],
+    fedwatch: { stated: false, items: [] },
+    prices: [],
+    facts: [],
+    text: JSON.stringify({
+      items: [{
+        title: 'PPI và vàng',
+        summary: 'Bộ Lao động cho biết PPI tháng 10 tăng 0,3%, thấp hơn dự báo. PPI tổng thể tăng 6,5% theo năm. Goldman Sachs hạ dự báo vàng xuống $4.650 và nêu mốc $4,800.',
+        reason: 'Thị trường đang phản ứng với PPI tổng thể và mốc dự báo vàng trong phiên Mỹ, không phải một chỉ số khác. FedWatch không phải lực chính.',
+        title_en: 'PPI and gold',
+        summary_en: source.excerpt,
+        reason_en: 'Markets reacted to headline PPI and the gold forecast.',
+      }],
+      fedwatch_note: 'Chưa có xác suất cuộc họp trong nguồn đã đọc.',
+    }),
+  });
+  assert.equal(good.ok, true, JSON.stringify(good.debug || good.error));
+  assert.match(good.board.items[0].summary, /4\.650 USD\/oz/);
+  assert.match(good.board.items[0].summary, /4\.800 USD\/oz/);
+  assert.equal(/\$4[.,]/.test(good.board.items[0].summary), false);
+  assert.match(good.board.items[0].summary, /PPI tổng thể tăng 6,5% theo năm/);
+  assert.equal(/cơ bản/.test(good.board.items[0].summary), false);
 });

@@ -185,6 +185,77 @@ function looksEnglish(text) {
   return ((text || '').match(/\b(the|and|from|with|near|week|gold|report|since|about)\b/gi) || []).length >= 3;
 }
 
+const EN_FUNCTION = new Set('the that this these those and or but from with near since about in on of to for by as is was were are be been have has had they their said reported below above increased recent note led into which who what when where while after before over under at an a it its not also would could should may will can did does his her our your we you he she them there here if then so just more most per than'.split(' '));
+const SHORT_TERM = /\b(?:fed\s*watch|spot\s+gold|gold\s+spot|cpi|nfp|dxy|wgc|cme|usd|xau|ppi|fomc|fed|opec|wti|brent)\b/gi;
+
+function predominantlyEnglish(sentence) {
+  const stripped = String(sentence || '')
+    .replace(SHORT_TERM, ' ')
+    .replace(/https?:\/\/\S+/g, ' ')
+    .replace(/\$?\d[\d.,]*/g, ' ');
+  const words = stripped.match(/\p{L}+/gu) || [];
+  if (!words.length) return false;
+  let vietnamese = 0;
+  let functional = 0;
+  let ascii = 0;
+  for (const word of words) {
+    if (/[ăâđêôơưáàảãạéèẻẽẹíìỉĩịóòỏõọúùủũụýỳỷỹ]/i.test(word)) {
+      vietnamese += 1;
+      continue;
+    }
+    if (!/^[A-Za-z]+$/.test(word)) continue;
+    ascii += 1;
+    if (EN_FUNCTION.has(word.toLowerCase())) functional += 1;
+  }
+  if (functional >= 4 && vietnamese <= 1) return true;
+  if (ascii >= 8 && vietnamese === 0) return true;
+  return false;
+}
+
+function englishSentences(text) {
+  return sentencesOf(text).filter(predominantlyEnglish);
+}
+
+function normalizeUsd(text) {
+  return String(text || '')
+    .replace(/\$\s*(\d),(\d{3})\.(\d{1,2})\b/g, (_, a, b, c) => `${a}.${b},${c.length === 1 ? `${c}0` : c} USD/oz`)
+    .replace(/\$\s*(\d),(\d{3})\b/g, (_, a, b) => `${a}.${b} USD/oz`)
+    .replace(/\$\s*(\d)\.(\d{3})(?!\d)/g, (_, a, b) => `${a}.${b} USD/oz`)
+    .replace(/\$\s*(\d{2,3})\.(\d{2})\b/g, (_, whole, frac) => `${whole},${frac} USD`);
+}
+
+function percentWindows(corpus, pct) {
+  const shown = String(pct).replace('.', '[.,]');
+  const re = new RegExp(`.{0,90}${shown}\\s*%.{0,90}`, 'gi');
+  return String(corpus || '').match(re) || [];
+}
+
+function headlineOnly(corpus, pct) {
+  const windows = percentWindows(corpus, pct);
+  if (!windows.length) return false;
+  const headline = windows.some((slice) => /headline|all items|overall/i.test(slice));
+  const core = windows.some((slice) => /\bcore\b|ex[- ]food|excluding food|cơ bản|lõi/i.test(slice));
+  return headline && !core;
+}
+
+function coreAttached(sentence, pct) {
+  const shown = String(pct).replace('.', ',');
+  const near = new RegExp(`(?:cơ bản|lõi).{0,48}${shown}\\s*%|${shown}\\s*%.{0,48}(?:cơ bản|lõi)`, 'i');
+  if (!near.test(sentence)) return false;
+  if (/không phải[^.]{0,48}(?:cơ bản|lõi)|chứ không[^.]{0,24}(?:cơ bản|lõi)/i.test(sentence)) return false;
+  return true;
+}
+
+function figureLabelProblems(text, corpus) {
+  const problems = [];
+  for (const sentence of sentencesOf(text)) {
+    for (const pct of percentsIn(sentence)) {
+      if (coreAttached(sentence, pct) && headlineOnly(corpus, pct)) problems.push(`core label on headline ${pct}%`);
+    }
+  }
+  return problems;
+}
+
 function formatVndLocal(amount) {
   return String(Math.abs(amount)).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 }
@@ -495,7 +566,7 @@ function stripUnsourcedHedge(text, corpus) {
 function polishVn(text, roles) {
   const known = roles || { decimals: new Set(), integers: new Set(), aliases: new Set() };
   const urls = [];
-  let out = unstutterGold(String(text || ''))
+  let out = normalizeUsd(unstutterGold(String(text || '')))
     .replace(/25\s*điểm\s*chuẩn/gi, '25 điểm cơ bản')
     .replace(/Commodity Markets Outlook/gi, 'Triển vọng Thị trường Hàng hóa')
     .replace(/\bWorld Bank\b/gi, 'Ngân hàng Thế giới')
@@ -848,6 +919,8 @@ function lintBoard(task, board, ctx) {
   if (/giao ngay\s+spot|spot\s+vàng\s+giao dịch|gold\s+spot\s+vàng/i.test(vn)) problems.push('gold opener stutter');
   const publishedVn = [vn, board.share_lead, board.share_fb, board.share_zalo].filter(Boolean).join('\n');
   if (/spot\s+gold|gold\s+spot/i.test(publishedVn)) problems.push('english spot gold left in Vietnamese');
+  if (englishSentences(vn).length) problems.push('english sentence in Vietnamese field');
+  if (task === 'macro' || task === 'weekly') problems.push(...figureLabelProblems(vn, ctx.corpus || ''));
   if (/phòng thủ dài hạn|vai trò phòng thủ/i.test(vn) && sentencesOf(vn).some((sentence) => unsourcedGoldHedge(sentence, ctx.corpus || ''))) problems.push('unsourced gold hedge');
   if (ctx.moved && /đi ngang|ổn định/i.test(vn)) problems.push('says prices are flat while they moved');
   if (ctx.largeMove && FLAT_LARGE_RE.test(vn)) problems.push('says the move is small while a side changed by at least 1 million');
