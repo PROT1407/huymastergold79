@@ -1,6 +1,167 @@
 {
  "strategies": [
   {
+   "id": "2026-11-15-tong-hop-tin-vang",
+   "date": "2026-11-15",
+   "news": true,
+   "session": "Bản tin tuần",
+   "session_en": "Week in the news",
+   "url": "bai/2026-11-15-tong-hop-tin-vang-tuan-qua.html",
+   "url_en": "en/posts/2026-11-15-gold-week-news-recap.html",
+   "headline": "Vàng mất hơn 4% tuần qua: CPI nóng, lợi suất vượt 5% kéo thủng 4.000 USD",
+   "headline_en": "Gold sheds more than 4% on the week as hot CPI pushes yields above 5%",
+   "title": "Vàng mất hơn 4% tuần qua: CPI nóng, lợi suất vượt 5% kéo thủng 4.000 USD",
+   "title_en": "Gold sheds more than 4% on the week as hot CPI pushes yields above 5%",
+   "article": {
+    "sections": [
+     {
+      "h": "",
+      "p": "Tuần 9/11–13/11/2026 vàng đi ngược hẳn tuần trước: đầu tuần còn hồi lên trên 4.100 USD, cuối tuần đã nằm dưới mốc 4.000. Theo CNBC, vàng giao ngay mất hơn 4% trong tuần, tuần tệ nhất kể từ đầu tháng 6. Kitco ghi nhận mức giảm 5,00% với giá 3.883,98 USD/oz lúc viết bài cuối ngày thứ Sáu. Đỉnh tuần 4.148,95 USD lập ngày thứ Hai, đáy 3.852,10 USD sáng thứ Năm, thấp nhất kể từ tháng 10/2025."
+     },
+     {
+      "h": "",
+      "p": "Nhịp hồi đầu tuần đến từ dầu. Tổng thống Trump nói khó có đợt tấn công mới vào Iran khi đàm phán còn tiến triển, Brent mất 5,4% xuống 92,97 USD/thùng trong phiên thứ Hai. USD yếu đi, nỗi lo lạm phát lùi lại, vàng giao ngay tăng 1,6% lên 4.129,28 USD (CNBC). Nhưng đó chỉ là khoảng lặng trước số lạm phát."
+     },
+     {
+      "h": "",
+      "p": "Thứ Ba, CPI tháng 10 tăng 0,4% so với dự báo 0,3%, CPI lõi tăng 0,3% so với dự báo 0,2% (CNBC dẫn BLS). Ngay trước giờ ra số, Thống đốc Fed Christopher Waller nói nếu lõi quanh 0,3% thì phương án tăng 0,5 điểm % trong tháng 12 nên được đặt lên bàn, và số ra đúng như thế. CNBC dẫn CME FedWatch sau CPI: 88% khả năng tăng 0,25 điểm %, 11% khả năng tăng 0,5 điểm %, trong khi một tuần trước khả năng tăng 0,5 còn là 0. Lợi suất 10 năm tăng gần 10 điểm cơ bản lên 4,95%. Sang thứ Tư, vàng thủng hẳn 4.000 USD khi các quan chức Fed tiếp tục giọng diều hâu (Kitco)."
+     },
+     {
+      "h": "",
+      "p": "Thứ Năm là ngày nặng nhất. Ông Trump viết rằng Mỹ \"không cần thỏa thuận với Iran\", hy vọng hòa bình tắt, Brent tăng hơn 3% lên 95,82 USD và lợi suất 10 năm vọt hơn 13 điểm cơ bản lên 5,125% (CNBC). Chỉ số USD lên gần đỉnh 19 tháng, vàng giao ngay có lúc giảm 2,7% về 3.881,70 USD. Điểm đáng nhớ của tuần: căng thẳng Trung Đông không còn đỡ vàng như trước, vì dầu cao nghĩa là lạm phát cao, và lạm phát cao nghĩa là Fed phải siết thêm."
+     },
+     {
+      "h": "",
+      "p": "Thứ Sáu, PPI tháng 10 tăng 0,3%, thấp hơn dự báo 0,4%, nhưng so với cùng kỳ lên 6,5%, cao nhất từ tháng 11/2022; PPI lõi (bỏ thực phẩm, năng lượng và dịch vụ thương mại) tăng 0,5% (CNBC). Vàng hồi nhờ lực mua bắt đáy, chạm 3.922,97 USD khi số ra rồi lùi lại; CNBC ghi spot tăng 0,6% ở 3.898,84 USD, còn Kitco cuối phiên Mỹ ghi quanh 3.883 USD. Sau PPI, FedWatch theo CNBC là 89,4% cho mức tăng 0,25 và 10,6% cho mức tăng 0,5 (trước PPI là 13,8%). Lợi suất 10 năm vẫn ở 5,143%, cả tuần tăng khoảng 30 điểm cơ bản theo CME. Brent chốt 95,84 USD, WTI 88,56 USD, cả hai giảm tuần thứ hai liên tiếp (Kitco)."
+     },
+     {
+      "h": "",
+      "p": "Nhìn chung, vàng lúc này chạy theo một chuỗi rất rõ: dầu → lạm phát → Fed → lợi suất và USD. Khi lợi suất 10 năm đứng trên 5% và thị trường coi việc Fed tăng lãi ngày 9/12 gần như chắc chắn (CNBC dẫn FedWatch 100%), các nhịp hồi của vàng khó đi xa; tin Iran giờ đè vàng nhiều hơn là đỡ. Tâm lý cũng đã nghiêng xuống: trong khảo sát Kitco, 62% chuyên gia Phố Wall nghĩ vàng giảm tiếp tuần tới, nhà đầu tư nhỏ chia 42% tăng, 38% giảm. Mốc cần nhìn là 4.000 USD phía trên và đáy tuần 3.852 phía dưới. Tuần tới có Chủ tịch Fed Kevin Warsh phát biểu thứ Hai, doanh số bán lẻ thứ Ba và biên bản họp Fed tháng 10 chiều thứ Tư giờ Mỹ (Kitco). Vàng chỉ có cửa hồi bền nếu lợi suất và USD hạ nhiệt, hoặc Fed dập kỳ vọng tăng 0,5 điểm %."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Vàng ngày 9/11/2026",
+      "url": "https://www.cnbc.com/2026/11/09/gold-gains-more-than-1percent-as-softer-oil-prices-ease-inflation-worries.html"
+     },
+     {
+      "name": "CNBC – Dầu ngày 9/11/2026",
+      "url": "https://www.cnbc.com/2026/11/09/oil-falls-as-trump-says-new-iran-attacks-unlikely.html"
+     },
+     {
+      "name": "CNBC – CPI tháng 10/2026",
+      "url": "https://www.cnbc.com/2026/11/10/cpi-inflation-report-october-2026.html"
+     },
+     {
+      "name": "CNBC – Phản ứng thị trường sau CPI, 10/11/2026",
+      "url": "https://www.cnbc.com/2026/11/10/market-spooked-because-now-the-fed-may-need-a-supersized-hike-in-december.html"
+     },
+     {
+      "name": "CNBC – Vàng ngày 12/11/2026",
+      "url": "https://www.cnbc.com/2026/11/12/gold-falls-to-over-one-week-low-on-firm-dollar-fed-rate-hike-bets.html"
+     },
+     {
+      "name": "CNBC – Lợi suất trái phiếu 12/11/2026",
+      "url": "https://www.cnbc.com/2026/11/12/us-treasurys-bonds-yields.html"
+     },
+     {
+      "name": "CNBC – Vàng ngày 13/11/2026 (cập nhật 5:23 PM ET)",
+      "url": "https://www.cnbc.com/2026/11/13/gold-rises-on-bargain-hunting-but-heads-for-weekly-decline.html"
+     },
+     {
+      "name": "CNBC – Lợi suất trái phiếu và PPI 13/11/2026",
+      "url": "https://www.cnbc.com/2026/11/13/treasury-yields-fed-rates.html"
+     },
+     {
+      "name": "Kitco – Báo cáo cuối phiên 13/11/2026",
+      "url": "https://www.kitco.com/news/article/2026-11-13/gold-posts-steep-weekly-loss-treasury-yields-rise-fed-tightening-bets"
+     },
+     {
+      "name": "Kitco – Khảo sát vàng hằng tuần 13/11/2026",
+      "url": "https://www.kitco.com/news/article/2026-11-13/wall-street-bears-abound-after-inflation-sours-fed-outlook-main-street"
+     },
+     {
+      "name": "CME Group – Lợi suất 10 năm tuần tới 13/11/2026",
+      "url": "https://www.cmegroup.com/videos/2026/11/13/10-year-treasury-yields-climb-30-bps-on-week-to-top-5-15-11-13.html"
+     }
+    ]
+   },
+   "article_en": {
+    "sections": [
+     {
+      "h": "",
+      "p": "Gold gave back the whole post-midterm mood in the week of Nov. 9–13. It was back above $4,100 on Monday and below $4,000 by midweek. CNBC said spot gold shed more than 4% on the week, its worst week since early June, while Kitco put the loss at 5.00% with spot at $3,883.98 an ounce late Friday. The weekly high was $4,148.95 on Monday and the low was $3,852.10 on Thursday morning, the weakest level since October 2025, according to Kitco."
+     },
+     {
+      "h": "",
+      "p": "Monday's bounce was an oil trade. President Trump said fresh strikes on Iran were highly unlikely while talks progressed, Brent fell 5.4% to $92.97 a barrel in Monday trading, the dollar softened, and spot gold rose 1.6% to $4,129.28 (CNBC). It did not survive the inflation data."
+     },
+     {
+      "h": "",
+      "p": "October CPI rose 0.4% on Tuesday against a 0.3% forecast, with core up 0.3% versus 0.2% expected, per CNBC citing the BLS. Hours earlier Fed Governor Christopher Waller had said a half-point December hike should be on the table if core came in around 0.3%. CNBC cited CME FedWatch after the release at 88% for a quarter-point hike and 11% for a half-point move, up from zero a week earlier. The 10-year yield jumped nearly 10 basis points to 4.95%. On Wednesday gold broke decisively below $4,000 as Fed officials kept up the hawkish tone (Kitco)."
+     },
+     {
+      "h": "",
+      "p": "Thursday did the real damage. Trump posted that the U.S. did not need a deal with Iran, Brent rose more than 3% to $95.82, and the 10-year yield surged more than 13 basis points to 5.125% (CNBC). With the dollar index near a 19-month high, spot gold fell 2.7% to $3,881.70 by 1:36 p.m. ET. The lesson of the week: Middle East risk is no longer a clean bid for gold, because higher oil means hotter inflation and a Fed that has to keep tightening."
+     },
+     {
+      "h": "",
+      "p": "Friday's October PPI rose 0.3%, below the 0.4% forecast, but the annual rate climbed to 6.5%, the highest since November 2022, and core PPI excluding food, energy and trade services rose 0.5% (CNBC). Bargain hunters lifted spot to $3,922.97 on the release before it faded; CNBC later had spot up 0.6% at $3,898.84 and December futures at $3,903.00, while Kitco showed spot near $3,883 in late U.S. trading. After PPI, CNBC cited FedWatch at 89.4% for a quarter-point December hike and 10.6% for a half point, down from 13.8% before the data. The 10-year still finished the day at 5.143%, about 30 basis points higher on the week per CME Group. Brent settled at $95.84 and WTI at $88.56, both down for a second straight week (Kitco)."
+     },
+     {
+      "h": "",
+      "p": "The chain driving gold is simple right now: oil, inflation, the Fed, then yields and the dollar. With the 10-year above 5% and markets treating a Dec. 9 hike as a lock (CNBC cited 100% FedWatch odds of a hike), rallies have little room to run. Sentiment has turned with price: 62% of Wall Street analysts in Kitco's survey expect lower gold next week, while retail voters split 42% higher and 38% lower. The levels that matter are $4,000 overhead and the $3,852 weekly low. Next week brings Fed Chair Kevin Warsh on Monday, October retail sales on Tuesday and the minutes of the October FOMC meeting on Wednesday afternoon (Kitco). A durable bounce likely needs softer yields and a weaker dollar, or a Fed that talks down a half-point hike."
+     }
+    ],
+    "sources": [
+     {
+      "name": "CNBC – Gold, Nov. 9, 2026",
+      "url": "https://www.cnbc.com/2026/11/09/gold-gains-more-than-1percent-as-softer-oil-prices-ease-inflation-worries.html"
+     },
+     {
+      "name": "CNBC – Oil, Nov. 9, 2026",
+      "url": "https://www.cnbc.com/2026/11/09/oil-falls-as-trump-says-new-iran-attacks-unlikely.html"
+     },
+     {
+      "name": "CNBC – October 2026 CPI report",
+      "url": "https://www.cnbc.com/2026/11/10/cpi-inflation-report-october-2026.html"
+     },
+     {
+      "name": "CNBC – Market reaction to CPI, Nov. 10, 2026",
+      "url": "https://www.cnbc.com/2026/11/10/market-spooked-because-now-the-fed-may-need-a-supersized-hike-in-december.html"
+     },
+     {
+      "name": "CNBC – Gold, Nov. 12, 2026",
+      "url": "https://www.cnbc.com/2026/11/12/gold-falls-to-over-one-week-low-on-firm-dollar-fed-rate-hike-bets.html"
+     },
+     {
+      "name": "CNBC – Treasury yields, Nov. 12, 2026",
+      "url": "https://www.cnbc.com/2026/11/12/us-treasurys-bonds-yields.html"
+     },
+     {
+      "name": "CNBC – Gold, Nov. 13, 2026 (updated 5:23 p.m. ET)",
+      "url": "https://www.cnbc.com/2026/11/13/gold-rises-on-bargain-hunting-but-heads-for-weekly-decline.html"
+     },
+     {
+      "name": "CNBC – Treasury yields and PPI, Nov. 13, 2026",
+      "url": "https://www.cnbc.com/2026/11/13/treasury-yields-fed-rates.html"
+     },
+     {
+      "name": "Kitco – PM report, Nov. 13, 2026",
+      "url": "https://www.kitco.com/news/article/2026-11-13/gold-posts-steep-weekly-loss-treasury-yields-rise-fed-tightening-bets"
+     },
+     {
+      "name": "Kitco – Weekly Gold Survey, Nov. 13, 2026",
+      "url": "https://www.kitco.com/news/article/2026-11-13/wall-street-bears-abound-after-inflation-sours-fed-outlook-main-street"
+     },
+     {
+      "name": "CME Group – 10-year yields on the week, Nov. 13, 2026",
+      "url": "https://www.cmegroup.com/videos/2026/11/13/10-year-treasury-yields-climb-30-bps-on-week-to-top-5-15-11-13.html"
+     }
+    ]
+   }
+  },
+  {
    "id": "2026-11-08-tong-hop-tin-vang",
    "date": "2026-11-08",
    "news": true,
