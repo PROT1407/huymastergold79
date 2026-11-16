@@ -48,7 +48,7 @@
  ],
  "advice": "Vùng 4.100–4.150 đã đẩy giá xuống lần nữa: CPI Mỹ tháng 10 nóng hơn dự báo, USD và lợi suất bật lên, vàng thế giới mất gần 3% trong phiên thứ Ba, sáng nay chỉ hồi nhẹ quanh 4.046 USD/oz.\nNhịp hồi đầu tuần vì vậy chỉ là hồi kỹ thuật. 4.100–4.150 giờ là trần phía trên; mốc gần cần giữ là 4.000. Giá chưa lấy lại được 4.100 thì đừng vội bắt đáy, càng đừng mua đuổi các nhịp hồi.\nMuốn mua dài hạn vẫn giữ kế hoạch chia phần: một phần khi thế giới về 3.700–3.600, phần lớn hơn để dành cho vùng 3.500.\nQuy ra tiền hôm nay: 3.700–3.600 ≈ 114,2–111,1 triệu/lượng, 3.500 ≈ 108,1 triệu (giá thế giới, chưa thuế phí).\nNếu SJC vẫn đắt hơn thế giới khoảng 14,6 triệu như hôm nay, vàng miếng ước quanh 128,8–125,7 triệu ở vùng 3.700–3.600, và quanh 122,7 triệu ở vùng 3.500.\nKhoản chênh 14,6 triệu là chi phí mình trả thêm – giá nhảy mạnh, khoản này cũng hay co giãn.\nAi lỡ mua ở đỉnh 191,3 triệu: đừng bán tháo theo phiên giảm, cũng đừng vội mua bình quân khi giá chưa về vùng đã tính. Chỉ mua thêm bằng tiền nhàn rỗi.",
  "_ghi_chu": "Phần giá/lịch sử/world/sjc_compare do scripts/update-vn-gold.py tự sinh. peak/refs/analysis/advice/world_news/quick_advice: sửa tay (chỉ số liệu có nguồn). world_news: mỗi mục {text (1 dòng tiếng Việt), source:{name,url}, intl}; luôn giữ ≥1 nguồn quốc tế (ưu tiên CNBC, rồi Reuters/Kitco/Bloomberg), bài trong ngày, link đã kiểm tra.",
- "updated_vn": "09:00 11/11/2026",
+ "updated_vn": "15:35 16/11/2026",
  "rows": [
   {
    "code": "SJL1L10",
@@ -56,8 +56,8 @@
    "type": "Vàng miếng SJC",
    "group": "mieng",
    "co": "SJC",
-   "buy": 136500000,
-   "sell": 139500000,
+   "buy": 134500000,
+   "sell": 137500000,
    "src_name": "SJC (sjc.com.vn) · qua giavang.org / webgia.com",
    "src_url": "https://sjc.com.vn/",
    "src_mode": "chain",
@@ -73,12 +73,12 @@
      "url": "https://webgia.com/gia-vang/sjc/"
     }
    ],
-   "src_time": "08:55 11/11/2026",
+   "src_time": "15:30 16/11/2026",
    "chg_buy": -2000000,
    "chg_sell": -2000000,
-   "prev_date": "2026-11-10",
-   "prev_buy": 138500000,
-   "prev_sell": 141500000
+   "prev_date": "2026-11-11",
+   "prev_buy": 136500000,
+   "prev_sell": 139500000
   },
   {
    "code": "DOHNL",
@@ -86,8 +86,8 @@
    "type": "Vàng miếng SJC",
    "group": "mieng",
    "co": "DOJI",
-   "buy": 137900000,
-   "sell": 140900000,
+   "buy": 134500000,
+   "sell": 137500000,
    "src_name": "DOJI (doji.vn) · qua giavang.org / webgia.com",
    "src_url": "https://doji.vn/",
    "src_mode": "chain",
@@ -103,12 +103,12 @@
      "url": "https://webgia.com/gia-vang/doji/"
     }
    ],
-   "src_time": "08:00 11/11/2026",
-   "chg_buy": -300000,
-   "chg_sell": -300000,
-   "prev_date": "2026-11-10",
-   "prev_buy": 138200000,
-   "prev_sell": 141200000
+   "src_time": "15:00 16/11/2026",
+   "chg_buy": -3400000,
+   "chg_sell": -3400000,
+   "prev_date": "2026-11-11",
+   "prev_buy": 137900000,
+   "prev_sell": 140900000
   },
   {
    "code": "DOHCML",
@@ -116,8 +116,8 @@
    "type": "Vàng miếng SJC",
    "group": "mieng",
    "co": "DOJI",
-   "buy": 137900000,
-   "sell": 140900000,
+   "buy": 134500000,
+   "sell": 137500000,
    "src_name": "DOJI (doji.vn) · qua giavang.org / webgia.com",
    "src_url": "https://doji.vn/",
    "src_mode": "chain",
@@ -133,12 +133,12 @@
      "url": "https://webgia.com/gia-vang/doji/"
     }
    ],
-   "src_time": "08:00 11/11/2026",
-   "chg_buy": -300000,
-   "chg_sell": -300000,
-   "prev_date": "2026-11-10",
-   "prev_buy": 138200000,
-   "prev_sell": 141200000
+   "src_time": "15:00 16/11/2026",
+   "chg_buy": -3400000,
+   "chg_sell": -3400000,
+   "prev_date": "2026-11-11",
+   "prev_buy": 137900000,
+   "prev_sell": 140900000
   },
   {
    "code": "PQHNVM",
@@ -146,19 +146,19 @@
    "type": "Vàng miếng SJC",
    "group": "mieng",
    "co": "PNJ",
-   "buy": 136500000,
-   "sell": 139500000,
+   "buy": 134500000,
+   "sell": 137500000,
    "src_name": "PNJ (giavang.pnj.com.vn) – trực tiếp",
    "src_url": "https://giavang.pnj.com.vn/",
    "src_mode": "direct",
    "src_brand": "PNJ",
    "src_host": "giavang.pnj.com.vn",
-   "src_time": "08:59 11/11/2026",
+   "src_time": "15:34 16/11/2026",
    "chg_buy": -2000000,
    "chg_sell": -2000000,
-   "prev_date": "2026-11-10",
-   "prev_buy": 138500000,
-   "prev_sell": 141500000
+   "prev_date": "2026-11-11",
+   "prev_buy": 136500000,
+   "prev_sell": 139500000
   },
   {
    "code": "BTSJC",
@@ -166,8 +166,8 @@
    "type": "Vàng miếng SJC",
    "group": "mieng",
    "co": "BTMC",
-   "buy": 136800000,
-   "sell": 140900000,
+   "buy": 133300000,
+   "sell": 137500000,
    "src_name": "Bảo Tín Minh Châu (btmc.vn) · qua giavang.org / webgia.com",
    "src_url": "https://btmc.vn/",
    "src_mode": "chain",
@@ -183,12 +183,12 @@
      "url": "https://webgia.com/gia-vang/bao-tin-minh-chau/"
     }
    ],
-   "src_time": "08:55 11/11/2026",
-   "chg_buy": 0,
-   "chg_sell": -300000,
-   "prev_date": "2026-11-10",
+   "src_time": "15:30 16/11/2026",
+   "chg_buy": -3500000,
+   "chg_sell": -3400000,
+   "prev_date": "2026-11-11",
    "prev_buy": 136800000,
-   "prev_sell": 141200000
+   "prev_sell": 140900000
   },
   {
    "code": "SJ9999",
@@ -196,8 +196,8 @@
    "type": "Nhẫn tròn 9999",
    "group": "nhan",
    "co": "SJC",
-   "buy": 135300000,
-   "sell": 139300000,
+   "buy": 133300000,
+   "sell": 137300000,
    "src_name": "SJC (sjc.com.vn) · qua giavang.org / webgia.com",
    "src_url": "https://sjc.com.vn/",
    "src_mode": "chain",
@@ -213,12 +213,12 @@
      "url": "https://webgia.com/gia-vang/sjc/"
     }
    ],
-   "src_time": "08:55 11/11/2026",
-   "chg_buy": -1900000,
-   "chg_sell": -1900000,
-   "prev_date": "2026-11-10",
-   "prev_buy": 137200000,
-   "prev_sell": 141200000
+   "src_time": "15:30 16/11/2026",
+   "chg_buy": -2000000,
+   "chg_sell": -2000000,
+   "prev_date": "2026-11-11",
+   "prev_buy": 135300000,
+   "prev_sell": 139300000
   },
   {
    "code": "PQHN24NTT",
@@ -226,19 +226,19 @@
    "type": "Nhẫn 24K",
    "group": "nhan",
    "co": "PNJ",
-   "buy": 134700000,
-   "sell": 138900000,
+   "buy": 132700000,
+   "sell": 136900000,
    "src_name": "PNJ (giavang.pnj.com.vn) – trực tiếp",
    "src_url": "https://giavang.pnj.com.vn/",
    "src_mode": "direct",
    "src_brand": "PNJ",
    "src_host": "giavang.pnj.com.vn",
-   "src_time": "08:59 11/11/2026",
-   "chg_buy": -1700000,
-   "chg_sell": -1700000,
-   "prev_date": "2026-11-10",
-   "prev_buy": 136400000,
-   "prev_sell": 140600000
+   "src_time": "15:34 16/11/2026",
+   "chg_buy": -2000000,
+   "chg_sell": -2000000,
+   "prev_date": "2026-11-11",
+   "prev_buy": 134700000,
+   "prev_sell": 138900000
   },
   {
    "code": "BT9999NTT",
@@ -246,8 +246,8 @@
    "type": "Nhẫn tròn 9999",
    "group": "nhan",
    "co": "BTMC",
-   "buy": 136800000,
-   "sell": 140800000,
+   "buy": 133300000,
+   "sell": 137300000,
    "src_name": "Bảo Tín Minh Châu (btmc.vn) · qua giavang.org / webgia.com",
    "src_url": "https://btmc.vn/",
    "src_mode": "chain",
@@ -263,10 +263,10 @@
      "url": "https://webgia.com/gia-vang/bao-tin-minh-chau/"
     }
    ],
-   "src_time": "08:55 11/11/2026",
-   "chg_buy": 0,
-   "chg_sell": 0,
-   "prev_date": "2026-11-10",
+   "src_time": "15:30 16/11/2026",
+   "chg_buy": -3500000,
+   "chg_sell": -3500000,
+   "prev_date": "2026-11-11",
    "prev_buy": 136800000,
    "prev_sell": 140800000
   },
@@ -276,8 +276,8 @@
    "type": "Nhẫn tròn 999 Hưng Thịnh Vượng",
    "group": "nhan",
    "co": "DOJI",
-   "buy": 137000000,
-   "sell": 141000000,
+   "buy": 133500000,
+   "sell": 137500000,
    "src_name": "DOJI (doji.vn) · dự phòng giavang.org",
    "src_url": "https://doji.vn/",
    "src_mode": "chain",
@@ -289,10 +289,10 @@
      "url": "https://giavang.org/trong-nuoc/doji/"
     }
    ],
-   "src_time": "08:00 11/11/2026",
-   "chg_buy": 0,
-   "chg_sell": 0,
-   "prev_date": "2026-11-10",
+   "src_time": "15:00 16/11/2026",
+   "chg_buy": -3500000,
+   "chg_sell": -3500000,
+   "prev_date": "2026-11-11",
    "prev_buy": 137000000,
    "prev_sell": 141000000
   },
@@ -302,19 +302,19 @@
    "type": "Vàng miếng SJC",
    "group": "mieng",
    "co": "Phú Quý",
-   "buy": 136500000,
-   "sell": 139500000,
+   "buy": 134500000,
+   "sell": 137500000,
    "src_name": "Phú Quý (phuquygroup.vn) – trực tiếp",
    "src_url": "https://phuquygroup.vn/",
    "src_mode": "direct",
    "src_brand": "Phú Quý",
    "src_host": "phuquygroup.vn",
-   "src_time": "08:35 11/11/2026",
-   "chg_buy": -1500000,
+   "src_time": "15:27 16/11/2026",
+   "chg_buy": -2000000,
    "chg_sell": -2000000,
-   "prev_date": "2026-11-10",
-   "prev_buy": 138000000,
-   "prev_sell": 141500000
+   "prev_date": "2026-11-11",
+   "prev_buy": 136500000,
+   "prev_sell": 139500000
   },
   {
    "code": "PQ_NHAN",
@@ -322,19 +322,19 @@
    "type": "Nhẫn tròn Phú Quý 999.9",
    "group": "nhan",
    "co": "Phú Quý",
-   "buy": 136500000,
-   "sell": 139500000,
+   "buy": 134500000,
+   "sell": 137500000,
    "src_name": "Phú Quý (phuquygroup.vn) – trực tiếp",
    "src_url": "https://phuquygroup.vn/",
    "src_mode": "direct",
    "src_brand": "Phú Quý",
    "src_host": "phuquygroup.vn",
-   "src_time": "08:35 11/11/2026",
-   "chg_buy": -1500000,
-   "chg_sell": -1500000,
-   "prev_date": "2026-11-10",
-   "prev_buy": 138000000,
-   "prev_sell": 141000000
+   "src_time": "15:27 16/11/2026",
+   "chg_buy": -2000000,
+   "chg_sell": -2000000,
+   "prev_date": "2026-11-11",
+   "prev_buy": 136500000,
+   "prev_sell": 139500000
   },
   {
    "code": "MH_SJC",
@@ -342,19 +342,19 @@
    "type": "Vàng miếng SJC",
    "group": "mieng",
    "co": "Mi Hồng",
-   "buy": 138000000,
-   "sell": 139500000,
+   "buy": 136000000,
+   "sell": 137500000,
    "src_name": "Mi Hồng (mihong.vn) – trực tiếp",
    "src_url": "https://mihong.vn/",
    "src_mode": "direct",
    "src_brand": "Mi Hồng",
    "src_host": "mihong.vn",
-   "src_time": "11/11/2026 08:35",
-   "chg_buy": -1700000,
-   "chg_sell": -1700000,
-   "prev_date": "2026-11-10",
-   "prev_buy": 139700000,
-   "prev_sell": 141200000
+   "src_time": "16/11/2026 14:49",
+   "chg_buy": -2000000,
+   "chg_sell": -2000000,
+   "prev_date": "2026-11-11",
+   "prev_buy": 138000000,
+   "prev_sell": 139500000
   },
   {
    "code": "MH_999",
@@ -362,28 +362,23 @@
    "type": "Vàng 99,9%",
    "group": "nhan",
    "co": "Mi Hồng",
-   "buy": 138000000,
-   "sell": 139500000,
+   "buy": 136000000,
+   "sell": 137500000,
    "src_name": "Mi Hồng (mihong.vn) – trực tiếp",
    "src_url": "https://mihong.vn/",
    "src_mode": "direct",
    "src_brand": "Mi Hồng",
    "src_host": "mihong.vn",
-   "src_time": "11/11/2026 08:35",
-   "chg_buy": -1700000,
-   "chg_sell": -1700000,
-   "prev_date": "2026-11-10",
-   "prev_buy": 139700000,
-   "prev_sell": 141200000
+   "src_time": "16/11/2026 14:49",
+   "chg_buy": -2000000,
+   "chg_sell": -2000000,
+   "prev_date": "2026-11-11",
+   "prev_buy": 138000000,
+   "prev_sell": 139500000
   }
  ],
  "history": {
   "SJL1L10": [
-   {
-    "date": "2026-10-06",
-    "buy": 140500000,
-    "sell": 143500000
-   },
    {
     "date": "2026-10-07",
     "buy": 140000000,
@@ -528,14 +523,14 @@
     "date": "2026-11-11",
     "buy": 136500000,
     "sell": 139500000
+   },
+   {
+    "date": "2026-11-16",
+    "buy": 134500000,
+    "sell": 137500000
    }
   ],
   "SJ9999": [
-   {
-    "date": "2026-10-06",
-    "buy": 140000000,
-    "sell": 143000000
-   },
    {
     "date": "2026-10-07",
     "buy": 139500000,
@@ -680,17 +675,22 @@
     "date": "2026-11-11",
     "buy": 135300000,
     "sell": 139300000
+   },
+   {
+    "date": "2026-11-16",
+    "buy": 133300000,
+    "sell": 137300000
    }
   ]
  },
  "world": {
-  "xau_usd": 4046.899902,
-  "xau_time_utc": "2026-11-11T01:59:58Z",
-  "usdvnd": 25608.244657,
-  "fx_time_utc": "Wed, 11 Nov 2026 00:02:32 +0000",
+  "xau_usd": 3863.550049,
+  "xau_time_utc": "2026-11-16T08:34:58Z",
+  "usdvnd": 25715.743135,
+  "fx_time_utc": "Mon, 16 Nov 2026 00:02:31 +0000",
   "factor": 1.20565,
-  "vnd_per_luong": 124900000.0,
-  "gap_sjc_sell": 14600000.0,
+  "vnd_per_luong": 119800000.0,
+  "gap_sjc_sell": 17700000.0,
   "note": "USD/oz × USD/VND (tỷ giá thị trường open.er-api) × 1,20565; chưa gồm thuế, phí"
  },
  "sources": {
@@ -700,56 +700,33 @@
   "fx": "https://open.er-api.com/"
  },
  "analysis_en": [
-  "Wednesday morning, Nov 11, SJC bars are 136.5–139.5 million VND per tael (8:55), down 2 million on both sides from the Nov 10 morning update (138.5–141.5); SJC rings are 135.3–139.3 million, down 1.9 million on both sides.",
-  "World gold is around $4,046/oz (CNBC XAU=, +0.4% in early Asia after Tuesday's near-3% drop on hot U.S. CPI), converting to ≈ 124.9 million VND per tael before taxes/fees – price was pushed out of the $4,100–$4,150 ceiling and is back below $4,100.",
-  "The SJC ask is ≈ 14.6 million above the converted price (SJC rings ≈ 14.4 million), little changed from ≈ 14.4 million yesterday as domestic prices followed world gold lower; versus a week ago (Nov 4: 138.2–141.2 million), SJC bars are 1.7 million lower on both sides.",
-  "A buyer at the 191.3 million peak ask (Jan 29, 2026) selling back today at the 136.5 million bid is down about 54.8 million VND per tael (≈ 28.6%)."
+  "SJC miếng is bid 134.500.000 and offered 137.500.000 VND per tael as of 15:30. Nhẫn SJC is bid 133.300.000 and offered 137.300.000 VND per tael as of 15:30. Nhẫn trơn 24K is bid 132.700.000 and offered 136.900.000 VND per tael as of 15:30."
  ],
- "advice_en": "The $4,100–$4,150 ceiling rejected gold again: hotter-than-expected October CPI lifted the dollar and yields, gold lost nearly 3% on Tuesday and is only bouncing slightly near $4,046 this morning.\nThat makes early-week strength just a technical bounce. $4,100–$4,150 is now overhead resistance and $4,000 is the nearby floor to watch. Until price reclaims $4,100, don't rush to catch the bottom and don't chase bounces.\nIf you're buying for the long haul, keep scaling in: a starter piece near $3,700–$3,600, and save the bigger slice for the $3,500 area.\nMind the dealer premium and the bid/ask on bars and coins – that's a real cost, and money you'll need within a few months doesn't belong in physical gold.\nBought near the highs? Don't panic-sell into the drop, and don't average down before price reaches your planned levels. Add only with spare cash.",
+ "advice_en": "SJC miếng is bid 134.500.000 and offered 137.500.000 VND per tael as of 15:30. Nhẫn SJC is bid 133.300.000 and offered 137.300.000 VND per tael as of 15:30. Nhẫn trơn 24K is bid 132.700.000 and offered 136.900.000 VND per tael as of 15:30.",
  "h79_view_en": [
   "Per CNBC, spot gold fell 2.8% to about $4,021 on Tuesday after October U.S. CPI rose 0.4% versus 0.3% expected, lifting the dollar and Treasury yields.",
   "The $4,100–$4,150 ceiling held and price is back near $4,046 – no bottom-fishing until $4,100 is reclaimed; $4,000 is the nearby floor, and long-term scaling plans stay at $3,700–$3,600 and $3,500."
  ],
- "quick_advice_en": "Gold was rejected at the $4,100–$4,150 ceiling after hot U.S. CPI (~$4,046 now): don't rush to buy the dip. If you're buying physical, scale in near $3,700–$3,600 and leave a larger slice for $3,500.",
+ "quick_advice_en": "SJC miếng is bid 134.500.000 and offered 137.500.000 VND per tael as of 15:30. Nhẫn SJC is bid 133.300.000 and offered 137.300.000 VND per tael as of 15:30. Nhẫn trơn 24K is bid 132.700.000 and offered 136.900.000 VND per tael as of 15:30.",
  "sjc_compare": {
-  "d1": {
-   "date": "2026-11-10",
-   "buy": 138500000,
-   "sell": 141500000
-  },
+  "d1": null,
   "w1": {
-   "date": "2026-11-04",
-   "buy": 138200000,
-   "sell": 141200000
+   "date": "2026-11-06",
+   "buy": 138000000,
+   "sell": 141000000
   },
   "m1": {
-   "date": "2026-10-12",
-   "buy": 141300000,
-   "sell": 144300000
+   "date": "2026-10-17",
+   "buy": 140600000,
+   "sell": 143600000
   }
  },
  "world_news": [
   {
-   "text": "CNBC: vàng giao ngay thứ Ba giảm 2,8% xuống khoảng 4.021 USD/oz khi CPI Mỹ tháng 10 tăng 0,4% (dự báo 0,3%), đẩy USD và lợi suất trái phiếu đi lên.",
+   "text": "",
    "source": {
-    "name": "CNBC",
-    "url": "https://www.cnbc.com/2026/11/10/gold-edges-lower-as-focus-shifts-to-us-inflation-data.html"
-   },
-   "intl": true
-  },
-  {
-   "text": "Kitco: lạm phát lõi tăng 0,3%, cao hơn dự báo 0,2%, cùng phát biểu ủng hộ tăng lãi suất 50 điểm cơ bản của thống đốc Fed Waller khiến vàng chịu sức bán mạnh.",
-   "source": {
-    "name": "Kitco News",
-    "url": "https://www.kitco.com/news/article/2026-11-10/gold-prices-down-2-day-us-cpi-rises-more-expected"
-   },
-   "intl": true
-  },
-  {
-   "text": "VTC News 7h sáng 11/11: SJC giảm 300.000 đồng/lượng mỗi chiều về 137,9–140,9 triệu, trước khi hạ tiếp trong buổi sáng.",
-   "source": {
-    "name": "VTC News",
-    "url": "https://vtcnews.vn/gia-vang-9999-sjc-hom-nay-11-11-2026-bao-nhieu-1-chi-ar1050540.html"
+    "name": "Gold API",
+    "url": "https://api.gold-api.com/price/XAU"
    },
    "intl": false
   }
@@ -762,6 +739,6 @@
  ],
  "official_fail": [],
  "world_news_rules": "Giữ ≥1 mục nguồn quốc tế (CNBC ưu tiên, rồi Reuters/Kitco/Bloomberg), bài trong ngày, link đã kiểm tra, 1 dòng tiếng Việt, không bịa số.",
- "price_time": "08:55 11/11/2026",
+ "price_time": "15:30 16/11/2026",
  "history_note": "Dữ liệu lưu hằng ngày của H79"
 }
