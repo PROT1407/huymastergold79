@@ -1,6 +1,6 @@
 {
  "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC | Chiến tranh | Ngân hàng TW. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
- "updated": "2026-11-17",
+ "updated": "2026-11-18",
  "fomc": {
   "source": {
    "name": "Federal Reserve – FOMC calendars",
@@ -56,6 +56,78 @@
   "note_en": "Decision at 2:00 PM ET on day two of the meeting, press conference at 2:30 PM ET. * = with economic projections (dot plot)."
  },
  "items": [
+  {
+   "date": "2026-11-18",
+   "category": "Vàng",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "Vàng dao động gần mức thấp nhất một năm khi kỳ vọng Fed tăng lãi suất đè nặng",
+   "summary": "Giá vàng giao ngay giao dịch quanh mức 3.853,10 USD/oz, giảm 2,40 USD tương đương 0,06%, trong biên độ từ 3.836,00 đến 3.891,60 USD/oz. Doanh thu bán lẻ tháng 10 tăng 0,2%, trong khi sản lượng công nghiệp giảm 0,4%. Xác suất Fed tăng 25 điểm cơ bản tại kỳ họp tháng 12 được ghi nhận ở mức khoảng 94%.",
+   "reason": "Ngắn hạn, áp lực từ kỳ vọng Fed tiếp tục thắt chặt chính sách tiền tệ và lợi suất trái phiếu duy trì ở mức cao (lợi suất kỳ hạn 10 năm ở mức khoảng 5,10%) tiếp tục kìm hãm đà hồi phục của vàng. Dài hạn, nhu cầu trú ẩn trước rủi ro địa chính trị tại Trung Đông vẫn là bệ đỡ vững chắc, song kim loại quý cần chờ đợi tín hiệu đảo chiều lãi suất rõ ràng hơn từ Fed.",
+   "source": {
+    "name": "Gold struggles near one-year lows, silver rebounds as stocks slide, Fed hike bets persist - Kitco PM Report | Kitco News",
+    "name_en": "Gold struggles near one-year lows, silver rebounds as stocks slide, Fed hike bets persist - Kitco PM Report | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-17/gold-struggles-near-one-year-lows-silver-rebounds-stocks-slide-fed-hike"
+   },
+   "time_vn": "Thứ Tư 18/11/2026 11:42 giờ VN",
+   "title_en": "Gold struggles near one-year lows, silver rebounds as stocks slide, Fed hike bets persist - Kitco PM Report",
+   "summary_en": "Spot gold was trading near $3,853.10 an ounce, down $2.40, or 0.06%, while silver was trading near $47.330, up $0.472, or 1.01%, on the session. Gold traded between $3,836.00 and $3,891.60 during the day. October retail sales increased 0.2%, and industrial production declined 0.4%. The latest published futures assessments indicated approximately a 94% probability of a 25-basis point increase.",
+   "reason_en": "In the short term, expectations of further Federal Reserve tightening and elevated Treasury yields continue to cap precious metals. In the long term, ongoing geopolitical tensions provide a floor for gold, though a sustained recovery depends on an eventual shift in monetary policy.",
+   "time_en": "Tuesday, November 17, 2026, 23:42 EST",
+   "source2": {
+    "name": "www.cnbc.com",
+    "name_en": "www.cnbc.com",
+    "url": "https://www.cnbc.com/2026/11/18/apec-trump-xi-putin-shenzhen.html"
+   }
+  },
+  {
+   "date": "2026-11-18",
+   "category": "Vàng",
+   "priority": 1,
+   "impact": "trung lập",
+   "title": "Nhu cầu vàng Ấn Độ tháng 10 khởi sắc nhờ giá giảm và mùa lễ hội",
+   "summary": "Theo Hội đồng Vàng Thế giới (WGC), giá vàng tháng 10 giảm 6,3% xuống mức 3.913 USD/oz. Tuy nhiên, giá thấp hơn đã thúc đẩy nhu cầu trang sức và đồng xu trong mùa lễ hội tại Ấn Độ tăng 15%-25% so với cùng kỳ năm trước, trong khi các quỹ ETF vàng ghi nhận tháng dòng tiền dương thứ năm liên tiếp.",
+   "reason": "Ngắn hạn, đợt giảm giá vàng kích thích lực mua vật chất theo mùa vụ tại các thị trường lớn như Ấn Độ, hỗ trợ nhu cầu tiêu thụ trang sức và thanh/đồng xu. Dài hạn, xu hướng tích lũy vật chất này củng cố nền giá cơ bản cho thị trường vàng toàn cầu.",
+   "source": {
+    "name": "India’s gold demand boosted by lower prices in October, with jewelry, ETFs, and imports strong – WGC’s Chacko | Kitco News",
+    "name_en": "India’s gold demand boosted by lower prices in October, with jewelry, ETFs, and imports strong – WGC’s Chacko | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-17/indias-gold-demand-boosted-lower-prices-october-jewelry-etfs-and-imports"
+   },
+   "time_vn": "Thứ Tư 18/11/2026 11:42 giờ VN",
+   "title_en": "India’s gold demand boosted by lower prices in October, with jewelry, ETFs, and imports strong – WGC’s Chacko",
+   "summary_en": "Following a relatively stable first half of October, gold prices fell sharply, ending the month 6.3% lower at US$3,913/oz, marking a second consecutive monthly decline. Retailer estimates indicate that demand in value terms increased 15%-25% y/y, while Indian gold ETFs recorded positive net inflows for the fifth consecutive month in October.",
+   "reason_en": "In the short term, lower prices stimulate seasonal physical demand for jewelry and bars and coins in key markets like India. Over the long term, this physical absorption supports a firm structural floor for global gold prices.",
+   "time_en": "Tuesday, November 17, 2026, 23:42 EST",
+   "source2": {
+    "name": "www.cnbc.com",
+    "name_en": "www.cnbc.com",
+    "url": "https://www.cnbc.com/2026/11/18/apec-trump-xi-putin-shenzhen.html"
+   }
+  },
+  {
+   "date": "2026-11-18",
+   "category": "Vàng",
+   "priority": 1,
+   "impact": "tăng",
+   "title": "Goldman Sachs dự báo vàng chạm 4.650 USD/oz vào cuối năm 2027 và hướng tới 5.600 USD/oz vào năm 2028",
+   "summary": "Goldman Sachs dự báo giá vàng đạt 4.650 USD/oz vào cuối năm 2027 nhờ lực mua ổn định từ các ngân hàng trung ương (dự kiến trung bình 60 tấn/tháng từ 2026 đến 2028), trước khi quay lại mức cao nhất mọi thời đại trên 5.600 USD/oz vào cuối năm 2028 khi Fed bắt đầu chu kỳ cắt giảm lãi suất.",
+   "reason": "Ngắn hạn, việc Fed tiếp tục tăng lãi suất có thể tạo ra biến động giảm và rủi ro điều chỉnh. Dài hạn, nhu cầu mua vàng từ khu vực chính thức (ngân hàng trung ương) và triển vọng cắt giảm lãi suất trong tương lai tạo động lực tăng trưởng mạnh mẽ cho kim loại quý.",
+   "source": {
+    "name": "Gold will reclaim $5,600/oz in 2028 as rate cuts bring Western investors back to precious metals – Goldman Sachs | Kitco News",
+    "name_en": "Gold will reclaim $5,600/oz in 2028 as rate cuts bring Western investors back to precious metals – Goldman Sachs | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-17/gold-will-reclaim-5600oz-2028-rate-cuts-bring-western-investors-back"
+   },
+   "time_vn": "Thứ Tư 18/11/2026 11:42 giờ VN",
+   "title_en": "Goldwill reclaim $5,600/oz in 2028 as rate cuts bring Western investors back to precious metals – Goldman Sachs",
+   "summary_en": "Gold will reclaim its all-time high above $5,600 per ounce by the end of 2028 after the Federal Reserve begins cutting interest rates and Western investors return to the precious metals market, according to analysts at Goldman Sachs. They see gold at $4,650 per ounce by year-end 2027, driven by continued central bank purchases averaging 60 tonnes per month.",
+   "reason_en": "In the near term, ongoing Fed rate hikes pose downside volatility risks for private investors. Over the long term, structural central bank demand and an anticipated shift toward rate cuts provide strong upward potential for gold.",
+   "time_en": "Tuesday, November 17, 2026, 23:42 EST",
+   "source2": {
+    "name": "www.cnbc.com",
+    "name_en": "www.cnbc.com",
+    "url": "https://www.cnbc.com/2026/11/18/apec-trump-xi-putin-shenzhen.html"
+   }
+  },
   {
    "date": "2026-11-17",
    "category": "Vàng",
