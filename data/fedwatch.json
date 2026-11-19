@@ -1,7 +1,7 @@
 {
  "_ghi_chu": "Xác suất lãi suất Fed theo CME FedWatch (suy ra từ giá hợp đồng tương lai Fed Funds 30 ngày). CME chặn truy cập tự động (403, điều khoản cấm scraping) nên số liệu được nhập TAY từ bài báo trích dẫn CME FedWatch – ghi rõ nguồn. Không tự bịa số. Để trống 'meetings' → web hiện trạng thái 'đang cập nhật'. Đơn vị: %, khoảng lãi suất theo điểm cơ bản (bps).",
- "updated_vn": "11:42 18/11/2026 (UTC+7)",
- "as_of_note": "The latest published futures assessments indicated approximately a 94% probability of a 25-basis point increase, with the remaining 6% favoring a larger 50-basis point move. 8-9 meeting, with the latest published futures assessment indicating a 96.6% probability of a 25-basis point increase and a 3.4% probability of a 50-basis point move.",
+ "updated_vn": "11:29 19/11/2026 (UTC+7)",
+ "as_of_note": "The latest futures assessment indicated approximately a 95% probability of a 25-basis point increase at the Dec. 8-9 meeting, with the latest published futures assessment indicating a 95.7% probability of a 25-basis point increase and a 4.3% probability of a 50-basis point move.",
  "current_range": [
   375,
   400
@@ -12,9 +12,9 @@
   "name_en": "Federal Reserve – FOMC statement, Sep 16, 2026 (hike to 3.75%–4.00%)"
  },
  "source": {
-  "name": "Gold struggles near one-year lows, silver rebounds as stocks slide, Fed hike bets persist - Kitco PM Report | Kitco News",
-  "url": "https://www.kitco.com/news/article/2026-11-17/gold-struggles-near-one-year-lows-silver-rebounds-stocks-slide-fed-hike",
-  "name_en": "Gold struggles near one-year lows, silver rebounds as stocks slide, Fed hike bets persist - Kitco PM Report | Kitco News"
+  "name": "Gold plunges below $3,750, silver tumbles as hawkish Fed minutes pressure metals - Kitco PM Report | Kitco News",
+  "url": "https://www.kitco.com/news/article/2026-11-18/gold-plunges-below-3750-silver-tumbles-hawkish-fed-minutes-pressure-metals",
+  "name_en": "Gold plunges below $3,750, silver tumbles as hawkish Fed minutes pressure metals - Kitco PM Report | Kitco News"
  },
  "source_alt": {
   "name": "CNBC – Vàng cao nhất hơn 2 tuần; CME FedWatch ~66% cửa tăng tháng 12 (trong phiên)",

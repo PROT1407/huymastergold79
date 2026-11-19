@@ -1,6 +1,6 @@
 {
  "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC | Chiến tranh | Ngân hàng TW. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
- "updated": "2026-11-18",
+ "updated": "2026-11-19",
  "fomc": {
   "source": {
    "name": "Federal Reserve – FOMC calendars",
@@ -56,6 +56,97 @@
   "note_en": "Decision at 2:00 PM ET on day two of the meeting, press conference at 2:30 PM ET. * = with economic projections (dot plot)."
  },
  "items": [
+  {
+   "date": "2026-11-19",
+   "category": "Vàng",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "Vàng lao dốc xuống đáy 14 tháng dưới mốc 3.750 USD/oz do biên bản Fed mang quan điểm diều hâu",
+   "summary": "vàng giao ngay giảm mạnh xuống quanh mức 3.722,60 USD/oz, giảm 125,90 USD tương đương 3,27% trong phiên giao dịch, chạm mức thấp nhất kể từ tháng 9/2025. Biên bản cuộc họp tháng 10 của Fed cho thấy sự ủng hộ đối với việc thắt chặt tiền tệ bổ sung để kiềm chế lạm phát, trong khi chỉ số DXY tăng lên 103,82. Theo Kitco (17:02 EST 18/11), xác suất CME FedWatch cho một lần tăng 25 điểm cơ bản tháng 12 là 95%.",
+   "reason": "Áp lực ngắn hạn đè nặng lên vàng do kỳ vọng lãi suất Fed tăng và đồng USD mạnh lên sau biên bản họp diều hâu. Về dài hạn, môi trường lãi suất cao duy trì chi phí cơ hội lớn cho kim loại quý.",
+   "source": {
+    "name": "Gold plunges below $3,750, silver tumbles as hawkish Fed minutes pressure metals - Kitco PM Report | Kitco News",
+    "name_en": "Gold plunges below $3,750, silver tumbles as hawkish Fed minutes pressure metals - Kitco PM Report | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-18/gold-plunges-below-3750-silver-tumbles-hawkish-fed-minutes-pressure-metals"
+   },
+   "time_vn": "Thứ Năm 19/11/2026 11:29 giờ VN",
+   "title_en": "Gold plunges below $3,750, silver tumbles as hawkish Fed minutes pressure metals - Kitco PM Report",
+   "summary_en": "Spot gold was trading near $3,722.60 an ounce, down $125.90, or 3.27%, while silver was trading near $44.930 an ounce, down $2.340, or 4.95%, on the session.",
+   "reason_en": "The release of hawkish minutes from the Fed's October meeting reinforced expectations for additional monetary tightening, while renewed U.S.-Iran military tensions failed to generate meaningful safe-haven demand.",
+   "time_en": "Wednesday, November 18, 2026, 23:29 EST",
+   "source2": {
+    "name": "Gold prices remain under pressure as Fed minutes show central bank committed to cooling inflation | Kitco News",
+    "name_en": "Gold prices remain under pressure as Fed minutes show central bank committed to cooling inflation | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-18/gold-prices-remain-under-pressure-fed-minutes-show-central-bank-committed"
+   }
+  },
+  {
+   "date": "2026-11-19",
+   "category": "Fed",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "Biên bản cuộc họp FOMC xác nhận Fed kiềm chế lạm phát và giữ lập trường thắt chặt",
+   "summary": "Biên bản cuộc họp tháng 10 của Fed cho thấy phần lớn thành viên coi việc hạ nhiệt lạm phát bướng bỉnh là ưu tiên hàng đầu, với kỳ vọng lãi suất sẽ tiếp tục được điều chỉnh tăng nhằm hướng tới mục tiêu lạm phát 2%.",
+   "reason": "Ngắn hạn và dài hạn: Lập trường thắt chặt chính sách tiền tệ tiếp tục tạo áp lực tiêu cực lên giá vàng khi chi phí nắm giữ tài sản phi lợi suất dâng cao.",
+   "source": {
+    "name": "Gold prices remain under pressure as Fed minutes show central bank committed to cooling inflation | Kitco News",
+    "name_en": "Gold prices remain under pressure as Fed minutes show central bank committed to cooling inflation | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-18/gold-prices-remain-under-pressure-fed-minutes-show-central-bank-committed"
+   },
+   "time_vn": "Thứ Năm 19/11/2026 11:29 giờ VN",
+   "title_en": "Gold prices remain under pressure as Fed minutes show central bank committed to cooling inflation",
+   "summary_en": "Although the Federal Reserve left interest rates unchanged in October, the minutes showed that committee members see cooling persistent inflation as their top priority.",
+   "reason_en": "The gold market has been struggling to hold critical support levels as markets continue to expect the Federal Reserve to raise interest rates by year-end.",
+   "time_en": "Wednesday, November 18, 2026, 23:29 EST"
+  },
+  {
+   "date": "2026-11-19",
+   "category": "Dầu mỏ",
+   "priority": 1,
+   "impact": "trung lập",
+   "title": "Dầu thô sụt giảm mạnh khi tồn kho dầu thương mại tại Mỹ tăng cao hơn dự báo",
+   "summary": "Nymex WTI crude futures giảm 2,75 USD tương đương 3,2% xuống chốt ở mức 83,26 USD/thùng sau khi báo cáo của Cơ quan Thông tin Năng lượng Mỹ cho biết kho dự trữ dầu thương mại tăng thêm 3,4 triệu thùng.",
+   "reason": "Ngắn hạn: Giá dầu giảm giúp hạ nhiệt áp lực lạm phát năng lượng. Dài hạn: Thặng dư nguồn cung toàn cầu có thể làm giảm bớt sức hút của các tài sản phòng thủ.",
+   "source": {
+    "name": "Gold plunges below $3,750, silver tumbles as hawkish Fed minutes pressure metals - Kitco PM Report | Kitco News",
+    "name_en": "Gold plunges below $3,750, silver tumbles as hawkish Fed minutes pressure metals - Kitco PM Report | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-18/gold-plunges-below-3750-silver-tumbles-hawkish-fed-minutes-pressure-metals"
+   },
+   "time_vn": "Thứ Năm 19/11/2026 11:29 giờ VN",
+   "title_en": "Gold plunges below $3,750, silver tumbles as hawkish Fed minutes pressure metals - Kitco PM Report",
+   "summary_en": "Nymex WTI crude futures declined $2.75, or 3.2%, to settle at $83.26 a barrel, their lowest closing level since late August.",
+   "reason_en": "Lower energy prices could help moderate inflation expectations, although Wednesday's weakness in precious metals indicated that expectations for further Federal Reserve tightening remained the more immediate market influence.",
+   "time_en": "Wednesday, November 18, 2026, 23:29 EST",
+   "source2": {
+    "name": "Gold prices remain under pressure as Fed minutes show central bank committed to cooling inflation | Kitco News",
+    "name_en": "Gold prices remain under pressure as Fed minutes show central bank committed to cooling inflation | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-18/gold-prices-remain-under-pressure-fed-minutes-show-central-bank-committed"
+   }
+  },
+  {
+   "date": "2026-11-19",
+   "category": "Tương quan",
+   "priority": 1,
+   "impact": "tăng",
+   "title": "Doanh số chờ bán nhà tháng 10 tại Mỹ giảm mạnh 4,7%, vượt mức dự báo",
+   "summary": "Chỉ số doanh số chờ bán nhà tại Mỹ giảm 4,7% trong tháng 10 theo thông báo từ Hiệp hội Môi giới Bất động sản Quốc gia, tệ hơn so với mức dự báo giảm 2,0% từ các nhà kinh tế.",
+   "reason": "Ngắn hạn: Các số liệu nhà đất yếu kém có thể gây sức ép lên lợi suất trái phiếu, qua đó tạo đà hồi phục kỹ thuật ngắn cho vàng. Dài hạn: Phản ánh tác động kéo dài của chu kỳ thắt chặt tiền tệ.",
+   "source": {
+    "name": "Spot gold slides to $3,756/oz as U.S. pending home sales drop 4.7% in October | Kitco News",
+    "name_en": "Spot gold slides to $3,756/oz as U.S. pending home sales drop 4.7% in October | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-18/spot-gold-slides-3756oz-us-pending-home-sales-drop-47-october"
+   },
+   "time_vn": "Thứ Năm 19/11/2026 11:29 giờ VN",
+   "title_en": "Spot gold slides to $3,756/oz as U.S. pending home sales drop 4.7% in October",
+   "summary_en": "The U.S. pending home sales index declined 4.7% in October, the NAR announced on Wednesday. The data was worse than forecasts, as economists expected a -2.0% print.",
+   "reason_en": "The U.S. housing sector contributes significantly to the nation's Gross Domestic Product, and it has been a significant drag on the economy as persistent higher prices and elevated mortgage rates resulting from the Federal Reserve's aggressive tightening cycle have pushed many new home buyers out of the market.",
+   "time_en": "Wednesday, November 18, 2026, 23:29 EST",
+   "source2": {
+    "name": "Gold prices remain under pressure as Fed minutes show central bank committed to cooling inflation | Kitco News",
+    "name_en": "Gold prices remain under pressure as Fed minutes show central bank committed to cooling inflation | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-18/gold-prices-remain-under-pressure-fed-minutes-show-central-bank-committed"
+   }
+  },
   {
    "date": "2026-11-18",
    "category": "Vàng",
