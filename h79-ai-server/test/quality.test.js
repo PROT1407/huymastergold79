@@ -352,6 +352,25 @@ test('a domestic source time far from the request is rejected', () => {
   assert.match(result.error, /lệch/);
 });
 
+test('a same-day domestic quote still publishes when the job runs after 08:43', () => {
+  const result = gate({
+    task: 'domestic',
+    final: true,
+    clock: clockFromVnString('2026-11-10 16:04'),
+    sourceTime: '2026-11-10 08:55',
+    previous: null,
+    prices: [{ brand: 'SJC', type: 'Vàng miếng SJC', buy: 136500000, sell: 139500000 }],
+    priceLines: ['SJC Vàng miếng SJC: mua 136.500.000, bán 139.500.000 đồng/lượng. Nguồn: https://example.test/sjc'],
+    sources: [{ name: 'SJC', url: 'https://example.test/sjc', excerpt: 'mua 136.500.000 bán 139.500.000' }],
+    fedwatch: { stated: false, items: [] },
+    facts: [],
+    text: JSON.stringify({ analysis: ['Lời bình đủ dài để không bị coi là một chữ cái khi ghép bảng giá trong nước chiều nay.'] }),
+  });
+  assert.equal(result.ok, true, JSON.stringify(result.debug || result.error));
+  assert.match(result.board.quick_advice, /136\.500\.000/);
+  assert.match(result.board.quick_advice, /08:55/);
+});
+
 test('11/11 domestic changes stay on the same product and a 2 million drop is not called quiet', () => {
   const prices = [
     { brand: 'SJC', type: 'Vàng miếng SJC', buy: 136500000, sell: 139500000 },

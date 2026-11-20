@@ -77,7 +77,9 @@ class PublishTests(unittest.TestCase):
 
     def test_schedule_mapping(self):
         self.assertEqual(pub.task_for_schedule('37 23 * * 0-4'), 'macro')
+        self.assertEqual(pub.task_for_schedule('52 22 * * 0-4'), 'macro')
         self.assertEqual(pub.task_for_schedule('43 1 * * 1-5'), 'domestic')
+        self.assertEqual(pub.task_for_schedule('13 1 * * 1-5'), 'domestic')
         self.assertEqual(pub.task_for_schedule('0 2 * * 0'), 'weekly')
         self.assertEqual(pub.task_for_schedule('', 'weekly'), 'weekly')
 
@@ -85,9 +87,13 @@ class PublishTests(unittest.TestCase):
         import os
         old = os.environ.get('H79_RUN_TOKEN')
         os.environ['H79_RUN_TOKEN'] = 'super-secret-token'
+        os.environ['RENDER_DEPLOY_HOOK'] = 'https://api.render.com/deploy/srv-abc?key=hook-secret'
         try:
-            self.assertNotIn('super-secret-token', pub.redact('token super-secret-token leaked'))
+            hidden = pub.redact('token super-secret-token leaked ' + os.environ['RENDER_DEPLOY_HOOK'])
+            self.assertNotIn('super-secret-token', hidden)
+            self.assertNotIn('hook-secret', hidden)
         finally:
+            os.environ.pop('RENDER_DEPLOY_HOOK', None)
             if old is None:
                 os.environ.pop('H79_RUN_TOKEN', None)
             else:
@@ -128,9 +134,75 @@ class PublishTests(unittest.TestCase):
         bad['board']['quick_advice'] = 'Nhẫn 140.000.000.'
         bad['board']['world_news'] = []
         bad['board']['refs'] = []
-        data2 = {'analysis': ['keep me'], 'peak': data['peak']}
-        self.assertFalse(pub.apply_domestic_prose(data2, bad, rows))
-        self.assertEqual(data2['analysis'], ['keep me'])
+        data2 = {'analysis': ['keep me'], 'advice': 'keep me', 'quick_advice': 'keep me', 'peak': data['peak']}
+        import io
+        from contextlib import redirect_stdout
+        with redirect_stdout(io.StringIO()):
+            self.assertTrue(pub.apply_domestic_prose(data2, bad, rows))
+        self.assertNotIn('140.000.000', data2['analysis'][0])
+        self.assertNotIn('keep me', data2['analysis'][0])
+        self.assertIn('147.800.000', data2['analysis'][0])
+        self.assertEqual(data2['refs'], [])
+
+    def test_derived_amounts_are_kept_and_stale_prose_is_replaced(self):
+        import io
+        from contextlib import redirect_stdout
+        rows = [
+            {'code': 'SJL1L10', 'buy': 145200000, 'sell': 147800000, 'prev_buy': 147200000, 'prev_sell': 149800000, 'prev_date': '2026-11-09'},
+            {'code': 'SJ9999', 'buy': 144000000, 'sell': 147000000, 'prev_buy': 145000000, 'prev_sell': 148000000, 'prev_date': '2026-11-09'},
+            {'code': 'PQHN24NTT', 'buy': 143500000, 'sell': 146500000, 'prev_buy': 144500000, 'prev_sell': 147500000, 'prev_date': '2026-11-09'},
+        ]
+        stale = {
+            'analysis': ['Sáng 11/11 SJC bán 136.500.000.'],
+            'advice': 'Lời ngày 11/11.',
+            'quick_advice': 'Cũ 11/11.',
+            'refs': [{'name': 'VTC', 'url': 'https://vtcnews.vn/11-11', 'facts': ['11/11: 136.500.000']}],
+            'world': {'vnd_per_luong': 109460000, 'gap_sjc_sell': 38340000},
+            'peak': {'sell': pub.PEAK_SELL, 'buy': 188300000, 'date': pub.PEAK_DATE},
+        }
+        body = payload('domestic')
+        body['board']['analysis'] = ['Quy đổi thế giới ≈ 109,5 triệu đồng/lượng, chênh SJC bán khoảng 38,3 triệu.']
+        body['board']['advice'] = 'Đỉnh 191,3 triệu ngày 29/01/2026, bán lại lỗ khoảng 46,1 triệu đồng/lượng.'
+        body['board']['quick_advice'] = 'So với hôm qua miếng bán giảm 2.000.000 đồng.'
+        body['board']['world_news'] = []
+        body['board']['refs'] = []
+        buf = io.StringIO()
+        with redirect_stdout(buf):
+            self.assertTrue(pub.apply_domestic_prose(stale, body, rows))
+        self.assertNotIn('warning:', buf.getvalue())
+        self.assertIn('109,5 triệu', stale['analysis'][0])
+        self.assertIn('191,3 triệu', stale['advice'])
+        self.assertIn('2.000.000', stale['quick_advice'])
+        self.assertNotIn('11/11', json.dumps(stale['analysis'] + [stale['advice'], stale['quick_advice']], ensure_ascii=False))
+        self.assertEqual(stale['refs'], [])
+        rejected = payload('domestic')
+        rejected['board']['analysis'] = ['Sáng 11/11 SJC bán 140.000.000.']
+        rejected['board']['advice'] = 'Nhẫn 140.000.000.'
+        rejected['board']['quick_advice'] = 'Nhẫn 140.000.000.'
+        rejected['board']['world_news'] = []
+        stale2 = {
+            'analysis': ['Sáng 11/11 SJC bán 136.500.000.'],
+            'advice': 'Lời ngày 11/11.',
+            'quick_advice': 'Cũ 11/11.',
+            'refs': [{'name': 'VTC', 'url': 'https://vtcnews.vn/11-11', 'facts': ['11/11: 136.500.000']}],
+            'world': stale['world'],
+            'peak': stale['peak'],
+        }
+        buf = io.StringIO()
+        with redirect_stdout(buf):
+            self.assertTrue(pub.apply_domestic_prose(stale2, rejected, rows))
+        self.assertIn('warning:', buf.getvalue())
+        self.assertIn('dropped stale refs', buf.getvalue())
+        written = json.dumps(stale2['analysis'] + [stale2['advice'], stale2['quick_advice']], ensure_ascii=False)
+        self.assertNotIn('11/11', written)
+        self.assertNotIn('140.000.000', written)
+        self.assertNotIn('136.500.000', written)
+        self.assertIn('SJC miếng', stale2['analysis'][0])
+        self.assertIn('nhẫn SJC', stale2['analysis'][0])
+        self.assertIn('PNJ 24K', stale2['analysis'][0])
+        self.assertIn('109,5 triệu', stale2['analysis'][0])
+        self.assertIn('38,3 triệu', stale2['analysis'][0])
+        self.assertEqual(stale2['refs'], [])
 
     def test_weekly_entry_has_no_trade_box(self):
         body = payload('weekly')
@@ -165,6 +237,35 @@ class PublishTests(unittest.TestCase):
             self.assertEqual(share['macro']['facebook'], 'Vàng 4.087')
             self.assertNotIn('H79_RUN_TOKEN', json.dumps(share))
 
+    def test_main_skips_a_published_board_without_waking(self):
+        import io
+        from contextlib import redirect_stdout
+        _stamp, date = pub.vn_now()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'bai').mkdir()
+            (root / 'bai' / f'{date}-gia-vang-trong-nuoc.html').write_text('x', encoding='utf-8')
+            (root / 'bai' / f'{date}-tin-vi-mo-anh-huong-gia-vang.html').write_text('x', encoding='utf-8')
+            old_root, old_wake = pub.ROOT, pub.wake
+            calls = []
+            pub.ROOT = root
+            pub.wake = lambda *args, **kwargs: calls.append('wake')
+            try:
+                buf = io.StringIO()
+                with redirect_stdout(buf):
+                    domestic = pub.main(['domestic'])
+                    macro = pub.main(['macro'])
+            finally:
+                pub.ROOT = old_root
+                pub.wake = old_wake
+            log = buf.getvalue()
+            self.assertEqual(domestic, 0)
+            self.assertEqual(macro, 0)
+            self.assertEqual(calls, [])
+            self.assertIn(f'domestic {date} already published', log)
+            self.assertIn(f'macro {date} already published', log)
+            self.assertIn('datetime_vn=', log)
+
 
 class PostRetryTests(unittest.TestCase):
     def setUp(self):
@@ -176,6 +277,161 @@ class PostRetryTests(unittest.TestCase):
             os.environ.pop('H79_RUN_TOKEN', None)
         else:
             os.environ['H79_RUN_TOKEN'] = self._token
+
+    def test_wake_polls_for_ten_minutes_then_accepts_health(self):
+        import urllib.error
+        attempts = []
+
+        class Resp:
+            status = 200
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *args):
+                return False
+
+        def opener(url, timeout=0):
+            attempts.append(timeout)
+            if len(attempts) < 3:
+                raise urllib.error.URLError('asleep')
+            return Resp()
+
+        sleeps = []
+        logs = []
+        pub.wake('https://h79-ai-server.onrender.com', opener=opener, sleep=sleeps.append, log=logs.append, hook='')
+        self.assertEqual(attempts, [pub.WAKE_TIMEOUT_S, pub.WAKE_TIMEOUT_S, pub.WAKE_TIMEOUT_S])
+        self.assertEqual(sleeps, [pub.WAKE_INTERVAL_S, pub.WAKE_INTERVAL_S])
+        self.assertIn('generator health attempt 1 failed: URLError', logs)
+        self.assertIn('generator health ok on attempt 3', logs)
+        self.assertNotIn('test-token', '\n'.join(logs))
+
+    def test_wake_stops_after_ten_minutes(self):
+        now = {'t': 0}
+
+        def clock():
+            return now['t']
+
+        def sleep(seconds):
+            self.assertEqual(seconds, pub.WAKE_INTERVAL_S)
+            now['t'] += seconds
+
+        def opener(url, timeout=0):
+            raise TimeoutError('asleep')
+
+        with self.assertRaises(SystemExit) as raised:
+            pub.wake('https://h79-ai-server.onrender.com', opener=opener, sleep=sleep, clock=clock, log=lambda _line: None, hook='')
+        self.assertIn('generator health check failed', str(raised.exception))
+        self.assertGreaterEqual(now['t'], pub.WAKE_LIMIT_S)
+        self.assertEqual(pub.WAKE_LIMIT_S, 600)
+        self.assertEqual(pub.POST_TIMEOUT_S, 180)
+
+    def test_502_and_503_stay_asleep_until_health_is_200(self):
+        import urllib.error
+
+        class Resp:
+            def __init__(self, status):
+                self.status = status
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *args):
+                return False
+
+        answers = [502, 503]
+        calls = []
+
+        def opener(url, timeout=0):
+            calls.append(url)
+            if answers:
+                status = answers.pop(0)
+                if status == 503:
+                    raise urllib.error.HTTPError(url, 503, 'unavailable', {}, None)
+                return Resp(status)
+            return Resp(200)
+
+        logs = []
+        pub.wake('https://h79-ai-server.onrender.com', opener=opener, sleep=lambda _seconds: None, log=logs.append, hook='')
+        self.assertEqual(len(calls), 3)
+        self.assertIn('generator health attempt 1 asleep (502)', logs)
+        self.assertIn('generator health attempt 2 asleep (503)', logs)
+        self.assertIn('generator health ok on attempt 3', logs)
+        self.assertNotIn('deploy hook', '\n'.join(logs))
+
+    def test_deploy_hook_fires_once_after_four_minutes_and_is_not_logged(self):
+        import urllib.error
+        now = {'t': 0}
+        hook = 'https://api.render.com/deploy/srv-abc?key=do-not-print'
+        calls = []
+
+        class Resp:
+            def __init__(self, status):
+                self.status = status
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *args):
+                return False
+
+        def clock():
+            return now['t']
+
+        def sleep(seconds):
+            now['t'] += seconds
+
+        def opener(url, timeout=0):
+            calls.append(url)
+            if url == hook:
+                return Resp(202)
+            if now['t'] < 300:
+                raise urllib.error.HTTPError(url, 503, 'unavailable', {}, None)
+            return Resp(200)
+
+        logs = []
+        pub.wake(
+            'https://h79-ai-server.onrender.com',
+            opener=opener,
+            sleep=sleep,
+            clock=clock,
+            log=logs.append,
+            hook=hook,
+        )
+        text = '\n'.join(logs)
+        self.assertEqual(calls.count(hook), 1)
+        self.assertGreaterEqual(now['t'], pub.WAKE_HOOK_AFTER_S)
+        self.assertIn('asleep (503)', text)
+        self.assertIn('render deploy hook called (202)', text)
+        self.assertNotIn('do-not-print', text)
+        self.assertNotIn(hook, text)
+
+    def test_missing_deploy_hook_is_skipped_for_the_full_wait(self):
+        import urllib.error
+        now = {'t': 0}
+        calls = []
+        old = os.environ.pop('RENDER_DEPLOY_HOOK', None)
+
+        def clock():
+            return now['t']
+
+        def sleep(seconds):
+            now['t'] += seconds
+
+        def opener(url, timeout=0):
+            calls.append(url)
+            raise urllib.error.HTTPError(url, 503, 'unavailable', {}, None)
+
+        try:
+            with self.assertRaises(SystemExit) as raised:
+                pub.wake('https://h79-ai-server.onrender.com', opener=opener, sleep=sleep, clock=clock, log=lambda _line: None)
+        finally:
+            if old is not None:
+                os.environ['RENDER_DEPLOY_HOOK'] = old
+        self.assertIn('generator health check failed', str(raised.exception))
+        self.assertGreaterEqual(now['t'], pub.WAKE_LIMIT_S)
+        self.assertTrue(all(url.endswith('/health') for url in calls))
+        self.assertGreater(len(calls), 1)
 
     def test_503_then_success_waits_and_returns_the_board(self):
         import io
