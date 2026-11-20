@@ -800,6 +800,13 @@ function reject(error, debug, retryable) {
   return { ok: false, status: 422, error, debug, retryable: Boolean(retryable) };
 }
 
+function sameCalendarDay(left, right) {
+  const day = (value) => ((String(value || '').match(/(\d{4}-\d{2}-\d{2})/) || [])[1] || '');
+  const leftDay = day(left);
+  const rightDay = day(right);
+  return Boolean(leftDay) && leftDay === rightDay;
+}
+
 function minutesApart(left, right) {
   const parse = (value) => {
     const match = String(value || '').match(/(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/);
@@ -1097,7 +1104,7 @@ function gate(input) {
       allowed.exact.add(amount);
     }
   }
-  if (input.sourceTime && minutesApart(input.sourceTime, clock.datetimeVn) > 360) {
+  if (input.sourceTime && !sameCalendarDay(input.sourceTime, clock.datetimeVn) && minutesApart(input.sourceTime, clock.datetimeVn) > 360) {
     return reject('Giờ cập nhật của nguồn lệch quá xa mốc yêu cầu.', { failedNumbers: [], missingFacts: [], detail: `source time ${input.sourceTime}` }, false);
   }
   lockDomesticBoard(board, input.priceLines && input.priceLines.length ? input.priceLines : [], { prices, previous: input.previous, sourceTime: input.sourceTime, clock });

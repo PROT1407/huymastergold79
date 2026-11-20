@@ -77,7 +77,9 @@ class PublishTests(unittest.TestCase):
 
     def test_schedule_mapping(self):
         self.assertEqual(pub.task_for_schedule('37 23 * * 0-4'), 'macro')
+        self.assertEqual(pub.task_for_schedule('52 22 * * 0-4'), 'macro')
         self.assertEqual(pub.task_for_schedule('43 1 * * 1-5'), 'domestic')
+        self.assertEqual(pub.task_for_schedule('13 1 * * 1-5'), 'domestic')
         self.assertEqual(pub.task_for_schedule('0 2 * * 0'), 'weekly')
         self.assertEqual(pub.task_for_schedule('', 'weekly'), 'weekly')
 
@@ -165,6 +167,35 @@ class PublishTests(unittest.TestCase):
             self.assertEqual(share['macro']['facebook'], 'Vàng 4.087')
             self.assertNotIn('H79_RUN_TOKEN', json.dumps(share))
 
+    def test_main_skips_a_published_board_without_waking(self):
+        import io
+        from contextlib import redirect_stdout
+        _stamp, date = pub.vn_now()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'bai').mkdir()
+            (root / 'bai' / f'{date}-gia-vang-trong-nuoc.html').write_text('x', encoding='utf-8')
+            (root / 'bai' / f'{date}-tin-vi-mo-anh-huong-gia-vang.html').write_text('x', encoding='utf-8')
+            old_root, old_wake = pub.ROOT, pub.wake
+            calls = []
+            pub.ROOT = root
+            pub.wake = lambda *args, **kwargs: calls.append('wake')
+            try:
+                buf = io.StringIO()
+                with redirect_stdout(buf):
+                    domestic = pub.main(['domestic'])
+                    macro = pub.main(['macro'])
+            finally:
+                pub.ROOT = old_root
+                pub.wake = old_wake
+            log = buf.getvalue()
+            self.assertEqual(domestic, 0)
+            self.assertEqual(macro, 0)
+            self.assertEqual(calls, [])
+            self.assertIn(f'domestic {date} already published', log)
+            self.assertIn(f'macro {date} already published', log)
+            self.assertIn('datetime_vn=', log)
+
 
 class PostRetryTests(unittest.TestCase):
     def setUp(self):
@@ -176,6 +207,54 @@ class PostRetryTests(unittest.TestCase):
             os.environ.pop('H79_RUN_TOKEN', None)
         else:
             os.environ['H79_RUN_TOKEN'] = self._token
+
+    def test_wake_polls_for_ten_minutes_then_accepts_health(self):
+        import urllib.error
+        attempts = []
+
+        class Resp:
+            status = 200
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *args):
+                return False
+
+        def opener(url, timeout=0):
+            attempts.append(timeout)
+            if len(attempts) < 3:
+                raise urllib.error.URLError('asleep')
+            return Resp()
+
+        sleeps = []
+        logs = []
+        pub.wake('https://h79-ai-server.onrender.com', opener=opener, sleep=sleeps.append, log=logs.append)
+        self.assertEqual(attempts, [pub.WAKE_TIMEOUT_S, pub.WAKE_TIMEOUT_S, pub.WAKE_TIMEOUT_S])
+        self.assertEqual(sleeps, [pub.WAKE_INTERVAL_S, pub.WAKE_INTERVAL_S])
+        self.assertIn('generator health attempt 1 failed: URLError', logs)
+        self.assertIn('generator health ok on attempt 3', logs)
+        self.assertNotIn('test-token', '\n'.join(logs))
+
+    def test_wake_stops_after_ten_minutes(self):
+        now = {'t': 0}
+
+        def clock():
+            return now['t']
+
+        def sleep(seconds):
+            self.assertEqual(seconds, pub.WAKE_INTERVAL_S)
+            now['t'] += seconds
+
+        def opener(url, timeout=0):
+            raise TimeoutError('asleep')
+
+        with self.assertRaises(SystemExit) as raised:
+            pub.wake('https://h79-ai-server.onrender.com', opener=opener, sleep=sleep, clock=clock, log=lambda _line: None)
+        self.assertIn('generator health check failed', str(raised.exception))
+        self.assertGreaterEqual(now['t'], pub.WAKE_LIMIT_S)
+        self.assertEqual(pub.WAKE_LIMIT_S, 600)
+        self.assertEqual(pub.POST_TIMEOUT_S, 180)
 
     def test_503_then_success_waits_and_returns_the_board(self):
         import io

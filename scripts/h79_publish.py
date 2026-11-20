@@ -3,8 +3,10 @@
 
 Vietnam is UTC+7 all year. The workflow clocks are:
 
-- macro, weekdays 06:37 VN = 23:37 UTC the previous calendar day (`37 23 * * 0-4`)
-- domestic, weekdays 08:43 VN = 01:43 UTC the same weekday (`43 1 * * 1-5`)
+- macro, weekdays 06:37 VN = 23:37 UTC the previous calendar day (`37 23 * * 0-4`),
+  with a backup at 22:52 UTC (`52 22 * * 0-4`)
+- domestic, weekdays 08:43 VN = 01:43 UTC the same weekday (`43 1 * * 1-5`),
+  with a backup at 01:13 UTC (`13 1 * * 1-5`)
 - weekly, Sunday 09:00 VN = 02:00 UTC Sunday (`0 2 * * 0`)
 
 The only secret is the repo secret H79_RUN_TOKEN. This script never prints it.
@@ -45,9 +47,9 @@ def task_for_schedule(schedule, forced=''):
     if forced in ('macro', 'domestic', 'weekly'):
         return forced
     text = (schedule or '').strip()
-    if text.startswith('37 23'):
+    if text.startswith('37 23') or text.startswith('52 22'):
         return 'macro'
-    if text.startswith('43 1') or text.startswith('43 01'):
+    if text.startswith(('43 1', '43 01', '13 1', '13 01')):
         return 'domestic'
     if text.startswith(('0 2', '00 2', '0 02')):
         return 'weekly'
@@ -75,20 +77,31 @@ def parse_host(base):
     return urllib.parse.urlparse(base).hostname or ''
 
 
-def wake(base, opener=None, sleep=time.sleep):
+WAKE_LIMIT_S = 600
+WAKE_INTERVAL_S = 15
+WAKE_TIMEOUT_S = 45
+
+
+def wake(base, opener=None, sleep=time.sleep, clock=time.time, log=print):
+    """Poll /health until Render finishes booting. Never log the run token."""
     url = base + '/health'
     open_url = opener or urllib.request.urlopen
-    deadline = time.time() + 90
+    deadline = clock() + WAKE_LIMIT_S
+    attempt = 0
     while True:
+        attempt += 1
         try:
-            with open_url(url, timeout=20) as response:
-                if getattr(response, 'status', 200) == 200:
+            with open_url(url, timeout=WAKE_TIMEOUT_S) as response:
+                status = getattr(response, 'status', 200)
+                if status == 200:
+                    log(f'generator health ok on attempt {attempt}')
                     return
-        except Exception:
-            pass
-        if time.time() >= deadline:
+                log(f'generator health attempt {attempt} status {status}')
+        except Exception as exc:
+            log(f'generator health attempt {attempt} failed: {redact(exc.__class__.__name__)}')
+        if clock() >= deadline:
             raise SystemExit('generator health check failed')
-        sleep(3)
+        sleep(WAKE_INTERVAL_S)
 
 
 def parse_vn_stamp(text):
@@ -137,6 +150,7 @@ def quotes_before(data, datetime_vn):
 
 # Three tries spread over about five minutes: immediate, then 90s, then 150s.
 POST_RETRY_WAITS = (90, 150)
+POST_TIMEOUT_S = 180
 
 
 def post_board(base, task, datetime_vn, opener=None, previous=None, sleep=time.sleep):
@@ -158,7 +172,7 @@ def post_board(base, task, datetime_vn, opener=None, previous=None, sleep=time.s
             'Accept': 'application/json',
         })
         try:
-            with open_url(req, timeout=180) as response:
+            with open_url(req, timeout=POST_TIMEOUT_S) as response:
                 payload = json.load(response)
         except urllib.error.HTTPError as exc:
             if exc.code == 429 or 500 <= exc.code <= 599:
@@ -472,6 +486,7 @@ def main(argv=None):
         print('missing task')
         return 1
     datetime_vn, date = vn_now()
+    print(f'{task} datetime_vn={datetime_vn}')
     if already_published(ROOT, task, date):
         print(f'{task} {date} already published')
         return 0
@@ -479,7 +494,7 @@ def main(argv=None):
     wake(base)
     previous = None
     if task == 'domestic':
-        previous = quotes_before(read_json(ROOT / 'data' / 'vn-gold-daily.json', {}), date)
+        previous = quotes_before(read_json(ROOT / 'data' / 'vn-gold-daily.json', {}), datetime_vn)
     payload = post_board(base, task, datetime_vn, previous=previous)
     if task == 'domestic':
         result = subprocess.run([sys.executable, str(ROOT / 'scripts' / 'update-vn-gold.py')], cwd=ROOT)
