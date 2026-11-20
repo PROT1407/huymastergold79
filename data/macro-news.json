@@ -1,6 +1,6 @@
 {
  "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC | Chiến tranh | Ngân hàng TW. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
- "updated": "2026-11-19",
+ "updated": "2026-11-20",
  "fomc": {
   "source": {
    "name": "Federal Reserve – FOMC calendars",
@@ -56,6 +56,121 @@
   "note_en": "Decision at 2:00 PM ET on day two of the meeting, press conference at 2:30 PM ET. * = with economic projections (dot plot)."
  },
  "items": [
+  {
+   "date": "2026-11-20",
+   "category": "Vàng",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "Vàng rớt mạnh xuống dưới 3.650 USD/oz khi áp lực tăng lãi suất của Fed đè nặng thị trường",
+   "summary": "Giá vàng giao ngay giảm mạnh 98,60 USD, tương đương 2,65%, xuống mức 3.625,50 USD/oz trong phiên giao dịch ngày thứ Năm. Trong tuần, giá vàng biến động từ vùng 3.625 lên đỉnh 4.150 USD/oz trước khi chịu áp lực bán tháo mạnh. Theo Kitco (21:05 EST 19/11), xác suất CME FedWatch cho một lần tăng tháng 12 là 96%.",
+   "reason": "Ngắn hạn, kỳ vọng Fed tiếp tục thắt chặt chính sách, đồng USD mạnh và làn sóng thanh lý tài sản diện rộng trên thị trường tài chính đang đè bẹp giá vàng. Dài hạn, lực mua từ các ngân hàng trung ương và quỹ ETF vẫn là bệ đỡ vững chắc, nhưng hiện tại dòng vốn nóng đang rút khỏi kim loại quý để tìm kiếm lợi suất cao hơn từ trái phiếu.",
+   "source": {
+    "name": "Gold falls below $3,650, silver tumbles as Fed rate concerns pressure metals - Kitco PM Report | Kitco News",
+    "name_en": "Gold falls below $3,650, silver tumbles as Fed rate concerns pressure metals - Kitco PM Report | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-19/gold-falls-below-3650-silver-tumbles-fed-rate-concerns-pressure-metals"
+   },
+   "time_vn": "Thứ Sáu 20/11/2026 11:33 giờ VN",
+   "title_en": "Gold falls below $3,650, silver tumbles as Fed rate concerns pressure metals",
+   "summary_en": "Spot gold was trading at $3,625.50 an ounce, down $98.60, or 2.65%, on the session.",
+   "reason_en": "Restrictive monetary policy expectations, a firm dollar, and broad financial-market liquidation pressured precious metals, overshadowing defensive demand.",
+   "time_en": "Thursday, November 19, 2026, 23:33 EST",
+   "source2": {
+    "name": "Gold the top commodity pick for 2027 even as broader commodities likely to underperform – Morgan Stanley | Kitco News",
+    "name_en": "Gold the top commodity pick for 2027 even as broader commodities likely to underperform – Morgan Stanley | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-19/gold-top-commodity-pick-2027-even-broader-commodities-likely-underperform"
+   }
+  },
+  {
+   "date": "2026-11-20",
+   "category": "Lợi suất",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "Lợi suất trái phiếu kho bạc 10 năm neo trên mốc 5% kéo dòng tiền rời khỏi vàng",
+   "summary": "Lợi suất trái phiếu kho bạc kỳ hạn 10 năm duy trì ở vùng trên 5%, dao động quanh mức 5,04% đến 5,1%, khiến chi phí cơ hội của việc nắm giữ tài sản không sinh lời như vàng tăng cao.",
+   "reason": "Ngắn hạn, lợi suất trái phiếu trên 5% thu hút mạnh mẽ dòng tiền đầu tư rủi ro thấp, gây áp lực trực tiếp làm giảm giá vàng. Dài hạn, xu hướng này chỉ đảo chiều khi lạm phát hạ nhiệt và lợi suất trái phiếu quay đầu giảm.",
+   "source": {
+    "name": "Gold futures sink below $3,700 as 5% yields pull money out of bullion | Kitco News",
+    "name_en": "Gold futures sink below $3,700 as 5% yields pull money out of bullion | Kitco News",
+    "url": "https://www.kitco.com/opinion/2026-11-19/gold-futures-sink-below-3700-5-yields-pull-money-out-bullion"
+   },
+   "time_vn": "Thứ Sáu 20/11/2026 11:33 giờ VN",
+   "title_en": "Gold futures sink below $3,700 as 5% yields pull money out of bullion",
+   "summary_en": "The benchmark 10-year Treasury yield eased toward 5.04% from approximately 5.07% Wednesday.",
+   "reason_en": "A rise in bond yields increases the opportunity cost of holding non-yielding bullion, pulling money out of precious metals.",
+   "time_en": "Thursday, November 19, 2026, 23:33 EST",
+   "source2": {
+    "name": "Gold the top commodity pick for 2027 even as broader commodities likely to underperform – Morgan Stanley | Kitco News",
+    "name_en": "Gold the top commodity pick for 2027 even as broader commodities likely to underperform – Morgan Stanley | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-19/gold-top-commodity-pick-2027-even-broader-commodities-likely-underperform"
+   }
+  },
+  {
+   "date": "2026-11-20",
+   "category": "Fed",
+   "priority": 1,
+   "impact": "trung lập",
+   "title": "Chỉ số sản xuất Philadelphia Fed giảm mạnh xuống 6,3 điểm trong tháng 11",
+   "summary": "Khảo sát triển vọng kinh doanh sản xuất tháng 11 của Philadelphia Fed giảm mạnh xuống 6,3 điểm từ mức 20,9 điểm trong tháng 10, thấp hơn nhiều so với kỳ vọng của thị trường.",
+   "reason": "Ngắn hạn, dữ liệu kinh tế suy yếu cho thấy đà tăng trưởng đang chậm lại, tạo thêm biến động cho thị trường nhưng chưa đủ để đảo ngược lập trường chống lạm phát của Fed. Dài hạn, kinh tế giảm tốc có thể buộc ngân hàng trung ương phải cân nhắc lại chính sách tiền tệ.",
+   "source": {
+    "name": "Gold remains under pressure as Philly Fed Survey drops to six-month low | Kitco News",
+    "name_en": "Gold remains under pressure as Philly Fed Survey drops to six-month low | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-19/gold-remains-under-pressure-philly-fed-survey-drops-six-month-low"
+   },
+   "time_vn": "Thứ Sáu 20/11/2026 11:33 giờ VN",
+   "title_en": "Gold remains under pressure as Philly Fed Survey drops to six-month low",
+   "summary_en": "The Philadelphia Fed's November manufacturing index declined sharply to 6.3 from 20.9 in October.",
+   "reason_en": "Softer manufacturing figures highlight slowing economic momentum, although persistent inflation continues to complicate the Federal Reserve's outlook.",
+   "time_en": "Thursday, November 19, 2026, 23:33 EST",
+   "source2": {
+    "name": "Gold the top commodity pick for 2027 even as broader commodities likely to underperform – Morgan Stanley | Kitco News",
+    "name_en": "Gold the top commodity pick for 2027 even as broader commodities likely to underperform – Morgan Stanley | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-19/gold-top-commodity-pick-2027-even-broader-commodities-likely-underperform"
+   }
+  },
+  {
+   "date": "2026-11-20",
+   "category": "Vàng",
+   "priority": 1,
+   "impact": "tăng",
+   "title": "Morgan Stanley duy trì dự báo vàng là mặt hàng chủ lực hàng đầu cho năm 2027",
+   "summary": "Theo báo cáo Triển vọng Đầu tư Toàn cầu năm 2027 của Morgan Stanley Research, dù các loại hàng hóa nói chung có thể kém hiệu quả, vàng vẫn được đánh giá là mặt hàng chủ lực hàng đầu nhờ nhu cầu mạnh mẽ từ các quỹ ETF và ngân hàng trung ương.",
+   "reason": "Ngắn hạn, vàng có thể chịu áp lực điều chỉnh. Dài hạn, nhu cầu tích sản từ các ngân hàng trung ương và định hướng phân bổ tài sản chiến lược sẽ tạo động lực tăng giá mạnh mẽ cho kim loại quý trong năm 2027.",
+   "source": {
+    "name": "Gold the top commodity pick for 2027 even as broader commodities likely to underperform – Morgan Stanley | Kitco News",
+    "name_en": "Gold the top commodity pick for 2027 even as broader commodities likely to underperform – Morgan Stanley | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-19/gold-top-commodity-pick-2027-even-broader-commodities-likely-underperform"
+   },
+   "time_vn": "Thứ Sáu 20/11/2026 11:33 giờ VN",
+   "title_en": "Gold the top commodity pick for 2027 even as broader commodities likely to underperform – Morgan Stanley",
+   "summary_en": "Gold remains the top commodity pick for 2027, benefiting from continued demand from exchange-traded funds and central banks.",
+   "reason_en": "Continued demand from exchange-traded funds and central banks provides strong long-term support for gold despite near-term headwinds.",
+   "time_en": "Thursday, November 19, 2026, 23:33 EST"
+  },
+  {
+   "date": "2026-11-20",
+   "category": "Dầu mỏ",
+   "priority": 1,
+   "impact": "trung lập",
+   "title": "Dầu thô WTI giao dịch ổn định quanh mức 83,21 USD/thùng",
+   "summary": "Hợp đồng tương lai dầu thô Nymex WTI giảm nhẹ 0,05 USD, tương đương khoảng 0,06%, đóng cửa ở mức 83,21 USD/thùng, trong khi dầu Brent tăng 0,03 USD lên 91,98 USD/thùng.",
+   "reason": "Ngắn hạn, giá dầu ổn định giúp xoa dịu phần nào lo ngại về lạm phát năng lượng. Dài hạn, biến động năng lượng tiếp tục là yếu tố chính chi phối kỳ vọng lãi suất của Fed và tác động gián tiếp lên vàng.",
+   "source": {
+    "name": "Gold falls below $3,650, silver tumbles as Fed rate concerns pressure metals - Kitco PM Report | Kitco News",
+    "name_en": "Gold falls below $3,650, silver tumbles as Fed rate concerns pressure metals - Kitco PM Report | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-19/gold-falls-below-3650-silver-tumbles-fed-rate-concerns-pressure-metals"
+   },
+   "time_vn": "Thứ Sáu 20/11/2026 11:33 giờ VN",
+   "title_en": "Gold falls below $3,650, silver tumbles as Fed rate concerns pressure metals",
+   "summary_en": "Nymex WTI crude oil futures declined $0.05, or approximately 0.06%, to settle at $83.21 a barrel, while Brent crude advanced $0.03 to $91.98.",
+   "reason_en": "Lower energy costs could eventually moderate inflation expectations, influencing broader monetary policy decisions.",
+   "time_en": "Thursday, November 19, 2026, 23:33 EST",
+   "source2": {
+    "name": "Gold the top commodity pick for 2027 even as broader commodities likely to underperform – Morgan Stanley | Kitco News",
+    "name_en": "Gold the top commodity pick for 2027 even as broader commodities likely to underperform – Morgan Stanley | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-19/gold-top-commodity-pick-2027-even-broader-commodities-likely-underperform"
+   }
+  },
   {
    "date": "2026-11-19",
    "category": "Vàng",
