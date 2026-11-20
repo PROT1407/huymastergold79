@@ -5,8 +5,8 @@
   "url": "https://www.forexfactory.com/calendar",
   "feed": "https://nfs.faireconomy.media/ff_calendar_thisweek.json"
  },
- "updated_vn": "13:42 16/11/2026",
- "updated_utc": "2026-11-16T06:42:59Z",
+ "updated_vn": "12:28 20/11/2026",
+ "updated_utc": "2026-11-20T05:28:21Z",
  "has_actual": false,
  "events": [
   {
@@ -44,7 +44,7 @@
    "time_utc": "2026-11-17T13:30:00Z",
    "time_vn": "20:30 17/11/2026",
    "date_vn": "2026-11-17",
-   "forecast": "0.2%",
+   "forecast": "0.1%",
    "previous": "0.8%",
    "actual": ""
   },
