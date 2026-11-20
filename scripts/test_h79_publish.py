@@ -87,9 +87,13 @@ class PublishTests(unittest.TestCase):
         import os
         old = os.environ.get('H79_RUN_TOKEN')
         os.environ['H79_RUN_TOKEN'] = 'super-secret-token'
+        os.environ['RENDER_DEPLOY_HOOK'] = 'https://api.render.com/deploy/srv-abc?key=hook-secret'
         try:
-            self.assertNotIn('super-secret-token', pub.redact('token super-secret-token leaked'))
+            hidden = pub.redact('token super-secret-token leaked ' + os.environ['RENDER_DEPLOY_HOOK'])
+            self.assertNotIn('super-secret-token', hidden)
+            self.assertNotIn('hook-secret', hidden)
         finally:
+            os.environ.pop('RENDER_DEPLOY_HOOK', None)
             if old is None:
                 os.environ.pop('H79_RUN_TOKEN', None)
             else:
@@ -229,7 +233,7 @@ class PostRetryTests(unittest.TestCase):
 
         sleeps = []
         logs = []
-        pub.wake('https://h79-ai-server.onrender.com', opener=opener, sleep=sleeps.append, log=logs.append)
+        pub.wake('https://h79-ai-server.onrender.com', opener=opener, sleep=sleeps.append, log=logs.append, hook='')
         self.assertEqual(attempts, [pub.WAKE_TIMEOUT_S, pub.WAKE_TIMEOUT_S, pub.WAKE_TIMEOUT_S])
         self.assertEqual(sleeps, [pub.WAKE_INTERVAL_S, pub.WAKE_INTERVAL_S])
         self.assertIn('generator health attempt 1 failed: URLError', logs)
@@ -250,11 +254,118 @@ class PostRetryTests(unittest.TestCase):
             raise TimeoutError('asleep')
 
         with self.assertRaises(SystemExit) as raised:
-            pub.wake('https://h79-ai-server.onrender.com', opener=opener, sleep=sleep, clock=clock, log=lambda _line: None)
+            pub.wake('https://h79-ai-server.onrender.com', opener=opener, sleep=sleep, clock=clock, log=lambda _line: None, hook='')
         self.assertIn('generator health check failed', str(raised.exception))
         self.assertGreaterEqual(now['t'], pub.WAKE_LIMIT_S)
         self.assertEqual(pub.WAKE_LIMIT_S, 600)
         self.assertEqual(pub.POST_TIMEOUT_S, 180)
+
+    def test_502_and_503_stay_asleep_until_health_is_200(self):
+        import urllib.error
+
+        class Resp:
+            def __init__(self, status):
+                self.status = status
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *args):
+                return False
+
+        answers = [502, 503]
+        calls = []
+
+        def opener(url, timeout=0):
+            calls.append(url)
+            if answers:
+                status = answers.pop(0)
+                if status == 503:
+                    raise urllib.error.HTTPError(url, 503, 'unavailable', {}, None)
+                return Resp(status)
+            return Resp(200)
+
+        logs = []
+        pub.wake('https://h79-ai-server.onrender.com', opener=opener, sleep=lambda _seconds: None, log=logs.append, hook='')
+        self.assertEqual(len(calls), 3)
+        self.assertIn('generator health attempt 1 asleep (502)', logs)
+        self.assertIn('generator health attempt 2 asleep (503)', logs)
+        self.assertIn('generator health ok on attempt 3', logs)
+        self.assertNotIn('deploy hook', '\n'.join(logs))
+
+    def test_deploy_hook_fires_once_after_four_minutes_and_is_not_logged(self):
+        import urllib.error
+        now = {'t': 0}
+        hook = 'https://api.render.com/deploy/srv-abc?key=do-not-print'
+        calls = []
+
+        class Resp:
+            def __init__(self, status):
+                self.status = status
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *args):
+                return False
+
+        def clock():
+            return now['t']
+
+        def sleep(seconds):
+            now['t'] += seconds
+
+        def opener(url, timeout=0):
+            calls.append(url)
+            if url == hook:
+                return Resp(202)
+            if now['t'] < 300:
+                raise urllib.error.HTTPError(url, 503, 'unavailable', {}, None)
+            return Resp(200)
+
+        logs = []
+        pub.wake(
+            'https://h79-ai-server.onrender.com',
+            opener=opener,
+            sleep=sleep,
+            clock=clock,
+            log=logs.append,
+            hook=hook,
+        )
+        text = '\n'.join(logs)
+        self.assertEqual(calls.count(hook), 1)
+        self.assertGreaterEqual(now['t'], pub.WAKE_HOOK_AFTER_S)
+        self.assertIn('asleep (503)', text)
+        self.assertIn('render deploy hook called (202)', text)
+        self.assertNotIn('do-not-print', text)
+        self.assertNotIn(hook, text)
+
+    def test_missing_deploy_hook_is_skipped_for_the_full_wait(self):
+        import urllib.error
+        now = {'t': 0}
+        calls = []
+        old = os.environ.pop('RENDER_DEPLOY_HOOK', None)
+
+        def clock():
+            return now['t']
+
+        def sleep(seconds):
+            now['t'] += seconds
+
+        def opener(url, timeout=0):
+            calls.append(url)
+            raise urllib.error.HTTPError(url, 503, 'unavailable', {}, None)
+
+        try:
+            with self.assertRaises(SystemExit) as raised:
+                pub.wake('https://h79-ai-server.onrender.com', opener=opener, sleep=sleep, clock=clock, log=lambda _line: None)
+        finally:
+            if old is not None:
+                os.environ['RENDER_DEPLOY_HOOK'] = old
+        self.assertIn('generator health check failed', str(raised.exception))
+        self.assertGreaterEqual(now['t'], pub.WAKE_LIMIT_S)
+        self.assertTrue(all(url.endswith('/health') for url in calls))
+        self.assertGreater(len(calls), 1)
 
     def test_503_then_success_waits_and_returns_the_board(self):
         import io

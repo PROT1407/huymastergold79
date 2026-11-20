@@ -9,7 +9,7 @@ Vietnam is UTC+7 all year. The workflow clocks are:
   with a backup at 01:13 UTC (`13 1 * * 1-5`)
 - weekly, Sunday 09:00 VN = 02:00 UTC Sunday (`0 2 * * 0`)
 
-The only secret is the repo secret H79_RUN_TOKEN. This script never prints it.
+The only required secret is the repo secret H79_RUN_TOKEN. RENDER_DEPLOY_HOOK is optional and is never printed. This script never prints either secret.
 It does not post to Telegram. If the generator quality gate fails, nothing is committed.
 """
 from __future__ import annotations
@@ -37,9 +37,10 @@ TRIEU_RE = re.compile(r'(\d{2,3})(?:[.,](\d))?\s*triệu', re.I)
 
 def redact(text):
     raw = text if isinstance(text, str) else str(text)
-    token = os.environ.get('H79_RUN_TOKEN') or ''
-    if token:
-        raw = raw.replace(token, '[redacted]')
+    for name in ('H79_RUN_TOKEN', 'RENDER_DEPLOY_HOOK'):
+        secret = os.environ.get(name) or ''
+        if secret:
+            raw = raw.replace(secret, '[redacted]')
     return raw
 
 
@@ -80,27 +81,84 @@ def parse_host(base):
 WAKE_LIMIT_S = 600
 WAKE_INTERVAL_S = 15
 WAKE_TIMEOUT_S = 45
+WAKE_HOOK_AFTER_S = 240
+ASLEEP_STATUSES = (502, 503)
 
 
-def wake(base, opener=None, sleep=time.sleep, clock=time.time, log=print):
-    """Poll /health until Render finishes booting. Never log the run token."""
-    url = base + '/health'
+def deploy_hook(hook):
+    """Return an https deploy-hook URL, or '' when it should be skipped."""
+    if hook is None:
+        hook = os.environ.get('RENDER_DEPLOY_HOOK') or ''
+    text = str(hook).strip()
+    if not text:
+        return ''
+    parsed = urllib.parse.urlparse(text)
+    if parsed.scheme != 'https' or not parsed.netloc:
+        return 'invalid'
+    return text
+
+
+def read_health(open_url, url):
+    try:
+        with open_url(url, timeout=WAKE_TIMEOUT_S) as response:
+            return getattr(response, 'status', 200), ''
+    except urllib.error.HTTPError as exc:
+        return exc.code, ''
+    except Exception as exc:
+        return None, exc.__class__.__name__
+
+
+def send_deploy_hook(open_url, hook_url, say):
+    try:
+        with open_url(hook_url, timeout=30) as response:
+            status = getattr(response, 'status', 200)
+        say(f'render deploy hook called ({status})')
+    except urllib.error.HTTPError as exc:
+        say(f'render deploy hook called ({exc.code})')
+    except Exception as exc:
+        say(f'render deploy hook failed: {exc.__class__.__name__}')
+
+
+def wake(base, opener=None, sleep=time.sleep, clock=time.time, log=print, hook=None):
+    """Poll /health for up to ten minutes. 502 and 503 mean Render is still asleep.
+
+    When RENDER_DEPLOY_HOOK is set, call that https URL once after about four
+    minutes of failures, then keep waiting. The hook URL is never logged.
+    """
+    url = base.rstrip('/') + '/health'
     open_url = opener or urllib.request.urlopen
-    deadline = clock() + WAKE_LIMIT_S
+    started = clock()
+    deadline = started + WAKE_LIMIT_S
     attempt = 0
+    hook_sent = False
+    hook_url = deploy_hook(hook)
+
+    def say(message):
+        text = redact(message)
+        if hook_url and hook_url != 'invalid':
+            text = text.replace(hook_url, '[redacted]')
+        log(text)
+
+    if hook_url == 'invalid':
+        say('render deploy hook ignored')
+        hook_url = ''
     while True:
         attempt += 1
-        try:
-            with open_url(url, timeout=WAKE_TIMEOUT_S) as response:
-                status = getattr(response, 'status', 200)
-                if status == 200:
-                    log(f'generator health ok on attempt {attempt}')
-                    return
-                log(f'generator health attempt {attempt} status {status}')
-        except Exception as exc:
-            log(f'generator health attempt {attempt} failed: {redact(exc.__class__.__name__)}')
+        status, error_name = read_health(open_url, url)
+        if status == 200:
+            say(f'generator health ok on attempt {attempt}')
+            return
+        if status in ASLEEP_STATUSES:
+            say(f'generator health attempt {attempt} asleep ({status})')
+        elif error_name:
+            say(f'generator health attempt {attempt} failed: {error_name}')
+        else:
+            say(f'generator health attempt {attempt} status {status}')
         if clock() >= deadline:
             raise SystemExit('generator health check failed')
+        if hook_url and not hook_sent and clock() - started >= WAKE_HOOK_AFTER_S:
+            send_deploy_hook(open_url, hook_url, say)
+            hook_sent = True
         sleep(WAKE_INTERVAL_S)
 
 

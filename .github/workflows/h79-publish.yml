@@ -6,7 +6,8 @@ name: h79-publish
 # domestic backup 08:13 VN = 01:13 UTC Mon–Fri → 13 1 * * 1-5
 # weekly Sunday 09:00 VN = 02:00 UTC Sunday → 0 2 * * 0
 # Whichever run lands first publishes that VN date. A later run of the same task exits without a commit.
-# Secret: H79_RUN_TOKEN only. The generator prompt and Gemini key stay on Render.
+# Secret: H79_RUN_TOKEN. Optional RENDER_DEPLOY_HOOK retriggers the same service once if health stays 502/503.
+# Neither secret is printed. This workflow does not keep the free service awake between runs.
 on:
   schedule:
     - cron: '52 22 * * 0-4'
@@ -34,6 +35,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
+      - name: Ping generator
+        run: curl -sS -o /dev/null --max-time 20 https://h79-ai-server.onrender.com/health || true
       - uses: actions/checkout@v4
         with:
           ref: main
@@ -44,6 +47,7 @@ jobs:
       - name: Publish board
         env:
           H79_RUN_TOKEN: ${{ secrets.H79_RUN_TOKEN }}
+          RENDER_DEPLOY_HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
           H79_API_URL: https://h79-ai-server.onrender.com
           H79_TASK: ${{ github.event_name == 'workflow_dispatch' && inputs.task || '' }}
           GITHUB_EVENT_SCHEDULE: ${{ github.event.schedule }}
