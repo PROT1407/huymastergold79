@@ -5,9 +5,9 @@
   "url": "https://www.forexfactory.com/calendar",
   "feed": "https://nfs.faireconomy.media/ff_calendar_thisweek.json"
  },
- "updated_vn": "12:28 20/11/2026",
- "updated_utc": "2026-11-20T05:28:21Z",
- "has_actual": false,
+ "updated_vn": "12:30 20/11/2026",
+ "updated_utc": "2026-11-20T05:30:41Z",
+ "has_actual": true,
  "events": [
   {
    "title": "Fed Chairman Warsh Speaks",
@@ -33,7 +33,8 @@
    "date_vn": "2026-11-17",
    "forecast": "0.4%",
    "previous": "0.9%",
-   "actual": ""
+   "actual": "0.6%",
+   "actual_src": "Census"
   },
   {
    "title": "Retail Sales m/m",
@@ -46,7 +47,8 @@
    "date_vn": "2026-11-17",
    "forecast": "0.1%",
    "previous": "0.8%",
-   "actual": ""
+   "actual": "0.2%",
+   "actual_src": "Census"
   },
   {
    "title": "FOMC Meeting Minutes",
