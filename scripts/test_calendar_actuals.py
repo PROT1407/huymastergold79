@@ -297,7 +297,10 @@ class UpdateScriptTests(unittest.TestCase):
 
     def test_keeps_sourced_actual_and_changes_timestamp_only_when_needed(self):
         doc = json.loads((ROOT / 'data' / 'calendar-us.json').read_text(encoding='utf-8'))
+        # Không phụ thuộc số của tuần đang chạy: tự gắn một actual có nguồn cho tin đầu.
+        doc['events'][0]['actual'] = '0.3%'
         doc['events'][0]['actual_src'] = 'CNBC'
+        doc['has_actual'] = True
         raw = self.feed_from(doc)
         self.assertIsNone(UPDATE.prepare(raw, doc, NOW))
         raw[0]['forecast'] = '9.9%'
