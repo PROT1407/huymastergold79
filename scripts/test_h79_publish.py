@@ -134,9 +134,75 @@ class PublishTests(unittest.TestCase):
         bad['board']['quick_advice'] = 'Nhẫn 140.000.000.'
         bad['board']['world_news'] = []
         bad['board']['refs'] = []
-        data2 = {'analysis': ['keep me'], 'peak': data['peak']}
-        self.assertFalse(pub.apply_domestic_prose(data2, bad, rows))
-        self.assertEqual(data2['analysis'], ['keep me'])
+        data2 = {'analysis': ['keep me'], 'advice': 'keep me', 'quick_advice': 'keep me', 'peak': data['peak']}
+        import io
+        from contextlib import redirect_stdout
+        with redirect_stdout(io.StringIO()):
+            self.assertTrue(pub.apply_domestic_prose(data2, bad, rows))
+        self.assertNotIn('140.000.000', data2['analysis'][0])
+        self.assertNotIn('keep me', data2['analysis'][0])
+        self.assertIn('147.800.000', data2['analysis'][0])
+        self.assertEqual(data2['refs'], [])
+
+    def test_derived_amounts_are_kept_and_stale_prose_is_replaced(self):
+        import io
+        from contextlib import redirect_stdout
+        rows = [
+            {'code': 'SJL1L10', 'buy': 145200000, 'sell': 147800000, 'prev_buy': 147200000, 'prev_sell': 149800000, 'prev_date': '2026-11-09'},
+            {'code': 'SJ9999', 'buy': 144000000, 'sell': 147000000, 'prev_buy': 145000000, 'prev_sell': 148000000, 'prev_date': '2026-11-09'},
+            {'code': 'PQHN24NTT', 'buy': 143500000, 'sell': 146500000, 'prev_buy': 144500000, 'prev_sell': 147500000, 'prev_date': '2026-11-09'},
+        ]
+        stale = {
+            'analysis': ['Sáng 11/11 SJC bán 136.500.000.'],
+            'advice': 'Lời ngày 11/11.',
+            'quick_advice': 'Cũ 11/11.',
+            'refs': [{'name': 'VTC', 'url': 'https://vtcnews.vn/11-11', 'facts': ['11/11: 136.500.000']}],
+            'world': {'vnd_per_luong': 109460000, 'gap_sjc_sell': 38340000},
+            'peak': {'sell': pub.PEAK_SELL, 'buy': 188300000, 'date': pub.PEAK_DATE},
+        }
+        body = payload('domestic')
+        body['board']['analysis'] = ['Quy đổi thế giới ≈ 109,5 triệu đồng/lượng, chênh SJC bán khoảng 38,3 triệu.']
+        body['board']['advice'] = 'Đỉnh 191,3 triệu ngày 29/01/2026, bán lại lỗ khoảng 46,1 triệu đồng/lượng.'
+        body['board']['quick_advice'] = 'So với hôm qua miếng bán giảm 2.000.000 đồng.'
+        body['board']['world_news'] = []
+        body['board']['refs'] = []
+        buf = io.StringIO()
+        with redirect_stdout(buf):
+            self.assertTrue(pub.apply_domestic_prose(stale, body, rows))
+        self.assertNotIn('warning:', buf.getvalue())
+        self.assertIn('109,5 triệu', stale['analysis'][0])
+        self.assertIn('191,3 triệu', stale['advice'])
+        self.assertIn('2.000.000', stale['quick_advice'])
+        self.assertNotIn('11/11', json.dumps(stale['analysis'] + [stale['advice'], stale['quick_advice']], ensure_ascii=False))
+        self.assertEqual(stale['refs'], [])
+        rejected = payload('domestic')
+        rejected['board']['analysis'] = ['Sáng 11/11 SJC bán 140.000.000.']
+        rejected['board']['advice'] = 'Nhẫn 140.000.000.'
+        rejected['board']['quick_advice'] = 'Nhẫn 140.000.000.'
+        rejected['board']['world_news'] = []
+        stale2 = {
+            'analysis': ['Sáng 11/11 SJC bán 136.500.000.'],
+            'advice': 'Lời ngày 11/11.',
+            'quick_advice': 'Cũ 11/11.',
+            'refs': [{'name': 'VTC', 'url': 'https://vtcnews.vn/11-11', 'facts': ['11/11: 136.500.000']}],
+            'world': stale['world'],
+            'peak': stale['peak'],
+        }
+        buf = io.StringIO()
+        with redirect_stdout(buf):
+            self.assertTrue(pub.apply_domestic_prose(stale2, rejected, rows))
+        self.assertIn('warning:', buf.getvalue())
+        self.assertIn('dropped stale refs', buf.getvalue())
+        written = json.dumps(stale2['analysis'] + [stale2['advice'], stale2['quick_advice']], ensure_ascii=False)
+        self.assertNotIn('11/11', written)
+        self.assertNotIn('140.000.000', written)
+        self.assertNotIn('136.500.000', written)
+        self.assertIn('SJC miếng', stale2['analysis'][0])
+        self.assertIn('nhẫn SJC', stale2['analysis'][0])
+        self.assertIn('PNJ 24K', stale2['analysis'][0])
+        self.assertIn('109,5 triệu', stale2['analysis'][0])
+        self.assertIn('38,3 triệu', stale2['analysis'][0])
+        self.assertEqual(stale2['refs'], [])
 
     def test_weekly_entry_has_no_trade_box(self):
         body = payload('weekly')

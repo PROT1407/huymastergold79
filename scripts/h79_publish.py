@@ -32,7 +32,15 @@ VN = ZoneInfo('Asia/Ho_Chi_Minh')
 PEAK_SELL = 191_300_000
 PEAK_DATE = '2026-01-29'
 VND_RE = re.compile(r'\d{1,3}(?:\.\d{3}){2,3}')
-TRIEU_RE = re.compile(r'(\d{2,3})(?:[.,](\d))?\s*triệu', re.I)
+TRIEU_RE = re.compile(r'(\d{1,3})(?:[.,](\d))?\s*triệu', re.I)
+DATE_DMY_RE = re.compile(r'\b(\d{1,2})/(\d{1,2})(?:/(\d{4}))?\b')
+DATE_ISO_RE = re.compile(r'\b(\d{4})-(\d{2})-(\d{2})\b')
+PRICE_TOLERANCE = 200_000
+DOMESTIC_PRODUCTS = (
+    ('SJL1L10', 'bar', 'SJC miếng'),
+    ('SJ9999', 'sjcRing', 'nhẫn SJC'),
+    ('PQHN24NTT', 'pnjRing', 'PNJ 24K'),
+)
 
 
 def redact(text):
@@ -347,21 +355,188 @@ def vnd_amounts(text):
     for match in TRIEU_RE.finditer(text or ''):
         frac = int(match.group(2)) * 100_000 if match.group(2) else 0
         found.add(int(match.group(1)) * 1_000_000 + frac)
-    return {amount for amount in found if amount >= 50_000_000}
+    return {amount for amount in found if amount >= 1_000_000}
+
+
+def as_int(value):
+    try:
+        amount = int(round(float(value)))
+    except (TypeError, ValueError):
+        return 0
+    return amount if amount > 0 else 0
+
+
+def add_amount(allowed, value):
+    amount = as_int(value)
+    if amount:
+        allowed.add(amount)
+
+
+def amount_allowed(amount, allowed):
+    if amount in allowed:
+        return True
+    return any(abs(amount - item) <= PRICE_TOLERANCE for item in allowed)
 
 
 def prose_ok(text, allowed):
     amounts = vnd_amounts(text)
-    return bool(amounts) and amounts <= allowed
+    return bool(amounts) and all(amount_allowed(amount, allowed) for amount in amounts)
+
+
+def mentioned_dates(text, year):
+    found = set()
+    for match in DATE_ISO_RE.finditer(text or ''):
+        found.add(f'{match.group(1)}-{match.group(2)}-{match.group(3)}')
+    for match in DATE_DMY_RE.finditer(text or ''):
+        day, month = int(match.group(1)), int(match.group(2))
+        if not (1 <= day <= 31 and 1 <= month <= 12):
+            continue
+        found.add(f'{int(match.group(3) or year):04d}-{month:02d}-{day:02d}')
+    return found
+
+
+def dates_ok(text, allowed, year):
+    return mentioned_dates(text, year) <= allowed
+
+
+def line_ok(text, allowed, dates, year):
+    return isinstance(text, str) and prose_ok(text, allowed) and dates_ok(text, dates, year)
+
+
+def row_by_code(rows, code):
+    return next((row for row in rows or [] if row.get('code') == code and row.get('buy') and row.get('sell')), None)
 
 
 def allowed_prices(rows):
     allowed = set()
     for row in rows or []:
-        for key in ('buy', 'sell'):
-            if row.get(key):
-                allowed.add(int(row[key]))
+        for key in ('buy', 'sell', 'prev_buy', 'prev_sell'):
+            add_amount(allowed, row.get(key))
+        for key in ('chg_buy', 'chg_sell'):
+            add_amount(allowed, abs(as_int(row.get(key))))
+        buy, prev_buy = as_int(row.get('buy')), as_int(row.get('prev_buy'))
+        sell, prev_sell = as_int(row.get('sell')), as_int(row.get('prev_sell'))
+        if buy and prev_buy:
+            add_amount(allowed, abs(buy - prev_buy))
+        if sell and prev_sell:
+            add_amount(allowed, abs(sell - prev_sell))
     return allowed
+
+
+def derived_amounts(data, rows, payload):
+    """Row prices plus world conversion, premium, like-for-like deltas, and the peak."""
+    allowed = allowed_prices(rows)
+    data = data or {}
+    world = data.get('world') or {}
+    payload = payload or {}
+    market = payload.get('market') or {}
+    converted = as_int(world.get('vnd_per_luong') or market.get('vnd_per_luong') or market.get('converted'))
+    add_amount(allowed, converted)
+    add_amount(allowed, world.get('gap_sjc_sell'))
+    add_amount(allowed, market.get('gap') or market.get('premium'))
+    add_amount(allowed, PEAK_SELL)
+    peak = data.get('peak') or {}
+    add_amount(allowed, peak.get('buy'))
+    add_amount(allowed, peak.get('sell'))
+    previous = payload.get('previous') or {}
+    for code, key, _label in DOMESTIC_PRODUCTS:
+        row = row_by_code(rows, code)
+        quote = previous.get(key) or {}
+        add_amount(allowed, quote.get('buy'))
+        add_amount(allowed, quote.get('sell'))
+        if not row:
+            continue
+        if converted and code == 'SJL1L10':
+            add_amount(allowed, abs(as_int(row.get('sell')) - converted))
+            add_amount(allowed, abs(as_int(row.get('buy')) - converted))
+        add_amount(allowed, abs(PEAK_SELL - as_int(row.get('buy'))))
+        add_amount(allowed, abs(PEAK_SELL - as_int(row.get('sell'))))
+        if quote.get('buy'):
+            add_amount(allowed, abs(as_int(row.get('buy')) - as_int(quote.get('buy'))))
+        if quote.get('sell'):
+            add_amount(allowed, abs(as_int(row.get('sell')) - as_int(quote.get('sell'))))
+    bar = row_by_code(rows, 'SJL1L10')
+    for item in (data.get('sjc_compare') or {}).values():
+        if not isinstance(item, dict):
+            continue
+        add_amount(allowed, item.get('buy'))
+        add_amount(allowed, item.get('sell'))
+        if not bar:
+            continue
+        if item.get('buy'):
+            add_amount(allowed, abs(as_int(bar.get('buy')) - as_int(item.get('buy'))))
+        if item.get('sell'):
+            add_amount(allowed, abs(as_int(bar.get('sell')) - as_int(item.get('sell'))))
+    for line in (payload.get('board') or {}).get('price_lines') or []:
+        allowed.update(vnd_amounts(line))
+    return allowed
+
+
+def allowed_dates(data, rows, payload):
+    dates = {PEAK_DATE, (payload.get('clock') or {}).get('dateVn') or ''}
+    dates.discard('')
+    for row in rows or []:
+        if row.get('prev_date'):
+            dates.add(row['prev_date'])
+    for item in ((data or {}).get('sjc_compare') or {}).values():
+        if isinstance(item, dict) and item.get('date'):
+            dates.add(item['date'])
+    return dates
+
+
+def fmt_vnd(amount):
+    return f'{as_int(amount):,}'.replace(',', '.')
+
+
+def fmt_trieu(amount):
+    scaled = int(round(as_int(amount) / 100_000))
+    whole, tenth = divmod(scaled, 10)
+    if tenth:
+        return f'{whole},{tenth} triệu'
+    return f'{whole} triệu'
+
+
+def quote_sentence(label, row):
+    if not row:
+        return ''
+    line = f"{label} mua {fmt_vnd(row['buy'])} / bán {fmt_vnd(row['sell'])}"
+    delta = 0
+    try:
+        if row.get('chg_sell') is not None:
+            delta = int(round(float(row.get('chg_sell'))))
+    except (TypeError, ValueError):
+        delta = 0
+    if not delta and row.get('prev_sell'):
+        delta = as_int(row.get('sell')) - as_int(row.get('prev_sell'))
+    if delta:
+        line += f", bán {'tăng' if delta > 0 else 'giảm'} {fmt_vnd(abs(delta))}"
+    return line
+
+
+def domestic_fallback(data, rows):
+    parts = []
+    for code, _key, label in DOMESTIC_PRODUCTS:
+        sentence = quote_sentence(label, row_by_code(rows, code))
+        if sentence:
+            parts.append(sentence)
+    if not parts:
+        for row in rows or []:
+            if row.get('buy') and row.get('sell'):
+                parts.append(quote_sentence(row.get('type') or 'Giá', row))
+                break
+    world = (data or {}).get('world') or {}
+    converted = as_int(world.get('vnd_per_luong'))
+    bar = row_by_code(rows, 'SJL1L10')
+    premium = as_int(world.get('gap_sjc_sell'))
+    if not premium and bar and converted:
+        premium = abs(as_int(bar.get('sell')) - converted)
+    if converted:
+        parts.append(f'Giá thế giới quy đổi {fmt_trieu(converted)} đồng/lượng')
+    if premium:
+        parts.append(f'Chênh SJC bán so với quy đổi {fmt_trieu(premium)}')
+    if not parts:
+        return 'Chưa đủ giá trong ngày để viết nhận định.'
+    return '. '.join(parts) + '.'
 
 
 def keep_peak(peak, rows, date):
@@ -387,25 +562,19 @@ def keep_peak(peak, rows, date):
     }
 
 
-def apply_domestic_prose(data, payload, rows):
-    allowed = allowed_prices(rows)
-    board = payload.get('board') or {}
-    changed = False
-    for key in ('analysis', 'analysis_en'):
-        lines = [line for line in (board.get(key) or []) if isinstance(line, str) and prose_ok(line, allowed)]
-        if lines:
-            data[key] = lines
-            changed = True
-    for key in ('advice', 'advice_en', 'quick_advice', 'quick_advice_en'):
-        text = board.get(key)
-        if isinstance(text, str) and prose_ok(text, allowed):
-            data[key] = text
-            changed = True
+def accepted_refs(board, allowed, dates, year):
     refs = []
     for ref in board.get('refs') or []:
         url = ref.get('url') or ''
-        facts = [fact for fact in (ref.get('facts') or []) if isinstance(fact, str) and (prose_ok(fact, allowed) or not vnd_amounts(fact))]
-        if url.startswith('https://') and facts and all(not vnd_amounts(fact) or prose_ok(fact, allowed) for fact in facts):
+        facts = []
+        for fact in ref.get('facts') or []:
+            if not isinstance(fact, str) or not dates_ok(fact, dates, year):
+                continue
+            amounts = vnd_amounts(fact)
+            if amounts and not all(amount_allowed(amount, allowed) for amount in amounts):
+                continue
+            facts.append(fact)
+        if url.startswith('https://') and facts:
             refs.append({
                 'name': ref.get('name') or 'Nguồn',
                 'url': url,
@@ -413,16 +582,47 @@ def apply_domestic_prose(data, payload, rows):
                 'name_en': ref.get('name_en') or ref.get('name') or '',
                 'facts_en': ref.get('facts_en') or [],
             })
-    if refs:
-        data['refs'] = refs
-        changed = True
+    return refs
+
+
+def apply_domestic_prose(data, payload, rows):
+    board = payload.get('board') or {}
+    year = (payload.get('clock') or {}).get('dateVn', '2026-01-01').split('-')[0]
+    allowed = derived_amounts(data, rows, payload)
+    dates = allowed_dates(data, rows, payload)
+    analysis = [line for line in (board.get('analysis') or []) if line_ok(line, allowed, dates, year)]
+    advice = board.get('advice') if line_ok(board.get('advice'), allowed, dates, year) else ''
+    quick = board.get('quick_advice') if line_ok(board.get('quick_advice'), allowed, dates, year) else ''
+    analysis_en = [line for line in (board.get('analysis_en') or []) if line_ok(line, allowed, dates, year)]
+    advice_en = board.get('advice_en') if line_ok(board.get('advice_en'), allowed, dates, year) else ''
+    quick_en = board.get('quick_advice_en') if line_ok(board.get('quick_advice_en'), allowed, dates, year) else ''
+    if analysis and advice:
+        data['analysis'] = analysis
+        data['advice'] = advice
+        data['quick_advice'] = quick or analysis[0]
+        if analysis_en:
+            data['analysis_en'] = analysis_en
+        if advice_en:
+            data['advice_en'] = advice_en
+        if quick_en:
+            data['quick_advice_en'] = quick_en
+        data['refs'] = accepted_refs(board, allowed, dates, year)
+    else:
+        fallback = domestic_fallback(data, rows)
+        print('warning: domestic prose was not accepted; wrote today\'s prices and dropped stale refs')
+        data['analysis'] = [fallback]
+        data['advice'] = fallback
+        data['quick_advice'] = fallback
+        data['refs'] = []
     news = []
     for item in board.get('world_news') or []:
         text = item.get('text') or ''
         source = item.get('source') or {}
         url = source.get('url') or ''
         amounts = vnd_amounts(text)
-        if not url.startswith('https://') or (amounts and not amounts <= allowed):
+        if not url.startswith('https://') or not dates_ok(text, dates, year):
+            continue
+        if amounts and not all(amount_allowed(amount, allowed) for amount in amounts):
             continue
         host = urllib.request.urlparse(url).hostname or ''
         news.append({
@@ -432,15 +632,13 @@ def apply_domestic_prose(data, payload, rows):
         })
     if news:
         data['world_news'] = news
-        changed = True
     date = payload['clock']['dateVn']
     kept = keep_peak(data.get('peak'), rows, date)
     if kept != data.get('peak'):
         data['peak'] = kept
-        changed = True
     elif 'peak' not in data and kept:
         data['peak'] = kept
-    return changed
+    return True
 
 
 def weekly_entry(payload):
