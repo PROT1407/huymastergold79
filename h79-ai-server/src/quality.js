@@ -1040,8 +1040,9 @@ function gate(input) {
       }
       let blob = weeklyBlob(board);
       if (contradictsClock(blob, clock)) return reject('Bản tin sai thứ hoặc gọi nhầm tuần mới.', { failedNumbers: [], missingFacts: [], detail: 'wrong weekday' }, !input.final);
-      if (/vùng (mua|bán)|kế hoạch (mua|bán)|\b(buy|sell) zone\b/i.test(blob)) {
-        return reject('Bản tin tuần không được viết vùng vào lệnh.', { failedNumbers: [], missingFacts: [], detail: 'trade plan' }, false);
+      if (/vùng (mua|bán)|kế hoạch (mua|bán)|\b(buy|sell) zone\b|stop[- ]loss|take[- ]profit|cắt lỗ|chốt lời|điểm vào lệnh|entry (zone|point)/i.test(blob)
+        || /(^|[^\p{L}])(BÁN|MUA|SL|TP\d?)(?![\p{L}\d.])/u.test(blob)) {
+        return reject('Bản tin tuần không được viết vùng vào lệnh.', { failedNumbers: [], missingFacts: [], detail: 'trade plan' }, !input.final);
       }
       let tokens = extractNumbers(blob);
       let bad = failedNumbers(tokens, allowed);

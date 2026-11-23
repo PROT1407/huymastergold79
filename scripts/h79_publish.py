@@ -3,10 +3,10 @@
 
 Vietnam is UTC+7 all year. The workflow clocks are:
 
-- macro, weekdays, up to three updates a VN day:
-  morning 06:37 VN = 23:37 UTC the previous calendar day (`37 23 * * 0-4`),
-  with a backup at 05:52 VN = 22:52 UTC (`52 22 * * 0-4`);
-  noon 12:07 VN = 05:07 UTC (`7 5 * * 1-5`); evening 19:17 VN = 12:17 UTC (`17 12 * * 1-5`).
+- macro, every day including Saturday and Sunday, up to three updates a VN day:
+  morning 06:37 VN = 23:37 UTC the previous calendar day (`37 23 * * *`),
+  with a backup at 05:52 VN = 22:52 UTC (`52 22 * * *`);
+  noon 12:07 VN = 05:07 UTC (`7 5 * * *`); evening 19:17 VN = 12:17 UTC (`17 12 * * *`).
   GitHub delays scheduled runs, so the slot (sang/trua/toi) comes from the VN clock
   when the run actually starts, not from the cron line. A later update is published
   only when the slot is still free, at least three hours have passed since the last
@@ -884,9 +884,6 @@ def main(argv=None):
         slot = macro_slot(now)
         if manual:
             slot = slot or 'sang'
-        elif now.weekday() >= 5:
-            print(f'macro {date} is a weekend day in VN, skipped')
-            return 0
         go, _first, reason = macro_gate(ROOT, date, datetime_vn, slot)
         print(reason)
         if not go:

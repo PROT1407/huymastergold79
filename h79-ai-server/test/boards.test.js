@@ -485,8 +485,9 @@ test('domestic price lines replace numbers the model typed', async () => {
   });
 });
 
-test('weekly digest uses Monday-Friday articles and no trade plan', async () => {
+test('weekly digest uses the week\'s articles, weekend included, and no trade plan', async () => {
   const weekArticle = 'https://www.cnbc.com/2026/11/13/gold-week-finishes-near-4080.html';
+  const weekendArticle = 'https://www.cnbc.com/2026/11/14/gold-weekend-wrap.html';
   const fetchImpl = async (url, init) => {
     const target = String(url);
     if (target.includes('generativelanguage')) {
@@ -505,7 +506,9 @@ test('weekly digest uses Monday-Friday articles and no trade plan', async () => 
       assert.match(user, /Không viết vùng vào lệnh/);
       assert.match(user, /giao dịch đầy sóng gió/);
       assert.match(user, /2026-11-09/);
-      assert.match(user, /2026-11-13/);
+      assert.match(user, /2026-11-15/);
+      assert.match(user, /thứ Bảy và Chủ nhật/);
+      assert.match(user, /không viết BÁN, MUA, SL, TP/);
       return geminiResponse(`\`\`\`json\n${JSON.stringify({
         title: 'Tuần vàng',
         title_en: 'Gold week',
@@ -521,7 +524,13 @@ test('weekly digest uses Monday-Friday articles and no trade plan', async () => 
         headers: { 'content-type': 'text/html' },
       });
     }
-    if (target.includes('cnbc.com') || target.includes('investing.com')) return indexPage([weekArticle, 'https://www.cnbc.com/2026/11/02/too-old.html']);
+    if (target === weekendArticle) {
+      return new Response('<html><title>Gold weekend</title><meta property="article:published_time" content="2026-11-14T10:00:00-05:00"><p>Gold ended near $4,080 on Friday after a high near $4,145.</p></html>', {
+        status: 200,
+        headers: { 'content-type': 'text/html' },
+      });
+    }
+    if (target.includes('cnbc.com') || target.includes('investing.com')) return indexPage([weekendArticle, weekArticle, 'https://www.cnbc.com/2026/11/02/too-old.html']);
     return new Response('down', { status: 404 });
   };
   await withServer({ env: env(), fetchImpl }, async (port) => {
@@ -533,7 +542,7 @@ test('weekly digest uses Monday-Friday articles and no trade plan', async () => 
     });
     assert.equal(res.status, 200);
     assert.equal(res.json.task, 'weekly');
-    assert.deepEqual(res.json.sources.map((src) => src.url), [weekArticle]);
+    assert.deepEqual(res.json.sources.map((src) => src.url).sort(), [weekArticle, weekendArticle].sort());
     assert.equal(res.json.clock.weekdayEn, 'Sunday');
     assert.equal(res.json.text.includes('```'), false);
     assert.equal(res.json.text.includes('Số liệu trong nguồn'), false);

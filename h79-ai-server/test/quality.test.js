@@ -2,7 +2,7 @@
 
 const assert = require('node:assert/strict');
 const { test } = require('node:test');
-const { dateWindow, fedwatchSentences, htmlToText, isArticleUrl, isHomepageUrl, payrollFact, preferNewest, pricePathFromFacts, renderPriceLines } = require('../src/collect');
+const { dateWindow, weekRange, fedwatchSentences, htmlToText, isArticleUrl, isHomepageUrl, payrollFact, preferNewest, pricePathFromFacts, renderPriceLines } = require('../src/collect');
 const { contradictsClock, dedupeSentences, extractNumbers, failedNumbers, gate, learnNumberRoles, lintBoard, lockDomesticBoard, missingCore, movesMatchProducts, polishVn, repeatedWord, stripUnsourcedHedge, styleVnFields } = require('../src/quality');
 const { clockFromVnString } = require('../src/time');
 
@@ -16,9 +16,9 @@ test('VN clock minus 12 hours is EST, with the real weekday and year', () => {
   assert.equal(tuesday.timeEn, 'Monday, November 9, 2026, 18:37 EST');
   assert.equal(tuesday.year, 2026);
   const sunday = clockFromVnString('2026-11-15 09:00');
-  assert.deepEqual(dateWindow('weekly', sunday), { start: '2026-11-09', end: '2026-11-13' });
+  assert.deepEqual(dateWindow('weekly', sunday), { start: '2026-11-07', end: '2026-11-15' });
   assert.deepEqual(dateWindow('macro', tuesday), { start: '2026-11-08', end: '2026-11-10' });
-  assert.deepEqual(dateWindow('weekly', clockFromVnString('2026-11-08 09:00')), { start: '2026-11-02', end: '2026-11-06' });
+  assert.deepEqual(dateWindow('weekly', clockFromVnString('2026-11-08 09:00')), { start: '2026-10-31', end: '2026-11-08' });
 });
 
 test('article URLs are not homepages', () => {
@@ -936,4 +936,41 @@ test('13/11 macro text rejects English sentences and a core label on headline PP
   assert.equal(/\$4[.,]/.test(good.board.items[0].summary), false);
   assert.match(good.board.items[0].summary, /PPI tổng thể tăng 6,5% theo năm/);
   assert.equal(/cơ bản/.test(good.board.items[0].summary), false);
+});
+
+test('weekly window takes weekend articles and survives a late Sunday run', () => {
+  const lateSunday = clockFromVnString('2026-11-22 16:12');
+  assert.deepEqual(dateWindow('weekly', lateSunday), { start: '2026-11-14', end: '2026-11-22' });
+  assert.deepEqual(weekRange(lateSunday), { start: '2026-11-16', end: '2026-11-22' });
+  const pastMidnight = clockFromVnString('2026-11-23 00:40');
+  assert.deepEqual(weekRange(pastMidnight), { start: '2026-11-16', end: '2026-11-22' });
+  assert.deepEqual(dateWindow('weekly', pastMidnight), { start: '2026-11-14', end: '2026-11-22' });
+  assert.deepEqual(dateWindow('weekly', clockFromVnString('2026-11-21 09:00')), { start: '2026-11-14', end: '2026-11-21' });
+});
+
+test('weekly recap rejects BÁN/MUA, SL and TP but keeps plain buying news', () => {
+  const base = (p) => gate({
+    task: 'weekly',
+    final: false,
+    clock: clockFromVnString('2026-11-22 16:12'),
+    week: { start: '2026-11-16', end: '2026-11-22' },
+    facts: [],
+    pricePath: '',
+    sources: [{ name: 'Kitco', url: 'https://www.kitco.com/news/article/2026-11-20/week-review', normalized: 'Gold fell to $3,625. Central banks kept buying gold.' }],
+    fedwatch: { stated: false, items: [] },
+    text: JSON.stringify({
+      title: 'Mốc 3.625 (tuần 16/11–22/11)',
+      title_en: 'Gold week',
+      sections: [{ h: 'Tuần', p }],
+      sections_en: [{ h: 'Week', p: 'Gold fell to 3625.' }],
+    }),
+  });
+  for (const bad of ['Vàng về 3.625 USD/oz. BÁN 3.650, SL 3.670, TP 3.600.', 'Vàng về 3.625 USD/oz. MUA quanh 3.600.', 'Vàng về 3.625 USD/oz. Đặt cắt lỗ dưới 3.600.']) {
+    const result = base(bad);
+    assert.equal(result.ok, false);
+    assert.equal(result.debug.detail, 'trade plan');
+    assert.equal(result.retryable, true);
+  }
+  const ok = base('Vàng về 3.625 USD/oz. Ngân hàng trung ương vẫn mua vàng.');
+  assert.notEqual(ok.debug && ok.debug.detail, 'trade plan');
 });

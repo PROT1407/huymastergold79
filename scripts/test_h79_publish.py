@@ -508,6 +508,8 @@ def story(title, url, title_en='', summary=''):
 class MacroSlotTests(unittest.TestCase):
     def test_new_crons_map_to_macro_and_old_ones_unchanged(self):
         self.assertEqual(pub.task_for_schedule('7 5 * * 1-5'), 'macro')
+        self.assertEqual(pub.task_for_schedule('7 5 * * *'), 'macro')
+        self.assertEqual(pub.task_for_schedule('37 23 * * *'), 'macro')
         self.assertEqual(pub.task_for_schedule('17 12 * * 1-5'), 'macro')
         self.assertEqual(pub.task_for_schedule('13 1 * * 1-5'), 'domestic')
         self.assertEqual(pub.task_for_schedule('0 2 * * 0'), 'weekly')
@@ -634,7 +636,7 @@ class MacroSlotTests(unittest.TestCase):
             self.assertEqual((root / 'data' / 'macro-news.json').read_text(encoding='utf-8'), before)
             self.assertFalse((root / 'data' / 'latest-share.json').exists())
 
-    def test_main_skips_without_waking_when_too_soon_late_night_or_weekend(self):
+    def test_main_skips_without_waking_when_too_soon_or_late_night(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             self.write_macro(root, [{'date': '2026-11-24', 'title': 'a', 'slot': 'sang', 'published_vn': '2026-11-24 10:30'}])
@@ -644,9 +646,21 @@ class MacroSlotTests(unittest.TestCase):
             code, calls, log = self.run_main(root, '2026-11-25 01:15', {}, schedule='17 12 * * 1-5')
             self.assertEqual((code, calls), (0, []))
             self.assertIn('00:00 and 05:00', log)
-            code, calls, log = self.run_main(root, '2026-11-28 00:30', {}, schedule='17 12 * * 1-5')
+
+    def test_weekend_runs_use_the_same_slots(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_macro(root, [{'date': '2026-11-28', 'title': 'a', 'slot': 'sang', 'published_vn': '2026-11-28 10:30'}])
+            code, calls, log = self.run_main(root, '2026-11-28 12:20', {}, schedule='7 5 * * *')
             self.assertEqual((code, calls), (0, []))
-            self.assertIn('weekend', log)
+            self.assertIn('min ago', log)
+            board = story('Dầu tăng vọt cuối tuần', 'https://www.cnbc.com/2026/11/28/oil.html')
+            board['clock']['dateVn'] = '2026-11-28'
+            code, calls, log = self.run_main(root, '2026-11-28 19:30', board, schedule='17 12 * * *')
+            self.assertEqual(code, 1)  # stops at build-seo in the temp dir, after the story was written
+            self.assertEqual(calls, ['wake', 'post'])
+            data = json.loads((root / 'data' / 'macro-news.json').read_text(encoding='utf-8'))
+            self.assertEqual([item['slot'] for item in data['items']], ['toi', 'sang'])
 
     def test_422_reason_is_logged_without_secrets(self):
         import io

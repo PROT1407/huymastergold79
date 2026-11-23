@@ -1,12 +1,12 @@
 name: h79-publish
 # Weekday boards and the Sunday news recap. Vietnam is UTC+7, no daylight saving.
-# macro weekdays, up to three updates a VN day (sang / trua / toi):
-#   morning 06:37 VN = 23:37 UTC Sun–Thu → 37 23 * * 0-4
-#   morning backup 05:52 VN = 22:52 UTC Sun–Thu → 52 22 * * 0-4
-#   noon 12:07 VN = 05:07 UTC Mon–Fri → 7 5 * * 1-5
-#   evening 19:17 VN = 12:17 UTC Mon–Fri → 17 12 * * 1-5
+# macro every day incl. Sat/Sun, up to three updates a VN day (sang / trua / toi):
+#   morning 06:37 VN = 23:37 UTC the day before → 37 23 * * *
+#   morning backup 05:52 VN = 22:52 UTC the day before → 52 22 * * *
+#   noon 12:07 VN = 05:07 UTC → 7 5 * * *
+#   evening 19:17 VN = 12:17 UTC → 17 12 * * *
 #   GitHub delays runs, so the script picks the slot from the VN clock when it starts
-#   (05–11 sang, 11–17 trua, 17–24 toi; 00–05 and VN weekends skip). A later update needs a
+#   (05–11 sang, 11–17 trua, 17–24 toi; 00–05 skips). A later update needs a
 #   free slot, 3 hours since the last update that day, and stories not already on the board.
 # domestic weekdays 08:43 VN = 01:43 UTC Mon–Fri → 43 1 * * 1-5
 # domestic backup 08:13 VN = 01:13 UTC Mon–Fri → 13 1 * * 1-5
@@ -17,10 +17,10 @@ name: h79-publish
 # Neither secret is printed. This workflow does not keep the free service awake between runs.
 on:
   schedule:
-    - cron: '52 22 * * 0-4'
-    - cron: '37 23 * * 0-4'
-    - cron: '7 5 * * 1-5'
-    - cron: '17 12 * * 1-5'
+    - cron: '52 22 * * *'
+    - cron: '37 23 * * *'
+    - cron: '7 5 * * *'
+    - cron: '17 12 * * *'
     - cron: '13 1 * * 1-5'
     - cron: '43 1 * * 1-5'
     - cron: '0 2 * * 0'
