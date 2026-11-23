@@ -77,7 +77,9 @@ class PublishTests(unittest.TestCase):
 
     def test_schedule_mapping(self):
         self.assertEqual(pub.task_for_schedule('37 23 * * 0-4'), 'macro')
+        self.assertEqual(pub.task_for_schedule('52 22 * * 0-4'), 'macro')
         self.assertEqual(pub.task_for_schedule('43 1 * * 1-5'), 'domestic')
+        self.assertEqual(pub.task_for_schedule('13 1 * * 1-5'), 'domestic')
         self.assertEqual(pub.task_for_schedule('0 2 * * 0'), 'weekly')
         self.assertEqual(pub.task_for_schedule('', 'weekly'), 'weekly')
 
@@ -85,9 +87,13 @@ class PublishTests(unittest.TestCase):
         import os
         old = os.environ.get('H79_RUN_TOKEN')
         os.environ['H79_RUN_TOKEN'] = 'super-secret-token'
+        os.environ['RENDER_DEPLOY_HOOK'] = 'https://api.render.com/deploy/srv-abc?key=hook-secret'
         try:
-            self.assertNotIn('super-secret-token', pub.redact('token super-secret-token leaked'))
+            hidden = pub.redact('token super-secret-token leaked ' + os.environ['RENDER_DEPLOY_HOOK'])
+            self.assertNotIn('super-secret-token', hidden)
+            self.assertNotIn('hook-secret', hidden)
         finally:
+            os.environ.pop('RENDER_DEPLOY_HOOK', None)
             if old is None:
                 os.environ.pop('H79_RUN_TOKEN', None)
             else:
@@ -128,9 +134,75 @@ class PublishTests(unittest.TestCase):
         bad['board']['quick_advice'] = 'Nhẫn 140.000.000.'
         bad['board']['world_news'] = []
         bad['board']['refs'] = []
-        data2 = {'analysis': ['keep me'], 'peak': data['peak']}
-        self.assertFalse(pub.apply_domestic_prose(data2, bad, rows))
-        self.assertEqual(data2['analysis'], ['keep me'])
+        data2 = {'analysis': ['keep me'], 'advice': 'keep me', 'quick_advice': 'keep me', 'peak': data['peak']}
+        import io
+        from contextlib import redirect_stdout
+        with redirect_stdout(io.StringIO()):
+            self.assertTrue(pub.apply_domestic_prose(data2, bad, rows))
+        self.assertNotIn('140.000.000', data2['analysis'][0])
+        self.assertNotIn('keep me', data2['analysis'][0])
+        self.assertIn('147.800.000', data2['analysis'][0])
+        self.assertEqual(data2['refs'], [])
+
+    def test_derived_amounts_are_kept_and_stale_prose_is_replaced(self):
+        import io
+        from contextlib import redirect_stdout
+        rows = [
+            {'code': 'SJL1L10', 'buy': 145200000, 'sell': 147800000, 'prev_buy': 147200000, 'prev_sell': 149800000, 'prev_date': '2026-11-09'},
+            {'code': 'SJ9999', 'buy': 144000000, 'sell': 147000000, 'prev_buy': 145000000, 'prev_sell': 148000000, 'prev_date': '2026-11-09'},
+            {'code': 'PQHN24NTT', 'buy': 143500000, 'sell': 146500000, 'prev_buy': 144500000, 'prev_sell': 147500000, 'prev_date': '2026-11-09'},
+        ]
+        stale = {
+            'analysis': ['Sáng 11/11 SJC bán 136.500.000.'],
+            'advice': 'Lời ngày 11/11.',
+            'quick_advice': 'Cũ 11/11.',
+            'refs': [{'name': 'VTC', 'url': 'https://vtcnews.vn/11-11', 'facts': ['11/11: 136.500.000']}],
+            'world': {'vnd_per_luong': 109460000, 'gap_sjc_sell': 38340000},
+            'peak': {'sell': pub.PEAK_SELL, 'buy': 188300000, 'date': pub.PEAK_DATE},
+        }
+        body = payload('domestic')
+        body['board']['analysis'] = ['Quy đổi thế giới ≈ 109,5 triệu đồng/lượng, chênh SJC bán khoảng 38,3 triệu.']
+        body['board']['advice'] = 'Đỉnh 191,3 triệu ngày 29/01/2026, bán lại lỗ khoảng 46,1 triệu đồng/lượng.'
+        body['board']['quick_advice'] = 'So với hôm qua miếng bán giảm 2.000.000 đồng.'
+        body['board']['world_news'] = []
+        body['board']['refs'] = []
+        buf = io.StringIO()
+        with redirect_stdout(buf):
+            self.assertTrue(pub.apply_domestic_prose(stale, body, rows))
+        self.assertNotIn('warning:', buf.getvalue())
+        self.assertIn('109,5 triệu', stale['analysis'][0])
+        self.assertIn('191,3 triệu', stale['advice'])
+        self.assertIn('2.000.000', stale['quick_advice'])
+        self.assertNotIn('11/11', json.dumps(stale['analysis'] + [stale['advice'], stale['quick_advice']], ensure_ascii=False))
+        self.assertEqual(stale['refs'], [])
+        rejected = payload('domestic')
+        rejected['board']['analysis'] = ['Sáng 11/11 SJC bán 140.000.000.']
+        rejected['board']['advice'] = 'Nhẫn 140.000.000.'
+        rejected['board']['quick_advice'] = 'Nhẫn 140.000.000.'
+        rejected['board']['world_news'] = []
+        stale2 = {
+            'analysis': ['Sáng 11/11 SJC bán 136.500.000.'],
+            'advice': 'Lời ngày 11/11.',
+            'quick_advice': 'Cũ 11/11.',
+            'refs': [{'name': 'VTC', 'url': 'https://vtcnews.vn/11-11', 'facts': ['11/11: 136.500.000']}],
+            'world': stale['world'],
+            'peak': stale['peak'],
+        }
+        buf = io.StringIO()
+        with redirect_stdout(buf):
+            self.assertTrue(pub.apply_domestic_prose(stale2, rejected, rows))
+        self.assertIn('warning:', buf.getvalue())
+        self.assertIn('dropped stale refs', buf.getvalue())
+        written = json.dumps(stale2['analysis'] + [stale2['advice'], stale2['quick_advice']], ensure_ascii=False)
+        self.assertNotIn('11/11', written)
+        self.assertNotIn('140.000.000', written)
+        self.assertNotIn('136.500.000', written)
+        self.assertIn('SJC miếng', stale2['analysis'][0])
+        self.assertIn('nhẫn SJC', stale2['analysis'][0])
+        self.assertIn('PNJ 24K', stale2['analysis'][0])
+        self.assertIn('109,5 triệu', stale2['analysis'][0])
+        self.assertIn('38,3 triệu', stale2['analysis'][0])
+        self.assertEqual(stale2['refs'], [])
 
     def test_weekly_entry_has_no_trade_box(self):
         body = payload('weekly')
@@ -165,6 +237,35 @@ class PublishTests(unittest.TestCase):
             self.assertEqual(share['macro']['facebook'], 'Vàng 4.087')
             self.assertNotIn('H79_RUN_TOKEN', json.dumps(share))
 
+    def test_main_skips_a_published_board_without_waking(self):
+        import io
+        from contextlib import redirect_stdout
+        _stamp, date = pub.vn_now()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'bai').mkdir()
+            (root / 'bai' / f'{date}-gia-vang-trong-nuoc.html').write_text('x', encoding='utf-8')
+            (root / 'bai' / f'{date}-tin-vi-mo-anh-huong-gia-vang.html').write_text('x', encoding='utf-8')
+            old_root, old_wake = pub.ROOT, pub.wake
+            calls = []
+            pub.ROOT = root
+            pub.wake = lambda *args, **kwargs: calls.append('wake')
+            try:
+                buf = io.StringIO()
+                with redirect_stdout(buf):
+                    domestic = pub.main(['domestic'])
+                    macro = pub.main(['macro'])
+            finally:
+                pub.ROOT = old_root
+                pub.wake = old_wake
+            log = buf.getvalue()
+            self.assertEqual(domestic, 0)
+            self.assertEqual(macro, 0)
+            self.assertEqual(calls, [])
+            self.assertIn(f'domestic {date} already published', log)
+            self.assertIn(f'macro {date} already published', log)
+            self.assertIn('datetime_vn=', log)
+
 
 class PostRetryTests(unittest.TestCase):
     def setUp(self):
@@ -176,6 +277,161 @@ class PostRetryTests(unittest.TestCase):
             os.environ.pop('H79_RUN_TOKEN', None)
         else:
             os.environ['H79_RUN_TOKEN'] = self._token
+
+    def test_wake_polls_for_ten_minutes_then_accepts_health(self):
+        import urllib.error
+        attempts = []
+
+        class Resp:
+            status = 200
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *args):
+                return False
+
+        def opener(url, timeout=0):
+            attempts.append(timeout)
+            if len(attempts) < 3:
+                raise urllib.error.URLError('asleep')
+            return Resp()
+
+        sleeps = []
+        logs = []
+        pub.wake('https://h79-ai-server.onrender.com', opener=opener, sleep=sleeps.append, log=logs.append, hook='')
+        self.assertEqual(attempts, [pub.WAKE_TIMEOUT_S, pub.WAKE_TIMEOUT_S, pub.WAKE_TIMEOUT_S])
+        self.assertEqual(sleeps, [pub.WAKE_INTERVAL_S, pub.WAKE_INTERVAL_S])
+        self.assertIn('generator health attempt 1 failed: URLError', logs)
+        self.assertIn('generator health ok on attempt 3', logs)
+        self.assertNotIn('test-token', '\n'.join(logs))
+
+    def test_wake_stops_after_ten_minutes(self):
+        now = {'t': 0}
+
+        def clock():
+            return now['t']
+
+        def sleep(seconds):
+            self.assertEqual(seconds, pub.WAKE_INTERVAL_S)
+            now['t'] += seconds
+
+        def opener(url, timeout=0):
+            raise TimeoutError('asleep')
+
+        with self.assertRaises(SystemExit) as raised:
+            pub.wake('https://h79-ai-server.onrender.com', opener=opener, sleep=sleep, clock=clock, log=lambda _line: None, hook='')
+        self.assertIn('generator health check failed', str(raised.exception))
+        self.assertGreaterEqual(now['t'], pub.WAKE_LIMIT_S)
+        self.assertEqual(pub.WAKE_LIMIT_S, 600)
+        self.assertEqual(pub.POST_TIMEOUT_S, 180)
+
+    def test_502_and_503_stay_asleep_until_health_is_200(self):
+        import urllib.error
+
+        class Resp:
+            def __init__(self, status):
+                self.status = status
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *args):
+                return False
+
+        answers = [502, 503]
+        calls = []
+
+        def opener(url, timeout=0):
+            calls.append(url)
+            if answers:
+                status = answers.pop(0)
+                if status == 503:
+                    raise urllib.error.HTTPError(url, 503, 'unavailable', {}, None)
+                return Resp(status)
+            return Resp(200)
+
+        logs = []
+        pub.wake('https://h79-ai-server.onrender.com', opener=opener, sleep=lambda _seconds: None, log=logs.append, hook='')
+        self.assertEqual(len(calls), 3)
+        self.assertIn('generator health attempt 1 asleep (502)', logs)
+        self.assertIn('generator health attempt 2 asleep (503)', logs)
+        self.assertIn('generator health ok on attempt 3', logs)
+        self.assertNotIn('deploy hook', '\n'.join(logs))
+
+    def test_deploy_hook_fires_once_after_four_minutes_and_is_not_logged(self):
+        import urllib.error
+        now = {'t': 0}
+        hook = 'https://api.render.com/deploy/srv-abc?key=do-not-print'
+        calls = []
+
+        class Resp:
+            def __init__(self, status):
+                self.status = status
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *args):
+                return False
+
+        def clock():
+            return now['t']
+
+        def sleep(seconds):
+            now['t'] += seconds
+
+        def opener(url, timeout=0):
+            calls.append(url)
+            if url == hook:
+                return Resp(202)
+            if now['t'] < 300:
+                raise urllib.error.HTTPError(url, 503, 'unavailable', {}, None)
+            return Resp(200)
+
+        logs = []
+        pub.wake(
+            'https://h79-ai-server.onrender.com',
+            opener=opener,
+            sleep=sleep,
+            clock=clock,
+            log=logs.append,
+            hook=hook,
+        )
+        text = '\n'.join(logs)
+        self.assertEqual(calls.count(hook), 1)
+        self.assertGreaterEqual(now['t'], pub.WAKE_HOOK_AFTER_S)
+        self.assertIn('asleep (503)', text)
+        self.assertIn('render deploy hook called (202)', text)
+        self.assertNotIn('do-not-print', text)
+        self.assertNotIn(hook, text)
+
+    def test_missing_deploy_hook_is_skipped_for_the_full_wait(self):
+        import urllib.error
+        now = {'t': 0}
+        calls = []
+        old = os.environ.pop('RENDER_DEPLOY_HOOK', None)
+
+        def clock():
+            return now['t']
+
+        def sleep(seconds):
+            now['t'] += seconds
+
+        def opener(url, timeout=0):
+            calls.append(url)
+            raise urllib.error.HTTPError(url, 503, 'unavailable', {}, None)
+
+        try:
+            with self.assertRaises(SystemExit) as raised:
+                pub.wake('https://h79-ai-server.onrender.com', opener=opener, sleep=sleep, clock=clock, log=lambda _line: None)
+        finally:
+            if old is not None:
+                os.environ['RENDER_DEPLOY_HOOK'] = old
+        self.assertIn('generator health check failed', str(raised.exception))
+        self.assertGreaterEqual(now['t'], pub.WAKE_LIMIT_S)
+        self.assertTrue(all(url.endswith('/health') for url in calls))
+        self.assertGreater(len(calls), 1)
 
     def test_503_then_success_waits_and_returns_the_board(self):
         import io
@@ -223,6 +479,197 @@ class PostRetryTests(unittest.TestCase):
             pub.post_board('https://h79.example', 'weekly', '2026-11-15 09:00', opener=always_down, sleep=slept.append)
         self.assertIn('after 3 tries', str(gave_up.exception))
         self.assertEqual(slept, [90, 150])
+
+
+class FixedNow:
+    """Stand-in for h79_publish.datetime with a fixed VN clock."""
+    def __init__(self, stamp):
+        from datetime import datetime as real
+        self.real = real
+        self.value = real.strptime(stamp, '%Y-%m-%d %H:%M').replace(tzinfo=pub.VN)
+
+    def now(self, tz=None):
+        return self.value
+
+    def strptime(self, *args):
+        return self.real.strptime(*args)
+
+
+def story(title, url, title_en='', summary=''):
+    p = payload()
+    p['sources'] = [{'name': 'Kitco', 'url': url}]
+    p['board']['items'] = [{
+        'title': title, 'summary': summary or title, 'reason': 'r', 'title_en': title_en, 'summary_en': '', 'reason_en': '',
+        'category': 'Fed', 'impact': 'giảm', 'source_url': url,
+    }]
+    return p
+
+
+class MacroSlotTests(unittest.TestCase):
+    def test_new_crons_map_to_macro_and_old_ones_unchanged(self):
+        self.assertEqual(pub.task_for_schedule('7 5 * * 1-5'), 'macro')
+        self.assertEqual(pub.task_for_schedule('7 5 * * *'), 'macro')
+        self.assertEqual(pub.task_for_schedule('37 23 * * *'), 'macro')
+        self.assertEqual(pub.task_for_schedule('17 12 * * 1-5'), 'macro')
+        self.assertEqual(pub.task_for_schedule('13 1 * * 1-5'), 'domestic')
+        self.assertEqual(pub.task_for_schedule('0 2 * * 0'), 'weekly')
+        self.assertEqual(pub.task_for_schedule('0 12 * * 1-5'), '')
+
+    def test_slot_follows_the_vn_clock_when_the_run_starts(self):
+        from datetime import datetime
+        at = lambda h, m=0: datetime(2026, 11, 24, h, m, tzinfo=pub.VN)
+        self.assertEqual(pub.macro_slot(at(4, 59)), '')
+        self.assertEqual(pub.macro_slot(at(5, 52)), 'sang')
+        self.assertEqual(pub.macro_slot(at(10, 59)), 'sang')
+        self.assertEqual(pub.macro_slot(at(11, 0)), 'trua')
+        self.assertEqual(pub.macro_slot(at(16, 59)), 'trua')
+        self.assertEqual(pub.macro_slot(at(17, 0)), 'toi')
+        self.assertEqual(pub.macro_slot(at(23, 59)), 'toi')
+
+    def write_macro(self, root, items):
+        (root / 'data').mkdir(exist_ok=True)
+        pub.write_json(root / 'data' / 'macro-news.json', {'items': items})
+
+    def test_gate_first_slot_gap_and_legacy_items(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_macro(root, [{'date': '2026-11-23', 'title': 'hôm qua'}])
+            self.assertEqual(pub.macro_gate(root, '2026-11-24', '2026-11-24 06:40', 'sang')[:2], (True, True))
+            self.assertFalse(pub.macro_gate(root, '2026-11-24', '2026-11-24 01:10', '')[0])
+            # legacy item: no slot field, time only inside time_vn → counts as sang at 11:33
+            self.write_macro(root, [{'date': '2026-11-24', 'title': 'a', 'time_vn': 'Thứ Ba 24/11/2026 11:33 giờ VN'}])
+            self.assertEqual(pub.item_published({'date': '2026-11-24', 'time_vn': 'Thứ Ba 24/11/2026 11:33 giờ VN'}), '2026-11-24 11:33')
+            go, first, reason = pub.macro_gate(root, '2026-11-24', '2026-11-24 11:50', 'sang')
+            self.assertFalse(go)
+            self.assertIn('slot sang', reason)
+            go, _first, reason = pub.macro_gate(root, '2026-11-24', '2026-11-24 13:00', 'trua')
+            self.assertFalse(go)
+            self.assertIn('min ago', reason)
+            self.assertEqual(pub.macro_gate(root, '2026-11-24', '2026-11-24 14:33', 'trua')[:2], (True, False))
+            self.write_macro(root, [
+                {'date': '2026-11-24', 'title': 'b', 'slot': 'trua', 'published_vn': '2026-11-24 15:10'},
+                {'date': '2026-11-24', 'title': 'a', 'slot': 'sang', 'published_vn': '2026-11-24 06:40'},
+            ])
+            self.assertFalse(pub.macro_gate(root, '2026-11-24', '2026-11-24 16:30', 'trua')[0])
+            self.assertFalse(pub.macro_gate(root, '2026-11-24', '2026-11-24 17:30', 'toi')[0])
+            self.assertTrue(pub.macro_gate(root, '2026-11-24', '2026-11-24 18:10', 'toi')[0])
+
+    def test_page_without_json_items_still_counts_as_published(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_macro(root, [])
+            (root / 'bai').mkdir()
+            (root / 'bai' / '2026-11-24-tin-vi-mo-anh-huong-gia-vang.html').write_text('x', encoding='utf-8')
+            go, _first, reason = pub.macro_gate(root, '2026-11-24', '2026-11-24 12:10', 'trua')
+            self.assertFalse(go)
+            self.assertIn('already published', reason)
+
+    def test_later_update_goes_on_top_and_keeps_the_morning_story(self):
+        data = {'items': []}
+        morning = story('Vàng giữ 4.087 khi lợi suất dịu', 'https://www.kitco.com/news/article/2026-11-10/a', 'Gold holds as yields ease')
+        self.assertTrue(pub.apply_macro(data, morning, slot='sang', published_vn='2026-11-10 06:40'))
+        self.assertEqual(data['items'][0]['slot'], 'sang')
+        self.assertEqual(data['items'][0]['published_vn'], '2026-11-10 06:40')
+        noon = story('Dầu tăng vọt sau căng thẳng Trung Đông, vàng nhích lên', 'https://www.cnbc.com/2026/11/10/oil-jumps.html', 'Oil jumps on Middle East tension')
+        self.assertTrue(pub.apply_macro(data, noon, slot='trua', published_vn='2026-11-10 12:30'))
+        self.assertEqual([item['slot'] for item in data['items']], ['trua', 'sang'])
+        self.assertEqual(data['items'][1]['title'], 'Vàng giữ 4.087 khi lợi suất dịu')
+
+    def test_repeats_by_url_or_headline_are_dropped(self):
+        data = {'items': [{'date': '2026-11-09', 'title': 'Fed giữ lãi suất', 'source': {'url': 'https://x.com/old'}}]}
+        self.assertTrue(pub.apply_macro(data, story('Vàng giữ 4.087 khi lợi suất dịu', 'https://www.kitco.com/news/article/2026-11-10/a', 'Gold holds as yields ease'), slot='sang', published_vn='2026-11-10 06:40'))
+        before = json.dumps(data, sort_keys=True)
+        same_url = story('Tiêu đề khác hẳn về chứng khoán', 'https://www.kitco.com/news/article/2026-11-10/a')
+        self.assertFalse(pub.apply_macro(data, same_url, slot='trua', published_vn='2026-11-10 12:30'))
+        reworded = story('Vàng giữ mốc 4.087 khi lợi suất dịu', 'https://www.cnbc.com/2026/11/10/b.html')
+        self.assertFalse(pub.apply_macro(data, reworded, slot='trua', published_vn='2026-11-10 12:30'))
+        english = story('Tin hoàn toàn khác', 'https://www.cnbc.com/2026/11/10/c.html', 'Gold holds as yields ease')
+        self.assertFalse(pub.apply_macro(data, english, slot='trua', published_vn='2026-11-10 12:30'))
+        yesterday = story('Một tin mới', 'https://x.com/old')
+        self.assertFalse(pub.apply_macro(data, yesterday, slot='trua', published_vn='2026-11-10 12:30'))
+        self.assertEqual(json.dumps(data, sort_keys=True), before)
+        mixed = story('Vàng giữ 4.087 khi lợi suất dịu', 'https://www.kitco.com/news/article/2026-11-10/a')
+        mixed['sources'].append({'name': 'CNBC', 'url': 'https://www.cnbc.com/2026/11/10/oil.html'})
+        mixed['board']['items'].append({'title': 'Dầu tăng vọt sau căng thẳng Trung Đông', 'summary': 'Dầu Brent tăng.', 'category': 'Dầu mỏ', 'source_url': 'https://www.cnbc.com/2026/11/10/oil.html'})
+        self.assertTrue(pub.apply_macro(data, mixed, slot='trua', published_vn='2026-11-10 12:30'))
+        today = [item['title'] for item in data['items'] if item['date'] == '2026-11-10']
+        self.assertEqual(today, ['Dầu tăng vọt sau căng thẳng Trung Đông', 'Vàng giữ 4.087 khi lợi suất dịu'])
+
+    def run_main(self, root, stamp, board, schedule='7 5 * * 1-5'):
+        import io
+        from contextlib import redirect_stdout
+        saved = (pub.ROOT, pub.wake, pub.post_board, pub.datetime, os.environ.get('GITHUB_EVENT_SCHEDULE'), os.environ.get('H79_TASK'))
+        calls = []
+        pub.ROOT = root
+        pub.wake = lambda *a, **k: calls.append('wake')
+        pub.post_board = lambda *a, **k: (calls.append('post'), board)[1]
+        pub.datetime = FixedNow(stamp)
+        os.environ['GITHUB_EVENT_SCHEDULE'] = schedule
+        os.environ.pop('H79_TASK', None)
+        buf = io.StringIO()
+        try:
+            with redirect_stdout(buf):
+                code = pub.main([])
+        finally:
+            pub.ROOT, pub.wake, pub.post_board, pub.datetime = saved[:4]
+            for key, value in (('GITHUB_EVENT_SCHEDULE', saved[4]), ('H79_TASK', saved[5])):
+                if value is None:
+                    os.environ.pop(key, None)
+                else:
+                    os.environ[key] = value
+        return code, calls, buf.getvalue()
+
+    def test_main_noon_run_with_nothing_new_writes_nothing(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_macro(root, [{
+                'date': '2026-11-24', 'title': 'Vàng giữ 4.087 khi lợi suất dịu', 'slot': 'sang', 'published_vn': '2026-11-24 06:40',
+                'source': {'url': 'https://www.kitco.com/news/article/2026-11-24/a'},
+            }])
+            before = (root / 'data' / 'macro-news.json').read_text(encoding='utf-8')
+            board = story('Vàng giữ 4.087 khi lợi suất dịu', 'https://www.kitco.com/news/article/2026-11-24/a')
+            board['clock']['dateVn'] = '2026-11-24'
+            code, calls, log = self.run_main(root, '2026-11-24 12:20', board)
+            self.assertEqual(code, 0)
+            self.assertEqual(calls, ['wake', 'post'])
+            self.assertIn('no new stories', log)
+            self.assertEqual((root / 'data' / 'macro-news.json').read_text(encoding='utf-8'), before)
+            self.assertFalse((root / 'data' / 'latest-share.json').exists())
+
+    def test_main_skips_without_waking_when_too_soon_or_late_night(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_macro(root, [{'date': '2026-11-24', 'title': 'a', 'slot': 'sang', 'published_vn': '2026-11-24 10:30'}])
+            code, calls, log = self.run_main(root, '2026-11-24 12:20', {})
+            self.assertEqual((code, calls), (0, []))
+            self.assertIn('min ago', log)
+            code, calls, log = self.run_main(root, '2026-11-25 01:15', {}, schedule='17 12 * * 1-5')
+            self.assertEqual((code, calls), (0, []))
+            self.assertIn('00:00 and 05:00', log)
+
+    def test_weekend_runs_use_the_same_slots(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_macro(root, [{'date': '2026-11-28', 'title': 'a', 'slot': 'sang', 'published_vn': '2026-11-28 10:30'}])
+            code, calls, log = self.run_main(root, '2026-11-28 12:20', {}, schedule='7 5 * * *')
+            self.assertEqual((code, calls), (0, []))
+            self.assertIn('min ago', log)
+            board = story('Dầu tăng vọt cuối tuần', 'https://www.cnbc.com/2026/11/28/oil.html')
+            board['clock']['dateVn'] = '2026-11-28'
+            code, calls, log = self.run_main(root, '2026-11-28 19:30', board, schedule='17 12 * * *')
+            self.assertEqual(code, 1)  # stops at build-seo in the temp dir, after the story was written
+            self.assertEqual(calls, ['wake', 'post'])
+            data = json.loads((root / 'data' / 'macro-news.json').read_text(encoding='utf-8'))
+            self.assertEqual([item['slot'] for item in data['items']], ['toi', 'sang'])
+
+    def test_422_reason_is_logged_without_secrets(self):
+        import io
+        import urllib.error
+        body = json.dumps({'ok': False, 'error': 'Không có bài báo cùng ngày hoặc gần đây.', 'debug': {'detail': 'no articles', 'failedNumbers': []}}).encode()
+        exc = urllib.error.HTTPError('https://h79.example/api/boards', 422, 'no', {}, io.BytesIO(body))
+        reason = pub.generator_reason(exc)
+        self.assertIn('no articles', reason)
+        self.assertIn('Không có bài báo', reason)
 
 
 if __name__ == '__main__':

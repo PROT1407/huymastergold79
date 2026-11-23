@@ -3,11 +3,19 @@
 
 Vietnam is UTC+7 all year. The workflow clocks are:
 
-- macro, weekdays 06:37 VN = 23:37 UTC the previous calendar day (`37 23 * * 0-4`)
-- domestic, weekdays 08:43 VN = 01:43 UTC the same weekday (`43 1 * * 1-5`)
+- macro, every day including Saturday and Sunday, up to three updates a VN day:
+  morning 06:37 VN = 23:37 UTC the previous calendar day (`37 23 * * *`),
+  with a backup at 05:52 VN = 22:52 UTC (`52 22 * * *`);
+  noon 12:07 VN = 05:07 UTC (`7 5 * * *`); evening 19:17 VN = 12:17 UTC (`17 12 * * *`).
+  GitHub delays scheduled runs, so the slot (sang/trua/toi) comes from the VN clock
+  when the run actually starts, not from the cron line. A later update is published
+  only when the slot is still free, at least three hours have passed since the last
+  update that day, and the generator returned stories not already on the board.
+- domestic, weekdays 08:43 VN = 01:43 UTC the same weekday (`43 1 * * 1-5`),
+  with a backup at 01:13 UTC (`13 1 * * 1-5`)
 - weekly, Sunday 09:00 VN = 02:00 UTC Sunday (`0 2 * * 0`)
 
-The only secret is the repo secret H79_RUN_TOKEN. This script never prints it.
+The only required secret is the repo secret H79_RUN_TOKEN. RENDER_DEPLOY_HOOK is optional and is never printed. This script never prints either secret.
 It does not post to Telegram. If the generator quality gate fails, nothing is committed.
 """
 from __future__ import annotations
@@ -30,24 +38,36 @@ VN = ZoneInfo('Asia/Ho_Chi_Minh')
 PEAK_SELL = 191_300_000
 PEAK_DATE = '2026-01-29'
 VND_RE = re.compile(r'\d{1,3}(?:\.\d{3}){2,3}')
-TRIEU_RE = re.compile(r'(\d{2,3})(?:[.,](\d))?\s*triệu', re.I)
+TRIEU_RE = re.compile(r'(\d{1,3})(?:[.,](\d))?\s*triệu', re.I)
+DATE_DMY_RE = re.compile(r'\b(\d{1,2})/(\d{1,2})(?:/(\d{4}))?\b')
+DATE_ISO_RE = re.compile(r'\b(\d{4})-(\d{2})-(\d{2})\b')
+PRICE_TOLERANCE = 200_000
+DOMESTIC_PRODUCTS = (
+    ('SJL1L10', 'bar', 'SJC miếng'),
+    ('SJ9999', 'sjcRing', 'nhẫn SJC'),
+    ('PQHN24NTT', 'pnjRing', 'PNJ 24K'),
+)
 
 
 def redact(text):
     raw = text if isinstance(text, str) else str(text)
-    token = os.environ.get('H79_RUN_TOKEN') or ''
-    if token:
-        raw = raw.replace(token, '[redacted]')
+    for name in ('H79_RUN_TOKEN', 'RENDER_DEPLOY_HOOK'):
+        secret = os.environ.get(name) or ''
+        if secret:
+            raw = raw.replace(secret, '[redacted]')
     return raw
+
+
+MACRO_CRONS = ('37 23', '52 22', '7 5', '07 5', '17 12')
 
 
 def task_for_schedule(schedule, forced=''):
     if forced in ('macro', 'domestic', 'weekly'):
         return forced
     text = (schedule or '').strip()
-    if text.startswith('37 23'):
+    if any(text.startswith(prefix + ' ') for prefix in MACRO_CRONS):
         return 'macro'
-    if text.startswith('43 1') or text.startswith('43 01'):
+    if text.startswith(('43 1', '43 01', '13 1', '13 01')):
         return 'domestic'
     if text.startswith(('0 2', '00 2', '0 02')):
         return 'weekly'
@@ -75,20 +95,88 @@ def parse_host(base):
     return urllib.parse.urlparse(base).hostname or ''
 
 
-def wake(base, opener=None, sleep=time.sleep):
-    url = base + '/health'
+WAKE_LIMIT_S = 600
+WAKE_INTERVAL_S = 15
+WAKE_TIMEOUT_S = 45
+WAKE_HOOK_AFTER_S = 240
+ASLEEP_STATUSES = (502, 503)
+
+
+def deploy_hook(hook):
+    """Return an https deploy-hook URL, or '' when it should be skipped."""
+    if hook is None:
+        hook = os.environ.get('RENDER_DEPLOY_HOOK') or ''
+    text = str(hook).strip()
+    if not text:
+        return ''
+    parsed = urllib.parse.urlparse(text)
+    if parsed.scheme != 'https' or not parsed.netloc:
+        return 'invalid'
+    return text
+
+
+def read_health(open_url, url):
+    try:
+        with open_url(url, timeout=WAKE_TIMEOUT_S) as response:
+            return getattr(response, 'status', 200), ''
+    except urllib.error.HTTPError as exc:
+        return exc.code, ''
+    except Exception as exc:
+        return None, exc.__class__.__name__
+
+
+def send_deploy_hook(open_url, hook_url, say):
+    try:
+        with open_url(hook_url, timeout=30) as response:
+            status = getattr(response, 'status', 200)
+        say(f'render deploy hook called ({status})')
+    except urllib.error.HTTPError as exc:
+        say(f'render deploy hook called ({exc.code})')
+    except Exception as exc:
+        say(f'render deploy hook failed: {exc.__class__.__name__}')
+
+
+def wake(base, opener=None, sleep=time.sleep, clock=time.time, log=print, hook=None):
+    """Poll /health for up to ten minutes. 502 and 503 mean Render is still asleep.
+
+    When RENDER_DEPLOY_HOOK is set, call that https URL once after about four
+    minutes of failures, then keep waiting. The hook URL is never logged.
+    """
+    url = base.rstrip('/') + '/health'
     open_url = opener or urllib.request.urlopen
-    deadline = time.time() + 90
+    started = clock()
+    deadline = started + WAKE_LIMIT_S
+    attempt = 0
+    hook_sent = False
+    hook_url = deploy_hook(hook)
+
+    def say(message):
+        text = redact(message)
+        if hook_url and hook_url != 'invalid':
+            text = text.replace(hook_url, '[redacted]')
+        log(text)
+
+    if hook_url == 'invalid':
+        say('render deploy hook ignored')
+        hook_url = ''
     while True:
-        try:
-            with open_url(url, timeout=20) as response:
-                if getattr(response, 'status', 200) == 200:
-                    return
-        except Exception:
-            pass
-        if time.time() >= deadline:
+        attempt += 1
+        status, error_name = read_health(open_url, url)
+        if status == 200:
+            say(f'generator health ok on attempt {attempt}')
+            return
+        if status in ASLEEP_STATUSES:
+            say(f'generator health attempt {attempt} asleep ({status})')
+        elif error_name:
+            say(f'generator health attempt {attempt} failed: {error_name}')
+        else:
+            say(f'generator health attempt {attempt} status {status}')
+        if clock() >= deadline:
             raise SystemExit('generator health check failed')
-        sleep(3)
+        if hook_url and not hook_sent and clock() - started >= WAKE_HOOK_AFTER_S:
+            send_deploy_hook(open_url, hook_url, say)
+            hook_sent = True
+        sleep(WAKE_INTERVAL_S)
 
 
 def parse_vn_stamp(text):
@@ -137,6 +225,7 @@ def quotes_before(data, datetime_vn):
 
 # Three tries spread over about five minutes: immediate, then 90s, then 150s.
 POST_RETRY_WAITS = (90, 150)
+POST_TIMEOUT_S = 180
 
 
 def post_board(base, task, datetime_vn, opener=None, previous=None, sleep=time.sleep):
@@ -158,12 +247,13 @@ def post_board(base, task, datetime_vn, opener=None, previous=None, sleep=time.s
             'Accept': 'application/json',
         })
         try:
-            with open_url(req, timeout=180) as response:
+            with open_url(req, timeout=POST_TIMEOUT_S) as response:
                 payload = json.load(response)
         except urllib.error.HTTPError as exc:
             if exc.code == 429 or 500 <= exc.code <= 599:
                 last = exc.code
                 continue
+            print(redact(f'generator HTTP {exc.code}: {generator_reason(exc)}'))
             raise SystemExit(f'generator HTTP {exc.code}')
         except (urllib.error.URLError, TimeoutError, OSError):
             last = 'timeout'
@@ -172,6 +262,27 @@ def post_board(base, task, datetime_vn, opener=None, previous=None, sleep=time.s
             raise SystemExit('generator rejected the draft')
         return payload
     raise SystemExit(f'generator failed after 3 tries ({last})')
+
+
+def generator_reason(exc):
+    """Short, secret-free reason from a generator 4xx body (error text and debug summary)."""
+    try:
+        raw = exc.read() if hasattr(exc, 'read') else b''
+        data = json.loads(raw.decode('utf-8', 'replace') or '{}') if raw else {}
+    except Exception:
+        return 'no details'
+    if not isinstance(data, dict):
+        return 'no details'
+    debug = data.get('debug') if isinstance(data.get('debug'), dict) else {}
+    parts = [str(data.get('error') or '')[:200]]
+    if debug.get('detail'):
+        parts.append(f"detail={str(debug['detail'])[:120]}")
+    for key in ('failedNumbers', 'missingFacts', 'flagged'):
+        value = debug.get(key)
+        if isinstance(value, list) and value:
+            parts.append(f'{key}={len(value)}: ' + '; '.join(str(item)[:80] for item in value[:3]))
+    text = ' | '.join(part for part in parts if part)
+    return text or 'no details'
 
 
 def read_json(path, fallback):
@@ -190,6 +301,94 @@ def macro_done(root, date):
     if any(item.get('date') == date for item in data.get('items', [])):
         return True
     return (Path(root) / 'bai' / f'{date}-tin-vi-mo-anh-huong-gia-vang.html').exists()
+
+
+# Macro slots by VN hour when the run actually starts. 00:00–04:59 is no slot:
+# that is a previous evening run GitHub pushed past midnight.
+MACRO_SLOTS = (('sang', 5, 11), ('trua', 11, 17), ('toi', 17, 24))
+MACRO_MIN_GAP_MIN = 180
+SIMILAR = 0.6
+
+
+def macro_slot(now_vn):
+    hour = now_vn.hour
+    for name, start, end in MACRO_SLOTS:
+        if start <= hour < end:
+            return name
+    return ''
+
+
+def item_published(item):
+    """'YYYY-MM-DD HH:MM' when this macro item went up. Old items carry it only inside time_vn."""
+    if item.get('published_vn'):
+        return item['published_vn']
+    match = re.search(r'(\d{1,2})/(\d{1,2})/(\d{4})\s+(\d{1,2}):(\d{2})', item.get('time_vn') or '')
+    if match and f'{match.group(3)}-{int(match.group(2)):02d}-{int(match.group(1)):02d}' == item.get('date'):
+        return f'{match.group(3)}-{int(match.group(2)):02d}-{int(match.group(1)):02d} {int(match.group(4)):02d}:{match.group(5)}'
+    return f"{item.get('date')} 06:00"
+
+
+def minutes_between(earlier, later):
+    fmt = '%Y-%m-%d %H:%M'
+    return (datetime.strptime(later, fmt) - datetime.strptime(earlier, fmt)).total_seconds() / 60
+
+
+def macro_gate(root, date, datetime_vn, slot):
+    """Return (go, first, reason). first=True means no macro update exists yet for this VN date."""
+    if not slot:
+        return False, False, 'no macro slot between 00:00 and 05:00 VN'
+    data = read_json(Path(root) / 'data' / 'macro-news.json', {'items': []})
+    today = [item for item in data.get('items', []) if item.get('date') == date]
+    if not today:
+        if (Path(root) / 'bai' / f'{date}-tin-vi-mo-anh-huong-gia-vang.html').exists():
+            return False, False, f'macro {date} already published'
+        return True, True, f'macro {date} first update ({slot})'
+    used = {item.get('slot') or 'sang' for item in today}
+    if slot in used:
+        return False, False, f'macro {date} slot {slot} already published'
+    last = max(item_published(item) for item in today)
+    gap = minutes_between(last, datetime_vn)
+    if gap < MACRO_MIN_GAP_MIN:
+        return False, False, f'macro {date} last update {last}, only {int(gap)} min ago'
+    return True, False, f'macro {date} extra update ({slot})'
+
+
+def words(text):
+    return {word for word in re.findall(r'\w+', (text or '').lower()) if len(word) > 1}
+
+
+def similar(a, b):
+    left, right = words(a), words(b)
+    if not left or not right:
+        return False
+    return len(left & right) / len(left | right) >= SIMILAR
+
+
+def item_urls(item):
+    return {(item.get(key) or {}).get('url') for key in ('source', 'source2') if (item.get(key) or {}).get('url')}
+
+
+def is_repeat(new, earlier):
+    """A story is a repeat when it cites the same article or reads like an earlier title or summary."""
+    seen_urls = set()
+    for old in earlier:
+        seen_urls |= item_urls(old)
+    if (new.get('source') or {}).get('url') in seen_urls:
+        return True
+    for old in earlier:
+        for key in ('title', 'title_en', 'summary', 'summary_en'):
+            if similar(new.get(key), old.get(key)):
+                return True
+    return False
+
+
+def recent_macro(items, date):
+    """Items of this VN date plus the latest earlier date, the stories a later update must not repeat."""
+    earlier_dates = sorted({item.get('date') for item in items if item.get('date') and item.get('date') < date})
+    keep = {date}
+    if earlier_dates:
+        keep.add(earlier_dates[-1])
+    return [item for item in items if item.get('date') in keep]
 
 
 def domestic_done(root, date):
@@ -213,12 +412,21 @@ def already_published(root, task, date):
     return False
 
 
-def apply_macro(data, payload):
+def apply_macro(data, payload, slot='', published_vn=''):
+    """Prepend this run's stories. Without a slot, a date that already has stories is left alone.
+
+    With a slot (sang/trua/toi), a later update of the same date is added on top of the
+    earlier ones; stories that repeat today's or the previous day's board are dropped.
+    Earlier stories are never changed or removed.
+    """
     clock = payload['clock']
     date = clock['dateVn']
     items = data.setdefault('items', [])
-    if any(item.get('date') == date for item in items):
+    has_today = any(item.get('date') == date for item in items)
+    if has_today and not slot:
         return False
+    earlier = recent_macro(items, date) if has_today else []
+    published_vn = published_vn or f"{date} {clock['timeVn']}"
     sources = [src for src in payload.get('sources') or [] if src.get('url')]
     by_url = {src['url']: src for src in sources}
     new_items = []
@@ -244,6 +452,11 @@ def apply_macro(data, payload):
         }
         if len(sources) > 1 and sources[1]['url'] != src['url']:
             item['source2'] = {'name': sources[1].get('name') or 'Nguồn', 'name_en': sources[1].get('name') or 'Source', 'url': sources[1]['url']}
+        if slot:
+            item['slot'] = slot
+            item['published_vn'] = published_vn
+        if earlier and is_repeat(item, earlier + new_items):
+            continue
         new_items.append(item)
     if not new_items:
         return False
@@ -275,21 +488,188 @@ def vnd_amounts(text):
     for match in TRIEU_RE.finditer(text or ''):
         frac = int(match.group(2)) * 100_000 if match.group(2) else 0
         found.add(int(match.group(1)) * 1_000_000 + frac)
-    return {amount for amount in found if amount >= 50_000_000}
+    return {amount for amount in found if amount >= 1_000_000}
+
+
+def as_int(value):
+    try:
+        amount = int(round(float(value)))
+    except (TypeError, ValueError):
+        return 0
+    return amount if amount > 0 else 0
+
+
+def add_amount(allowed, value):
+    amount = as_int(value)
+    if amount:
+        allowed.add(amount)
+
+
+def amount_allowed(amount, allowed):
+    if amount in allowed:
+        return True
+    return any(abs(amount - item) <= PRICE_TOLERANCE for item in allowed)
 
 
 def prose_ok(text, allowed):
     amounts = vnd_amounts(text)
-    return bool(amounts) and amounts <= allowed
+    return bool(amounts) and all(amount_allowed(amount, allowed) for amount in amounts)
+
+
+def mentioned_dates(text, year):
+    found = set()
+    for match in DATE_ISO_RE.finditer(text or ''):
+        found.add(f'{match.group(1)}-{match.group(2)}-{match.group(3)}')
+    for match in DATE_DMY_RE.finditer(text or ''):
+        day, month = int(match.group(1)), int(match.group(2))
+        if not (1 <= day <= 31 and 1 <= month <= 12):
+            continue
+        found.add(f'{int(match.group(3) or year):04d}-{month:02d}-{day:02d}')
+    return found
+
+
+def dates_ok(text, allowed, year):
+    return mentioned_dates(text, year) <= allowed
+
+
+def line_ok(text, allowed, dates, year):
+    return isinstance(text, str) and prose_ok(text, allowed) and dates_ok(text, dates, year)
+
+
+def row_by_code(rows, code):
+    return next((row for row in rows or [] if row.get('code') == code and row.get('buy') and row.get('sell')), None)
 
 
 def allowed_prices(rows):
     allowed = set()
     for row in rows or []:
-        for key in ('buy', 'sell'):
-            if row.get(key):
-                allowed.add(int(row[key]))
+        for key in ('buy', 'sell', 'prev_buy', 'prev_sell'):
+            add_amount(allowed, row.get(key))
+        for key in ('chg_buy', 'chg_sell'):
+            add_amount(allowed, abs(as_int(row.get(key))))
+        buy, prev_buy = as_int(row.get('buy')), as_int(row.get('prev_buy'))
+        sell, prev_sell = as_int(row.get('sell')), as_int(row.get('prev_sell'))
+        if buy and prev_buy:
+            add_amount(allowed, abs(buy - prev_buy))
+        if sell and prev_sell:
+            add_amount(allowed, abs(sell - prev_sell))
     return allowed
+
+
+def derived_amounts(data, rows, payload):
+    """Row prices plus world conversion, premium, like-for-like deltas, and the peak."""
+    allowed = allowed_prices(rows)
+    data = data or {}
+    world = data.get('world') or {}
+    payload = payload or {}
+    market = payload.get('market') or {}
+    converted = as_int(world.get('vnd_per_luong') or market.get('vnd_per_luong') or market.get('converted'))
+    add_amount(allowed, converted)
+    add_amount(allowed, world.get('gap_sjc_sell'))
+    add_amount(allowed, market.get('gap') or market.get('premium'))
+    add_amount(allowed, PEAK_SELL)
+    peak = data.get('peak') or {}
+    add_amount(allowed, peak.get('buy'))
+    add_amount(allowed, peak.get('sell'))
+    previous = payload.get('previous') or {}
+    for code, key, _label in DOMESTIC_PRODUCTS:
+        row = row_by_code(rows, code)
+        quote = previous.get(key) or {}
+        add_amount(allowed, quote.get('buy'))
+        add_amount(allowed, quote.get('sell'))
+        if not row:
+            continue
+        if converted and code == 'SJL1L10':
+            add_amount(allowed, abs(as_int(row.get('sell')) - converted))
+            add_amount(allowed, abs(as_int(row.get('buy')) - converted))
+        add_amount(allowed, abs(PEAK_SELL - as_int(row.get('buy'))))
+        add_amount(allowed, abs(PEAK_SELL - as_int(row.get('sell'))))
+        if quote.get('buy'):
+            add_amount(allowed, abs(as_int(row.get('buy')) - as_int(quote.get('buy'))))
+        if quote.get('sell'):
+            add_amount(allowed, abs(as_int(row.get('sell')) - as_int(quote.get('sell'))))
+    bar = row_by_code(rows, 'SJL1L10')
+    for item in (data.get('sjc_compare') or {}).values():
+        if not isinstance(item, dict):
+            continue
+        add_amount(allowed, item.get('buy'))
+        add_amount(allowed, item.get('sell'))
+        if not bar:
+            continue
+        if item.get('buy'):
+            add_amount(allowed, abs(as_int(bar.get('buy')) - as_int(item.get('buy'))))
+        if item.get('sell'):
+            add_amount(allowed, abs(as_int(bar.get('sell')) - as_int(item.get('sell'))))
+    for line in (payload.get('board') or {}).get('price_lines') or []:
+        allowed.update(vnd_amounts(line))
+    return allowed
+
+
+def allowed_dates(data, rows, payload):
+    dates = {PEAK_DATE, (payload.get('clock') or {}).get('dateVn') or ''}
+    dates.discard('')
+    for row in rows or []:
+        if row.get('prev_date'):
+            dates.add(row['prev_date'])
+    for item in ((data or {}).get('sjc_compare') or {}).values():
+        if isinstance(item, dict) and item.get('date'):
+            dates.add(item['date'])
+    return dates
+
+
+def fmt_vnd(amount):
+    return f'{as_int(amount):,}'.replace(',', '.')
+
+
+def fmt_trieu(amount):
+    scaled = int(round(as_int(amount) / 100_000))
+    whole, tenth = divmod(scaled, 10)
+    if tenth:
+        return f'{whole},{tenth} triệu'
+    return f'{whole} triệu'
+
+
+def quote_sentence(label, row):
+    if not row:
+        return ''
+    line = f"{label} mua {fmt_vnd(row['buy'])} / bán {fmt_vnd(row['sell'])}"
+    delta = 0
+    try:
+        if row.get('chg_sell') is not None:
+            delta = int(round(float(row.get('chg_sell'))))
+    except (TypeError, ValueError):
+        delta = 0
+    if not delta and row.get('prev_sell'):
+        delta = as_int(row.get('sell')) - as_int(row.get('prev_sell'))
+    if delta:
+        line += f", bán {'tăng' if delta > 0 else 'giảm'} {fmt_vnd(abs(delta))}"
+    return line
+
+
+def domestic_fallback(data, rows):
+    parts = []
+    for code, _key, label in DOMESTIC_PRODUCTS:
+        sentence = quote_sentence(label, row_by_code(rows, code))
+        if sentence:
+            parts.append(sentence)
+    if not parts:
+        for row in rows or []:
+            if row.get('buy') and row.get('sell'):
+                parts.append(quote_sentence(row.get('type') or 'Giá', row))
+                break
+    world = (data or {}).get('world') or {}
+    converted = as_int(world.get('vnd_per_luong'))
+    bar = row_by_code(rows, 'SJL1L10')
+    premium = as_int(world.get('gap_sjc_sell'))
+    if not premium and bar and converted:
+        premium = abs(as_int(bar.get('sell')) - converted)
+    if converted:
+        parts.append(f'Giá thế giới quy đổi {fmt_trieu(converted)} đồng/lượng')
+    if premium:
+        parts.append(f'Chênh SJC bán so với quy đổi {fmt_trieu(premium)}')
+    if not parts:
+        return 'Chưa đủ giá trong ngày để viết nhận định.'
+    return '. '.join(parts) + '.'
 
 
 def keep_peak(peak, rows, date):
@@ -315,25 +695,19 @@ def keep_peak(peak, rows, date):
     }
 
 
-def apply_domestic_prose(data, payload, rows):
-    allowed = allowed_prices(rows)
-    board = payload.get('board') or {}
-    changed = False
-    for key in ('analysis', 'analysis_en'):
-        lines = [line for line in (board.get(key) or []) if isinstance(line, str) and prose_ok(line, allowed)]
-        if lines:
-            data[key] = lines
-            changed = True
-    for key in ('advice', 'advice_en', 'quick_advice', 'quick_advice_en'):
-        text = board.get(key)
-        if isinstance(text, str) and prose_ok(text, allowed):
-            data[key] = text
-            changed = True
+def accepted_refs(board, allowed, dates, year):
     refs = []
     for ref in board.get('refs') or []:
         url = ref.get('url') or ''
-        facts = [fact for fact in (ref.get('facts') or []) if isinstance(fact, str) and (prose_ok(fact, allowed) or not vnd_amounts(fact))]
-        if url.startswith('https://') and facts and all(not vnd_amounts(fact) or prose_ok(fact, allowed) for fact in facts):
+        facts = []
+        for fact in ref.get('facts') or []:
+            if not isinstance(fact, str) or not dates_ok(fact, dates, year):
+                continue
+            amounts = vnd_amounts(fact)
+            if amounts and not all(amount_allowed(amount, allowed) for amount in amounts):
+                continue
+            facts.append(fact)
+        if url.startswith('https://') and facts:
             refs.append({
                 'name': ref.get('name') or 'Nguồn',
                 'url': url,
@@ -341,16 +715,47 @@ def apply_domestic_prose(data, payload, rows):
                 'name_en': ref.get('name_en') or ref.get('name') or '',
                 'facts_en': ref.get('facts_en') or [],
             })
-    if refs:
-        data['refs'] = refs
-        changed = True
+    return refs
+
+
+def apply_domestic_prose(data, payload, rows):
+    board = payload.get('board') or {}
+    year = (payload.get('clock') or {}).get('dateVn', '2026-01-01').split('-')[0]
+    allowed = derived_amounts(data, rows, payload)
+    dates = allowed_dates(data, rows, payload)
+    analysis = [line for line in (board.get('analysis') or []) if line_ok(line, allowed, dates, year)]
+    advice = board.get('advice') if line_ok(board.get('advice'), allowed, dates, year) else ''
+    quick = board.get('quick_advice') if line_ok(board.get('quick_advice'), allowed, dates, year) else ''
+    analysis_en = [line for line in (board.get('analysis_en') or []) if line_ok(line, allowed, dates, year)]
+    advice_en = board.get('advice_en') if line_ok(board.get('advice_en'), allowed, dates, year) else ''
+    quick_en = board.get('quick_advice_en') if line_ok(board.get('quick_advice_en'), allowed, dates, year) else ''
+    if analysis and advice:
+        data['analysis'] = analysis
+        data['advice'] = advice
+        data['quick_advice'] = quick or analysis[0]
+        if analysis_en:
+            data['analysis_en'] = analysis_en
+        if advice_en:
+            data['advice_en'] = advice_en
+        if quick_en:
+            data['quick_advice_en'] = quick_en
+        data['refs'] = accepted_refs(board, allowed, dates, year)
+    else:
+        fallback = domestic_fallback(data, rows)
+        print('warning: domestic prose was not accepted; wrote today\'s prices and dropped stale refs')
+        data['analysis'] = [fallback]
+        data['advice'] = fallback
+        data['quick_advice'] = fallback
+        data['refs'] = []
     news = []
     for item in board.get('world_news') or []:
         text = item.get('text') or ''
         source = item.get('source') or {}
         url = source.get('url') or ''
         amounts = vnd_amounts(text)
-        if not url.startswith('https://') or (amounts and not amounts <= allowed):
+        if not url.startswith('https://') or not dates_ok(text, dates, year):
+            continue
+        if amounts and not all(amount_allowed(amount, allowed) for amount in amounts):
             continue
         host = urllib.request.urlparse(url).hostname or ''
         news.append({
@@ -360,15 +765,13 @@ def apply_domestic_prose(data, payload, rows):
         })
     if news:
         data['world_news'] = news
-        changed = True
     date = payload['clock']['dateVn']
     kept = keep_peak(data.get('peak'), rows, date)
     if kept != data.get('peak'):
         data['peak'] = kept
-        changed = True
     elif 'peak' not in data and kept:
         data['peak'] = kept
-    return changed
+    return True
 
 
 def weekly_entry(payload):
@@ -428,15 +831,16 @@ def commit_and_push(message, runner=subprocess.run):
     return True
 
 
-def apply_payload(root, task, payload):
+def apply_payload(root, task, payload, slot='', published_vn=''):
     root = Path(root)
     changed = False
     if task == 'macro':
         macro_path = root / 'data' / 'macro-news.json'
         macro = read_json(macro_path, {'items': []})
-        if apply_macro(macro, payload):
-            write_json(macro_path, macro)
-            changed = True
+        if not apply_macro(macro, payload, slot=slot, published_vn=published_vn):
+            return False
+        write_json(macro_path, macro)
+        changed = True
         fed_path = root / 'data' / 'fedwatch.json'
         if fed_path.exists():
             fed = read_json(fed_path, {})
@@ -458,7 +862,7 @@ def apply_payload(root, task, payload):
     share_path = root / 'data' / 'latest-share.json'
     share = apply_share(read_json(share_path, {}), task, payload)
     write_json(share_path, share)
-    return changed or True
+    return True
 
 
 def main(argv=None):
@@ -467,19 +871,31 @@ def main(argv=None):
         argv = sys.argv[1:]
     if argv and argv[0] in ('macro', 'domestic', 'weekly'):
         forced = argv[0]
-    task = task_for_schedule(os.environ.get('GITHUB_EVENT_SCHEDULE', ''), os.environ.get('H79_TASK') or forced)
+    manual = os.environ.get('H79_TASK') or forced
+    task = task_for_schedule(os.environ.get('GITHUB_EVENT_SCHEDULE', ''), manual)
     if not task:
         print('missing task')
         return 1
-    datetime_vn, date = vn_now()
-    if already_published(ROOT, task, date):
+    now = datetime.now(VN)
+    datetime_vn, date = vn_now(now)
+    print(f'{task} datetime_vn={datetime_vn}')
+    slot = ''
+    if task == 'macro':
+        slot = macro_slot(now)
+        if manual:
+            slot = slot or 'sang'
+        go, _first, reason = macro_gate(ROOT, date, datetime_vn, slot)
+        print(reason)
+        if not go:
+            return 0
+    elif already_published(ROOT, task, date):
         print(f'{task} {date} already published')
         return 0
     base = api_base()
     wake(base)
     previous = None
     if task == 'domestic':
-        previous = quotes_before(read_json(ROOT / 'data' / 'vn-gold-daily.json', {}), date)
+        previous = quotes_before(read_json(ROOT / 'data' / 'vn-gold-daily.json', {}), datetime_vn)
     payload = post_board(base, task, datetime_vn, previous=previous)
     if task == 'domestic':
         result = subprocess.run([sys.executable, str(ROOT / 'scripts' / 'update-vn-gold.py')], cwd=ROOT)
@@ -487,13 +903,16 @@ def main(argv=None):
             subprocess.run(['git', 'checkout', '--', 'data/vn-gold-daily.json', 'data/vn-gold-history.json'], cwd=ROOT)
             print('price update failed')
             return 1
-    apply_payload(ROOT, task, payload)
+    if not apply_payload(ROOT, task, payload, slot=slot, published_vn=datetime_vn):
+        print(f'{task} {date} {slot}: no new stories, nothing published')
+        return 0
     seo = subprocess.run([sys.executable, str(ROOT / 'scripts' / 'build-seo.py')], cwd=ROOT)
     if seo.returncode != 0:
         print('build-seo failed')
         return 1
-    commit_and_push(f'H79 {task} {date}')
-    print(f'published {task} {date}')
+    label = f'{task} {date}' + (f' {slot}' if slot else '')
+    commit_and_push(f'H79 {label}')
+    print(f'published {label}')
     return 0
 
 

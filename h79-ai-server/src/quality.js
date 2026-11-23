@@ -800,6 +800,13 @@ function reject(error, debug, retryable) {
   return { ok: false, status: 422, error, debug, retryable: Boolean(retryable) };
 }
 
+function sameCalendarDay(left, right) {
+  const day = (value) => ((String(value || '').match(/(\d{4}-\d{2}-\d{2})/) || [])[1] || '');
+  const leftDay = day(left);
+  const rightDay = day(right);
+  return Boolean(leftDay) && leftDay === rightDay;
+}
+
 function minutesApart(left, right) {
   const parse = (value) => {
     const match = String(value || '').match(/(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})/);
@@ -1033,8 +1040,9 @@ function gate(input) {
       }
       let blob = weeklyBlob(board);
       if (contradictsClock(blob, clock)) return reject('Bản tin sai thứ hoặc gọi nhầm tuần mới.', { failedNumbers: [], missingFacts: [], detail: 'wrong weekday' }, !input.final);
-      if (/vùng (mua|bán)|kế hoạch (mua|bán)|\b(buy|sell) zone\b/i.test(blob)) {
-        return reject('Bản tin tuần không được viết vùng vào lệnh.', { failedNumbers: [], missingFacts: [], detail: 'trade plan' }, false);
+      if (/vùng (mua|bán)|kế hoạch (mua|bán)|\b(buy|sell) zone\b|stop[- ]loss|take[- ]profit|cắt lỗ|chốt lời|điểm vào lệnh|entry (zone|point)/i.test(blob)
+        || /(^|[^\p{L}])(BÁN|MUA|SL|TP\d?)(?![\p{L}\d.])/u.test(blob)) {
+        return reject('Bản tin tuần không được viết vùng vào lệnh.', { failedNumbers: [], missingFacts: [], detail: 'trade plan' }, !input.final);
       }
       let tokens = extractNumbers(blob);
       let bad = failedNumbers(tokens, allowed);
@@ -1097,7 +1105,7 @@ function gate(input) {
       allowed.exact.add(amount);
     }
   }
-  if (input.sourceTime && minutesApart(input.sourceTime, clock.datetimeVn) > 360) {
+  if (input.sourceTime && !sameCalendarDay(input.sourceTime, clock.datetimeVn) && minutesApart(input.sourceTime, clock.datetimeVn) > 360) {
     return reject('Giờ cập nhật của nguồn lệch quá xa mốc yêu cầu.', { failedNumbers: [], missingFacts: [], detail: `source time ${input.sourceTime}` }, false);
   }
   lockDomesticBoard(board, input.priceLines && input.priceLines.length ? input.priceLines : [], { prices, previous: input.previous, sourceTime: input.sourceTime, clock });

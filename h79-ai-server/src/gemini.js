@@ -30,8 +30,9 @@ function taskInstruction(task, clock, extra) {
   if (task === 'weekly') {
     const week = extra.week || {};
     return [
-      'Nhiệm vụ: weekly = bản tin tổng hợp tin vàng từ thứ Hai đến thứ Sáu.',
-      `Khoảng ngày: ${week.start || ''} đến ${week.end || ''}.`,
+      'Nhiệm vụ: weekly = bản tin tổng hợp tin vàng trong tuần, gồm cả tin thứ Bảy và Chủ nhật nếu nguồn có.',
+      `Tuần: ${week.start || ''} đến ${week.end || ''}. Bài nguồn từ ${week.from || week.start || ''} đến ${week.to || week.end || ''}.`,
+      'Đây là bản tin thuần tin tức: không viết BÁN, MUA, SL, TP, điểm vào lệnh, cắt lỗ hay chốt lời.',
       ...clockLines,
       'Viết bản tin tiếng Việt, tiếng Anh, một dòng Facebook và một dòng Zalo.',
       'Mọi câu tiếng Việt phải là tiếng Việt. Không chép nguyên câu tiếng Anh. Giữ đúng nhãn headline và core, tháng và năm. Giá USD viết 4.150 USD/oz.',
@@ -41,7 +42,7 @@ function taskInstruction(task, clock, extra) {
       'Nợ công Mỹ là một câu sự kiện riêng: "Nợ công Mỹ đã trên 40 nghìn tỷ USD." Không gắn câu nợ công vào câu về đáy giá vàng.',
       'Chỉ viết Ngân hàng Thế giới khi câu có số dự báo. Không thêm câu kết chung chung.',
       'Trong tiếng Việt viết "Ngân hàng Thế giới" thay cho World Bank, và "Triển vọng Thị trường Hàng hóa" thay cho Commodity Markets Outlook.',
-      'Tiêu đề hoặc câu mở phải ghi khoảng tuần, ví dụ tuần 2/11–6/11.',
+      'Tiêu đề hoặc câu mở phải ghi khoảng tuần, ví dụ tuần 16/11–22/11.',
       'Không thêm nhận định địa chính trị. Không viết đàm phán với Iran là lực hỗ trợ giá, trừ khi một câu dữ kiện nói đúng điều đó.',
       'Không viết vùng vào lệnh và không viết kế hoạch mua hoặc bán.',
       'Phải đưa đủ diễn biến giá và mọi số liệu đã tách (lương, phần trăm, lộ trình các năm). Chép đúng câu nguồn. Không biến một mốc tương lai thành mức giá đang giữ.',

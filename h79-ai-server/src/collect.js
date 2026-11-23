@@ -114,13 +114,24 @@ function addDays(iso, days) {
   return `${date.getUTCFullYear()}-${String(date.getUTCMonth() + 1).padStart(2, '0')}-${String(date.getUTCDate()).padStart(2, '0')}`;
 }
 
+// The recap week runs Monday to Sunday VN. A Monday run is a Sunday run that GitHub
+// pushed past midnight, so it still recaps the week that just ended.
+function weekRange(clock) {
+  let monday;
+  if (clock.weekdayIndex === 0) monday = addDays(clock.dateVn, -6);
+  else if (clock.weekdayIndex === 1) monday = addDays(clock.dateVn, -7);
+  else monday = addDays(clock.dateVn, -(clock.weekdayIndex - 1));
+  return { start: monday, end: addDays(monday, 6) };
+}
+
+// Weekly articles: from the Saturday before the recap week up to the run date
+// (Sunday run = 9 days), weekend articles included, so a late Sunday run still
+// finds the week's news.
 function dateWindow(task, clock) {
   if (task === 'weekly') {
-    let monday;
-    if (clock.weekdayIndex === 0) monday = addDays(clock.dateVn, -6);
-    else if (clock.weekdayIndex === 6) monday = addDays(clock.dateVn, -5);
-    else monday = addDays(clock.dateVn, -(clock.weekdayIndex - 1));
-    return { start: monday, end: addDays(monday, 4) };
+    const week = weekRange(clock);
+    const end = clock.dateVn < week.end ? clock.dateVn : week.end;
+    return { start: addDays(week.start, -2), end };
   }
   return { start: addDays(clock.dateEt, -1), end: clock.dateVn };
 }
@@ -612,7 +623,7 @@ async function collectNews(task, fetchImpl, clock) {
     hasPrices: false,
     facts,
     pricePath: pricePathFromFacts(facts),
-    week: window,
+    week: task === 'weekly' ? { ...weekRange(clock), from: window.start, to: window.end } : window,
     fedwatch: {
       stated: fedItems.length > 0,
       items: fedItems.slice(0, 6),
@@ -630,6 +641,7 @@ async function collect(task, fetchImpl, clock) {
 module.exports = {
   collect,
   dateWindow,
+  weekRange,
   extractFacts,
   htmlToText,
   extractSourceTime,
