@@ -481,5 +481,182 @@ class PostRetryTests(unittest.TestCase):
         self.assertEqual(slept, [90, 150])
 
 
+class FixedNow:
+    """Stand-in for h79_publish.datetime with a fixed VN clock."""
+    def __init__(self, stamp):
+        from datetime import datetime as real
+        self.real = real
+        self.value = real.strptime(stamp, '%Y-%m-%d %H:%M').replace(tzinfo=pub.VN)
+
+    def now(self, tz=None):
+        return self.value
+
+    def strptime(self, *args):
+        return self.real.strptime(*args)
+
+
+def story(title, url, title_en='', summary=''):
+    p = payload()
+    p['sources'] = [{'name': 'Kitco', 'url': url}]
+    p['board']['items'] = [{
+        'title': title, 'summary': summary or title, 'reason': 'r', 'title_en': title_en, 'summary_en': '', 'reason_en': '',
+        'category': 'Fed', 'impact': 'giảm', 'source_url': url,
+    }]
+    return p
+
+
+class MacroSlotTests(unittest.TestCase):
+    def test_new_crons_map_to_macro_and_old_ones_unchanged(self):
+        self.assertEqual(pub.task_for_schedule('7 5 * * 1-5'), 'macro')
+        self.assertEqual(pub.task_for_schedule('17 12 * * 1-5'), 'macro')
+        self.assertEqual(pub.task_for_schedule('13 1 * * 1-5'), 'domestic')
+        self.assertEqual(pub.task_for_schedule('0 2 * * 0'), 'weekly')
+        self.assertEqual(pub.task_for_schedule('0 12 * * 1-5'), '')
+
+    def test_slot_follows_the_vn_clock_when_the_run_starts(self):
+        from datetime import datetime
+        at = lambda h, m=0: datetime(2026, 11, 24, h, m, tzinfo=pub.VN)
+        self.assertEqual(pub.macro_slot(at(4, 59)), '')
+        self.assertEqual(pub.macro_slot(at(5, 52)), 'sang')
+        self.assertEqual(pub.macro_slot(at(10, 59)), 'sang')
+        self.assertEqual(pub.macro_slot(at(11, 0)), 'trua')
+        self.assertEqual(pub.macro_slot(at(16, 59)), 'trua')
+        self.assertEqual(pub.macro_slot(at(17, 0)), 'toi')
+        self.assertEqual(pub.macro_slot(at(23, 59)), 'toi')
+
+    def write_macro(self, root, items):
+        (root / 'data').mkdir(exist_ok=True)
+        pub.write_json(root / 'data' / 'macro-news.json', {'items': items})
+
+    def test_gate_first_slot_gap_and_legacy_items(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_macro(root, [{'date': '2026-11-23', 'title': 'hôm qua'}])
+            self.assertEqual(pub.macro_gate(root, '2026-11-24', '2026-11-24 06:40', 'sang')[:2], (True, True))
+            self.assertFalse(pub.macro_gate(root, '2026-11-24', '2026-11-24 01:10', '')[0])
+            # legacy item: no slot field, time only inside time_vn → counts as sang at 11:33
+            self.write_macro(root, [{'date': '2026-11-24', 'title': 'a', 'time_vn': 'Thứ Ba 24/11/2026 11:33 giờ VN'}])
+            self.assertEqual(pub.item_published({'date': '2026-11-24', 'time_vn': 'Thứ Ba 24/11/2026 11:33 giờ VN'}), '2026-11-24 11:33')
+            go, first, reason = pub.macro_gate(root, '2026-11-24', '2026-11-24 11:50', 'sang')
+            self.assertFalse(go)
+            self.assertIn('slot sang', reason)
+            go, _first, reason = pub.macro_gate(root, '2026-11-24', '2026-11-24 13:00', 'trua')
+            self.assertFalse(go)
+            self.assertIn('min ago', reason)
+            self.assertEqual(pub.macro_gate(root, '2026-11-24', '2026-11-24 14:33', 'trua')[:2], (True, False))
+            self.write_macro(root, [
+                {'date': '2026-11-24', 'title': 'b', 'slot': 'trua', 'published_vn': '2026-11-24 15:10'},
+                {'date': '2026-11-24', 'title': 'a', 'slot': 'sang', 'published_vn': '2026-11-24 06:40'},
+            ])
+            self.assertFalse(pub.macro_gate(root, '2026-11-24', '2026-11-24 16:30', 'trua')[0])
+            self.assertFalse(pub.macro_gate(root, '2026-11-24', '2026-11-24 17:30', 'toi')[0])
+            self.assertTrue(pub.macro_gate(root, '2026-11-24', '2026-11-24 18:10', 'toi')[0])
+
+    def test_page_without_json_items_still_counts_as_published(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_macro(root, [])
+            (root / 'bai').mkdir()
+            (root / 'bai' / '2026-11-24-tin-vi-mo-anh-huong-gia-vang.html').write_text('x', encoding='utf-8')
+            go, _first, reason = pub.macro_gate(root, '2026-11-24', '2026-11-24 12:10', 'trua')
+            self.assertFalse(go)
+            self.assertIn('already published', reason)
+
+    def test_later_update_goes_on_top_and_keeps_the_morning_story(self):
+        data = {'items': []}
+        morning = story('Vàng giữ 4.087 khi lợi suất dịu', 'https://www.kitco.com/news/article/2026-11-10/a', 'Gold holds as yields ease')
+        self.assertTrue(pub.apply_macro(data, morning, slot='sang', published_vn='2026-11-10 06:40'))
+        self.assertEqual(data['items'][0]['slot'], 'sang')
+        self.assertEqual(data['items'][0]['published_vn'], '2026-11-10 06:40')
+        noon = story('Dầu tăng vọt sau căng thẳng Trung Đông, vàng nhích lên', 'https://www.cnbc.com/2026/11/10/oil-jumps.html', 'Oil jumps on Middle East tension')
+        self.assertTrue(pub.apply_macro(data, noon, slot='trua', published_vn='2026-11-10 12:30'))
+        self.assertEqual([item['slot'] for item in data['items']], ['trua', 'sang'])
+        self.assertEqual(data['items'][1]['title'], 'Vàng giữ 4.087 khi lợi suất dịu')
+
+    def test_repeats_by_url_or_headline_are_dropped(self):
+        data = {'items': [{'date': '2026-11-09', 'title': 'Fed giữ lãi suất', 'source': {'url': 'https://x.com/old'}}]}
+        self.assertTrue(pub.apply_macro(data, story('Vàng giữ 4.087 khi lợi suất dịu', 'https://www.kitco.com/news/article/2026-11-10/a', 'Gold holds as yields ease'), slot='sang', published_vn='2026-11-10 06:40'))
+        before = json.dumps(data, sort_keys=True)
+        same_url = story('Tiêu đề khác hẳn về chứng khoán', 'https://www.kitco.com/news/article/2026-11-10/a')
+        self.assertFalse(pub.apply_macro(data, same_url, slot='trua', published_vn='2026-11-10 12:30'))
+        reworded = story('Vàng giữ mốc 4.087 khi lợi suất dịu', 'https://www.cnbc.com/2026/11/10/b.html')
+        self.assertFalse(pub.apply_macro(data, reworded, slot='trua', published_vn='2026-11-10 12:30'))
+        english = story('Tin hoàn toàn khác', 'https://www.cnbc.com/2026/11/10/c.html', 'Gold holds as yields ease')
+        self.assertFalse(pub.apply_macro(data, english, slot='trua', published_vn='2026-11-10 12:30'))
+        yesterday = story('Một tin mới', 'https://x.com/old')
+        self.assertFalse(pub.apply_macro(data, yesterday, slot='trua', published_vn='2026-11-10 12:30'))
+        self.assertEqual(json.dumps(data, sort_keys=True), before)
+        mixed = story('Vàng giữ 4.087 khi lợi suất dịu', 'https://www.kitco.com/news/article/2026-11-10/a')
+        mixed['sources'].append({'name': 'CNBC', 'url': 'https://www.cnbc.com/2026/11/10/oil.html'})
+        mixed['board']['items'].append({'title': 'Dầu tăng vọt sau căng thẳng Trung Đông', 'summary': 'Dầu Brent tăng.', 'category': 'Dầu mỏ', 'source_url': 'https://www.cnbc.com/2026/11/10/oil.html'})
+        self.assertTrue(pub.apply_macro(data, mixed, slot='trua', published_vn='2026-11-10 12:30'))
+        today = [item['title'] for item in data['items'] if item['date'] == '2026-11-10']
+        self.assertEqual(today, ['Dầu tăng vọt sau căng thẳng Trung Đông', 'Vàng giữ 4.087 khi lợi suất dịu'])
+
+    def run_main(self, root, stamp, board, schedule='7 5 * * 1-5'):
+        import io
+        from contextlib import redirect_stdout
+        saved = (pub.ROOT, pub.wake, pub.post_board, pub.datetime, os.environ.get('GITHUB_EVENT_SCHEDULE'), os.environ.get('H79_TASK'))
+        calls = []
+        pub.ROOT = root
+        pub.wake = lambda *a, **k: calls.append('wake')
+        pub.post_board = lambda *a, **k: (calls.append('post'), board)[1]
+        pub.datetime = FixedNow(stamp)
+        os.environ['GITHUB_EVENT_SCHEDULE'] = schedule
+        os.environ.pop('H79_TASK', None)
+        buf = io.StringIO()
+        try:
+            with redirect_stdout(buf):
+                code = pub.main([])
+        finally:
+            pub.ROOT, pub.wake, pub.post_board, pub.datetime = saved[:4]
+            for key, value in (('GITHUB_EVENT_SCHEDULE', saved[4]), ('H79_TASK', saved[5])):
+                if value is None:
+                    os.environ.pop(key, None)
+                else:
+                    os.environ[key] = value
+        return code, calls, buf.getvalue()
+
+    def test_main_noon_run_with_nothing_new_writes_nothing(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_macro(root, [{
+                'date': '2026-11-24', 'title': 'Vàng giữ 4.087 khi lợi suất dịu', 'slot': 'sang', 'published_vn': '2026-11-24 06:40',
+                'source': {'url': 'https://www.kitco.com/news/article/2026-11-24/a'},
+            }])
+            before = (root / 'data' / 'macro-news.json').read_text(encoding='utf-8')
+            board = story('Vàng giữ 4.087 khi lợi suất dịu', 'https://www.kitco.com/news/article/2026-11-24/a')
+            board['clock']['dateVn'] = '2026-11-24'
+            code, calls, log = self.run_main(root, '2026-11-24 12:20', board)
+            self.assertEqual(code, 0)
+            self.assertEqual(calls, ['wake', 'post'])
+            self.assertIn('no new stories', log)
+            self.assertEqual((root / 'data' / 'macro-news.json').read_text(encoding='utf-8'), before)
+            self.assertFalse((root / 'data' / 'latest-share.json').exists())
+
+    def test_main_skips_without_waking_when_too_soon_late_night_or_weekend(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_macro(root, [{'date': '2026-11-24', 'title': 'a', 'slot': 'sang', 'published_vn': '2026-11-24 10:30'}])
+            code, calls, log = self.run_main(root, '2026-11-24 12:20', {})
+            self.assertEqual((code, calls), (0, []))
+            self.assertIn('min ago', log)
+            code, calls, log = self.run_main(root, '2026-11-25 01:15', {}, schedule='17 12 * * 1-5')
+            self.assertEqual((code, calls), (0, []))
+            self.assertIn('00:00 and 05:00', log)
+            code, calls, log = self.run_main(root, '2026-11-28 00:30', {}, schedule='17 12 * * 1-5')
+            self.assertEqual((code, calls), (0, []))
+            self.assertIn('weekend', log)
+
+    def test_422_reason_is_logged_without_secrets(self):
+        import io
+        import urllib.error
+        body = json.dumps({'ok': False, 'error': 'Không có bài báo cùng ngày hoặc gần đây.', 'debug': {'detail': 'no articles', 'failedNumbers': []}}).encode()
+        exc = urllib.error.HTTPError('https://h79.example/api/boards', 422, 'no', {}, io.BytesIO(body))
+        reason = pub.generator_reason(exc)
+        self.assertIn('no articles', reason)
+        self.assertIn('Không có bài báo', reason)
+
+
 if __name__ == '__main__':
     unittest.main()

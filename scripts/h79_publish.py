@@ -3,8 +3,14 @@
 
 Vietnam is UTC+7 all year. The workflow clocks are:
 
-- macro, weekdays 06:37 VN = 23:37 UTC the previous calendar day (`37 23 * * 0-4`),
-  with a backup at 22:52 UTC (`52 22 * * 0-4`)
+- macro, weekdays, up to three updates a VN day:
+  morning 06:37 VN = 23:37 UTC the previous calendar day (`37 23 * * 0-4`),
+  with a backup at 05:52 VN = 22:52 UTC (`52 22 * * 0-4`);
+  noon 12:07 VN = 05:07 UTC (`7 5 * * 1-5`); evening 19:17 VN = 12:17 UTC (`17 12 * * 1-5`).
+  GitHub delays scheduled runs, so the slot (sang/trua/toi) comes from the VN clock
+  when the run actually starts, not from the cron line. A later update is published
+  only when the slot is still free, at least three hours have passed since the last
+  update that day, and the generator returned stories not already on the board.
 - domestic, weekdays 08:43 VN = 01:43 UTC the same weekday (`43 1 * * 1-5`),
   with a backup at 01:13 UTC (`13 1 * * 1-5`)
 - weekly, Sunday 09:00 VN = 02:00 UTC Sunday (`0 2 * * 0`)
@@ -52,11 +58,14 @@ def redact(text):
     return raw
 
 
+MACRO_CRONS = ('37 23', '52 22', '7 5', '07 5', '17 12')
+
+
 def task_for_schedule(schedule, forced=''):
     if forced in ('macro', 'domestic', 'weekly'):
         return forced
     text = (schedule or '').strip()
-    if text.startswith('37 23') or text.startswith('52 22'):
+    if any(text.startswith(prefix + ' ') for prefix in MACRO_CRONS):
         return 'macro'
     if text.startswith(('43 1', '43 01', '13 1', '13 01')):
         return 'domestic'
@@ -244,6 +253,7 @@ def post_board(base, task, datetime_vn, opener=None, previous=None, sleep=time.s
             if exc.code == 429 or 500 <= exc.code <= 599:
                 last = exc.code
                 continue
+            print(redact(f'generator HTTP {exc.code}: {generator_reason(exc)}'))
             raise SystemExit(f'generator HTTP {exc.code}')
         except (urllib.error.URLError, TimeoutError, OSError):
             last = 'timeout'
@@ -252,6 +262,27 @@ def post_board(base, task, datetime_vn, opener=None, previous=None, sleep=time.s
             raise SystemExit('generator rejected the draft')
         return payload
     raise SystemExit(f'generator failed after 3 tries ({last})')
+
+
+def generator_reason(exc):
+    """Short, secret-free reason from a generator 4xx body (error text and debug summary)."""
+    try:
+        raw = exc.read() if hasattr(exc, 'read') else b''
+        data = json.loads(raw.decode('utf-8', 'replace') or '{}') if raw else {}
+    except Exception:
+        return 'no details'
+    if not isinstance(data, dict):
+        return 'no details'
+    debug = data.get('debug') if isinstance(data.get('debug'), dict) else {}
+    parts = [str(data.get('error') or '')[:200]]
+    if debug.get('detail'):
+        parts.append(f"detail={str(debug['detail'])[:120]}")
+    for key in ('failedNumbers', 'missingFacts', 'flagged'):
+        value = debug.get(key)
+        if isinstance(value, list) and value:
+            parts.append(f'{key}={len(value)}: ' + '; '.join(str(item)[:80] for item in value[:3]))
+    text = ' | '.join(part for part in parts if part)
+    return text or 'no details'
 
 
 def read_json(path, fallback):
@@ -270,6 +301,94 @@ def macro_done(root, date):
     if any(item.get('date') == date for item in data.get('items', [])):
         return True
     return (Path(root) / 'bai' / f'{date}-tin-vi-mo-anh-huong-gia-vang.html').exists()
+
+
+# Macro slots by VN hour when the run actually starts. 00:00–04:59 is no slot:
+# that is a previous evening run GitHub pushed past midnight.
+MACRO_SLOTS = (('sang', 5, 11), ('trua', 11, 17), ('toi', 17, 24))
+MACRO_MIN_GAP_MIN = 180
+SIMILAR = 0.6
+
+
+def macro_slot(now_vn):
+    hour = now_vn.hour
+    for name, start, end in MACRO_SLOTS:
+        if start <= hour < end:
+            return name
+    return ''
+
+
+def item_published(item):
+    """'YYYY-MM-DD HH:MM' when this macro item went up. Old items carry it only inside time_vn."""
+    if item.get('published_vn'):
+        return item['published_vn']
+    match = re.search(r'(\d{1,2})/(\d{1,2})/(\d{4})\s+(\d{1,2}):(\d{2})', item.get('time_vn') or '')
+    if match and f'{match.group(3)}-{int(match.group(2)):02d}-{int(match.group(1)):02d}' == item.get('date'):
+        return f'{match.group(3)}-{int(match.group(2)):02d}-{int(match.group(1)):02d} {int(match.group(4)):02d}:{match.group(5)}'
+    return f"{item.get('date')} 06:00"
+
+
+def minutes_between(earlier, later):
+    fmt = '%Y-%m-%d %H:%M'
+    return (datetime.strptime(later, fmt) - datetime.strptime(earlier, fmt)).total_seconds() / 60
+
+
+def macro_gate(root, date, datetime_vn, slot):
+    """Return (go, first, reason). first=True means no macro update exists yet for this VN date."""
+    if not slot:
+        return False, False, 'no macro slot between 00:00 and 05:00 VN'
+    data = read_json(Path(root) / 'data' / 'macro-news.json', {'items': []})
+    today = [item for item in data.get('items', []) if item.get('date') == date]
+    if not today:
+        if (Path(root) / 'bai' / f'{date}-tin-vi-mo-anh-huong-gia-vang.html').exists():
+            return False, False, f'macro {date} already published'
+        return True, True, f'macro {date} first update ({slot})'
+    used = {item.get('slot') or 'sang' for item in today}
+    if slot in used:
+        return False, False, f'macro {date} slot {slot} already published'
+    last = max(item_published(item) for item in today)
+    gap = minutes_between(last, datetime_vn)
+    if gap < MACRO_MIN_GAP_MIN:
+        return False, False, f'macro {date} last update {last}, only {int(gap)} min ago'
+    return True, False, f'macro {date} extra update ({slot})'
+
+
+def words(text):
+    return {word for word in re.findall(r'\w+', (text or '').lower()) if len(word) > 1}
+
+
+def similar(a, b):
+    left, right = words(a), words(b)
+    if not left or not right:
+        return False
+    return len(left & right) / len(left | right) >= SIMILAR
+
+
+def item_urls(item):
+    return {(item.get(key) or {}).get('url') for key in ('source', 'source2') if (item.get(key) or {}).get('url')}
+
+
+def is_repeat(new, earlier):
+    """A story is a repeat when it cites the same article or reads like an earlier title or summary."""
+    seen_urls = set()
+    for old in earlier:
+        seen_urls |= item_urls(old)
+    if (new.get('source') or {}).get('url') in seen_urls:
+        return True
+    for old in earlier:
+        for key in ('title', 'title_en', 'summary', 'summary_en'):
+            if similar(new.get(key), old.get(key)):
+                return True
+    return False
+
+
+def recent_macro(items, date):
+    """Items of this VN date plus the latest earlier date, the stories a later update must not repeat."""
+    earlier_dates = sorted({item.get('date') for item in items if item.get('date') and item.get('date') < date})
+    keep = {date}
+    if earlier_dates:
+        keep.add(earlier_dates[-1])
+    return [item for item in items if item.get('date') in keep]
 
 
 def domestic_done(root, date):
@@ -293,12 +412,21 @@ def already_published(root, task, date):
     return False
 
 
-def apply_macro(data, payload):
+def apply_macro(data, payload, slot='', published_vn=''):
+    """Prepend this run's stories. Without a slot, a date that already has stories is left alone.
+
+    With a slot (sang/trua/toi), a later update of the same date is added on top of the
+    earlier ones; stories that repeat today's or the previous day's board are dropped.
+    Earlier stories are never changed or removed.
+    """
     clock = payload['clock']
     date = clock['dateVn']
     items = data.setdefault('items', [])
-    if any(item.get('date') == date for item in items):
+    has_today = any(item.get('date') == date for item in items)
+    if has_today and not slot:
         return False
+    earlier = recent_macro(items, date) if has_today else []
+    published_vn = published_vn or f"{date} {clock['timeVn']}"
     sources = [src for src in payload.get('sources') or [] if src.get('url')]
     by_url = {src['url']: src for src in sources}
     new_items = []
@@ -324,6 +452,11 @@ def apply_macro(data, payload):
         }
         if len(sources) > 1 and sources[1]['url'] != src['url']:
             item['source2'] = {'name': sources[1].get('name') or 'Nguồn', 'name_en': sources[1].get('name') or 'Source', 'url': sources[1]['url']}
+        if slot:
+            item['slot'] = slot
+            item['published_vn'] = published_vn
+        if earlier and is_repeat(item, earlier + new_items):
+            continue
         new_items.append(item)
     if not new_items:
         return False
@@ -698,15 +831,16 @@ def commit_and_push(message, runner=subprocess.run):
     return True
 
 
-def apply_payload(root, task, payload):
+def apply_payload(root, task, payload, slot='', published_vn=''):
     root = Path(root)
     changed = False
     if task == 'macro':
         macro_path = root / 'data' / 'macro-news.json'
         macro = read_json(macro_path, {'items': []})
-        if apply_macro(macro, payload):
-            write_json(macro_path, macro)
-            changed = True
+        if not apply_macro(macro, payload, slot=slot, published_vn=published_vn):
+            return False
+        write_json(macro_path, macro)
+        changed = True
         fed_path = root / 'data' / 'fedwatch.json'
         if fed_path.exists():
             fed = read_json(fed_path, {})
@@ -728,7 +862,7 @@ def apply_payload(root, task, payload):
     share_path = root / 'data' / 'latest-share.json'
     share = apply_share(read_json(share_path, {}), task, payload)
     write_json(share_path, share)
-    return changed or True
+    return True
 
 
 def main(argv=None):
@@ -737,13 +871,27 @@ def main(argv=None):
         argv = sys.argv[1:]
     if argv and argv[0] in ('macro', 'domestic', 'weekly'):
         forced = argv[0]
-    task = task_for_schedule(os.environ.get('GITHUB_EVENT_SCHEDULE', ''), os.environ.get('H79_TASK') or forced)
+    manual = os.environ.get('H79_TASK') or forced
+    task = task_for_schedule(os.environ.get('GITHUB_EVENT_SCHEDULE', ''), manual)
     if not task:
         print('missing task')
         return 1
-    datetime_vn, date = vn_now()
+    now = datetime.now(VN)
+    datetime_vn, date = vn_now(now)
     print(f'{task} datetime_vn={datetime_vn}')
-    if already_published(ROOT, task, date):
+    slot = ''
+    if task == 'macro':
+        slot = macro_slot(now)
+        if manual:
+            slot = slot or 'sang'
+        elif now.weekday() >= 5:
+            print(f'macro {date} is a weekend day in VN, skipped')
+            return 0
+        go, _first, reason = macro_gate(ROOT, date, datetime_vn, slot)
+        print(reason)
+        if not go:
+            return 0
+    elif already_published(ROOT, task, date):
         print(f'{task} {date} already published')
         return 0
     base = api_base()
@@ -758,13 +906,16 @@ def main(argv=None):
             subprocess.run(['git', 'checkout', '--', 'data/vn-gold-daily.json', 'data/vn-gold-history.json'], cwd=ROOT)
             print('price update failed')
             return 1
-    apply_payload(ROOT, task, payload)
+    if not apply_payload(ROOT, task, payload, slot=slot, published_vn=datetime_vn):
+        print(f'{task} {date} {slot}: no new stories, nothing published')
+        return 0
     seo = subprocess.run([sys.executable, str(ROOT / 'scripts' / 'build-seo.py')], cwd=ROOT)
     if seo.returncode != 0:
         print('build-seo failed')
         return 1
-    commit_and_push(f'H79 {task} {date}')
-    print(f'published {task} {date}')
+    label = f'{task} {date}' + (f' {slot}' if slot else '')
+    commit_and_push(f'H79 {label}')
+    print(f'published {label}')
     return 0
 
 
