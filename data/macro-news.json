@@ -1,6 +1,6 @@
 {
  "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC | Chiến tranh | Ngân hàng TW. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
- "updated": "2026-11-24",
+ "updated": "2026-11-25",
  "fomc": {
   "source": {
    "name": "Federal Reserve – FOMC calendars",
@@ -56,6 +56,110 @@
   "note_en": "Decision at 2:00 PM ET on day two of the meeting, press conference at 2:30 PM ET. * = with economic projections (dot plot)."
  },
  "items": [
+  {
+   "date": "2026-11-25",
+   "category": "Vàng",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "Vàng đảo chiều giảm mạnh dưới mốc 3.600 USD khi chứng khoán công nghệ bị bán tháo và tâm lý tiêu dùng Mỹ tăng vọt",
+   "summary": "Vàng giao ngay chốt phiên giao dịch gần mức 3.552,50 USD/oz, giảm 81,70 USD tương đương 2,25%, sau khi có lúc chạm mức thấp 3.546,00 USD trong ngày. Chỉ số niềm tin người tiêu dùng của The Conference Board trong tháng 11 tăng vọt 11,4 điểm lên 103,3, vượt xa kỳ vọng và đạt mức cao nhất kể từ tháng 1/2025. Trong khi đó, nhóm cổ phiếu công nghệ tiếp tục đối mặt với áp lực bán tháo trên diện rộng. Theo Kitco (17:16 EST 24/11), xác suất CME FedWatch cho một lần tăng 25 điểm cơ bản tháng 12 là 95%.",
+   "reason": "Ngắn hạn, dữ liệu kinh tế Mỹ tích cực cùng áp lực thanh khoản từ đợt bán tháo cổ phiếu công nghệ đẩy vàng sụt giảm mạnh. Dài hạn, rủi ro lạm phát dai dẳng và kỳ vọng Fed duy trì chính sách tiền tệ thắt chặt tiếp tục tạo áp lực điều chỉnh lên kim loại quý.",
+   "source": {
+    "name": "Gold, silver extend losses as tech stocks slide, Fed inflation test looms - Kitco PM Report | Kitco News",
+    "name_en": "Gold, silver extend losses as tech stocks slide, Fed inflation test looms - Kitco PM Report | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-24/gold-silver-extend-losses-tech-stocks-slide-fed-inflation-test-looms-kitco"
+   },
+   "time_vn": "Thứ Tư 25/11/2026 05:32 giờ VN",
+   "title_en": "Gold, silver extend losses as tech stocks slide, Fed inflation test looms",
+   "summary_en": "Spot gold was trading near $3,552.50 an ounce, down $81.70, or 2.25%, while silver was trading near $40.790, down $2.250, or 5.22%, on the session. Gold traded as low as $3,546.00 during the day. The Conference Board's November consumer confidence index surged 11.4 points to 103.3 from an upwardly revised 91.9 in October.",
+   "reason_en": "Stronger consumer confidence and broader portfolio liquidation pressured gold in the near term, while persistent inflation risks and a hawkish Federal Reserve maintain downward pressure over the longer term.",
+   "time_en": "Tuesday, November 24, 2026, 17:32 EST",
+   "source2": {
+    "name": "Gold’s selloff is sowing the seeds of its next rally – Theo’s Iggy Ioppe | Kitco News",
+    "name_en": "Gold’s selloff is sowing the seeds of its next rally – Theo’s Iggy Ioppe | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-24/golds-selloff-sowing-seeds-its-next-rally-theos-iggy-ioppe"
+   },
+   "slot": "sang",
+   "published_vn": "2026-11-25 05:32"
+  },
+  {
+   "date": "2026-11-25",
+   "category": "Ngân hàng TW",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "BCA Research khép lại chu kỳ giữ vị thế mua vàng trong 4 năm do áp lực từ đồng USD và Fed",
+   "summary": "Roukaya Ibrahim, Trưởng bộ phận Chiến lược Hàng hóa tại BCA Research, cho biết bà đã chuyển sang trạng thái trung lập đối với vàng sau khi vị thế mua dài hạn bị chạm mức dừng lỗ do giá rớt xuống dưới 3,7 USD/oz. Dù vậy, hãng nghiên cứu này nhấn mạnh nhu cầu từ các ngân hàng trung ương vẫn là yếu tố cấu trúc hỗ trợ phần sàn cho giá vàng.",
+   "reason": "Ngắn hạn, đà phục hồi của đồng USD và lập trường thắt chặt của Fed khiến dòng tiền ETF đối mặt rủi ro rút vốn, đè nặng lên giá vàng. Dài hạn, nhu cầu mua ròng của các ngân hàng trung ương và định giá đắt đỏ của đồng bạc xanh sẽ tạo nền hỗ trợ vững chắc cho kim loại quý.",
+   "source": {
+    "name": "BCA Research ends four-year bullish gold trade as US dollar, Fed take their toll | Kitco News",
+    "name_en": "BCA Research ends four-year bullish gold trade as US dollar, Fed take their toll | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-24/bca-research-ends-four-year-bullish-gold-trade-us-dollar-fed-take-their"
+   },
+   "time_vn": "Thứ Tư 25/11/2026 05:32 giờ VN",
+   "title_en": "BCA Research ends four-year bullish gold trade as US dollar, Fed take their toll",
+   "summary_en": "Roukaya Ibrahim, Chief Commodities Strategist at BCA Research, said that she is now neutral on gold after being stopped out of her long position when prices dropped below $3,700 an ounce. She noted that central bank gold purchases are a structural trend that will limit the magnitude of any drawdown in gold prices.",
+   "reason_en": "A strengthening dollar and hawkish Fed policy weigh on gold near term, while structural central bank demand provides a long-term floor for prices.",
+   "time_en": "Tuesday, November 24, 2026, 17:32 EST",
+   "source2": {
+    "name": "Gold’s selloff is sowing the seeds of its next rally – Theo’s Iggy Ioppe | Kitco News",
+    "name_en": "Gold’s selloff is sowing the seeds of its next rally – Theo’s Iggy Ioppe | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-24/golds-selloff-sowing-seeds-its-next-rally-theos-iggy-ioppe"
+   },
+   "slot": "sang",
+   "published_vn": "2026-11-25 05:32"
+  },
+  {
+   "date": "2026-11-25",
+   "category": "Tương quan",
+   "priority": 1,
+   "impact": "trung lập",
+   "title": "HSBC, J.P. Morgan và StoneX thực hiện thành công các giao dịch trực tiếp đầu tiên sử dụng Quyền lợi Vàng Gộp",
+   "summary": "Sự tiến hóa kỹ thuật số của vàng đạt cột mốc quan trọng khi các tổ chức lớn tiến hành các giao dịch trên thị trường bán buôn sử dụng Quyền lợi Vàng Gộp thuộc sáng kiến Vàng Kỹ thuật số Bán buôn của Hội đồng Vàng Thế giới (WGC). Các thỏi vàng đạt chuẩn giao nhận Loco London 400 oz đã được đưa vào hệ sinh thái vàng kỹ thuật số để tạo ra PGI.",
+   "reason": "Ngắn hạn và dài hạn, việc số hóa vàng giúp tăng tính thanh khoản, cho phép sở hữu phân đoạn và sử dụng vàng linh hoạt hơn làm tài sản thế chấp trong hệ thống tài chính hiện đại.",
+   "source": {
+    "name": "HSBC, J.P. Morgan and StoneX complete first live trades using Pooled Gold Interests (PGI) | Kitco News",
+    "name_en": "HSBC, J.P. Morgan and StoneX complete first live trades using Pooled Gold Interests (PGI) | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-24/hsbc-jp-morgan-and-stonex-complete-first-live-trades-using-pooled-gold"
+   },
+   "time_vn": "Thứ Tư 25/11/2026 05:32 giờ VN",
+   "title_en": "HSBC, J.P. Morgan and StoneX complete first live trades using Pooled Gold Interests (PGI)",
+   "summary_en": "Gold's digital evolution passed a major milestone after HSBC, J.P. Morgan and StoneX conducted wholesale-market transactions using Pooled Gold Interests (PGI) for the first time. Loco London physical 400-ounce Good Delivery gold bars were placed into the Wholesale Digital Gold ecosystem, and PGI were created.",
+   "reason_en": "Digitalization enhances gold's liquidity, allowing fractional ownership and more efficient use of physical gold as collateral across modern financial markets.",
+   "time_en": "Tuesday, November 24, 2026, 17:32 EST",
+   "source2": {
+    "name": "Gold’s selloff is sowing the seeds of its next rally – Theo’s Iggy Ioppe | Kitco News",
+    "name_en": "Gold’s selloff is sowing the seeds of its next rally – Theo’s Iggy Ioppe | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-24/golds-selloff-sowing-seeds-its-next-rally-theos-iggy-ioppe"
+   },
+   "slot": "sang",
+   "published_vn": "2026-11-25 05:32"
+  },
+  {
+   "date": "2026-11-25",
+   "category": "Dầu mỏ",
+   "priority": 1,
+   "impact": "tăng",
+   "title": "Dầu thô bật tăng mạnh do rủi ro địa chính trị tại Vùng Vịnh và các cuộc tấn công nhằm vào tàu chở dầu",
+   "summary": "Giá dầu thô Nymex WTI tăng khoảng 2,3% lên mức chốt phiên 82,05 USD/thùng, trong khi dầu Brent tăng 2,3% lên 91,40 USD/thùng. Sự phục hồi diễn ra sau các thông tin về việc tàu chở dầu tiếp tục chịu ảnh hưởng bởi mìn hải quân tại tuyến đường hàng hải chiến lược eo biển Hormuz.",
+   "reason": "Ngắn hạn, giá năng lượng tăng tái thiết lập phần bù rủi ro địa chính trị, qua đó hỗ trợ nhu cầu phòng thủ của vàng. Dài hạn, chi phí năng lượng cao hơn cũng duy trì áp lực lạm phát, buộc các ngân hàng trung ương phải duy trì chính sách thận trọng.",
+   "source": {
+    "name": "Gold, silver extend losses as tech stocks slide, Fed inflation test looms - Kitco PM Report | Kitco News",
+    "name_en": "Gold, silver extend losses as tech stocks slide, Fed inflation test looms - Kitco PM Report | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-24/gold-silver-extend-losses-tech-stocks-slide-fed-inflation-test-looms-kitco"
+   },
+   "time_vn": "Thứ Tư 25/11/2026 05:32 giờ VN",
+   "title_en": "Gold, silver extend losses as tech stocks slide, Fed inflation test looms - Kitco PM Report",
+   "summary_en": "Nymex WTI crude futures advanced approximately 2.3% to settle at $82.05 a barrel, while Brent crude gained 2.3% to finish at $91.40 following renewed security incidents in the Strait of Hormuz.",
+   "reason_en": "Geopolitical risks in the Middle East support defensive demand for gold in the near term, while higher energy costs sustain broader inflation pressures over the long term.",
+   "time_en": "Tuesday, November 24, 2026, 17:32 EST",
+   "source2": {
+    "name": "Gold’s selloff is sowing the seeds of its next rally – Theo’s Iggy Ioppe | Kitco News",
+    "name_en": "Gold’s selloff is sowing the seeds of its next rally – Theo’s Iggy Ioppe | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-24/golds-selloff-sowing-seeds-its-next-rally-theos-iggy-ioppe"
+   },
+   "slot": "sang",
+   "published_vn": "2026-11-25 05:32"
+  },
   {
    "date": "2026-11-24",
    "category": "Vàng",
