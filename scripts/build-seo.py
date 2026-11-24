@@ -295,6 +295,8 @@ def article_html(a, en=False):
     if not a or not a.get("sections"): return ""
     def para(x):
         body = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", e(x.get("p", ""))).replace(chr(10), "<br>")
+        # [chữ](link) → link nội bộ (chỉ h79gold.com hoặc đường dẫn bai/, en/) để dẫn về bài cũ
+        body = re.sub(r"\[([^\]]+)\]\(((?:https://h79gold\.com/|bai/|en/)[^\s)\"'<>]+)\)", r'<a href="\2">\1</a>', body)
         if x.get("h"):
             gap = "<br>" if chr(10) in x.get("p", "") else " "
             return f'<p><b>{e(x["h"])}:</b>{gap}{body}</p>'

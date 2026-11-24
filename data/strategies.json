@@ -1,6 +1,176 @@
 {
  "strategies": [
   {
+   "id": "2026-11-24-nhan-dinh-chung",
+   "date": "2026-11-24",
+   "time": "11:30",
+   "session": "Nhận định chung",
+   "session_en": "Daily Outlook",
+   "url": "bai/2026-11-24-nhan-dinh-vang-nhan-dinh-chung-1130.html",
+   "url_en": "en/posts/2026-11-24-gold-plan-daily-outlook-1130.html",
+   "headline": "Vàng 24/11 nhận định chung: hai đỉnh dưới cản 3.677–3.722, chờ xác nhận để về 3.200 rồi 2.700",
+   "headline_en": "H79 Gold Plan – Daily Outlook, Nov 24: Double Top Under 3,677–3,722 – Sell Rallies Toward 3,200, Then 2,700",
+   "title": "Vàng 24/11 nhận định chung: hai đỉnh dưới cản 3.677–3.722, chờ xác nhận để về 3.200 rồi 2.700",
+   "title_en": "H79 Gold Plan – Daily Outlook, Nov 24: Double Top Under 3,677–3,722 – Sell Rallies Toward 3,200, Then 2,700",
+   "image": "img/charts/gold-2026-11-24-nhan-dinh-chung.jpg",
+   "image_alt": "Biểu đồ vàng 4 giờ 24/11: hai đỉnh 3.688,7 và 3.676,8 dưới vùng cản 3.677–3.722, cổ 3.621,8; BÁN 3.677–3.722, SL 3.745; mục tiêu 3.200–3.250 rồi 2.700–2.796; nhìn lại nhận định 6/11 đã chạm 4.005 → 3.900 → 3.689",
+   "image_en": "img/charts/gold-2026-11-24-daily-outlook.jpg",
+   "image_alt_en": "Gold 4-hour chart Nov 24: double top at 3,688.7 and 3,676.8 under 3,677–3,722 resistance, neckline 3,621.8; SELL 3,677–3,722, SL 3,745; targets 3,200–3,250 then 2,700–2,796; Nov 6 outlook targets 4,005 → 3,900 → 3,689 hit",
+   "article": {
+    "sections": [
+     {
+      "h": "Nhìn lại nhận định 6/11",
+      "p": "Bài [nhận định chung 6/11](https://h79gold.com/bai/2026-11-06-nhan-dinh-vang-nhan-dinh-chung-1015.html) chọn bán hồi 4.075–4.095, SL 4.166, mục tiêu 4.005 → 3.900 → 3.689. Giá đi đúng phác thảo: hồi lên 4.079,7 chiều 6/11, cao nhất sau đó 4.147,3 (10/11), không chạm SL; rồi về 4.005 (11/11), 3.900 (12/11), 3.689 (19/11) và chạm đáy 3.503 rạng sáng 21/11."
+     }
+    ]
+   },
+   "article_en": {
+    "sections": [
+     {
+      "h": "Nov 6 outlook, revisited",
+      "p": "The [Nov 6 daily outlook](https://h79gold.com/en/posts/2026-11-06-gold-plan-daily-outlook-1015.html) said sell the bounce at 4,075–4,095, SL 4,166, targets 4,005 → 3,900 → 3,689. Price followed the sketch: a bounce to 4,079.7 later on Nov 6, a best rally of 4,147.3 (Nov 9) that never hit the stop, then 4,005 (Nov 11), 3,900 (Nov 12), 3,689 (Nov 19) and a 3,503 low on Nov 20 (ET)."
+     }
+    ]
+   },
+   "trend": "Hai đỉnh 3.688,7 và 3.676,8 ngay dưới cản 3.677–3.722 (vùng đỡ cũ bị phá 19/11). Xu hướng trung, ngắn hạn vẫn giảm: BÁN hồi 3.677–3.722, SL 3.745, mục tiêu 3.200 rồi 2.700. Xác nhận khi nến H4 đóng dưới 3.622.",
+   "trend_en": "Double top at 3,688.7 and 3,676.8 right under 3,677–3,722 resistance (old support broken Nov 19). The medium- and short-term trend is still down: SELL rallies into 3,677–3,722, SL 3,745, targets 3,200 then 2,700. Confirmed on a 4H close below 3,622.",
+   "trendType": "down",
+   "support": [
+    3622,
+    3503,
+    3250,
+    3200,
+    2796,
+    2700
+   ],
+   "resistance": [
+    3677,
+    3722,
+    3745
+   ],
+   "scenarios": [
+    "Kế hoạch: BÁN 3.677–3.722 | SL 3.745 | TP 3.200 → 2.700.",
+    "Xác nhận: nến H4 đóng dưới 3.622 (cổ hai đỉnh). Bán khi giá hồi lên vùng cản và nến H1 đóng đỏ từ chối, không bán đuổi.",
+    "Vô hiệu: nến H4 đóng trên 3.745 – đứng ngoài, chờ cấu trúc mới.",
+    "Đáy 3.503 là chỗ giá dễ khựng lại: chạm thì chốt bớt, dời SL về hòa vốn.",
+    "Vùng 3.677–3.722 là đỡ cũ ngày 18–19/11, bị phá nên thành cản; trendline giảm từ đỉnh 4.147,3 (10/11) vẫn đè trên giá.",
+    "Lịch (giờ VN): PCE lõi và GDP Mỹ 20:30 thứ 4 (25/11). Vào nhỏ quanh tin."
+   ],
+   "scenarios_en": [
+    "Plan: SELL 3,677–3,722 | SL 3,745 | TP 3,200 → 2,700.",
+    "Confirm: a 4H close below 3,622 (the neckline). Sell a bounce into resistance on a red 1H rejection close; don't chase.",
+    "Invalidation: a 4H close above 3,745 – stand aside and wait for a new structure.",
+    "The 3,503 low is where price may stall: take some profit there and move the stop to breakeven.",
+    "3,677–3,722 was support on Nov 18–19; it broke and is now resistance, and the falling trendline from the 4,147.3 high (Nov 9) still caps price.",
+    "Calendar (ET): US core PCE and GDP 8:30 AM Wednesday (Nov 25). Go light around the data."
+   ],
+   "macro": [],
+   "macro_en": [],
+   "market_picture": {
+    "text": "Xu hướng trung và ngắn hạn vẫn là giảm. Đầu tuần vàng hồi từ đáy 3.503 lên 3.688,7 (tối 23/11) nhưng không qua được vùng 3.677–3.722. Đây là vùng đỡ cũ bị phá ngày 19/11, giờ thành cản. Sáng nay giá thử lại lần hai, lên 3.676,8 rồi bị đạp xuống, thành hai đỉnh ngay dưới cản. Giá đang quanh 3.632, sát cổ 3.622.\nNến H4 đóng dưới 3.622 là hai đỉnh được xác nhận, đường về 3.503 rồi 3.200 mở ra; thủng 3.200 thì đích xa là 2.700–2.800.\nTin tức vẫn nghiêng về bên bán. Fed giữ giọng cứng trước cuộc họp 8–9/12, lợi suất 10 năm quanh 4,9%, USD mạnh. Nhịp hồi hôm qua chủ yếu là mua bắt đáy theo chứng khoán.",
+    "chips": [
+     {
+      "k": "XAU",
+      "v": "3.632 +0,02%",
+      "dir": "up"
+     },
+     {
+      "k": "DXY",
+      "v": "104,28",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "4,91%",
+      "dir": "down"
+     }
+    ],
+    "sources": [
+     {
+      "name": "Kitco PM – Vàng, bạc hồi mạnh đầu tuần nhờ mua bắt đáy; Fed vẫn là rủi ro (23/11)",
+      "url": "https://www.kitco.com/news/article/2026-11-23/gold-silver-prices-see-sharp-rebounds-ai-shares-rally-renewed-fed"
+     },
+     {
+      "name": "Kitco – Natixis: nhịp hồi có thể ngắn, vàng có thể về 3.340 (23/11)",
+      "url": "https://www.kitco.com/news/article/2026-11-23/golds-recovery-may-be-short-lived-natixis-warns-drop-3340"
+     },
+     {
+      "name": "Kitco PM – Vàng thủng 3.650; FedWatch ~90% tăng lãi tháng 12 (19/11)",
+      "url": "https://www.kitco.com/news/article/2026-11-19/gold-falls-below-3650-silver-tumbles-fed-rate-concerns-pressure-metals"
+     },
+     {
+      "name": "CNBC – Vàng giao ngay (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "market_picture_en": {
+    "text": "The medium- and short-term trend is still down. Gold bounced from the 3,503 low to 3,688.7 on Monday but couldn't get through 3,677–3,722. That's old support that broke on Nov 19 and now acts as resistance. In Asian trade price tested it a second time at 3,676.8 and was pushed back, leaving a double top right under resistance. Price sits near 3,632, just above the 3,622 neckline.\nA 4H close below 3,622 confirms the double top and opens 3,503, then 3,200; a break of 3,200 puts 2,700–2,800 in play.\nThe news flow still leans bearish. The Fed is sounding hawkish ahead of its Dec 8–9 meeting, the 10-year yield is near 4.9% and the dollar is firm. Monday's bounce was mostly bargain hunting alongside the stock rebound.",
+    "chips": [
+     {
+      "k": "XAU",
+      "v": "3,632 +0.02%",
+      "dir": "up"
+     },
+     {
+      "k": "DXY",
+      "v": "104.28",
+      "dir": "down"
+     },
+     {
+      "k": "US10Y",
+      "v": "4.91%",
+      "dir": "down"
+     }
+    ],
+    "sources": [
+     {
+      "name": "Kitco PM – Gold, silver rebound sharply on bargain hunting; Fed still the risk (Nov 23)",
+      "url": "https://www.kitco.com/news/article/2026-11-23/gold-silver-prices-see-sharp-rebounds-ai-shares-rally-renewed-fed"
+     },
+     {
+      "name": "Kitco – Natixis warns gold's recovery may be short-lived, sees $3,340 (Nov 23)",
+      "url": "https://www.kitco.com/news/article/2026-11-23/golds-recovery-may-be-short-lived-natixis-warns-drop-3340"
+     },
+     {
+      "name": "Kitco PM – Gold below $3,650; FedWatch ~90% for a December hike (Nov 19)",
+      "url": "https://www.kitco.com/news/article/2026-11-19/gold-falls-below-3650-silver-tumbles-fed-rate-concerns-pressure-metals"
+     },
+     {
+      "name": "CNBC – Spot gold (XAU=)",
+      "url": "https://www.cnbc.com/quotes/XAU="
+     }
+    ]
+   },
+   "physicalAdvice": "Chờ xác nhận rồi mới bán, đừng đuổi theo nến.",
+   "physicalAdvice_en": "Wait for confirmation; don't chase candles.",
+   "notes": "Các mốc là giá giao ngay XAU/USD (CNBC XAU=), giờ VN. Đỉnh 23/11 3.688,7 (nến H1 21:00) · đỉnh 24/11 3.676,8 (nến H1 08:00) · cổ 3.621,8 (nến H1 06:00 24/11) · đáy 3.503,0 (01:00 21/11) · đỉnh 10/11 4.147,3 (03:00). Đỉnh lịch sử 4.694,8 (cuối tháng 8).",
+   "notes_en": "Levels are spot XAU/USD (CNBC XAU=), ET. Nov 23 high 3,688.7 (9:00 AM 1H candle) · second top 3,676.8 (8:00 PM Nov 23 1H candle) · neckline 3,621.8 (6:00 PM Nov 23) · low 3,503.0 (1:00 PM Nov 20) · Nov 9 high 4,147.3 (3:00 PM). Record high 4,694.8 (late August).",
+   "dataTime": "Cập nhật ~10:30 ngày 24/11/2026 giờ VN. Nến giao ngay CNBC XAU=; DXY, US10Y từ CNBC; tin từ Kitco; lịch tin theo ForexFactory.",
+   "dataTime_en": "Updated ~10:30 PM ET, Monday Nov 23, 2026. Spot candles from CNBC XAU=; DXY and US10Y from CNBC; news from Kitco; calendar from ForexFactory.",
+   "disclaimer": "Nhận định kỹ thuật tham khảo, không phải lời khuyên đầu tư.",
+   "disclaimer_en": "Technical analysis for educational purposes only – not investment advice.",
+   "brief": true,
+   "summary": {
+    "trend": "down",
+    "trendText": "Hai đỉnh dưới cản 3.677–3.722 – chờ xác nhận để bán theo xu hướng giảm",
+    "trendText_en": "Double top under 3,677–3,722 – wait for confirmation, then sell with the downtrend",
+    "sell": {
+     "zone": "3.677 – 3.722",
+     "sl": "3.745",
+     "tp": "3.200 → 2.700",
+     "zone_en": "3,677–3,722",
+     "sl_en": "3,745",
+     "tp_en": "3,200 → 2,700"
+    },
+    "note": "Xác nhận: nến H4 đóng dưới 3.622. Bán khi hồi lên vùng + nến H1 đóng đỏ từ chối, không bán đuổi. Nến H4 đóng trên 3.745 thì vô hiệu.",
+    "note_en": "Confirm: a 4H close below 3,622. Sell a bounce into the zone on a red 1H rejection close; don't chase. A 4H close above 3,745 voids the view.",
+    "price": "spot",
+    "priceNote": "Giá giao ngay XAU/USD",
+    "priceNote_en": "Spot XAU/USD prices"
+   }
+  },
+  {
    "id": "2026-11-15-tong-hop-tin-vang",
    "date": "2026-11-15",
    "news": true,
