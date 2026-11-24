@@ -1,6 +1,6 @@
 {
  "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC | Chiến tranh | Ngân hàng TW. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
- "updated": "2026-11-20",
+ "updated": "2026-11-24",
  "fomc": {
   "source": {
    "name": "Federal Reserve – FOMC calendars",
@@ -56,6 +56,157 @@
   "note_en": "Decision at 2:00 PM ET on day two of the meeting, press conference at 2:30 PM ET. * = with economic projections (dot plot)."
  },
  "items": [
+  {
+   "date": "2026-11-24",
+   "category": "Vàng",
+   "priority": 1,
+   "impact": "tăng",
+   "title": "Vàng và bạc bật tăng mạnh từ đáy, khối lượng mua đáy gia tăng khi thị trường cổ phiếu hồi phục",
+   "summary": "Giá vàng giao ngay đứng quanh mức 3.635,10 USD/oz, tăng 2,75%, trong khi bạc tăng khoảng 4,62% lên mức 43,02 USD/oz trong phiên giao dịch đầu tuần nhờ lực mua bắt đáy và tâm lý rủi ro cải thiện khi thị trường chứng khoán toàn cầu hồi phục.",
+   "reason": "Nhịp hồi phục kỹ thuật mạnh mẽ sau tuần giảm sâu giúp vàng lấy lại mốc 3,6 USD/oz nhờ lực mua bắt đáy. Tuy nhiên, áp lực thắt chặt từ Fed, lợi suất trái phiếu cao và rủi ro địa chính trị vẫn là thách thức lớn đối với đà tăng bền vững của kim loại quý trong ngắn và dài hạn.",
+   "source": {
+    "name": "Gold, silver prices see sharp rebounds as AI shares rally, renewed Fed uncertainty - Kitco PM Report | Kitco News",
+    "name_en": "Gold, silver prices see sharp rebounds as AI shares rally, renewed Fed uncertainty - Kitco PM Report | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-23/gold-silver-prices-see-sharp-rebounds-ai-shares-rally-renewed-fed"
+   },
+   "time_vn": "Thứ Ba 24/11/2026 07:00 giờ VN",
+   "title_en": "Gold, silver prices see sharp rebounds as AI shares rally, renewed Fed uncertainty",
+   "summary_en": "Gold and silver prices rebounded strongly Monday after last week's steep selloff, supported by bargain hunting and improving risk sentiment as global equity markets recovered. In late-afternoon trading, spot gold was near $3,635.10 an ounce, up 2.75%, while spot silver was around $43.020 an ounce, up approximately 4.62%.",
+   "reason_en": "Persistent Federal Reserve tightening concerns, elevated Treasury yields and geopolitical uncertainty continue to challenge the sustainability of the precious metals recovery.",
+   "time_en": "Monday, November 23, 2026, 19:00 EST",
+   "source2": {
+    "name": "Gold&#x27;s recovery may be short-lived as Natixis warns of drop to $3,340 | Kitco News",
+    "name_en": "Gold&#x27;s recovery may be short-lived as Natixis warns of drop to $3,340 | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-23/golds-recovery-may-be-short-lived-natixis-warns-drop-3340"
+   },
+   "slot": "sang",
+   "published_vn": "2026-11-24 07:00"
+  },
+  {
+   "date": "2026-11-24",
+   "category": "Fed",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "Natixis cảnh báo đà hồi phục của vàng có thể ngắn hạn và nguy cơ lùi về 3.340 USD/oz vào tháng 1",
+   "summary": "Chuyên gia Bernard Dahdah từ Natixis nhận định vàng có thể giảm về 3.340 USD/oz vào tháng 1 do chính sách tiền tệ thắt chặt của Fed, đồng USD mạnh lên và nhu cầu vật chất chậm lại.",
+   "reason": "Trong ngắn hạn, đà phục hồi của vàng có thể bị giới hạn bởi lập trường diều hâu của Fed và lợi suất cao; dài hạn, việc giảm tốc từ các ngân hàng trung ương và áp lực thanh khoản từ thị trường chứng khoán tạo rủi ro giảm giá lớn.",
+   "source": {
+    "name": "Gold&#x27;s recovery may be short-lived as Natixis warns of drop to $3,340 | Kitco News",
+    "name_en": "Gold&#x27;s recovery may be short-lived as Natixis warns of drop to $3,340 | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-23/golds-recovery-may-be-short-lived-natixis-warns-drop-3340"
+   },
+   "time_vn": "Thứ Ba 24/11/2026 07:00 giờ VN",
+   "title_en": "Gold's recovery may be short-lived as Natixis warns of drop to $3,340",
+   "summary_en": "Looking ahead, Dahdah said that gold could fall to $3,340 an ounce by January as the market faces growing headwinds from tighter monetary policy and slowing physical demand. The precious metal has lost roughly 25% of its value since reaching its record high in August.",
+   "reason_en": "The biggest headwind remains the Federal Reserve, as persistent inflation pressures continue to support expectations that the central bank will raise interest rates through the end of the year and into 2027.",
+   "time_en": "Monday, November 23, 2026, 19:00 EST",
+   "slot": "sang",
+   "published_vn": "2026-11-24 07:00"
+  },
+  {
+   "date": "2026-11-24",
+   "category": "Vàng",
+   "priority": 1,
+   "impact": "tăng",
+   "title": "Chỉ số PMI tổng hợp của S&P Global giảm xuống 54,6 trong tháng 11, nền kinh tế Mỹ hạ nhiệt theo đúng định hướng",
+   "summary": "Chỉ số PMI tổng hợp flash của S&P Global giảm xuống 54,6 trong tháng 11 từ mức 55,9 trong tháng 10. PMI dịch vụ giảm xuống 54,7 và PMI sản xuất giảm nhẹ về 54,5.",
+   "reason": "Hoạt động kinh tế Mỹ đang hạ nhiệt có kiểm soát, giúp giảm bớt lo ngại về việc Fed phải tăng lãi suất quá mức, qua đó tạo đà hỗ trợ cho vàng trong ngắn hạn nhưng vẫn duy trì áp lực lạm phát dài hạn.",
+   "source": {
+    "name": "Gold prices jump 3% as bargain hunting overshadows slowing U.S. manufacturing and services activity | Kitco News",
+    "name_en": "Gold prices jump 3% as bargain hunting overshadows slowing U.S. manufacturing and services activity | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-23/gold-prices-jump-3-bargain-hunting-overshadows-slowing-us-manufacturing-and"
+   },
+   "time_vn": "Thứ Ba 24/11/2026 07:00 giờ VN",
+   "title_en": "Gold prices jump 3% as bargain hunting overshadows slowing U.S. manufacturing and services activity",
+   "summary_en": "S&P Global reported Monday that its flash Composite Purchasing Managers Index (PMI) fell to 54.6 in November, down from October’s reading of 55.9. The composite index has dropped to a four-month low.",
+   "reason_en": "Both are still expanding, so this is a slower pace rather than a stall, and alongside last week's softer producer prices and creeping jobless claims, it paints an economy cooling on its own terms, which is exactly what the Fed wanted.",
+   "time_en": "Monday, November 23, 2026, 19:00 EST",
+   "source2": {
+    "name": "Gold&#x27;s recovery may be short-lived as Natixis warns of drop to $3,340 | Kitco News",
+    "name_en": "Gold&#x27;s recovery may be short-lived as Natixis warns of drop to $3,340 | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-23/golds-recovery-may-be-short-lived-natixis-warns-drop-3340"
+   },
+   "slot": "sang",
+   "published_vn": "2026-11-24 07:00"
+  },
+  {
+   "date": "2026-11-24",
+   "category": "Lợi suất",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "Lợi suất trái phiếu chính phủ Mỹ kỳ hạn 10 năm giữ gần mức 4,92% sau khi vượt 4,92%",
+   "summary": "Lợi suất trái phiếu kho bạc Mỹ kỳ hạn 10 năm duy trì gần mức 4,92%, trong khi lợi suất kỳ hạn 30 năm vẫn ở trên mức 5%.",
+   "reason": "Lợi suất trái phiếu duy trì ở mức cao làm tăng chi phí cơ hội của việc nắm giữ tài sản không sinh lời như vàng trong ngắn hạn, nhưng thâm hụt tài khóa dài hạn có thể củng cố nhu cầu tài sản dự trữ thay thế.",
+   "source": {
+    "name": "Gold price rallies above $3,600 as AI selloff reshapes Fed outlook - Kitco AM Report | Kitco News",
+    "name_en": "Gold price rallies above $3,600 as AI selloff reshapes Fed outlook - Kitco AM Report | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-23/gold-price-rallies-above-3600-ai-selloff-reshapes-fed-outlook-kitco-am"
+   },
+   "time_vn": "Thứ Ba 24/11/2026 07:00 giờ VN",
+   "title_en": "Gold price rallies above $3,600 as AI selloff reshapes Fed outlook - Kitco AM Report",
+   "summary_en": "The benchmark 10-year yield finished near 4.92%, following its earlier advance above 5%. With federal borrowing continuing to expand, sustained elevated yields increase debt-servicing costs.",
+   "reason_en": "Although fiscal uncertainty may strengthen gold's longer-term appeal as an alternative reserve asset, elevated Treasury yields remain a near-term obstacle for non-yielding bullion.",
+   "time_en": "Monday, November 23, 2026, 19:00 EST",
+   "source2": {
+    "name": "Gold&#x27;s recovery may be short-lived as Natixis warns of drop to $3,340 | Kitco News",
+    "name_en": "Gold&#x27;s recovery may be short-lived as Natixis warns of drop to $3,340 | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-23/golds-recovery-may-be-short-lived-natixis-warns-drop-3340"
+   },
+   "slot": "sang",
+   "published_vn": "2026-11-24 07:00"
+  },
+  {
+   "date": "2026-11-24",
+   "category": "Dầu mỏ",
+   "priority": 1,
+   "impact": "trung lập",
+   "title": "Giá dầu WTI giảm 3,9% xuống 80,17 USD/thùng và Brent giảm 3,5% xuống 89,37 USD/thùng",
+   "summary": "Dầu WTI chốt phiên giảm 3,9% ở mức 80,17 USD/thùng, trong khi dầu Brent giảm 3,5% xuống còn 89,37 USD/thùng do nguồn cung Trung Đông phục hồi và sự khởi động lại đường ống ở Libya.",
+   "reason": "Giá dầu giảm giúp xoa dịu phần nào lo ngại về áp lực chi phí năng lượng đối với lạm phát chung trong ngắn hạn, làm giảm bớt sức ép thắt chặt tiền tệ cực đoan từ Fed.",
+   "source": {
+    "name": "Gold, silver prices see sharp rebounds as AI shares rally, renewed Fed uncertainty - Kitco PM Report | Kitco News",
+    "name_en": "Gold, silver prices see sharp rebounds as AI shares rally, renewed Fed uncertainty - Kitco PM Report | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-23/gold-silver-prices-see-sharp-rebounds-ai-shares-rally-renewed-fed"
+   },
+   "time_vn": "Thứ Ba 24/11/2026 07:00 giờ VN",
+   "title_en": "Gold, silver prices see sharp rebounds as AI shares rally, renewed Fed uncertainty - Kitco PM Report",
+   "summary_en": "WTI settled down 3.9% at $80.17 a barrel, while Brent declined 3.5% to $89.37. Recovering Middle Eastern oil flows and the restart of a Libyan pipeline weighed on crude prices Monday.",
+   "reason_en": "The conflict maintains an underlying geopolitical risk premium for gold, although immediate liquidity requirements and interest-rate expectations have recently exerted greater influence over bullion prices.",
+   "time_en": "Monday, November 23, 2026, 19:00 EST",
+   "source2": {
+    "name": "Gold&#x27;s recovery may be short-lived as Natixis warns of drop to $3,340 | Kitco News",
+    "name_en": "Gold&#x27;s recovery may be short-lived as Natixis warns of drop to $3,340 | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-23/golds-recovery-may-be-short-lived-natixis-warns-drop-3340"
+   },
+   "slot": "sang",
+   "published_vn": "2026-11-24 07:00"
+  },
+  {
+   "date": "2026-11-24",
+   "category": "Ngân hàng TW",
+   "priority": 1,
+   "impact": "tăng",
+   "title": "UBS dự báo vàng đạt 5.000 USD/oz vào cuối năm 2027, Goldman Sachs dự phóng mức 4.650 USD/oz",
+   "summary": "UBS dự báo giá vàng sẽ đạt 5.000 USD/oz trong quý 4 năm 2027 nhờ nhu cầu bảo vệ trước tình trạng mất giá tiền tệ, trong khi Goldman Sachs dự phóng mức 4.650 USD/oz nhờ lực mua của ngân hàng trung ương.",
+   "reason": "Trong dài hạn, nhu cầu từ các ngân hàng trung ương và rủi ro mất giá tiền tệ tiếp tục tạo nền tảng vững chắc cho xu hướng tăng giá của vàng, bất chấp các đợt điều chỉnh ngắn hạn.",
+   "source": {
+    "name": "Gold SWOT: UBS and Goldman Sachs see gold recovering by late 2027 | Kitco News",
+    "name_en": "Gold SWOT: UBS and Goldman Sachs see gold recovering by late 2027 | Kitco News",
+    "url": "https://www.kitco.com/opinion/2026-11-23/gold-swot-ubs-and-goldman-sachs-see-gold-recovering-late-2027"
+   },
+   "time_vn": "Thứ Ba 24/11/2026 07:00 giờ VN",
+   "title_en": "Gold SWOT: UBS and Goldman Sachs see gold recovering by late 2027",
+   "summary_en": "UBS forecasts gold will reach $5,000 per ounce in the fourth quarter of 2027, supported by demand for protection against currency debasement. Goldman Sachs projects $4,650 per ounce by year-end 2027, citing central bank buying.",
+   "reason_en": "UBS forecasts gold will reach $5,000 per ounce in the fourth quarter of 2027, supported by demand for protection against currency debasement.",
+   "time_en": "Monday, November 23, 2026, 19:00 EST",
+   "source2": {
+    "name": "Gold&#x27;s recovery may be short-lived as Natixis warns of drop to $3,340 | Kitco News",
+    "name_en": "Gold&#x27;s recovery may be short-lived as Natixis warns of drop to $3,340 | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-23/golds-recovery-may-be-short-lived-natixis-warns-drop-3340"
+   },
+   "slot": "sang",
+   "published_vn": "2026-11-24 07:00"
+  },
   {
    "date": "2026-11-20",
    "category": "Vàng",
