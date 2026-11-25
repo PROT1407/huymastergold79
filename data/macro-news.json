@@ -58,6 +58,58 @@
  "items": [
   {
    "date": "2026-11-25",
+   "category": "Tương quan",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "Chỉ số niềm tin tiêu dùng Mỹ tăng mạnh trong tháng 11, gây sức ép lên tài sản an toàn",
+   "summary": "Conference Board công bố Chỉ số Niềm tin Tiêu dùng tháng 11 tăng lên mức 103,3, tăng từ mức 91,9 trong tháng 10 và vượt xa kỳ vọng của thị trường, đẩy vàng kiểm tra vùng hỗ trợ kỹ thuật quan trọng.",
+   "reason": "Dữ liệu kinh tế tích cực làm giảm nhu cầu nắm giữ tài sản trú ẩn an toàn như vàng trong ngắn hạn, trong khi dài hạn thị trường tiếp tục đánh giá sức khỏe nền kinh tế Mỹ.",
+   "source": {
+    "name": "Gold price testing support near $3,600 as US Consumer Confidence sees sharp rise in November | Kitco News",
+    "name_en": "Gold price testing support near $3,600 as US Consumer Confidence sees sharp rise in November | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-24/gold-price-testing-support-near-3600-us-consumer-confidence-sees-sharp-rise"
+   },
+   "time_vn": "Thứ Tư 25/11/2026 12:04 giờ VN",
+   "title_en": "Gold price testing support near $3,600 as US Consumer Confidence sees sharp rise in November",
+   "summary_en": "The Consumer Confidence Index jumped to 103.3 in November, up from 91.9 in October, the Conference Board announced Tuesday.",
+   "reason_en": "Gold prices have dropped to session lows as improving consumer confidence reduces demand for the safe-haven asset.",
+   "time_en": "Wednesday, November 25, 2026, 00:04 EST",
+   "source2": {
+    "name": "Gold, silver extend losses as tech stocks slide, Fed inflation test looms - Kitco PM Report | Kitco News",
+    "name_en": "Gold, silver extend losses as tech stocks slide, Fed inflation test looms - Kitco PM Report | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-24/gold-silver-extend-losses-tech-stocks-slide-fed-inflation-test-looms-kitco"
+   },
+   "slot": "trua",
+   "published_vn": "2026-11-25 12:04"
+  },
+  {
+   "date": "2026-11-25",
+   "category": "Fed",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "Cố vấn FedWatch: Phần lớn thị trường định giá khả năng tăng lãi suất 25 điểm cơ bản 96,4%",
+   "summary": "Theo công cụ CME FedWatch, có khoảng 96,4% trader kỳ vọng Fed sẽ thực hiện đợt tăng 25 điểm cơ bản tại cuộc họp sắp tới.",
+   "reason": "Kỳ vọng lãi suất tăng cao tạo áp lực chi phí cơ hội lớn đối với vàng không sinh lời trong ngắn hạn.",
+   "source": {
+    "name": "Gold and silver slide to key support as rate hike fears build | Kitco News",
+    "name_en": "Gold and silver slide to key support as rate hike fears build | Kitco News",
+    "url": "https://www.kitco.com/opinion/2026-11-24/gold-and-silver-slide-key-support-rate-hike-fears-build"
+   },
+   "time_vn": "Thứ Tư 25/11/2026 12:04 giờ VN",
+   "title_en": "CME FedWatch tool indicates rate hike expectations",
+   "summary_en": "According to the CME FedWatch tool, which is based on interest rate futures pricing, 96.4% of traders expect a 25 basis point hike.",
+   "reason_en": "Rising rates can also lift the dollar over time, adding a further headwind to non-yielding gold.",
+   "time_en": "Wednesday, November 25, 2026, 00:04 EST",
+   "source2": {
+    "name": "Gold, silver extend losses as tech stocks slide, Fed inflation test looms - Kitco PM Report | Kitco News",
+    "name_en": "Gold, silver extend losses as tech stocks slide, Fed inflation test looms - Kitco PM Report | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-24/gold-silver-extend-losses-tech-stocks-slide-fed-inflation-test-looms-kitco"
+   },
+   "slot": "trua",
+   "published_vn": "2026-11-25 12:04"
+  },
+  {
+   "date": "2026-11-25",
    "category": "Vàng",
    "priority": 1,
    "impact": "giảm",

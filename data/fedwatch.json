@@ -1,7 +1,7 @@
 {
  "_ghi_chu": "Xác suất lãi suất Fed theo CME FedWatch (suy ra từ giá hợp đồng tương lai Fed Funds 30 ngày). CME chặn truy cập tự động (403, điều khoản cấm scraping) nên số liệu được nhập TAY từ bài báo trích dẫn CME FedWatch – ghi rõ nguồn. Không tự bịa số. Để trống 'meetings' → web hiện trạng thái 'đang cập nhật'. Đơn vị: %, khoảng lãi suất theo điểm cơ bản (bps).",
- "updated_vn": "05:32 25/11/2026 (UTC+7)",
- "as_of_note": "8-9 policy meeting, with the latest published futures assessment indicating approximately a 95% probability of a 25-basis point increase. 8-9 meeting, with the latest published futures assessment indicating approximately a 95% probability of a 25-basis point increase and a 5% probability of a larger 50-basis point move.",
+ "updated_vn": "12:04 25/11/2026 (UTC+7)",
+ "as_of_note": "8-9 policy meeting, with the latest published futures assessment indicating approximately a 95% probability of a 25-basis point increase. 8-9 meeting, with the latest published futures assessment indicating approximately a 95% probability of a 25-basis point increase and a 5% probability of a larger 50-basis point move. According to the CME FedWatch tool, which is based on interest rate futures pricing, 96.4% of traders expect a 25 basis point hike.",
  "current_range": [
   375,
   400
