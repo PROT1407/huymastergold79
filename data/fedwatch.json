@@ -1,7 +1,7 @@
 {
  "_ghi_chu": "Xác suất lãi suất Fed theo CME FedWatch (suy ra từ giá hợp đồng tương lai Fed Funds 30 ngày). CME chặn truy cập tự động (403, điều khoản cấm scraping) nên số liệu được nhập TAY từ bài báo trích dẫn CME FedWatch – ghi rõ nguồn. Không tự bịa số. Để trống 'meetings' → web hiện trạng thái 'đang cập nhật'. Đơn vị: %, khoảng lãi suất theo điểm cơ bản (bps).",
- "updated_vn": "12:04 25/11/2026 (UTC+7)",
- "as_of_note": "8-9 policy meeting, with the latest published futures assessment indicating approximately a 95% probability of a 25-basis point increase. 8-9 meeting, with the latest published futures assessment indicating approximately a 95% probability of a 25-basis point increase and a 5% probability of a larger 50-basis point move. According to the CME FedWatch tool, which is based on interest rate futures pricing, 96.4% of traders expect a 25 basis point hike.",
+ "updated_vn": "12:22 26/11/2026 (UTC+7)",
+ "as_of_note": "8-9 meeting, with futures markets assigning approximately a 96% probability to a 25-basis point increase ahead of Wednesday&#x27;s inflation release.",
  "current_range": [
   375,
   400
@@ -12,9 +12,9 @@
   "name_en": "Federal Reserve – FOMC statement, Sep 16, 2026 (hike to 3.75%–4.00%)"
  },
  "source": {
-  "name": "Gold, silver extend losses as tech stocks slide, Fed inflation test looms - Kitco PM Report | Kitco News",
-  "url": "https://www.kitco.com/news/article/2026-11-24/gold-silver-extend-losses-tech-stocks-slide-fed-inflation-test-looms-kitco",
-  "name_en": "Gold, silver extend losses as tech stocks slide, Fed inflation test looms - Kitco PM Report | Kitco News"
+  "name": "Gold, silver remain under pressure as strong GDP, sticky inflation reinforce Fed hike bets - Kitco AM Report | Kitco News",
+  "url": "https://www.kitco.com/news/article/2026-11-25/gold-silver-remain-under-pressure-strong-gdp-sticky-inflation-reinforce-fed",
+  "name_en": "Gold, silver remain under pressure as strong GDP, sticky inflation reinforce Fed hike bets - Kitco AM Report | Kitco News"
  },
  "source_alt": {
   "name": "CNBC – Vàng cao nhất hơn 2 tuần; CME FedWatch ~66% cửa tăng tháng 12 (trong phiên)",

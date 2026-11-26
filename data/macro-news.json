@@ -1,6 +1,6 @@
 {
  "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC | Chiến tranh | Ngân hàng TW. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
- "updated": "2026-11-25",
+ "updated": "2026-11-26",
  "fomc": {
   "source": {
    "name": "Federal Reserve – FOMC calendars",
@@ -56,6 +56,121 @@
   "note_en": "Decision at 2:00 PM ET on day two of the meeting, press conference at 2:30 PM ET. * = with economic projections (dot plot)."
  },
  "items": [
+  {
+   "date": "2026-11-26",
+   "category": "Vàng",
+   "priority": 1,
+   "impact": "tăng",
+   "title": "Vàng bật tăng mạnh từ đáy phiên nhờ lợi suất suy giảm và Phố Wall hồi phục",
+   "summary": "vàng giao ngay được giao dịch gần 3.576,30 USD/oz, tăng 21,20 USD tương ứng 0,60%, sau khi dao động trong biên độ từ 3.426,40 đến 3.590,00 USD/oz trong phiên. Động thái giảm của lợi suất trái phiếu Kho bạc giúp giảm áp lực đè nặng lên kim loại quý sau đợt bán tháo đầu ngày. Theo Kitco (09:01 EST 25/11), xác suất CME FedWatch cho một lần tăng 25 điểm cơ bản tháng 12 là 96%.",
+   "reason": "Ngắn hạn, việc lợi suất trái phiếu giảm và thị trường chứng khoán Phố Wall hồi phục giúp vàng phục hồi mạnh mẽ từ mức thấp. Dài hạn, kỳ vọng lãi suất của Fed và các yếu tố vĩ mô vẫn chi phối xu hướng giá.",
+   "source": {
+    "name": "Gold, silver reverse early losses as Wall Street rebounds ahead of Thanksgiving - Kitco PM Report | Kitco News",
+    "name_en": "Gold, silver reverse early losses as Wall Street rebounds ahead of Thanksgiving - Kitco PM Report | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-25/gold-silver-reverse-early-losses-wall-street-rebounds-ahead-thanksgiving"
+   },
+   "time_vn": "Thứ Năm 26/11/2026 12:22 giờ VN",
+   "title_en": "Gold, silver reverse early losses as Wall Street rebounds ahead of Thanksgiving",
+   "summary_en": "Spot gold was trading near $3,576.30 an ounce, up $21.20, or 0.60%, while silver was trading near $41.120, up $0.320 or 0.78% on the session.",
+   "reason_en": "The decline in borrowing costs helped ease pressure on precious metals after their sharp morning selloff, although the Fed's continued inflation concerns maintained uncertainty about the trajectory of rates into 2027.",
+   "time_en": "Thursday, November 26, 2026, 00:22 EST",
+   "slot": "trua",
+   "published_vn": "2026-11-26 12:22"
+  },
+  {
+   "date": "2026-11-26",
+   "category": "Fed",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "Lạm phát PCE tháng 10 và GDP quý 3 củng cố kỳ vọng Fed tăng lãi suất",
+   "summary": "Chỉ số giá PCE tháng 10 tăng 0,3% theo tháng và 3,8% so với cùng kỳ năm trước. Lõi PCE tăng 0,3% trên cơ sở hàng tháng, đưa lạm phát lõi hàng năm lên mức 3,3%. Trong khi đó, GDP quý 3 được điều chỉnh tăng lên mức hằng năm 4,3%.",
+   "reason": "Ngắn hạn và dài hạn, dữ liệu tăng trưởng kinh tế mạnh cùng lạm phát dai dẳng củng cố khả năng Fed tiếp tục thắt chặt chính sách tiền tệ, gây áp lực lên tài sản không sinh lời như vàng.",
+   "source": {
+    "name": "Gold, silver remain under pressure as strong GDP, sticky inflation reinforce Fed hike bets - Kitco AM Report | Kitco News",
+    "name_en": "Gold, silver remain under pressure as strong GDP, sticky inflation reinforce Fed hike bets - Kitco AM Report | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-25/gold-silver-remain-under-pressure-strong-gdp-sticky-inflation-reinforce-fed"
+   },
+   "time_vn": "Thứ Năm 26/11/2026 12:22 giờ VN",
+   "title_en": "Gold, silver remain under pressure as strong GDP, sticky inflation reinforce Fed hike bets",
+   "summary_en": "The October personal consumption expenditures price index increased 0.3% on the month and 3.8% from a year earlier, compared with September's annual increase of 3.6%.",
+   "reason_en": "The combination of stronger economic growth, resilient employment and persistent underlying inflation reinforced expectations for restrictive Federal Reserve policy, adding to pressure on gold and silver.",
+   "time_en": "Thursday, November 26, 2026, 00:22 EST",
+   "source2": {
+    "name": "Gold, silver reverse early losses as Wall Street rebounds ahead of Thanksgiving - Kitco PM Report | Kitco News",
+    "name_en": "Gold, silver reverse early losses as Wall Street rebounds ahead of Thanksgiving - Kitco PM Report | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-25/gold-silver-reverse-early-losses-wall-street-rebounds-ahead-thanksgiving"
+   },
+   "slot": "trua",
+   "published_vn": "2026-11-26 12:22"
+  },
+  {
+   "date": "2026-11-26",
+   "category": "Lợi suất",
+   "priority": 1,
+   "impact": "tăng",
+   "title": "Lợi suất trái phiếu Kho bạc Mỹ kỳ hạn 10 năm sụt giảm",
+   "summary": "Lợi suất trái phiếu Kho bạc kỳ hạn 10 năm chuẩn giảm khoảng 5,6 điểm cơ bản xuống 4,845%, trong khi lợi suất kỳ hạn 2 năm giảm khoảng 3,5 điểm cơ bản xuống 4,633%.",
+   "reason": "Ngắn hạn, lợi suất giảm làm giảm chi phí cơ hội nắm giữ vàng, hỗ trợ đà phục hồi của kim loại quý. Dài hạn, biến động lợi suất phản ánh tâm lý lo ngại về định giá cổ phiếu và triển vọng tăng trưởng kinh tế.",
+   "source": {
+    "name": "Gold, silver reverse early losses as Wall Street rebounds ahead of Thanksgiving - Kitco PM Report | Kitco News",
+    "name_en": "Gold, silver reverse early losses as Wall Street rebounds ahead of Thanksgiving - Kitco PM Report | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-25/gold-silver-reverse-early-losses-wall-street-rebounds-ahead-thanksgiving"
+   },
+   "time_vn": "Thứ Năm 26/11/2026 12:22 giờ VN",
+   "title_en": "Treasury yields decline as demand for government securities reflects economic growth outlook",
+   "summary_en": "The benchmark 10-year Treasury yield declined approximately 5.6 basis points to 4.845%, while the two-year yield fell around 3.5 basis points to 4.633%.",
+   "reason_en": "The decline in borrowing costs helped ease pressure on precious metals after their sharp morning selloff, although demand for government securities was also reflecting concerns about equity valuations.",
+   "time_en": "Thursday, November 26, 2026, 00:22 EST",
+   "slot": "trua",
+   "published_vn": "2026-11-26 12:22"
+  },
+  {
+   "date": "2026-11-26",
+   "category": "Ngân hàng TW",
+   "priority": 1,
+   "impact": "tăng",
+   "title": "Ray Dalio: Vàng vẫn là tài sản đa dạng hóa không thể thay thế",
+   "summary": "Ray Dalio, nhà sáng lập Bridgewater Associates, cho biết vàng mang tính không thể thay thế như một công cụ đa dạng hóa hiệu quả trong danh mục đầu tư, và tỷ lệ phân bổ từ 10% đến 15% là bước đi đúng đắn bất kể chu kỳ đầu tư nào.",
+   "reason": "Ngắn hạn và dài hạn, việc các ngân hàng trung ương và quỹ đầu tư dịch chuyển dòng tiền sang vàng phản ánh nhu cầu trú ẩn an toàn trong bối cảnh rủi ro nợ công và địa chính trị gia tăng.",
+   "source": {
+    "name": "There’s still no substitute for 10-15% gold allocation in investor portfolios – Ray Dalio | Kitco News",
+    "name_en": "There’s still no substitute for 10-15% gold allocation in investor portfolios – Ray Dalio | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-25/theres-still-no-substitute-10-15-gold-allocation-investor-portfolios-ray"
+   },
+   "time_vn": "Thứ Năm 26/11/2026 12:22 giờ VN",
+   "title_en": "There’s still no substitute for 10-15% gold allocation in investor portfolios – Ray Dalio",
+   "summary_en": "Gold is irreplaceable as an effective diversifier in investor portfolios, and a 10% to 15% allocation is the right move regardless of where we are in the investment cycle, according to Bridgewater Associates founder Ray Dalio.",
+   "reason_en": "What you're seeing happen now is a change in central banks’ holdings: They're moving to gold because that is the safer kind of money.",
+   "time_en": "Thursday, November 26, 2026, 00:22 EST",
+   "source2": {
+    "name": "Gold, silver reverse early losses as Wall Street rebounds ahead of Thanksgiving - Kitco PM Report | Kitco News",
+    "name_en": "Gold, silver reverse early losses as Wall Street rebounds ahead of Thanksgiving - Kitco PM Report | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-25/gold-silver-reverse-early-losses-wall-street-rebounds-ahead-thanksgiving"
+   },
+   "slot": "trua",
+   "published_vn": "2026-11-26 12:22"
+  },
+  {
+   "date": "2026-11-26",
+   "category": "Dầu mỏ",
+   "priority": 1,
+   "impact": "trung lập",
+   "title": "Giá dầu thô Nymex WTI duy trì gần mốc 84,07 USD/thùng",
+   "summary": "Hợp đồng tương lai dầu thô Nymex WTI được giao dịch ở mức gần 84,07 USD/thùng trong các tín hiệu thị trường chiều muộn, trong khi dầu Brent ở mức khoảng 89,62 USD trong dữ liệu hợp đồng tương lai khả dụng.",
+   "reason": "Ngắn hạn, giá dầu ổn định hỗ trợ một phần rủi ro địa chính trị và chi phí năng lượng. Dài hạn, nguồn cung toàn cầu và tồn kho dầu thô tiếp tục tác động đến lạm phát chung.",
+   "source": {
+    "name": "Gold, silver reverse early losses as Wall Street rebounds ahead of Thanksgiving - Kitco PM Report | Kitco News",
+    "name_en": "Gold, silver reverse early losses as Wall Street rebounds ahead of Thanksgiving - Kitco PM Report | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-25/gold-silver-reverse-early-losses-wall-street-rebounds-ahead-thanksgiving"
+   },
+   "time_vn": "Thứ Năm 26/11/2026 12:22 giờ VN",
+   "title_en": "Nymex WTI crude oil futures trade near $84.07 a barrel",
+   "summary_en": "Nymex WTI crude oil futures were trading near $84.07 a barrel in late-afternoon market indications, while Brent crude was near $89.62 in available futures data.",
+   "reason_en": "The unresolved confrontation continues to provide a potential source of defensive demand, while recovering production and shipments outside the most affected areas have helped contain the broader supply impact.",
+   "time_en": "Thursday, November 26, 2026, 00:22 EST",
+   "slot": "trua",
+   "published_vn": "2026-11-26 12:22"
+  },
   {
    "date": "2026-11-25",
    "category": "Tương quan",
