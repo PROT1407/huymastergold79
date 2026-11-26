@@ -127,7 +127,7 @@ function extractText(data) {
   return chunks.join('').trim();
 }
 
-const GEMINI_BACKOFF_MS = [0, 400, 1200];
+const GEMINI_BACKOFF_MS = [0, 15000, 45000];
 
 function retryableGeminiStatus(status) {
   return status === 429 || (typeof status === 'number' && status >= 500);

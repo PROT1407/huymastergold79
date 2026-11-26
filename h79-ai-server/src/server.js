@@ -283,8 +283,8 @@ function createServer(options = {}) {
     let text;
     try {
       text = await generateBoard(modelInput);
-    } catch {
-      send(res, 502, { ok: false, error: 'Không tạo được bản tin lúc này. Vui lòng thử lại sau.' });
+    } catch (error) {
+      send(res, 502, { ok: false, error: 'Không tạo được bản tin lúc này. Vui lòng thử lại sau.', debug: { detail: 'gemini_failed', status: error && error.geminiStatus } });
       return;
     }
     let checked = gate(gateInput(text, false));
@@ -292,8 +292,8 @@ function createServer(options = {}) {
     if (!checked.ok && checked.retryable) {
       try {
         text = await generateBoard({ ...modelInput, feedback: checked.debug });
-      } catch {
-        send(res, 502, { ok: false, error: 'Không tạo được bản tin lúc này. Vui lòng thử lại sau.' });
+      } catch (error) {
+        send(res, 502, { ok: false, error: 'Không tạo được bản tin lúc này. Vui lòng thử lại sau.', debug: { detail: 'gemini_failed', status: error && error.geminiStatus } });
         return;
       }
       checked = gate(gateInput(text, true));

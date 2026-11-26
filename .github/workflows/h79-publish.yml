@@ -1,26 +1,36 @@
 name: h79-publish
 # Weekday boards and the Sunday news recap. Vietnam is UTC+7, no daylight saving.
-# macro every day incl. Sat/Sun, up to three updates a VN day (sang / trua / toi):
-#   morning 06:37 VN = 23:37 UTC the day before → 37 23 * * *
-#   morning backup 05:52 VN = 22:52 UTC the day before → 52 22 * * *
-#   noon 12:07 VN = 05:07 UTC → 7 5 * * *
-#   evening 19:17 VN = 12:17 UTC → 17 12 * * *
-#   GitHub delays runs, so the script picks the slot from the VN clock when it starts
-#   (05–11 sang, 11–17 trua, 17–24 toi; 00–05 skips). A later update needs a
-#   free slot, 3 hours since the last update that day, and stories not already on the board.
+# macro every day incl. Sat/Sun, at any hour, only when a local precheck finds new stories:
+#   02:33 VN = 19:33 UTC → 33 19 * * *
+#   05:52 VN = 22:52 UTC → 52 22 * * *
+#   06:37 VN = 23:37 UTC → 37 23 * * *
+#   09:22 VN = 02:22 UTC → 22 2 * * *
+#   12:07 VN = 05:07 UTC → 7 5 * * *
+#   15:47 VN = 08:47 UTC → 47 8 * * *
+#   19:17 VN = 12:17 UTC → 17 12 * * *
+#   22:27 VN = 15:27 UTC → 27 15 * * *
+#   GitHub delays runs, so the script labels the slot from the VN clock when it starts
+#   (00–05 dem, 05–11 sang, 11–17 trua, 17–24 toi). It does not skip any hour, slot, or gap.
+#   A run scans public news indexes first and only wakes the Render generator when it
+#   finds article URLs not already on the board. Duplicate stories are still dropped.
 # domestic weekdays 08:43 VN = 01:43 UTC Mon–Fri → 43 1 * * 1-5
 # domestic backup 08:13 VN = 01:13 UTC Mon–Fri → 13 1 * * 1-5
 # weekly Sunday 09:00 VN = 02:00 UTC Sunday → 0 2 * * 0
 # Domestic and weekly: whichever run lands first publishes that VN date; a later run exits without a commit.
-# Macro: a run that finds nothing new, or a taken slot, exits without a commit.
+# Macro: a run that finds nothing new exits without waking Render and without a commit.
 # Secret: H79_RUN_TOKEN. Optional RENDER_DEPLOY_HOOK retriggers the same service once if health stays 502/503.
 # Neither secret is printed. This workflow does not keep the free service awake between runs.
+# It does not ping the generator until the script has decided a board needs to be written.
 on:
   schedule:
+    - cron: '33 19 * * *'
     - cron: '52 22 * * *'
     - cron: '37 23 * * *'
+    - cron: '22 2 * * *'
     - cron: '7 5 * * *'
+    - cron: '47 8 * * *'
     - cron: '17 12 * * *'
+    - cron: '27 15 * * *'
     - cron: '13 1 * * 1-5'
     - cron: '43 1 * * 1-5'
     - cron: '0 2 * * 0'
@@ -44,8 +54,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - name: Ping generator
-        run: curl -sS -o /dev/null --max-time 20 https://h79-ai-server.onrender.com/health || true
       - uses: actions/checkout@v4
         with:
           ref: main

@@ -3,14 +3,12 @@
 
 Vietnam is UTC+7 all year. The workflow clocks are:
 
-- macro, every day including Saturday and Sunday, up to three updates a VN day:
-  morning 06:37 VN = 23:37 UTC the previous calendar day (`37 23 * * *`),
-  with a backup at 05:52 VN = 22:52 UTC (`52 22 * * *`);
-  noon 12:07 VN = 05:07 UTC (`7 5 * * *`); evening 19:17 VN = 12:17 UTC (`17 12 * * *`).
-  GitHub delays scheduled runs, so the slot (sang/trua/toi) comes from the VN clock
-  when the run actually starts, not from the cron line. A later update is published
-  only when the slot is still free, at least three hours have passed since the last
-  update that day, and the generator returned stories not already on the board.
+- macro, every day including Saturday and Sunday, at any hour:
+  crons about every three to four hours (see the workflow). GitHub may delay a run,
+  so the slot (dem/sang/trua/toi) is taken from the VN clock when the run starts.
+  A run first scans public news indexes itself. It wakes the Render generator only
+  when that scan finds article URLs not already on the board. The generator's
+  stories are still dropped if they repeat a source link or a similar title/summary.
 - domestic, weekdays 08:43 VN = 01:43 UTC the same weekday (`43 1 * * 1-5`),
   with a backup at 01:13 UTC (`13 1 * * 1-5`)
 - weekly, Sunday 09:00 VN = 02:00 UTC Sunday (`0 2 * * 0`)
@@ -58,7 +56,7 @@ def redact(text):
     return raw
 
 
-MACRO_CRONS = ('37 23', '52 22', '7 5', '07 5', '17 12')
+MACRO_CRONS = ('37 23', '52 22', '7 5', '07 5', '17 12', '33 19', '22 2', '22 02', '47 8', '47 08', '27 15')
 
 
 def task_for_schedule(schedule, forced=''):
@@ -223,9 +221,9 @@ def quotes_before(data, datetime_vn):
     return {'bar': bar, 'pnjRing': pnj, 'sjcRing': sjc, 'ring': pnj or sjc}
 
 
-# Three tries spread over about five minutes: immediate, then 90s, then 150s.
-POST_RETRY_WAITS = (90, 150)
-POST_TIMEOUT_S = 180
+# Five tries spread over about ten minutes, so a brief Gemini 503 can recover.
+POST_RETRY_WAITS = (60, 90, 150, 180)
+POST_TIMEOUT_S = 360
 
 
 def post_board(base, task, datetime_vn, opener=None, previous=None, sleep=time.sleep):
@@ -238,7 +236,8 @@ def post_board(base, task, datetime_vn, opener=None, previous=None, sleep=time.s
     body = json.dumps(body_payload).encode()
     open_url = opener or urllib.request.urlopen
     last = 'unreachable'
-    for attempt in range(3):
+    tries = 1 + len(POST_RETRY_WAITS)
+    for attempt in range(tries):
         if attempt:
             sleep(POST_RETRY_WAITS[attempt - 1])
         req = urllib.request.Request(base + '/api/boards', data=body, method='POST', headers={
@@ -250,10 +249,12 @@ def post_board(base, task, datetime_vn, opener=None, previous=None, sleep=time.s
             with open_url(req, timeout=POST_TIMEOUT_S) as response:
                 payload = json.load(response)
         except urllib.error.HTTPError as exc:
+            reason = generator_reason(exc)
             if exc.code == 429 or 500 <= exc.code <= 599:
                 last = exc.code
+                print(redact(f'generator HTTP {exc.code}: {reason}'))
                 continue
-            print(redact(f'generator HTTP {exc.code}: {generator_reason(exc)}'))
+            print(redact(f'generator HTTP {exc.code}: {reason}'))
             raise SystemExit(f'generator HTTP {exc.code}')
         except (urllib.error.URLError, TimeoutError, OSError):
             last = 'timeout'
@@ -261,7 +262,7 @@ def post_board(base, task, datetime_vn, opener=None, previous=None, sleep=time.s
         if not isinstance(payload, dict) or not payload.get('ok') or not payload.get('board'):
             raise SystemExit('generator rejected the draft')
         return payload
-    raise SystemExit(f'generator failed after 3 tries ({last})')
+    raise SystemExit(f'generator failed after {1 + len(POST_RETRY_WAITS)} tries ({last})')
 
 
 def generator_reason(exc):
@@ -277,6 +278,8 @@ def generator_reason(exc):
     parts = [str(data.get('error') or '')[:200]]
     if debug.get('detail'):
         parts.append(f"detail={str(debug['detail'])[:120]}")
+    if debug.get('status') is not None:
+        parts.append(f"status={debug['status']}")
     for key in ('failedNumbers', 'missingFacts', 'flagged'):
         value = debug.get(key)
         if isinstance(value, list) and value:
@@ -303,10 +306,9 @@ def macro_done(root, date):
     return (Path(root) / 'bai' / f'{date}-tin-vi-mo-anh-huong-gia-vang.html').exists()
 
 
-# Macro slots by VN hour when the run actually starts. 00:00–04:59 is no slot:
-# that is a previous evening run GitHub pushed past midnight.
-MACRO_SLOTS = (('sang', 5, 11), ('trua', 11, 17), ('toi', 17, 24))
-MACRO_MIN_GAP_MIN = 180
+# Macro slots by VN hour when the run actually starts. Label only; it does not
+# gate publishing. 00:00–04:59 is dem (a delayed evening run, or a night cron).
+MACRO_SLOTS = (('dem', 0, 5), ('sang', 5, 11), ('trua', 11, 17), ('toi', 17, 24))
 SIMILAR = 0.6
 
 
@@ -334,23 +336,16 @@ def minutes_between(earlier, later):
 
 
 def macro_gate(root, date, datetime_vn, slot):
-    """Return (go, first, reason). first=True means no macro update exists yet for this VN date."""
-    if not slot:
-        return False, False, 'no macro slot between 00:00 and 05:00 VN'
+    """Return (go, first, reason). Publishing is not limited by hour, slot, or gap.
+
+    first=True means no macro update exists yet for this VN date. The run still
+    skips the generator when a local precheck finds no new candidate stories.
+    """
     data = read_json(Path(root) / 'data' / 'macro-news.json', {'items': []})
     today = [item for item in data.get('items', []) if item.get('date') == date]
     if not today:
-        if (Path(root) / 'bai' / f'{date}-tin-vi-mo-anh-huong-gia-vang.html').exists():
-            return False, False, f'macro {date} already published'
-        return True, True, f'macro {date} first update ({slot})'
-    used = {item.get('slot') or 'sang' for item in today}
-    if slot in used:
-        return False, False, f'macro {date} slot {slot} already published'
-    last = max(item_published(item) for item in today)
-    gap = minutes_between(last, datetime_vn)
-    if gap < MACRO_MIN_GAP_MIN:
-        return False, False, f'macro {date} last update {last}, only {int(gap)} min ago'
-    return True, False, f'macro {date} extra update ({slot})'
+        return True, True, f'macro {date} first update ({slot or "dem"})'
+    return True, False, f'macro {date} extra update ({slot or "dem"})'
 
 
 def words(text):
@@ -391,6 +386,180 @@ def recent_macro(items, date):
     return [item for item in items if item.get('date') in keep]
 
 
+# Public news indexes, same set as h79-ai-server/src/collect.js. A GitHub run
+# scans these itself so it can skip the Render generator when nothing is new.
+NEWS_INDEXES = (
+    ('Kitco News', 'https://www.kitco.com/news'),
+    ('Kitco RSS', 'https://www.kitco.com/news/rss'),
+    ('CNBC Gold', 'https://www.cnbc.com/gold/'),
+    ('CNBC Markets', 'https://www.cnbc.com/markets/'),
+    ('CNBC RSS', 'https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=10000664'),
+    ('Reuters commodities', 'https://www.reuters.com/markets/commodities/'),
+    ('FXStreet', 'https://www.fxstreet.com/news/latest'),
+    ('FXStreet RSS', 'https://www.fxstreet.com/rss/news'),
+    ('Fed press', 'https://www.federalreserve.gov/feeds/press_all.xml'),
+)
+ARTICLE_HOSTS = {
+    'cnbc.com', 'www.cnbc.com',
+    'reuters.com', 'www.reuters.com',
+    'kitco.com', 'www.kitco.com',
+    'investing.com', 'www.investing.com',
+    'federalreserve.gov', 'www.federalreserve.gov',
+    'fxstreet.com', 'www.fxstreet.com',
+}
+HOMEPAGE_PATHS = {
+    '/gold', '/markets', '/news', '/news/commodities-news', '/news/latest', '/news/rss',
+    '/rss/news', '/markets/commodities', '/monetarypolicy/openmarket.htm',
+    '/feeds/press_all.xml', '/feeds/press_monetary.xml',
+}
+PRECHECK_TIMEOUT_S = 8
+PRECHECK_UA = 'Mozilla/5.0 (compatible; H79BoardBot/1.0; +https://h79gold.com/)'
+HREF_RE = re.compile(r'''<a\b[^>]*href\s*=\s*["']([^"'#]+)["']''', re.I)
+LINK_RE = re.compile(r'<link>(?:<!\[CDATA\[)?([^\]<]+)', re.I)
+GUID_RE = re.compile(r'<guid(?:\s[^>]*)?>(?:<!\[CDATA\[)?(https?:[^\]<]+)', re.I)
+
+
+def add_days(iso, days):
+    from datetime import timedelta
+    return (datetime.strptime(iso, '%Y-%m-%d') + timedelta(days=days)).strftime('%Y-%m-%d')
+
+
+def normalize_url(url):
+    text = (url or '').split('#', 1)[0].strip()
+    if len(text) > 1 and text.endswith('/'):
+        text = text[:-1]
+    return text
+
+
+def is_homepage_url(url):
+    try:
+        parsed = urllib.parse.urlparse(url)
+    except Exception:
+        return True
+    path = (parsed.path or '/').rstrip('/') or '/'
+    if path == '/':
+        return True
+    return path.lower() in HOMEPAGE_PATHS
+
+
+def is_article_url(url):
+    try:
+        parsed = urllib.parse.urlparse(url)
+    except Exception:
+        return False
+    host = (parsed.hostname or '').lower()
+    if parsed.scheme != 'https' or parsed.username or parsed.password:
+        return False
+    if host not in ARTICLE_HOSTS or is_homepage_url(url):
+        return False
+    path = parsed.path or ''
+    if re.search(r'/(quotes|video|pro|login|account|newsletters|search|tag|author|live-tv)\b', path, re.I):
+        return False
+    if re.search(r'/20\d{2}/\d{2}/\d{2}/', path) or re.search(r'20\d{2}-\d{2}-\d{2}', path):
+        return True
+    if host.endswith('investing.com') and re.search(r'/news/[^/]+/[^/]+', path, re.I):
+        return True
+    if host.endswith('kitco.com') and re.search(r'/news/article/', path, re.I):
+        return True
+    if host.endswith('reuters.com') and len([part for part in path.split('/') if part]) >= 3:
+        return True
+    if host.endswith('federalreserve.gov') and re.search(r'/newsevents/pressreleases/', path, re.I):
+        return True
+    if host.endswith('fxstreet.com') and re.search(r'/news/[^/]+', path, re.I) and not re.search(r'/news/latest/?$', path, re.I):
+        return True
+    return False
+
+
+def article_date(url):
+    slash = re.search(r'/(20\d{2})/(\d{2})/(\d{2})/', url or '')
+    if slash:
+        return f'{slash.group(1)}-{slash.group(2)}-{slash.group(3)}'
+    dash = re.search(r'(20\d{2})-(\d{2})-(\d{2})', url or '')
+    return f'{dash.group(1)}-{dash.group(2)}-{dash.group(3)}' if dash else ''
+
+
+def in_precheck_window(day, date_vn):
+    if not day:
+        return True
+    return add_days(date_vn, -2) <= day <= date_vn
+
+
+def extract_links(html, base_url):
+    found = []
+    seen = set()
+
+    def add(value):
+        try:
+            href = normalize_url(urllib.parse.urljoin(base_url, value.strip()))
+        except Exception:
+            return
+        if href and href not in seen:
+            seen.add(href)
+            found.append(href)
+
+    raw = html or ''
+    for match in HREF_RE.finditer(raw):
+        add(match.group(1))
+    for match in LINK_RE.finditer(raw):
+        add(match.group(1))
+    for match in GUID_RE.finditer(raw):
+        add(match.group(1))
+    return found
+
+
+def published_urls(items):
+    found = set()
+    for item in items:
+        found |= {normalize_url(url) for url in item_urls(item) if url}
+    return found
+
+
+def fetch_index(url, open_url, timeout=PRECHECK_TIMEOUT_S):
+    request = urllib.request.Request(url, headers={
+        'User-Agent': PRECHECK_UA,
+        'Accept': 'text/html,application/xhtml+xml,application/xml,application/rss+xml,text/xml;q=0.9,*/*;q=0.8',
+    })
+    with open_url(request, timeout=timeout) as response:
+        raw = response.read(400000)
+        if isinstance(raw, bytes):
+            raw = raw.decode('utf-8', 'replace')
+        final = getattr(response, 'url', None) or url
+        return raw, final
+
+
+def scan_macro_candidates(root, date, opener=None, log=print):
+    """Compare public index links with the board. Does not call the Render generator.
+
+    Returns (urls, status): status is 'new', 'none', or 'error'.
+    """
+    open_url = opener or urllib.request.urlopen
+    data = read_json(Path(root) / 'data' / 'macro-news.json', {'items': []})
+    seen = published_urls(recent_macro(data.get('items', []), date))
+    found = []
+    fetched = 0
+    for name, url in NEWS_INDEXES:
+        try:
+            raw, final = fetch_index(url, open_url)
+            fetched += 1
+        except Exception:
+            log(f'precheck skip {name}')
+            continue
+        for href in extract_links(raw, final):
+            if not is_article_url(href) or not in_precheck_window(article_date(href), date):
+                continue
+            norm = normalize_url(href)
+            if norm not in seen and norm not in found:
+                found.append(norm)
+    if found:
+        log(f'precheck {len(found)} new candidate(s) from {fetched} indexes')
+        return found, 'new'
+    if fetched:
+        log(f'precheck no new candidates from {fetched} indexes')
+        return [], 'none'
+    log('precheck failed to fetch any index')
+    return [], 'error'
+
+
 def domestic_done(root, date):
     return (Path(root) / 'bai' / f'{date}-gia-vang-trong-nuoc.html').exists()
 
@@ -413,18 +582,16 @@ def already_published(root, task, date):
 
 
 def apply_macro(data, payload, slot='', published_vn=''):
-    """Prepend this run's stories. Without a slot, a date that already has stories is left alone.
+    """Prepend this run's stories.
 
-    With a slot (sang/trua/toi), a later update of the same date is added on top of the
-    earlier ones; stories that repeat today's or the previous day's board are dropped.
-    Earlier stories are never changed or removed.
+    A later update of the same date is added on top of the earlier ones; stories
+    that repeat today's or the previous day's board are dropped. Earlier stories
+    are never changed or removed. Slot is a label (dem/sang/trua/toi) only.
     """
     clock = payload['clock']
     date = clock['dateVn']
     items = data.setdefault('items', [])
     has_today = any(item.get('date') == date for item in items)
-    if has_today and not slot:
-        return False
     earlier = recent_macro(items, date) if has_today else []
     published_vn = published_vn or f"{date} {clock['timeVn']}"
     sources = [src for src in payload.get('sources') or [] if src.get('url')]
@@ -881,13 +1048,17 @@ def main(argv=None):
     print(f'{task} datetime_vn={datetime_vn}')
     slot = ''
     if task == 'macro':
-        slot = macro_slot(now)
-        if manual:
-            slot = slot or 'sang'
+        slot = macro_slot(now) or 'dem'
         go, _first, reason = macro_gate(ROOT, date, datetime_vn, slot)
         print(reason)
         if not go:
             return 0
+        _candidates, status = scan_macro_candidates(ROOT, date)
+        if status == 'none':
+            print(f'macro {date} {slot}: no new candidate stories, skip generator')
+            return 0
+        if status == 'error':
+            print(f'macro {date} {slot}: precheck failed, calling generator')
     elif already_published(ROOT, task, date):
         print(f'{task} {date} already published')
         return 0

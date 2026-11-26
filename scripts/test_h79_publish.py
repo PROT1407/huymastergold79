@@ -246,24 +246,24 @@ class PublishTests(unittest.TestCase):
             (root / 'bai').mkdir()
             (root / 'bai' / f'{date}-gia-vang-trong-nuoc.html').write_text('x', encoding='utf-8')
             (root / 'bai' / f'{date}-tin-vi-mo-anh-huong-gia-vang.html').write_text('x', encoding='utf-8')
-            old_root, old_wake = pub.ROOT, pub.wake
+            old_root, old_wake, old_scan = pub.ROOT, pub.wake, pub.scan_macro_candidates
             calls = []
             pub.ROOT = root
             pub.wake = lambda *args, **kwargs: calls.append('wake')
+            pub.scan_macro_candidates = lambda *a, **k: ([], 'none')
             try:
                 buf = io.StringIO()
                 with redirect_stdout(buf):
                     domestic = pub.main(['domestic'])
                     macro = pub.main(['macro'])
             finally:
-                pub.ROOT = old_root
-                pub.wake = old_wake
+                pub.ROOT, pub.wake, pub.scan_macro_candidates = old_root, old_wake, old_scan
             log = buf.getvalue()
             self.assertEqual(domestic, 0)
             self.assertEqual(macro, 0)
             self.assertEqual(calls, [])
             self.assertIn(f'domestic {date} already published', log)
-            self.assertIn(f'macro {date} already published', log)
+            self.assertIn('no new candidate stories', log)
             self.assertIn('datetime_vn=', log)
 
 
@@ -324,7 +324,7 @@ class PostRetryTests(unittest.TestCase):
         self.assertIn('generator health check failed', str(raised.exception))
         self.assertGreaterEqual(now['t'], pub.WAKE_LIMIT_S)
         self.assertEqual(pub.WAKE_LIMIT_S, 600)
-        self.assertEqual(pub.POST_TIMEOUT_S, 180)
+        self.assertEqual(pub.POST_TIMEOUT_S, 360)
 
     def test_502_and_503_stay_asleep_until_health_is_200(self):
         import urllib.error
@@ -453,8 +453,8 @@ class PostRetryTests(unittest.TestCase):
             return Body(json.dumps(payload()).encode())
 
         got = pub.post_board('https://h79.example', 'macro', '2026-11-10 06:37', opener=opener, sleep=sleeps.append)
-        self.assertEqual(calls, [180, 180, 180])
-        self.assertEqual(sleeps, [90, 150])
+        self.assertEqual(calls, [360, 360, 360])
+        self.assertEqual(sleeps, [60, 90])
         self.assertTrue(got['ok'])
         self.assertIn('board', got)
 
@@ -477,8 +477,8 @@ class PostRetryTests(unittest.TestCase):
         slept = []
         with self.assertRaises(SystemExit) as gave_up:
             pub.post_board('https://h79.example', 'weekly', '2026-11-15 09:00', opener=always_down, sleep=slept.append)
-        self.assertIn('after 3 tries', str(gave_up.exception))
-        self.assertEqual(slept, [90, 150])
+        self.assertIn('after 5 tries', str(gave_up.exception))
+        self.assertEqual(slept, [60, 90, 150, 180])
 
 
 class FixedNow:
@@ -511,6 +511,10 @@ class MacroSlotTests(unittest.TestCase):
         self.assertEqual(pub.task_for_schedule('7 5 * * *'), 'macro')
         self.assertEqual(pub.task_for_schedule('37 23 * * *'), 'macro')
         self.assertEqual(pub.task_for_schedule('17 12 * * 1-5'), 'macro')
+        self.assertEqual(pub.task_for_schedule('33 19 * * *'), 'macro')
+        self.assertEqual(pub.task_for_schedule('22 2 * * *'), 'macro')
+        self.assertEqual(pub.task_for_schedule('47 8 * * *'), 'macro')
+        self.assertEqual(pub.task_for_schedule('27 15 * * *'), 'macro')
         self.assertEqual(pub.task_for_schedule('13 1 * * 1-5'), 'domestic')
         self.assertEqual(pub.task_for_schedule('0 2 * * 0'), 'weekly')
         self.assertEqual(pub.task_for_schedule('0 12 * * 1-5'), '')
@@ -518,7 +522,8 @@ class MacroSlotTests(unittest.TestCase):
     def test_slot_follows_the_vn_clock_when_the_run_starts(self):
         from datetime import datetime
         at = lambda h, m=0: datetime(2026, 11, 24, h, m, tzinfo=pub.VN)
-        self.assertEqual(pub.macro_slot(at(4, 59)), '')
+        self.assertEqual(pub.macro_slot(at(0, 0)), 'dem')
+        self.assertEqual(pub.macro_slot(at(4, 59)), 'dem')
         self.assertEqual(pub.macro_slot(at(5, 52)), 'sang')
         self.assertEqual(pub.macro_slot(at(10, 59)), 'sang')
         self.assertEqual(pub.macro_slot(at(11, 0)), 'trua')
@@ -530,39 +535,35 @@ class MacroSlotTests(unittest.TestCase):
         (root / 'data').mkdir(exist_ok=True)
         pub.write_json(root / 'data' / 'macro-news.json', {'items': items})
 
-    def test_gate_first_slot_gap_and_legacy_items(self):
+    def test_gate_allows_any_hour_and_a_repeat_slot(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             self.write_macro(root, [{'date': '2026-11-23', 'title': 'hôm qua'}])
             self.assertEqual(pub.macro_gate(root, '2026-11-24', '2026-11-24 06:40', 'sang')[:2], (True, True))
-            self.assertFalse(pub.macro_gate(root, '2026-11-24', '2026-11-24 01:10', '')[0])
-            # legacy item: no slot field, time only inside time_vn → counts as sang at 11:33
+            self.assertEqual(pub.macro_gate(root, '2026-11-24', '2026-11-24 01:10', 'dem')[:2], (True, True))
             self.write_macro(root, [{'date': '2026-11-24', 'title': 'a', 'time_vn': 'Thứ Ba 24/11/2026 11:33 giờ VN'}])
             self.assertEqual(pub.item_published({'date': '2026-11-24', 'time_vn': 'Thứ Ba 24/11/2026 11:33 giờ VN'}), '2026-11-24 11:33')
             go, first, reason = pub.macro_gate(root, '2026-11-24', '2026-11-24 11:50', 'sang')
-            self.assertFalse(go)
-            self.assertIn('slot sang', reason)
-            go, _first, reason = pub.macro_gate(root, '2026-11-24', '2026-11-24 13:00', 'trua')
-            self.assertFalse(go)
-            self.assertIn('min ago', reason)
-            self.assertEqual(pub.macro_gate(root, '2026-11-24', '2026-11-24 14:33', 'trua')[:2], (True, False))
+            self.assertEqual((go, first), (True, False))
+            self.assertIn('extra update', reason)
+            self.assertTrue(pub.macro_gate(root, '2026-11-24', '2026-11-24 13:00', 'trua')[0])
             self.write_macro(root, [
                 {'date': '2026-11-24', 'title': 'b', 'slot': 'trua', 'published_vn': '2026-11-24 15:10'},
                 {'date': '2026-11-24', 'title': 'a', 'slot': 'sang', 'published_vn': '2026-11-24 06:40'},
             ])
-            self.assertFalse(pub.macro_gate(root, '2026-11-24', '2026-11-24 16:30', 'trua')[0])
-            self.assertFalse(pub.macro_gate(root, '2026-11-24', '2026-11-24 17:30', 'toi')[0])
-            self.assertTrue(pub.macro_gate(root, '2026-11-24', '2026-11-24 18:10', 'toi')[0])
+            self.assertTrue(pub.macro_gate(root, '2026-11-24', '2026-11-24 16:30', 'trua')[0])
+            self.assertTrue(pub.macro_gate(root, '2026-11-24', '2026-11-24 17:30', 'toi')[0])
+            self.assertTrue(pub.macro_gate(root, '2026-11-25', '2026-11-25 01:15', 'dem')[0])
 
-    def test_page_without_json_items_still_counts_as_published(self):
+    def test_page_without_json_items_can_still_take_an_update(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             self.write_macro(root, [])
             (root / 'bai').mkdir()
             (root / 'bai' / '2026-11-24-tin-vi-mo-anh-huong-gia-vang.html').write_text('x', encoding='utf-8')
-            go, _first, reason = pub.macro_gate(root, '2026-11-24', '2026-11-24 12:10', 'trua')
-            self.assertFalse(go)
-            self.assertIn('already published', reason)
+            go, first, reason = pub.macro_gate(root, '2026-11-24', '2026-11-24 12:10', 'trua')
+            self.assertEqual((go, first), (True, True))
+            self.assertIn('first update', reason)
 
     def test_later_update_goes_on_top_and_keeps_the_morning_story(self):
         data = {'items': []}
@@ -595,14 +596,15 @@ class MacroSlotTests(unittest.TestCase):
         today = [item['title'] for item in data['items'] if item['date'] == '2026-11-10']
         self.assertEqual(today, ['Dầu tăng vọt sau căng thẳng Trung Đông', 'Vàng giữ 4.087 khi lợi suất dịu'])
 
-    def run_main(self, root, stamp, board, schedule='7 5 * * 1-5'):
+    def run_main(self, root, stamp, board, schedule='7 5 * * 1-5', precheck=('https://www.cnbc.com/2026/11/24/new.html',), precheck_status='new'):
         import io
         from contextlib import redirect_stdout
-        saved = (pub.ROOT, pub.wake, pub.post_board, pub.datetime, os.environ.get('GITHUB_EVENT_SCHEDULE'), os.environ.get('H79_TASK'))
+        saved = (pub.ROOT, pub.wake, pub.post_board, pub.datetime, pub.scan_macro_candidates, os.environ.get('GITHUB_EVENT_SCHEDULE'), os.environ.get('H79_TASK'))
         calls = []
         pub.ROOT = root
         pub.wake = lambda *a, **k: calls.append('wake')
         pub.post_board = lambda *a, **k: (calls.append('post'), board)[1]
+        pub.scan_macro_candidates = lambda *a, **k: (list(precheck), precheck_status)
         pub.datetime = FixedNow(stamp)
         os.environ['GITHUB_EVENT_SCHEDULE'] = schedule
         os.environ.pop('H79_TASK', None)
@@ -611,8 +613,8 @@ class MacroSlotTests(unittest.TestCase):
             with redirect_stdout(buf):
                 code = pub.main([])
         finally:
-            pub.ROOT, pub.wake, pub.post_board, pub.datetime = saved[:4]
-            for key, value in (('GITHUB_EVENT_SCHEDULE', saved[4]), ('H79_TASK', saved[5])):
+            pub.ROOT, pub.wake, pub.post_board, pub.datetime, pub.scan_macro_candidates = saved[:5]
+            for key, value in (('GITHUB_EVENT_SCHEDULE', saved[5]), ('H79_TASK', saved[6])):
                 if value is None:
                     os.environ.pop(key, None)
                 else:
@@ -636,31 +638,88 @@ class MacroSlotTests(unittest.TestCase):
             self.assertEqual((root / 'data' / 'macro-news.json').read_text(encoding='utf-8'), before)
             self.assertFalse((root / 'data' / 'latest-share.json').exists())
 
-    def test_main_skips_without_waking_when_too_soon_or_late_night(self):
+    def test_main_skips_without_waking_when_precheck_finds_nothing(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             self.write_macro(root, [{'date': '2026-11-24', 'title': 'a', 'slot': 'sang', 'published_vn': '2026-11-24 10:30'}])
-            code, calls, log = self.run_main(root, '2026-11-24 12:20', {})
+            code, calls, log = self.run_main(root, '2026-11-24 12:20', {}, precheck=(), precheck_status='none')
             self.assertEqual((code, calls), (0, []))
-            self.assertIn('min ago', log)
-            code, calls, log = self.run_main(root, '2026-11-25 01:15', {}, schedule='17 12 * * 1-5')
+            self.assertIn('no new candidate stories', log)
+            code, calls, log = self.run_main(root, '2026-11-25 01:15', {}, schedule='17 12 * * 1-5', precheck=(), precheck_status='none')
             self.assertEqual((code, calls), (0, []))
-            self.assertIn('00:00 and 05:00', log)
+            self.assertIn('first update (dem)', log)
+            self.assertIn('no new candidate stories', log)
 
-    def test_weekend_runs_use_the_same_slots(self):
+    def test_weekend_and_late_night_runs_still_publish_new_stories(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             self.write_macro(root, [{'date': '2026-11-28', 'title': 'a', 'slot': 'sang', 'published_vn': '2026-11-28 10:30'}])
-            code, calls, log = self.run_main(root, '2026-11-28 12:20', {}, schedule='7 5 * * *')
-            self.assertEqual((code, calls), (0, []))
-            self.assertIn('min ago', log)
             board = story('Dầu tăng vọt cuối tuần', 'https://www.cnbc.com/2026/11/28/oil.html')
             board['clock']['dateVn'] = '2026-11-28'
+            code, calls, log = self.run_main(root, '2026-11-28 12:20', {}, schedule='7 5 * * *', precheck=(), precheck_status='none')
+            self.assertEqual((code, calls), (0, []))
+            self.assertIn('no new candidate stories', log)
             code, calls, log = self.run_main(root, '2026-11-28 19:30', board, schedule='17 12 * * *')
             self.assertEqual(code, 1)  # stops at build-seo in the temp dir, after the story was written
             self.assertEqual(calls, ['wake', 'post'])
             data = json.loads((root / 'data' / 'macro-news.json').read_text(encoding='utf-8'))
             self.assertEqual([item['slot'] for item in data['items']], ['toi', 'sang'])
+            night = story('Fed ra thông báo đêm', 'https://www.federalreserve.gov/newsevents/pressreleases/2026-11-29-a.htm')
+            night['clock']['dateVn'] = '2026-11-29'
+            self.write_macro(root, [])
+            code, calls, log = self.run_main(root, '2026-11-29 01:15', night, schedule='33 19 * * *')
+            self.assertEqual(calls, ['wake', 'post'])
+            data = json.loads((root / 'data' / 'macro-news.json').read_text(encoding='utf-8'))
+            self.assertEqual(data['items'][0]['slot'], 'dem')
+
+    def test_precheck_compares_index_links_with_the_board(self):
+        import io
+
+        class Body(io.BytesIO):
+            def __init__(self, data, url):
+                super().__init__(data)
+                self.url = url
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *args):
+                return False
+
+        pages = {
+            'https://www.kitco.com/news': b'<a href="/news/article/2026-11-24/old">old</a><a href="/news/article/2026-11-24/new">new</a>',
+            'https://www.kitco.com/news/rss': b'<link>https://www.kitco.com/news/article/2026-11-24/new</link>',
+        }
+
+        def opener(req, timeout=0):
+            url = getattr(req, 'full_url', None) or req
+            if url not in pages:
+                raise OSError('skip')
+            return Body(pages[url], url)
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.write_macro(root, [{
+                'date': '2026-11-24',
+                'title': 'old',
+                'source': {'url': 'https://www.kitco.com/news/article/2026-11-24/old'},
+            }])
+            logs = []
+            found, status = pub.scan_macro_candidates(root, '2026-11-24', opener=opener, log=logs.append)
+            self.assertEqual(status, 'new')
+            self.assertEqual(found, ['https://www.kitco.com/news/article/2026-11-24/new'])
+            self.write_macro(root, [
+                {'date': '2026-11-24', 'title': 'old', 'source': {'url': 'https://www.kitco.com/news/article/2026-11-24/old'}},
+                {'date': '2026-11-24', 'title': 'new', 'source': {'url': 'https://www.kitco.com/news/article/2026-11-24/new'}},
+            ])
+            found, status = pub.scan_macro_candidates(root, '2026-11-24', opener=opener, log=logs.append)
+            self.assertEqual((found, status), ([], 'none'))
+
+        def always_fail(req, timeout=0):
+            raise OSError('down')
+
+        found, status = pub.scan_macro_candidates(Path('/tmp'), '2026-11-24', opener=always_fail, log=logs.append)
+        self.assertEqual((found, status), ([], 'error'))
 
     def test_422_reason_is_logged_without_secrets(self):
         import io
@@ -670,6 +729,33 @@ class MacroSlotTests(unittest.TestCase):
         reason = pub.generator_reason(exc)
         self.assertIn('no articles', reason)
         self.assertIn('Không có bài báo', reason)
+
+    def test_502_reason_is_logged_on_retry(self):
+        import io
+        import urllib.error
+        from contextlib import redirect_stdout
+        body = json.dumps({'ok': False, 'error': 'Không tạo được bản tin lúc này. Vui lòng thử lại sau.', 'debug': {'detail': 'gemini_failed', 'status': 503}}).encode()
+        calls = []
+
+        def always_down(req, timeout=0):
+            calls.append(timeout)
+            raise urllib.error.HTTPError(req.full_url, 502, 'bad gateway', {}, io.BytesIO(body))
+
+        buf = io.StringIO()
+        token = os.environ.get('H79_RUN_TOKEN')
+        os.environ['H79_RUN_TOKEN'] = 'test-token'
+        try:
+            with redirect_stdout(buf), self.assertRaises(SystemExit) as gave_up:
+                pub.post_board('https://h79.example', 'macro', '2026-11-24 22:30', opener=always_down, sleep=lambda _s: None)
+        finally:
+            if token is None:
+                os.environ.pop('H79_RUN_TOKEN', None)
+            else:
+                os.environ['H79_RUN_TOKEN'] = token
+        self.assertIn('after 5 tries (502)', str(gave_up.exception))
+        self.assertEqual(len(calls), 5)
+        self.assertIn('gemini_failed', buf.getvalue())
+        self.assertIn('status=503', buf.getvalue())
 
 
 if __name__ == '__main__':
