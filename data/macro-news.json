@@ -1,6 +1,6 @@
 {
  "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC | Chiến tranh | Ngân hàng TW. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
- "updated": "2026-11-26",
+ "updated": "2026-11-27",
  "fomc": {
   "source": {
    "name": "Federal Reserve – FOMC calendars",
@@ -56,6 +56,131 @@
   "note_en": "Decision at 2:00 PM ET on day two of the meeting, press conference at 2:30 PM ET. * = with economic projections (dot plot)."
  },
  "items": [
+  {
+   "date": "2026-11-27",
+   "category": "Vàng",
+   "priority": 1,
+   "impact": "tăng",
+   "title": "Vàng bật tăng trở lại trên mốc 3,5 USD/oz nhờ lực mua bắt đáy và kỳ vọng chính sách",
+   "summary": "Giá vàng giao ngay dao động quanh mức 3.569,90 USD/oz, giảm nhẹ 0,50% trong phiên nhưng đã hồi phục nhanh chóng sau khi kiểm tra vùng hỗ trợ quan trọng. Theo Kitco (08:54 EST 26/11), xác suất CME FedWatch cho một lần tăng 25 điểm cơ bản tháng 12 là 99%.",
+   "reason": "Ngắn hạn: Lực mua bắt đáy xuất hiện mạnh mẽ khi giá vàng chạm ngưỡng hỗ trợ kỹ thuật quanh 3,500 USD/oz, giúp thị trường thu hẹp đà giảm. Dài hạn: Áp lực từ kỳ vọng Fed tiếp tục thắt chặt chính sách và đồng USD mạnh vẫn duy trì, khiến xu hướng tăng trưởng bền vững cần thêm thời gian tích lũy.",
+   "source": {
+    "name": "Gold slips, silver steadies as Fed rate hike expectations persist in holiday trading - Kitco AM Report | Kitco News",
+    "name_en": "Gold slips, silver steadies as Fed rate hike expectations persist in holiday trading - Kitco AM Report | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-26/gold-slips-silver-steadies-fed-rate-hike-expectations-persist-holiday"
+   },
+   "time_vn": "Thứ Sáu 27/11/2026 04:40 giờ VN",
+   "title_en": "Gold rebounds above $3,500 on bargain hunting and rate expectations",
+   "summary_en": "Spot gold traded near $3,569.90 an ounce, down 0.50% on the session, staging a recovery after testing key support levels.",
+   "reason_en": "Short-term: Bargain hunting emerged strongly near technical support at $3,500, helping pare losses. Long-term: Persistent Fed tightening expectations and a firm dollar continue to cap upside momentum.",
+   "time_en": "Thursday, November 26, 2026, 16:40 EST",
+   "source2": {
+    "name": "India’s central bank repatriates another 60 tonnes of gold in 2026 as share of FX reserves drops to 14.38% | Kitco News",
+    "name_en": "India’s central bank repatriates another 60 tonnes of gold in 2026 as share of FX reserves drops to 14.38% | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-26/indias-central-bank-repatriates-another-60-tonnes-gold-2026-share-fx"
+   },
+   "slot": "dem",
+   "published_vn": "2026-11-27 04:40"
+  },
+  {
+   "date": "2026-11-27",
+   "category": "Fed",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "Kỳ vọng Fed tăng lãi suất tháng 12 duy trì ở mức cao sau loạt dữ liệu kinh tế",
+   "summary": "Đánh giá thị trường hợp đồng tương lai cho thấy xác suất khoảng 99% Fed sẽ tăng lãi suất 25 điểm cơ bản tại cuộc họp ngày 8-9 tháng 12.",
+   "reason": "Ngắn hạn: Thông tin này tiếp tục gây áp lực đè nặng lên kim loại quý. Dài hạn: Phản ánh định hướng chính sách thắt chặt của Fed nhằm kiểm soát lạm phát nền tảng.",
+   "source": {
+    "name": "Gold slips, silver steadies as Fed rate hike expectations persist in holiday trading - Kitco AM Report | Kitco News",
+    "name_en": "Gold slips, silver steadies as Fed rate hike expectations persist in holiday trading - Kitco AM Report | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-26/gold-slips-silver-steadies-fed-rate-hike-expectations-persist-holiday"
+   },
+   "time_vn": "Thứ Sáu 27/11/2026 04:40 giờ VN",
+   "title_en": "Fed rate hike expectations remain elevated following economic data",
+   "summary_en": "Published futures assessment indicates approximately a 99% probability of a 25-basis point increase at the Dec. 8-9 meeting.",
+   "reason_en": "Short-term: Weighs heavily on precious metals. Long-term: Reflects ongoing central bank focus on managing inflation risks.",
+   "time_en": "Thursday, November 26, 2026, 16:40 EST",
+   "source2": {
+    "name": "India’s central bank repatriates another 60 tonnes of gold in 2026 as share of FX reserves drops to 14.38% | Kitco News",
+    "name_en": "India’s central bank repatriates another 60 tonnes of gold in 2026 as share of FX reserves drops to 14.38% | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-26/indias-central-bank-repatriates-another-60-tonnes-gold-2026-share-fx"
+   },
+   "slot": "dem",
+   "published_vn": "2026-11-27 04:40"
+  },
+  {
+   "date": "2026-11-27",
+   "category": "Lợi suất",
+   "priority": 1,
+   "impact": "tăng",
+   "title": "Lợi suất trái phiếu kho bạc Mỹ kỳ hạn 10 năm giảm nhẹ trong phiên giao dịch trước kỳ nghỉ",
+   "summary": "Lợi suất trái phiếu kho bạc Mỹ kỳ hạn 10 năm giảm 5,6 điểm cơ bản xuống 4,845%, trong khi kỳ hạn 2 năm giảm 3,5 điểm cơ bản xuống 4,633%.",
+   "reason": "Ngắn hạn: Lợi suất giảm tạo khoảng trống hỗ trợ giúp vàng phục hồi từ đáy. Dài hạn: Biến động lợi suất phụ thuộc vào dữ liệu lạm phát và việc làm tiếp theo.",
+   "source": {
+    "name": "Gold slips, silver steadies as Fed rate hike expectations persist in holiday trading - Kitco AM Report | Kitco News",
+    "name_en": "Gold slips, silver steadies as Fed rate hike expectations persist in holiday trading - Kitco AM Report | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-26/gold-slips-silver-steadies-fed-rate-hike-expectations-persist-holiday"
+   },
+   "time_vn": "Thứ Sáu 27/11/2026 04:40 giờ VN",
+   "title_en": "10-year US Treasury yield declines ahead of holiday session",
+   "summary_en": "The benchmark 10-year yield fell 5.6 basis points to 4.845%, while the two-year yield declined 3.5 basis points to 4.633%.",
+   "reason_en": "Short-term: Lower yields offer support for gold recovery. Long-term: Yield trajectory remains tied to upcoming inflation and employment data.",
+   "time_en": "Thursday, November 26, 2026, 16:40 EST",
+   "source2": {
+    "name": "India’s central bank repatriates another 60 tonnes of gold in 2026 as share of FX reserves drops to 14.38% | Kitco News",
+    "name_en": "India’s central bank repatriates another 60 tonnes of gold in 2026 as share of FX reserves drops to 14.38% | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-26/indias-central-bank-repatriates-another-60-tonnes-gold-2026-share-fx"
+   },
+   "slot": "dem",
+   "published_vn": "2026-11-27 04:40"
+  },
+  {
+   "date": "2026-11-27",
+   "category": "Ngân hàng TW",
+   "priority": 1,
+   "impact": "trung lập",
+   "title": "Ngân hàng Trung ương Ấn Độ chuyển thêm 60 tấn vàng về kho nội địa trong năm 2026",
+   "summary": "RBI đã di chuyển 60,08 tấn vàng từ các kho nước ngoài về cơ sở lưu trữ trong nước trong quý 2 và quý 3, nâng tỷ lệ vàng lưu trữ nội địa lên 84,05%.",
+   "reason": "Ngắn hạn: Không tác động trực tiếp ngay lập tức đến giá giao ngay nhưng củng cố xu hướng nắm giữ tài sản vật chất của các ngân hàng trung ương lớn. Dài hạn: Tăng tính tự chủ an toàn dự trữ quốc gia.",
+   "source": {
+    "name": "India’s central bank repatriates another 60 tonnes of gold in 2026 as share of FX reserves drops to 14.38% | Kitco News",
+    "name_en": "India’s central bank repatriates another 60 tonnes of gold in 2026 as share of FX reserves drops to 14.38% | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-26/indias-central-bank-repatriates-another-60-tonnes-gold-2026-share-fx"
+   },
+   "time_vn": "Thứ Sáu 27/11/2026 04:40 giờ VN",
+   "title_en": "Reserve Bank of India repatriates another 60 tonnes of gold in 2026",
+   "summary_en": "The RBI moved 60.08 tonnes of bullion from overseas vaults to domestic storage over Q2 and Q3, bringing domestic holdings share to 84.05%.",
+   "reason_en": "Short-term: Neutral for spot prices but reinforces institutional physical demand. Long-term: Enhances sovereign reserve security.",
+   "time_en": "Thursday, November 26, 2026, 16:40 EST",
+   "slot": "dem",
+   "published_vn": "2026-11-27 04:40"
+  },
+  {
+   "date": "2026-11-27",
+   "category": "Dầu mỏ",
+   "priority": 1,
+   "impact": "trung lập",
+   "title": "Giá dầu thô giảm nhẹ trong bối cảnh thị trường cân đối lại nguồn cung toàn cầu",
+   "summary": "Dầu Brent giao dịch quanh mức 93,65 USD/thùng (giảm 1,01%), trong khi dầu WTI ở mức 83,25 USD/thùng (giảm 0,51%) trong phiên giao dịch đầu giờ tại châu Âu.",
+   "reason": "Ngắn hạn: Giá dầu hạ nhiệt giúp giảm bớt áp lực lạm phát chi phí đẩy. Dài hạn: Biến động năng lượng tiếp tục ảnh hưởng đến kỳ vọng lãi suất toàn cầu.",
+   "source": {
+    "name": "Gold slips, silver steadies as Fed rate hike expectations persist in holiday trading - Kitco AM Report | Kitco News",
+    "name_en": "Gold slips, silver steadies as Fed rate hike expectations persist in holiday trading - Kitco AM Report | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-26/gold-slips-silver-steadies-fed-rate-hike-expectations-persist-holiday"
+   },
+   "time_vn": "Thứ Sáu 27/11/2026 04:40 giờ VN",
+   "title_en": "Crude oil prices decline modestly amid global supply adjustments",
+   "summary_en": "Brent crude futures traded near $93.65 a barrel, down 1.01%, while Nymex WTI crude was near $83.25, down 0.51% in early European dealings.",
+   "reason_en": "Short-term: Easing oil prices help moderate cost-push inflation. Long-term: Energy shifts continue to guide broader rate expectations.",
+   "time_en": "Thursday, November 26, 2026, 16:40 EST",
+   "source2": {
+    "name": "India’s central bank repatriates another 60 tonnes of gold in 2026 as share of FX reserves drops to 14.38% | Kitco News",
+    "name_en": "India’s central bank repatriates another 60 tonnes of gold in 2026 as share of FX reserves drops to 14.38% | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-26/indias-central-bank-repatriates-another-60-tonnes-gold-2026-share-fx"
+   },
+   "slot": "dem",
+   "published_vn": "2026-11-27 04:40"
+  },
   {
    "date": "2026-11-26",
    "category": "Vàng",
