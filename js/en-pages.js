@@ -31,12 +31,15 @@
   if (box) {
     const KEY = 'hmg_symbol', q = new URLSearchParams(location.search).get('symbol');
     let symbol = (q || localStorage.getItem(KEY) || 'OANDA:XAUUSD').toUpperCase(), draw = null, data = null, cat = 0;
+    let withInd = false;
+    const EXTRA = [{ id: 'BB@tv-basicstudies', inputs: { length: 90, mult: 2 } }, { id: 'MASimple@tv-basicstudies', inputs: { length: 34 } }, { id: 'MASimple@tv-basicstudies', inputs: { length: 89 } }];
     const cfg = t => ({ autosize: true, symbol, interval: /^(HNX|UPCOM|HOSE):/.test(symbol) ? 'D' : '45', timezone: NY, theme: t, style: '1', locale: 'en',
       allow_symbol_change: true, calendar: false, hide_side_toolbar: false, hide_top_toolbar: false, hide_legend: false, withdateranges: true, details: true,
       show_popup_button: true, popup_width: '1200', popup_height: '750', save_image: true, hide_volume: false, backgroundColor: t === 'dark' ? 'rgba(13,17,23,1)' : 'rgba(255,253,247,1)',
-      studies: [{ id: 'BB@tv-basicstudies', inputs: { length: 90, mult: 2 } }, { id: 'MASimple@tv-basicstudies', inputs: { length: 34 } }, { id: 'MASimple@tv-basicstudies', inputs: { length: 89 } }, { id: 'MACD@tv-basicstudies', inputs: { fastLength: 12, slowLength: 26, signalLength: 9 } }, { id: 'RSI@tv-basicstudies', inputs: { length: 14 } }],
+      studies: (withInd ? EXTRA : []).concat([{ id: 'MACD@tv-basicstudies', inputs: { fastLength: 12, slowLength: 26, signalLength: 9 } }, { id: 'RSI@tv-basicstudies', inputs: { length: 14 } }]),
       support_host: 'https://www.tradingview.com' });
-    H.lazy(box, () => { draw = H.tv(box, 'embed-widget-advanced-chart.js', cfg); });
+    /* Đường chỉ báo riêng chỉ vẽ khi mục chartIndicators bật (features.json) hoặc xem thử riêng; tắt thì không đưa vào cấu hình biểu đồ */
+    H.lazy(box, () => { H.feature('chartIndicators').then(on => { withInd = on; const pre = $('ind-pre'); if (on && pre) pre.textContent = 'BB(90,2), SMA 34, SMA 89, '; draw = H.tv(box, 'embed-widget-advanced-chart.js', cfg); }); });
     const mark = () => { document.querySelectorAll('[data-s]').forEach(c => c.classList.toggle('active', c.dataset.s === symbol)); if ($('cur-sym')) $('cur-sym').textContent = symbol; };
     const set = s => { symbol = s; localStorage.setItem(KEY, s); const u = new URL(location.href); u.searchParams.set('symbol', s); history.replaceState(null, '', u); mark(); if (draw) draw(); };
     document.addEventListener('click', e => { const b = e.target.closest('button[data-s]'); if (b) set(b.dataset.s); });

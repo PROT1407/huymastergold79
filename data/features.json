@@ -3,5 +3,6 @@
   "cptCard": true,
   "newsSidebar": true,
   "stickyCard": true,
-  "mobileLayout": true
+  "mobileLayout": true,
+  "chartIndicators": false
 }

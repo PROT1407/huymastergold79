@@ -188,6 +188,23 @@
     if (nav) nav.before(block); else art.appendChild(block);
   });
 
+  /* ---- Công tắc mục (data/features.json): H.feature('khoá') -> Promise<boolean>.
+     Xem thử riêng trên máy này: ?h79preview=1 (lưu localStorage), ?h79preview=0 xoá -> mọi mục đều bật. Không có cờ: chỉ mục true trong features.json.
+     Phần tử có data-feature="khoá" (và hidden) tự hiện khi mục bật; trang không có phần tử đó thì không tải features.json. ---- */
+  (() => {
+    const K = 'h79_preview', qs = new URLSearchParams(location.search), pv = qs.get('h79preview');
+    try {
+      if (pv === '1') localStorage.setItem(K, '1'); else if (pv === '0') localStorage.removeItem(K);
+      if (pv === '0' || pv === '1') { qs.delete('h79preview'); const q = qs.toString(); history.replaceState(null, '', location.pathname + (q ? '?' + q : '') + location.hash); }
+    } catch (e) { }
+    const local = () => { try { return localStorage.getItem(K) === '1'; } catch (e) { return false; } };
+    let P = null;
+    H.feature = key => local() ? Promise.resolve(true)
+      : (P || (P = H.getJSON(H.ROOT + 'data/features.json').catch(() => ({})))).then(j => !!j && j[key] === true);
+    const reveal = () => document.querySelectorAll('[data-feature]').forEach(el => H.feature(el.dataset.feature).then(on => { if (on) el.hidden = false; }));
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', reveal); else reveal();
+  })();
+
   /* ---- TradingView widget theo giao diện ---- */
   H.tv = function (el, file, cfgFn) {
     const draw = () => {
