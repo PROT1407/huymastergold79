@@ -172,7 +172,7 @@
       studies: (withInd ? EXTRA : []).concat([{ id: 'MACD@tv-basicstudies', inputs: { fastLength: 12, slowLength: 26, signalLength: 9 } }, { id: 'RSI@tv-basicstudies', inputs: { length: 14 } }]),
       support_host: 'https://www.tradingview.com' });
     /* Đường chỉ báo riêng chỉ vẽ khi mục chartIndicators bật (features.json) hoặc xem thử riêng; tắt thì không đưa vào cấu hình biểu đồ */
-    H.lazy(box, () => { H.feature('chartIndicators').then(on => { withInd = on; const pre = $('ind-pre'); if (on && pre) pre.textContent = 'BB(90,2), MA34, MA89, '; draw = H.tv(box, 'embed-widget-advanced-chart.js', cfg); }); });
+    H.lazy(box, () => { (H.feature ? H.feature('chartIndicators') : Promise.resolve(false)).then(on => { withInd = on; const pre = $('ind-pre'); if (on && pre) pre.textContent = 'BB(90,2), MA34, MA89, '; draw = H.tv(box, 'embed-widget-advanced-chart.js', cfg); }); });
     const mark = () => { document.querySelectorAll('[data-s]').forEach(c => c.classList.toggle('active', c.dataset.s === symbol)); if ($('cur-sym')) $('cur-sym').textContent = symbol; };
     const set = s => { symbol = s; localStorage.setItem(KEY, s); const u = new URL(location.href); u.searchParams.set('symbol', s); history.replaceState(null, '', u); mark(); if (draw) draw(); };
     document.addEventListener('click', e => { const b = e.target.closest('button[data-s]'); if (b) set(b.dataset.s); });
