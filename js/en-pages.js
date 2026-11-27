@@ -75,7 +75,7 @@
     <div class="mi-head"><span class="mi-ic" title="${E(c[1])}">${c[0]}</span><span class="badge side">${E(c[1])}</span><span class="muted small">${E(dShort(it.date))}</span>${it.priority === 1 ? '<span class="badge ex">Direct impact</span>' : ''}<span class="imp ${im[0]}">${im[1]}</span></div>
     <h3 style="color:var(--txt);margin:8px 0 2px;font-size:1.02rem">${E(it.title_en)}</h3>${it.time_en ? `<span class="mi-time">🕐 ${E(it.time_en)}</span>` : ''}
     ${full ? `<p class="small" style="margin-top:8px">${E(it.summary_en || '')}</p>${it.reason_en ? `<p class="small" style="margin-top:6px"><b>Gold impact:</b> ${E(it.reason_en)}</p>` : ''}${it.check_en ? `<p class="small note" style="margin:8px 0 0">⚠ ${E(it.check_en)}</p>` : ''}` : `<p class="small muted" style="margin-top:6px">${E(it.reason_en || '')}</p>`}
-    <p class="small mi-src" style="margin-top:8px"><span>Source: ${src(it.source)}${it.source2 ? ' · ' + src(it.source2) : ''}</span>${full ? shareBtn(it) : ''}</p></article>`; };
+    <p class="small mi-src" style="margin-top:8px"><span>Source: ${src(it.source)}${it.source2 ? ' · ' + src(it.source2) : ''}</span>${shareBtn(it)}</p></article>`; };
   if ($('macro') || $('fomc') || $('macro-home') || document.querySelector('[data-fomc-cd]')) H.getJSON('data/macro-news.json').then(d => {
     const items = d.items.filter(x => x.title_en).sort((a, b) => (a.priority || 2) - (b.priority || 2) || b.date.localeCompare(a.date));
     if ($('macro')) {

@@ -101,5 +101,17 @@ class StoryPages(unittest.TestCase):
         self.assertEqual(text, 'T\n\nMột. Hai.\n\nTác động tới vàng: Ngắn hạn: A.\n\nhttps://h79gold.com/tin/x.html')
 
 
+    def test_homepage_macro_cards_include_share_button(self):
+        root = SCRIPTS.parent
+        macro = (root / 'js' / 'macro.js').read_text(encoding='utf-8')
+        en = (root / 'js' / 'en-pages.js').read_text(encoding='utf-8')
+        self.assertIn('${shareBtn(it)}', macro)
+        self.assertNotIn('${full ? shareBtn(it)', macro)
+        self.assertIn('${shareBtn(it)}', en)
+        self.assertNotIn('${full ? shareBtn(it)', en)
+        self.assertIn('js/story-share.js', (root / 'index.html').read_text(encoding='utf-8'))
+        self.assertIn('js/story-share.js', (root / 'en' / 'index.html').read_text(encoding='utf-8'))
+
+
 if __name__ == '__main__':
     unittest.main()
