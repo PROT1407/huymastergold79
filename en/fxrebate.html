@@ -27,9 +27,7 @@
 <main class="wrap">
 
 <div class="page-head">
-  <p class="crumb"><a href="en/index.html">Home</a> › <a href="en/trading-fund.html">Trading</a> › FX Rebate</p>
   <h1>FX <span style="color:var(--gold)">Rebate</span></h1>
-  <p>Open an account on the H79 link and get your trading rebate in USDT.</p>
 </div>
 
 <section class="sec" id="brokers">
@@ -37,102 +35,28 @@
     <article class="rb-broker rb-live">
       <header class="rb-top">
         <span class="rb-mark" aria-hidden="true">EX</span>
-        <div class="rb-id"><h3 class="rb-name">Exness</h3></div>
-        <p class="rb-offer"><b>~80% of IB</b><small>paid per lot</small></p>
+        <div class="rb-id"><h3 class="rb-name">Exness <span class="mini-tag soft">estimate</span></h3></div>
+        <p class="rb-offer"><b>~80% IB</b></p>
       </header>
-      <p class="rb-est"><span class="mini-tag soft">estimate</span> USD/lot · Common level, read Oct 25, 2026</p>
-      <ul class="rb-lots" id="rates"><li><b>XAUUSD</b> <span>Standard ≈ 3.84 · Pro ≈ 2.28 · Zero/Raw <strong>1.20</strong> fixed</span></li><li><b>EURUSD</b> <span>Standard ≈ 1.28 · Pro ≈ 0.82 · Zero/Raw <strong>0.34</strong> fixed</span></li><li><b>GBPUSD</b> <span>Standard ≈ 1.62 · Pro ≈ 0.96 · Zero ≈ 0.45 estimate</span></li></ul>
-      <div class="rb-cta">
-        <a class="btn" href="https://one.exnessonelink.com/a/dxa5yv2x16" target="_blank" rel="noopener sponsored">Open Exness on the H79 link →</a>
-        <button type="button" class="rb-clip" data-copy="https://one.exnessonelink.com/a/dxa5yv2x16" data-idle="Copy link" data-done="Copied ✓">Copy link</button>
-      </div>
+      <ul class="rb-lots" id="rates"><li><b>XAUUSD</b> <span>Standard 3.84 · Pro 2.28 · Zero/Raw <strong>1.20</strong></span></li><li><b>EURUSD</b> <span>Standard 1.28 · Pro 0.82 · Zero/Raw <strong>0.34</strong></span></li><li><b>GBPUSD</b> <span>Standard 1.62 · Pro 0.96 · Zero 0.45</span></li></ul>
+      <div class="rb-cta"><a class="btn" href="https://one.exnessonelink.com/a/dxa5yv2x16" target="_blank" rel="noopener sponsored">Open Exness →</a></div>
     </article>
 
     <article class="rb-broker rb-live">
       <header class="rb-top">
         <span class="rb-mark" aria-hidden="true">CPT</span>
         <div class="rb-id"><h3 class="rb-name">CPT Markets</h3></div>
-        <p class="rb-offer"><b>Client account</b><small>H79 sign-up link</small></p>
       </header>
-      <div class="rb-cta">
-        <a class="btn" href="https://portal.cptmarkets.com/user/register?inviteid=CWo5B5Cs6-MT5&amp;inviteType=1" target="_blank" rel="noopener sponsored">Open a CPT Markets account →</a>
-        <button type="button" class="rb-clip" data-copy="https://portal.cptmarkets.com/user/register?inviteid=CWo5B5Cs6-MT5&inviteType=1" data-idle="Copy link" data-done="Copied ✓">Copy link</button>
-      </div>
+      <div class="rb-cta"><a class="btn" href="https://portal.cptmarkets.com/user/register?inviteid=CWo5B5Cs6-MT5&amp;inviteType=1" target="_blank" rel="noopener sponsored">Open account →</a></div>
     </article>
   </div>
 </section>
 
-<section class="card sec" id="uid">
-  <h2 style="margin-top:0">Send the UID on Zalo</h2>
-  <p>Open the account on the link, then send this template to H79 on Zalo.</p>
-  <pre class="rb-uid" id="rb-uid">FXRebate
-UID:
-Account: Standard / Pro / Zero / Raw
-Main market:
-USDT network: TRC-20 or BEP-20
-Wallet:</pre>
-  <div class="share">
-    <button type="button" class="btn ghost" id="rb-copy">Copy template</button>
-    <a class="btn zalo" href="https://zalo.me/0938295970" target="_blank" rel="noopener">💬 Zalo 0938295970</a>
-    <a class="btn zalo" href="https://zalo.me/0919997283" target="_blank" rel="noopener">💬 Zalo 0919997283</a>
-  </div>
-</section>
-
-<p class="small muted">⚠ <b>Risk:</b> Gold and forex CFDs can lose part or all of your capital. A rebate is not profit; the figures are estimates. Do not send money to individuals.</p>
+<p class="small muted">⚠ CFDs risk losing capital.</p>
 
 </main>
 <div id="site-footer"></div>
 <script src="js/common.js?v=20261026z"></script>
 <script src="js/analytics.js?v=20261016g" defer></script>
-<script>
-(function () {
-  var copy = document.getElementById('rb-copy');
-  if (copy) copy.onclick = function () {
-    var t = document.getElementById('rb-uid').textContent;
-    var btn = copy;
-    (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function () {
-      btn.textContent = 'Copied ✓';
-      setTimeout(function () { btn.textContent = 'Copy template'; }, 1500);
-    }).catch(function () { prompt('Copy:', t); });
-  };
-  function rbCopyNow(text) {
-    var ta = document.createElement('textarea');
-    ta.value = text;
-    ta.style.position = 'fixed';
-    ta.style.top = '0';
-    ta.style.left = '0';
-    ta.style.width = '2em';
-    ta.style.height = '2em';
-    ta.style.padding = '0';
-    ta.style.border = 'none';
-    ta.style.outline = 'none';
-    ta.style.boxShadow = 'none';
-    ta.style.background = 'transparent';
-    document.body.appendChild(ta);
-    ta.focus();
-    ta.select();
-    var ok = false;
-    try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
-    document.body.removeChild(ta);
-    return ok;
-  }
-  document.querySelectorAll('.rb-clip').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var text = btn.getAttribute('data-copy') || '';
-      var idle = btn.getAttribute('data-idle') || 'Copy';
-      var done = btn.getAttribute('data-done') || 'Copied ✓';
-      function flash(label) {
-        btn.textContent = label;
-        setTimeout(function () { btn.textContent = idle; }, 3000);
-      }
-      btn.textContent = '…';
-      if (rbCopyNow(text)) { flash(done); return; }
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(function () { flash(done); }).catch(function () { flash('Not copied'); prompt(idle, text); });
-      } else { flash('Not copied'); prompt(idle, text); }
-    });
-  });
-})();
-</script>
 </body>
 </html>
