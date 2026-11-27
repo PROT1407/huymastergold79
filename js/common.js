@@ -63,7 +63,7 @@
     ['live', 'en/live.html', '🔴 Live'],
     ['forex', 'en/trading-fund.html', '💱 Trading', [
       ['en/trading-fund.html', 'Trading fund model', 'Risk rules and roadmap'],
-      ['en/fxrebate.html', 'FX Rebate', '80% of Exness IB, paid in USDT'],
+      ['en/fxrebate.html', 'FX Rebate', 'Exness and CPT Markets'],
       ['en/copy-trading.html', 'Copy trading', 'Follow the H79 account']]],
     ['learn', 'en/learn.html', '📚 Learn'],
     ['bai', 'en/posts/index.html', '📰 Archive'],
@@ -89,7 +89,7 @@
       ['lich-kinh-te.html', 'Lịch kinh tế', 'Fed, CPI, việc làm Mỹ…']]],
     ['forex', 'quy-forex.html', '💱 Forex', [
       ['quy-forex.html', 'Xây dựng quỹ Forex', 'Lộ trình vốn, quản trị rủi ro'],
-      ['fxrebate.html', 'Hoàn phí', 'Cashback IB Exness — 80%'],
+      ['fxrebate.html', 'Hoàn phí', 'Exness và CPT Markets'],
       ['tai-khoan-follow.html', 'Tài khoản Follow', 'Copy/theo dõi tài khoản giao dịch']]],
     ['learn', 'kien-thuc.html', '📚 Kiến thức', [
       ['kien-thuc.html#mua-vang', 'Cách mua vàng vật chất', 'Cho người mới'],
