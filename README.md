@@ -15,7 +15,7 @@ Website tĩnh, không cần build. Kéo thả cả thư mục (hoặc file zip) 
 | kien-thuc.html | Bài hướng dẫn cho người mới |
 | live.html | Phòng Live (YouTube TRADING LIVE XAUUSD), lịch `data/live-schedule.json`, đếm ngược, Google Calendar |
 | quy-forex.html | Xây dựng quỹ Forex – dữ liệu `data/fund.json` (SỐ LIỆU MẪU) |
-| fxrebate.html | Hoàn phí FX (FXRebate) – 80% hoa hồng IB Exness, vận hành tay. EN: `en/fxrebate.html`. Mẫu sheet: `ops/fxrebate-sheet-template.csv` |
+| fxrebate.html | Hoàn phí FX (FXRebate) – Exness và CPT Markets. EN: `en/fxrebate.html`. Mẫu sheet: `ops/fxrebate-sheet-template.csv` |
 | tai-khoan-follow.html | Tài khoản Follow – dữ liệu `data/follow-accounts.json` (SỐ LIỆU MẪU) |
 | lien-he.html | Về tôi, QR Zalo, YouTube, email |
 
