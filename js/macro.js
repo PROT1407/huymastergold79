@@ -8,17 +8,19 @@ document.addEventListener('DOMContentLoaded', function () {
     if (it.category === 'Chiến tranh' || /chiến tranh|địa chính trị|xung đột|houthi|ngừng bắn/.test(t)) return ['⚔️', 'Chiến tranh & địa chính trị']; if (/fomc|dot plot/.test(t)) return ['🏛', 'Fed/FOMC']; if (/việc làm|bảng lương|thất nghiệp|nfp/.test(t)) return ['👷', 'Việc làm'];
     if (/lạm phát|cpi|pce/.test(t)) return ['🔥', 'Lạm phát']; if (/usd|dxy/.test(t) && it.category === 'Tương quan') return ['💵', 'USD'];
     return ({ 'Lợi suất': ['📈', 'Lợi suất'], 'Trái phiếu': ['🧾', 'Trái phiếu'], 'Fed': ['🏦', 'Fed'], 'FOMC': ['🏛', 'FOMC'], 'Tương quan': ['🔗', 'Tương quan'], 'Ngân hàng TW': ['🪙', 'Ngân hàng trung ương mua vàng'] })[it.category] || ['📰', it.category]; };
+  const SITE = 'https://h79gold.com/';
+  const shareBtn = it => `<button type="button" class="sh-story" data-title="${e(it.title)}" data-summary="${e(it.summary)}" data-reason="${e(it.reason)}" data-url="${e(SITE + (it.slug ? 'tin/' + it.slug + '.html' : 'tin-tuc.html'))}" aria-label="Chia sẻ tin này">↗ Chia sẻ</button>`;
   const src = s => s && s.url ? `<a href="${e(s.url)}" target="_blank" rel="noopener">${e(s.name)} ↗</a>` : '';
   const card = (it, full, i) => { const ic = ICON(it), im = IMP[it.impact] || IMP['trung lập'];
     return `<article class="card macro-item anim i-${im[0]}" style="animation-delay:${Math.min(i || 0, 10) * 60}ms" data-cat="${e(it.category)}">${full ? `<span class="tl-date">${H.dateVN(it.date)}</span>` : ''}
     <div class="mi-head"><span class="mi-ic" title="${e(ic[1])}">${ic[0]}</span><span class="badge side">${e(it.category)}</span><span class="muted small">${H.dateVN(it.date)}</span>${it.priority === 1 ? '<span class="badge ex">Tác động trực tiếp</span>' : ''}<span class="imp ${im[0]}">${im[1]}</span></div>
     <h3 style="color:var(--txt);margin:8px 0 2px;font-size:1.02rem">${e(it.title)}</h3><span class="mi-time">🕐 Giờ VN: ${e(it.time_vn || '—')}</span>
     ${full ? `<p class="small" style="margin-top:8px">${e(it.summary)}</p><p class="small" style="margin-top:6px"><b>Tác động tới vàng:</b> ${e(it.reason)}</p>${it.check ? `<p class="small note" style="margin:8px 0 0">⚠ ${e(it.check)}</p>` : ''}` : `<p class="small muted" style="margin-top:6px">${e(it.reason)}</p>`}
-    <p class="small" style="margin-top:8px">Nguồn: ${src(it.source)}${it.source2 ? ' · ' + src(it.source2) : ''}</p>${full ? `<div class="rx" data-rx="tin|${e(it.date)}|${e(it.title)}"></div>` : ''}</article>`; };
+    <p class="small mi-src" style="margin-top:8px"><span>Nguồn: ${src(it.source)}${it.source2 ? ' · ' + src(it.source2) : ''}</span>${full ? shareBtn(it) : ''}</p>${full ? `<div class="rx" data-rx="tin|${e(it.date)}|${e(it.title)}"></div>` : ''}</article>`; };
   const hlCard = it => { const ic = ICON(it), im = IMP[it.impact] || IMP['trung lập'];
     return `<article class="card hl anim"><div class="mi-head"><span class="tag">★ TIN NỔI BẬT</span><span class="mi-ic">${ic[0]}</span><span class="badge side">${e(it.category)}</span><span class="imp ${im[0]}">${im[1]}</span></div>
     <h3>${e(it.title)}</h3><span class="mi-time">🕐 Giờ VN: ${e(it.time_vn || '—')}</span><p class="small" style="margin-top:8px">${e(it.summary)}</p>
-    <p class="small" style="margin-top:6px"><b>Tác động tới vàng:</b> ${e(it.reason)}</p><p class="small" style="margin-top:8px">Nguồn: ${src(it.source)}${it.source2 ? ' · ' + src(it.source2) : ''}</p></article>`; };
+    <p class="small" style="margin-top:6px"><b>Tác động tới vàng:</b> ${e(it.reason)}</p><p class="small mi-src" style="margin-top:8px"><span>Nguồn: ${src(it.source)}${it.source2 ? ' · ' + src(it.source2) : ''}</span>${shareBtn(it)}</p></article>`; };
   H.getJSON('data/macro-news.json').then(d => {
     const items = d.items.slice().sort((a, b) => (a.priority || 2) - (b.priority || 2) || b.date.localeCompare(a.date));
     if ($('macro')) {

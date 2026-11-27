@@ -1047,7 +1047,7 @@ def apply_share(data, task, payload):
 def commit_and_push(message, runner=subprocess.run):
     if os.environ.get('GITHUB_ACTIONS') != 'true' and os.environ.get('H79_PUSH') != '1':
         return False
-    add = ['git', 'add', '--', 'data/macro-news.json', 'data/fedwatch.json', 'data/vn-gold-daily.json', 'data/vn-gold-history.json', 'data/strategies.json', 'data/latest-share.json', 'bai', 'en/posts', 'sitemap.xml', 'robots.txt', 'index.html']
+    add = ['git', 'add', '--', 'data/macro-news.json', 'data/fedwatch.json', 'data/vn-gold-daily.json', 'data/vn-gold-history.json', 'data/strategies.json', 'data/latest-share.json', 'bai', 'en/posts', 'tin', 'en/stories', 'sitemap.xml', 'robots.txt', 'index.html']
     runner(add, cwd=ROOT, check=True)
     quiet = runner(['git', 'diff', '--cached', '--quiet'], cwd=ROOT)
     if quiet.returncode == 0:

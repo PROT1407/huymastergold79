@@ -67,13 +67,15 @@
     'Tương quan': ['🔗', 'Cross-asset'], 'Ngân hàng TW': ['🪙', 'Central banks'], 'Vàng': ['🥇', 'Gold'], 'Dầu mỏ': ['🛢', 'Oil'] };
   const IMP = { 'tăng': ['up', '▲ Bullish gold'], 'giảm': ['down', '▼ Bearish gold'], 'trung lập': ['side', '◆ Neutral'] };
   const cat = c => CAT[c] || ['📰', c];
+  const SITE_URL = 'https://h79gold.com/';
+  const shareBtn = it => `<button type="button" class="sh-story" data-title="${E(it.title_en)}" data-summary="${E(it.summary_en || '')}" data-reason="${E(it.reason_en || '')}" data-url="${E(SITE_URL + (it.slug_en ? 'en/stories/' + it.slug_en + '.html' : 'en/news.html'))}" aria-label="Share this story">↗ Share</button>`;
   const src = s => s && s.url ? `<a href="${E(s.url)}" target="_blank" rel="noopener">${E(s.name_en || s.name)} ↗</a>` : '';
   const mcard = (it, full, i) => { const c = cat(it.category), im = IMP[it.impact] || IMP['trung lập'];
     return `<article class="card macro-item anim i-${im[0]}" style="animation-delay:${Math.min(i || 0, 10) * 60}ms">${full ? `<span class="tl-date">${E(dShort(it.date))}</span>` : ''}
     <div class="mi-head"><span class="mi-ic" title="${E(c[1])}">${c[0]}</span><span class="badge side">${E(c[1])}</span><span class="muted small">${E(dShort(it.date))}</span>${it.priority === 1 ? '<span class="badge ex">Direct impact</span>' : ''}<span class="imp ${im[0]}">${im[1]}</span></div>
     <h3 style="color:var(--txt);margin:8px 0 2px;font-size:1.02rem">${E(it.title_en)}</h3>${it.time_en ? `<span class="mi-time">🕐 ${E(it.time_en)}</span>` : ''}
     ${full ? `<p class="small" style="margin-top:8px">${E(it.summary_en || '')}</p>${it.reason_en ? `<p class="small" style="margin-top:6px"><b>Gold impact:</b> ${E(it.reason_en)}</p>` : ''}${it.check_en ? `<p class="small note" style="margin:8px 0 0">⚠ ${E(it.check_en)}</p>` : ''}` : `<p class="small muted" style="margin-top:6px">${E(it.reason_en || '')}</p>`}
-    <p class="small" style="margin-top:8px">Source: ${src(it.source)}${it.source2 ? ' · ' + src(it.source2) : ''}</p></article>`; };
+    <p class="small mi-src" style="margin-top:8px"><span>Source: ${src(it.source)}${it.source2 ? ' · ' + src(it.source2) : ''}</span>${full ? shareBtn(it) : ''}</p></article>`; };
   if ($('macro') || $('fomc') || $('macro-home') || document.querySelector('[data-fomc-cd]')) H.getJSON('data/macro-news.json').then(d => {
     const items = d.items.filter(x => x.title_en).sort((a, b) => (a.priority || 2) - (b.priority || 2) || b.date.localeCompare(a.date));
     if ($('macro')) {

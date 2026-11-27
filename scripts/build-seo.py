@@ -6,6 +6,7 @@ CHẠY TRƯỚC MỖI LẦN PUSH (routine):   python3 scripts/build-seo.py
 - bai/<YYYY-MM-DD>-<slug>.html : nhận định H79 (data/strategies.json),
   bản tin vĩ mô theo ngày (data/macro-news.json), giá vàng trong nước theo ngày
   (data/vn-gold-daily.json). Chỉ hiển thị đúng nội dung có trong JSON.
+- tin/<ngày>-<slug>.html + en/stories/<ngày>-<slug>.html : mỗi tin vĩ mô một trang riêng (để chia sẻ; không có og:image)
 - bai/index.html (Kho bài viết), sitemap.xml, robots.txt
 - Cập nhật canonical/og:url/og:image của trang chính theo BASE_URL,
   khối "Bài viết mới" trên index.html (giữa 2 marker SEO-LATEST).
@@ -45,6 +46,9 @@ LANG_PAIRS = {"index.html": "en/index.html", "chien-luoc.html": "en/h79-analysis
               "tai-khoan-follow.html": "en/copy-trading.html", "lien-he.html": "en/contact.html"}
 # Bài tiếng Anh tĩnh: en/posts/ (giữ đồng bộ với POST_SES trong js/common.js)
 OUT_EN = ROOT / "en" / "posts"
+# Trang riêng cho từng tin vĩ mô (chia sẻ Facebook/Zalo): tin/ (VI) và en/stories/ (EN). Không có og:image để Facebook hiện thẻ chữ theo tiêu đề tin.
+OUT_TIN = ROOT / "tin"
+OUT_STORY_EN = ROOT / "en" / "stories"
 POST_SES = {"phien-au-my": "london-ny-overlap", "phien-au": "london-session", "phien-my": "new-york-session", "phien-a": "asian-session", "phien-dem": "new-york-session"}  # 21:00–23:00 VN = NY morning/midday ET; never "night-session" on EN
 # Old EN URLs kept alive as redirect stubs (meta refresh + canonical) after slug fixes.
 EN_REDIRECTS = {
@@ -52,6 +56,7 @@ EN_REDIRECTS = {
     "en/posts/2026-10-15-gold-plan-night-session-2120.html": "en/posts/2026-10-15-gold-plan-new-york-session-2120.html",
     "en/posts/2026-10-14-gold-plan-night-session-2237.html": "en/posts/2026-10-14-gold-plan-new-york-session-2237.html",
 }
+STORY_V = "20261127a"  # cache-busting js/story-share.js
 ASSET_V = "20261026z"  # cache-busting cho css/js trong trang sinh tự động
 OLD_BASES = ["https://prot1407.github.io/huymastergold79/", "https://huymastergold79.com.vn/", "https://h79gold.com/"]
 VN = dt.timezone(dt.timedelta(hours=7))
@@ -753,6 +758,167 @@ def build_en(arts):
     return made
 
 
+# ---------- Trang riêng cho từng tin vĩ mô ----------
+def story_slug(title, date, taken):
+    """<ngày>-<slug ASCII ≤ 60 ký tự, cắt ở dấu gạch>; trùng → thêm -2, -3. Dùng làm tên file và URL."""
+    full = slug(title or "")
+    s = full[:60]
+    if len(full) > 60 and "-" in s: s = s.rsplit("-", 1)[0]
+    s = f"{date}-{s.strip('-') or 'tin'}"
+    base, n = s, 2
+    while s in taken:
+        s = f"{base}-{n}"; n += 1
+    taken.add(s)
+    return s
+
+def ensure_story_slugs():
+    """Gán slug / slug_en (một lần, giữ nguyên về sau để link đã chia sẻ không đổi). Ghi lại data/macro-news.json nếu có thay đổi."""
+    path = ROOT / "data" / "macro-news.json"
+    data = json.loads(path.read_text(encoding="utf-8"))
+    items = data.get("items", [])
+    taken, taken_en = set(), set()
+    for it in items:
+        if it.get("slug"): taken.add(it["slug"])
+        if it.get("slug_en"): taken_en.add(it["slug_en"])
+    changed = False
+    for it in reversed(items):  # cũ → mới, để bản cũ giữ slug gốc
+        if not (it.get("date") and it.get("title")): continue
+        if not it.get("slug"):
+            it["slug"] = story_slug(it["title"], it["date"], taken); changed = True
+        if it.get("title_en") and it.get("summary_en") and not it.get("slug_en"):
+            it["slug_en"] = story_slug(it["title_en"], it["date"], taken_en); changed = True
+    if changed:
+        path.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
+    return items
+
+def story_desc(text, limit=300):
+    """Mô tả og:description: nguyên câu nếu được, tối đa ~300 ký tự."""
+    text = re.sub(r"\s+", " ", text or "").strip()
+    if len(text) <= limit: return text
+    head = text[:limit]
+    m = list(re.finditer(r"[.!?](?=\s)", head))
+    if m and m[-1].end() >= 80: return head[:m[-1].end()]
+    return head.rsplit(" ", 1)[0].rstrip(" ,;:.") + "…"
+
+def story_button(title, summary, reason, url, en=False):
+    return (f'<button type="button" class="sh-story" data-title="{e(title)}" data-summary="{e(summary)}" data-reason="{e(reason)}" '
+            f'data-url="{e(url)}" aria-label="{"Share this story" if en else "Chia sẻ tin này"}">{"↗ Share this story" if en else "↗ Chia sẻ tin này"}</button>')
+
+def story_head(lang, title, desc, url, pub, base, alt, section):
+    ld = {"@context": "https://schema.org", "@type": "NewsArticle", "headline": title[:110], "description": desc,
+          "datePublished": pub, "dateModified": pub, "inLanguage": lang, "mainEntityOfPage": url, "url": url,
+          "author": {"@type": "Person", "name": AUTHOR, "url": BASE_URL + ("en/about.html" if lang == "en" else "lien-he.html")},
+          "publisher": {"@type": "Organization", "name": SITE, "url": BASE_URL,
+                        "logo": {"@type": "ImageObject", "url": BASE_URL + "assets/favicon.svg"}}}
+    # Cố ý KHÔNG có og:image / twitter:image: Facebook sẽ hiện thẻ chữ (tên miền + tiêu đề + mô tả) thay cho banner chung.
+    return f"""<!DOCTYPE html>
+<html lang="{lang}" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<base href="{base}">
+<title>{e(title)} | {SITE}</title>
+<meta name="description" content="{e(desc)}">
+<meta name="robots" content="index, follow">
+<meta name="author" content="{AUTHOR} – {SITE}">
+<link rel="canonical" href="{url}">{alt}
+<meta name="theme-color" content="#0d1117">
+<meta property="og:type" content="article"><meta property="og:locale" content="{"en_US" if lang == "en" else "vi_VN"}"><meta property="og:site_name" content="{SITE}">
+<meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{url}">
+<meta property="article:published_time" content="{pub}"><meta property="article:author" content="{AUTHOR}"><meta property="article:section" content="{e(section)}">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="{e(title)}"><meta name="twitter:description" content="{e(desc)}">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.dataset.theme=localStorage.getItem('hmg_theme')||'dark'</script>
+<link rel="stylesheet" href="css/site.css?v={ASSET_V}">
+{CSS}
+<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
+</head>
+"""
+
+def story_foot():
+    return f"""<div id="site-footer"></div>
+<script src="js/common.js?v={ASSET_V}"></script>
+<script src="js/story-share.js?v={STORY_V}"></script>
+<script src="js/analytics.js?v={ASSET_V}" defer></script>
+</body>
+</html>
+"""
+
+def story_pub(it):
+    pv = it.get("published_vn")
+    if pv and re.match(r"\d{4}-\d\d-\d\d \d\d:\d\d$", pv): return pv.replace(" ", "T") + ":00+07:00"
+    return f"{it['date']}T00:00:00+07:00"
+
+def story_page_vi(it):
+    url = BASE_URL + f"tin/{it['slug']}.html"
+    en_url = BASE_URL + f"en/stories/{it['slug_en']}.html" if it.get("slug_en") else None
+    alt = ""
+    if en_url:
+        alt = (f'\n<link rel="alternate" hreflang="vi" href="{url}">\n<link rel="alternate" hreflang="en" href="{en_url}">'
+               f'\n<link rel="alternate" hreflang="x-default" href="{url}">')
+    desc = story_desc(it.get("summary") or it.get("reason") or it["title"])
+    imp = {"tăng": ("up", "Hỗ trợ vàng ↑"), "giảm": ("down", "Áp lực vàng ↓")}.get(it.get("impact"), ("side", "Trung lập"))
+    srcs = " · ".join(src_link(it[k]) for k in ("source", "source2") if it.get(k))
+    cat = it.get("category", "")
+    body = (f'<nav class="seo-bc"><a href="index.html">Trang chủ</a> › <a href="tin-tuc.html">Tin vĩ mô</a> › Tin</nav>\n'
+            f'<div class="seo-meta" style="margin-top:10px"><span class="badge side">{e(cat)}</span><span class="badge {imp[0]}">{imp[1]}</span>'
+            f'{"<span class=muted>🕐 " + e(it["time_vn"]) + "</span>" if it.get("time_vn") else ""}</div>\n'
+            f'<h1>{e(it["title"])}</h1>\n<p>{e(it.get("summary"))}</p>\n'
+            + (f'<p><b>Tác động tới vàng:</b> {e(it["reason"])}</p>\n' if it.get("reason") else "")
+            + (f'<p class="small note">⚠ {e(it["check"])}</p>\n' if it.get("check") else "")
+            + (f'<p class="small">🔗 Nguồn: {srcs}</p>\n' if srcs else "")
+            + f'<p style="margin-top:14px">{story_button(it["title"], it.get("summary"), it.get("reason"), url)} <a class="btn ghost" href="tin-tuc.html">← Tất cả tin vĩ mô</a></p>\n'
+            '<p class="muted small" style="margin-top:14px">⚠ Nội dung chỉ mang tính tham khảo, không phải lời khuyên đầu tư.</p>\n'
+            '<div class="seo-nav"><a class="btn" href="tin-tuc.html">🌐 Tin vĩ mô</a><a class="btn ghost" href="chien-luoc.html">🎯 Chiến lược hôm nay</a><a class="btn ghost" href="gia-vang.html">💰 Giá vàng VN</a></div>\n')
+    return (story_head("vi", it["title"], desc, url, story_pub(it), "../", alt, "Tin vĩ mô")
+            + '<body data-page="bai">\n<div id="site-header"></div>\n<main class="wrap"><article class="seo-art">\n' + body + "</article></main>\n" + story_foot())
+
+STORY_CAT_EN = {"Chiến tranh": "War & geopolitics", "Lạm phát": "Inflation", "Fed": "Fed", "FOMC": "FOMC", "Lợi suất": "Yields", "Trái phiếu": "Bonds",
+                "Tương quan": "Cross-asset", "Ngân hàng TW": "Central banks", "Vàng": "Gold", "Dầu mỏ": "Oil"}
+
+def story_page_en(it):
+    url = BASE_URL + f"en/stories/{it['slug_en']}.html"
+    vi_url = BASE_URL + f"tin/{it['slug']}.html"
+    alt = (f'\n<link rel="alternate" hreflang="vi" href="{vi_url}">\n<link rel="alternate" hreflang="en" href="{url}">'
+           f'\n<link rel="alternate" hreflang="x-default" href="{vi_url}">')
+    title = it["title_en"]; desc = story_desc(it.get("summary_en") or title)
+    imp = {"tăng": ("up", "Bullish for gold ↑"), "giảm": ("down", "Bearish for gold ↓")}.get(it.get("impact"), ("side", "Neutral"))
+    srcs = " · ".join(en_src_link(it[k]) for k in ("source", "source2") if it.get(k))
+    body = (f'<nav class="seo-bc"><a href="en/index.html">Home</a> › <a href="en/news.html">Macro news</a> › Story</nav>\n'
+            f'<div class="seo-meta" style="margin-top:10px"><span class="badge side">{e(STORY_CAT_EN.get(it.get("category", ""), it.get("category", "")))}</span><span class="badge {imp[0]}">{imp[1]}</span>'
+            f'{"<span class=muted>🕐 " + e(it["time_en"]) + "</span>" if it.get("time_en") else ""}</div>\n'
+            f'<h1>{e(title)}</h1>\n<p>{e(it.get("summary_en"))}</p>\n'
+            + (f'<p><b>Gold impact:</b> {e(it["reason_en"])}</p>\n' if it.get("reason_en") else "")
+            + (f'<p class="small note">⚠ {e(it["check_en"])}</p>\n' if it.get("check_en") else "")
+            + (f'<p class="small">🔗 Source: {srcs}</p>\n' if srcs else "")
+            + f'<p style="margin-top:14px">{story_button(title, it.get("summary_en"), it.get("reason_en"), url, True)} <a class="btn ghost" href="en/news.html">← All macro news</a></p>\n'
+            '<p class="muted small" style="margin-top:14px">⚠ For information and education only – not investment advice.</p>\n'
+            '<div class="seo-nav"><a class="btn" href="en/news.html">🌐 Macro news</a><a class="btn ghost" href="en/h79-analysis.html">🎯 Latest H79 plan</a><a class="btn ghost" href="en/economic-calendar.html">📅 Economic calendar</a></div>\n')
+    return (story_head("en", title, desc, url, story_pub(it), "../../", alt, "Macro news")
+            + '<body data-page="bai">\n<div id="site-header"></div>\n<main class="wrap"><article class="seo-art">\n' + body + "</article></main>\n" + story_foot())
+
+def write_stories():
+    """Sinh tin/<slug>.html + en/stories/<slug>.html cho mọi tin trong data/macro-news.json. Idempotent, xoá trang mồ côi.
+    Trả về danh sách (url, ngày) cho sitemap."""
+    items = [it for it in ensure_story_slugs() if it.get("date") and it["date"] <= TODAY and it.get("title") and it.get("slug")]
+    urls = []
+    for out_dir, rel, make, key in ((OUT_TIN, "tin/", story_page_vi, "slug"), (OUT_STORY_EN, "en/stories/", story_page_en, "slug_en")):
+        out_dir.mkdir(parents=True, exist_ok=True)
+        want = {}
+        for it in items:
+            if it.get(key) and (key == "slug" or (it.get("title_en") and it.get("summary_en"))):
+                want[f"{it[key]}.html"] = it
+        for f in out_dir.glob("*.html"):
+            if f.name not in want: f.unlink()
+        for name, it in want.items():
+            fp = out_dir / name; h = make(it)
+            if not fp.exists() or fp.read_text(encoding="utf-8") != h: fp.write_text(h, encoding="utf-8")
+            urls.append((BASE_URL + rel + name, it["date"]))
+    return urls
+
+
 def main():
     arts = build_strategies() + build_macro() + build_vngold()
     en_arts = build_en(arts)
@@ -769,6 +935,7 @@ def main():
         if not fp.exists() or fp.read_text(encoding="utf-8") != h: fp.write_text(h, encoding="utf-8")
     (OUT / "index.html").write_text(index_page(arts), encoding="utf-8")
     fix_main_pages(arts)
+    story_urls = write_stories()
     latest = arts[0]["date"] if arts else TODAY
     urls = [(BASE_URL if p == "index.html" else BASE_URL + p, latest, "daily", "1.0" if p == "index.html" else "0.8") for p in MAIN_PAGES if (ROOT / p).exists()]
     urls += [(BASE_URL + p, latest, "daily", "0.7") for p in EN_PAGES if (ROOT / p).exists()]
@@ -776,10 +943,12 @@ def main():
     urls.append((BASE_URL + "en/posts/index.html", latest, "daily", "0.7"))
     urls += [(BASE_URL + x["path"], x["date"], "weekly", "0.6") for x in en_arts]
     urls += [(BASE_URL + "bai/" + a["file"], a["date"], "weekly", "0.6") for a in arts]
+    urls += [(u, d, "monthly", "0.5") for u, d in story_urls]
     sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "".join(
         f"  <url><loc>{u}</loc><lastmod>{d}</lastmod><changefreq>{c}</changefreq><priority>{p}</priority></url>\n" for u, d, c, p in urls) + "</urlset>\n"
     (ROOT / "sitemap.xml").write_text(sm, encoding="utf-8")
     (ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nDisallow: /scripts/\nDisallow: /admin/\n\nSitemap: {BASE_URL}sitemap.xml\n", encoding="utf-8")
+    print(f"build-seo tin: {len(story_urls)} trang tin lẻ (tin/ + en/stories/)")
     print(f"build-seo EN: {len(en_arts)} bài en/posts/")
     print(f"build-seo: {len(arts)} bài + bai/index.html, sitemap {len(urls)} URL → {BASE_URL}sitemap.xml")
 
