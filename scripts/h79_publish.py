@@ -9,8 +9,12 @@ Vietnam is UTC+7 all year. The workflow clocks are:
   A run first scans public news indexes itself. It wakes the Render generator only
   when that scan finds article URLs not already on the board. The generator's
   stories are still dropped if they repeat a source link or a similar title/summary.
-- domestic, weekdays 08:43 VN = 01:43 UTC the same weekday (`43 1 * * 1-5`),
-  with a backup at 01:13 UTC (`13 1 * * 1-5`)
+- domestic, Monday–Saturday, about four times a VN day when SJC or ring quotes change:
+  first-of-day 08:43 VN = 01:43 UTC (`43 1 * * 1-6`), with a backup at 01:13 UTC (`13 1 * * 1-6`);
+  then in the same job as the 09:22, 12:07, 15:47 and 19:17 VN macro crons, so the
+  Render service is often still awake. A run fetches prices itself first and only
+  wakes the generator when those quotes differ from the last published rows. Later
+  updates overwrite the same day's page, they do not create a second URL.
 - weekly, Sunday 09:00 VN = 02:00 UTC Sunday (`0 2 * * 0`)
 
 The only required secret is the repo secret H79_RUN_TOKEN. RENDER_DEPLOY_HOOK is optional and is never printed. This script never prints either secret.
@@ -57,6 +61,8 @@ def redact(text):
 
 
 MACRO_CRONS = ('37 23', '52 22', '7 5', '07 5', '17 12', '33 19', '22 2', '22 02', '47 8', '47 08', '27 15')
+# After these macro crons, also try a domestic update on Monday–Saturday.
+DOMESTIC_FOLLOW_CRONS = ('22 2', '22 02', '7 5', '07 5', '47 8', '47 08', '17 12')
 
 
 def task_for_schedule(schedule, forced=''):
@@ -575,10 +581,64 @@ def already_published(root, task, date):
     if task == 'macro':
         return macro_done(root, date)
     if task == 'domestic':
-        return domestic_done(root, date)
+        return False
     if task == 'weekly':
         return weekly_done(root, date)
     return False
+
+
+def should_follow_with_domestic(schedule, now_vn=None):
+    """True on Mon–Sat when this run is one of the 09:22/12:07/15:47/19:17 VN macro crons."""
+    current = now_vn or datetime.now(VN)
+    if current.tzinfo is None:
+        current = current.replace(tzinfo=VN)
+    else:
+        current = current.astimezone(VN)
+    if current.weekday() > 5:
+        return False
+    text = (schedule or '').strip()
+    return any(text.startswith(prefix + ' ') for prefix in DOMESTIC_FOLLOW_CRONS)
+
+
+def key_quotes(rows):
+    """Buy/sell for SJC bar, SJC ring and PNJ 24K ring, the quotes that decide a republish."""
+    out = {}
+    for code, _key, _label in DOMESTIC_PRODUCTS:
+        row = row_by_code(rows, code)
+        if row and as_int(row.get('buy')) and as_int(row.get('sell')):
+            out[code] = (as_int(row.get('buy')), as_int(row.get('sell')))
+    return out
+
+
+def fetch_live_domestic_rows():
+    import importlib.util
+    path = ROOT / 'scripts' / 'update-vn-gold.py'
+    spec = importlib.util.spec_from_file_location('update_vn_gold', path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    rows, _ok, _fail = module.collect_rows()
+    return rows
+
+
+def scan_domestic_prices(root, fetch_rows=None, log=print):
+    """Compare live SJC/nhẫn quotes with the last published rows. Does not wake Render.
+
+    Returns (go, status) where status is 'changed', 'none', or 'error'.
+    """
+    published = key_quotes(read_json(Path(root) / 'data' / 'vn-gold-daily.json', {}).get('rows') or [])
+    try:
+        live = key_quotes((fetch_rows or fetch_live_domestic_rows)())
+    except Exception:
+        log('precheck domestic failed to fetch prices')
+        return False, 'error'
+    if not live:
+        log('precheck domestic got no usable quotes')
+        return False, 'error'
+    if published and live == published:
+        log('precheck domestic prices unchanged')
+        return False, 'none'
+    log('precheck domestic prices changed' if published else 'precheck domestic first quotes')
+    return True, 'changed'
 
 
 def apply_macro(data, payload, slot='', published_vn=''):
@@ -1032,49 +1092,8 @@ def apply_payload(root, task, payload, slot='', published_vn=''):
     return True
 
 
-def main(argv=None):
-    forced = ''
-    if argv is None:
-        argv = sys.argv[1:]
-    if argv and argv[0] in ('macro', 'domestic', 'weekly'):
-        forced = argv[0]
-    manual = os.environ.get('H79_TASK') or forced
-    task = task_for_schedule(os.environ.get('GITHUB_EVENT_SCHEDULE', ''), manual)
-    if not task:
-        print('missing task')
-        return 1
-    now = datetime.now(VN)
-    datetime_vn, date = vn_now(now)
-    print(f'{task} datetime_vn={datetime_vn}')
-    slot = ''
-    if task == 'macro':
-        slot = macro_slot(now) or 'dem'
-        go, _first, reason = macro_gate(ROOT, date, datetime_vn, slot)
-        print(reason)
-        if not go:
-            return 0
-        _candidates, status = scan_macro_candidates(ROOT, date)
-        if status == 'none':
-            print(f'macro {date} {slot}: no new candidate stories, skip generator')
-            return 0
-        if status == 'error':
-            print(f'macro {date} {slot}: precheck failed, calling generator')
-    elif already_published(ROOT, task, date):
-        print(f'{task} {date} already published')
-        return 0
-    base = api_base()
-    wake(base)
-    previous = None
-    if task == 'domestic':
-        previous = quotes_before(read_json(ROOT / 'data' / 'vn-gold-daily.json', {}), datetime_vn)
-    payload = post_board(base, task, datetime_vn, previous=previous)
-    if task == 'domestic':
-        result = subprocess.run([sys.executable, str(ROOT / 'scripts' / 'update-vn-gold.py')], cwd=ROOT)
-        if result.returncode != 0:
-            subprocess.run(['git', 'checkout', '--', 'data/vn-gold-daily.json', 'data/vn-gold-history.json'], cwd=ROOT)
-            print('price update failed')
-            return 1
-    if not apply_payload(ROOT, task, payload, slot=slot, published_vn=datetime_vn):
+def finish_board(task, date, payload, slot='', published_vn=''):
+    if not apply_payload(ROOT, task, payload, slot=slot, published_vn=published_vn):
         print(f'{task} {date} {slot}: no new stories, nothing published')
         return 0
     seo = subprocess.run([sys.executable, str(ROOT / 'scripts' / 'build-seo.py')], cwd=ROOT)
@@ -1085,6 +1104,98 @@ def main(argv=None):
     commit_and_push(f'H79 {label}')
     print(f'published {label}')
     return 0
+
+
+def publish_macro(now, datetime_vn, date):
+    slot = macro_slot(now) or 'dem'
+    go, _first, reason = macro_gate(ROOT, date, datetime_vn, slot)
+    print(reason)
+    if not go:
+        return 0
+    _candidates, status = scan_macro_candidates(ROOT, date)
+    if status == 'none':
+        print(f'macro {date} {slot}: no new candidate stories, skip generator')
+        return 0
+    if status == 'error':
+        print(f'macro {date} {slot}: precheck failed, calling generator')
+    wake(api_base())
+    try:
+        payload = post_board(api_base(), 'macro', datetime_vn)
+    except SystemExit as exc:
+        print('macro generator failed')
+        code = exc.code if isinstance(exc.code, int) else 1
+        return 1 if code is None else code
+    return finish_board('macro', date, payload, slot=slot, published_vn=datetime_vn)
+
+
+def publish_domestic(datetime_vn, date, fetch_rows=None):
+    go, status = scan_domestic_prices(ROOT, fetch_rows=fetch_rows)
+    print(f'domestic {date} precheck {status}')
+    if not go:
+        if status == 'none':
+            print(f'domestic {date}: prices unchanged, skip generator')
+        else:
+            print(f'domestic {date}: precheck failed, skip generator')
+        return 0
+    wake(api_base())
+    previous = quotes_before(read_json(ROOT / 'data' / 'vn-gold-daily.json', {}), datetime_vn)
+    try:
+        payload = post_board(api_base(), 'domestic', datetime_vn, previous=previous)
+    except SystemExit as exc:
+        print('domestic generator failed')
+        code = exc.code if isinstance(exc.code, int) else 1
+        return 1 if code is None else code
+    result = subprocess.run([sys.executable, str(ROOT / 'scripts' / 'update-vn-gold.py')], cwd=ROOT)
+    if result.returncode != 0:
+        subprocess.run(['git', 'checkout', '--', 'data/vn-gold-daily.json', 'data/vn-gold-history.json'], cwd=ROOT)
+        print('price update failed')
+        return 1
+    return finish_board('domestic', date, payload)
+
+
+def publish_weekly(datetime_vn, date):
+    if already_published(ROOT, 'weekly', date):
+        print(f'weekly {date} already published')
+        return 0
+    wake(api_base())
+    try:
+        payload = post_board(api_base(), 'weekly', datetime_vn)
+    except SystemExit as exc:
+        print('weekly generator failed')
+        code = exc.code if isinstance(exc.code, int) else 1
+        return 1 if code is None else code
+    return finish_board('weekly', date, payload)
+
+
+def main(argv=None):
+    forced = ''
+    if argv is None:
+        argv = sys.argv[1:]
+    if argv and argv[0] in ('macro', 'domestic', 'weekly'):
+        forced = argv[0]
+    manual = os.environ.get('H79_TASK') or forced
+    schedule = os.environ.get('GITHUB_EVENT_SCHEDULE', '')
+    task = task_for_schedule(schedule, manual)
+    if not task:
+        print('missing task')
+        return 1
+    now = datetime.now(VN)
+    datetime_vn, date = vn_now(now)
+    print(f'{task} datetime_vn={datetime_vn}')
+    if task == 'macro':
+        code = publish_macro(now, datetime_vn, date)
+        if not manual and should_follow_with_domestic(schedule, now):
+            print(f'domestic follow after macro {date}')
+            dcode = publish_domestic(datetime_vn, date)
+            if dcode and not code:
+                code = dcode
+        return code
+    if task == 'domestic':
+        return publish_domestic(datetime_vn, date)
+    if task == 'weekly':
+        return publish_weekly(datetime_vn, date)
+    print('missing task')
+    return 1
 
 
 if __name__ == '__main__':

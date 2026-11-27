@@ -80,6 +80,8 @@ class PublishTests(unittest.TestCase):
         self.assertEqual(pub.task_for_schedule('52 22 * * 0-4'), 'macro')
         self.assertEqual(pub.task_for_schedule('43 1 * * 1-5'), 'domestic')
         self.assertEqual(pub.task_for_schedule('13 1 * * 1-5'), 'domestic')
+        self.assertEqual(pub.task_for_schedule('43 1 * * 1-6'), 'domestic')
+        self.assertEqual(pub.task_for_schedule('13 1 * * 1-6'), 'domestic')
         self.assertEqual(pub.task_for_schedule('0 2 * * 0'), 'weekly')
         self.assertEqual(pub.task_for_schedule('', 'weekly'), 'weekly')
 
@@ -246,23 +248,24 @@ class PublishTests(unittest.TestCase):
             (root / 'bai').mkdir()
             (root / 'bai' / f'{date}-gia-vang-trong-nuoc.html').write_text('x', encoding='utf-8')
             (root / 'bai' / f'{date}-tin-vi-mo-anh-huong-gia-vang.html').write_text('x', encoding='utf-8')
-            old_root, old_wake, old_scan = pub.ROOT, pub.wake, pub.scan_macro_candidates
+            old_root, old_wake, old_scan, old_dom = pub.ROOT, pub.wake, pub.scan_macro_candidates, pub.scan_domestic_prices
             calls = []
             pub.ROOT = root
             pub.wake = lambda *args, **kwargs: calls.append('wake')
             pub.scan_macro_candidates = lambda *a, **k: ([], 'none')
+            pub.scan_domestic_prices = lambda *a, **k: (False, 'none')
             try:
                 buf = io.StringIO()
                 with redirect_stdout(buf):
                     domestic = pub.main(['domestic'])
                     macro = pub.main(['macro'])
             finally:
-                pub.ROOT, pub.wake, pub.scan_macro_candidates = old_root, old_wake, old_scan
+                pub.ROOT, pub.wake, pub.scan_macro_candidates, pub.scan_domestic_prices = old_root, old_wake, old_scan, old_dom
             log = buf.getvalue()
             self.assertEqual(domestic, 0)
             self.assertEqual(macro, 0)
             self.assertEqual(calls, [])
-            self.assertIn(f'domestic {date} already published', log)
+            self.assertIn('prices unchanged', log)
             self.assertIn('no new candidate stories', log)
             self.assertIn('datetime_vn=', log)
 
@@ -515,7 +518,7 @@ class MacroSlotTests(unittest.TestCase):
         self.assertEqual(pub.task_for_schedule('22 2 * * *'), 'macro')
         self.assertEqual(pub.task_for_schedule('47 8 * * *'), 'macro')
         self.assertEqual(pub.task_for_schedule('27 15 * * *'), 'macro')
-        self.assertEqual(pub.task_for_schedule('13 1 * * 1-5'), 'domestic')
+        self.assertEqual(pub.task_for_schedule('13 1 * * 1-6'), 'domestic')
         self.assertEqual(pub.task_for_schedule('0 2 * * 0'), 'weekly')
         self.assertEqual(pub.task_for_schedule('0 12 * * 1-5'), '')
 
@@ -596,15 +599,16 @@ class MacroSlotTests(unittest.TestCase):
         today = [item['title'] for item in data['items'] if item['date'] == '2026-11-10']
         self.assertEqual(today, ['Dầu tăng vọt sau căng thẳng Trung Đông', 'Vàng giữ 4.087 khi lợi suất dịu'])
 
-    def run_main(self, root, stamp, board, schedule='7 5 * * 1-5', precheck=('https://www.cnbc.com/2026/11/24/new.html',), precheck_status='new'):
+    def run_main(self, root, stamp, board, schedule='7 5 * * 1-5', precheck=('https://www.cnbc.com/2026/11/24/new.html',), precheck_status='new', domestic_status='none'):
         import io
         from contextlib import redirect_stdout
-        saved = (pub.ROOT, pub.wake, pub.post_board, pub.datetime, pub.scan_macro_candidates, os.environ.get('GITHUB_EVENT_SCHEDULE'), os.environ.get('H79_TASK'))
+        saved = (pub.ROOT, pub.wake, pub.post_board, pub.datetime, pub.scan_macro_candidates, pub.scan_domestic_prices, os.environ.get('GITHUB_EVENT_SCHEDULE'), os.environ.get('H79_TASK'))
         calls = []
         pub.ROOT = root
         pub.wake = lambda *a, **k: calls.append('wake')
         pub.post_board = lambda *a, **k: (calls.append('post'), board)[1]
         pub.scan_macro_candidates = lambda *a, **k: (list(precheck), precheck_status)
+        pub.scan_domestic_prices = lambda *a, **k: (domestic_status == 'changed', domestic_status)
         pub.datetime = FixedNow(stamp)
         os.environ['GITHUB_EVENT_SCHEDULE'] = schedule
         os.environ.pop('H79_TASK', None)
@@ -613,8 +617,8 @@ class MacroSlotTests(unittest.TestCase):
             with redirect_stdout(buf):
                 code = pub.main([])
         finally:
-            pub.ROOT, pub.wake, pub.post_board, pub.datetime, pub.scan_macro_candidates = saved[:5]
-            for key, value in (('GITHUB_EVENT_SCHEDULE', saved[5]), ('H79_TASK', saved[6])):
+            pub.ROOT, pub.wake, pub.post_board, pub.datetime, pub.scan_macro_candidates, pub.scan_domestic_prices = saved[:6]
+            for key, value in (('GITHUB_EVENT_SCHEDULE', saved[6]), ('H79_TASK', saved[7])):
                 if value is None:
                     os.environ.pop(key, None)
                 else:
@@ -756,6 +760,76 @@ class MacroSlotTests(unittest.TestCase):
         self.assertEqual(len(calls), 5)
         self.assertIn('gemini_failed', buf.getvalue())
         self.assertIn('status=503', buf.getvalue())
+
+
+    def test_follow_crons_are_monday_to_saturday_only(self):
+        from datetime import datetime
+        sat = datetime(2026, 11, 28, 12, 10, tzinfo=pub.VN)
+        sun = datetime(2026, 11, 29, 12, 10, tzinfo=pub.VN)
+        mon = datetime(2026, 11, 23, 9, 25, tzinfo=pub.VN)
+        self.assertTrue(pub.should_follow_with_domestic('7 5 * * *', sat))
+        self.assertTrue(pub.should_follow_with_domestic('22 2 * * *', mon))
+        self.assertTrue(pub.should_follow_with_domestic('47 8 * * *', sat))
+        self.assertTrue(pub.should_follow_with_domestic('17 12 * * *', sat))
+        self.assertFalse(pub.should_follow_with_domestic('7 5 * * *', sun))
+        self.assertFalse(pub.should_follow_with_domestic('37 23 * * *', sat))
+        self.assertFalse(pub.should_follow_with_domestic('0 2 * * 0', sun))
+
+    def test_domestic_precheck_compares_sjc_and_ring_quotes(self):
+        published = [
+            {'code': 'SJL1L10', 'buy': 129500000, 'sell': 134500000},
+            {'code': 'SJ9999', 'buy': 128300000, 'sell': 134300000},
+            {'code': 'PQHN24NTT', 'buy': 127000000, 'sell': 132500000},
+        ]
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'data').mkdir()
+            pub.write_json(root / 'data' / 'vn-gold-daily.json', {'rows': published})
+            logs = []
+            go, status = pub.scan_domestic_prices(root, fetch_rows=lambda: published, log=logs.append)
+            self.assertEqual((go, status), (False, 'none'))
+            changed = [dict(published[0], sell=135000000), published[1], published[2]]
+            go, status = pub.scan_domestic_prices(root, fetch_rows=lambda: changed, log=logs.append)
+            self.assertEqual((go, status), (True, 'changed'))
+
+            def boom():
+                raise OSError('down')
+
+            go, status = pub.scan_domestic_prices(root, fetch_rows=boom, log=logs.append)
+            self.assertEqual((go, status), (False, 'error'))
+
+    def test_main_updates_domestic_again_when_prices_change(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'data').mkdir()
+            (root / 'bai').mkdir()
+            date = '2026-11-28'
+            (root / 'bai' / f'{date}-gia-vang-trong-nuoc.html').write_text('old', encoding='utf-8')
+            pub.write_json(root / 'data' / 'vn-gold-daily.json', {'rows': [
+                {'code': 'SJL1L10', 'buy': 129500000, 'sell': 134500000},
+            ]})
+            board = payload('domestic')
+            board['clock']['dateVn'] = date
+            code, calls, log = self.run_main(root, '2026-11-28 12:12', board, schedule='7 5 * * *', precheck=(), precheck_status='none', domestic_status='changed')
+            self.assertIn('domestic follow after macro', log)
+            self.assertEqual(calls, ['wake', 'post'])
+            # build-seo is missing in the temp dir, but the follow ran and did not treat the page as already published
+            self.assertNotIn('already published', log)
+
+    def test_key_quotes_ignore_other_brands(self):
+        rows = [
+            {'code': 'SJL1L10', 'buy': 129500000, 'sell': 134500000},
+            {'code': 'DOHNL', 'buy': 100000000, 'sell': 101000000},
+            {'code': 'SJ9999', 'buy': 128300000, 'sell': 134300000},
+            {'code': 'PQHN24NTT', 'buy': 127000000, 'sell': 132500000},
+        ]
+        self.assertEqual(pub.key_quotes(rows), {
+            'SJL1L10': (129500000, 134500000),
+            'SJ9999': (128300000, 134300000),
+            'PQHN24NTT': (127000000, 132500000),
+        })
+        self.assertEqual(pub.key_quotes(rows), pub.key_quotes(rows + [{'code': 'MH_SJC', 'buy': 1, 'sell': 2}]))
+
 
 
 if __name__ == '__main__':

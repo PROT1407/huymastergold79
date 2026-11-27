@@ -109,29 +109,36 @@ def gv_pick(pg, path, col=0):  # giavang.org/trong-nuoc/<trang>/: bảng nghìn 
         ok = lambda x: x is not None and 5e7 < x < 5e8
         return (b, s, tm) if ok(b) and ok(s) and b <= s else (None, None, '')
     except Exception as ex: print('giavang.org lỗi', pg, ex); return None, None, ''
-def main():
-    old = json.load(open(OUT)) if os.path.exists(OUT) else {}
+def collect_rows():
+    """Fetch live domestic quotes. Does not write vn-gold-daily.json or history."""
     off = {}  # PNJ/Mi Hồng/Phú Quý: web chính thức (ưu tiên); thiếu -> webgia.com
+    ok, fail = [], []
     for name, fn in OFFICIAL:
-        try: off.update(fn()); OK.append(name)
-        except Exception as ex: print('web chính thức lỗi', name, ex); FAIL.append(name)
+        try: off.update(fn()); ok.append(name)
+        except Exception as ex: print('web chính thức lỗi', name, ex); fail.append(name)
     need = sorted({r[5] for r in WROWS if r[5] in WG_ONLY or r[0] not in off}, key=[r[5] for r in WROWS].index)
     pages = {}
     for pg in need:  # mỗi trang webgia đọc 1 lần
         try: t = fetch(WG + pg + '/'); pages[pg] = (cells(t), stamp(t))
         except Exception as ex: print('webgia lỗi', pg, ex)
     rows = []
-    for c, b, t, g, co, pg, path, col in WROWS:
-        if c in off and pg not in WG_ONLY: rows.append({'code': c, 'brand': b, 'type': t, 'group': g, 'co': co, **off[c]}); continue
+    for c, b, typ, g, co, pg, path, col in WROWS:
+        if c in off and pg not in WG_ONLY: rows.append({'code': c, 'brand': b, 'type': typ, 'group': g, 'co': co, **off[c]}); continue
         bu, se = pick(pages[pg][0], path, col) if pg in pages else (None, None)
         if bu is None or se is None or bu > se: bu = se = None  # không đọc được -> hiển thị '–'
         if bu is None:  # webgia ẩn số -> dự phòng giavang.org (đơn vị nghìn đồng/lượng), ghi rõ nguồn
             gb, gs, gt = gv_pick(pg, path, col)
             if gb is not None:
                 name, host, url = OFF[pg]
-                rows.append({'code': c, 'brand': b, 'type': t, 'group': g, 'co': co, 'buy': gb, 'sell': gs, 'src_name': f'{name} ({host}) · dự phòng giavang.org', 'src_url': url, 'src_mode': 'chain',
+                rows.append({'code': c, 'brand': b, 'type': typ, 'group': g, 'co': co, 'buy': gb, 'sell': gs, 'src_name': f'{name} ({host}) · dự phòng giavang.org', 'src_url': url, 'src_mode': 'chain',
                              'src_brand': name, 'src_host': host, 'src_via': [{'name': 'giavang.org', 'url': GV + 'trong-nuoc/' + pg + '/'}], 'src_time': gt}); continue
-        rows.append({'code': c, 'brand': b, 'type': t, 'group': g, 'co': co, 'buy': bu, 'sell': se, **wsrc(pg), 'src_time': pages.get(pg, ('', ''))[1]})
+        rows.append({'code': c, 'brand': b, 'type': typ, 'group': g, 'co': co, 'buy': bu, 'sell': se, **wsrc(pg), 'src_time': pages.get(pg, ('', ''))[1]})
+    return rows, ok, fail
+
+def main():
+    old = json.load(open(OUT)) if os.path.exists(OUT) else {}
+    rows, ok, fail = collect_rows()
+    OK.extend(ok); FAIL.extend(fail)
     today = dt.datetime.now(VN).date().isoformat()
     H = json.load(open(HIST)) if os.path.exists(HIST) else {}
     for c in SEED:  # giá chốt có nguồn thật, chỉ thêm nếu chưa có

@@ -13,11 +13,17 @@ name: h79-publish
 #   (00–05 dem, 05–11 sang, 11–17 trua, 17–24 toi). It does not skip any hour, slot, or gap.
 #   A run scans public news indexes first and only wakes the Render generator when it
 #   finds article URLs not already on the board. Duplicate stories are still dropped.
-# domestic weekdays 08:43 VN = 01:43 UTC Mon–Fri → 43 1 * * 1-5
-# domestic backup 08:13 VN = 01:13 UTC Mon–Fri → 13 1 * * 1-5
+# domestic Mon–Sat, about four updates a day when SJC or ring quotes change:
+#   first-of-day 08:43 VN = 01:43 UTC → 43 1 * * 1-6
+#   first-of-day backup 08:13 VN = 01:13 UTC → 13 1 * * 1-6
+#   then in the same job after the 09:22, 12:07, 15:47 and 19:17 VN macro crons
+#   (22 2, 7 5, 47 8, 17 12), so Render is often still awake.
+#   A run fetches prices first and only wakes the generator when quotes changed.
+#   Later updates overwrite bai/<date>-gia-vang-trong-nuoc.html; the page shows the latest updated_vn.
 # weekly Sunday 09:00 VN = 02:00 UTC Sunday → 0 2 * * 0
-# Domestic and weekly: whichever run lands first publishes that VN date; a later run exits without a commit.
+# Weekly: whichever run lands first publishes that VN date; a later run exits without a commit.
 # Macro: a run that finds nothing new exits without waking Render and without a commit.
+# Domestic: a run whose prices match the last published rows exits without waking Render.
 # Secret: H79_RUN_TOKEN. Optional RENDER_DEPLOY_HOOK retriggers the same service once if health stays 502/503.
 # Neither secret is printed. This workflow does not keep the free service awake between runs.
 # It does not ping the generator until the script has decided a board needs to be written.
@@ -31,8 +37,8 @@ on:
     - cron: '47 8 * * *'
     - cron: '17 12 * * *'
     - cron: '27 15 * * *'
-    - cron: '13 1 * * 1-5'
-    - cron: '43 1 * * 1-5'
+    - cron: '13 1 * * 1-6'
+    - cron: '43 1 * * 1-6'
     - cron: '0 2 * * 0'
   workflow_dispatch:
     inputs:
