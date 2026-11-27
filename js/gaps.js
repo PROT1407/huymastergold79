@@ -2,6 +2,20 @@
    Chỉ hiển thị điều suy ra được từ dữ liệu: ngày/vùng/SL/TP của nhận định và so giá spot hiện tại với vùng (không nói đã khớp/lãi). */
 (function () {
   'use strict';
+  /* Cờ bật: (1) xem thử riêng: ?h79preview=1 lưu localStorage, ?h79preview=0 xoá; (2) công khai: data/features.json {"fillGaps": true}.
+     Mặc định tắt: khi tắt file này không làm gì, không tải dữ liệu, không thêm class -> trang giữ nguyên như cũ. */
+  const KEY = 'h79_preview', qs = new URLSearchParams(location.search), pv = qs.get('h79preview');
+  try {
+    if (pv === '1') localStorage.setItem(KEY, '1'); else if (pv === '0') localStorage.removeItem(KEY);
+    if (pv === '0' || pv === '1') { qs.delete('h79preview'); const q = qs.toString(); history.replaceState(null, '', location.pathname + (q ? '?' + q : '') + location.hash); }
+  } catch (e) { }
+  const localOn = () => { try { return localStorage.getItem(KEY) === '1'; } catch (e) { return false; } };
+  const HM = window.HMG;
+  if (localOn()) start();
+  else if (HM) HM.getJSON(HM.ROOT + 'data/features.json').then(j => { if (j && j.fillGaps === true) start(); }).catch(() => { });
+
+  function start() {
+  document.documentElement.classList.add('fillgaps');
   const H = window.HMG, $ = id => document.getElementById(id), E = H.esc;
   const EN = /^en/i.test(document.documentElement.lang || '');
   const T = EN
@@ -9,7 +23,6 @@
         below: 'Price is below the stop level', sell: 'SELL', buy: 'BUY', sl: 'SL', tp: 'TP', plan: 'Daily Outlook', none: 'No active plan yet.', stale: 'Plan of' }
     : { title: 'Lệnh H79 đang theo dõi', open: 'Xem bài nhận định →', price: 'Giá giao ngay', zoneIn: 'Giá trong vùng', wait: 'Chờ giá về vùng', above: 'Giá đã vượt mức SL',
         below: 'Giá đã thủng mức SL', sell: 'BÁN', buy: 'MUA', sl: 'SL', tp: 'TP', plan: 'Nhận định chung', none: 'Chưa có kế hoạch.', stale: 'Kế hoạch ngày' };
-  const PRIVATE = /BB\s*90|MA\s*34|MA\s*89|MA34|MA89|BB90/i;
 
   /* "3.677 – 3.722" (VI) hay "3,677–3,722" (EN) -> [3677, 3722]. Chỉ nhận số nguyên nghìn hoặc số có phần thập phân 1–2 chữ số. */
   const num = s => {
@@ -55,7 +68,6 @@
       return `<div class="pb-row"><b class="${l.k}">${l.k === 'sell' ? T.sell : T.buy}</b> ${E(l.z)}${l.sl ? ` · ${T.sl} ${E(l.sl)}` : ''}${l.tp ? ` · ${T.tp} ${E(l.tp)}` : ''}${st ? `<br><span class="pb-st ${st[0]}">${E(st[1])}</span>` : ''}</div>`;
     }).join('');
     const html = `<h3>🎯 ${T.title}</h3><div class="pb-meta">${T.plan} ${dShort(PLAN.date)}${PLAN.time ? ' ' + PLAN.time : ''}${p ? ` · ${T.price} $${f1(p)}` : ''}</div>${rows}<a class="pb-link" href="${E(link(PLAN))}">${T.open}</a>`;
-    if (PRIVATE.test(html)) { box.hidden = true; return; }
     box.innerHTML = html; box.hidden = false;
   }
 
@@ -67,7 +79,6 @@
       <p class="small" style="margin:6px 0 4px;font-weight:700">${E(planTitle(PLAN))}</p>
       ${L.map(l => { const st = status(l, p); return `<div class="small"><b style="color:var(--${l.k === 'sell' ? 'down' : 'up'})">${l.k === 'sell' ? T.sell : T.buy}</b> ${E(l.z)}${l.sl ? ` · ${T.sl} ${E(l.sl)}` : ''}${st ? ` · <span class="muted">${E(st[1])}</span>` : ''}</div>`; }).join('')}
       <a class="small" style="display:inline-block;margin-top:6px;font-weight:700" href="${E(link(PLAN))}">${T.open}</a>`;
-    if (PRIVATE.test(html)) { el.hidden = true; return; }
     el.innerHTML = html; el.hidden = false;
   }
 
@@ -87,4 +98,5 @@
 
   H.getJSON(H.ROOT + 'data/strategies.json').then(d => { PLAN = pick(d.strategies); drawHome(); drawSide(); }).catch(() => { PLAN = null; drawHome(); drawSide(); });
   H.sub(() => { drawHome(); drawSide(); drawPrice(); });
+  }
 })();
