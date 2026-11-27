@@ -8,7 +8,7 @@ CHẠY TRƯỚC MỖI LẦN PUSH (routine):   python3 scripts/build-seo.py
   (data/vn-gold-daily.json). Chỉ hiển thị đúng nội dung có trong JSON.
 - tin/<ngày>-<slug>.html + en/stories/<ngày>-<slug>.html : mỗi tin vĩ mô một trang riêng (để chia sẻ; không có og:image)
 - bai/index.html (Kho bài viết), sitemap.xml, robots.txt
-- Cập nhật canonical/og:url/og:image của trang chính theo BASE_URL,
+- Cập nhật canonical/og:url của trang chính theo BASE_URL. Trang mục lục/bảng tin không có og:image (Facebook hiện thẻ chữ). Chỉ bài nhận định có chart riêng mới gắn og:image.
   khối "Bài viết mới" trên index.html (giữa 2 marker SEO-LATEST).
 Idempotent: chạy lại nhiều lần cho cùng dữ liệu → cùng kết quả (bài cũ không còn trong
 JSON sẽ bị xoá khỏi bai/ để tránh trang mồ côi).
@@ -127,8 +127,12 @@ def og_style_img(s, en=False):  # ảnh xem trước theo og_style (None = dùng
     st = OG_STYLES.get(str(s.get("og_style") or ""))
     return st[1 if en else 0] if st and (ROOT / st[1 if en else 0]).exists() else None
 
-def og_img(a, en=False):  # ảnh chart riêng > kiểu og_style > mặc định v3
-    return a.get("img") or a.get("ogimg") or (OG_IMG_EN if en else OG_IMG_VI)
+def og_img(a, en=False):
+    """Ảnh chart riêng của bài. Không bao giờ dùng banner mặc định og-h79 (VI/EN) hay ảnh og_style."""
+    rel = a.get("img")
+    if not rel or rel in (OG_IMG_VI, OG_IMG_EN):
+        return None
+    return rel
 
 def _img_meta(rel):
     """(width, height, mime) từ header PNG/JPEG — không cần Pillow (CI chỉ có stdlib)."""
@@ -163,9 +167,8 @@ def _img_meta(rel):
         return None  # hiếm; bỏ qua kích thước
     return None
 
-def og_dim(a, en=False):
-    """og:image:type/width/height/alt — luôn khai báo (chart riêng + ảnh mặc định) để Facebook hiện preview."""
-    rel = og_img(a, en)
+def og_dim(rel):
+    """og:image:type/width/height/alt — chỉ gọi khi bài có chart riêng."""
     meta = _img_meta(rel)
     if meta:
         w, h, mime = meta
@@ -177,14 +180,25 @@ def og_dim(a, en=False):
             f'<meta property="og:image:height" content="{h}">'
             f'<meta property="og:image:alt" content="{alt}">')
 
+
+def og_share_tags(a, en=False):
+    """og:image chỉ khi có chart riêng; không thì Twitter card summary, Facebook hiện thẻ chữ."""
+    rel = og_img(a, en)
+    if not rel:
+        return '<meta name="twitter:card" content="summary">'
+    return (f'<meta property="og:image" content="{BASE_URL}{rel}">{og_dim(rel)}'
+            f'<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{BASE_URL}{rel}">')
+
 def page(a, body):
     url = BASE_URL + "bai/" + a["file"]
     ld = {"@context": "https://schema.org", "@type": "NewsArticle", "headline": a["title"][:110],
           "description": a["desc"], "datePublished": a["pub"], "dateModified": a["pub"], "inLanguage": "vi",
-          "mainEntityOfPage": url, "url": url, "image": [BASE_URL + og_img(a)],
+          "mainEntityOfPage": url, "url": url,
           "author": {"@type": "Person", "name": AUTHOR, "url": BASE_URL + "lien-he.html"},
           "publisher": {"@type": "Organization", "name": SITE, "url": BASE_URL,
                         "logo": {"@type": "ImageObject", "url": BASE_URL + "assets/favicon.svg"}}}
+    if og_img(a):
+        ld["image"] = [BASE_URL + og_img(a)]
     full = f"{a['title']} | {SITE}"
     icon, kname = KIND[a["kind"]]
     return f"""<!DOCTYPE html>
@@ -200,9 +214,9 @@ def page(a, body):
 <link rel="canonical" href="{url}">{alt_links(url, a.get("en"))}
 <meta name="theme-color" content="#0d1117">
 <meta property="og:type" content="article"><meta property="og:locale" content="vi_VN"><meta property="og:site_name" content="{SITE}">
-<meta property="og:title" content="{e(a['title'])}"><meta property="og:description" content="{e(a['desc'])}"><meta property="og:url" content="{url}"><meta property="og:image" content="{BASE_URL}{og_img(a)}">{og_dim(a)}
+<meta property="og:title" content="{e(a['title'])}"><meta property="og:description" content="{e(a['desc'])}"><meta property="og:url" content="{url}">
 <meta property="article:published_time" content="{a['pub']}"><meta property="article:author" content="{AUTHOR}"><meta property="article:section" content="{kname}">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{BASE_URL}{og_img(a)}">
+{og_share_tags(a)}
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -576,8 +590,10 @@ def en_page(a, body):
     url = BASE_URL + a["path"]; vi = BASE_URL + a["vi"] if a.get("vi") else None
     ld = {"@context": "https://schema.org", "@type": a.get("type", "NewsArticle"), "headline": a["title"][:110], "description": a["desc"],
           "datePublished": a["pub"], "dateModified": a["pub"], "inLanguage": "en", "mainEntityOfPage": url, "url": url,
-          "image": [BASE_URL + og_img(a, True)], "author": {"@type": "Person", "name": AUTHOR, "url": BASE_URL + "en/about.html"},
+          "author": {"@type": "Person", "name": AUTHOR, "url": BASE_URL + "en/about.html"},
           "publisher": {"@type": "Organization", "name": SITE, "url": BASE_URL + "en/", "logo": {"@type": "ImageObject", "url": BASE_URL + "assets/favicon.svg"}}}
+    if og_img(a, True):
+        ld["image"] = [BASE_URL + og_img(a, True)]
     alt = (f'\n<link rel="alternate" hreflang="vi" href="{vi}">\n<link rel="alternate" hreflang="en" href="{url}">\n<link rel="alternate" hreflang="x-default" href="{vi}">' if vi else "")
     og = "website" if a.get("type") == "CollectionPage" else "article"
     return f"""<!DOCTYPE html>
@@ -593,8 +609,8 @@ def en_page(a, body):
 <link rel="canonical" href="{url}">{alt}
 <meta name="theme-color" content="#0d1117">
 <meta property="og:type" content="{og}"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="{SITE}">
-<meta property="og:title" content="{e(a['title'])}"><meta property="og:description" content="{e(a['desc'])}"><meta property="og:url" content="{url}"><meta property="og:image" content="{BASE_URL}{og_img(a, True)}">{og_dim(a, True)}
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="{BASE_URL}{og_img(a, True)}">
+<meta property="og:title" content="{e(a['title'])}"><meta property="og:description" content="{e(a['desc'])}"><meta property="og:url" content="{url}">
+{og_share_tags(a, True)}
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -919,6 +935,104 @@ def write_stories():
     return urls
 
 
+# ---------- Gỡ banner chia sẻ mặc định trên trang tĩnh; gắn tiêu đề/mô tả trọng tâm ----------
+_OG_IMG_TAG = re.compile(
+    r'\s*<meta (?:property="og:image(?::(?:type|width|height|alt))?"|name="twitter:image") content="[^"]*"\s*/?>',
+    re.I,
+)
+# Ảnh chân dung / ảnh riêng được giữ; chỉ gỡ banner mặc định og-h79.
+_DEFAULT_BANNER = re.compile(r"og-h79(?:-en)?-v\d")
+
+
+def drop_default_share_image(html):
+    """Gỡ og:image/twitter:image của banner mặc định. Trang dùng ảnh riêng (chart, huy.jpg) giữ nguyên."""
+    if not _DEFAULT_BANNER.search(html):
+        return html
+    html = _OG_IMG_TAG.sub("", html)
+    html = html.replace('name="twitter:card" content="summary_large_image"', 'name="twitter:card" content="summary"')
+    html = re.sub(r"\n{3,}", "\n\n", html)
+    return html
+
+
+def set_meta_content(html, attr, value):
+    """Ghi đè content của một thẻ meta (og:title, og:description, name=description)."""
+    pat = re.compile(r'(<meta ' + attr + r' content=")[^"]*(")')
+    return pat.sub(lambda m: m.group(1) + e(value) + m.group(2), html, count=1)
+
+
+def latest_macro_share(en=False):
+    """Tiêu đề + tóm tắt tin vĩ mô mới nhất (để khung xem trước trang tin-tuc / en/news bám đúng tin)."""
+    items = load("macro-news.json").get("items") or []
+    if en:
+        items = [it for it in items if it.get("title_en")]
+    if not items:
+        return None
+    it = items[0]
+    title = (it.get("title_en") if en else it.get("title")) or ""
+    raw = (it.get("summary_en") if en else it.get("summary")) or title
+    return title, story_desc(raw, 300)
+
+
+def vnd_trieu(v):
+    if not v:
+        return "—"
+    s = f"{v / 1e6:.2f}".rstrip("0").rstrip(".").replace(".", ",")
+    return s
+
+
+def gia_vang_share():
+    """og:title/description của gia-vang.html: giá SJC và nhẫn hôm nay."""
+    g = load("vn-gold-daily.json")
+    rows = {r.get("code"): r for r in (g.get("rows") or [])}
+
+    def pair(code):
+        r = rows.get(code) or {}
+        return vnd_trieu(r.get("buy")), vnd_trieu(r.get("sell"))
+
+    sjc_b, sjc_s = pair("SJL1L10")
+    nhan_b, nhan_s = pair("SJ9999")
+    pnj_b, pnj_s = pair("PQHN24NTT")
+    when = g.get("updated_vn") or ""
+    m = re.search(r"(\d{1,2}/\d{1,2}/\d{4})", when)
+    day = m.group(1)[:5] if m else dvn(TODAY)[:5]
+    title = f"Giá vàng SJC hôm nay {day}: mua {sjc_b} triệu – bán {sjc_s} triệu"
+    desc = (f"SJC miếng mua {sjc_b} – bán {sjc_s} triệu/lượng. "
+            f"Nhẫn SJC 9999 mua {nhan_b} – bán {nhan_s}. "
+            f"Nhẫn PNJ 24K mua {pnj_b} – bán {pnj_s}."
+            + (f" Cập nhật {when}." if when else ""))
+    return title, desc
+
+
+def apply_focused_share(html, title, desc):
+    html = set_meta_content(html, r'property="og:title"', title)
+    html = set_meta_content(html, r'property="og:description"', desc)
+    html = set_meta_content(html, r'name="description"', desc)
+    return html
+
+
+def refresh_share_previews():
+    """Gỡ banner mặc định trên trang tĩnh; trang tin vĩ mô và giá vàng trong nước dùng tiêu đề/mô tả trọng tâm, cập nhật mỗi lần build."""
+    pages = list(MAIN_PAGES) + list(EN_PAGES) + ["zalo/index.html"]
+    for rel in pages:
+        fp = ROOT / rel
+        if not fp.exists():
+            continue
+        s = o = fp.read_text(encoding="utf-8")
+        s = drop_default_share_image(s)
+        if rel == "tin-tuc.html":
+            pair = latest_macro_share(False)
+            if pair:
+                s = apply_focused_share(s, *pair)
+        elif rel == "en/news.html":
+            pair = latest_macro_share(True)
+            if pair:
+                s = apply_focused_share(s, *pair)
+        elif rel == "gia-vang.html":
+            s = apply_focused_share(s, *gia_vang_share())
+        if s != o:
+            fp.write_text(s, encoding="utf-8")
+
+
 def main():
     arts = build_strategies() + build_macro() + build_vngold()
     en_arts = build_en(arts)
@@ -935,6 +1049,7 @@ def main():
         if not fp.exists() or fp.read_text(encoding="utf-8") != h: fp.write_text(h, encoding="utf-8")
     (OUT / "index.html").write_text(index_page(arts), encoding="utf-8")
     fix_main_pages(arts)
+    refresh_share_previews()
     story_urls = write_stories()
     latest = arts[0]["date"] if arts else TODAY
     urls = [(BASE_URL if p == "index.html" else BASE_URL + p, latest, "daily", "1.0" if p == "index.html" else "0.8") for p in MAIN_PAGES if (ROOT / p).exists()]
