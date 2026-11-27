@@ -81,8 +81,9 @@
     if ($('macro')) {
       const cats = ['All'].concat([...new Set(items.map(x => x.category))]);
       $('macro-chips').innerHTML = cats.map((c, i) => `<button type="button" data-c="${E(c)}" class="${i ? '' : 'on'}">${E(i ? cat(c)[1] : 'All')} <small>${i ? items.filter(x => x.category === c).length : items.length}</small></button>`).join('');
-      const draw = c => { $('macro').innerHTML = items.filter(x => c === 'All' || x.category === c).map((x, i) => mcard(x, true, i)).join('') || '<p class="muted">No stories yet.</p>'; $('macro-chips').querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.c === c)); };
+      const draw = c => { $('macro').innerHTML = items.filter(x => c === 'All' || x.category === c).map((x, i) => mcard(x, true, i)).join('') || '<p class="muted">No stories yet.</p>'; document.querySelectorAll('#macro-chips button,#side-chips button').forEach(b => b.classList.toggle('on', b.dataset.c === c)); };
       $('macro-chips').onclick = ev => { const b = ev.target.closest('button'); if (b) draw(b.dataset.c); };
+      if ($('side-chips')) { $('side-chips').innerHTML = $('macro-chips').innerHTML; $('side-chips').onclick = ev => { const b = ev.target.closest('button'); if (b) { draw(b.dataset.c); $('macro-chips').scrollIntoView({ behavior: 'smooth', block: 'start' }); } }; }
       draw('All');
       const top = items.filter(x => x.priority === 1).sort((a, b) => b.date.localeCompare(a.date))[0];
       if (top && $('macro-hl')) $('macro-hl').innerHTML = mcard(top, true, 0).replace('<div class="mi-head">', '<div class="mi-head"><span class="tag">★ TOP STORY</span>');

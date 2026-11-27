@@ -26,8 +26,9 @@ document.addEventListener('DOMContentLoaded', function () {
     if ($('macro')) {
       const cats = ['Tất cả', 'Vàng', 'Lạm phát', 'Dầu mỏ', 'Lợi suất', 'Trái phiếu', 'Tương quan', 'Fed', 'FOMC', 'Chiến tranh', 'Ngân hàng TW'];
       $('macro-chips').innerHTML = cats.map((c, i) => `<button type="button" data-c="${c}" class="${i ? '' : 'on'}">${c} <small>${i ? items.filter(x => x.category === c).length : items.length}</small></button>`).join('');
-      const draw = c => { $('macro').innerHTML = items.filter(x => c === 'Tất cả' || x.category === c).map((x, i) => card(x, true, i)).join(''); $('macro-chips').querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.c === c)); };
+      const draw = c => { $('macro').innerHTML = items.filter(x => c === 'Tất cả' || x.category === c).map((x, i) => card(x, true, i)).join(''); document.querySelectorAll('#macro-chips button,#side-chips button').forEach(b => b.classList.toggle('on', b.dataset.c === c)); };
       $('macro-chips').onclick = ev => { const b = ev.target.closest('button'); if (b) draw(b.dataset.c); };
+      if ($('side-chips')) { $('side-chips').innerHTML = $('macro-chips').innerHTML; $('side-chips').onclick = ev => { const b = ev.target.closest('button'); if (b) { draw(b.dataset.c); $('macro-chips').scrollIntoView({ behavior: 'smooth', block: 'start' }); } }; }
       const want = new URLSearchParams(location.search).get('muc'); draw(cats.includes(want) ? want : 'Tất cả');
       const top = items.filter(x => x.priority === 1).sort((a, b) => b.date.localeCompare(a.date))[0];
       if (top && $('macro-hl')) $('macro-hl').innerHTML = hlCard(top);

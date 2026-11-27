@@ -1,0 +1,26 @@
+/* Ô "Lệnh H79 đang theo dõi" (trang chủ) + cột phải dính của trang tin tức */
+.plan-box{margin-top:14px;border:1px solid var(--line);border-left:3px solid var(--gold);background:var(--bg2);border-radius:10px;padding:12px 14px;font-size:.9rem;line-height:1.5}
+.plan-box h3{margin:0 0 2px;font-size:.98rem}
+.plan-box .pb-meta{color:var(--muted);font-size:.78rem}
+.plan-box .pb-row{margin-top:6px}
+.plan-box .pb-row b.sell{color:var(--down)}.plan-box .pb-row b.buy{color:var(--up)}
+.plan-box .pb-st{display:inline-block;margin-top:8px;padding:3px 10px;border-radius:999px;border:1px solid var(--line);font-size:.78rem;font-weight:700}
+.plan-box .pb-st.in{border-color:var(--gold);color:var(--gold)}
+.plan-box .pb-st.out{border-color:var(--down);color:var(--down)}
+.plan-box a.pb-link{display:inline-block;margin-top:8px;font-size:.84rem;font-weight:700}
+.side-sticky{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.side-card{padding:12px 14px}
+.side-card h3{margin:0 0 4px;font-size:.98rem}
+.side-card .sc-rows{display:grid;gap:4px;font-size:.88rem}
+.side-card .sc-rows div{display:flex;justify-content:space-between;gap:10px}
+.side-card .sc-rows span{color:var(--muted)}
+.side-card .chips{justify-content:flex-start;margin:6px 0 0;gap:6px}
+.side-card .chips button{padding:4px 11px;font-size:.78rem}
+a.side-cta{display:block;text-decoration:none;color:var(--txt)}
+a.side-cta:hover{border-color:var(--gold)}
+a.side-cta b{display:block;font-size:.95rem}
+a.side-cta small{display:block;color:var(--muted);margin-top:2px;font-size:.8rem}
+@media(min-width:1021px){
+  .side-sticky{position:sticky;top:84px;max-height:calc(100vh - 100px);overflow-y:auto;scrollbar-width:thin}
+}
+#macro-chips{scroll-margin-top:84px}
