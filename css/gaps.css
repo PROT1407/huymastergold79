@@ -1,6 +1,6 @@
 /* Lấp khoảng trống – TẤT CẢ quy tắc chỉ có hiệu lực khi <html class="fillgaps"> (js/gaps.js bật khi cờ xem thử hoặc data/features.json fillGaps=true).
    Tắt = không có quy tắc nào ảnh hưởng bố cục hiện tại. */
-.plan-box,.side-sticky,.gp-cpt{display:none}
+.plan-box,.side-sticky,.gp-cpt,.rb-new{display:none}
 html.fillgaps .plan-box{display:block;margin-top:14px;border:1px solid var(--line);border-left:3px solid var(--gold);background:var(--bg2);border-radius:10px;padding:12px 14px;font-size:.9rem;line-height:1.5}
 html.fillgaps .plan-box[hidden]{display:none}
 html.fillgaps .plan-box h3{margin:0 0 2px;font-size:.98rem}
@@ -56,3 +56,6 @@ html.fillgaps #macro-chips{scroll-margin-top:108px}
   html.fillgaps #side-extra>.gp-cpt{flex-basis:300px}
   html.fillgaps #side-extra>#sc-price,html.fillgaps #side-extra>#sc-plan{flex-basis:270px}
 }
+/* FXRebate: bản tối giản chỉ hiện khi bật cờ; tắt cờ = trang cũ nguyên vẹn */
+html.fillgaps .rb-new{display:block}
+html.fillgaps .rb-old{display:none}
