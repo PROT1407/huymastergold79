@@ -1,7 +1,7 @@
-/* Lấp khoảng trống – TẤT CẢ quy tắc chỉ có hiệu lực khi <html class="fillgaps"> (js/gaps.js bật khi cờ xem thử hoặc data/features.json fillGaps=true).
-   Tắt = không có quy tắc nào ảnh hưởng bố cục hiện tại. */
-.plan-box,.side-sticky,.gp-cpt,.rb-new{display:none}
-html.fillgaps .plan-box{display:block;margin-top:14px;border:1px solid var(--line);border-left:3px solid var(--gold);background:var(--bg2);border-radius:10px;padding:12px 14px;font-size:.9rem;line-height:1.5}
+/* Lấp khoảng trống – mỗi mục chỉ hiện khi <html> có class fg-<mục> (js/gaps.js thêm theo data/features.json hoặc ?h79preview=1).
+   Mục: homeOrders, cptCard, newsSidebar, stickyCard, mobileLayout. Tắt hết = không quy tắc nào ảnh hưởng bố cục. */
+.plan-box,.side-sticky,.gp-cpt{display:none}
+html.fg-homeOrders .plan-box{display:block;margin-top:14px;border:1px solid var(--line);border-left:3px solid var(--gold);background:var(--bg2);border-radius:10px;padding:12px 14px;font-size:.9rem;line-height:1.5}
 html.fillgaps .plan-box[hidden]{display:none}
 html.fillgaps .plan-box h3{margin:0 0 2px;font-size:.98rem}
 html.fillgaps .plan-box .pb-meta{color:var(--muted);font-size:.78rem}
@@ -12,7 +12,9 @@ html.fillgaps .plan-box .pb-st{display:inline-block;margin-top:8px;padding:3px 1
 html.fillgaps .plan-box .pb-st.in{border-color:var(--gold);color:var(--gold)}
 html.fillgaps .plan-box .pb-st.out{border-color:var(--down);color:var(--down)}
 html.fillgaps .plan-box a.pb-link{display:inline-block;margin-top:8px;font-size:.84rem;font-weight:700}
-html.fillgaps .side-sticky{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+html.fg-cptCard .side-sticky,html.fg-newsSidebar .side-sticky{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+/* cột phải tin tức: chỉ thẻ CPT khi mục newsSidebar tắt */
+html.fg-cptCard:not(.fg-newsSidebar) .side-sticky>:not(.gp-cpt){display:none!important}
 html.fillgaps .side-card{padding:10px 14px}
 html.fillgaps .side-card[hidden]{display:none}
 html.fillgaps .side-card h3{margin:0 0 4px;font-size:.98rem}
@@ -26,7 +28,7 @@ html.fillgaps a.side-cta:hover{border-color:var(--gold)}
 html.fillgaps a.side-cta b{display:block;font-size:.95rem}
 html.fillgaps a.side-cta small{display:block;color:var(--muted);margin-top:2px;font-size:.8rem}
 /* thẻ CPT Markets: cùng kiểu thẻ trên trang Tài khoản Follow (viền vàng, nền gradient vàng, tag xanh, nút vàng) */
-html.fillgaps .gp-cpt{display:block;position:relative;border:2px solid var(--gold);border-radius:18px;padding:14px 16px;background:linear-gradient(135deg,rgba(240,185,11,.2),var(--card) 60%)}
+html.fg-cptCard .gp-cpt{display:block;position:relative;border:2px solid var(--gold);border-radius:18px;padding:14px 16px;background:linear-gradient(135deg,rgba(240,185,11,.2),var(--card) 60%)}
 html.fillgaps .gp-cpt.gp-home{margin-top:14px}
 html.fillgaps .gp-live{display:inline-block;font-size:.7rem;font-weight:800;color:var(--up);background:rgba(22,199,132,.14);padding:2px 9px;border-radius:999px}
 html.fillgaps .gp-cpt h3{font-size:.98rem;line-height:1.3;font-weight:800;margin:6px 0 8px}
@@ -39,23 +41,20 @@ html.fillgaps .gp-sec:hover{border-color:var(--gold)}
 html.fillgaps #macro-chips{scroll-margin-top:108px}
 @media(min-width:1021px){
   /* tin tức: cột phải dính khi cuộn */
-  html.fillgaps .side-sticky{position:sticky;top:108px;max-height:calc(100vh - 124px);overflow-y:auto;scrollbar-width:thin}
+  html.fg-stickyCard .side-sticky{position:sticky;top:108px;max-height:calc(100vh - 124px);overflow-y:auto;scrollbar-width:thin}
 }
 @media(min-width:1241px) and (min-height:700px){
   /* trang chủ: thẻ hero bên phải dính cạnh thẻ biểu đồ cao */
-  html.fillgaps .g-hero>.card:not(#quick){position:sticky;top:108px;align-self:start}
+  html.fg-stickyCard .g-hero>.card:not(#quick){position:sticky;top:108px;align-self:start}
 }
 @media(max-width:1020px){
   /* điện thoại/tablet: thẻ phụ lên ngay dưới hàng chip lọc, thành dải cuộn ngang gọn */
-  html.fillgaps #macro-grid>aside{display:contents}
-  html.fillgaps #macro-grid>aside>*{order:1}
-  html.fillgaps #macro-grid>aside>#side-extra{order:-1;flex-direction:row;margin-top:0;gap:10px;overflow-x:auto;overflow-y:hidden;max-height:none;padding-bottom:6px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
-  html.fillgaps #side-extra>.side-card{flex:0 0 240px;scroll-snap-align:start}
-  html.fillgaps #side-extra>a.side-cta{flex-basis:210px}
-  html.fillgaps #side-extra>.side-chipcard{display:none}
-  html.fillgaps #side-extra>.gp-cpt{flex-basis:300px}
-  html.fillgaps #side-extra>#sc-price,html.fillgaps #side-extra>#sc-plan{flex-basis:270px}
+  html.fg-mobileLayout #macro-grid>aside{display:contents}
+  html.fg-mobileLayout #macro-grid>aside>*{order:1}
+  html.fg-mobileLayout #macro-grid>aside>#side-extra{order:-1;flex-direction:row;margin-top:0;gap:10px;overflow-x:auto;overflow-y:hidden;max-height:none;padding-bottom:6px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+  html.fg-mobileLayout #side-extra>.side-card{flex:0 0 240px;scroll-snap-align:start}
+  html.fg-mobileLayout #side-extra>a.side-cta{flex-basis:210px}
+  html.fg-mobileLayout #side-extra>.side-chipcard{display:none}
+  html.fg-mobileLayout #side-extra>.gp-cpt{flex-basis:300px}
+  html.fg-mobileLayout #side-extra>#sc-price,html.fg-mobileLayout #side-extra>#sc-plan{flex-basis:270px}
 }
-/* FXRebate: bản tối giản chỉ hiện khi bật cờ; tắt cờ = trang cũ nguyên vẹn */
-html.fillgaps .rb-new{display:block}
-html.fillgaps .rb-old{display:none}

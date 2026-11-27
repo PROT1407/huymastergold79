@@ -2,20 +2,33 @@
    Chỉ hiển thị điều suy ra được từ dữ liệu: ngày/vùng/SL/TP của nhận định và so giá spot hiện tại với vùng (không nói đã khớp/lãi). */
 (function () {
   'use strict';
-  /* Cờ bật: (1) xem thử riêng: ?h79preview=1 lưu localStorage, ?h79preview=0 xoá; (2) công khai: data/features.json {"fillGaps": true}.
-     Mặc định tắt: khi tắt file này không làm gì, không tải dữ liệu, không thêm class -> trang giữ nguyên như cũ. */
+  /* Công tắc từng mục: data/features.json = { "<mục>": true|false, ... }. Mục nào true -> thêm class "fg-<mục>" vào <html>, CSS/JS của mục đó mới chạy.
+     Mục mới thêm sau này mặc định false. Xem thử riêng: ?h79preview=1 (lưu localStorage) bật TẤT CẢ mục kể cả mục đang tắt; ?h79preview=0 xoá.
+     Không mục nào bật -> file này không thêm class nào, trang giữ nguyên như cũ. Trang quản lý: h79-admin.html. */
   const KEY = 'h79_preview', qs = new URLSearchParams(location.search), pv = qs.get('h79preview');
+  const KNOWN = ['homeOrders', 'cptCard', 'newsSidebar', 'stickyCard', 'mobileLayout'];
   try {
     if (pv === '1') localStorage.setItem(KEY, '1'); else if (pv === '0') localStorage.removeItem(KEY);
     if (pv === '0' || pv === '1') { qs.delete('h79preview'); const q = qs.toString(); history.replaceState(null, '', location.pathname + (q ? '?' + q : '') + location.hash); }
   } catch (e) { }
   const localOn = () => { try { return localStorage.getItem(KEY) === '1'; } catch (e) { return false; } };
   const HM = window.HMG;
-  if (localOn()) start();
-  else if (HM) HM.getJSON(HM.ROOT + 'data/features.json').then(j => { if (j && j.fillGaps === true) start(); }).catch(() => { });
+  if (!HM) return;
+  const allOn = j => { const o = {}; KNOWN.concat(Object.keys(j || {})).forEach(k => { if (/^[A-Za-z0-9_]+$/.test(k)) o[k] = true; }); return o; };
+  let started = false;
+  function apply(flags) {
+    const on = Object.keys(flags || {}).filter(k => flags[k] === true && /^[A-Za-z0-9_]+$/.test(k));
+    if (!on.length) return;
+    const cl = document.documentElement.classList;
+    on.forEach(k => cl.add('fg-' + k));
+    if (started) return;
+    started = true; cl.add('fillgaps'); start(flags);
+  }
+  if (localOn()) { apply(allOn()); HM.getJSON(HM.ROOT + 'data/features.json').then(j => apply(allOn(j))).catch(() => { }); }
+  else HM.getJSON(HM.ROOT + 'data/features.json').then(j => apply(j)).catch(() => { });
 
-  function start() {
-  document.documentElement.classList.add('fillgaps');
+  function start(F) {
+  const on = k => F[k] === true || localOn();
   const H = window.HMG, $ = id => document.getElementById(id), E = H.esc;
   const EN = /^en/i.test(document.documentElement.lang || '');
   const T = EN
@@ -60,7 +73,7 @@
   const planTitle = s => (EN ? (s.headline_en || s.title_en) : (s.headline || s.title)) || '';
 
   function drawHome() {
-    const box = $('h79-plan'); if (!box) return;
+    const box = $('h79-plan'); if (!box || !on('homeOrders')) return;
     if (!PLAN) { box.hidden = true; return; }
     const D = H.data, p = D && D.xau, L = legs(PLAN);
     const rows = L.map(l => {
@@ -72,7 +85,7 @@
   }
 
   function drawSide() {
-    const el = $('sc-plan'); if (!el) return;
+    const el = $('sc-plan'); if (!el || !on('newsSidebar')) return;
     if (!PLAN) { el.hidden = true; return; }
     const L = legs(PLAN), D = H.data, p = D && D.xau;
     const html = `<h3>🎯 ${EN ? 'Latest plan' : 'Nhận định mới nhất'}</h3><div class="pb-meta muted small">${T.plan} ${dShort(PLAN.date)}${PLAN.time ? ' ' + PLAN.time : ''}</div>
@@ -83,7 +96,7 @@
   }
 
   function drawPrice() {
-    const el = $('sc-price'); if (!el) return;
+    const el = $('sc-price'); if (!el || !on('newsSidebar')) return;
     const D = H.data, row = n => (D.rows || []).find(r => r.name === n);
     const tr = v => H.fmt(v / 1e6, 2);
     const lines = [];

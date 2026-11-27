@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<title>Quản lý hiển thị web</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<style>
+:root{--bg:#0d1117;--card:#161b22;--line:#2a313c;--txt:#e6edf3;--muted:#8b98a8;--gold:#f0b90b;--up:#16c784;--down:#ea3943}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:720px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:1.35rem;margin:8px 0 4px}
+h1 span{color:var(--gold)}
+.sub{color:var(--muted);font-size:.9rem;margin:0 0 18px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:12px}
+.row{display:flex;align-items:center;gap:14px}
+.row .info{flex:1;min-width:0}
+.row b{display:block;font-size:1rem}
+.row small{display:block;color:var(--muted);font-size:.82rem;margin-top:2px}
+.row a{font-size:.84rem;color:var(--gold);text-decoration:none;font-weight:700;white-space:nowrap}
+.row a:hover{text-decoration:underline}
+.tag{display:inline-block;font-size:.7rem;font-weight:800;padding:1px 8px;border-radius:999px;border:1px solid var(--line);color:var(--muted);margin-left:6px;vertical-align:middle}
+.tag.on{color:var(--up);border-color:var(--up)}
+.tag.chg{color:var(--gold);border-color:var(--gold)}
+.sw{position:relative;width:52px;height:30px;flex:none}
+.sw input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer;z-index:2}
+.sw i{position:absolute;inset:0;border-radius:999px;background:#3a424d;transition:.2s}
+.sw i:after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;transition:.2s}
+.sw input:checked+i{background:var(--up)}
+.sw input:checked+i:after{transform:translateX(22px)}
+.sw input:focus-visible+i{outline:2px solid var(--gold);outline-offset:2px}
+button,.btn{font:inherit;font-weight:800;border:0;border-radius:12px;padding:12px 18px;cursor:pointer}
+.save{width:100%;background:linear-gradient(135deg,#f7d34a,var(--gold) 55%,#c99a06);color:#1a1405;font-size:1.05rem;margin-top:6px}
+.save:disabled{opacity:.55;cursor:wait}
+.ghost{background:transparent;border:1px solid var(--line);color:var(--txt);padding:8px 14px;font-weight:700;font-size:.85rem}
+input[type=password],input[type=text]{width:100%;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:#0d1117;color:var(--txt);font:inherit;margin:8px 0}
+#msg{margin-top:12px;padding:12px 14px;border-radius:12px;font-size:.95rem;display:none;white-space:pre-line}
+#msg.ok{display:block;background:rgba(22,199,132,.12);border:1px solid var(--up)}
+#msg.err{display:block;background:rgba(234,57,67,.12);border:1px solid var(--down)}
+#msg.info{display:block;background:var(--card);border:1px solid var(--line)}
+.foot{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;align-items:center}
+.foot a{color:var(--muted);font-size:.85rem}
+.note{color:var(--muted);font-size:.82rem;margin:10px 2px}
+[hidden]{display:none!important}
+@media(max-width:520px){.row{flex-wrap:wrap}.row a{order:3;width:100%}}
+</style>
+</head>
+<body>
+<main>
+<h1>Quản lý <span>hiển thị web</span></h1>
+<p class="sub">Bật hoặc tắt từng mục cho mọi người, rồi bấm “Lưu lên web”.</p>
+
+<div class="box" id="tokenBox" hidden>
+  <b>Nhập token một lần</b>
+  <small style="display:block;color:var(--muted);margin-top:2px">Token chỉ lưu trong trình duyệt này, không lưu ở đâu khác.</small>
+  <input type="password" id="tokenIn" placeholder="github_pat_…" autocomplete="off" spellcheck="false">
+  <button class="ghost" id="tokenSave" type="button">Lưu token</button>
+</div>
+
+<div id="list"></div>
+
+<button class="save" id="saveBtn" type="button">Lưu lên web</button>
+<div id="msg" role="status" aria-live="polite"></div>
+<p class="note">Sau khi lưu, web cập nhật sau khoảng 1–2 phút (có khi lâu hơn một chút). “Xem thử” mở trang với chế độ xem thử: hiện tất cả mục, kể cả mục đang tắt.</p>
+
+<div class="foot">
+  <button class="ghost" id="forget" type="button">Quên token</button>
+  <a href="index.html?h79preview=0">Tắt chế độ xem thử trên máy này</a>
+</div>
+</main>
+
+<script>
+(function () {
+  'use strict';
+  var REPO = 'PROT1407/huymastergold79', FILE = 'data/features.json', BRANCH = 'main';
+  var TK = 'h79_admin_token';
+  var WHO = { name: 'PROT1407', email: '201034500+PROT1407@users.noreply.github.com' };
+  /* Mục mới: thêm một dòng ở đây và một khoá (mặc định false) trong data/features.json. Khoá lạ trong file vẫn hiện, tên = khoá. */
+  var SECTIONS = [
+    { key: 'homeOrders', name: 'Hộp “Lệnh H79 đang theo dõi”', desc: 'Trang chủ: tóm tắt kế hoạch BÁN/MUA mới nhất và giá đang ở đâu so với vùng.', page: 'index.html' },
+    { key: 'cptCard', name: 'Thẻ CPT Markets', desc: 'Trang chủ (dưới Chênh SJC) và cột phải trang Tin tức: nút theo dõi và mở tài khoản.', page: 'index.html' },
+    { key: 'newsSidebar', name: 'Cột phải trang Tin tức', desc: 'Giá vàng nhanh, nhận định mới nhất, lọc chủ đề, thẻ FXRebate / Bulenox / Zalo.', page: 'tin-tuc.html' },
+    { key: 'stickyCard', name: 'Thẻ đi theo khi kéo (máy tính)', desc: 'Cột phải trang chủ và tin tức đi theo khi cuộn, đỡ trống chỗ.', page: 'tin-tuc.html' },
+    { key: 'mobileLayout', name: 'Thẻ phụ trên điện thoại (Tin tức)', desc: 'Thẻ lướt ngang ngay dưới hàng chip lọc chủ đề.', page: 'tin-tuc.html' }
+  ];
+  var $ = function (id) { return document.getElementById(id); };
+  var state = {}, remote = {}, sha = null, token = '';
+  function getTok() { try { return localStorage.getItem(TK) || ''; } catch (e) { return ''; } }
+  function setTok(v) { try { v ? localStorage.setItem(TK, v) : localStorage.removeItem(TK); } catch (e) { } }
+  function msg(kind, text) { var m = $('msg'); m.className = kind; m.textContent = text; }
+  function b64d(s) { return decodeURIComponent(escape(atob(s.replace(/\s/g, '')))); }
+  function b64e(s) { return btoa(unescape(encodeURIComponent(s))); }
+  function api(path, opt) {
+    opt = opt || {}; opt.headers = Object.assign({ 'Accept': 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28', 'Authorization': 'Bearer ' + token }, opt.headers || {});
+    return fetch('https://api.github.com/repos/' + REPO + '/contents/' + FILE + path, opt);
+  }
+  function cleanFlags(j) { var o = {}; Object.keys(j || {}).forEach(function (k) { if (typeof j[k] === 'boolean') o[k] = j[k]; }); return o; }
+
+  function render() {
+    var keys = SECTIONS.map(function (s) { return s.key; });
+    Object.keys(state).forEach(function (k) { if (keys.indexOf(k) < 0) keys.push(k); });
+    var list = $('list'); list.textContent = '';
+    keys.forEach(function (k) {
+      var meta = SECTIONS.filter(function (s) { return s.key === k; })[0] || { name: k, desc: 'Mục mới (chưa có mô tả).', page: 'index.html' };
+      var on = state[k] === true, was = remote[k] === true, changed = on !== was;
+      var box = document.createElement('div'); box.className = 'box';
+      var row = document.createElement('div'); row.className = 'row';
+      var info = document.createElement('div'); info.className = 'info';
+      var b = document.createElement('b'); b.textContent = meta.name;
+      var tag = document.createElement('span'); tag.className = 'tag' + (changed ? ' chg' : (was ? ' on' : ''));
+      tag.textContent = changed ? 'chưa lưu' : (was ? 'đang bật trên web' : 'đang tắt');
+      b.appendChild(tag);
+      var sm = document.createElement('small'); sm.textContent = meta.desc;
+      info.appendChild(b); info.appendChild(sm);
+      var a = document.createElement('a'); a.href = meta.page + '?h79preview=1'; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'Xem thử →';
+      var sw = document.createElement('label'); sw.className = 'sw';
+      var inp = document.createElement('input'); inp.type = 'checkbox'; inp.checked = on; inp.setAttribute('aria-label', meta.name);
+      inp.addEventListener('change', function () { state[k] = inp.checked; render(); });
+      var knob = document.createElement('i'); sw.appendChild(inp); sw.appendChild(knob);
+      row.appendChild(info); row.appendChild(a); row.appendChild(sw);
+      box.appendChild(row); list.appendChild(box);
+    });
+  }
+
+  function load() {
+    token = getTok();
+    $('tokenBox').hidden = !!token;
+    var p;
+    if (token) {
+      p = api('?ref=' + BRANCH + '&t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
+        if (!r.ok) throw { status: r.status };
+        return r.json();
+      }).then(function (j) { sha = j.sha; return JSON.parse(b64d(j.content)); });
+    } else {
+      p = fetch('data/features.json?t=' + Date.now(), { cache: 'no-store' }).then(function (r) { if (!r.ok) throw { status: r.status }; return r.json(); });
+    }
+    return p.then(function (j) {
+      remote = cleanFlags(j); state = Object.assign({}, remote);
+      SECTIONS.forEach(function (s) { if (!(s.key in state)) { state[s.key] = false; } });
+      render();
+      msg('', ''); $('msg').className = '';
+      if (!token) msg('info', 'Chưa có token: đang xem trạng thái hiện tại. Nhập token ở trên để lưu thay đổi.');
+    }).catch(function (e) {
+      state = {}; remote = {}; render();
+      msg('err', errText(e, 'Không đọc được trạng thái hiện tại.'));
+    });
+  }
+
+  function errText(e, base) {
+    var s = e && e.status;
+    if (s === 401) return base + '\nToken sai hoặc đã hết hạn. Bấm “Quên token” rồi tạo token mới.';
+    if (s === 403) return base + '\nToken chưa đủ quyền, hoặc GitHub đang giới hạn lượt gọi. Kiểm tra token có quyền Contents: Read and write cho repo này.';
+    if (s === 404) return base + '\nKhông thấy file hoặc token không được cấp cho repo này. Kiểm tra token chỉ chọn repo huymastergold79, quyền Contents: Read and write.';
+    if (s === 409 || s === 422) return base + '\nCó người vừa sửa file này cùng lúc. Bấm tải lại trang rồi lưu lại.';
+    if (s) return base + '\nGitHub trả lỗi ' + s + '.';
+    return base + '\nKhông kết nối được. Kiểm tra mạng rồi thử lại.';
+  }
+
+  function save() {
+    if (!token) { $('tokenBox').hidden = false; $('tokenIn').focus(); msg('err', 'Cần nhập token trước khi lưu.'); return; }
+    var btn = $('saveBtn'); btn.disabled = true; msg('info', 'Đang lưu…');
+    api('?ref=' + BRANCH + '&t=' + Date.now(), { cache: 'no-store' }).then(function (r) {
+      if (!r.ok) throw { status: r.status };
+      return r.json();
+    }).then(function (cur) {
+      var latest = {}; try { latest = JSON.parse(b64d(cur.content)); } catch (e) { }
+      var out = {}, changes = [];
+      Object.keys(latest).forEach(function (k) { out[k] = latest[k]; });
+      Object.keys(state).forEach(function (k) {
+        if (out[k] !== state[k]) changes.push(k + ': ' + (state[k] ? 'bật' : 'tắt'));
+        out[k] = state[k];
+      });
+      if (!changes.length) { msg('info', 'Không có thay đổi để lưu.'); btn.disabled = false; return; }
+      var body = { message: 'Admin: cập nhật hiển thị (' + changes.join(', ') + ')', content: b64e(JSON.stringify(out, null, 2) + '\n'), sha: cur.sha, branch: BRANCH, committer: WHO, author: WHO };
+      return api('', { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }).then(function (r) {
+        if (!r.ok) throw { status: r.status };
+        return r.json();
+      }).then(function (res) {
+        sha = res.content && res.content.sha; remote = cleanFlags(out); state = Object.assign({}, remote);
+        render();
+        msg('ok', 'Đã lưu: ' + changes.join(', ') + '.\nWeb sẽ cập nhật sau khoảng 1–2 phút. Tải lại trang web để thấy.');
+        btn.disabled = false;
+      });
+    }).catch(function (e) { msg('err', errText(e, 'Lưu không được.')); btn.disabled = false; });
+  }
+
+  $('saveBtn').addEventListener('click', save);
+  $('tokenSave').addEventListener('click', function () {
+    var v = $('tokenIn').value.trim();
+    if (!/^[A-Za-z0-9_\-]{20,}$/.test(v)) { msg('err', 'Token không đúng dạng. Dán lại toàn bộ chuỗi token (bắt đầu bằng github_pat_).'); return; }
+    setTok(v); $('tokenIn').value = ''; load();
+  });
+  $('forget').addEventListener('click', function () {
+    setTok(''); token = ''; sha = null; $('tokenIn').value = ''; $('tokenBox').hidden = false;
+    msg('info', 'Đã xoá token khỏi trình duyệt này.');
+  });
+  load();
+})();
+</script>
+</body>
+</html>

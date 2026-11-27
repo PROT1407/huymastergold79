@@ -1,3 +1,7 @@
 {
-  "fillGaps": true
+  "homeOrders": true,
+  "cptCard": true,
+  "newsSidebar": true,
+  "stickyCard": true,
+  "mobileLayout": true
 }
