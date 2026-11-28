@@ -205,6 +205,17 @@
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', reveal); else reveal();
   })();
 
+  /* ---- Mục menu "Bot Vàng H79": chỉ thêm khi công tắc botVang bật (hoặc ?h79preview=1). Chỉ bản tiếng Việt. ---- */
+  if (!EN) {
+    const addBot = () => H.feature('botVang').then(on => {
+      if (!on) return;
+      const a = document.querySelector('#menu .dd a[href="fxrebate.html"]'); if (!a || !a.parentNode) return;
+      const n = document.createElement('a'); n.href = 'bot-vang.html'; n.innerHTML = 'Bot Vàng H79<small>Giới thiệu, cài đặt, hiệu suất</small>';
+      a.parentNode.insertBefore(n, a.nextSibling);
+    });
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addBot); else addBot();
+  }
+
   /* ---- TradingView widget theo giao diện ---- */
   H.tv = function (el, file, cfgFn) {
     const draw = () => {

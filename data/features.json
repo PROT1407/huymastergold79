@@ -4,5 +4,6 @@
   "newsSidebar": true,
   "stickyCard": true,
   "mobileLayout": true,
-  "chartIndicators": false
+  "chartIndicators": false,
+  "botVang": false
 }
