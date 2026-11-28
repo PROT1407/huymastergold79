@@ -1,6 +1,6 @@
 {
  "_ghi_chu": "Tin vĩ mô liên quan vàng. category: Lợi suất | Trái phiếu | Tương quan | Fed | FOMC | Chiến tranh | Ngân hàng TW. impact: tăng | giảm | trung lập. Chỉ đăng tin có nguồn uy tín, có link (Fed, Bộ Tài chính Mỹ, BLS, báo tài chính…); không đăng tin từ tài liệu nội bộ/cá nhân. Thêm tin mới lên đầu mảng. time_vn: thời điểm sự kiện theo giờ Việt Nam (UTC+7). priority: 1 = tác động trực tiếp tới vàng (hiện trước), 2, 3.",
- "updated": "2026-11-27",
+ "updated": "2026-11-28",
  "fomc": {
   "source": {
    "name": "Federal Reserve – FOMC calendars",
@@ -56,6 +56,118 @@
   "note_en": "Decision at 2:00 PM ET on day two of the meeting, press conference at 2:30 PM ET. * = with economic projections (dot plot)."
  },
  "items": [
+  {
+   "date": "2026-11-28",
+   "category": "Vàng",
+   "priority": 1,
+   "impact": "tăng",
+   "title": "Vàng phục hồi trên mốc 3.650 USD nhờ lực mua bắt đáy và chứng khoán Mỹ khởi sắc",
+   "summary": "Giá vàng giao ngay chốt phiên cuối tuần đứng ngay trên mốc 3.650 USD/oz, tăng khoảng 1,97% đến 2,45% trong phiên nhờ lực cầu bắt đáy, nhu cầu vật chất từ Trung Quốc và đà hồi phục mạnh của thị trường chứng khoán Mỹ sau nhịp giảm sâu đầu tuần về sát vùng 3.426 USD/oz.",
+   "reason": "Ngắn hạn: Giúp vàng thoát khỏi áp lực bán tháo và nhịp giảm mạnh về đáy 15 tháng nhờ tâm lý rủi ro trên thị trường tài chính cải thiện và hoạt động chốt lời vị thế bán khống. Dài hạn: Kim loại quý vẫn chịu áp lực từ kỳ vọng Fed tiếp tục thắt chặt chính sách tiền tệ và lợi suất trái phiếu duy trì ở mức cao.",
+   "source": {
+    "name": "Gold climbs above $3,650, silver surges as Wall Street rebounds sharply - Kitco PM Report | Kitco News",
+    "name_en": "Gold climbs above $3,650, silver surges as Wall Street rebounds sharply - Kitco PM Report | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-27/gold-climbs-above-3650-silver-surges-wall-street-rebounds-sharply-kitco-pm"
+   },
+   "time_vn": "Thứ Bảy 28/11/2026 10:22 giờ VN",
+   "title_en": "Gold climbs above $3,650, silver surges as Wall Street rebounds sharply",
+   "summary_en": "Spot gold recovered above $3,650 per ounce, gaining nearly 2% to 2.45% on Friday as bargain hunting, renewed Chinese physical demand, and a sharp Wall Street equity rebound helped cushion the metal despite lingering Fed tightening concerns.",
+   "reason_en": "Short-term: Eases severe liquidation pressure and lifts bullion from multi-month lows driven by improved market sentiment and short-covering. Long-term: Retains headwinds from expected Federal Reserve tightening and elevated Treasury yields.",
+   "time_en": "Friday, November 27, 2026, 22:22 EST",
+   "source2": {
+    "name": "The Fed is fighting the wrong inflation battle | Kitco News",
+    "name_en": "The Fed is fighting the wrong inflation battle | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-27/fed-fighting-wrong-inflation-battle"
+   },
+   "slot": "sang",
+   "published_vn": "2026-11-28 10:22",
+   "slug": "2026-11-28-vang-phuc-hoi-tren-moc-3-650-usd-nho-luc-mua-bat-day-va",
+   "slug_en": "2026-11-28-gold-climbs-above-3-650-silver-surges-as-wall-street-2"
+  },
+  {
+   "date": "2026-11-28",
+   "category": "Fed",
+   "priority": 1,
+   "impact": "giảm",
+   "title": "Dữ liệu kinh tế Mỹ tích cực củng cố kỳ vọng Fed tăng lãi suất tháng 12",
+   "summary": "GDP quý 3 của Mỹ được điều chỉnh tăng trưởng ở mức 4,3%, trong khi chỉ số giá PCE tháng 10 tăng 3,8% theo năm và lạm phát lõi theo năm đạt 3,3%, củng cố dự báo Ngân hàng Trung ương Mỹ sẽ tiến hành thêm một đợt tăng lãi suất trong cuộc họp tháng 12.",
+   "reason": "Ngắn hạn và dài hạn: Dữ liệu kinh tế và lạm phát mạnh mẽ làm gia tăng rủi ro thắt chặt tiền tệ, gây áp lực đè nặng lên các tài sản không sinh lời như vàng, dù thị trường đã phần nào phản ánh thông tin này.",
+   "source": {
+    "name": "Wall Street’s bullish bets tick higher after gold bounces back above $3,600, Main Street maintains bearish bias with payrolls on deck | Kitc",
+    "name_en": "Wall Street’s bullish bets tick higher after gold bounces back above $3,600, Main Street maintains bearish bias with payrolls on deck | Kitc",
+    "url": "https://www.kitco.com/news/article/2026-11-27/wall-streets-bullish-bets-tick-higher-after-gold-bounces-back-above-3600"
+   },
+   "time_vn": "Thứ Bảy 28/11/2026 10:22 giờ VN",
+   "title_en": "Wall Street’s bullish bets tick higher after gold bounces back above $3,600",
+   "summary_en": "Third-quarter U.S. GDP growth was revised higher to 4.3% while October annual PCE inflation rose 3.8% and annual core inflation accelerated to 3.3%, reinforcing expectations for another Federal Reserve rate hike in December.",
+   "reason_en": "Short and long-term: Strong economic data and persistent inflation reinforce hawkish monetary policy expectations, capping sustained upside momentum for non-yielding bullion.",
+   "time_en": "Friday, November 27, 2026, 22:22 EST",
+   "source2": {
+    "name": "The Fed is fighting the wrong inflation battle | Kitco News",
+    "name_en": "The Fed is fighting the wrong inflation battle | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-27/fed-fighting-wrong-inflation-battle"
+   },
+   "slot": "sang",
+   "published_vn": "2026-11-28 10:22",
+   "slug": "2026-11-28-du-lieu-kinh-te-my-tich-cuc-cung-co-ky-vong-fed-tang-lai",
+   "slug_en": "2026-11-28-wall-streets-bullish-bets-tick-higher-after-gold-bounces"
+  },
+  {
+   "date": "2026-11-28",
+   "category": "Lợi suất",
+   "priority": 1,
+   "impact": "trung lập",
+   "title": "Lợi suất trái phiếu và USD duy trì sức ép nhưng vàng vẫn giữ được sắc xanh",
+   "summary": "Lợi suất trái phiếu chính phủ Mỹ kỳ hạn 10 năm dịch chuyển về sát mức 4,93% và kỳ hạn 2 năm vượt 4,69%, trong khi chỉ số USD Index duy trì ở mức cao, tuy nhiên dòng tiền bắt đáy và nhu cầu tài sản trú ẩn trước rủi ro địa chính trị vẫn hỗ trợ giá vàng.",
+   "reason": "Ngắn hạn và dài hạn: Lợi suất cao và USD mạnh là yếu tố cản trở đà tăng của vàng, nhưng rủi ro lạm phát và căng thẳng địa chính trị tiếp tục duy trì lực cầu hỗ trợ dài hạn cho kim loại quý.",
+   "source": {
+    "name": "Gold and silver bounce from 15-month lows, but Fed risks loom large | Kitco News",
+    "name_en": "Gold and silver bounce from 15-month lows, but Fed risks loom large | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-27/gold-and-silver-bounce-15-month-lows-fed-risks-loom-large"
+   },
+   "time_vn": "Thứ Bảy 28/11/2026 10:22 giờ VN",
+   "title_en": "Gold and silver bounce from 15-month lows, but Fed risks loom large",
+   "summary_en": "The benchmark 10-year Treasury yield moved toward 4.93% while the two-year yield climbed above 4.69% and the U.S. dollar remained firm, though precious metals managed to hold recovery gains supported by defensive demand.",
+   "reason_en": "Short and long-term: Elevated yields and a firm dollar present traditional headwinds, offset by ongoing geopolitical risks and defensive hedging demand.",
+   "time_en": "Friday, November 27, 2026, 22:22 EST",
+   "source2": {
+    "name": "The Fed is fighting the wrong inflation battle | Kitco News",
+    "name_en": "The Fed is fighting the wrong inflation battle | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-27/fed-fighting-wrong-inflation-battle"
+   },
+   "slot": "sang",
+   "published_vn": "2026-11-28 10:22",
+   "slug": "2026-11-28-loi-suat-trai-phieu-va-usd-duy-tri-suc-ep-nhung-vang-van",
+   "slug_en": "2026-11-28-gold-and-silver-bounce-from-15-month-lows-but-fed-risks"
+  },
+  {
+   "date": "2026-11-28",
+   "category": "Dầu mỏ",
+   "priority": 1,
+   "impact": "trung lập",
+   "title": "Giá dầu Brent tăng tuần thứ ba liên tiếp trong bối cảnh rủi ro nguồn cung",
+   "summary": "Dầu Brent ghi nhận mức tăng khoảng 3,1% trong tuần, kết thúc chuỗi ba tuần giảm liên tiếp, trong khi dầu WTI giảm khoảng 0,4%. Những căng thẳng tại Trung Đông và eo biển Hormuz tiếp tục duy trì rủi ro về nguồn cung năng lượng.",
+   "reason": "Ngắn hạn và dài hạn: Giá dầu biến động tác động đến kỳ vọng lạm phát toàn cầu, qua đó gián tiếp ảnh hưởng đến lộ trình chính sách lãi suất của các ngân hàng trung ương lớn.",
+   "source": {
+    "name": "Gold climbs above $3,650, silver surges as Wall Street rebounds sharply - Kitco PM Report | Kitco News",
+    "name_en": "Gold climbs above $3,650, silver surges as Wall Street rebounds sharply - Kitco PM Report | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-27/gold-climbs-above-3650-silver-surges-wall-street-rebounds-sharply-kitco-pm"
+   },
+   "time_vn": "Thứ Bảy 28/11/2026 10:22 giờ VN",
+   "title_en": "Gold climbs above $3,650, silver surges as Wall Street rebounds sharply - Kitco PM Report",
+   "summary_en": "Brent crude gained approximately 3.1% for the week to end a three-week losing streak while WTI declined around 0.4%, as ongoing Middle East tensions and shipping risks kept energy supply concerns alive.",
+   "reason_en": "Short and long-term: Oil price fluctuations influence broader inflation expectations and subsequently shape central bank monetary policy paths.",
+   "time_en": "Friday, November 27, 2026, 22:22 EST",
+   "source2": {
+    "name": "The Fed is fighting the wrong inflation battle | Kitco News",
+    "name_en": "The Fed is fighting the wrong inflation battle | Kitco News",
+    "url": "https://www.kitco.com/news/article/2026-11-27/fed-fighting-wrong-inflation-battle"
+   },
+   "slot": "sang",
+   "published_vn": "2026-11-28 10:22",
+   "slug": "2026-11-28-gia-dau-brent-tang-tuan-thu-ba-lien-tiep-trong-boi-canh-rui",
+   "slug_en": "2026-11-28-gold-climbs-above-3-650-silver-surges-as-wall-street"
+  },
   {
    "date": "2026-11-27",
    "category": "Vàng",
