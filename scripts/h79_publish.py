@@ -1047,13 +1047,13 @@ def apply_share(data, task, payload):
 def commit_and_push(message, runner=subprocess.run):
     if os.environ.get('GITHUB_ACTIONS') != 'true' and os.environ.get('H79_PUSH') != '1':
         return False
-    add = ['git', 'add', '--', 'data/macro-news.json', 'data/fedwatch.json', 'data/vn-gold-daily.json', 'data/vn-gold-history.json', 'data/strategies.json', 'data/latest-share.json', 'bai', 'en/posts', 'tin', 'en/stories', 'sitemap.xml', 'robots.txt', 'index.html']
+    add = ['git', 'add', '--', 'data/macro-news.json', 'data/fedwatch.json', 'data/vn-gold-daily.json', 'data/vn-gold-history.json', 'data/strategies.json', 'data/latest-share.json', 'bai', 'en/posts', 'tin', 'en/stories', 'sitemap.xml', 'robots.txt', 'index.html', 'tin-tuc.html', 'en/news.html', 'gia-vang.html']
     runner(add, cwd=ROOT, check=True)
     quiet = runner(['git', 'diff', '--cached', '--quiet'], cwd=ROOT)
     if quiet.returncode == 0:
         return False
     runner(['git', '-c', 'user.name=PROT1407', '-c', 'user.email=201034500+PROT1407@users.noreply.github.com', 'commit', '-m', message], cwd=ROOT, check=True)
-    runner(['git', 'pull', '--rebase', 'origin', 'main'], cwd=ROOT, check=True)
+    runner(['git', 'pull', '--rebase', '--autostash', 'origin', 'main'], cwd=ROOT, check=True)
     runner(['git', 'push', 'origin', 'HEAD:main'], cwd=ROOT, check=True)
     return True
 
